@@ -1,0 +1,32 @@
+@import 'config/colors';
+@import 'config/sizes';
+
+:host {
+    display: flex;
+    min-height: 100%;
+}
+
+.base {
+    $self: &;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+
+    &__header {
+        flex: 0 0 $h-header;
+        height: $h-header;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        position: relative;
+    }
+
+    &__footer {
+        bottom: 0;
+        flex: 0 0 auto;
+        position: relative;
+    }
+}

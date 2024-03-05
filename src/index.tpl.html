@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>GIZ Costing Tool</title>
+        <base href="/" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="author" content="GIZ & INA" />
+        <meta name="copyright" content="GIZ & INA" />
+        <meta name="web_author" content="Us Media, info@usmedia.nl" />
+
+        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png" />
+        <meta name="msapplication-TileColor" content="#00625f" />
+        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml" />
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+        <link rel="manifest" href="/assets/favicons/manifest.json" />
+        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#00625f" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+
+        <style>
+            :root {
+                --app-height: 100%;
+            }
+
+            body {
+                background-color: #fff;
+            }
+
+            .spinner {
+                width: 100px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                text-align: center;
+            }
+
+            .spinner__ball {
+                width: 30px;
+                height: 30px;
+                background-color: #00625fff;
+                border-radius: 50%;
+                display: inline-block;
+                animation: spinner-motion 3s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+            }
+
+            .spinner__text {
+                color: #00625fff;
+                margin-top: 10px;
+                font-family: sans-serif;
+                letter-spacing: 3px;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+
+            .is-loaded .spinner {
+                display: none;
+            }
+
+            @keyframes spinner-motion {
+                0% {
+                    transform: translateX(0) scale(1);
+                }
+                25% {
+                    transform: translateX(-50px) scale(0.5);
+                }
+                50% {
+                    transform: translateX(0) scale(1);
+                }
+                75% {
+                    transform: translateX(50px) scale(0.5);
+                }
+                100% {
+                    transform: translateX(0) scale(1);
+                }
+            }
+        </style>
+
+        <script>
+            // Check for IE -- see https://stackoverflow.com/a/9851769
+            if (/*@cc_on!@*/ false && !!document.documentMode) {
+                window.location.href = '/legacy.html';
+            }
+
+            // Config
+            document.env = {
+                baseAPI: '${BASE_API}',
+            };
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <h2>No javascript detected</h2>
+            <p>Please enable javascript to use this website.</p>
+        </noscript>
+
+        <giz-root></giz-root>
+
+        <div class="spinner">
+            <div class="spinner__ball"></div>
+            <p class="spinner__text">Loading</p>
+        </div>
+    </body>
+</html>

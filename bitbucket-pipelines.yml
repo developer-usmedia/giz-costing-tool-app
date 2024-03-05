@@ -1,0 +1,38 @@
+image: node:18
+
+options:
+  max-time: 15 # mins
+
+definitions:
+  services:
+    docker:
+      memory: 2048 # mb
+
+  steps:
+    - step: &lint
+        name: Lint
+        script:
+          - npm ci
+          - npm run lint
+
+    - step: &build
+        name: Build
+        script:
+          - cp ./src/index.tpl.html ./src/index.html
+          - npm ci
+          - npm run lint
+          - npm run build
+
+    - step: &build-and-save
+        <<: *build
+        artifacts:
+          - dist/**
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *lint
+
+  branches:
+    develop:
+      - step: *build-and-save

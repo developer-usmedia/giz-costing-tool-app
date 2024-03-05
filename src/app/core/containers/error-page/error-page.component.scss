@@ -1,0 +1,14 @@
+@import 'config/sizes';
+@import 'config/colors';
+@import 'mixins/screen';
+
+:host {
+    display: block;
+    height: 100%;
+}
+
+.error {
+    $self: &;
+
+    display: flex;
+}

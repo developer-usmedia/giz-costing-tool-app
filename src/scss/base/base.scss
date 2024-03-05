@@ -1,0 +1,70 @@
+@use 'sass:color';
+@import '../config/colors';
+@import '../config/sizes';
+@import '../mixins/list-reset';
+@import '../mixins/screen';
+@import '../mixins/typography';
+
+html,
+body {
+    font-size: 16px;
+    min-height: 100%;
+}
+
+body {
+    @include style-text;
+
+    background-color: $c-grey--lightest;
+    height: 100vh;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include style-heading;
+
+    margin: 0 0 0.5rem;
+}
+
+h1 {
+    @include style-heading-1;
+
+    margin: 0 0 1rem;
+}
+
+h2 {
+    @include style-heading-2;
+
+    margin: 0 0 1rem;
+}
+
+h3 {
+    @include style-heading-3;
+
+    margin: 0 0 0.5rem;
+}
+
+h4 {
+    @include style-heading-4;
+}
+
+h5,
+h6 {
+    @include style-heading-5;
+}
+
+p {
+    font-size: inherit;
+    font-style: inherit;
+    margin: 0 0 1.25rem;
+}
+
+strong {
+    font-weight: $weight-bold;
+}
+
+// TODO more base styles

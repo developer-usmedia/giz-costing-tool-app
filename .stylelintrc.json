@@ -1,0 +1,34 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "ignoreFiles": [
+        "node_modules/**/*",
+        "dist/**/*"
+    ],
+    "plugins": [
+        "stylelint-order",
+        "stylelint-selector-bem-pattern"
+    ],
+    "rules": {
+        "string-quotes": "single",
+        "at-rule-no-unknown": null,
+        "selector-class-pattern": null,
+        "indentation": 4,
+        "no-empty-source": null,
+        "order/properties-alphabetical-order": true,
+        "plugin/selector-bem-pattern": {
+            "componentName": "[A-Z]+",
+            "componentSelectors": {
+                "combined": "^\\.combined-{componentName}-[a-z]+$",
+                "initial": "^\\.{componentName}(?:-[a-z]+)?$"
+            },
+            "utilitySelectors": "^\\.util-[a-z]+$"
+        },
+        "property-no-vendor-prefix": true,
+        "selector-list-comma-newline-after": null,
+        "selector-no-vendor-prefix": true,
+        "selector-type-no-unknown": null,
+        "selector-pseudo-element-no-unknown": null,
+        "scss/dollar-variable-pattern": ["([a-z][a-z0-9]*)(-[a-z0-9]+)?(--[a-z0-9]+)?"],
+        "value-keyword-case": null
+    }
+}
