@@ -1,0 +1,28 @@
+@import '../config/colors';
+@import '../config/fonts';
+
+.todo {
+    border: 4px solid $c-rose--darker;
+    clear: both;
+    font-weight: $weight-bold;
+    margin: 0;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    position: relative;
+
+    &::before {
+        background: $c-rose--darker;
+        color: $c-white;
+        content: 'todo';
+        font-size: var(--text-font-size-small);
+        font-weight: $weight-bold;
+        left: -2px;
+        line-height: 1;
+        padding: 4px;
+        position: absolute;
+        top: -2px;
+    }
+
+    & + .todo {
+        margin-top: 1rem;
+    }
+}

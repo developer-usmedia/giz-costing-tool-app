@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from '@core/containers/base/base.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
+import { ExamplesComponent } from '@core/containers/examples/examples.component';
 
 const routes: Routes = [
     {
@@ -13,6 +14,10 @@ const routes: Routes = [
                 path: '',
                 redirectTo: 'dashboard',
                 pathMatch: 'full',
+            },
+            {
+                path: 'examples',
+                component: ExamplesComponent,
             },
             {
                 path: 'dashboard',

@@ -1,0 +1,59 @@
+@import 'mixins/typography';
+
+.examples {
+    &__section {
+        border-bottom: 2px solid var(--hr-color);
+        padding: 2rem 0;
+    }
+
+    &__title {
+        font-size: var(--heading-1-hero-font-size);
+        margin: 0 0 2rem;
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-size: var(--heading-1-font-size);
+        margin-top: 1.5rem;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    &__hero {
+        @include style-heading-1-hero;
+    }
+
+    &__dialog-title {
+        @include style-heading-dialog;
+    }
+
+    &__list {
+        --icon-button-background: red;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__icon {
+        @include style-text-small;
+
+        align-items: center;
+        background: $c-grey--200;
+        border-radius: $b-radius;
+        display: flex;
+        flex: 0 0 74px;
+        flex-direction: column;
+        gap: 0.3rem;
+        height: 80px;
+        padding: 0.5rem;
+        text-align: center;
+    }
+}

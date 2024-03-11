@@ -1,0 +1,161 @@
+@use 'sass:color';
+@import './mixins/button';
+@import './mixins/sr-only';
+
+:root {
+    --button-background: #{ $c-forest--darker };
+    --button-border: #{ $c-forest--darker };
+    --button-color: #{ $c-white };
+    --button-background-hover: #{ $c-forest--dark };
+    --button-border-hover: #{ $c-forest--dark };
+    --button-color-hover: #{ $c-white };
+    --button-background-disabled: #{ $c-forest };
+    --button-border-disabled: #{ $c-forest };
+    --button-color-disabled: #{ $c-white };
+}
+
+.button {
+    $self: &;
+
+    @include button-base;
+    @include button-style(
+        var(--button-background),
+        var(--button-border),
+        var(--button-color),
+        var(--button-background-hover),
+        var(--button-border-hover),
+        var(--button-color-hover),
+        var(--button-background-disabled),
+        var(--button-border-disabled),
+        var(--button-color-disabled),
+    );
+
+    &__text {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        & + #{ $self }__icon {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__icon {
+        display: block;
+        height: 18px;
+        width: 18px;
+
+        & + #{ $self }__text {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &--basic {
+        --button-background: #{ $c-white };
+        --button-border: #{ $c-white };
+        --button-color: #{ $c-grey--900 };
+        --button-background-hover: #{ $c-grey--100 };
+        --button-border-hover: #{ $c-grey--100 };
+        --button-color-hover: #{ $c-grey--900 };
+        --button-background-disabled: #{ $c-white };
+        --button-border-disabled: #{ $c-white };
+        --button-color-disabled: #{ color.scale($c-black, $alpha: -60%) };
+    }
+
+    &--warning {
+        --button-background: #{ $c-rose--darker };
+        --button-border: #{ $c-rose--darker };
+        --button-color: #{ $c-white };
+        --button-background-hover: #{ $c-rose--dark };
+        --button-border-hover: #{ $c-rose--dark };
+        --button-color-hover: #{ $c-white };
+        --button-background-disabled: #{ $c-rose--light };
+        --button-border-disabled: #{ $c-rose--light };
+        --button-color-disabled: #{ $c-white };
+    }
+
+    &--stroke {
+        --button-background: #{ $c-white };
+        --button-border: #{ color.scale($c-black, $alpha: -88%)};
+        --button-color: #{ $c-forest--darker };
+        --button-background-hover: #{ $c-forest--lightest };
+        --button-border-hover: #{ color.scale($c-black, $alpha: -88%) };
+        --button-color-hover: #{ $c-forest--darker };
+        --button-background-disabled: #{ $c-white };
+        --button-border-disabled: #{ color.scale($c-black, $alpha: -88%) };
+        --button-color-disabled: #{ color.scale($c-forest--darker, $alpha: -50%) };
+
+        &#{ $self }--basic {
+            --button-background: #{ $c-white };
+            --button-border: #{ color.scale($c-black, $alpha: -88%)};
+            --button-color: #{ $c-grey--900 };
+            --button-background-hover: #{ color.scale($c-black, $alpha: -94%) };
+            --button-border-hover: #{ color.scale($c-black, $alpha: -88%) };
+            --button-color-hover: #{ $c-grey--900 };
+            --button-background-disabled: #{ $c-white };
+            --button-border-disabled: #{ color.scale($c-black, $alpha: -88%) };
+            --button-color-disabled: #{ color.scale($c-grey--900, $alpha: -50%) };
+        }
+
+        &#{ $self }--warning {
+            --button-background: #{ $c-white };
+            --button-border: #{ color.scale($c-black, $alpha: -88%)};
+            --button-color: #{ $c-rose--darker };
+            --button-background-hover: #{ $c-rose-lightest };
+            --button-border-hover: #{ color.scale($c-black, $alpha: -88%) };
+            --button-color-hover: #{ $c-rose--darker };
+            --button-background-disabled: #{ $c-white };
+            --button-border-disabled: #{ color.scale($c-black, $alpha: -88%) };
+            --button-color-disabled: #{ color.scale($c-rose--darker, $alpha: -50%) };
+        }
+    }
+
+    &--link {
+        --button-background: transparent;
+        --button-border: transparent;
+        --button-color: #{ $c-forest--dark };
+        --button-background-hover: transparent;
+        --button-border-hover: transparent;
+        --button-color-hover: #{ $c-forest--dark };
+        --button-background-disabled: transparent;
+        --button-border-disabled: transparent;
+        --button-color-disabled: #{ color.scale($c-black, $alpha: -60%) };
+
+        padding: 0;
+
+        #{ $self }__text {
+            border-bottom: 1px solid transparent;
+            line-height: 1.2;
+            text-decoration: none;
+            transition: border-bottom-color 0.2s ease;
+        }
+
+        &:focus-visible,
+        &:hover {
+            #{ $self }__text {
+                border-bottom: 1px solid var(--button-color);
+            }
+        }
+
+        &:disabled {
+            &:focus-visible,
+            &:hover {
+                #{ $self }__text {
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+
+        &#{ $self }--basic {
+            --button-color: #{ $c-grey--900 };
+            --button-color-hover: #{ $c-grey--900 };
+        }
+
+        &#{ $self }--warning {
+            --button-color: #{ $c-rose--darker };
+            --button-color-hover: #{ $c-rose--darker };
+        }
+    }
+}

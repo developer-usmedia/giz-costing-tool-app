@@ -12,18 +12,15 @@
         <meta name="copyright" content="GIZ & INA" />
         <meta name="web_author" content="Us Media, info@usmedia.nl" />
 
-        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png" />
-        <meta name="msapplication-TileColor" content="#00625f" />
-        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml" />
-
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
         <link rel="manifest" href="/assets/favicons/manifest.json" />
-        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#00625f" />
-        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#00625f">
+        <meta name="msapplication-TileColor" content="#00625f">
+        <meta name="theme-color" content="#fafafa">
 
         <style>
             :root {
@@ -31,58 +28,43 @@
             }
 
             body {
-                background-color: #fff;
+                background-color: #fafafa;
             }
 
-            .spinner {
-                width: 100px;
-                height: 50px;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                margin: auto;
-                text-align: center;
+            .spinner-index {
+                align-items: center;
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
             }
 
-            .spinner__ball {
-                width: 30px;
-                height: 30px;
-                background-color: #00625fff;
+            .spinner-index::before {
+                animation: rotate 1.2s infinite linear;
+                border: 10px solid #9ac0bfff;
+                border-bottom-color: #00625fff;
                 border-radius: 50%;
-                display: inline-block;
-                animation: spinner-motion 3s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+                content: '';
+                height: 80px;
+                margin: 2rem auto;
+                overflow: hidden;
+                position: relative;
+                width: 80px;
             }
 
-            .spinner__text {
-                color: #00625fff;
-                margin-top: 10px;
-                font-family: sans-serif;
-                letter-spacing: 3px;
-                font-size: 12px;
-                text-transform: uppercase;
-            }
-
-            .is-loaded .spinner {
+            .is-loaded .spinner-index {
                 display: none;
             }
 
-            @keyframes spinner-motion {
+            @keyframes rotate {
                 0% {
-                    transform: translateX(0) scale(1);
+                    transform: rotate(0deg);
                 }
-                25% {
-                    transform: translateX(-50px) scale(0.5);
-                }
-                50% {
-                    transform: translateX(0) scale(1);
-                }
-                75% {
-                    transform: translateX(50px) scale(0.5);
-                }
+
                 100% {
-                    transform: translateX(0) scale(1);
+                    transform: rotate(360deg);
                 }
             }
         </style>
@@ -107,9 +89,6 @@
 
         <giz-root></giz-root>
 
-        <div class="spinner">
-            <div class="spinner__ball"></div>
-            <p class="spinner__text">Loading</p>
-        </div>
+        <div class="spinner-index"></div>
     </body>
 </html>

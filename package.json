@@ -11,8 +11,8 @@
         "lint:watch": "nodemon --exec \"npm run lint || exit 1\" --ext ts,html,scss",
         "lint-ts": "eslint --ext .ts,.html ./src/app",
         "lint-fix": "eslint --ext .ts,.html ./src/app --fix",
-        "lint-sass": "stylelint ./src/app/**/*.scss",
-        "icons": "svg2sprite ./src/assets/images/svg ./src/assets/images/icons.svg --stripAttrs fill --stripAttrs stroke --stripAttrs id",
+        "lint-sass": "stylelint ./src/app/**/*.scss ./src/scss/**/*",
+        "icons": "svg2sprite ./src/assets/images/icons ./src/assets/images/icons.svg --stripAttrs fill --stripAttrs stroke --stripAttrs id",
         "test": "ng test"
     },
     "dependencies": {

@@ -1,9 +1,7 @@
 @import 'config/colors';
 
 :host {
-    background-color: $c-white;
     display: block;
     height: 100%;
-    max-width: 100vw;
-    width: 100%;
+    width: min(100%, 100vw);
 }

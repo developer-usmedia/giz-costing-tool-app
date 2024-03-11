@@ -1,0 +1,369 @@
+<div class="examples">
+    <section class="examples__section">
+        <h1 class="examples__title">Examples</h1>
+
+        <h1 class="examples__hero">Heading Hero</h1>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h2 class="examples__dialog-title">Heading Dialog</h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, <a href="/">consectetur adipiscing</a> elit, sed do <strong>eiusmod
+            tempor</strong> incididunt ut labore et dolore magna aliqua. Sed odio morbi quis commodo. Augue ut lectus
+            arcu bibendum at varius vel pharetra. Sapien faucibus et molestie ac feugiat sed lectus. Nullam ac tortor
+            vitae purus faucibus. Nec ullamcorper sit amet risus nullam. Pellentesque diam volutpat commodo sed egestas
+            egestas fringilla phasellus faucibus. Porttitor lacus luctus accumsan tortor. Sit amet venenatis urna cursus
+            eget. Morbi enim nunc faucibus a pellentesque sit amet.
+        </p>
+        <p>
+            Faucibus
+            <mark>interdum posuere</mark>
+            lorem ipsum dolor sit amet. Ac tincidunt vitae semper quis lectus. Cras sed felis eget velit aliquet
+            sagittis. Nisl vel pretium lectus quam id leo in vitae. Eleifend quam adipiscing vitae proin sagittis nisl
+            rhoncus. Viverra adipiscing at in tellus integer feugiat. Diam ut venenatis tellus in. Viverra orci sagittis
+            eu volutpat odio. Nec dui nunc mattis enim. Vitae auctor eu augue ut lectus. Vitae auctor eu augue ut lectus
+            arcu bibendum at. Nibh tortor id aliquet lectus. Ultrices dui sapien eget mi proin. Proin sed libero enim
+            sed faucibus turpis in eu. Massa enim nec dui nunc. Maecenas volutpat blandit aliquam etiam erat velit
+            scelerisque in.
+        </p>
+
+        <hr>
+
+        <ul>
+            <li>List item</li>
+            <li>List item 2</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Sed odio morbi quis commodo. Augue ut lectus arcu bibendum at varius vel pharetra.
+                Sapien faucibus et molestie ac feugiat sed lectus. Nullam ac tortor vitae purus faucibus.
+            </li>
+            <li>List item nested
+                <ul>
+                    <li>List item nested</li>
+                    <li>List item nested</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ol>
+            <li>Ordered list</li>
+            <li>Ordered list</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Sed odio morbi quis commodo. Augue ut lectus arcu bibendum at varius vel pharetra.
+                Sapien faucibus et molestie ac feugiat sed lectus. Nullam ac tortor vitae purus faucibus.
+            </li>
+            <li>List item nested
+                <ul>
+                    <li>List item nested</li>
+                    <li>List item nested</li>
+                </ul>
+            </li>
+            <li>List item nested
+                <ol>
+                    <li>List item nested</li>
+                    <li>List item nested</li>
+                </ol>
+            </li>
+        </ol>
+
+        <dl>
+            <dt>Definition list</dt>
+            <dd>Definition value</dd>
+            <dt>Definition list</dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Sed odio morbi quis commodo. Augue ut lectus arcu bibendum at varius vel pharetra.
+                Sapien faucibus et molestie ac feugiat sed lectus. Nullam ac tortor vitae purus faucibus.
+            </dd>
+        </dl>
+
+        <hr>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Thead</th>
+                <th>Thead</th>
+                <th>Thead</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Tbody th</th>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+            <tr>
+                <th>Tbody th</th>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+            <tr>
+                <th>Tbody th</th>
+                <td>Table cell</td>
+                <td>Table cell</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <pre>Text in a pre elementis displayed in a fixed-widthfont, and it preserves both      spaces and
+    line breaks</pre>
+
+    </section>
+
+    <section class="examples__section">
+        <h2 class="examples__title">Icons</h2>
+        <ul class="examples__list">
+            @for (icon of icons; track icon) {
+                <li class="examples__icon">
+                    <giz-icon [icon]="icon" [size]="'large'"></giz-icon>
+                    <span>{{ icon }}</span>
+                </li>
+            }
+        </ul>
+    </section>
+
+    <section class="examples__section">
+        <h2 class="examples__title">Button</h2>
+
+        <h2 class="examples__subtitle">Default</h2>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'basic'">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'basic'" [disabled]="true">Basic disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'primary'">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'primary'" [disabled]="true">Primary disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'warning'">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'warning'" [disabled]="true">Warning disabled</button>
+            </li>
+        </ul>
+
+        <h2 class="examples__subtitle">Stroked</h2>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-stroke-button [theme]="'basic'">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-stroke-button [theme]="'basic'" [disabled]="true">Basic disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-stroke-button [theme]="'primary'">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-stroke-button [theme]="'primary'" [disabled]="true">Primary disabled
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-stroke-button [theme]="'warning'">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-stroke-button [theme]="'warning'" [disabled]="true">Warning disabled</button>
+            </li>
+        </ul>
+
+        <h2 class="examples__subtitle">Link</h2>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-link-button [theme]="'basic'">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-link-button [theme]="'basic'" [disabled]="true">Basic disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-link-button [theme]="'primary'">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-link-button [theme]="'primary'" [disabled]="true">Primary disabled
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-link-button [theme]="'warning'">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-link-button [theme]="'warning'" [disabled]="true">Warning disabled</button>
+            </li>
+        </ul>
+
+        <h2 class="examples__subtitle">With icon</h2>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'basic'" [icon]="icon.OPEN_IN_NEW">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'basic'"
+                        [icon]="icon.OPEN_IN_NEW" [iconPosition]="'right'">Basic
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'primary'" [icon]="icon.OPEN_IN_NEW">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'primary'"
+                        [icon]="icon.OPEN_IN_NEW" [iconPosition]="'right'">Primary
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'warning'" [icon]="icon.OPEN_IN_NEW">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-button [theme]="'warning'"
+                        [icon]="icon.OPEN_IN_NEW" [iconPosition]="'right'">Warning
+                </button>
+            </li>
+        </ul>
+    </section>
+
+    <section class="examples__section">
+        <h2 class="examples__title">Icon Button</h2>
+
+        <h2 class="examples__subtitle">Default</h2>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'basic'">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'basic'" [disabled]="true">Basic disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'primary'">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'primary'" [disabled]="true">Primary disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'warning'">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'warning'" [disabled]="true">Warning disabled</button>
+            </li>
+        </ul>
+
+        <h2 class="examples__subtitle">Stroked</h2>
+
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'basic'">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'basic'" [disabled]="true">Basic disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'primary'">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'primary'" [disabled]="true">Primary disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'warning'">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'warning'" [disabled]="true">Warning disabled</button>
+            </li>
+        </ul>
+        <h2 class="examples__subtitle">Small</h2>
+
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'basic'">Basic</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'basic'" [disabled]="true">Basic disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'primary'">Primary</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'primary'" [disabled]="true">Primary disabled</button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'warning'">Warning</button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'warning'" [disabled]="true">Warning disabled</button>
+            </li>
+        </ul>
+    </section>
+
+    <section class="examples__section">
+        <h2 class="examples__title">Spinner</h2>
+
+        <ul class="examples__list">
+            <li class="examples__item">
+                <giz-spinner></giz-spinner>
+            </li>
+            <li class="examples__item">
+                <giz-spinner [theme]="'grey'"></giz-spinner>
+            </li>
+            <li class="examples__item">
+                <giz-spinner [theme]="'darkgrey'"></giz-spinner>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <giz-spinner [size]="'large'"></giz-spinner>
+            </li>
+            <li class="examples__item">
+                <giz-spinner [size]="'large'" [theme]="'grey'"></giz-spinner>
+            </li>
+            <li class="examples__item">
+                <giz-spinner [size]="'large'" [theme]="'darkgrey'"></giz-spinner>
+            </li>
+        </ul>
+    </section>
+</div>

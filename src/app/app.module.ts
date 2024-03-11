@@ -7,9 +7,7 @@ import { HttpBackend, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
-import { BaseComponent } from '@core/containers/base/base.component';
-import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
-import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
+import { CoreModule } from '@core/core.module';
 
 const httpLoaderFactory = (http: HttpClient) => {
     return new TranslateHttpLoader(
@@ -22,13 +20,11 @@ const httpLoaderFactory = (http: HttpClient) => {
 @NgModule({
     declarations: [
         AppComponent,
-        BaseComponent,
-        ErrorPageComponent,
-        DashboardComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        CoreModule.forRoot(),
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

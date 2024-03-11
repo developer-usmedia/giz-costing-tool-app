@@ -1,0 +1,30 @@
+:root {
+    --icon-size: 24px;
+}
+
+.icon {
+    display: inline-block;
+    fill: currentColor;
+    height: var(--icon-size);
+    line-height: 1;
+    transition: fill 0.2s;
+    width: var(--icon-size);
+
+    svg {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    &--extra-small {
+        --icon-size: 10px;
+    }
+
+    &--small {
+        --icon-size: 18px;
+    }
+
+    &--large {
+        --icon-size: 34px;
+    }
+}

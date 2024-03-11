@@ -1,0 +1,44 @@
+@import './config/colors';
+@import './mixins/animations';
+
+:root {
+    --spinner-bcg: #{ $c-forest--lighter };
+    --spinner-color: #{ $c-forest--darker };
+    --spinner-size: 24px;
+}
+
+.spinner {
+    $self: &;
+
+    @include rotate;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+        animation: rotate 1.2s infinite linear;
+        border: calc(var(--spinner-size) / 8) solid var(--spinner-bcg);
+        border-bottom-color: var(--spinner-color);
+        border-radius: 50%;
+        content: '';
+        height: var(--spinner-size);
+        width: var(--spinner-size);
+    }
+
+    &--large {
+        --spinner-size: 60px;
+    }
+
+    &--grey {
+        --spinner-bcg: #{ $c-grey--200 };
+        --spinner-color: #{ $c-grey--400 };
+    }
+
+    &--darkgrey {
+        --spinner-bcg: #{ $c-grey--300 };
+        --spinner-color: #{ $c-grey--900 };
+    }
+}

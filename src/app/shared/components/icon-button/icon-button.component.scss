@@ -1,0 +1,70 @@
+@use 'sass:color';
+@import './mixins/button';
+@import './mixins/sr-only';
+
+:root {
+    --icon-button-background: transparent;
+    --icon-button-border: transparent;
+    --icon-button-color: #{ $c-forest--darker };
+    --icon-button-background-hover: #{ $c-forest--lightest };
+    --icon-button-border-hover: #{ $c-forest--lightest };
+    --icon-button-color-hover: #{ $c-forest--darker };
+    --icon-button-background-disabled: transparent;
+    --icon-button-border-disabled: transparent;
+    --icon-button-color-disabled: #{ $c-grey--400 };
+}
+
+.icon-button {
+    $self: &;
+
+    @include button-base;
+    @include button-style(
+        var(--icon-button-background),
+        var(--icon-button-border),
+        var(--icon-button-color),
+        var(--icon-button-background-hover),
+        var(--icon-button-border-hover),
+        var(--icon-button-color-hover),
+        var(--icon-button-background-disabled),
+        var(--icon-button-border-disabled),
+        var(--icon-button-color-disabled),
+    );
+
+    border-radius: 50%;
+    padding: 0;
+    width: var(--button-height);
+
+    &__text {
+        @include sr-only;
+    }
+
+    &--basic {
+        --icon-button-color: #{ $c-grey--900 };
+        --icon-button-background-hover: #{ color.scale($c-black, $alpha: -94%) };
+        --icon-button-border-hover: #{ color.scale($c-black, $alpha: -94%) };
+        --icon-button-color-hover: #{ $c-grey--900 };
+        --icon-button-background-disabled: transparent;
+        --icon-button-border-disabled: transparent;
+    }
+
+    &--warning {
+        --icon-button-color: #{ $c-rose--darker };
+        --icon-button-background-hover: #{ $c-rose-lightest };
+        --icon-button-border-hover: #{ $c-rose-lightest };
+        --icon-button-color-hover: #{ $c-rose--darker };
+        --icon-button-background-disabled: transparent;
+        --icon-button-border-disabled: transparent;
+    }
+
+    &--stroke {
+        border-radius: $b-radius;
+
+        --icon-button-border: #{ color.scale($c-black, $alpha: -88%)};
+        --icon-button-border-hover: #{ color.scale($c-black, $alpha: -88%)};
+        --icon-button-border-disabled: #{ color.scale($c-black, $alpha: -88%)};
+    }
+
+    &--small {
+        --button-height: 24px;
+    }
+}

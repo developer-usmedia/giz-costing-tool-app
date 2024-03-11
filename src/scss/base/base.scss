@@ -14,9 +14,9 @@ body {
 body {
     @include style-text;
 
-    background-color: $c-grey--lightest;
+    background-color: var(--body-bcg);
+    color: var(--text-color);
     height: 100vh;
-
 }
 
 h1,
@@ -48,13 +48,10 @@ h3 {
     margin: 0 0 0.5rem;
 }
 
-h4 {
-    @include style-heading-4;
-}
-
+h4,
 h5,
 h6 {
-    @include style-heading-5;
+    @include style-heading-4;
 }
 
 p {
@@ -67,4 +64,248 @@ strong {
     font-weight: $weight-bold;
 }
 
-// TODO more base styles
+small {
+    @include style-text-small;
+}
+
+a {
+    &:focus-visible {
+        outline: 2px solid var(--link-color);
+    }
+
+    &:not([class]) {
+        border-bottom: 1px solid transparent;
+        color: var(--link-color);
+        cursor: pointer;
+        text-decoration: none;
+        transition: border-bottom-color 0.2s ease;
+        z-index: 0;
+
+        &:focus,
+        &:hover {
+            border-bottom: 1px solid currentColor;
+        }
+    }
+}
+
+button {
+    font-size: var(--text-font-size);
+    font-weight: $weight-normal;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+img,
+figure {
+    display: block;
+}
+
+figcaption {
+    @include style-text-small;
+
+    color: var(--caption-color);
+    font-style: italic;
+    padding: 0.5rem 1rem;
+}
+
+ul,
+ol {
+    @include list-reset;
+
+    &:not([class]) {
+        margin: 0 0 2rem;
+
+        li {
+            @include style-text;
+
+            margin: 0 0 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+
+            &::before {
+                left: 0;
+                position: absolute;
+            }
+        }
+
+        ul,
+        ol {
+            @include list-reset;
+
+            margin: 0.5rem 0 0;
+        }
+    }
+}
+
+/* stylelint-disable no-descending-specificity -- disable lint to ignore the ol styling in the shared class */
+ol {
+    &:not([class]) {
+        counter-reset: ol-number;
+
+        > li {
+            counter-increment: ol-number;
+
+            &::before {
+                color: var(--text-color);
+                content: counter(ol-number) '.';
+                font-size: var(--text-font-size);
+            }
+        }
+    }
+}
+
+ul {
+    &:not([class]) {
+        li {
+            padding-left: 1rem;
+
+            &::before {
+                color: var(--list-bullet-color);
+                content: '\002022';
+                font-size: 1.125rem;
+                line-height: 1.2;
+                top: 0;
+            }
+
+            ol {
+                &:not([class]) {
+                    counter-reset: ol-number;
+
+                    li {
+                        counter-increment: ol-number;
+                        padding-left: 1.75rem;
+
+                        &::before {
+                            color: var(--text-color);
+                            content: counter(ol-number) '.';
+                            font-size: var(--text-font-size);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* stylelint-enable no-descending-specificity */
+
+q {
+    display: inline-block;
+    margin: 0 0 1.25rem;
+}
+
+dl {
+    margin: 0 0 1.25rem;
+}
+
+dt {
+    @include style-text;
+
+    font-weight: $weight-bold;
+    margin: 0.75rem 0 0;
+}
+
+dd {
+    @include style-text;
+}
+
+hr {
+    background-color: var(--hr-color);
+    border: 0;
+    height: 2px;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+table {
+    border: 1px solid var(--table-border-color);
+    border-radius: $b-radius;
+    margin: 0 0 1rem;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+}
+
+tr {
+    background-color: var(--table-bcg);
+    border-bottom: 1px solid var(--table-border-color);
+    position: relative;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+th,
+td {
+    border: none;
+    padding: 0.875rem $p-gutter;
+}
+
+th {
+    color: var(--table-heading-color);
+    font-weight: $weight-bold;
+}
+
+thead {
+    th {
+        font-size: var(--text-font-size-small);
+        padding: 0.75rem $p-gutter;
+    }
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+}
+
+mark,
+ins {
+    background-color: var(--highlight-color);
+    border: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+del {
+    opacity: 0.75;
+}
+
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+    font-family: $font-monospace;
+}
+
+pre {
+    border: 1px solid var(--pre-border-color);
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.75rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+audio,
+canvas,
+iframe,
+svg,
+video {
+    vertical-align: middle;
+}
+
+video {
+    display: block;
+    width: 100%;
+}
+
+iframe {
+    max-width: 100%;
+}

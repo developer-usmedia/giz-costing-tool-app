@@ -1,0 +1,36 @@
+@use 'sass:color';
+@import '../config/colors';
+@import '../config/sizes';
+
+:root {
+    // Headings & Paragraphs
+    --heading-1-hero-font-size: 2rem;
+    --heading-1-font-size: 1.5rem;
+    --heading-2-font-size: 1.25rem;
+    --heading-3-font-size: 1rem;
+    --heading-4-font-size: 0.875rem;
+    --heading-dialog-font-size: 1.5rem;
+    --text-font-size: 0.875rem;
+    --text-font-size-large: 1rem;
+    --text-font-size-small: 0.75rem;
+
+    // Base colors
+    --text-color: #{ $c-black };
+    --link-color: #{ $c-forest--darker };
+    --caption-color: #{ $c-grey--900 };
+    --list-bullet-color: #{ $c-black };
+    --hr-color: #{ $c-forest };
+    --pre-border-color: #{ $c-grey--400 };
+    --highlight-color: #{ $c-forest--lighter };
+    --body-bcg: #{ $c-grey--100 };
+
+    // Button sizing
+    --button-font-size: 1.375rem;
+    --button-height: 36px;
+    --button-padding: #{ $p-gutter };
+
+    // Table
+    --table-bcg: #{ $c-white };
+    --table-border-color: #{ $c-grey--200 };
+    --table-heading-color: #{ $c-grey--700 };
+}
