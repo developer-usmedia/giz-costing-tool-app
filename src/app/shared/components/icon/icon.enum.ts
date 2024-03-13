@@ -2,6 +2,8 @@ export enum ICON {
     ADD = 'add',
     ARROW_BACK = 'arrow-back',
     ARROW_DOWN = 'arrow-down',
+    ARROW_FORWARD = 'arrow-forward',
+    ARROW_UP = 'arrow-up',
     CALCULATE = 'calculate',
     CHECK = 'check',
     CHEVRON_DOWN = 'chevron-down',

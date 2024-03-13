@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
-import { ICON } from '@shared/models';
+import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector

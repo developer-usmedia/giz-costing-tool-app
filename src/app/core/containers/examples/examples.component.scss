@@ -54,4 +54,11 @@
         padding: 0.5rem;
         text-align: center;
     }
+
+    &__top {
+        bottom: $p-gutter;
+        position: fixed;
+        right: $p-gutter;
+        z-index: 1;
+    }
 }

@@ -6,6 +6,7 @@ import { ExamplesComponent } from '@core/containers/examples/examples.component'
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 import { KeyValuePipe } from '@angular/common';
+import { DialogModule } from '@angular/cdk/dialog';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { KeyValuePipe } from '@angular/common';
         BaseComponent,
     ],
     imports: [
+        DialogModule,
         RouterModule,
         SharedModule,
         KeyValuePipe,

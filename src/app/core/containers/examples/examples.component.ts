@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { ICON } from '@shared/models';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
     selector: 'giz-examples',
@@ -8,13 +9,17 @@ import { ToastrService } from 'ngx-toastr';
     styleUrl: './examples.component.scss',
 })
 export class ExamplesComponent {
+    @ViewChild('dialogTemplateRef') private readonly dialogTemplateRef!: TemplateRef<any>;
+
     public icons: ICON[] = Object.entries(ICON).map(entry => entry[1]);
     protected readonly icon = ICON;
 
     private activeToaster?: number;
+    private dialogRef?: DialogRef<any>;
 
     constructor(
-        private readonly toastr: ToastrService
+        public dialog: Dialog,
+        private readonly toastr: ToastrService,
     ) {
     }
 
@@ -60,5 +65,13 @@ export class ExamplesComponent {
             this.toastr.clear(this.activeToaster);
             this.activeToaster = undefined;
         }
+    }
+
+    public openDialog() {
+        this.dialogRef = this.dialog.open(this.dialogTemplateRef);
+    }
+
+    public closeDialog() {
+        this.dialogRef?.close();
     }
 }

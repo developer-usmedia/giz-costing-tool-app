@@ -6,7 +6,7 @@ import {
     HostBinding, Input,
     ViewEncapsulation,
 } from '@angular/core';
-import { ICON } from '@shared/models';
+import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
     selector: 'giz-icon',

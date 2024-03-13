@@ -49,3 +49,7 @@ $c-shadow: /* stylelint-disable-line scss/dollar-variable-colon-space-after */
     0 7px 34px 0 color.scale($c-black, $alpha: -88%),
     0 18px 28px 0 color.scale($c-black, $alpha: -86%),
     0 9px 11px 0 color.scale($c-black, $alpha: -80%);
+$c-shadow--large: /* stylelint-disable-line scss/dollar-variable-colon-space-after */
+    0 9px 46px 0 color.scale($c-black, $alpha: -88%),
+    0 24px 38px 0 color.scale($c-black, $alpha: -86%),
+    0 11px 15px 0 color.scale($c-black, $alpha: -80%);

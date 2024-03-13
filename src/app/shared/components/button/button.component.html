@@ -1,3 +1,7 @@
-<giz-icon class="button__icon" [icon]="icon" *ngIf="icon && iconPosition == 'left'"></giz-icon>
+@if (icon && iconPosition === 'left') {
+    <giz-icon class="button__icon" [icon]="icon"></giz-icon>
+}
 <span class="button__text"><ng-content></ng-content></span>
-<giz-icon class="button__icon" [icon]="icon" *ngIf="icon && iconPosition == 'right'"></giz-icon>
+@if (icon && iconPosition === 'right') {
+    <giz-icon class="button__icon" [icon]="icon"></giz-icon>
+}

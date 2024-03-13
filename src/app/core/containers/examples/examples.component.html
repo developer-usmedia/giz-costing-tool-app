@@ -1,7 +1,39 @@
 <div class="examples">
-    <section class="examples__section">
+    <section class="examples__section" id="menu">
         <h1 class="examples__title">Examples</h1>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <a routerLink="./" fragment="content"
+                   type="button" giz-stroke-button>Content</a>
+            </li>
+            <li class="examples__item">
+                <a routerLink="./" fragment="icons"
+                   type="button" giz-stroke-button>Icons</a>
+            </li>
+            <li class="examples__item">
+                <a routerLink="./" fragment="buttons"
+                   type="button" giz-stroke-button>Buttons</a>
+            </li>
+            <li class="examples__item">
+                <a routerLink="./" fragment="icon-buttons"
+                   type="button" giz-stroke-button>Icon Buttons</a>
+            </li>
+            <li class="examples__item">
+                <a routerLink="./" fragment="spinner"
+                   type="button" giz-stroke-button>Spinner</a>
+            </li>
+            <li class="examples__item">
+                <a routerLink="./" fragment="toast"
+                   type="button" giz-stroke-button>Toasts</a>
+            </li>
+            <li class="examples__item">
+                <a routerLink="./" fragment="dialog"
+                   type="button" giz-stroke-button>Dialog</a>
+            </li>
+        </ul>
+    </section>
 
+    <section class="examples__section" id="content">
         <h1 class="examples__hero">Heading Hero</h1>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -111,7 +143,7 @@
 
     </section>
 
-    <section class="examples__section">
+    <section class="examples__section" id="icons">
         <h2 class="examples__title">Icons</h2>
         <ul class="examples__list">
             @for (icon of icons; track icon) {
@@ -123,7 +155,7 @@
         </ul>
     </section>
 
-    <section class="examples__section">
+    <section class="examples__section" id="buttons">
         <h2 class="examples__title">Button</h2>
 
         <h2 class="examples__subtitle">Default</h2>
@@ -239,38 +271,44 @@
         </ul>
     </section>
 
-    <section class="examples__section">
+    <section class="examples__section" id="icon-buttons">
         <h2 class="examples__title">Icon Button</h2>
 
         <h2 class="examples__subtitle">Default</h2>
         <ul class="examples__list">
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [theme]="'basic'">Basic</button>
+                        [theme]="'basic'">Basic
+                </button>
             </li>
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [theme]="'basic'" [disabled]="true">Basic disabled</button>
-            </li>
-        </ul>
-        <ul class="examples__list">
-            <li class="examples__item">
-                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [theme]="'primary'">Primary</button>
-            </li>
-            <li class="examples__item">
-                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [theme]="'primary'" [disabled]="true">Primary disabled</button>
+                        [theme]="'basic'" [disabled]="true">Basic disabled
+                </button>
             </li>
         </ul>
         <ul class="examples__list">
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [theme]="'warning'">Warning</button>
+                        [theme]="'primary'">Primary
+                </button>
             </li>
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [theme]="'warning'" [disabled]="true">Warning disabled</button>
+                        [theme]="'primary'" [disabled]="true">Primary disabled
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'warning'">Warning
+                </button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [theme]="'warning'" [disabled]="true">Warning disabled
+                </button>
             </li>
         </ul>
 
@@ -279,31 +317,37 @@
         <ul class="examples__list">
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [buttonType]="'stroke'" [theme]="'basic'">Basic</button>
+                        [buttonType]="'stroke'" [theme]="'basic'">Basic
+                </button>
             </li>
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [buttonType]="'stroke'" [theme]="'basic'" [disabled]="true">Basic disabled</button>
-            </li>
-        </ul>
-        <ul class="examples__list">
-            <li class="examples__item">
-                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [buttonType]="'stroke'" [theme]="'primary'">Primary</button>
-            </li>
-            <li class="examples__item">
-                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [buttonType]="'stroke'" [theme]="'primary'" [disabled]="true">Primary disabled</button>
+                        [buttonType]="'stroke'" [theme]="'basic'" [disabled]="true">Basic disabled
+                </button>
             </li>
         </ul>
         <ul class="examples__list">
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [buttonType]="'stroke'" [theme]="'warning'">Warning</button>
+                        [buttonType]="'stroke'" [theme]="'primary'">Primary
+                </button>
             </li>
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [buttonType]="'stroke'" [theme]="'warning'" [disabled]="true">Warning disabled</button>
+                        [buttonType]="'stroke'" [theme]="'primary'" [disabled]="true">Primary disabled
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'warning'">Warning
+                </button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [buttonType]="'stroke'" [theme]="'warning'" [disabled]="true">Warning disabled
+                </button>
             </li>
         </ul>
         <h2 class="examples__subtitle">Small</h2>
@@ -311,36 +355,42 @@
         <ul class="examples__list">
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [size]="'small'" [theme]="'basic'">Basic</button>
+                        [size]="'small'" [theme]="'basic'">Basic
+                </button>
             </li>
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [size]="'small'" [theme]="'basic'" [disabled]="true">Basic disabled</button>
-            </li>
-        </ul>
-        <ul class="examples__list">
-            <li class="examples__item">
-                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [size]="'small'" [theme]="'primary'">Primary</button>
-            </li>
-            <li class="examples__item">
-                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [size]="'small'" [theme]="'primary'" [disabled]="true">Primary disabled</button>
+                        [size]="'small'" [theme]="'basic'" [disabled]="true">Basic disabled
+                </button>
             </li>
         </ul>
         <ul class="examples__list">
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [size]="'small'" [theme]="'warning'">Warning</button>
+                        [size]="'small'" [theme]="'primary'">Primary
+                </button>
             </li>
             <li class="examples__item">
                 <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
-                        [size]="'small'" [theme]="'warning'" [disabled]="true">Warning disabled</button>
+                        [size]="'small'" [theme]="'primary'" [disabled]="true">Primary disabled
+                </button>
+            </li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'warning'">Warning
+                </button>
+            </li>
+            <li class="examples__item">
+                <button type="button" giz-icon-button [icon]="icon.MORE_VERT"
+                        [size]="'small'" [theme]="'warning'" [disabled]="true">Warning disabled
+                </button>
             </li>
         </ul>
     </section>
 
-    <section class="examples__section">
+    <section class="examples__section" id="spinner">
         <h2 class="examples__title">Spinner</h2>
 
         <ul class="examples__list">
@@ -367,10 +417,11 @@
         </ul>
     </section>
 
-    <section class="examples__section">
+    <section class="examples__section" id="toast">
         <h2 class="examples__title">Toasters</h2>
         <p>Note: Shows 4 max</p>
-        <p>Docs: <a href="https://github.com/scttcper/ngx-toastr">https://github.com/scttcper/ngx-toastr</a></p>
+        <p>Docs: <a href="https://github.com/scttcper/ngx-toastr"
+                    target="_blank">https://github.com/scttcper/ngx-toastr</a></p>
 
         <ul class="examples__list">
             <li class="examples__item">
@@ -395,8 +446,10 @@
             <li>
         </ul>
 
-        <p>If you want a toaster to not automatically close you can set <code>disableTimeOut: true</code> in the Individual Options.
-            You can save the return value (id) of the toastr and close it using <code>toastrService.clear(toastId?: number);</code>.</p>
+        <p>If you want a toaster to not automatically close you can set <code>disableTimeOut: true</code> in the
+            Individual Options.
+            You can save the return value (id) of the toastr and close it using <code>toastrService.clear(toastId?:
+                number);</code>.</p>
 
         <ul class="examples__list">
             <li class="examples__item">
@@ -407,4 +460,52 @@
             <li>
         </ul>
     </section>
+
+    <section class="examples__section" id="dialog">
+        <h2 class="examples__title">Dialog</h2>
+
+        <p>We use the Angular CDK Dialog in combination with our own Dialog Component which handles the html & styling
+            of the dialog itself.<br>
+            You can open a Dialog from a component or a template. In this example page we use a template.<br>
+            For more information on the Dialog Options go to the Docs: <a
+                href="https://material.angular.io/cdk/dialog/api" target="_blank">https://material.angular.io/cdk/dialog/api</a>
+        </p>
+        <p>The Dialog component has a couple of options:</p>
+        <dl>
+            <dt>Title</dt>
+            <dd>Title of the dialog (required)</dd>
+            <dt>Size</dt>
+            <dd>Normal (default), small or large</dd>
+            <dt>Content (ng-content)</dt>
+            <dd>The main content of the dialog</dd>
+            <dt>Footer content - Left (footer-left)</dt>
+            <dd>Buttons/loader/etc</dd>
+            <dt>Footer content - Right (footer-right)</dt>
+            <dd>Buttons/loader/etc</dd>
+        </dl>
+        <button giz-button (click)="openDialog()">Open Dialog</button>
+    </section>
+
+    <a routerLink="./" fragment="menu"
+       giz-icon-button buttonType="stroke" [icon]="icon.ARROW_UP"
+       class="examples__top">Go to top</a>
 </div>
+
+<ng-template #dialogTemplateRef>
+    <giz-dialog [title]="'Test Dialog'" (closeDialog)="closeDialog()">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+
+        <ng-container footer-left>
+            <a giz-stroke-button routerLink="/">Button left</a>
+        </ng-container>
+
+        <ng-container footer-right>
+            <button type="button" giz-stroke-button (click)="closeDialog()">Cancel</button>
+            <button type="button" giz-button routerLink="/">Save</button>
+        </ng-container>
+    </giz-dialog>
+</ng-template>
