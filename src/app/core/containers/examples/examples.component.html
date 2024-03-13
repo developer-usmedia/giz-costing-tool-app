@@ -366,4 +366,45 @@
             </li>
         </ul>
     </section>
+
+    <section class="examples__section">
+        <h2 class="examples__title">Toasters</h2>
+        <p>Note: Shows 4 max</p>
+        <p>Docs: <a href="https://github.com/scttcper/ngx-toastr">https://github.com/scttcper/ngx-toastr</a></p>
+
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button giz-button (click)="showToaster('info')">Info toaster</button>
+            <li>
+            <li class="examples__item">
+                <button giz-button (click)="showToaster('success')">Success toaster</button>
+            <li>
+            <li class="examples__item">
+                <button giz-button (click)="showToaster('warning')">Warning toaster</button>
+            <li>
+            <li class="examples__item">
+                <button giz-button (click)="showToaster('error')">Error toaster</button>
+            <li>
+        </ul>
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button giz-button (click)="showToaster('warning-filled')">Warning toaster (filled)</button>
+            <li>
+            <li class="examples__item">
+                <button giz-button (click)="showToaster('critical')">Critical toaster (filled)</button>
+            <li>
+        </ul>
+
+        <p>If you want a toaster to not automatically close you can set <code>disableTimeOut: true</code> in the Individual Options.
+            You can save the return value (id) of the toastr and close it using <code>toastrService.clear(toastId?: number);</code>.</p>
+
+        <ul class="examples__list">
+            <li class="examples__item">
+                <button giz-button (click)="showNonCloseableToaster()">Open non-closeable toaster</button>
+            <li>
+            <li class="examples__item">
+                <button giz-button (click)="closeToaster()">Close the toaster</button>
+            <li>
+        </ul>
+    </section>
 </div>

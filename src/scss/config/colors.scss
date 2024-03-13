@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Forest
 $c-forest--darker: #00625fff;
 $c-forest--dark: #33817fff;
@@ -35,3 +37,15 @@ $c-white: #fff;
 // Branding
 $c-giz-red: #da1c2380;
 $c-ina-green: #9da04280;
+
+// State
+$c-info: #0098ff;
+$c-success: #00625f;
+$c-warning: #ffc505;
+$c-error: #f44336;
+
+// Shadows
+$c-shadow: /* stylelint-disable-line scss/dollar-variable-colon-space-after */
+    0 7px 34px 0 color.scale($c-black, $alpha: -88%),
+    0 18px 28px 0 color.scale($c-black, $alpha: -86%),
+    0 9px 11px 0 color.scale($c-black, $alpha: -80%);

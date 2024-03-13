@@ -8,6 +8,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { CoreModule } from '@core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const httpLoaderFactory = (http: HttpClient) => {
     return new TranslateHttpLoader(
@@ -23,6 +24,7 @@ const httpLoaderFactory = (http: HttpClient) => {
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         CoreModule.forRoot(),
         TranslateModule.forRoot({
@@ -42,7 +44,7 @@ const httpLoaderFactory = (http: HttpClient) => {
                 success: 'toast--success',
                 warning: 'toast--warning',
             },
-            maxOpened: 2,
+            maxOpened: 4,
         }),
     ],
     providers: [ ],

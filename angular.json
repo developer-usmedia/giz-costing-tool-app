@@ -46,6 +46,7 @@
                             "src/assets/favicons/manifest.json"
                         ],
                         "styles": [
+                            "node_modules/ngx-toastr/toastr.css",
                             "src/scss/main.scss"
                         ],
                         "stylePreprocessorOptions": {
@@ -118,6 +119,7 @@
                             "src/assets"
                         ],
                         "styles": [
+                            "node_modules/ngx-toastr/toastr.css",
                             "src/main.scss"
                         ],
                         "scripts": []

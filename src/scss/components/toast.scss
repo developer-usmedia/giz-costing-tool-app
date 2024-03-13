@@ -1,0 +1,59 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/screen';
+
+:root {
+    --toast-background: #{ $c-white };
+    --toast-color: #{ $c-black };
+    --toast-border-color: #{ $c-info };
+}
+
+.toast {
+    $self: &;
+
+    background-color: var(--toast-background);
+    border-left: 6px solid var(--toast-border-color);
+    border-radius: $b-radius;
+    box-shadow: $c-shadow;
+    color: var(--toast-color);
+    overflow: hidden;
+    padding: 0.75rem 1rem;
+    pointer-events: none;
+    position: relative;
+
+    &--success {
+        --toast-border-color: #{ $c-success };
+    }
+
+    &--error {
+        --toast-border-color: #{ $c-error };
+    }
+
+    &--warning {
+        --toast-border-color: #{ $c-warning };
+    }
+
+    &--info {
+        --toast-border-color: #{ $c-info };
+    }
+
+    ~ #{ $self } {
+        margin-top: 0.5rem;
+    }
+
+    &--filled {
+        --toast-background: var(--toast-border-color);
+
+        &#{ $self }--success,
+        &#{ $self }--error {
+            --toast-color: #{ $c-white };
+        }
+    }
+}
+
+// Container
+.toast-bottom-right {
+    bottom: $p-gutter;
+    right: $p-gutter;
+    width: min(calc(100% - ($p-gutter * 2)), 500px);
+}
