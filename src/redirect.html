@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Legacy Browser | GIZ Costing Tool</title>
+        <title>Redirecting | GIZ Costing Tool</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,34 +25,35 @@
                 text-align: center;
             }
 
-            a {
-                cursor: pointer;
-                outline: 0;
-                color: #fff;
-                background-color: #00625fff;
-                display: inline-block;
-                text-align: center;
-                text-decoration: none;
-                border: 1px solid transparent;
-                padding: 6px 25px;
-                margin-top: 2rem;
-                border-radius: 4px;
-                transition: color .2s, background-color .2s;
-            }
-
-            a:hover {
-                background-color: #9ac0bfff;
+            noscript {
+                background-color: rgba(255,0,0,.1);
+                border: 1px solid rgb(255,0,0);
+                border-radius: 5px;
+                padding: 0 1rem;
+                margin: 0 0 2rem;
             }
         </style>
+        <script>
+            // Redirect to preferred language
+            const prefLang = navigator.language?.substring(0, 2) || 'en';
+            if (prefLang === 'es') {
+                window.location.replace(window.location.origin + '/es');
+            }
+            else {
+                window.location.replace(window.location.origin + '/en');
+            }
+        </script>
     </head>
     <body>
-        <h1>Sorry...</h1>
+        <noscript>
+            <h2>No javascript detected</h2>
+            <p>Please enable javascript to use this website.</p>
+        </noscript>
+
+        <h1>Redirecting...</h1>
         <p>
-            Your browser is too old to optimally experience this website.<br />
-            Upgrade your browser to improve your experience.
-        </p>
-        <p>
-            <a href="https://browsehappy.com/"><span>Upgrade your browser</span></a>
+            We're getting you to the right place!<br />
+            Please wait a moment while we redirect you based on your preferred language.
         </p>
     </body>
 </html>

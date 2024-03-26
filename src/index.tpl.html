@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
-        <meta charset="utf-8" />
         <title>GIZ Costing Tool</title>
-        <base href="/" />
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="author" content="GIZ & INA" />
-        <meta name="copyright" content="GIZ & INA" />
-        <meta name="web_author" content="Us Media, info@usmedia.nl" />
-
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="GIZ & INA">
+        <meta name="copyright" content="GIZ & INA">
+        <meta name="web_author" content="Us Media, info@usmedia.nl">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-        <link rel="manifest" href="/assets/favicons/manifest.json" />
+        <link rel="manifest" href="/assets/favicons/manifest.json">
         <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#00625f">
         <meta name="msapplication-TileColor" content="#00625f">
         <meta name="theme-color" content="#fafafa">
-
         <style>
             :root {
                 --app-height: 100%;
@@ -31,64 +26,74 @@
                 background-color: #fafafa;
             }
 
-            .spinner-index {
-                align-items: center;
-                display: flex;
-                height: 100vh;
-                justify-content: center;
-                margin: 0 auto;
-                overflow: hidden;
-                position: relative;
+            noscript {
+                background-color: rgba(255,0,0,.1);
+                border: 1px solid rgb(255,0,0);
+                border-radius: 5px;
+                padding: 0 1rem;
+                text-align: center;
             }
 
-            .spinner-index::before {
+            .splash {
+                align-items: center;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                left: 0;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 99999;
+            }
+
+            .splash::before {
                 animation: rotate 1.2s infinite linear;
                 border: 10px solid #9ac0bfff;
                 border-bottom-color: #00625fff;
                 border-radius: 50%;
                 content: '';
+                display: block;
                 height: 80px;
-                margin: 2rem auto;
-                overflow: hidden;
                 position: relative;
                 width: 80px;
             }
 
-            .is-loaded .spinner-index {
+            .is-loaded .splash,
+            .no-js .splash,
+            .no-js giz-root {
                 display: none;
             }
 
             @keyframes rotate {
-                0% {
-                    transform: rotate(0deg);
-                }
-
-                100% {
-                    transform: rotate(360deg);
-                }
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
             }
         </style>
-
         <script>
             // Check for IE -- see https://stackoverflow.com/a/9851769
             if (/*@cc_on!@*/ false && !!document.documentMode) {
                 window.location.href = '/legacy.html';
             }
 
+            // JS class
+            document.documentElement.classList.remove('no-js');
+            document.documentElement.classList.add('js');
+
             // Config
             document.env = {
-                baseAPI: '${BASE_API}',
+                baseApi: '${BASE_API}',
+                version: '${VERSION}',
+                language: '${LANGUAGE}',
             };
         </script>
     </head>
     <body>
+        <giz-root></giz-root>
+        <div class="splash"></div>
+
         <noscript>
             <h2>No javascript detected</h2>
             <p>Please enable javascript to use this website.</p>
         </noscript>
-
-        <giz-root></giz-root>
-
-        <div class="spinner-index"></div>
     </body>
 </html>

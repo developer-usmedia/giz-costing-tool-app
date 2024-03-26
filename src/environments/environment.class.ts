@@ -1,30 +1,31 @@
 declare global {
     interface Document {
         env: {
-            [key: string]: boolean | string | number;
+            language?: string;
+            version?: string;
+            baseApi?: string;
         };
     }
 }
 
 export class Environment {
     production: boolean;
-    baseAPI: string;
+    baseApi: string;
     version: string;
-    lang: string;
+    language: string;
 
     constructor(isProd: boolean) {
-        const envVars = document.env ? document.env : {};
-        Object.assign(this, envVars);
+        const env = document.env ? document.env : {};
 
-        this.version = '1.0.0';
         this.production = isProd;
-        this.lang = 'en';
-        this.baseAPI = String(envVars["baseApi"]) ?? '';
+        this.language = env.language ?? 'en';
+        this.version = env.version ?? 'n/a';
+        this.baseApi = env.baseApi ?? '';
     }
 
     public get endpoints(): { [key: string]: string } {
         return {
-            todo: this.baseAPI + 'todo',
+            todo: this.baseApi + 'todo',
         };
     }
 }
