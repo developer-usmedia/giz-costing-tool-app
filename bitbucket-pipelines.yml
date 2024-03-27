@@ -22,17 +22,45 @@ definitions:
           - npm ci
           - npm run lint
           - npm run build
+          - cp -rT ./config/gae ./dist/
 
     - step: &build-and-save
         <<: *build
         artifacts:
           - dist/**
 
+    - step: &deploy
+        name: Deploy
+        image: usmedia/cloud-sdk:latest
+        script:
+          # Get version for deployment
+          - export VERSION=$(if [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; else date +"%Y-%m-%d-build-${BITBUCKET_BUILD_NUMBER}"; fi)
+
+          # Fill index.html with env variables
+          - envsubst < './dist/browser/index.html' > './dist/browser/index.temp.html'
+          - mv './dist/browser/index.temp.html' './dist/browser/index.html'
+
+          # Deploy dist folder to gae
+          - gcloud config set project ${GOOGLE_CLOUD_PROJECT}
+          - echo ${GCP_BITBUCKET_PIPELINE_SA} | base64 --decode --ignore-garbage > client-secret.json
+          - gcloud auth activate-service-account --key-file client-secret.json && rm -f client-secret.json
+          - gcloud app deploy ./dist/ --quiet --version=${VERSION}
+        artifacts:
+          - dist/**
+        after-script:
+          - ./config/gae/clean-versions.sh
+
 pipelines:
   pull-requests:
     '**':
+      - step: *build
       - step: *lint
 
   branches:
     develop:
       - step: *build-and-save
+      - step:
+          name: Deploy to staging
+          deployment: staging
+          <<: *deploy
+

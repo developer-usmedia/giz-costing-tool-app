@@ -27,7 +27,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/app",
+                        "outputPath": "dist/",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": [
@@ -41,9 +41,8 @@
                             "vendor": false
                         },
                         "assets": [
-                            "src/assets/favicons/favicon.ico",
                             "src/assets",
-                            "src/assets/favicons/manifest.json"
+                            "src/legacy.html"
                         ],
                         "styles": [
                             "@angular/cdk/overlay-prebuilt.css",

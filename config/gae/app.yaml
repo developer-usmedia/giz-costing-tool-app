@@ -1,0 +1,54 @@
+runtime: nodejs20
+
+automatic_scaling:
+  max_instances: 1
+
+handlers:
+  # Serve angular files
+  - url: /(.*\.js)
+    static_files: browser/\1
+    upload: browser/(.*\.js)
+    mime_type: text/javascript
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /(.*\.css)
+    static_files: browser/\1
+    upload: browser/(.*\.css)
+    mime_type: text/css
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /(.*\.txt)
+    static_files: browser/\1
+    upload: browser/(.*\.txt)
+    mime_type: text/plain
+    secure: always
+    redirect_http_response_code: 301
+
+  # Serve assets directly
+  - url: /assets
+    static_dir: browser/assets
+    secure: always
+    redirect_http_response_code: 301
+
+  # Serve favicon directly
+  - url: /favicon\.ico
+    static_files: browser/assets/favicons/favicon.ico
+    upload: browser/assets/favicons/favicon.ico
+    secure: always
+    redirect_http_response_code: 301
+  
+  # Serve legacy directly
+  - url: /legacy.html
+    static_files: browser/legacy.html
+    upload: browser/legacy.html
+    secure: always
+    redirect_http_response_code: 301
+
+  # Serve app
+  - url: /.*
+    static_files: browser/index.html
+    upload: browser/index.html
+    secure: always
+    redirect_http_response_code: 301

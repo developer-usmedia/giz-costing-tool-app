@@ -1,0 +1,14 @@
+# Deploy
+.gcloudignore
+clean_versions.sh
+
+# Git
+.git
+.gitignore
+
+# Node.js dependencies:
+node_modules/
+
+# Env
+.editorconfig
+.env

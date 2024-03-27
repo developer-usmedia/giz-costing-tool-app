@@ -2,12 +2,11 @@
 
 ## Url's
 
-| Environment | URL                            |
-|-------------|--------------------------------|
-| Local       | <http://http://localhost:4200> |
-| Develop     | ?                              |
-| Staging     | ?                              |
-| Production  | ?                              |
+| Environment | URL                                              |
+| ----------- | ------------------------------------------------ |
+| Local       | <http://localhost:4200>                          |
+| Staging     | <https://true-elevator-417011.ew.r.appspot.com/> |
+| Production  | ?                                                |
 
 ## Requirements
 

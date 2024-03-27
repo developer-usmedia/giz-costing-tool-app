@@ -5,7 +5,7 @@
     "scripts": {
         "start": "npm run envsub && ng serve",
         "envsub": "envsub ./src/index.tpl.html ./src/index.html --env-file .env",
-        "build": "ng build",
+        "build": "ng build --configuration production",
         "watch": "ng build --watch --configuration development",
         "lint": "npm run lint-ts && npm run lint-sass",
         "lint:watch": "nodemon --exec \"npm run lint || exit 1\" --ext ts,html,scss",
