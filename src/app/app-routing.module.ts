@@ -8,6 +8,7 @@ import { ErrorPageComponent } from '@core/containers/error-page/error-page.compo
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
 import { AuthGuard } from '@core/guards/auth.guard';
 import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
+import { AccountComponent } from '@core/containers/account/account.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,10 @@ const routes: Routes = [
             {
                 path: ROOT_ROUTE.EXAMPLES,
                 component: ExamplesComponent,
+            },
+            {
+                path: ROOT_ROUTE.ACCOUNT,
+                component: AccountComponent,
             },
         ],
     },

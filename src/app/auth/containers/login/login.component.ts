@@ -42,10 +42,8 @@ export class LoginComponent {
     public login(loginForm: LoginForm): void {
         this.authApi
             .login(loginForm)
-            .then(async () => {
-                await this.queryClient.invalidateQueries({ queryKey: ['session'] });
-                await this.router.navigate([this.routeService.getLink(ROOT_ROUTE.DASHBOARD)]);
-            })
+            .then(() => this.queryClient.invalidateQueries({ queryKey: ['session'] }))
+            .then(() => this.router.navigate([this.routeService.getLink(ROOT_ROUTE.DASHBOARD)]))
             .catch(async (error: HttpErrorResponse) => {
                 const errorBody = error.error as ({ error: string; message: string; statusCode: number });
                 if (error.status === STATUS.BAD_REQUEST && errorBody?.message.includes('emailVerificationCode')) {
@@ -54,8 +52,7 @@ export class LoginComponent {
                         password: loginForm.password,
                     }));
                     await this.router.navigate([this.routeService.getLink(AUTH_ROUTE.EMAIL_VERIFICATION)]);
-                }
-                else if (error.status === STATUS.NOT_FOUND || error.status === STATUS.UNAUTHORIZED) {
+                } else if (error.status === STATUS.NOT_FOUND || error.status === STATUS.UNAUTHORIZED) {
                     this.wrongPassword = true;
                 } else {
                     this.toastr.error($localize`:login error:Something went wrong logging in`);

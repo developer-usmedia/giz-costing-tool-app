@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { lastValueFrom, map } from 'rxjs';
 
-import { UserResponse, UsersResponse, UsersResult } from '@api/models';
+import { User, UsersResponse, UsersResult } from '@api/models';
 import { BaseApi } from './base.api';
 import { PagingParams } from '@core/models';
 
@@ -10,8 +10,8 @@ import { PagingParams } from '@core/models';
 export class UserApi extends BaseApi {
     private readonly baseUrl = `${environment.apiUrl}/users`;
 
-    public getOneById(id: string): Promise<UserResponse> {
-        return lastValueFrom(this.get<UserResponse>(this.baseUrl + '/' + id));
+    public getOneById(id: string): Promise<User> {
+        return lastValueFrom(this.get<User>(this.baseUrl + '/' + id));
     }
 
     public getMany(paging: PagingParams): Promise<UsersResult> {

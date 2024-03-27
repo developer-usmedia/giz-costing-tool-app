@@ -1,8 +1,10 @@
 export enum MODULE_ROUTE {
     AUTH = 'auth',
+    ENTRIES = 'entries',
 }
 
 export enum ROOT_ROUTE {
+    ACCOUNT = 'account',
     DASHBOARD = 'dashboard',
     DATA_PROTECTION = 'data-protection',
     EXAMPLES = 'examples',

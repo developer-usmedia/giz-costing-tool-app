@@ -1,0 +1,50 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/sr-only';
+@import 'mixins/stretch';
+@import 'mixins/typography';
+
+:host {
+    display: inline-block;
+}
+
+:root {
+    --breadcrumb-color: #{ $c-grey--600 };
+    --breadcrumb-color-active: #{ $c-grey--900 };
+    --breadcrumb-color-hover: #{ $c-grey--900 };
+}
+
+.breadcrumb {
+    $self: &;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &__item {
+        color: var(--breadcrumb-color);
+
+        &--icon:not(.is-active) {
+            #{ $self }__text {
+                @include sr-only;
+            }
+        }
+    }
+
+    &__link {
+        align-items: center;
+        color: var(--breadcrumb-color);
+        display: flex;
+        gap: 0.5rem;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:focus,
+        &:hover {
+            color: var(--breadcrumb-color-hover);
+        }
+
+        #{ $self }__item.is-active & {
+            color: var(--breadcrumb-color-active);
+        }
+    }
+}

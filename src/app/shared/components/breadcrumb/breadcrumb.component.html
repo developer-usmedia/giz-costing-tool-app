@@ -1,0 +1,25 @@
+<ul class="breadcrumb">
+    @for (item of breadcrumb; track item.name) {
+        <li class="breadcrumb__item" [ngClass]="{
+             'is-active': item.active,
+             'breadcrumb__item--icon': !!item.icon,
+        }">
+            @if (item.icon && item.link) {
+                <a class="breadcrumb__link breadcrumb__link--icon" [routerLink]="item.link">
+                    <giz-icon class="breadcrumb__icon" [icon]="item.icon"></giz-icon>
+                    <span class="breadcrumb__text">{{ item.name }}</span>
+                </a>
+            }
+            @else if (item.icon) {
+                <giz-icon class="breadcrumb__icon" [icon]="item.icon"></giz-icon>
+            }
+            @else if (item.link) {
+                <a class="breadcrumb__link" [routerLink]="item.link">
+                    <span class="breadcrumb__text">{{ item.name }}</span>
+                </a>
+            } @else {
+                <span class="breadcrumb__text">{{ item.name }}</span>
+            }
+        </li>
+    }
+</ul>

@@ -84,7 +84,7 @@ export class RegisterComponent implements OnDestroy {
                         email: registerForm.email,
                         password: registerForm.password,
                     }));
-                    this.currentStep$.next(REGISTER_STEPS.VERIFICATION_CODE);
+                    return this.currentStep$.next(REGISTER_STEPS.VERIFICATION_CODE);
                 },
                 error: (error: HttpErrorResponse) => {
                     if (error.status === STATUS.BAD_REQUEST) {

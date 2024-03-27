@@ -1,0 +1,87 @@
+@use 'sass:color';
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/screen';
+@import 'mixins/sr-only';
+@import 'mixins/typography';
+
+:root {
+    --header-profile-color: #{ $c-grey--700 };
+    --header-avatar-background: #{ $c-forest--darker };
+    --header-avatar-color: #{ $c-white };
+    --header-menu-footer-background: #{ $c-grey--100 };
+    --header-menu-footer-border: #{ color.scale($c-black, $alpha: -88%) };
+}
+
+.header {
+    $self: &;
+
+    align-items: center;
+    display: flex;
+    height: $h-header;
+    justify-content: space-between;
+
+    &__profile {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        position: relative;
+
+        &--link {
+            &:focus,
+            &:hover {
+                --header-avatar-background: #{ $c-forest--darkest };
+                --header-profile-color: #{ $c-grey--900 };
+            }
+
+            #{ $self }__email {
+                @include sr-only;
+            }
+        }
+    }
+
+    &__email {
+        @include style-text-small;
+
+        color: var(--header-profile-color);
+    }
+
+    &__avatar {
+        align-items: center;
+        background: var(--header-avatar-background);
+        border-radius: 50%;
+        color: var(--header-avatar-color);
+        display: flex;
+        font-size: 1.125rem;
+        height: 32px;
+        justify-content: center;
+        text-transform: uppercase;
+        width: 32px;
+    }
+
+    &__menu {
+        --menu-padding: 0;
+        --menu-min-width: 300px;
+    }
+
+    &__menu-heading {
+        padding: $p-gutter;
+    }
+
+    &__menu-footer {
+        background: var(--header-menu-footer-background);
+        border-top: 1px solid var(--header-menu-footer-border);
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: $p-gutter;
+    }
+
+    @include screen($screen-simple) {
+        &__profile--link {
+            #{ $self }__email {
+                @include sr-only-reverse;
+            }
+        }
+    }
+}

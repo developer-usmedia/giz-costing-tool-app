@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 
 import { ButtonComponent } from './components/button/button.component';
 import { DialogComponent } from './components/dialog/dialog.component';
@@ -18,8 +20,8 @@ import {
     TruncatePipe,
 } from '@shared/pipes';
 import { MenuComponent } from './components/menu/menu.component';
-import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.component';
 
 const PIPES = [
     EmptyPipe,
@@ -32,6 +34,7 @@ const PIPES = [
 ];
 
 const COMPONENTS = [
+    BreadcrumbComponent,
     ButtonComponent,
     DialogComponent,
     IconComponent,
@@ -56,6 +59,7 @@ const COMPONENTS = [
         CommonModule,
         CdkMenu,
         CdkMenuItem,
+        RouterLink,
     ],
 })
 export class SharedModule {

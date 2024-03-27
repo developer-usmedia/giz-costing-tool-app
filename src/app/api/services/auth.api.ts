@@ -6,6 +6,7 @@ import {
     LoginResponse,
     LogoutResponse,
     RegisterForm,
+    User,
     UserResponse,
     VerifyEmailForm,
     VerifyEmailReponse,
@@ -42,8 +43,8 @@ export class AuthApi extends BaseApi {
         return this.post<LogoutResponse>(this.endpoints.logout);
     }
 
-    public session(): Promise<UserResponse> {
-        return lastValueFrom(this.get<UserResponse>(this.endpoints.session));
+    public session(): Promise<User> {
+        return lastValueFrom(this.get<User>(this.endpoints.session));
     }
 
     public verifyEmail(verifyForm: VerifyEmailForm): Observable<VerifyEmailReponse> {

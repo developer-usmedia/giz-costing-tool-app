@@ -4,7 +4,7 @@
 VERSIONS=$(gcloud app versions list --project=${GOOGLE_CLOUD_PROJECT} --service default --filter='traffic_split=0' --sort-by '~version.createTime' --format 'value(version.id)')
 COUNT=0
 echo "Cleanup of old versions"
-for VERSION in ${VERSION}S
+for VERSION in ${VERSIONS}
 do
     ((COUNT++))
     if [ $COUNT -gt 10 ]

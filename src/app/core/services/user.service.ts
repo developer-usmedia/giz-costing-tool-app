@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AuthApi } from '@api/services';
 import { UserApi } from './api/user.api';
 import { useQuery } from './query/use-query';
-import { UserResponse } from '@api/models';
+import { User } from '@api/models';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -13,10 +13,10 @@ export class UserService {
     ){}
 
     public getUser(id: string) {
-        return useQuery<UserResponse>(['users', { id: id }], () => this.userApi.getOneById(id));
+        return useQuery<User>(['users', { id: id }], () => this.userApi.getOneById(id));
     }
 
     public getUserSession() {
-        return useQuery<UserResponse>(['session'], () => this.authApi.session(), { retry: false });
+        return useQuery<User>(['session'], () => this.authApi.session(), { retry: false });
     }
 }

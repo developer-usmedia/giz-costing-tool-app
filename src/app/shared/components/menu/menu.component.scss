@@ -3,7 +3,9 @@
 @import './config/sizes';
 
 :root {
-    --menu-bcg: #{ $c-white };
+    --menu-background: #{ $c-white };
+    --menu-padding: 5px 0;
+    --menu-min-width: 200px;
 }
 
 .menu {
@@ -13,7 +15,7 @@
     border-radius: $b-radius;
     box-shadow: $c-shadow-6;
     display: block;
-    min-width: 200px;
-    padding: 5px 0;
+    min-width: var(--menu-min-width);
+    padding: var(--menu-padding);
     position: relative;
 }
