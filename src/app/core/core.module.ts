@@ -1,12 +1,14 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { BaseComponent } from '@core/containers/base/base.component';
-import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
-import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
-import { ExamplesComponent } from '@core/containers/examples/examples.component';
-import { RouterModule } from '@angular/router';
-import { SharedModule } from '@shared/shared.module';
-import { KeyValuePipe } from '@angular/common';
 import { DialogModule } from '@angular/cdk/dialog';
+import { KeyValuePipe } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { BaseComponent } from '@core/containers/base/base.component';
+import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
+import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
+import { ExamplesComponent } from '@core/containers/examples/examples.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -23,6 +25,7 @@ import { DialogModule } from '@angular/cdk/dialog';
         RouterModule,
         SharedModule,
         KeyValuePipe,
+        TranslateModule,
     ],
 })
 export class CoreModule {

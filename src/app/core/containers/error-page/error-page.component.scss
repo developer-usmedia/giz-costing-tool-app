@@ -1,14 +1,45 @@
 @import 'config/sizes';
 @import 'config/colors';
 @import 'mixins/screen';
+@import 'mixins/typography';
+
+:root {
+    --error-page-color-subtitle: #{$c-grey--600};
+}
 
 :host {
     display: block;
-    height: 100%;
 }
 
 .error {
     $self: &;
 
+    align-items: center;
     display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+    &__subtitle {
+        @include style-heading-3;
+
+        color: var(--error-page-color-subtitle);
+        margin-bottom: 0.25rem;
+    }
+
+    &__title {
+        @include style-heading-1-hero;
+
+        margin-bottom: 3rem;
+    }
+
+    &__description {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
+    }
 }
