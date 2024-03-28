@@ -82,6 +82,52 @@ Entity
 }
 ```
 
+```json
+
+{
+  "users": [
+    {
+      "id": "0be1de10-2574-448e-8854-2ea924b99c5c",
+      "email": "koen.lippe@usmedia.nl",
+      "emailVerified": false,
+      "twoFactorEnabled": false,
+      "_links": {
+        "self": {
+          "href": "http://localhost:3000/api/users/0be1de10-2574-448e-8854-2ea924b99c5c"
+        }
+      }
+    },
+    {
+      "id": "fd460112-1bf1-4ecb-b1c0-4f946b9477d2",
+      "email": "info@usmedia.nl",
+      "emailVerified": false,
+      "twoFactorEnabled": false,
+      "_links": {
+        "self": {
+          "href": "http://localhost:3000/api/users/fd460112-1bf1-4ecb-b1c0-4f946b9477d2"
+        }
+      }
+    },
+  ],
+  "_links": {
+    "self": {
+      "href": "http://localhost:3000/api/users?index=0&size=25"
+    },
+    "first": {
+      "href": "http://localhost:3000/api/users?index=0&size=25"
+    },
+    "last": {
+      "href": "http://localhost:3000/api/users?index=0&size=25"
+    }
+  },
+  "_meta": {
+    "index": 0,
+    "size": 25,
+    "total": 4
+  }
+}
+```
+
 Success
 ```json
 {
