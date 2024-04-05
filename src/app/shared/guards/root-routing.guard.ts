@@ -3,9 +3,9 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const navigateToBrowserLang = (): boolean => {
     const router: Router = inject(Router);
-    const prefLang = navigator.language?.substring(0, 2) || 'en';
+    const browserLang = navigator.language?.substring(0, 2) || 'en';
 
-    if (prefLang === 'es') {
+    if (browserLang === 'es') {
         router.navigateByUrl('/es');
     } else {
         router.navigateByUrl('/en');

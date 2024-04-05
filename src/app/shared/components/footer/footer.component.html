@@ -1,0 +1,20 @@
+<div class="footer">
+    <div class="footer__menu">
+        <span class="footer__legal">© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH</span>
+        <ul class="footer__items">
+            <li class="footer__item">
+                <a [routerLink]="['terms-and-conditions' | route]" class="footer__link">
+                    {{ 'footer.terms-and-conditions' | translate }}
+                </a>
+            </li>
+            <li class="footer__item">
+                <a [routerLink]="['data-protection' | route]" class="footer__link">
+                    {{ 'footer.data-protection' | translate }}
+                </a>
+            </li>
+            <li class="footer__item">
+                <a [routerLink]="['imprint' | route]" class="footer__link">{{ 'footer.imprint' | translate }}</a>
+            </li>
+        </ul>
+    </div>
+</div>

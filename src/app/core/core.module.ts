@@ -8,6 +8,7 @@ import { BaseComponent } from '@core/containers/base/base.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
+import { FooterComponent } from '@shared/components/footer/footer.component';
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedModule } from '@shared/shared.module';
         ErrorPageComponent,
         DashboardComponent,
         ExamplesComponent,
+        FooterComponent,
     ],
     exports: [
         BaseComponent,

@@ -1,0 +1,47 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/screen';
+
+:host {
+    --footer-link-color: #{$c-grey--700};
+}
+
+.footer {
+    $self: &;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: calc($p-gutter / 2) $p-gutter;
+
+    &__menu {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__items {
+        display: flex;
+    }
+
+    &__link,
+    &__legal {
+        color: var(--footer-link-color);
+        text-decoration: none;
+    }
+
+    &__link {
+        border-bottom: 1px solid transparent;
+        transition: border-bottom-color 0.2s;
+
+        &:focus,
+        &:hover {
+            border-bottom-color: currentColor;
+        }
+    }
+
+    &__item::before {
+        content: '|';
+        margin: 0 1rem;
+    }
+}

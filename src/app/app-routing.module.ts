@@ -7,18 +7,40 @@ import { ErrorPageComponent } from '@core/containers/error-page/error-page.compo
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
 import { RootRoutingGuard } from '@shared/guards/root-routing.guard';
 
+type GizRoutes = {
+    en: Record<string, string>;
+    es: Record<string, string>;
+};
+
+export const GIZ_ROUTES: GizRoutes = {
+    en: {
+        dashboard: 'dashboard',
+        examples: 'examples',
+        ['terms-and-conditions']: 'terms-and-conditions',
+        ['data-protection']: 'data-protection',
+        imprint: 'imprint',
+    },
+    es: {
+        dashboard: 'panel',
+        examples: 'ejemplos',
+        ['terms-and-conditions']: 'terminos-y-condiciones',
+        ['data-protection']: 'proteccion-de-datos',
+        imprint: 'impresion',
+    },
+};
+
 const ROUTES_EN: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: GIZ_ROUTES.en['dashboard'],
         pathMatch: 'full',
     },
     {
-        path: 'examples',
+        path: GIZ_ROUTES.en['examples'],
         component: ExamplesComponent,
     },
     {
-        path: 'dashboard',
+        path: GIZ_ROUTES.en['dashboard'],
         component: DashboardComponent,
     },
 ];
@@ -26,15 +48,15 @@ const ROUTES_EN: Routes = [
 const ROUTES_ES: Routes = [
     {
         path: '',
-        redirectTo: 'panel',
+        redirectTo: GIZ_ROUTES.es['dashboard'],
         pathMatch: 'full',
     },
     {
-        path: 'ejemplos',
+        path: GIZ_ROUTES.es['examples'],
         component: ExamplesComponent,
     },
     {
-        path: 'panel',
+        path: GIZ_ROUTES.es['dashboard'],
         component: DashboardComponent,
     },
 ];
@@ -61,7 +83,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes,  { anchorScrolling: 'enabled', scrollOffset: [0, 50] }),
+        RouterModule.forRoot(routes, { anchorScrolling: 'enabled', scrollOffset: [0, 50] }),
     ],
     exports: [ RouterModule ],
 })

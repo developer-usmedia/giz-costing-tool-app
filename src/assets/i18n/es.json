@@ -2,5 +2,10 @@
     "language": "Espagnol",
     "dialog": {
         "close": "Cerrar"
+    },
+    "footer": {
+        "terms-and-conditions": "Condiciones generales",
+        "data-protection": "Protección de datos",
+        "imprint": "Pie de imprenta"
     }
 }

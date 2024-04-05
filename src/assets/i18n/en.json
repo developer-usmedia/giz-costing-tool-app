@@ -2,5 +2,10 @@
     "language": "English",
     "dialog": {
         "close": "Close"
+    },
+    "footer": {
+        "terms-and-conditions": "Terms & Conditions",
+        "data-protection": "Data Protection",
+        "imprint": "Imprint"
     }
 }
