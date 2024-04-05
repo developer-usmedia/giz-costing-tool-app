@@ -12,7 +12,7 @@
     --heading-dialog-font-size: 1.5rem;
     --text-font-size: 0.875rem;
     --text-font-size-large: 1rem;
-    --text-font-size-small: 0.75rem;
+    --text-font-size-small: 0.8125rem;
 
     // Base colors
     --text-color: #{ $c-black };
@@ -33,4 +33,16 @@
     --table-bcg: #{ $c-white };
     --table-border-color: #{ $c-grey--200 };
     --table-heading-color: #{ $c-grey--700 };
+
+    // Form
+    --form-input-bcg: #{ $c-grey--100 };
+    --form-input-border: #{ $c-grey--300 };
+    --form-input-border-focus: #{ $c-grey--600 };
+    --form-input-color: #{ $c-grey--900 };
+    --form-input-placeholder: #{ $c-grey--400 };
+    --form-input-disabled-bcg: #{ $c-grey--200 };
+    --form-input-checkmark: #{ $c-grey--900 };
+    --form-label-color: #{ $c-grey--600 };
+    --form-error: #{ $c-error };
+    --form-spinner: #{ $c-grey--600 };
 }

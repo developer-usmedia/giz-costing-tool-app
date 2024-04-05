@@ -3,7 +3,8 @@ import {
     ChangeDetectionStrategy,
     Component,
     ElementRef,
-    HostBinding, Input,
+    HostBinding,
+    Input,
     ViewEncapsulation,
 } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';

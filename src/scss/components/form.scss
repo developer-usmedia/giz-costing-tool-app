@@ -1,0 +1,110 @@
+@import '../mixins/sr-only';
+@import '../mixins/form';
+@import '../mixins/typography';
+
+.form {
+    $self: &;
+
+    position: relative;
+    width: 100%;
+
+    &__field {
+        display: block;
+        margin-bottom: 1rem;
+        position: relative;
+
+        &.is-error {
+            --form-input-border: #{ $c-error--dark };
+            --form-label-color: #{ $c-error--dark };
+        }
+
+        #{ $self }__label {
+            position: absolute;
+            top: 20px;
+        }
+
+        &.has-value {
+            #{ $self }__label {
+                transform: scale(0.8) translateY(-100%);
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+        transform-origin: left center;
+        transition: color 0.2s, transform 0.2s;
+
+        .is-required & {
+            &::after {
+                color: currentColor;
+                content: '*';
+                display: inline-block;
+                font-size: 0.75rem;
+                text-align: right;
+                width: 10px;
+            }
+        }
+
+        &.is-hidden {
+            @include sr-only;
+        }
+    }
+
+    &__error {
+        @include style-text-small;
+
+        color: var(--form-error);
+        margin: 4px 0 0;
+
+        #{ $self }__field & {
+            padding-left: $p-input;
+        }
+    }
+
+    &__hint {
+        @include style-text-small;
+
+        margin-top: 4px;
+    }
+
+    &__input,
+    &__select {
+        position: relative;
+        width: 100%;
+    }
+
+    &__select {
+        @include form-select;
+    }
+
+    &__checkbox {
+        @include form-checkbox;
+    }
+
+    &__radio {
+        @include form-radio;
+    }
+
+    &__footer {
+        align-content: center;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    &__column {
+        align-content: center;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__spinner {
+        align-items: center;
+        color: var(--form-spinner);
+        display: flex;
+        font-style: italic;
+        gap: 0.5rem;
+    }
+}

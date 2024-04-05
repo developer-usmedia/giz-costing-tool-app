@@ -3,9 +3,92 @@
     "dialog": {
         "close": "Cerrar"
     },
+    "error": {
+        "403": {
+            "title": "403: no autorizado",
+            "description": "No estás autorizado a hacer esto. "
+        }
+    },
     "footer": {
         "terms-and-conditions": "Condiciones generales",
         "data-protection": "Protección de datos",
         "imprint": "Pie de imprenta"
+    },
+    "form": {
+        "state": {
+            "creating": "Creando...",
+            "updating": "Actualizando...",
+            "removing": "Eliminando...",
+            "deleting": "Eliminando...",
+            "verifying": "Verificando..."
+        },
+        "verificationCode": {
+            "label": "Código",
+            "errors": {
+                "required": "Se requiere código",
+                "invalid": "El código no es válido o ha caducado",
+                "length": "El código debe tener 6 caracteres."
+            },
+            "resend": {
+                "button": "Envíame un nuevo código",
+                "success": "Recibirás un nuevo código por correo electrónico",
+                "error": "Algo salió mal al enviar el código"
+            }
+        },
+        "email": {
+            "label": "Correo electrónico",
+            "errors": {
+                "required": "correo electronico es requerido",
+                "taken": "Correo electrónico ya en uso",
+                "invalid": "el correo electrónico es invalido"
+            }
+        },
+        "password": {
+            "label": "Contraseña",
+            "errors": {
+                "required": "se requiere contraseña",
+                "invalid": "La contraseña no es válida",
+                "length": "La contraseña debe estar entre 9",
+                "case": "La contraseña debe contener caracteres en mayúsculas y minúsculas.",
+                "numbers": "La contraseña debe contener números",
+                "special": "La contraseña debe contener caracteres especiales"
+            },
+            "strength": {
+                "score-0": "Muy débil",
+                "score-1": "Débil",
+                "score-2": "Medio",
+                "score-3": "Bien",
+                "score-4": "¡Excelente!"
+            }
+        },
+        "passwordConfirm": {
+            "label": "Confirmar Contraseña",
+            "errors": {
+                "required": "Las contraseñas no coinciden",
+                "equal": "Las contraseñas no coinciden"
+            }
+        }
+    },
+    "register": {
+        "signup": {
+            "title": "Crear una cuenta",
+            "description": "Por favor complete los detalles a continuación para crear su cuenta",
+            "tooltip": "Crear una cuenta",
+            "button": "Registro",
+            "back": "Atrás para iniciar sesión"
+        },
+        "verification": {
+            "title": "Código de verificación",
+            "description": "Hemos enviado un correo electrónico a <strong>{{ email }}</strong> con un código de verificación, ingréselo a continuación para continuar.",
+            "tooltip": "Ingrese el código de verificación recibido por correo electrónico",
+            "button": "Continuar",
+            "back": "Atrás para iniciar sesión"
+        },
+        "finalize": {
+            "title": "Todo listo",
+            "description": "Su cuenta ha sido creada y está listo para comenzar a utilizar la herramienta.",
+            "tooltip": "Registro hecho",
+            "button": "Continuar para iniciar sesión"
+        }
     }
 }

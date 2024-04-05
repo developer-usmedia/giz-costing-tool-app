@@ -1,0 +1,17 @@
+<div class="auth-content__content">
+    <div class="auth-content__header">
+        @if (icon) {
+            <span class="auth-content__icon">
+                <giz-icon [icon]="icon"></giz-icon>
+            </span>
+        }
+        <h1 class="auth-content__title">{{ title }}</h1>
+    </div>
+    @if (description) {
+        <p class="auth-content__description" [innerHTML]="description"></p>
+    }
+    <ng-content></ng-content>
+</div>
+<div class="auth-content__footer">
+    <ng-content select="[auth-footer]"></ng-content>
+</div>

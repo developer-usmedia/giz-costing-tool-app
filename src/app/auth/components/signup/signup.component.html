@@ -1,0 +1,80 @@
+<form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form__field" [ngClass]="{
+        'is-error': form | hasError: 'email',
+        'has-value': form | hasValue: 'email',
+    }">
+        <div class="form__input">
+            <label class="form__label" for="email">{{ 'form.email.label' | translate }}</label>
+            <input type="email" id="email" formControlName="email"/>
+        </div>
+        @if (form | showError: 'email' :'required') {
+            <div class="form__error">{{ 'form.email.errors.required' | translate }}</div>
+        }
+        @if (form | showError: 'email' :'email') {
+            <div class="form__error">{{ 'form.email.errors.invalid' | translate }}</div>
+        }
+        @if (emailTaken) {
+            <div class="form__error">{{ 'form.email.errors.taken' | translate }}</div>
+        }
+    </div>
+
+    <div class="form__field" [ngClass]="{
+        'is-error': form | hasError: 'password',
+        'has-value': form | hasValue: 'password',
+    }">
+        <div class="form__input">
+            <label class="form__label" for="password">{{ 'form.password.label' | translate }}</label>
+            <input type="password" id="password" formControlName="password"/>
+        </div>
+        @if (form | showError: 'password' :'required') {
+            <div class="form__error">{{ 'form.password.errors.required' | translate }}</div>
+        }
+    </div>
+
+    <div class="form__field" [ngClass]="{
+        'is-error': form | hasError: 'passwordConfirm',
+        'has-value': form | hasValue: 'passwordConfirm',
+    }">
+        <div class="form__input">
+            <label class="form__label"  for="passwordConfirm">{{ 'form.passwordConfirm.label' | translate }}</label>
+            <input type="password" id="passwordConfirm" formControlName="passwordConfirm"/>
+        </div>
+        @if (form | showError: 'passwordConfirm' :'required') {
+            <div class="form__error">{{ 'form.passwordConfirm.errors.required' | translate }}</div>
+        }
+        @if (form.hasError('noMatch')) {
+            <div class="form__error">{{ 'form.passwordConfirm.errors.equal' | translate }}</div>
+        }
+    </div>
+
+    <giz-password-strength [password]="password?.value"></giz-password-strength>
+
+    @if (form | showError: 'password' :'passwordLength') {
+        <div class="form__error">{{ 'form.password.errors.length' | translate }}</div>
+    }
+    @if (form | showError: 'password' :'passwordUpperAndLowerCase') {
+        <div class="form__error">{{ 'form.password.errors.case' | translate }}</div>
+    }
+    @if (form | showError: 'password' :'passwordNumbers') {
+        <div class="form__error">{{ 'form.password.errors.numbers' | translate }}</div>
+    }
+    @if (form | showError: 'password' :'passwordSpecialCharacters') {
+        <div class="form__error">{{ 'form.password.errors.special' | translate }}</div>
+    }
+
+    @if (submitting) {
+        <div class="form__spinner">
+            <giz-spinner [theme]="'grey'"></giz-spinner>
+            <span>{{ 'form.state.creating' | translate }}</span>
+        </div>
+    }
+
+    <div class="form__footer">
+        <div class="form__buttons">
+            <a giz-link-button routerLink="/auth/login">{{ 'register.signup.back' | translate }}</a>
+        </div>
+        <div class="form__buttons">
+            <button type="submit" giz-button>{{ 'register.signup.button' | translate }}</button>
+        </div>
+    </div>
+</form>

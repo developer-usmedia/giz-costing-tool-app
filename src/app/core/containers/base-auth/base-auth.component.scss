@@ -1,0 +1,45 @@
+@import 'config/colors';
+@import 'config/shadows';
+@import 'config/sizes';
+@import 'mixins/stretch';
+
+:root {
+    --base-auth-bcg: #{ $c-white };
+}
+
+.base-auth {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    position: relative;
+
+    &__image {
+        @include stretch;
+
+        object-fit: cover;
+    }
+
+    &__container {
+        align-items: center;
+        display: flex;
+        flex: 1 1 auto;
+        margin: 0 auto;
+        padding: $p-gutter;
+        width: min(100%, $screen-normal);
+    }
+
+    &__content {
+        background-color: var(--base-auth-bcg);
+        border-radius: $b-radius;
+        box-shadow: $c-shadow-6;
+        display: flex;
+        min-height: 600px;
+        position: relative;
+        width: min(100%, 400px);
+    }
+
+    &__footer {
+        flex: 0 0 auto;
+        position: relative;
+    }
+}

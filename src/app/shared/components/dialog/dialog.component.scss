@@ -1,4 +1,5 @@
 @import 'config/colors';
+@import 'config/shadows';
 @import 'config/sizes';
 @import 'mixins/typography';
 
@@ -10,7 +11,7 @@
 .dialog {
     background-color: var(--dialog-background);
     border-radius: $b-radius;
-    box-shadow: $c-shadow--large;
+    box-shadow: $c-shadow-24;
     display: flex;
     flex-direction: column;
     height: 100%;

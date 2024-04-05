@@ -6,6 +6,7 @@ import { DashboardComponent } from '@core/containers/dashboard/dashboard.compone
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
 import { RootRoutingGuard } from '@shared/guards/root-routing.guard';
+import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
 
 type GizRoutes = {
     en: Record<string, string>;
@@ -63,6 +64,11 @@ const ROUTES_ES: Routes = [
 
 const routes: Routes = [
     {
+        path: 'auth',
+        component: BaseAuthComponent,
+        loadChildren: () => import('./auth/auth.module').then((p) => p.AuthModule),
+    },
+    {
         path: '',
         children: [],
         canActivate: [
@@ -75,7 +81,6 @@ const routes: Routes = [
     },
     { path: 'en', component: BaseComponent, children: ROUTES_EN },
     { path: 'es', component: BaseComponent, children: ROUTES_ES },
-
     { path: 'error/404', component: ErrorPageComponent, data: { error: 404 } },
     { path: 'error/500', component: ErrorPageComponent, data: { error: 500 } },
     { path: '**', redirectTo: 'error/404' },
@@ -83,8 +88,9 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, { anchorScrolling: 'enabled', scrollOffset: [0, 50] }),
+        RouterModule.forRoot(routes, { anchorScrolling: 'enabled', scrollOffset: [ 0, 50 ] }),
     ],
     exports: [ RouterModule ],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

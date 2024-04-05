@@ -1,0 +1,52 @@
+@import 'config/colors';
+
+:root {
+    --auth-description-color: #{ $c-grey--700 };
+    --auth-icon-bcg: #{ $c-grey--900 };
+    --auth-icon-color: #{ $c-white };
+}
+
+.auth-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 3.75rem 3.75rem 1.5rem;
+
+    &__content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    &__header {
+        align-items: center;
+        display: flex;
+        gap: 0.75rem;
+        margin: 0 0 0.5rem;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__icon {
+        align-items: center;
+        background: var(--auth-icon-bcg);
+        border-radius: 50%;
+        color: var(--auth-icon-color);
+        display: flex;
+        height: 25px;
+        justify-content: center;
+        width: 25px;
+    }
+
+    &__description {
+        color: var(--auth-description-color);
+    }
+
+    &__footer {
+        margin-top: auto;
+    }
+}

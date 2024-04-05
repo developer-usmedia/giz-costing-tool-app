@@ -3,9 +3,92 @@
     "dialog": {
         "close": "Close"
     },
+    "error": {
+        "403": {
+            "title": "403: Unauthorized",
+            "description": "You are not authorized to do this. Please login with the correct user and rights."
+        }
+    },
     "footer": {
         "terms-and-conditions": "Terms & Conditions",
         "data-protection": "Data Protection",
         "imprint": "Imprint"
+    },
+    "form": {
+        "state": {
+            "creating": "Creating...",
+            "updating": "Updating...",
+            "removing": "Removing...",
+            "deleting": "Deleting...",
+            "verifying": "Verifying..."
+        },
+        "verificationCode": {
+            "label": "Code",
+            "errors": {
+                "required": "Code is required",
+                "invalid": "Code is invalid or expired",
+                "length": "Code has to be 6 characters"
+            },
+            "resend": {
+                "button": "Send me a new code",
+                "success": "You will receive a new code via email",
+                "error": "Something went wrong sending the code"
+            }
+        },
+        "email": {
+            "label": "Email",
+            "errors": {
+                "required": "Email is required",
+                "taken": "Email already in use",
+                "invalid": "Email is invalid"
+            }
+        },
+        "password": {
+            "label": "Password",
+            "errors": {
+                "required": "Password is required",
+                "invalid": "Password is invalid",
+                "length": "Password must be between 9 & 15 characters",
+                "case": "Password must contain upper- and lowercase characters",
+                "numbers": "Password must contain numbers",
+                "special": "Password must contain special characters"
+            },
+            "strength": {
+                "score-0": "Very weak",
+                "score-1": "Weak",
+                "score-2": "Medium",
+                "score-3": "Good",
+                "score-4": "Great!"
+            }
+        },
+        "passwordConfirm": {
+            "label": "Confirm password",
+            "errors": {
+                "required": "Passwords do not match",
+                "equal": "Passwords do not match"
+            }
+        }
+    },
+    "register": {
+        "signup": {
+            "title": "Create account",
+            "description": "Please fill in the details below to create your account",
+            "tooltip": "Create account",
+            "button": "Register",
+            "back": "Back to login"
+        },
+        "verification": {
+            "title": "Verification Code",
+            "description": "We've sent an email to <strong>{{ email }}</strong> with a verification code, please enter it below to continue.",
+            "tooltip": "Enter verification code received via email",
+            "button": "Continue",
+            "back": "Back to login"
+        },
+        "finalize": {
+            "title": "All done",
+            "description": "Your account has been created and you are ready to start using the tool",
+            "tooltip": "Registration done",
+            "button": "Continue to login"
+        }
     }
 }

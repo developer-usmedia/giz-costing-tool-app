@@ -1,0 +1,66 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/list-reset';
+@import 'mixins/typography';
+
+:root {
+    --stepper-circle-bcg: #{ $c-white };
+    --stepper-circle-border: #{ $c-grey--300 };
+    --stepper-circle-label: #{ $c-grey--900 };
+}
+
+.stepper {
+    $self: &;
+
+    @include list-reset;
+
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+
+    &__item {
+        align-items: center;
+        cursor: default;
+        display: flex;
+
+        &--active {
+            --stepper-circle-border: #{ $c-forest--dark };
+            --stepper-label: #{ $c-black };
+        }
+
+        &--disabled {
+            --stepper-circle-bcg: #{ $c-grey--300 };
+        }
+
+        & + & {
+            &::before {
+                background: var(--stepper-circle-border);
+                content: '';
+                display: block;
+                height: 1px;
+                margin: 0 0.6rem;
+                width: 12px;
+            }
+        }
+    }
+
+    &__circle {
+        background-color: var(--stepper-circle-bcg);
+        border: 1px solid var(--stepper-circle-border);
+        border-radius: 50%;
+        height: 26px;
+        line-height: 24px;
+        position: relative;
+        text-align: center;
+        width: 26px;
+    }
+
+    &__label {
+        @include style-text-small;
+
+        color: var(--stepper-circle-label);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

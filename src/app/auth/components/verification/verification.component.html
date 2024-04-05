@@ -1,0 +1,46 @@
+<form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form__field" [ngClass]="{
+        'is-error': form | hasError: 'verificationCode',
+        'has-value': form | hasValue: 'verificationCode',
+    }">
+        <div class="form__input">
+            <label class="form__label" for="verificationCode">{{ 'form.verificationCode.label' | translate }}</label>
+            <input type="text" id="verificationCode" formControlName="verificationCode"/>
+        </div>
+        @if (form | showError: 'verificationCode' :'required') {
+            <div class="form__error">{{ 'form.verificationCode.errors.required' | translate }}</div>
+        }
+        @if ((form | showError: 'verificationCode' :'minlength') ||
+        (form | showError: 'verificationCode' :'maxlength')) {
+            <div class="form__error">{{ 'form.verificationCode.errors.length' | translate }}</div>
+        }
+        @if (codeInvalid) {
+            <div class="form__error">{{ 'form.verificationCode.errors.invalid' | translate }}</div>
+        }
+
+        <div class="form__hint">
+            <button type="button" giz-link-button theme="basic" (click)="sendCode()">
+                {{ 'form.verificationCode.resend.button' | translate }}
+            </button>
+            @if (newCodeSent) {
+                <p>{{ 'form.verificationCode.resend.success' | translate }}</p>
+            }
+        </div>
+    </div>
+
+    @if (submitting) {
+        <div class="form__spinner">
+            <giz-spinner [theme]="'grey'"></giz-spinner>
+            <span>{{ 'form.state.verifying' | translate }}</span>
+        </div>
+    }
+
+    <div class="form__footer">
+        <div class="form__buttons">
+            <a giz-link-button routerLink="/auth/login">{{ 'register.verification.back' | translate }}</a>
+        </div>
+        <div class="form__buttons">
+            <button type="submit" giz-button>{{ 'register.verification.button' | translate }}</button>
+        </div>
+    </div>
+</form>

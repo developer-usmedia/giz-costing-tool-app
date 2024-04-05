@@ -25,6 +25,12 @@
             "dom"
         ],
         "paths": {
+            "@api/*" : [
+                "app/api/*"
+            ],
+            "@auth/*": [
+                "app/auth/*"
+            ],
             "@core/*": [
                 "app/core/*"
             ],

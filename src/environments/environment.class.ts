@@ -19,10 +19,4 @@ export class Environment {
         this.apiUrl = env.apiUrl ?? '';
         this.version = env.version ?? 'n/a';
     }
-
-    public get endpoints(): { [key: string]: string } {
-        return {
-            todo: this.apiUrl + 'todo',
-        };
-    }
 }

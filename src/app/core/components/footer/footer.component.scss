@@ -2,8 +2,8 @@
 @import 'config/sizes';
 @import 'mixins/screen';
 
-:host {
-    --footer-link-color: #{$c-grey--700};
+:root {
+    --footer-link-color: #{ $c-grey--700 };
 }
 
 .footer {
@@ -24,6 +24,14 @@
         display: flex;
     }
 
+    &__item {
+        &::before {
+            color: var(--footer-link-color);
+            content: '|';
+            margin: 0 1rem;
+        }
+    }
+
     &__link,
     &__legal {
         color: var(--footer-link-color);
@@ -40,8 +48,7 @@
         }
     }
 
-    &__item::before {
-        content: '|';
-        margin: 0 1rem;
+    &--white {
+        --footer-link-color: #{ $c-white };
     }
 }

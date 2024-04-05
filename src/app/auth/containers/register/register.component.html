@@ -1,0 +1,34 @@
+<giz-auth-content
+    [title]="('register.' + getTranslationKey(currentStep$.value) + '.title') | translate"
+    [description]="('register.' + getTranslationKey(currentStep$.value) + '.description') | translate: { email: loginDetails.email }"
+    [icon]="currentStep$.value === registerSteps.DONE ? icon.CHECK : undefined"
+>
+    @if (currentStep$.value === registerSteps.REGISTER) {
+        <giz-signup
+            [emailTaken]="emailTaken"
+            [submitting]="signupSubmitting"
+            (submitForm)="signup($event)"
+        ></giz-signup>
+    }
+
+    @if (currentStep$.value === registerSteps.VERIFICATION_CODE) {
+        <giz-verification
+            [loginDetails]="loginDetails"
+            [codeInvalid]="codeInvalid"
+            [submitting]="verificationSubmitting"
+            (sendNewCode)="sendNewCode()"
+            (submitForm)="verify($event)"
+        ></giz-verification>
+    }
+
+    @if (currentStep$.value === registerSteps.DONE) {
+        <a giz-button routerLink="/auth/login">{{ 'register.finalize.button' | translate }}</a>
+    }
+
+    <ng-container auth-footer>
+        <giz-stepper
+            [steps]="steps"
+            [activeStep]="currentStep$.value"
+        ></giz-stepper>
+    </ng-container>
+</giz-auth-content>

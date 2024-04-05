@@ -43,13 +43,10 @@ $c-info: #0098ff;
 $c-success: #00625f;
 $c-warning: #ffc505;
 $c-error: #f44336;
+$c-error--dark: #c30f08;
 
-// Shadows
-$c-shadow: /* stylelint-disable-line scss/dollar-variable-colon-space-after */
-    0 7px 34px 0 color.scale($c-black, $alpha: -88%),
-    0 18px 28px 0 color.scale($c-black, $alpha: -86%),
-    0 9px 11px 0 color.scale($c-black, $alpha: -80%);
-$c-shadow--large: /* stylelint-disable-line scss/dollar-variable-colon-space-after */
-    0 9px 46px 0 color.scale($c-black, $alpha: -88%),
-    0 24px 38px 0 color.scale($c-black, $alpha: -86%),
-    0 11px 15px 0 color.scale($c-black, $alpha: -80%);
+// Password Strength
+$c-password-weak: #c30f08;
+$c-password-medium: #faab1a;
+$c-password-strong: #a2be69;
+$c-password-very-strong: #0fa90d;

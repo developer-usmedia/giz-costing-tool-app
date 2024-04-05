@@ -1,0 +1,98 @@
+@import '../mixins/form';
+@import '../mixins/typography';
+
+legend,
+label,
+input,
+textarea,
+select {
+    @include style-text;
+}
+
+input {
+    box-shadow: none;
+    outline: none;
+
+    &[type='text'],
+    &[type='email'],
+    &[type='date'],
+    &[type='tel'],
+    &[type='number'],
+    &[type='password'],
+    &[type='search'] {
+        @include form-input;
+    }
+
+    &[type='date'] {
+        appearance: none;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
+            margin: 0;
+        }
+    }
+
+    /* stylelint-disable property-no-vendor-prefix, order/properties-alphabetical-order */
+    &[type='number'] {
+        appearance: none;
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    /* stylelint-enable property-no-vendor-prefix, order/properties-alphabetical-order */
+
+    &[type='search'] {
+        appearance: none;
+
+        &::-webkit-search-cancel-button {
+            appearance: none;
+            display: none;
+        }
+    }
+
+    &[type='file'] {
+        font-size: 1rem;
+    }
+
+    &::-ms-clear {
+        display: none;
+    }
+}
+
+textarea {
+    @include form-input;
+
+    line-height: 1.5;
+    min-height: 6rem;
+    padding: 0.8rem 1rem;
+    resize: vertical;
+    width: 100%;
+}
+
+select {
+    @include form-input;
+}
+
+legend,
+label {
+    @include style-text;
+
+    color: var(--form-label-color);
+    display: block;
+    font-weight: $weight-normal;
+    margin: 0 0 0.25rem;
+    padding: 0 $p-input;
+}
+
+input,
+select,
+textarea {
+    &::-ms-expand {
+        display: none;
+    }
+}

@@ -1,0 +1,15 @@
+<ul class="stepper">
+    @for (step of steps; track $index) {
+        <li class="stepper__item"
+            [ngClass]="{
+                'stepper__item--active': activeStep === step.index,
+                'stepper__item--disabled': step.disabled
+            }"
+            [title]="step.description"
+        >
+            <div class="stepper__circle">
+                <span class="stepper__label">{{ $index + 1 }}</span>
+            </div>
+        </li>
+    }
+</ul>

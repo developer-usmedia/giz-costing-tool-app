@@ -1,0 +1,100 @@
+@use 'sass:color';
+@import 'colors';
+/* stylelint-disable scss/dollar-variable-colon-space-after */
+$c-shadow-1:
+    0 2px 1px color.scale($c-black, $alpha: -80%),
+    0 1px 1px color.scale($c-black, $alpha: -86%),
+    0 1px 3px color.scale($c-black, $alpha: -88%);
+$c-shadow-2:
+    0 3px 1px color.scale($c-black, $alpha: -80%),
+    0 2px 2px color.scale($c-black, $alpha: -86%),
+    0 1px 5px color.scale($c-black, $alpha: -88%);
+$c-shadow-3:
+    0 3px 3px color.scale($c-black, $alpha: -80%),
+    0 3px 4px color.scale($c-black, $alpha: -86%),
+    0 1px 8px color.scale($c-black, $alpha: -88%);
+$c-shadow-4:
+    0 2px 4px color.scale($c-black, $alpha: -80%),
+    0 4px 5px color.scale($c-black, $alpha: -86%),
+    0 1px 10 color.scale($c-black, $alpha: -88%);
+$c-shadow-5:
+    0 3px 5px color.scale($c-black, $alpha: -80%),
+    0 5px 8px color.scale($c-black, $alpha: -86%),
+    0 1px 14px color.scale($c-black, $alpha: -88%);
+$c-shadow-6:
+    0 3px 5px color.scale($c-black, $alpha: -80%),
+    0 6px 10 color.scale($c-black, $alpha: -86%),
+    0 1px 18px color.scale($c-black, $alpha: -88%);
+$c-shadow-7:
+    0 4px 5px color.scale($c-black, $alpha: -80%),
+    0 7px 10 color.scale($c-black, $alpha: -86%),
+    0 2px 16px color.scale($c-black, $alpha: -88%);
+$c-shadow-8:
+    0 5px 5px color.scale($c-black, $alpha: -80%),
+    0 8px 10 color.scale($c-black, $alpha: -86%),
+    0 3px 14px color.scale($c-black, $alpha: -88%);
+$c-shadow-9:
+    0 5px 6px color.scale($c-black, $alpha: -80%),
+    0 9px 12px color.scale($c-black, $alpha: -86%),
+    0 3px 16px color.scale($c-black, $alpha: -88%);
+$c-shadow-10:
+    0 6px 6px color.scale($c-black, $alpha: -80%),
+    0 10 14px color.scale($c-black, $alpha: -86%),
+    0 4px 18px color.scale($c-black, $alpha: -88%);
+$c-shadow-11:
+    0 6px 7px color.scale($c-black, $alpha: -80%),
+    0 11px 15px color.scale($c-black, $alpha: -86%),
+    0 4px 20 color.scale($c-black, $alpha: -88%);
+$c-shadow-12:
+    0 7px 8px color.scale($c-black, $alpha: -80%),
+    0 12px 17px color.scale($c-black, $alpha: -86%),
+    0 5px 22px color.scale($c-black, $alpha: -88%);
+$c-shadow-13:
+    0 7px 8px color.scale($c-black, $alpha: -80%),
+    0 13px 19px color.scale($c-black, $alpha: -86%),
+    0 5px 24px color.scale($c-black, $alpha: -88%);
+$c-shadow-14:
+    0 7px 9px color.scale($c-black, $alpha: -80%),
+    0 14px 21px color.scale($c-black, $alpha: -86%),
+    0 5px 26px color.scale($c-black, $alpha: -88%);
+$c-shadow-15:
+    0 8px 9px color.scale($c-black, $alpha: -80%),
+    0 15px 22px color.scale($c-black, $alpha: -86%),
+    0 6px 28px color.scale($c-black, $alpha: -88%);
+$c-shadow-16:
+    0 8px 10 color.scale($c-black, $alpha: -80%),
+    0 16px 24px color.scale($c-black, $alpha: -86%),
+    0 6px 30 color.scale($c-black, $alpha: -88%);
+$c-shadow-17:
+    0 8px 11px color.scale($c-black, $alpha: -80%),
+    0 17px 26px color.scale($c-black, $alpha: -86%),
+    0 6px 32px color.scale($c-black, $alpha: -88%);
+$c-shadow-18:
+    0 9px 11px color.scale($c-black, $alpha: -80%),
+    0 18px 28px color.scale($c-black, $alpha: -86%),
+    0 7px 34px color.scale($c-black, $alpha: -88%);
+$c-shadow-19:
+    0 9px 12px color.scale($c-black, $alpha: -80%),
+    0 19px 29px color.scale($c-black, $alpha: -86%),
+    0 7px 36px color.scale($c-black, $alpha: -88%);
+$c-shadow-20:
+    0 10 13px color.scale($c-black, $alpha: -80%),
+    0 20 31px color.scale($c-black, $alpha: -86%),
+    0 8px 38px color.scale($c-black, $alpha: -88%);
+$c-shadow-21:
+    0 10 13px color.scale($c-black, $alpha: -80%),
+    0 21px 33px color.scale($c-black, $alpha: -86%),
+    0 8px 40 color.scale($c-black, $alpha: -88%);
+$c-shadow-22:
+    0 10 14px color.scale($c-black, $alpha: -80%),
+    0 22px 35px color.scale($c-black, $alpha: -86%),
+    0 8px 42px color.scale($c-black, $alpha: -88%);
+$c-shadow-23:
+    0 11px 14px color.scale($c-black, $alpha: -80%),
+    0 23px 36px color.scale($c-black, $alpha: -86%),
+    0 9px 44px color.scale($c-black, $alpha: -88%);
+$c-shadow-24:
+    0 11px 15px color.scale($c-black, $alpha: -80%),
+    0 24px 38px color.scale($c-black, $alpha: -86%),
+    0 9px 46px color.scale($c-black, $alpha: -88%);
+/* stylelint-enable scss/dollar-variable-colon-space-after */

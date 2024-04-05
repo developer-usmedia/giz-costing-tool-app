@@ -2,17 +2,20 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { EmptyPipe } from '@shared/pipes/empty.pipe';
-import { RoutePipe } from '@shared/pipes/route.pipe';
-import { TruncatePipe } from '@shared/pipes/truncate.pipe';
 import { ButtonComponent } from './components/button/button.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
 import { IconComponent } from './components/icon/icon.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { StepperComponent } from './components/stepper/stepper.component';
+import { EmptyPipe, HasErrorPipe, HasValuePipe, RoutePipe, ShowErrorPipe, TruncatePipe } from '@shared/pipes';
+import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
 
 const PIPES = [
     EmptyPipe,
+    HasErrorPipe,
+    HasValuePipe,
+    ShowErrorPipe,
     RoutePipe,
     TruncatePipe,
 ];
@@ -22,7 +25,9 @@ const COMPONENTS = [
     DialogComponent,
     IconComponent,
     IconButtonComponent,
+    PasswordStrengthComponent,
     SpinnerComponent,
+    StepperComponent,
 ];
 
 @NgModule({

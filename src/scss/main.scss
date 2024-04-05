@@ -3,7 +3,9 @@
 @import './base/fonts';
 @import './base/variables';
 @import './base/base';
+@import './base/form';
 
 // COMPONENTS
+@import './components/form';
 @import './components/toast';
 @import './components/todo';
