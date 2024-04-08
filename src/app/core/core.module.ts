@@ -2,7 +2,6 @@ import { DialogModule } from '@angular/cdk/dialog';
 import { KeyValuePipe, NgClass } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { BaseComponent } from '@core/containers/base/base.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
@@ -30,7 +29,6 @@ import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.componen
         RouterModule,
         SharedModule,
         KeyValuePipe,
-        TranslateModule,
         NgClass,
     ],
 })

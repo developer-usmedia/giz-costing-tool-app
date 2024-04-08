@@ -8,7 +8,7 @@ import {
     SimpleChanges,
     ViewEncapsulation,
 } from '@angular/core';
-import { PasswordService } from '@shared/services/password.service';
+import { PasswordService } from '@shared/services';
 
 export enum RANK {
     TOO_SHORT = 0,

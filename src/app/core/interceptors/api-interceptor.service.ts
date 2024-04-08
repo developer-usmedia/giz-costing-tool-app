@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { TranslateService } from '@ngx-translate/core';
 
 import { environment } from 'environments/environment';
 import { STATUS } from '@shared/helpers';
@@ -13,7 +12,6 @@ export class ApiInterceptor implements HttpInterceptor {
     constructor(
         private readonly router: Router,
         private readonly toastr: ToastrService,
-        private readonly translate: TranslateService,
     ) {}
 
     public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -29,8 +27,8 @@ export class ApiInterceptor implements HttpInterceptor {
                     this.router.navigate(['/auth/login']);
                 } else if (error.status === STATUS.FORBIDDEN) {
                     this.toastr.error(
-                        this.translate.instant('error.403.title') as string,
-                        this.translate.instant('error.403.description') as string
+                        $localize`:unauthorized title:403 Unauthorized`,
+                        $localize`:unauthorized description:You are not authorized to do this. Please login with the correct user and rights.`
                     );
                 }
                 return throwError(() => error);

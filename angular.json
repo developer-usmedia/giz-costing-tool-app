@@ -23,6 +23,18 @@
             "root": "",
             "sourceRoot": "src",
             "prefix": "giz",
+            "i18n": {
+                "sourceLocale": {
+                    "baseHref": "/en",
+                    "code": "en"
+                },
+                "locales": {
+                    "es": {
+                        "translation": "src/assets/i18n/es.json",
+                        "baseHref": "/es"
+                    }
+                }
+            },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
@@ -55,7 +67,8 @@
                             ]
                         },
                         "scripts": [],
-                        "serviceWorker": false
+                        "serviceWorker": false,
+                        "localize": true
                     },
                     "configurations": {
                         "production": {
@@ -83,6 +96,12 @@
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true
+                        },
+                        "en": {
+                            "localize": ["en"]
+                        },
+                        "es": {
+                            "localize": ["es"]
                         }
                     },
                     "defaultConfiguration": "production"
@@ -95,6 +114,12 @@
                         },
                         "development": {
                             "buildTarget": "giz-costing-tool-app:build:development"
+                        },
+                        "en": {
+                            "buildTarget": "giz-costing-tool-app:build:en"
+                        },
+                        "es": {
+                            "buildTarget": "giz-costing-tool-app:build:es"
                         }
                     },
                     "defaultConfiguration": "development"

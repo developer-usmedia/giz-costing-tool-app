@@ -3,7 +3,8 @@ import {
     Component,
     EventEmitter,
     Input,
-    OnChanges, OnDestroy,
+    OnChanges,
+    OnDestroy,
     OnInit,
     Output,
     SimpleChanges,
@@ -11,6 +12,7 @@ import {
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginForm } from '@api/models';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import { AUTH_ROUTE } from '@core/models';
 
 interface VerificationFormGroup {
     verificationCode: FormControl<string>;
@@ -42,6 +44,7 @@ export class VerificationComponent implements OnInit, OnChanges, OnDestroy {
         }),
     });
 
+    protected readonly authRoute = AUTH_ROUTE;
     private readonly destroyed$ = new Subject<void>();
     private _codeInvalid?: boolean;
 

@@ -50,5 +50,10 @@
 
     &--white {
         --footer-link-color: #{ $c-white };
+
+        .button--link.button--basic {
+            --button-color: #{ $c-white };
+            --button-color-hover: #{ $c-white };
+        }
     }
 }

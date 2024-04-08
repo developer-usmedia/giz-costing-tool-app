@@ -1,94 +1,50 @@
 {
-    "language": "Espagnol",
-    "dialog": {
-        "close": "Cerrar"
-    },
-    "error": {
-        "403": {
-            "title": "403: no autorizado",
-            "description": "No estás autorizado a hacer esto. "
-        }
-    },
-    "footer": {
-        "terms-and-conditions": "Condiciones generales",
-        "data-protection": "Protección de datos",
-        "imprint": "Pie de imprenta"
-    },
-    "form": {
-        "state": {
-            "creating": "Creando...",
-            "updating": "Actualizando...",
-            "removing": "Eliminando...",
-            "deleting": "Eliminando...",
-            "verifying": "Verificando..."
-        },
-        "verificationCode": {
-            "label": "Código",
-            "errors": {
-                "required": "Se requiere código",
-                "invalid": "El código no es válido o ha caducado",
-                "length": "El código debe tener 6 caracteres."
-            },
-            "resend": {
-                "button": "Envíame un nuevo código",
-                "success": "Recibirás un nuevo código por correo electrónico",
-                "error": "Algo salió mal al enviar el código"
-            }
-        },
-        "email": {
-            "label": "Correo electrónico",
-            "errors": {
-                "required": "correo electronico es requerido",
-                "taken": "Correo electrónico ya en uso",
-                "invalid": "el correo electrónico es invalido"
-            }
-        },
-        "password": {
-            "label": "Contraseña",
-            "errors": {
-                "required": "se requiere contraseña",
-                "invalid": "La contraseña no es válida",
-                "length": "La contraseña debe estar entre 9",
-                "case": "La contraseña debe contener caracteres en mayúsculas y minúsculas.",
-                "numbers": "La contraseña debe contener números",
-                "special": "La contraseña debe contener caracteres especiales"
-            },
-            "strength": {
-                "score-0": "Muy débil",
-                "score-1": "Débil",
-                "score-2": "Medio",
-                "score-3": "Bien",
-                "score-4": "¡Excelente!"
-            }
-        },
-        "passwordConfirm": {
-            "label": "Confirmar Contraseña",
-            "errors": {
-                "required": "Las contraseñas no coinciden",
-                "equal": "Las contraseñas no coinciden"
-            }
-        }
-    },
-    "register": {
-        "signup": {
-            "title": "Crear una cuenta",
-            "description": "Por favor complete los detalles a continuación para crear su cuenta",
-            "tooltip": "Crear una cuenta",
-            "button": "Registro",
-            "back": "Atrás para iniciar sesión"
-        },
-        "verification": {
-            "title": "Código de verificación",
-            "description": "Hemos enviado un correo electrónico a <strong>{{ email }}</strong> con un código de verificación, ingréselo a continuación para continuar.",
-            "tooltip": "Ingrese el código de verificación recibido por correo electrónico",
-            "button": "Continuar",
-            "back": "Atrás para iniciar sesión"
-        },
-        "finalize": {
-            "title": "Todo listo",
-            "description": "Su cuenta ha sido creada y está listo para comenzar a utilizar la herramienta.",
-            "tooltip": "Registro hecho",
-            "button": "Continuar para iniciar sesión"
-        }
-    }
+  "locale": "es-ES",
+  "translations": {
+      "4768749765465246664": "Correo electrónico",
+      "8552587679160911578": "correo electronico es requerido",
+      "5448447574828483730": "el correo electrónico es invalido",
+      "5182423730421293911": "Correo electrónico ya en uso",
+      "1431416938026210429": "Contraseña",
+      "205044832662301680": "se requiere contraseña",
+      "3782563238994348625": "Confirmar Contraseña",
+      "6451269955734195952": "Las contraseñas no coinciden",
+      "205900374336488792": "La contraseña debe estar entre 9",
+      "3824997308087984996": "La contraseña debe contener caracteres en mayúsculas y minúsculas.",
+      "690040451368776081": "La contraseña debe contener números",
+      "4778291627781831910": "La contraseña debe contener caracteres especiales",
+      "4392937809790226797": "Creando...",
+      "7420623990150183817": "Atrás para iniciar sesión",
+      "6962699013778688473": "Continuar",
+      "8186013988289067040": "Código",
+      "8881952964804049753": "Se requiere código",
+      "3432757743524243366": "El código debe tener 6 caracteres.",
+      "1582937737650324624": "El código no es válido o ha caducado",
+      "7821122750659791142": "Envíame un nuevo código",
+      "7692753600860928436": "Recibirás un nuevo código por correo electrónico",
+      "4371485180715105780": "Verificando...",
+      "3432829306936850573": "Continuar para iniciar sesión",
+      "5907476126990913307": "Crear una cuenta",
+      "6468590462203245502": "Ingrese el código de verificación recibido por correo electrónico",
+      "7307330871373289630": "Registro hecho",
+      "2838127015056524936": "Algo salió mal al enviar el código",
+      "7451233168808859381": "Código de verificación",
+      "1764438664527786931": "Todo listo",
+      "3317425385897286167": "Por favor complete los detalles a continuación para crear su cuenta",
+      "5550156490513806347": "Hemos enviado un correo electrónico a *{$PH}* con un código de verificación; ingréselo a continuación para continuar.",
+      "4013362728299028003": "Su cuenta ha sido creada y está listo para comenzar a utilizar la herramienta.",
+      "664573589261423471": "Términos y condiciones",
+      "9055665654201606988": "Protección de Datos",
+      "5891707175321515013": "Imprimir",
+      "5390694175418476713": "español",
+      "5866254605255506989": "Inglés",
+      "2026999907054671051": "403 No autorizado",
+      "5255272757343969948": "No estás autorizado a hacer esto. ",
+      "7819314041543176992": "Cerca",
+      "3012667740913383440": "Muy débil",
+      "7182242959675416946": "Débil",
+      "5982496808088686844": "Medio",
+      "29167121133682512": "Bien",
+      "6899344040225872362": "¡Excelente!"
+  }
 }

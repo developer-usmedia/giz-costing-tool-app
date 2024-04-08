@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, take } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthService } from '@api/services';
@@ -9,6 +8,7 @@ import { LoginForm, RegisterForm } from '@api/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
+import { AUTH_ROUTE } from '@core/models';
 
 enum REGISTER_STEPS {
     REGISTER = 1,
@@ -39,24 +39,24 @@ export class RegisterComponent {
     };
 
     protected userId?: string ;
+    protected readonly authRoute = AUTH_ROUTE;
 
     constructor(
         private readonly authService: AuthService,
         private readonly toastr: ToastrService,
-        private readonly translateService: TranslateService,
     ) {
         this.steps = [
             {
                 index: REGISTER_STEPS.REGISTER,
-                description: this.translateService.instant('register.signup.tooltip') as string,
+                description: $localize`:register signup hint:Create account`,
             },
             {
                 index: REGISTER_STEPS.VERIFICATION_CODE,
-                description: this.translateService.instant('register.verification.tooltip') as string,
+                description: $localize`:register verification hint:Enter verification code received via email`,
             },
             {
                 index: REGISTER_STEPS.DONE,
-                description: this.translateService.instant('register.finalize.tooltip') as string,
+                description: $localize`:register finalize hint:Registration done`,
             },
         ];
     }
@@ -102,7 +102,7 @@ export class RegisterComponent {
 
     public sendNewCode(): void {
         if (!this.userId) {
-            this.toastr.error(this.translateService.instant('form.verificationCode.resend.error') as string);
+            this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
             return;
         }
 
@@ -110,20 +110,31 @@ export class RegisterComponent {
             userId: this.userId,
         }).pipe(take(1)).subscribe({
             error: (error: HttpErrorResponse) => {
-                this.toastr.error(this.translateService.instant('form.verificationCode.resend.error') as string);
+                this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
                 console.error(error);
             },
         });
     }
 
-    public getTranslationKey(step: REGISTER_STEPS): string {
+    public getTitle(step: REGISTER_STEPS): string {
         switch (step) {
             case REGISTER_STEPS.REGISTER:
-                return 'signup';
+                return $localize`:register signup title:Create account`;
             case REGISTER_STEPS.VERIFICATION_CODE:
-                return 'verification';
+                return $localize`:register verification title:Verification Code`;
             case REGISTER_STEPS.DONE:
-                return 'finalize';
+                return $localize`:register finalize title:All done`;
+        }
+    }
+
+    public getDescription(step: REGISTER_STEPS): string {
+        switch (step) {
+            case REGISTER_STEPS.REGISTER:
+                return $localize`:register signup description:Please fill in the details below to create your account`;
+            case REGISTER_STEPS.VERIFICATION_CODE:
+                return $localize`:register verification description:We've sent an email to [${ this.loginDetails.email }](mailto:${ this.loginDetails.email }) with a verification code, please enter it below to continue.`;
+            case REGISTER_STEPS.DONE:
+                return $localize`:register finalize description:Your account has been created and you are ready to start using the tool`;
         }
     }
 }

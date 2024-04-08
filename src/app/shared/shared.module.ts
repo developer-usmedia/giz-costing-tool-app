@@ -1,22 +1,30 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { ButtonComponent } from './components/button/button.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
 import { IconComponent } from './components/icon/icon.component';
+import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { StepperComponent } from './components/stepper/stepper.component';
-import { EmptyPipe, HasErrorPipe, HasValuePipe, RoutePipe, ShowErrorPipe, TruncatePipe } from '@shared/pipes';
-import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
+import {
+    EmptyPipe,
+    HasErrorPipe,
+    HasValuePipe,
+    MarkdownPipe,
+    RoutePipe,
+    ShowErrorPipe,
+    TruncatePipe,
+} from '@shared/pipes';
 
 const PIPES = [
     EmptyPipe,
     HasErrorPipe,
     HasValuePipe,
-    ShowErrorPipe,
+    MarkdownPipe,
     RoutePipe,
+    ShowErrorPipe,
     TruncatePipe,
 ];
 
@@ -41,7 +49,6 @@ const COMPONENTS = [
     ],
     imports: [
         CommonModule,
-        TranslateModule,
     ],
 })
 export class SharedModule {

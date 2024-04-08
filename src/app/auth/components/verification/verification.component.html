@@ -4,26 +4,26 @@
         'has-value': form | hasValue: 'verificationCode',
     }">
         <div class="form__input">
-            <label class="form__label" for="verificationCode">{{ 'form.verificationCode.label' | translate }}</label>
+            <label class="form__label" for="verificationCode" i18n="form verificationCode label">Code</label>
             <input type="text" id="verificationCode" formControlName="verificationCode"/>
         </div>
         @if (form | showError: 'verificationCode' :'required') {
-            <div class="form__error">{{ 'form.verificationCode.errors.required' | translate }}</div>
+            <div class="form__error" i18n="form verificationCode errors required">Code is required</div>
         }
         @if ((form | showError: 'verificationCode' :'minlength') ||
         (form | showError: 'verificationCode' :'maxlength')) {
-            <div class="form__error">{{ 'form.verificationCode.errors.length' | translate }}</div>
+            <div class="form__error" i18n="form verificationCode errors length">Code has to be 6 characters</div>
         }
         @if (codeInvalid) {
-            <div class="form__error">{{ 'form.verificationCode.errors.invalid' | translate }}</div>
+            <div class="form__error" i18n="form verificationCode errors invalid">Code is invalid or expired</div>
         }
 
         <div class="form__hint">
             <button type="button" giz-link-button theme="basic" (click)="sendCode()">
-                {{ 'form.verificationCode.resend.button' | translate }}
+                <p i18n="form verificationCode resend button">Send me a new code</p>
             </button>
             @if (newCodeSent) {
-                <p>{{ 'form.verificationCode.resend.success' | translate }}</p>
+                <p i18n="form verificationCode resend success">You will receive a new code via email</p>
             }
         </div>
     </div>
@@ -31,16 +31,16 @@
     @if (submitting) {
         <div class="form__spinner">
             <giz-spinner [theme]="'grey'"></giz-spinner>
-            <span>{{ 'form.state.verifying' | translate }}</span>
+            <span i18n="form state verifying">Verifying...</span>
         </div>
     }
 
     <div class="form__footer">
         <div class="form__buttons">
-            <a giz-link-button routerLink="/auth/login">{{ 'register.verification.back' | translate }}</a>
+            <a giz-link-button [routerLink]="(authRoute.LOGIN | route)" i18n="login back">Back to login</a>
         </div>
         <div class="form__buttons">
-            <button type="submit" giz-button>{{ 'register.verification.button' | translate }}</button>
+            <button type="submit" giz-button i18n="register continue">Continue</button>
         </div>
     </div>
 </form>

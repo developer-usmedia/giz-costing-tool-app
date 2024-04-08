@@ -3,18 +3,24 @@
         <span class="footer__legal">© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH</span>
         <ul class="footer__items">
             <li class="footer__item">
-                <a [routerLink]="['terms-and-conditions' | route]" class="footer__link">
-                    {{ 'footer.terms-and-conditions' | translate }}
-                </a>
+                <a [routerLink]="(rootRoute.TERMS | route)"
+                   class="footer__link" i18n="terms title">Terms and Conditions</a>
             </li>
             <li class="footer__item">
-                <a [routerLink]="['data-protection' | route]" class="footer__link">
-                    {{ 'footer.data-protection' | translate }}
-                </a>
+                <a [routerLink]="(rootRoute.DATA_PROTECTION | route)"
+                   class="footer__link" i18n="dataProtection title">Data Protection</a>
             </li>
             <li class="footer__item">
-                <a [routerLink]="['imprint' | route]" class="footer__link">{{ 'footer.imprint' | translate }}</a>
+                <a [routerLink]="(rootRoute.IMPRINT | route)"
+                   class="footer__link" i18n="imprint title">Imprint</a>
             </li>
         </ul>
+    </div>
+
+    <div class="footer__language">
+        <button class="footer__switcher" type="button"
+                giz-link-button theme="basic"
+                [icon]="icon.LANGUAGE" [iconPosition]="'right'"
+        >{{ currentLanguage }}</button>
     </div>
 </div>

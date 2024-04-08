@@ -2,9 +2,9 @@
     <h2 class="dialog__title">{{ title }}</h2>
 
     @if (showCloseButton) {
-        <button class="dialog__close" giz-icon-button [icon]="icon.CLOSE" [theme]="'basic'" (click)="close()">
-            {{ 'dialog.close' | translate }}
-        </button>
+        <button class="dialog__close" i18n="close button"
+                giz-icon-button [icon]="icon.CLOSE" [theme]="'basic'"
+                (click)="close()">Close</button>
     }
 </div>
 <div class="dialog__content">

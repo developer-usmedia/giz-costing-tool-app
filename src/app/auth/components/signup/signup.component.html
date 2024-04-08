@@ -4,17 +4,17 @@
         'has-value': form | hasValue: 'email',
     }">
         <div class="form__input">
-            <label class="form__label" for="email">{{ 'form.email.label' | translate }}</label>
+            <label class="form__label" for="email" i18n="form email label">Email</label>
             <input type="email" id="email" formControlName="email"/>
         </div>
         @if (form | showError: 'email' :'required') {
-            <div class="form__error">{{ 'form.email.errors.required' | translate }}</div>
+            <div class="form__error" i18n="form email errors required">Email is required</div>
         }
         @if (form | showError: 'email' :'email') {
-            <div class="form__error">{{ 'form.email.errors.invalid' | translate }}</div>
+            <div class="form__error" i18n="form email errors invalid">Email is invalid</div>
         }
         @if (emailTaken) {
-            <div class="form__error">{{ 'form.email.errors.taken' | translate }}</div>
+            <div class="form__error" i18n="form email errors taken">Email already in use</div>
         }
     </div>
 
@@ -23,11 +23,11 @@
         'has-value': form | hasValue: 'password',
     }">
         <div class="form__input">
-            <label class="form__label" for="password">{{ 'form.password.label' | translate }}</label>
+            <label class="form__label" for="password" i18n="form password label">Password</label>
             <input type="password" id="password" formControlName="password"/>
         </div>
         @if (form | showError: 'password' :'required') {
-            <div class="form__error">{{ 'form.password.errors.required' | translate }}</div>
+            <div class="form__error" i18n="form password errors required">Password is required</div>
         }
     </div>
 
@@ -36,45 +36,45 @@
         'has-value': form | hasValue: 'passwordConfirm',
     }">
         <div class="form__input">
-            <label class="form__label"  for="passwordConfirm">{{ 'form.passwordConfirm.label' | translate }}</label>
+            <label class="form__label"  for="passwordConfirm" i18n="form passwordConfirm label">Confirm password</label>
             <input type="password" id="passwordConfirm" formControlName="passwordConfirm"/>
         </div>
         @if (form | showError: 'passwordConfirm' :'required') {
-            <div class="form__error">{{ 'form.passwordConfirm.errors.required' | translate }}</div>
+            <div class="form__error" i18n="form passwordConfirm errors equal">Passwords do not match</div>
         }
         @if (form.hasError('noMatch')) {
-            <div class="form__error">{{ 'form.passwordConfirm.errors.equal' | translate }}</div>
+            <div class="form__error" i18n="form passwordConfirm errors equal">Passwords do not match</div>
         }
     </div>
 
     <giz-password-strength [password]="password?.value"></giz-password-strength>
 
     @if (form | showError: 'password' :'passwordLength') {
-        <div class="form__error">{{ 'form.password.errors.length' | translate }}</div>
+        <div class="form__error" i18n="form password errors length">Password must be between 9 & 15 characters</div>
     }
     @if (form | showError: 'password' :'passwordUpperAndLowerCase') {
-        <div class="form__error">{{ 'form.password.errors.case' | translate }}</div>
+        <div class="form__error" i18n="form password errors case">Password must contain upper- and lowercase characters</div>
     }
     @if (form | showError: 'password' :'passwordNumbers') {
-        <div class="form__error">{{ 'form.password.errors.numbers' | translate }}</div>
+        <div class="form__error" i18n="form password errors numbers">Password must contain numbers</div>
     }
     @if (form | showError: 'password' :'passwordSpecialCharacters') {
-        <div class="form__error">{{ 'form.password.errors.special' | translate }}</div>
+        <div class="form__error" i18n="form password errors special">Password must contain special characters</div>
     }
 
     @if (submitting) {
         <div class="form__spinner">
             <giz-spinner [theme]="'grey'"></giz-spinner>
-            <span>{{ 'form.state.creating' | translate }}</span>
+            <span i18n="form state creating">Creating...</span>
         </div>
     }
 
     <div class="form__footer">
         <div class="form__buttons">
-            <a giz-link-button routerLink="/auth/login">{{ 'register.signup.back' | translate }}</a>
+            <a giz-link-button [routerLink]="(authroute.LOGIN | route)" i18n="login back">Back to login</a>
         </div>
         <div class="form__buttons">
-            <button type="submit" giz-button>{{ 'register.signup.button' | translate }}</button>
+            <button type="submit" giz-button i18n="register continue">Continue</button>
         </div>
     </div>
 </form>

@@ -1,6 +1,6 @@
 <giz-auth-content
-    [title]="('register.' + getTranslationKey(currentStep$.value) + '.title') | translate"
-    [description]="('register.' + getTranslationKey(currentStep$.value) + '.description') | translate: { email: loginDetails.email }"
+    [title]="getTitle(currentStep$.value)"
+    [description]="getDescription(currentStep$.value)"
     [icon]="currentStep$.value === registerSteps.DONE ? icon.CHECK : undefined"
 >
     @if (currentStep$.value === registerSteps.REGISTER) {
@@ -22,7 +22,7 @@
     }
 
     @if (currentStep$.value === registerSteps.DONE) {
-        <a giz-button routerLink="/auth/login">{{ 'register.finalize.button' | translate }}</a>
+        <a giz-button [routerLink]="(authRoute.LOGIN | route)" i18n="login continue">Continue to login</a>
     }
 
     <ng-container auth-footer>
