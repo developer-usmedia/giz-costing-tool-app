@@ -17,6 +17,9 @@ import {
     ShowErrorPipe,
     TruncatePipe,
 } from '@shared/pipes';
+import { MenuComponent } from './components/menu/menu.component';
+import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 const PIPES = [
     EmptyPipe,
@@ -33,6 +36,8 @@ const COMPONENTS = [
     DialogComponent,
     IconComponent,
     IconButtonComponent,
+    MenuComponent,
+    MenuItemComponent,
     PasswordStrengthComponent,
     SpinnerComponent,
     StepperComponent,
@@ -49,6 +54,8 @@ const COMPONENTS = [
     ],
     imports: [
         CommonModule,
+        CdkMenu,
+        CdkMenuItem,
     ],
 })
 export class SharedModule {

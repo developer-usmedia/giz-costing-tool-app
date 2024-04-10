@@ -27,7 +27,7 @@
     // Button sizing
     --button-font-size: 1.375rem;
     --button-height: 36px;
-    --button-padding: #{ $p-gutter };
+    --button-padding: 0 #{ $p-gutter };
 
     // Table
     --table-bcg: #{ $c-white };

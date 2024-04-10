@@ -42,8 +42,8 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
         {
             provide: APP_BASE_HREF,
             useFactory: getBaseHref,
-            deps: [PlatformLocation]
-        }
+            deps: [PlatformLocation],
+        },
     ],
     bootstrap: [ AppComponent ],
 })

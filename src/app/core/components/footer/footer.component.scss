@@ -9,26 +9,23 @@
 .footer {
     $self: &;
 
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
     padding: calc($p-gutter / 2) $p-gutter;
-
-    &__menu {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
 
     &__items {
         display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1rem;
     }
 
     &__item {
-        &::before {
+        &::after {
             color: var(--footer-link-color);
             content: '|';
-            margin: 0 1rem;
+            margin-left: 1rem;
+        }
+
+        &:last-child::after {
+            display: none;
         }
     }
 
@@ -48,6 +45,19 @@
         }
     }
 
+    &__switcher {
+        margin-left: 0.5rem;
+
+        &.button--link {
+            --button-padding: 0.5rem 0;
+        }
+    }
+
+    .button--link.button--basic {
+        --button-color: #{ $c-grey--700 };
+        --button-color-hover: #{ $c-grey--700 };
+    }
+
     &--white {
         --footer-link-color: #{ $c-white };
 
@@ -55,5 +65,11 @@
             --button-color: #{ $c-white };
             --button-color-hover: #{ $c-white };
         }
+    }
+
+    @include screen($screen-simple) {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
     }
 }

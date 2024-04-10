@@ -1,5 +1,5 @@
 {
-  "locale": "en-US",
+  "locale": "en",
   "translations": {
     "4768749765465246664": "Email",
     "8552587679160911578": "Email is required",
@@ -31,7 +31,7 @@
     "7451233168808859381": "Verification Code",
     "1764438664527786931": "All done",
     "3317425385897286167": "Please fill in the details below to create your account",
-    "5550156490513806347": "We've sent an email to *{$PH}* with a verification code, please enter it below to continue.",
+    "8864851718631094942": "We've sent an email to [{$PH}](mailto:{$PH_1}) with a verification code, please enter it below to continue.",
     "4013362728299028003": "Your account has been created and you are ready to start using the tool",
     "664573589261423471": "Terms and Conditions",
     "9055665654201606988": "Data Protection",

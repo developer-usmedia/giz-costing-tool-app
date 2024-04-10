@@ -124,8 +124,7 @@
         --button-background-disabled: transparent;
         --button-border-disabled: transparent;
         --button-color-disabled: #{ color.scale($c-black, $alpha: -60%) };
-
-        padding: 0;
+        --button-padding: 0;
 
         #{ $self }__text {
             border-bottom: 1px solid transparent;

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject, Input, LOCALE_ID, ViewEncapsulation } from '@angular/core';
 
 import { ICON } from '@shared/components/icon/icon.enum';
-import { LOCALE, ROOT_ROUTE } from '@core/models';
+import { LOCALE, LOCALES, ROOT_ROUTE } from '@core/models';
 
 @Component({
     selector: 'giz-footer',
@@ -15,17 +15,26 @@ export class FooterComponent {
 
     protected readonly icon = ICON;
     protected readonly rootRoute = ROOT_ROUTE;
+    protected readonly locales = LOCALES;
 
     constructor(
-        @Inject(LOCALE_ID) public locale: string
+        @Inject(LOCALE_ID) public currentLocale: string,
     ) {}
 
-    get currentLanguage(): string {
-        switch (this.locale) {
+    public languageLabel(locale: string): string {
+        switch (locale) {
             case LOCALE.ES:
                 return $localize`:language espagnol:Espagnol`;
             default:
                 return $localize`:language english:English`;
         }
+    }
+
+    public getTranslatedRoute(locale: string) {
+        if (locale === this.currentLocale) {
+            return window.location.pathname;
+        }
+
+        return window.location.pathname.replace(`/${ this.currentLocale }/`, `/${ locale }/`);
     }
 }

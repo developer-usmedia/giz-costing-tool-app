@@ -1,0 +1,19 @@
+@import './config/colors';
+@import './config/shadows';
+@import './config/sizes';
+
+:root {
+    --menu-bcg: #{ $c-white };
+}
+
+.menu {
+    $self: &;
+
+    background-color: var(--menu-background);
+    border-radius: $b-radius;
+    box-shadow: $c-shadow-6;
+    display: block;
+    min-width: 200px;
+    padding: 5px 0;
+    position: relative;
+}

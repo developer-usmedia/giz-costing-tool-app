@@ -1,26 +1,37 @@
 <div class="footer" [ngClass]="{ 'footer--white': theme === 'white' }">
-    <div class="footer__menu">
-        <span class="footer__legal">© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH</span>
-        <ul class="footer__items">
-            <li class="footer__item">
-                <a [routerLink]="(rootRoute.TERMS | route)"
-                   class="footer__link" i18n="terms title">Terms and Conditions</a>
-            </li>
-            <li class="footer__item">
-                <a [routerLink]="(rootRoute.DATA_PROTECTION | route)"
-                   class="footer__link" i18n="dataProtection title">Data Protection</a>
-            </li>
-            <li class="footer__item">
-                <a [routerLink]="(rootRoute.IMPRINT | route)"
-                   class="footer__link" i18n="imprint title">Imprint</a>
-            </li>
-        </ul>
-    </div>
+    <ul class="footer__items">
+        <li class="footer__item">
+            <span class="footer__legal" translate="no">© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH</span>
+        </li>
+        <li class="footer__item">
+            <a [routerLink]="(rootRoute.TERMS | route)"
+               class="footer__link" i18n="terms title">Terms and Conditions</a>
+        </li>
+        <li class="footer__item">
+            <a [routerLink]="(rootRoute.DATA_PROTECTION | route)"
+               class="footer__link" i18n="dataProtection title">Data Protection</a>
+        </li>
+        <li class="footer__item">
+            <a [routerLink]="(rootRoute.IMPRINT | route)"
+               class="footer__link" i18n="imprint title">Imprint</a>
+        </li>
+    </ul>
 
     <div class="footer__language">
         <button class="footer__switcher" type="button"
                 giz-link-button theme="basic"
                 [icon]="icon.LANGUAGE" [iconPosition]="'right'"
-        >{{ currentLanguage }}</button>
+                [cdkMenuTriggerFor]="languageMenu"
+        >{{ languageLabel(currentLocale) }}</button>
+
+        <ng-template #languageMenu>
+            <giz-menu>
+                @for (locale of locales; track locale) {
+                    <a giz-menu-item [href]="getTranslatedRoute(locale)"
+                       [active]="locale === currentLocale"
+                    >{{ languageLabel(locale) }}</a>
+                }
+            </giz-menu>
+        </ng-template>
     </div>
 </div>

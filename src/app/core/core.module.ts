@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from '@core/interceptors';
 import { FooterComponent } from '@core/components/footer/footer.component';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
+import { CdkMenuTrigger } from '@angular/cdk/menu';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.componen
         SharedModule,
         KeyValuePipe,
         NgClass,
+        CdkMenuTrigger,
     ],
 })
 export class CoreModule {

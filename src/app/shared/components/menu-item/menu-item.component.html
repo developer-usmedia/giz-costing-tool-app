@@ -1,0 +1,7 @@
+@if (icon) {
+    <giz-icon class="menu-item__icon" [icon]="icon"></giz-icon>
+}
+<span class="menu-item__text"><ng-content></ng-content></span>
+@if (active) {
+    <giz-icon class="menu-item__icon menu-item__icon--active" [icon]="icons.CHECK"></giz-icon>
+}

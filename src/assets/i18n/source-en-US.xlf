@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="4768749765465246664" datatype="html">
         <source>Email</source>
@@ -262,8 +262,8 @@
         </context-group>
         <note priority="1" from="description">register signup description</note>
       </trans-unit>
-      <trans-unit id="5550156490513806347" datatype="html">
-        <source>We&apos;ve sent an email to *<x id="PH" equiv-text="this.loginDetails.email"/>* with a verification code, please enter it below to continue.</source>
+      <trans-unit id="8864851718631094942" datatype="html">
+        <source>We&apos;ve sent an email to [<x id="PH" equiv-text="this.loginDetails.email"/>](mailto:<x id="PH_1" equiv-text="this.loginDetails.email"/>) with a verification code, please enter it below to continue.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
           <context context-type="linenumber">135</context>
@@ -282,7 +282,7 @@
         <source>Terms and Conditions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
-          <context context-type="linenumber">7,9</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
         <note priority="1" from="description">terms title</note>
       </trans-unit>
@@ -290,7 +290,7 @@
         <source>Data Protection</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
-          <context context-type="linenumber">11,13</context>
+          <context context-type="linenumber">12,14</context>
         </context-group>
         <note priority="1" from="description">dataProtection title</note>
       </trans-unit>
@@ -298,7 +298,7 @@
         <source>Imprint</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">16,18</context>
         </context-group>
         <note priority="1" from="description">imprint title</note>
       </trans-unit>
@@ -306,7 +306,7 @@
         <source>Espagnol</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">language espagnol</note>
       </trans-unit>
@@ -314,7 +314,7 @@
         <source>English</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">language english</note>
       </trans-unit>
@@ -338,7 +338,7 @@
         <source>Close</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/dialog/dialog.component.html</context>
-          <context context-type="linenumber">8,11</context>
+          <context context-type="linenumber">7,10</context>
         </context-group>
         <note priority="1" from="description">close button</note>
       </trans-unit>
