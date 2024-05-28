@@ -7,7 +7,7 @@ import { LoginForm, LoginResponse, RegisterForm, UserResponse, VerifyEmailForm, 
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-    private readonly baseUrl = `${ environment.apiUrl }/auth`;
+    private readonly baseUrl = `${ environment.apiUrl }/api/auth`;
 
     private readonly endpoints = {
         register: `${ this.baseUrl }/register`,
