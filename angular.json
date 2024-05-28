@@ -25,13 +25,13 @@
             "prefix": "giz",
             "i18n": {
                 "sourceLocale": {
-                    "baseHref": "/en",
+                    "baseHref": "/en/",
                     "code": "en"
                 },
                 "locales": {
                     "es": {
                         "translation": "src/assets/i18n/es.json",
-                        "baseHref": "/es"
+                        "baseHref": "/es/"
                     }
                 }
             },

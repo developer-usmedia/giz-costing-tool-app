@@ -5,50 +5,102 @@ automatic_scaling:
 
 handlers:
   # Serve angular files
-  - url: /(.*\.js)
-    static_files: browser/\1
-    upload: browser/(.*\.js)
+  - url: /en/(.*\.js)
+    static_files: browser/en/\1
+    upload: browser/en/(.*\.js)
     mime_type: text/javascript
     secure: always
     redirect_http_response_code: 301
 
-  - url: /(.*\.css)
-    static_files: browser/\1
-    upload: browser/(.*\.css)
+  - url: /es/(.*\.js)
+    static_files: browser/es/\1
+    upload: browser/es/(.*\.js)
+    mime_type: text/javascript
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /en/(.*\.css)
+    static_files: browser/en/\1
+    upload: browser/en/(.*\.css)
     mime_type: text/css
     secure: always
     redirect_http_response_code: 301
 
-  - url: /(.*\.txt)
+  - url: /es/(.*\.css)
+    static_files: browser/es/\1
+    upload: browser/es/(.*\.css)
+    mime_type: text/css
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /en/(.*\.txt)
+    static_files: browser/en/\1
+    upload: browser/en/(.*\.txt)
+    mime_type: text/plain
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /es/(.*\.txt)
     static_files: browser/\1
-    upload: browser/(.*\.txt)
+    upload: browser/es/(.*\.txt)
     mime_type: text/plain
     secure: always
     redirect_http_response_code: 301
 
   # Serve assets directly
-  - url: /assets
-    static_dir: browser/assets
+  - url: /en/assets
+    static_dir: browser/en/assets
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /es/assets
+    static_dir: browser/es/assets
     secure: always
     redirect_http_response_code: 301
 
   # Serve favicon directly
   - url: /favicon\.ico
-    static_files: browser/assets/favicons/favicon.ico
-    upload: browser/assets/favicons/favicon.ico
-    secure: always
-    redirect_http_response_code: 301
-  
-  # Serve legacy directly
-  - url: /legacy.html
-    static_files: browser/legacy.html
-    upload: browser/legacy.html
+    static_files: browser/en/assets/favicons/favicon.ico
+    upload: browser/en/assets/favicons/favicon.ico
     secure: always
     redirect_http_response_code: 301
 
-  # Serve app
-  - url: /.*
-    static_files: browser/index.html
-    upload: browser/index.html
+  # Serve legacy directly
+  - url: /legacy.html
+    static_files: browser/en/legacy.html
+    upload: browser/en/legacy.html
+    secure: always
+    redirect_http_response_code: 301
+
+  # Serve en
+  - url: /en
+    static_files: browser/en/index.html
+    upload: browser/en/index.html
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /en/.*
+    static_files: browser/en/index.html
+    upload: browser/en/index.html
+    secure: always
+    redirect_http_response_code: 301
+
+  # Serve es
+  - url: /es
+    static_files: browser/es/index.html
+    upload: browser/es/index.html
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /es/.*
+    static_files: browser/es/index.html
+    upload: browser/es/index.html
+    secure: always
+    redirect_http_response_code: 301
+
+  # Serve app TODO: this needs to redirect depending on browser language
+  - url: /
+    static_files: browser/en/index.html
+    upload: browser/en/index.html
     secure: always
     redirect_http_response_code: 301
