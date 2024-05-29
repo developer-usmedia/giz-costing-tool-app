@@ -58,7 +58,7 @@ pipelines:
     '**':
       - step: *build-and-save
       - step: *lint
-      - step: &deploy
+      - step:
           name: Deploy to staging - PR preview
           deployment: staging
           image: usmedia/cloud-sdk:latest
