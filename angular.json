@@ -59,6 +59,7 @@
                         "styles": [
                             "@angular/cdk/overlay-prebuilt.css",
                             "node_modules/ngx-toastr/toastr.css",
+                            "src/assets/fonts/fonts.css",
                             "src/scss/main.scss"
                         ],
                         "stylePreprocessorOptions": {
@@ -142,6 +143,7 @@
                         "styles": [
                             "@angular/cdk/overlay-prebuilt.css",
                             "node_modules/ngx-toastr/toastr.css",
+                            "src/assets/fonts/fonts.css",
                             "src/main.scss"
                         ],
                         "scripts": []

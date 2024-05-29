@@ -1,4 +1,3 @@
-// Roboto
 @font-face {
     font-display: swap;
     font-family: Roboto;
@@ -6,8 +5,8 @@
     font-weight: 400;
     src:
         local('Roboto'),
-        url('/assets/fonts/roboto/roboto-400.woff2') format('woff2'),
-        url('/assets/fonts/roboto/roboto-400.woff') format('woff');
+        url('./roboto/roboto-400.woff2') format('woff2'),
+        url('./roboto/roboto-400.woff') format('woff');
 }
 
 @font-face {
@@ -17,6 +16,6 @@
     font-weight: 700;
     src:
         local('Roboto'),
-        url('/assets/fonts/roboto/roboto-700.woff2') format('woff2'),
-        url('/assets/fonts/roboto/roboto-700.woff') format('woff');
+        url('./roboto/roboto-700.woff2') format('woff2'),
+        url('./roboto/roboto-700.woff') format('woff');
 }
