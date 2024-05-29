@@ -9,7 +9,7 @@
     "205044832662301680": "Password is required",
     "3782563238994348625": "Confirm password",
     "6451269955734195952": "Passwords do not match",
-    "205900374336488792": "Password must be between 9 & 15 characters",
+    "205900374336488792": "Password must be between 12 & 200 characters",
     "3824997308087984996": "Password must contain upper- and lowercase characters",
     "690040451368776081": "Password must contain numbers",
     "4778291627781831910": "Password must contain special characters",

@@ -50,7 +50,7 @@
     <giz-password-strength [password]="password?.value"></giz-password-strength>
 
     @if (form | showError: 'password' :'passwordLength') {
-        <div class="form__error" i18n="form password errors length">Password must be between 9 & 15 characters</div>
+        <div class="form__error" i18n="form password errors length">Password must be between 12 & 200 characters</div>
     }
     @if (form | showError: 'password' :'passwordUpperAndLowerCase') {
         <div class="form__error" i18n="form password errors case">Password must contain upper- and lowercase characters</div>

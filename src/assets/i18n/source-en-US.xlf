@@ -71,7 +71,7 @@
         <note priority="1" from="description">form passwordConfirm errors equal</note>
       </trans-unit>
       <trans-unit id="205900374336488792" datatype="html">
-        <source>Password must be between 9 &amp; 15 characters</source>
+        <source>Password must be between 12 &amp; 200 characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">53,55</context>

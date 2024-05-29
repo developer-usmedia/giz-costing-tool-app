@@ -1,6 +1,6 @@
 export class PasswordService {
-    public static MINLENGTH = 9;
-    public static MAXLENGTH = 15;
+    public static MINLENGTH = 12;
+    public static MAXLENGTH = 200;
 
     public static checkUpperAndLowerCase(password: string) {
         const upper = /[A-Z]/;
