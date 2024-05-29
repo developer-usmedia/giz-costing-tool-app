@@ -3,11 +3,12 @@ import {
     ChangeDetectionStrategy,
     Component,
     ElementRef,
-    HostBinding,
-    Input,
+    HostBinding, Inject,
+    Input, LOCALE_ID,
     ViewEncapsulation,
 } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
     selector: 'giz-icon',
@@ -24,9 +25,11 @@ export class IconComponent {
     @HostBinding('class') cssClass = 'icon';
 
     constructor(
+        @Inject(APP_BASE_HREF) public baseHref: string,
         private readonly elementRef: ElementRef<HTMLElement>,
         @Attribute('aria-hidden') ariaHidden: string,
     ) {
+        console.log(this.baseHref);
         // If the user has not explicitly set aria-hidden, mark the icon as hidden, as this is
         // the right thing to do for the majority of icon use-cases.
         if (!ariaHidden) {
@@ -43,6 +46,6 @@ export class IconComponent {
     }
 
     get href(): string {
-        return `/assets/images/icons.svg#${ this.icon }`;
+        return `${ this.baseHref }assets/images/icons.svg#${ this.icon }`;
     }
 }

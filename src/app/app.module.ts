@@ -8,6 +8,11 @@ import { CoreModule } from '@core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
+import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
+
+export function getBaseHref(platformLocation: PlatformLocation): string {
+    return platformLocation.getBaseHrefFromDOM();
+}
 
 @NgModule({
     declarations: [
@@ -34,6 +39,11 @@ import { AppComponent } from './app.component';
         }),
     ],
     providers: [
+        {
+            provide: APP_BASE_HREF,
+            useFactory: getBaseHref,
+            deps: [PlatformLocation]
+        }
     ],
     bootstrap: [ AppComponent ],
 })

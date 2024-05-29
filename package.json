@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "npm run envsub && ng serve --configuration=en",
+        "start": "npm run envsub && ng serve",
         "start-es": "npm run envsub && ng serve --configuration=es",
         "envsub": "envsub ./src/index.tpl.html ./src/index.html --env-file .env",
         "build": "ng build --configuration production",

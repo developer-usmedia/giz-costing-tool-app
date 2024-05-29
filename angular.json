@@ -95,10 +95,9 @@
                         "development": {
                             "optimization": false,
                             "extractLicenses": false,
-                            "sourceMap": true
-                        },
-                        "en": {
-                            "localize": ["en"]
+                            "sourceMap": true,
+                            "localize": ["en"],
+                            "baseHref": "/"
                         },
                         "es": {
                             "localize": ["es"]
@@ -114,9 +113,6 @@
                         },
                         "development": {
                             "buildTarget": "giz-costing-tool-app:build:development"
-                        },
-                        "en": {
-                            "buildTarget": "giz-costing-tool-app:build:en"
                         },
                         "es": {
                             "buildTarget": "giz-costing-tool-app:build:es"

@@ -1,4 +1,5 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Inject, LOCALE_ID, ViewEncapsulation } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
     selector: 'giz-base-auth',
@@ -8,4 +9,8 @@ import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 })
 export class BaseAuthComponent {
    @HostBinding('class') cssClass = 'bass-auth';
+
+   constructor(
+       @Inject(APP_BASE_HREF) public baseHref: string,
+   ) {}
 }
