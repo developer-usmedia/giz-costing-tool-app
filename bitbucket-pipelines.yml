@@ -12,7 +12,7 @@ definitions:
     - step: &lint
         name: Lint
         script:
-          - npm ci
+          - npm ci --prefer-offline
           - npm run lint
 
     - step: &build
@@ -20,7 +20,6 @@ definitions:
         script:
           - cp ./src/index.tpl.html ./src/index.html
           - npm ci
-          - npm run lint
           - npm run build
           - cp -rT ./config/gae ./dist/
 
@@ -37,10 +36,10 @@ definitions:
           - export VERSION=$(if [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; else date +"%Y-%m-%d-build-${BITBUCKET_BUILD_NUMBER}"; fi)
 
           # Fill index.html with env variables
-          - export BASE_HREF='/en'
+          - export BASE_HREF='/en/'
           - envsubst < './dist/browser/en/index.html' > './dist/browser/en/index.temp.html'
           - mv './dist/browser/en/index.temp.html' './dist/browser/en/index.html'
-          - export BASE_HREF='/es'
+          - export BASE_HREF='/es/'
           - envsubst < './dist/browser/es/index.html' > './dist/browser/es/index.temp.html'
           - mv './dist/browser/es/index.temp.html' './dist/browser/es/index.html'
 
@@ -68,10 +67,10 @@ pipelines:
             - export VERSION="preview-${BITBUCKET_PR_ID}"
 
             # Fill index.html with env variables
-            - export BASE_HREF='/en'
+            - export BASE_HREF='/en/'
             - envsubst < './dist/browser/en/index.html' > './dist/browser/en/index.temp.html'
             - mv './dist/browser/en/index.temp.html' './dist/browser/en/index.html'
-            - export BASE_HREF='/es'
+            - export BASE_HREF='/es/'
             - envsubst < './dist/browser/es/index.html' > './dist/browser/es/index.temp.html'
             - mv './dist/browser/es/index.temp.html' './dist/browser/es/index.html'
 

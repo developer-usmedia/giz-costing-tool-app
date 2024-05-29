@@ -3,8 +3,9 @@ import {
     ChangeDetectionStrategy,
     Component,
     ElementRef,
-    HostBinding, Inject,
-    Input, LOCALE_ID,
+    HostBinding,
+    Inject,
+    Input,
     ViewEncapsulation,
 } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
@@ -29,7 +30,6 @@ export class IconComponent {
         private readonly elementRef: ElementRef<HTMLElement>,
         @Attribute('aria-hidden') ariaHidden: string,
     ) {
-        console.log(this.baseHref);
         // If the user has not explicitly set aria-hidden, mark the icon as hidden, as this is
         // the right thing to do for the majority of icon use-cases.
         if (!ariaHidden) {

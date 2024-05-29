@@ -1,4 +1,4 @@
-import { Component, HostBinding, Inject, LOCALE_ID, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Inject, ViewEncapsulation } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
