@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable, lastValueFrom } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 
 import {
+    ForgotPasswordForm,
+    ForgotPasswordResponse,
     LoginForm,
     LoginResponse,
     LogoutResponse,
     RegisterForm,
+    ResetPasswordForm,
+    ResetPasswordResponse,
     User,
     UserResponse,
     VerifyEmailForm,
@@ -49,5 +53,13 @@ export class AuthApi extends BaseApi {
 
     public verifyEmail(verifyForm: VerifyEmailForm): Observable<VerifyEmailReponse> {
         return this.post<VerifyEmailReponse>(this.endpoints.verifyEmail, verifyForm);
+    }
+
+    public forgotPassword(forgotPasswordForm: ForgotPasswordForm): Observable<ForgotPasswordResponse> {
+        return this.post<ForgotPasswordResponse>(this.endpoints.forgotPassword, forgotPasswordForm);
+    }
+
+    public resetPassword(resetPasswordForm: ResetPasswordForm): Observable<ResetPasswordResponse> {
+        return this.post<ResetPasswordResponse>(this.endpoints.resetPassword, resetPasswordForm);
     }
 }

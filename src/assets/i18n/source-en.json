@@ -37,6 +37,7 @@
     "6393528297285624278": "Something went wrong logging in",
     "5620406908320216029": "Logged out",
     "3871891686683761545": "You have successfully logged out",
+    "639546403850221881": "Something went wrong logging out",
     "3432829306936850573": "Continue to login",
     "5907476126990913307": "Create account",
     "6468590462203245502": "Enter verification code received via email",
@@ -49,6 +50,10 @@
     "5891707175321515013": "Imprint",
     "5390694175418476713": "Espagnol",
     "5866254605255506989": "English",
+    "4247400351982331798": "Account settings",
+    "2949848596707725099": "Sign out",
+    "4449392692590364756": "Welcome to the Costing Tool",
+    "2454050363478003966": "Login",
     "2026999907054671051": "403 Unauthorized",
     "5255272757343969948": "You are not authorized to do this. Please login with the correct user and rights.",
     "7819314041543176992": "Close",
@@ -56,6 +61,10 @@
     "7182242959675416946": "Weak",
     "5982496808088686844": "Medium",
     "29167121133682512": "Good",
-    "6899344040225872362": "Great!"
+    "6899344040225872362": "Great!",
+    "6570363013146073520": "Dashboard",
+    "8559170870663360229": "Examples",
+    "4086606389696938932": "Account",
+    "4260117635578082273": "Entries"
   }
 }

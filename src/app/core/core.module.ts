@@ -9,11 +9,16 @@ import { AccountComponent } from '@core/containers/account/account.component';
 import { ApiInterceptor } from '@core/interceptors';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
 import { BaseComponent } from '@core/containers/base/base.component';
+import { ContentPageComponent } from './components/content-page/content-page.component';
+import { CpDataProtectionComponent } from './containers/cp-data-protection/cp-data-protection.component';
+import { CpImprintComponent } from './containers/cp-imprint/cp-imprint.component';
+import { CpTermsComponent } from './containers/cp-terms/cp-terms.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
 import { FooterComponent } from '@core/components/footer/footer.component';
 import { HeaderComponent } from '@core/components/header/header.component';
+import { HomepageComponent } from './containers/homepage/homepage.component';
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
@@ -21,14 +26,18 @@ import { SharedModule } from '@shared/shared.module';
         AccountComponent,
         BaseComponent,
         BaseAuthComponent,
+        CpImprintComponent,
+        CpTermsComponent,
+        CpDataProtectionComponent,
         DashboardComponent,
         ErrorPageComponent,
         ExamplesComponent,
         FooterComponent,
         HeaderComponent,
+        ContentPageComponent,
+        HomepageComponent,
     ],
-    exports: [
-    ],
+    exports: [],
     imports: [
         DialogModule,
         RouterModule,

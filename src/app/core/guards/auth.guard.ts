@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AUTH_ROUTE } from '@core/models';
+import { ROOT_ROUTE } from '@core/models';
 import { RouteService } from '@shared/services';
 
 const COOKIE_NAME = 'GIZ-COOKIE';
@@ -23,7 +23,7 @@ class PermissionsService {
             return true;
         }
 
-        return await this.router.navigate([ this.routeService.getLink(AUTH_ROUTE.LOGIN) ]);
+        return await this.router.navigate([ this.routeService.getLink(ROOT_ROUTE.HOME) ]);
     }
 }
 

@@ -1,0 +1,39 @@
+<div class="entry">
+    <div class="entry__header">
+        <div class="entry__facility">
+            <h3 class="entry__title">Facility name</h3>
+            <p class="entry__subtitle">2023, Brazil</p>
+        </div>
+
+        <div class="entry__links">
+            <a giz-link-button
+               [routerLink]="entryRoute.INFORMATION | route"
+               [routerLinkActive]="'active'"
+            >Information</a>
+            <a giz-link-button
+               [disabled]="true"
+               [routerLink]="entryRoute.SCENARIO | route"
+               [routerLinkActive]="'active'"
+            >Scenario</a>
+            <a giz-link-button
+               [disabled]="true"
+               [routerLink]="entryRoute.DISTRIBUTION | route"
+               [routerLinkActive]="'active'"
+            >Distribution</a>
+            <a giz-link-button
+               [disabled]="true"
+               [routerLink]="entryRoute.BUYER | route"
+               [routerLinkActive]="'active'"
+            >Buyer</a>
+            <a giz-link-button
+               [disabled]="true"
+               [routerLink]="entryRoute.REPORT | route"
+               [routerLinkActive]="'active'"
+            >Report</a>
+        </div>
+    </div>
+    <hr>
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+
+

@@ -334,7 +334,7 @@
         <source>Something went wrong logging in</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <note priority="1" from="description">login error</note>
       </trans-unit>
@@ -342,7 +342,7 @@
         <source>Logged out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">logout title</note>
       </trans-unit>
@@ -350,9 +350,17 @@
         <source>You have successfully logged out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">logout description</note>
+      </trans-unit>
+      <trans-unit id="639546403850221881" datatype="html">
+        <source>Something went wrong logging out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">logout error</note>
       </trans-unit>
       <trans-unit id="3432829306936850573" datatype="html">
         <source>Continue to login</source>
@@ -371,6 +379,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
           <context context-type="linenumber">150</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
         <note priority="1" from="description">register signup hint</note>
       </trans-unit>
@@ -420,6 +432,10 @@
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">8,10</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-terms/cp-terms.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
         <note priority="1" from="description">terms title</note>
       </trans-unit>
       <trans-unit id="9055665654201606988" datatype="html">
@@ -428,6 +444,10 @@
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">12,14</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-data-protection/cp-data-protection.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
         <note priority="1" from="description">dataProtection title</note>
       </trans-unit>
       <trans-unit id="5891707175321515013" datatype="html">
@@ -435,6 +455,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">16,18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-imprint/cp-imprint.component.html</context>
+          <context context-type="linenumber">2,3</context>
         </context-group>
         <note priority="1" from="description">imprint title</note>
       </trans-unit>
@@ -453,6 +477,38 @@
           <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">language english</note>
+      </trans-unit>
+      <trans-unit id="4247400351982331798" datatype="html">
+        <source>Account settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+        <note priority="1" from="description">menu account</note>
+      </trans-unit>
+      <trans-unit id="2949848596707725099" datatype="html">
+        <source>Sign out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <note priority="1" from="description">menu logout</note>
+      </trans-unit>
+      <trans-unit id="4449392692590364756" datatype="html">
+        <source>Welcome to the Costing Tool</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">homepage title</note>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">homepage login</note>
       </trans-unit>
       <trans-unit id="2026999907054671051" datatype="html">
         <source>403 Unauthorized</source>
@@ -517,6 +573,38 @@
           <context context-type="linenumber">27,31</context>
         </context-group>
         <note priority="1" from="description">password-strength great</note>
+      </trans-unit>
+      <trans-unit id="6570363013146073520" datatype="html">
+        <source>Dashboard</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">breadcrumb dashboard title</note>
+      </trans-unit>
+      <trans-unit id="8559170870663360229" datatype="html">
+        <source>Examples</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">breadcrumb examples title</note>
+      </trans-unit>
+      <trans-unit id="4086606389696938932" datatype="html">
+        <source>Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">breadcrumb account title</note>
+      </trans-unit>
+      <trans-unit id="4260117635578082273" datatype="html">
+        <source>Entries</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">breadcrumb entries title</note>
       </trans-unit>
     </body>
   </file>

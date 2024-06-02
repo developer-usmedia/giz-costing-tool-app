@@ -1,6 +1,9 @@
-.dashboard {
+@import 'config/sizes';
+
+.home {
     &__buttons {
         display: flex;
         gap: 1rem;
+        margin-top: $p-gutter;
     }
 }

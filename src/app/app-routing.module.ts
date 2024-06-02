@@ -1,20 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AccountComponent } from '@core/containers/account/account.component';
+import { AuthGuard } from '@core/guards/auth.guard';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
 import { BaseComponent } from '@core/containers/base/base.component';
+import { CpDataProtectionComponent } from '@core/containers/cp-data-protection/cp-data-protection.component';
+import { CpImprintComponent } from '@core/containers/cp-imprint/cp-imprint.component';
+import { CpTermsComponent } from '@core/containers/cp-terms/cp-terms.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
-import { AuthGuard } from '@core/guards/auth.guard';
+import { HomepageComponent } from '@core/containers/homepage/homepage.component';
 import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
-import { AccountComponent } from '@core/containers/account/account.component';
 
 const routes: Routes = [
     {
         path: MODULE_ROUTE.AUTH,
         component: BaseAuthComponent,
         loadChildren: () => import('./auth/auth.module').then((p) => p.AuthModule),
+    },
+    {
+        path: 'home',
+        component: HomepageComponent,
+    },
+    {
+        path: 'imprint',
+        component: CpImprintComponent,
+    },
+    {
+        path: 'terms',
+        component: CpTermsComponent,
+    },
+    {
+        path: 'data-protection',
+        component: CpDataProtectionComponent,
     },
     {
         path: '',
@@ -38,15 +58,12 @@ const routes: Routes = [
                 path: ROOT_ROUTE.ACCOUNT,
                 component: AccountComponent,
             },
+            {
+                path: MODULE_ROUTE.ENTRY,
+                loadChildren: () => import('./entries/entries.module').then((p) => p.EntriesModule),
+            },
         ],
     },
-    // TEMP routes to demonstate that if angular does the routing useQuery will be able to use its cache.
-    // As soon as you reload the page and probably reinitialie angular (state?) useQuery will not be able to cache it
-    // To demonstrate open network tab and start navigating through eacth footer link -> only 1 session request
-    // You can also see this happen in salary matrix with googlapi://account?lookup request for idp
-    { path: 'imprint', component: BaseComponent },
-    { path: 'terms', component: BaseComponent },
-    { path: 'data-protection', component: BaseComponent },
     { path: 'error/404', component: ErrorPageComponent, data: { error: 404 } },
     { path: 'error/500', component: ErrorPageComponent, data: { error: 500 } },
     { path: '**', redirectTo: 'error/404' },

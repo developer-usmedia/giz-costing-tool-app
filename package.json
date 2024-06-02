@@ -15,7 +15,7 @@
         "lint-sass": "stylelint ./src/app/**/*.scss ./src/scss/**/*",
         "icons": "svg2sprite ./src/assets/images/icons ./src/assets/images/icons.svg --stripAttrs fill --stripAttrs stroke --stripAttrs id",
         "test": "ng test",
-        "extract-i18n": "ng extract-i18n --output-path src/assets/i18n --out-file source-en-US.json --format json && ng extract-i18n --output-path src/assets/i18n --out-file source-en-US.xlf"
+        "extract-i18n": "ng extract-i18n --output-path src/assets/i18n --out-file source-en.json --format json && ng extract-i18n --output-path src/assets/i18n --out-file source-en.xlf"
     },
     "dependencies": {
         "@angular/animations": "17.2.0",

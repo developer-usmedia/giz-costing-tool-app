@@ -1,19 +1,19 @@
 import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
+import { AngularQueryDevtools } from '@tanstack/angular-query-devtools-experimental';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { AngularQueryDevtools } from '@tanstack/angular-query-devtools-experimental';
+import { NgxsModule } from '@ngxs/store';
 import { QueryClient, provideAngularQuery } from '@tanstack/angular-query-experimental';
+import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppStore } from '@store/app.store';
 import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NgxsModule } from '@ngxs/store';
-import { AppStore } from '@store/app.store';
 
 export function getBaseHref(platformLocation: PlatformLocation): string {
     return platformLocation.getBaseHrefFromDOM();

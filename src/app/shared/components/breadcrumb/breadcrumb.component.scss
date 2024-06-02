@@ -17,22 +17,43 @@
 .breadcrumb {
     $self: &;
 
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
 
     &__item {
+        align-items: center;
         color: var(--breadcrumb-color);
+        display: flex;
 
         &--icon:not(.is-active) {
             #{ $self }__text {
                 @include sr-only;
             }
         }
+
+        &.is-active {
+            color: var(--breadcrumb-color-active);
+        }
+
+        &::after {
+            content: '>';
+            margin-left: 0.5rem;
+        }
+
+        &:first-child,
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
     }
 
     &__link {
         align-items: center;
-        color: var(--breadcrumb-color);
+        color: currentColor;
         display: flex;
         gap: 0.5rem;
         text-decoration: none;
@@ -41,10 +62,6 @@
         &:focus,
         &:hover {
             color: var(--breadcrumb-color-hover);
-        }
-
-        #{ $self }__item.is-active & {
-            color: var(--breadcrumb-color-active);
         }
     }
 }

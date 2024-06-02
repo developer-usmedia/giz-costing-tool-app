@@ -37,6 +37,7 @@
       "6393528297285624278": "Algo salió mal al iniciar sesión",
       "5620406908320216029": "Desconectado",
       "3871891686683761545": "Has terminado tu sesion satisfactoriamente",
+      "639546403850221881": "Algo salió mal al cerrar sesión",
       "3432829306936850573": "Continuar para iniciar sesión",
       "5907476126990913307": "Crear una cuenta",
       "6468590462203245502": "Ingrese el código de verificación recibido por correo electrónico",
@@ -49,6 +50,10 @@
       "5891707175321515013": "Imprimir",
       "5390694175418476713": "español",
       "5866254605255506989": "Inglés",
+      "4247400351982331798": "Configuraciones de la cuenta",
+      "2949848596707725099": "desconectar",
+      "4449392692590364756": "Bienvenido a la herramienta de costes",
+      "2454050363478003966": "Acceso",
       "2026999907054671051": "403 No autorizado",
       "5255272757343969948": "No estás autorizado a hacer esto. ",
       "7819314041543176992": "Cerca",
@@ -56,6 +61,10 @@
       "7182242959675416946": "Débil",
       "5982496808088686844": "Medio",
       "29167121133682512": "Bien",
-      "6899344040225872362": "¡Excelente!"
+      "6899344040225872362": "¡Excelente!",
+      "6570363013146073520": "Panel",
+      "8559170870663360229": "Ejemplos",
+      "4086606389696938932": "Cuenta",
+      "4260117635578082273": "Entradas"
   }
 }
