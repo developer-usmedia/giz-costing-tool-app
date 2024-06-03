@@ -101,7 +101,8 @@
                             "baseHref": "/"
                         },
                         "es": {
-                            "localize": ["es"]
+                            "localize": ["es"],
+                            "baseHref": "/"
                         }
                     },
                     "defaultConfiguration": "production"

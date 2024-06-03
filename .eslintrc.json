@@ -63,6 +63,7 @@
                     {
                         "selector": "enum",
                         "format": [
+                            "PascalCase",
                             "UPPER_CASE"
                         ]
                     },

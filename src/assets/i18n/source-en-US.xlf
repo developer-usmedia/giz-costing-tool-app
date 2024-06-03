@@ -5,6 +5,10 @@
       <trans-unit id="4768749765465246664" datatype="html">
         <source>Email</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">7,8</context>
         </context-group>
@@ -12,6 +16,10 @@
       </trans-unit>
       <trans-unit id="8552587679160911578" datatype="html">
         <source>Email is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">11,13</context>
@@ -21,21 +29,21 @@
       <trans-unit id="5448447574828483730" datatype="html">
         <source>Email is invalid</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">14,18</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">14,16</context>
         </context-group>
         <note priority="1" from="description">form email errors invalid</note>
       </trans-unit>
-      <trans-unit id="5182423730421293911" datatype="html">
-        <source>Email already in use</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
-          <context context-type="linenumber">17,21</context>
-        </context-group>
-        <note priority="1" from="description">form email errors taken</note>
-      </trans-unit>
       <trans-unit id="1431416938026210429" datatype="html">
         <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">26,27</context>
@@ -45,10 +53,62 @@
       <trans-unit id="205044832662301680" datatype="html">
         <source>Password is required</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">30,34</context>
         </context-group>
         <note priority="1" from="description">form password errors required</note>
+      </trans-unit>
+      <trans-unit id="3416225639449757818" datatype="html">
+        <source>Either your email address or your password is incorrect.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">30,35</context>
+        </context-group>
+        <note priority="1" from="description">form password errors incorrect</note>
+      </trans-unit>
+      <trans-unit id="3002949707073442552" datatype="html">
+        <source>Login in...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">38,41</context>
+        </context-group>
+        <note priority="1" from="description">form state login</note>
+      </trans-unit>
+      <trans-unit id="2727496946419791472" datatype="html">
+        <source>Forgot password?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <note priority="1" from="description">login forgot-password</note>
+      </trans-unit>
+      <trans-unit id="6962699013778688473" datatype="html">
+        <source>Continue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">47,49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
+          <context context-type="linenumber">77,79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+        <note priority="1" from="description">login continue</note>
+      </trans-unit>
+      <trans-unit id="5182423730421293911" datatype="html">
+        <source>Email already in use</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
+          <context context-type="linenumber">17,21</context>
+        </context-group>
+        <note priority="1" from="description">form email errors taken</note>
       </trans-unit>
       <trans-unit id="3782563238994348625" datatype="html">
         <source>Confirm password</source>
@@ -70,7 +130,7 @@
         </context-group>
         <note priority="1" from="description">form passwordConfirm errors equal</note>
       </trans-unit>
-      <trans-unit id="205900374336488792" datatype="html">
+      <trans-unit id="8408165616429632224" datatype="html">
         <source>Password must be between 12 &amp; 200 characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
@@ -120,19 +180,11 @@
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
           <context context-type="linenumber">40,42</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
         <note priority="1" from="description">login back</note>
-      </trans-unit>
-      <trans-unit id="6962699013778688473" datatype="html">
-        <source>Continue</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
-          <context context-type="linenumber">77,79</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
-          <context context-type="linenumber">43,45</context>
-        </context-group>
-        <note priority="1" from="description">register continue</note>
       </trans-unit>
       <trans-unit id="8186013988289067040" datatype="html">
         <source>Code</source>
@@ -190,11 +242,123 @@
         </context-group>
         <note priority="1" from="description">form state verifying</note>
       </trans-unit>
+      <trans-unit id="7451233168808859381" datatype="html">
+        <source>Verification Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+        <note priority="1" from="description">register verification title</note>
+      </trans-unit>
+      <trans-unit id="8864851718631094942" datatype="html">
+        <source>We&apos;ve sent an email to [<x id="PH" equiv-text="this.emailAddress"/>](mailto:<x id="PH_1" equiv-text="this.emailAddress"/>) with a verification code, please enter it below to continue.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <note priority="1" from="description">register verification description</note>
+      </trans-unit>
+      <trans-unit id="2838127015056524936" datatype="html">
+        <source>Something went wrong sending the code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+        <note priority="1" from="description">verificationCode send error</note>
+      </trans-unit>
+      <trans-unit id="3244130877832092065" datatype="html">
+        <source>Too many requests, try again later</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+        <note priority="1" from="description">verificationCode send error-limit</note>
+      </trans-unit>
+      <trans-unit id="5849573010227956913" datatype="html">
+        <source>No account yet?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">login go-to-register</note>
+      </trans-unit>
+      <trans-unit id="2308975396733519902" datatype="html">
+        <source>Create an account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <note priority="1" from="description">login create-account</note>
+      </trans-unit>
+      <trans-unit id="1032145116648837291" datatype="html">
+        <source>Welcome Back!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">login title</note>
+      </trans-unit>
+      <trans-unit id="7375380732086541452" datatype="html">
+        <source>Please login to continue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">login description</note>
+      </trans-unit>
+      <trans-unit id="6393528297285624278" datatype="html">
+        <source>Something went wrong logging in</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="description">login error</note>
+      </trans-unit>
+      <trans-unit id="5620406908320216029" datatype="html">
+        <source>Logged out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">logout title</note>
+      </trans-unit>
+      <trans-unit id="3871891686683761545" datatype="html">
+        <source>You have successfully logged out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">logout description</note>
+      </trans-unit>
       <trans-unit id="3432829306936850573" datatype="html">
         <source>Continue to login</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">25,28</context>
+          <context context-type="linenumber">24,27</context>
         </context-group>
         <note priority="1" from="description">login continue</note>
       </trans-unit>
@@ -202,11 +366,11 @@
         <source>Create account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <note priority="1" from="description">register signup hint</note>
       </trans-unit>
@@ -214,7 +378,7 @@
         <source>Enter verification code received via email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <note priority="1" from="description">register verification hint</note>
       </trans-unit>
@@ -222,35 +386,15 @@
         <source>Registration done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">61</context>
         </context-group>
         <note priority="1" from="description">register finalize hint</note>
-      </trans-unit>
-      <trans-unit id="2838127015056524936" datatype="html">
-        <source>Something went wrong sending the code</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">105</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">113</context>
-        </context-group>
-        <note priority="1" from="description">verificationCode send error</note>
-      </trans-unit>
-      <trans-unit id="7451233168808859381" datatype="html">
-        <source>Verification Code</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">124</context>
-        </context-group>
-        <note priority="1" from="description">register verification title</note>
       </trans-unit>
       <trans-unit id="1764438664527786931" datatype="html">
         <source>All done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">154</context>
         </context-group>
         <note priority="1" from="description">register finalize title</note>
       </trans-unit>
@@ -258,23 +402,15 @@
         <source>Please fill in the details below to create your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">161</context>
         </context-group>
         <note priority="1" from="description">register signup description</note>
-      </trans-unit>
-      <trans-unit id="8864851718631094942" datatype="html">
-        <source>We&apos;ve sent an email to [<x id="PH" equiv-text="this.loginDetails.email"/>](mailto:<x id="PH_1" equiv-text="this.loginDetails.email"/>) with a verification code, please enter it below to continue.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">135</context>
-        </context-group>
-        <note priority="1" from="description">register verification description</note>
       </trans-unit>
       <trans-unit id="4013362728299028003" datatype="html">
         <source>Your account has been created and you are ready to start using the tool</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">165</context>
         </context-group>
         <note priority="1" from="description">register finalize description</note>
       </trans-unit>

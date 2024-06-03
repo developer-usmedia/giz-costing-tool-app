@@ -4,7 +4,7 @@ export interface RegisterForm {
 }
 
 export interface VerifyEmailForm {
-    userId: string;
+    email: string;
 }
 
 export interface LoginForm {

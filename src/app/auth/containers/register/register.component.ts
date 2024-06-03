@@ -1,14 +1,17 @@
-import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { BehaviorSubject, take } from 'rxjs';
+import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject, Observable, Subject, take, takeUntil } from 'rxjs';
 
-import { AuthService } from '@api/services';
-import { LoginForm, RegisterForm } from '@api/models';
+import { RegisterForm } from '@api/models';
+import { AuthApi } from '@api/services';
+import { AUTH_ROUTE, UserDetails } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
-import { AUTH_ROUTE } from '@core/models';
+import { Select, Store } from '@ngxs/store';
+import { SaveUserDetails } from '@store/app.actions';
+import { AppStore } from '@store/app.store';
 
 enum REGISTER_STEPS {
     REGISTER = 1,
@@ -22,27 +25,26 @@ enum REGISTER_STEPS {
     styleUrl: './register.component.scss',
     encapsulation: ViewEncapsulation.None,
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnDestroy {
+    @Select(AppStore.userDetails) userDetails$!: Observable<UserDetails>;
+
     public currentStep$ = new BehaviorSubject<REGISTER_STEPS>(REGISTER_STEPS.REGISTER);
     public signupSubmitting = false;
     public verificationSubmitting = false;
     public emailTaken = false;
     public codeInvalid = false;
     public steps: Stepper[];
+    public emailAddress = '';
 
     protected readonly icon = ICON;
     protected readonly registerSteps = REGISTER_STEPS;
-
-    protected loginDetails: LoginForm = {
-        email: '',
-        password: '',
-    };
-
-    protected userId?: string ;
     protected readonly authRoute = AUTH_ROUTE;
 
+    private readonly destroyed$ = new Subject<void>();
+
     constructor(
-        private readonly authService: AuthService,
+        private readonly authApi: AuthApi,
+        private readonly store: Store,
         private readonly toastr: ToastrService,
     ) {
         this.steps = [
@@ -59,61 +61,87 @@ export class RegisterComponent {
                 description: $localize`:register finalize hint:Registration done`,
             },
         ];
+
+        this.userDetails$.pipe(takeUntil(this.destroyed$)).subscribe((userDetails) => {
+           this.emailAddress = userDetails.email;
+        });
+    }
+
+    public ngOnDestroy() {
+        this.destroyed$.next();
+        this.destroyed$.complete();
     }
 
     public signup(registerForm: RegisterForm): void {
         this.emailTaken = false;
         this.signupSubmitting = true;
-        this.authService.register(registerForm).pipe(take(1)).subscribe({
-            next: (response) => {
-                this.loginDetails.email = registerForm.email;
-                this.loginDetails.password = registerForm.password;
-                this.userId = response.user?.id;
-                this.currentStep$.next(REGISTER_STEPS.VERIFICATION_CODE);
-            },
-            error: (error: HttpErrorResponse) => {
-                if (error.status === STATUS.BAD_REQUEST) {
-                    this.emailTaken = true;
-                }
-                this.signupSubmitting = false;
-            },
-        });
+        this.authApi
+            .register(registerForm)
+            .pipe(take(1))
+            .subscribe({
+                next: () => {
+                    this.store.dispatch(new SaveUserDetails({
+                        email: registerForm.email,
+                        password: registerForm.password,
+                    }));
+                    this.currentStep$.next(REGISTER_STEPS.VERIFICATION_CODE);
+                },
+                error: (error: HttpErrorResponse) => {
+                    if (error.status === STATUS.BAD_REQUEST) {
+                        this.emailTaken = true;
+                    }
+                    this.signupSubmitting = false;
+                },
+            });
     }
 
     public verify(code: string): void {
         this.codeInvalid = false;
         this.verificationSubmitting = true;
-        this.authService.login({
-            email: this.loginDetails.email,
-            password: this.loginDetails.password,
-            emailVerificationCode: code,
-        }).pipe(take(1)).subscribe({
-            next: () => {
-                this.currentStep$.next(REGISTER_STEPS.DONE);
-            },
-            error: (error: HttpErrorResponse) => {
-                if (error.status === STATUS.BAD_REQUEST) {
-                    this.codeInvalid = true;
-                }
-                this.verificationSubmitting = false;
-            },
-        });
+
+        this.userDetails$
+            .pipe(take(1))
+            .subscribe((userDetails) => {
+                this.authApi
+                    .login({
+                        email: userDetails.email,
+                        password: userDetails.password,
+                        emailVerificationCode: code,
+                    })
+                    .then(() => this.currentStep$.next(REGISTER_STEPS.DONE))
+                    .catch((error: HttpErrorResponse) => {
+                        if (error.status === STATUS.BAD_REQUEST) {
+                            this.codeInvalid = true;
+                        }
+                        this.verificationSubmitting = false;
+                    });
+            });
+
     }
 
     public sendNewCode(): void {
-        if (!this.userId) {
-            this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
-            return;
-        }
+        this.userDetails$
+            .pipe(take(1))
+            .subscribe((userDetails) => {
+                if (!userDetails.email) {
+                    this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
+                    return;
+                }
 
-        this.authService.verifyEmail({
-            userId: this.userId,
-        }).pipe(take(1)).subscribe({
-            error: (error: HttpErrorResponse) => {
-                this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
-                console.error(error);
-            },
-        });
+                this.authApi
+                    .verifyEmail({ email: userDetails.email })
+                    .pipe(take(1))
+                    .subscribe({
+                        error: (error: HttpErrorResponse) => {
+                            if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                                this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
+                            } else {
+                                this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
+                            }
+                            console.error(error);
+                        },
+                    });
+            });
     }
 
     public getTitle(step: REGISTER_STEPS): string {
@@ -132,7 +160,7 @@ export class RegisterComponent {
             case REGISTER_STEPS.REGISTER:
                 return $localize`:register signup description:Please fill in the details below to create your account`;
             case REGISTER_STEPS.VERIFICATION_CODE:
-                return $localize`:register verification description:We've sent an email to [${ this.loginDetails.email }](mailto:${ this.loginDetails.email }) with a verification code, please enter it below to continue.`;
+              return $localize`:register verification description:We've sent an email to [${ this.emailAddress }](mailto:${ this.emailAddress }) with a verification code, please enter it below to continue.`;
             case REGISTER_STEPS.DONE:
                 return $localize`:register finalize description:Your account has been created and you are ready to start using the tool`;
         }

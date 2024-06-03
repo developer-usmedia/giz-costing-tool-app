@@ -13,6 +13,9 @@ export const ROOT_ROUTES: string[] = Object.values(ROOT_ROUTE);
 
 export enum AUTH_ROUTE {
     LOGIN = 'login',
+    LOGOUT = 'logout',
+    EMAIL_VERIFICATION = 'emailVerification',
+    PASSWORD_RESET = 'password-reset',
     REGISTER = 'register',
 }
 export const AUTH_ROUTES: string[] = Object.values(AUTH_ROUTE);

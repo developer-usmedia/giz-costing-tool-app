@@ -10,7 +10,6 @@ import {
     SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginForm } from '@api/models';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { AUTH_ROUTE } from '@core/models';
 
@@ -25,7 +24,6 @@ interface VerificationFormGroup {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VerificationComponent implements OnInit, OnChanges, OnDestroy {
-    @Input({ required: true }) loginDetails!: LoginForm;
     @Input() submitting = false;
 
     @Output() submitForm = new EventEmitter<string>();
@@ -51,6 +49,7 @@ export class VerificationComponent implements OnInit, OnChanges, OnDestroy {
     get codeInvalid(): boolean {
         return this._codeInvalid === true;
     }
+
     @Input() set codeInvalid(value: boolean) {
         this._codeInvalid = value;
         this.newCodeSent = false;

@@ -1,7 +1,15 @@
 @import 'config/colors';
+@import 'config/sizes';
 
 :host {
     display: block;
     height: 100%;
     width: min(100%, 100vw);
+}
+
+.dev-tools {
+    bottom: 60px;
+    position: fixed;
+    right: $p-gutter;
+    z-index: 100;
 }

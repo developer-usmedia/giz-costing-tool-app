@@ -1,6 +1,8 @@
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
+
+import { ROOT_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
@@ -12,6 +14,8 @@ export class ExamplesComponent {
     @ViewChild('dialogTemplateRef') private readonly dialogTemplateRef!: TemplateRef<any>;
 
     public icons: ICON[] = Object.entries(ICON).map(entry => entry[1]);
+
+    protected readonly rootRoute = ROOT_ROUTE;
     protected readonly icon = ICON;
 
     private activeToaster?: number;

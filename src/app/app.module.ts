@@ -1,14 +1,19 @@
-import { HttpClientModule } from '@angular/common/http';
+import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { AngularQueryDevtools } from '@tanstack/angular-query-devtools-experimental';
+import { QueryClient, provideAngularQuery } from '@tanstack/angular-query-experimental';
 import { ToastrModule } from 'ngx-toastr';
+
 import { CoreModule } from '@core/core.module';
-import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from '@shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
+import { NgxsModule } from '@ngxs/store';
+import { AppStore } from '@store/app.store';
 
 export function getBaseHref(platformLocation: PlatformLocation): string {
     return platformLocation.getBaseHrefFromDOM();
@@ -24,6 +29,7 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
         BrowserAnimationsModule,
         CoreModule.forRoot(),
         HttpClientModule,
+        NgxsModule.forRoot([AppStore]),
         RouterModule,
         SharedModule,
         ToastrModule.forRoot({
@@ -37,6 +43,7 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
             },
             maxOpened: 4,
         }),
+        AngularQueryDevtools,
     ],
     providers: [
         {
@@ -44,6 +51,8 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
             useFactory: getBaseHref,
             deps: [PlatformLocation],
         },
+        provideHttpClient(),
+        provideAngularQuery(new QueryClient()),
     ],
     bootstrap: [ AppComponent ],
 })

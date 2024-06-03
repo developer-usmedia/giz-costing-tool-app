@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ROOT_ROUTE } from '@core/models';
 
 enum ERROR_TITLE {
     NOT_FOUND = 'Page not found',
@@ -19,7 +20,8 @@ enum ERROR_DESCRIPTION {
     styleUrl: './error-page.component.scss',
 })
 export class ErrorPageComponent {
-    code: number;
+    protected readonly rootRoute = ROOT_ROUTE;
+    protected readonly code: number;
 
     constructor(private readonly route: ActivatedRoute) {
         this.code = this.route.snapshot.data['error'] as number;

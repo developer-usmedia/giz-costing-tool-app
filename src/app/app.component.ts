@@ -1,20 +1,21 @@
-import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { environment } from 'environments/environment';
 
 @Component({
     selector: 'giz-root',
-    template: '<router-outlet></router-outlet>',
+    templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-    title = 'giz-costing-tool-app';
+    protected readonly devTools = environment.devTools;
 
     constructor(
-        @Inject(DOCUMENT) private readonly document: Document
+        @Inject(DOCUMENT) private readonly document: Document,
     ) {
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.loaded();
     }
 

@@ -1,0 +1,11 @@
+<giz-auth-content
+    [title]="title"
+    [description]="description"
+>
+    <giz-verification
+        [codeInvalid]="codeInvalid"
+        [submitting]="submitting"
+        (sendNewCode)="sendNewCode()"
+        (submitForm)="verify($event)"
+    ></giz-verification>
+</giz-auth-content>

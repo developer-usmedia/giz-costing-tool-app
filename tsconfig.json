@@ -36,6 +36,9 @@
             ],
             "@shared/*": [
                 "app/shared/*"
+            ],
+            "@store/*": [
+                "app/core/store/*"
             ]
         }
     },

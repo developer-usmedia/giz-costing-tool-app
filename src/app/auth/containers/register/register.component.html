@@ -13,7 +13,6 @@
 
     @if (currentStep$.value === registerSteps.VERIFICATION_CODE) {
         <giz-verification
-            [loginDetails]="loginDetails"
             [codeInvalid]="codeInvalid"
             [submitting]="verificationSubmitting"
             (sendNewCode)="sendNewCode()"
