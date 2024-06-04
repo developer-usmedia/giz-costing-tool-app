@@ -1,0 +1,13 @@
+<div class="entry-header">
+    <div class="entry-header__heading">
+        @if (backButton) {
+            <a giz-icon-button [buttonType]="'stroke'" [icon]="backButton.icon"
+               [routerLink]="backButton.link">{{ backButton.text }}</a>
+        }
+        <h2 class="entry-header__title">{{ title }}</h2>
+    </div>
+
+    <div class="entry-header__actions">
+        <ng-content></ng-content>
+    </div>
+</div>

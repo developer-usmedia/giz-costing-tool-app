@@ -3,31 +3,31 @@
         <h1 class="examples__title">Examples</h1>
         <ul class="examples__list">
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="content"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="content"
                    type="button" giz-stroke-button>Content</a>
             </li>
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="icons"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="icons"
                    type="button" giz-stroke-button>Icons</a>
             </li>
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="buttons"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="buttons"
                    type="button" giz-stroke-button>Buttons</a>
             </li>
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="icon-buttons"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="icon-buttons"
                    type="button" giz-stroke-button>Icon Buttons</a>
             </li>
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="spinner"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="spinner"
                    type="button" giz-stroke-button>Spinner</a>
             </li>
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="toast"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="toast"
                    type="button" giz-stroke-button>Toasts</a>
             </li>
             <li class="examples__item">
-                <a [routerLink]="(rootRoute.EXAMPLES | route)" fragment="dialog"
+                <a [routerLink]="(routes.EXAMPLES)" fragment="dialog"
                    type="button" giz-stroke-button>Dialog</a>
             </li>
         </ul>
@@ -486,7 +486,7 @@
         <button giz-button (click)="openDialog()">Open Dialog</button>
     </section>
 
-    <a [routerLink]="(rootRoute.DASHBOARD| route)" fragment="menu"
+    <a [routerLink]="(routes.DASHBOARD)" fragment="menu"
        giz-icon-button buttonType="stroke" [icon]="icon.ARROW_UP"
        class="examples__top">Go to top</a>
 </div>
@@ -500,12 +500,12 @@
         laborum.
 
         <ng-container footer-left>
-            <a giz-stroke-button [routerLink]="(rootRoute.DASHBOARD| route)">Button left</a>
+            <a giz-stroke-button [routerLink]="(routes.DASHBOARD)">Button left</a>
         </ng-container>
 
         <ng-container footer-right>
             <button type="button" giz-stroke-button (click)="closeDialog()">Cancel</button>
-            <button type="button" giz-button [routerLink]="(rootRoute.DASHBOARD| route)">Save</button>
+            <button type="button" giz-button [routerLink]="(routes.DASHBOARD)">Save</button>
         </ng-container>
     </giz-dialog>
 </ng-template>

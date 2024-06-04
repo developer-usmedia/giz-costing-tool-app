@@ -1,0 +1,19 @@
+@import 'mixins/typography';
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &__heading {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__title {
+        @include style-heading-2;
+
+        margin: 0;
+    }
+}

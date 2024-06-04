@@ -4,7 +4,6 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import { BreadcrumbItem, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
-import { RouteService } from '@shared/services';
 import { User } from '@api/models';
 import { UserService } from '@core/services/user.service';
 import { getBreadCrumbTitle } from '@shared/helpers';
@@ -20,7 +19,6 @@ export class BaseComponent implements OnInit {
 
     constructor(
         private readonly router: Router,
-        private readonly routeService: RouteService,
         private readonly userService: UserService,
     ) {
         router.events.subscribe((value) => {
@@ -39,7 +37,7 @@ export class BaseComponent implements OnInit {
         this.breadcrumb = [
             {
                 name: getBreadCrumbTitle(ROOT_ROUTE.DASHBOARD),
-                link: this.routeService.getLink(ROOT_ROUTE.DASHBOARD),
+                link: ROOT_ROUTE.DASHBOARD,
                 icon: ICON.DASHBOARD,
                 active: this.router.url.endsWith(ROOT_ROUTE.DASHBOARD),
             },
@@ -49,7 +47,7 @@ export class BaseComponent implements OnInit {
         if (this.router.url.includes(MODULE_ROUTE.ENTRIES) && !this.router.url.endsWith(MODULE_ROUTE.ENTRIES)) {
             this.breadcrumb.push({
                 name: getBreadCrumbTitle(MODULE_ROUTE.ENTRIES),
-                link: this.routeService.getLink(MODULE_ROUTE.ENTRIES),
+                link: MODULE_ROUTE.ENTRIES,
             });
 
             // TODO: Make this work with api
@@ -66,7 +64,7 @@ export class BaseComponent implements OnInit {
         if (this.router.url.endsWith(MODULE_ROUTE.ENTRIES)) {
             this.breadcrumb.push({
                 name: getBreadCrumbTitle(MODULE_ROUTE.ENTRIES),
-                link: this.routeService.getLink(MODULE_ROUTE.ENTRIES),
+                link: MODULE_ROUTE.ENTRIES,
                 active: true,
             });
         }

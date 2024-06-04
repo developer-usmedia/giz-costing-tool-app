@@ -7,7 +7,6 @@ import { AuthApi } from '@api/services';
 import { ToastrService } from 'ngx-toastr';
 import { HttpErrorResponse } from '@angular/common/http';
 import { STATUS } from '@shared/helpers';
-import { RouteService } from '@shared/services';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +24,6 @@ export class EmailVerificationComponent {
     constructor(
         private readonly authService: AuthApi,
         private readonly toastr: ToastrService,
-        private readonly routeService: RouteService,
         private readonly router: Router,
     ) {
         this.userDetails$
@@ -34,7 +32,7 @@ export class EmailVerificationComponent {
                 if (userDetails.email) {
                     this.emailAddress = userDetails.email;
                 } else {
-                    this.router.navigate([this.routeService.getLink(AUTH_ROUTE.LOGIN)]);
+                    this.router.navigate([AUTH_ROUTE.LOGIN]);
                 }
             });
     }
@@ -61,7 +59,7 @@ export class EmailVerificationComponent {
                         emailVerificationCode: code,
                     })
                     .then(() => {
-                        this.router.navigate([this.routeService.getLink(ROOT_ROUTE.DASHBOARD)]);
+                        this.router.navigate([ROOT_ROUTE.DASHBOARD]);
                     })
                     .catch((error: HttpErrorResponse) => {
                         if (error.status === STATUS.BAD_REQUEST) {

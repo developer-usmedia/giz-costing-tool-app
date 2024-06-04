@@ -6,11 +6,11 @@ import { distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs'
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-    selector: 'giz-entry-information',
-    templateUrl: './entry-information.component.html',
-    styleUrl: './entry-information.component.scss',
+    selector: 'giz-entry-scenarios',
+    templateUrl: './entry-scenarios.component.html',
+    styleUrl: './entry-scenarios.component.scss',
 })
-export class EntryInformationComponent implements OnDestroy{
+export class EntryScenariosComponent implements OnDestroy{
     public backTitle = $localize`:entry back-to-overview: Back to overview`;
     public title = $localize`:entry information title: Information`;
     public id$: Observable<string>;

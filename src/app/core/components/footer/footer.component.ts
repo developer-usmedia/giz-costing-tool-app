@@ -14,7 +14,7 @@ export class FooterComponent {
     @Input() theme: 'default' | 'white' = 'default';
 
     protected readonly icon = ICON;
-    protected readonly rootRoute = ROOT_ROUTE;
+    protected readonly routes = ROOT_ROUTE;
     protected readonly locales = LOCALES;
 
     constructor(

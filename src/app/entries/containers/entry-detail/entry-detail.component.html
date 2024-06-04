@@ -7,27 +7,26 @@
 
         <div class="entry__links">
             <a giz-link-button
-               [routerLink]="entryRoute.INFORMATION | route"
+               [routerLink]="routes.INFORMATION"
                [routerLinkActive]="'active'"
             >Information</a>
             <a giz-link-button
-               [disabled]="true"
-               [routerLink]="entryRoute.SCENARIO | route"
+               [routerLink]="routes.SCENARIO"
                [routerLinkActive]="'active'"
-            >Scenario</a>
+            >Scenarios</a>
             <a giz-link-button
                [disabled]="true"
-               [routerLink]="entryRoute.DISTRIBUTION | route"
+               [routerLink]="routes.DISTRIBUTION"
                [routerLinkActive]="'active'"
             >Distribution</a>
             <a giz-link-button
                [disabled]="true"
-               [routerLink]="entryRoute.BUYER | route"
+               [routerLink]="routes.BUYER"
                [routerLinkActive]="'active'"
             >Buyer</a>
             <a giz-link-button
                [disabled]="true"
-               [routerLink]="entryRoute.REPORT | route"
+               [routerLink]="routes.REPORT"
                [routerLinkActive]="'active'"
             >Report</a>
         </div>

@@ -4,7 +4,11 @@
     <div class="todo">Content & styling & logo's</div>
 
     <div class="home__buttons">
-        <a giz-stroke-button [routerLink]="authRoute.LOGIN | route" i18n="homepage login">Login</a>
-        <a giz-stroke-button [routerLink]="authRoute.REGISTER | route" i18n="homepage create">Create account</a>
+        @if (loggedIn) {
+            <a giz-stroke-button [routerLink]="[routRoute.DASHBOARD]" i18n="homepage login">Login</a>
+        } @else {
+            <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="homepage login">Login</a>
+        }
+        <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.REGISTER]" i18n="homepage create">Create account</a>
     </div>
 </giz-content-page>

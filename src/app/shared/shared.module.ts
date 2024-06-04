@@ -15,7 +15,6 @@ import {
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
-    RoutePipe,
     ShowErrorPipe,
     TruncatePipe,
 } from '@shared/pipes';
@@ -28,7 +27,6 @@ const PIPES = [
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
-    RoutePipe,
     ShowErrorPipe,
     TruncatePipe,
 ];

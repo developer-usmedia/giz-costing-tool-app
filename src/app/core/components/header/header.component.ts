@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { User } from '@api/models';
-import { AUTH_ROUTE, BreadcrumbItem, ROOT_ROUTE } from '@core/models';
+import { AUTH_ROUTE, BreadcrumbItem, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { ConnectedPosition } from '@angular/cdk/overlay';
 
 @Component({
@@ -12,7 +12,7 @@ import { ConnectedPosition } from '@angular/cdk/overlay';
 })
 export class HeaderComponent {
     @Input({ required: true }) breadcrumb!: BreadcrumbItem[];
-    @Input({ required: true }) user!: User | undefined;
+    @Input() user?: User | undefined;
 
     @HostBinding('class') cssClass = 'header';
 
@@ -23,6 +23,7 @@ export class HeaderComponent {
         overlayY: 'top',
         offsetY: 10,
     }];
+    protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly authRoute = AUTH_ROUTE;
     protected readonly rootRoute = ROOT_ROUTE;
 }

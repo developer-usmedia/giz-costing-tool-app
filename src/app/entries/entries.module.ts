@@ -9,11 +9,15 @@ import { SharedModule } from '@shared/shared.module';
 import { EntryDetailComponent } from './containers/entry-detail/entry-detail.component';
 import { OverviewComponent } from './containers/overview/overview.component';
 import { EntryInformationComponent } from './containers/entry-information/entry-information.component';
+import { EntryHeaderComponent } from './components/entry-header/entry-header.component';
+import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
 
 @NgModule({
     declarations: [
         EntryDetailComponent,
+        EntryHeaderComponent,
         EntryInformationComponent,
+        EntryScenariosComponent,
         OverviewComponent,
     ],
     imports: [
@@ -28,12 +32,12 @@ import { EntryInformationComponent } from './containers/entry-information/entry-
                 component: EntryDetailComponent,
                 children: [
                     {
-                        path: ENTRY_ROUTE.INFORMATION,
+                        path: '',
                         component: EntryInformationComponent,
                     },
                     {
                         path: ENTRY_ROUTE.SCENARIO,
-                        component: EntryInformationComponent,
+                        component: EntryScenariosComponent,
                     },
                     {
                         path: ENTRY_ROUTE.DISTRIBUTION,

@@ -7,7 +7,6 @@ import { LoginForm } from '@api/models';
 import { AuthApi } from '@api/services';
 import { AUTH_ROUTE, ROOT_ROUTE } from '@core/models';
 import { STATUS } from '@shared/helpers';
-import { RouteService } from '@shared/services/route.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { SaveUserDetails } from '@store/app.actions';
 import { Store } from '@ngxs/store';
@@ -25,7 +24,6 @@ export class LoginComponent {
 
     constructor(
         private readonly authApi: AuthApi,
-        private readonly routeService: RouteService,
         private readonly router: Router,
         private readonly store: Store,
         private readonly toastr: ToastrService,
@@ -43,7 +41,7 @@ export class LoginComponent {
         this.authApi
             .login(loginForm)
             .then(() => this.queryClient.invalidateQueries({ queryKey: ['session'] }))
-            .then(() => this.router.navigate([this.routeService.getLink(ROOT_ROUTE.DASHBOARD)]))
+            .then(() => this.router.navigate([ROOT_ROUTE.DASHBOARD]))
             .catch(async (error: HttpErrorResponse) => {
                 const errorBody = error.error as ({ error: string; message: string; statusCode: number });
                 if (error.status === STATUS.BAD_REQUEST && errorBody?.message.includes('emailVerificationCode')) {
@@ -51,7 +49,7 @@ export class LoginComponent {
                         email: loginForm.email,
                         password: loginForm.password,
                     }));
-                    await this.router.navigate([this.routeService.getLink(AUTH_ROUTE.EMAIL_VERIFICATION)]);
+                    await this.router.navigate([AUTH_ROUTE.EMAIL_VERIFICATION]);
                 } else if (error.status === STATUS.NOT_FOUND || error.status === STATUS.UNAUTHORIZED) {
                     this.wrongPassword = true;
                 } else {

@@ -16,24 +16,24 @@ import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 
 const routes: Routes = [
     {
-        path: MODULE_ROUTE.AUTH,
+        path: MODULE_ROUTE.AUTH.replace(/\//g, ''),
         component: BaseAuthComponent,
         loadChildren: () => import('./auth/auth.module').then((p) => p.AuthModule),
     },
     {
-        path: 'home',
+        path: ROOT_ROUTE.HOME.replace(/\//g, ''),
         component: HomepageComponent,
     },
     {
-        path: 'imprint',
+        path: ROOT_ROUTE.IMPRINT.replace(/\//g, ''),
         component: CpImprintComponent,
     },
     {
-        path: 'terms',
+        path: ROOT_ROUTE.TERMS.replace(/\//g, ''),
         component: CpTermsComponent,
     },
     {
-        path: 'data-protection',
+        path: ROOT_ROUTE.DATA_PROTECTION.replace(/\//g, ''),
         component: CpDataProtectionComponent,
     },
     {
@@ -43,23 +43,23 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: ROOT_ROUTE.DASHBOARD,
+                redirectTo: ROOT_ROUTE.DASHBOARD.replace(/\//g, ''),
                 pathMatch: 'full',
             },
             {
-                path: ROOT_ROUTE.DASHBOARD,
+                path: ROOT_ROUTE.DASHBOARD.replace(/\//g, ''),
                 component: DashboardComponent,
             },
             {
-                path: ROOT_ROUTE.EXAMPLES,
+                path: ROOT_ROUTE.EXAMPLES.replace(/\//g, ''),
                 component: ExamplesComponent,
             },
             {
-                path: ROOT_ROUTE.ACCOUNT,
+                path: ROOT_ROUTE.ACCOUNT.replace(/\//g, ''),
                 component: AccountComponent,
             },
             {
-                path: MODULE_ROUTE.ENTRY,
+                path: MODULE_ROUTE.ENTRIES.replace(/\//g, ''),
                 loadChildren: () => import('./entries/entries.module').then((p) => p.EntriesModule),
             },
         ],
