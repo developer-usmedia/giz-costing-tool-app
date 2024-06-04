@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { LoginForm } from '@api/models';
 import { AuthApi } from '@api/services';
-import { AUTH_ROUTE, ROOT_ROUTE } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { STATUS } from '@shared/helpers';
 import { HttpErrorResponse } from '@angular/common/http';
 import { SaveUserDetails } from '@store/app.actions';
@@ -20,6 +20,7 @@ export class LoginComponent {
     public submitting = false;
     public wrongPassword = false;
     protected readonly authRoute = AUTH_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
     private readonly queryClient = injectQueryClient();
 
     constructor(
@@ -49,7 +50,7 @@ export class LoginComponent {
                         email: loginForm.email,
                         password: loginForm.password,
                     }));
-                    await this.router.navigate([AUTH_ROUTE.EMAIL_VERIFICATION]);
+                    await this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.EMAIL_VERIFICATION]);
                 } else if (error.status === STATUS.NOT_FOUND || error.status === STATUS.UNAUTHORIZED) {
                     this.wrongPassword = true;
                 } else {

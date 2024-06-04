@@ -11,8 +11,8 @@ import { ActivatedRoute, Params } from '@angular/router';
     styleUrl: './entry-scenarios.component.scss',
 })
 export class EntryScenariosComponent implements OnDestroy{
-    public backTitle = $localize`:entry back-to-overview: Back to overview`;
-    public title = $localize`:entry information title: Information`;
+    public backTitle = $localize`:entry information title: Information`;
+    public title = $localize`:entry scenarios title: Scenarios`;
     public id$: Observable<string>;
 
     protected readonly icon = ICON;

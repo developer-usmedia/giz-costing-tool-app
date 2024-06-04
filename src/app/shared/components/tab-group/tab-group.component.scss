@@ -1,0 +1,52 @@
+@import 'config/colors';
+
+:root {
+    --tab-group-gradient-left: #{ linear-gradient(to right, $c-grey--200, transparent) };
+    --tab-group-gradient-right: #{ linear-gradient(to left, $c-grey--200, transparent) };
+}
+
+.tab-group {
+    display: block;
+    position: relative;
+
+    &__list {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        display: none;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 40px;
+        z-index: 10;
+    }
+
+    &::before {
+        background: var(--tab-group-gradient-left);
+        left: 0;
+    }
+
+    &::after {
+        background: var(--tab-group-gradient-right);
+        right: 0;
+    }
+
+    &.is-overflow-left {
+        &::before {
+            display: block;
+        }
+    }
+
+    &.is-overflow-right {
+        &::after {
+            display: block;
+        }
+    }
+}

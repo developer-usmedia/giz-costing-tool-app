@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AUTH_ROUTE } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { AuthApi } from '@api/services';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -13,6 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LogoutComponent implements OnInit {
     protected readonly authRoute = AUTH_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly icon = ICON;
 
     constructor(

@@ -21,6 +21,11 @@ import {
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.component';
+import { TabGroupComponent } from '@shared/components/tab-group/tab-group.component';
+import { TabComponent } from '@shared/components/tab/tab.component';
+import { CdkObserveContent } from '@angular/cdk/observers';
+import { ScrollOverflowDirective } from '@shared/directives/scroll-overflow.directive';
+import { ScrollOverflowContainerDirective } from '@shared/directives/scroll-overflow-container.directive';
 
 const PIPES = [
     EmptyPipe,
@@ -42,6 +47,13 @@ const COMPONENTS = [
     PasswordStrengthComponent,
     SpinnerComponent,
     StepperComponent,
+    TabGroupComponent,
+    TabComponent,
+];
+
+const DIRECTIVES = [
+    ScrollOverflowDirective,
+    ScrollOverflowContainerDirective,
 ];
 
 @NgModule({
@@ -51,6 +63,7 @@ const COMPONENTS = [
     ],
     exports: [
         ...COMPONENTS,
+        ...DIRECTIVES,
         ...PIPES,
     ],
     imports: [
@@ -58,6 +71,8 @@ const COMPONENTS = [
         CdkMenu,
         CdkMenuItem,
         RouterLink,
+        CdkObserveContent,
+        ...DIRECTIVES,
     ],
 })
 export class SharedModule {

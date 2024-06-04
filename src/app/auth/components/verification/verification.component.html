@@ -37,7 +37,7 @@
 
     <div class="form__footer">
         <div class="form__buttons">
-            <a giz-link-button [routerLink]="(authRoute.LOGIN)" i18n="login back">Back to login</a>
+            <a giz-link-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="login back">Back to login</a>
         </div>
         <div class="form__buttons">
             <button type="submit" giz-button i18n="register continue">Continue</button>

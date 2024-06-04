@@ -13,7 +13,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 
 import { RegisterForm } from '@api/models';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { AUTH_ROUTE } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 
 interface LoginFormGroup {
     email: FormControl<string>;
@@ -50,6 +50,8 @@ export class LoginFormComponent implements OnInit, OnChanges, OnDestroy {
     );
 
     protected readonly authroute = AUTH_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
+
     private readonly destroyed$ = new Subject<void>();
     private _wrongPassword = false;
 

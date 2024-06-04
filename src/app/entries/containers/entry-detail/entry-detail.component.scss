@@ -1,46 +1,53 @@
 @import 'config/colors';
 @import 'config/sizes';
+@import 'mixins/screen';
+@import 'mixins/typography';
 
 :root {
-    --entry-subtitle-color: #{ $c-grey--900 };
-    --entry-link-color: #{ $c-grey--900 };
-    --entry-link-active-color: #{ $c-success };
+    --entry-detail-subtitle-color: #{ $c-grey--600 };
+    --entry-detail-border-color: #{ $c-grey--300 };
 }
 
 .entry {
     &__header {
-        align-items: flex-end;
-        display: flex;
-        justify-content: space-between;
+        border-bottom: 1px solid var(--entry-detail-border-color);
+        margin-bottom: $p-gutter * 2;
     }
 
-    &__facility {
-        padding: $p-gutter $p-gutter 1rem;
+    &__info {
+        padding: $p-gutter;
     }
 
     &__title {
-        font-size: 1.25rem;
-        margin: 0;
+        @include style-heading-2;
+
+        margin: 0 0 0.4rem;
     }
 
     &__subtitle {
-        color: var(--entry-subtitle-color);
+        color: var(--entry-detail-subtitle-color);
         margin: 0;
     }
 
-    // TODO: Replace by tabs component
-    &__links {
-        display: flex;
-        gap: 0.75rem;
+    &__tabs {
+        margin-right: -$p-gutter;
+    }
 
-        button {
-            border-radius: 0;
-            color: var(--entry-link-color);
-            padding: 1.25rem 0.75rem;
+    &__download {
+        &.icon-button--basic {
+            --icon-button-color: #{ $c-grey--600 };
+        }
+    }
 
-            &.active {
-                border-bottom: 3px solid var(--entry-link-active-color);
-            }
+    @include screen($screen-simple) {
+        &__header {
+            align-items: flex-end;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__tabs {
+            margin-right: 0;
         }
     }
 }

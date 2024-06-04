@@ -12,7 +12,7 @@ export class EntryHeaderComponent {
     @Input() backButton?: {
         text: string;
         icon: ICON;
-        link: string | string[];
+        link: string | any[];
     };
 
     @Input({required: true}) title!: string;

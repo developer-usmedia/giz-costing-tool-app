@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Select } from '@ngxs/store';
 import { AppStore } from '@store/app.store';
 import { Observable, take } from 'rxjs';
-import { AUTH_ROUTE, ROOT_ROUTE, UserDetails } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE, UserDetails } from '@core/models';
 import { AuthApi } from '@api/services';
 import { ToastrService } from 'ngx-toastr';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -32,7 +32,7 @@ export class EmailVerificationComponent {
                 if (userDetails.email) {
                     this.emailAddress = userDetails.email;
                 } else {
-                    this.router.navigate([AUTH_ROUTE.LOGIN]);
+                    this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.LOGIN]);
                 }
             });
     }

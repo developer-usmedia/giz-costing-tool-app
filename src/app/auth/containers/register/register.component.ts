@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable, Subject, take, takeUntil } from 'rxjs';
 
 import { RegisterForm } from '@api/models';
 import { AuthApi } from '@api/services';
-import { AUTH_ROUTE, UserDetails } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE, UserDetails } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
@@ -39,6 +39,7 @@ export class RegisterComponent implements OnDestroy {
     protected readonly icon = ICON;
     protected readonly registerSteps = REGISTER_STEPS;
     protected readonly authRoute = AUTH_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
 
     private readonly destroyed$ = new Subject<void>();
 

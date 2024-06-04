@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { environment } from 'environments/environment';
 import { STATUS } from '@shared/helpers';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 
 @Injectable({ providedIn: 'root' })
 export class ApiInterceptor implements HttpInterceptor {
@@ -24,7 +25,7 @@ export class ApiInterceptor implements HttpInterceptor {
         return next.handle(request).pipe(
             catchError((error: HttpErrorResponse) => {
                 if (error.status === STATUS.UNAUTHORIZED) {
-                    this.router.navigate(['/auth/login']);
+                    this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.LOGIN]);
                 } else if (error.status === STATUS.FORBIDDEN) {
                     this.toastr.error(
                         $localize`:unauthorized title:403 Unauthorized`,

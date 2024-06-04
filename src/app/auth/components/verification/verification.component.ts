@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { AUTH_ROUTE } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 
 interface VerificationFormGroup {
     verificationCode: FormControl<string>;
@@ -43,6 +43,7 @@ export class VerificationComponent implements OnInit, OnChanges, OnDestroy {
     });
 
     protected readonly authRoute = AUTH_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
     private readonly destroyed$ = new Subject<void>();
     private _codeInvalid?: boolean;
 

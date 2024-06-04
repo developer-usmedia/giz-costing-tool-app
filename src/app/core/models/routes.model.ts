@@ -23,7 +23,7 @@ export enum AUTH_ROUTE {
 export enum ENTRY_ROUTE {
     SCENARIO = 'scenario',
     DISTRIBUTION = 'distribution',
-    INFORMATION = 'information',
+    INFORMATION = '',
     BUYER = 'buyer',
     REPORT = 'report',
 }

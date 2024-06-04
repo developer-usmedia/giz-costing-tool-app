@@ -1,34 +1,15 @@
 <giz-entry-header
     [title]="title"
     [backButton]="{
-        icon: icon.LIST,
+        icon: icon.ARROW_BACK,
         text: backTitle,
-        link: [moduleRoute.ENTRIES],
+        link: [moduleRoute.ENTRIES, (id$ | async)],
     }"
 >
     <a giz-stroke-button [routerLink]="[moduleRoute.ENTRIES, (id$ | async), entryRoute.SCENARIO]"
        i18n="entry information continue">Continue</a>
 </giz-entry-header>
 
-<div class="info">
-    <div class="info__column">
-        <table>
-            <tbody>
-            <tr>
-                <td>text1.1</td>
-                <td>text1.2</td>
-            </tr>
-            <tr>
-                <td>text2.1</td>
-                <td>text2.2</td>
-            </tr>
-            <tr>
-                <td>text3.1</td>
-                <td>text3.2</td>
-            </tr>
-            <tr>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="todo">
+    Scenario's
 </div>

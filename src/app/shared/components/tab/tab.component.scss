@@ -1,0 +1,64 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/typography';
+
+:root {
+    --tab-color: #{ $c-grey--900 };
+    --tab-color-hover: #{ $c-black };
+    --tab-color-disabled: #{ $c-grey--600 };
+    --tab-border-active: #{ $c-forest--darker };
+    --tab-border-focus: #{ $c-grey--400 };
+}
+
+.tab {
+    color: var(--tab-color);
+    display: block;
+    flex: 0 0 auto;
+    height: 44px;
+    line-height: 44px;
+    min-width: 70px;
+    padding: 0 $p-gutter;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+
+    &::after {
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 4px;
+        left: 0;
+        position: absolute;
+        transition: background-color 0.2s;
+        width: 100%;
+    }
+
+    &:not(.is-disabled) {
+        &:focus,
+        &:hover {
+            color: var(--tab-color-hover);
+
+            &::after {
+                background-color: var(--tab-border-focus);
+            }
+        }
+    }
+
+    &.is-disabled {
+        color: var(--tab-color-disabled);
+        cursor: not-allowed;
+    }
+
+    &.is-active {
+        --tab-border-focus: var(--tab-border-active);
+
+        &::after {
+            background-color: var(--tab-border-active);
+        }
+    }
+
+    @include screen($screen-simple) {
+        min-width: 100px;
+    }
+}

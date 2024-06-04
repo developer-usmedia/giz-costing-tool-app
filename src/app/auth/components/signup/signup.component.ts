@@ -14,7 +14,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { RegisterForm } from '@api/models';
 import { CustomValidators } from '@shared/services';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { AUTH_ROUTE } from '@core/models';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 
 interface SignupFormGroup {
     email: FormControl<string>;
@@ -64,7 +64,9 @@ export class SignupComponent implements OnInit, OnChanges, OnDestroy {
         }
     );
 
-    protected readonly authroute = AUTH_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
+    protected readonly authRoute = AUTH_ROUTE;
+
     private readonly destroyed$ = new Subject<void>();
     private _emailTaken?: boolean;
 
@@ -116,4 +118,5 @@ export class SignupComponent implements OnInit, OnChanges, OnDestroy {
             this.submitForm.emit(form);
         }
     }
+
 }

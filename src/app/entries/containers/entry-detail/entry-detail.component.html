@@ -1,38 +1,50 @@
 <div class="entry">
     <div class="entry__header">
-        <div class="entry__facility">
-            <h3 class="entry__title">Facility name</h3>
+        <div class="entry__info">
+            <h3 class="entry__title">Facility name
+                <button giz-icon-button [icon]="icon.DOWNLOAD" [theme]="'basic'" [size]="'small'"
+                        (click)="download()" class="entry__download" i18n="entry download">Download</button>
+            </h3>
             <p class="entry__subtitle">2023, Brazil</p>
         </div>
 
-        <div class="entry__links">
-            <a giz-link-button
-               [routerLink]="routes.INFORMATION"
-               [routerLinkActive]="'active'"
-            >Information</a>
-            <a giz-link-button
-               [routerLink]="routes.SCENARIO"
-               [routerLinkActive]="'active'"
-            >Scenarios</a>
-            <a giz-link-button
-               [disabled]="true"
-               [routerLink]="routes.DISTRIBUTION"
-               [routerLinkActive]="'active'"
-            >Distribution</a>
-            <a giz-link-button
-               [disabled]="true"
-               [routerLink]="routes.BUYER"
-               [routerLinkActive]="'active'"
-            >Buyer</a>
-            <a giz-link-button
-               [disabled]="true"
-               [routerLink]="routes.REPORT"
-               [routerLinkActive]="'active'"
-            >Report</a>
+        <div class="entry__tabs">
+            <giz-tab-group>
+                <a giz-tab
+                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async)]"
+                   [routerLinkActive]="['is-active']"
+                   [routerLinkActiveOptions]="{ exact: true }"
+                   i18n="entry tab information"
+                >Information</a>
+                <a giz-tab
+                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.SCENARIO]"
+                   [routerLinkActive]="['is-active']"
+                   i18n="entry tab scenarios"
+                >Scenarios</a>
+                <a giz-tab
+                   [disabled]="tabDisabled(routes.DISTRIBUTION)"
+                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.DISTRIBUTION]"
+                   [routerLinkActive]="['is-active']"
+                   i18n="entry tab distribution"
+                >Distribution</a>
+                <a giz-tab
+                   [disabled]="tabDisabled(routes.BUYER)"
+                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.BUYER]"
+                   [routerLinkActive]="['is-active']"
+                   i18n="entry tab buyer"
+                >Buyer</a>
+                <a giz-tab
+                   [disabled]="tabDisabled(routes.REPORT)"
+                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.REPORT]"
+                   [routerLinkActive]="['is-active']"
+                   i18n="entry tab report"
+                >Report</a>
+            </giz-tab-group>
         </div>
     </div>
-    <hr>
-    <router-outlet #routerOutlet="outlet"></router-outlet>
+    <div class="entry__content">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+    </div>
 </div>
 
 

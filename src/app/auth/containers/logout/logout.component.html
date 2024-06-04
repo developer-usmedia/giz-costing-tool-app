@@ -4,6 +4,6 @@
     [icon]="icon.CHECK"
 >
     <div>
-        <a giz-stroke-button [routerLink]="(authRoute.LOGIN)" i18n="logout back">Back to login</a>
+        <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="logout back">Back to login</a>
     </div>
 </giz-auth-content>
