@@ -11,6 +11,7 @@ import { OverviewComponent } from './containers/overview/overview.component';
 import { EntryInformationComponent } from './containers/entry-information/entry-information.component';
 import { EntryHeaderComponent } from './components/entry-header/entry-header.component';
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
+import { CdkCopyToClipboard } from '@angular/cdk/clipboard';
 
 @NgModule({
     declarations: [
@@ -57,6 +58,7 @@ import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scen
         CommonModule,
         CoreModule,
         SharedModule,
+        CdkCopyToClipboard,
     ],
 })
 export class EntriesModule {}

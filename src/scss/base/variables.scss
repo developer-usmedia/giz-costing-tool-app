@@ -15,10 +15,10 @@
     --text-font-size-small: 0.8125rem;
 
     // Base colors
-    --text-color: #{ $c-black };
+    --text-color: #{ $c-grey--900 };
     --link-color: #{ $c-forest--darker };
     --caption-color: #{ $c-grey--900 };
-    --list-bullet-color: #{ $c-black };
+    --list-bullet-color: #{ $c-grey--900 };
     --hr-color: #{ $c-forest };
     --pre-border-color: #{ $c-grey--400 };
     --highlight-color: #{ $c-forest--lighter };
@@ -31,8 +31,11 @@
 
     // Table
     --table-bcg: #{ $c-white };
-    --table-border-color: #{ $c-grey--200 };
-    --table-heading-color: #{ $c-grey--700 };
+    --table-border-color: #{ $c-grey--250 };
+    --table-heading-color: #{ $c-grey--900 };
+    --table-head-heading-color: #{ $c-grey--700 };
+    --table-cell-padding: 0.875rem #{ $p-gutter };
+    --table-head-cell-padding: 0.75rem #{ $p-gutter };
 
     // Form
     --form-input-bcg: #{ $c-grey--100 };

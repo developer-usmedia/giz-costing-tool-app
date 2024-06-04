@@ -5,6 +5,7 @@
 
 :root {
     --entry-detail-subtitle-color: #{ $c-grey--600 };
+    --entry-detail-icon-color: #{ $c-grey--600 };
     --entry-detail-border-color: #{ $c-grey--300 };
 }
 
@@ -21,6 +22,9 @@
     &__title {
         @include style-heading-2;
 
+        align-items: center;
+        display: flex;
+        gap: 0.25rem;
         margin: 0 0 0.4rem;
     }
 
@@ -33,10 +37,9 @@
         margin-right: -$p-gutter;
     }
 
-    &__download {
-        &.icon-button--basic {
-            --icon-button-color: #{ $c-grey--600 };
-        }
+    &__icon {
+        color: var(--entry-detail-icon-color);
+        padding-top: 2px;
     }
 
     @include screen($screen-simple) {

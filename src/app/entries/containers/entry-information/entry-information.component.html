@@ -11,24 +11,126 @@
 </giz-entry-header>
 
 <div class="info">
-    <div class="info__column">
-        <table>
-            <tbody>
-            <tr>
-                <td>text1.1</td>
-                <td>text1.2</td>
-            </tr>
-            <tr>
-                <td>text2.1</td>
-                <td>text2.2</td>
-            </tr>
-            <tr>
-                <td>text3.1</td>
-                <td>text3.2</td>
-            </tr>
-            <tr>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    @if (loading$ | async) {
+        <giz-spinner [size]="'large'"></giz-spinner>
+    } @else {
+        <div class="info__column">
+            <table class="info__table">
+                <caption i18n="entry general title">General</caption>
+                <tbody>
+                    <tr>
+                        <th i18n="entry facility label">Facility</th>
+                        <td>Facility name</td>
+                    </tr>
+                    <tr>
+                        <th i18n="entry country label">Country</th>
+                        <td>Brazil</td>
+                    </tr>
+                    <tr>
+                        <th i18n="entry currency label">Currency</th>
+                        <td>Brazilian Real (BRL)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="info__table">
+                <caption i18n="entry product-information title">Product information</caption>
+                <tbody>
+                    <tr>
+                        <th i18n="entry products label">Product(s)</th>
+                        <td>Bananas</td>
+                    </tr>
+                    <tr>
+                        <th i18n="entry annual-production label">Annual production</th>
+                        <td>150.000 Boxes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="info__table">
+                <caption i18n="entry payroll title">Payroll</caption>
+                <tbody>
+                    <tr>
+                        <th i18n="entry year label">Year</th>
+                        <td>2023</td>
+                    </tr>
+                    <tr>
+                        <th i18n="entry job-categories label"># Job categories</th>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <th i18n="entry workers label"># Workers</th>
+                        <td>467</td>
+                    </tr>
+                    <tr>
+                        <th i18n="entry workers-below-living-wage label"># Workers - Below living wage</th>
+                        <td>154</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="info__column">
+            <table class="info__table">
+                <caption i18n="entry salary-matrix title">Salary Matrix</caption>
+                <tbody>
+                <tr>
+                    <th i18n="entry matrix-id label">Matrix ID</th>
+                    <td class="info__copy-cell">
+                        <button giz-icon-button [icon]="icon.COPY" [theme]="'basic'"[size]="'small'"
+                                [cdkCopyToClipboard]="'B1NAZ5C7-8914-1M623-AV6ME5C7'" i18n="copy">Copy</button>&nbsp;
+                        B1NAZ5C7-8914-1M623-AV6ME5C7
+                    </td>
+                </tr>
+                <tr>
+                    <th i18n="entry facility-id label">Facility ID</th>
+                    <td class="info__copy-cell">
+                        <button giz-icon-button [icon]="icon.COPY" [theme]="'basic'" [size]="'small'"
+                                [cdkCopyToClipboard]="'BRMASO-0002'" i18n="copy">Copy</button>
+                        BRMASO-0002
+                    </td>
+                </tr>
+                <tr>
+                    <th i18n="entry verified label">Verified?</th>
+                    <td>Not verified</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="info__table">
+                <caption i18n="entry benchmark title">Benchmark</caption>
+                <tbody>
+                <tr>
+                    <th i18n="entry region label">Region</th>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <th i18n="entry amount label">Amount</th>
+                    <td>462.00 BRL</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <table class="info__table">
+                <caption i18n="entry entry title">Entry</caption>
+                <tbody>
+                <tr>
+                    <th i18n="entry entry-id label">Entry ID</th>
+                    <td class="info__copy-cell">
+                        <button giz-icon-button [icon]="icon.COPY" [theme]="'basic'" [size]="'small'"
+                                [cdkCopyToClipboard]="'D60AA0E4-4726-4B47-9MAV-EM1A7C'" i18n="copy">Copy</button>
+                        D60AA0E4-4726-4B47-9MAV-EM1A7C
+                    </td>
+                </tr>
+                <tr>
+                    <th i18n="entry created-on label">Created on</th>
+                    <td>Nov. 05, 2023</td>
+                </tr>
+                <tr>
+                    <th i18n="entry edited-on label">Edited on</th>
+                    <td>Nov. 29, 2023</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    }
 </div>

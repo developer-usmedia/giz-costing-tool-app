@@ -29,5 +29,6 @@ export enum ICON {
     SYNC = 'sync',
     UPLOAD_FILE = 'upload-file',
     USER = 'user',
+    VERIFIED = 'verified',
     WARNING = 'warning',
 }

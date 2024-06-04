@@ -1,8 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { ENTRY_ROUTE, MODULE_ROUTE } from '@core/models';
-import { $localize } from '@angular/localize/init';
-import { distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -11,9 +10,10 @@ import { ActivatedRoute, Params } from '@angular/router';
     styleUrl: './entry-information.component.scss',
 })
 export class EntryInformationComponent implements OnDestroy{
-    public backTitle = $localize`:entry back-to-overview: Back to overview`;
-    public title = $localize`:entry information title: Information`;
+    public backTitle = $localize`:entry back-to-overview:Back to overview`;
+    public title = $localize`:entry information title:Information`;
     public id$: Observable<string>;
+    public loading$ = new BehaviorSubject<boolean>(false);
 
     protected readonly icon = ICON;
     protected readonly moduleRoute = MODULE_ROUTE;
@@ -34,7 +34,8 @@ export class EntryInformationComponent implements OnDestroy{
 
         this.id$.subscribe((id) => {
             if (id) {
-                // TODO: Load right entry
+                // TODO: Load right entry + get loading from angular query
+                this.loading$.next(false);
             }
         });
     }

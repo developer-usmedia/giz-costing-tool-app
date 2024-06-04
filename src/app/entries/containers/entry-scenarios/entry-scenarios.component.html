@@ -10,6 +10,10 @@
        i18n="entry information continue">Continue</a>
 </giz-entry-header>
 
-<div class="todo">
-    Scenario's
-</div>
+@if (loading$ | async) {
+    <giz-spinner></giz-spinner>
+} @else {
+    <div class="todo">
+        Scenario's
+    </div>
+}

@@ -1,5 +1,5 @@
 <div class="examples">
-    <section class="examples__section" id="menu">
+    <section class="examples__section" id="anchor-menu">
         <h1 class="examples__title">Examples</h1>
         <ul class="examples__list">
             <li class="examples__item">
@@ -29,6 +29,14 @@
             <li class="examples__item">
                 <a [routerLink]="(routes.EXAMPLES)" fragment="dialog"
                    type="button" giz-stroke-button>Dialog</a>
+            </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="tabs"
+                   type="button" giz-stroke-button>Tabs</a>
+            </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="menu"
+                   type="button" giz-stroke-button>Menu</a>
             </li>
         </ul>
     </section>
@@ -486,7 +494,41 @@
         <button giz-button (click)="openDialog()">Open Dialog</button>
     </section>
 
-    <a [routerLink]="(routes.DASHBOARD)" fragment="menu"
+    <section class="examples__section" id="tabs">
+        <h2 class="examples__title">Tabs</h2>
+        <giz-tab-group>
+            <a giz-tab
+               [routerLink]=""
+               [routerLinkActive]="['is-active']"
+               [routerLinkActiveOptions]="{ exact: true }"
+            >Tab 1</a>
+            <a giz-tab
+               [routerLink]="[routes.EXAMPLES]"
+               [routerLinkActive]="['is-active']"
+            >Tab active</a>
+            <a giz-tab
+               [disabled]="true"
+               [routerLink]="[routes.HOME]"
+               [routerLinkActive]="['is-active']"
+            >Tab disabled</a>
+        </giz-tab-group>
+    </section>
+
+    <section class="examples__section" id="menu">
+        <h2 class="examples__title">Menu</h2>
+        <button type="button" giz-button [cdkMenuTriggerFor]="menu"
+        >Menu</button>
+
+        <ng-template #menu>
+            <giz-menu>
+                <a giz-menu-item [routerLink]="[routes.EXAMPLES]" [active]="true">Item active</a>
+                <a giz-menu-item [routerLink]="[routes.EXAMPLES]">Item</a>
+                <a giz-menu-item [routerLink]="[routes.EXAMPLES]">Item</a>
+            </giz-menu>
+        </ng-template>
+    </section>
+
+    <a [routerLink]="(routes.DASHBOARD)" fragment="anchor-menu"
        giz-icon-button buttonType="stroke" [icon]="icon.ARROW_UP"
        class="examples__top">Go to top</a>
 </div>

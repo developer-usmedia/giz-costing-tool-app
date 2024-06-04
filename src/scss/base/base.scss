@@ -111,6 +111,14 @@ figcaption {
     padding: 0.5rem 1rem;
 }
 
+caption {
+    @include style-text-small;
+
+    color: var(--caption-color);
+    margin: 0 0 ($p-gutter * 0.5);
+    text-align: left;
+}
+
 ul,
 ol {
     @include list-reset;
@@ -230,7 +238,6 @@ table {
 
 tr {
     background-color: var(--table-bcg);
-    border-bottom: 1px solid var(--table-border-color);
     position: relative;
 
     &:last-child {
@@ -240,8 +247,8 @@ tr {
 
 th,
 td {
-    border: none;
-    padding: 0.875rem $p-gutter;
+    border-bottom: 1px solid var(--table-border-color);
+    padding: var(--table-cell-padding);
 }
 
 th {
@@ -251,8 +258,17 @@ th {
 
 thead {
     th {
+        color: var(--table-head-heading-color);
         font-size: var(--text-font-size-small);
-        padding: 0.75rem $p-gutter;
+        padding: var(--table-head-cell-padding);
+    }
+}
+
+tbody {
+    tr:last-child {
+        th,td {
+            border-bottom: 0;
+        }
     }
 }
 

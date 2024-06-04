@@ -2,7 +2,7 @@ import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 
 import { ENTRY_ROUTE, MODULE_ROUTE, RouteName } from '@core/models';
 import { ActivatedRoute, Params } from '@angular/router';
-import { distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
 import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
@@ -13,10 +13,13 @@ import { ICON } from '@shared/components/icon/icon.enum';
 })
 export class EntryDetailComponent implements OnDestroy {
     public id$: Observable<string>;
+    public loading$ = new BehaviorSubject<boolean>(true);
     public readonly routes = ENTRY_ROUTE;
+    public readonly verified = false; // TODO: Replace this with entry.verified when we have entry
 
     protected readonly icon = ICON;
     protected readonly moduleRoute = MODULE_ROUTE;
+
     private readonly destroyed$ = new Subject<void>();
 
     constructor(
@@ -32,7 +35,8 @@ export class EntryDetailComponent implements OnDestroy {
 
         this.id$.subscribe((id) => {
             if (id) {
-                // TODO: Load right entry
+                // TODO: Load right entry + get loading from angular query
+                this.loading$.next(false);
             }
         });
     }
