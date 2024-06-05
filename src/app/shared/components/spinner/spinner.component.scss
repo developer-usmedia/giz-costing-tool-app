@@ -2,8 +2,8 @@
 @import './mixins/animations';
 
 :root {
-    --spinner-bcg: #{ $c-forest--lighter };
-    --spinner-color: #{ $c-forest--darker };
+    --spinner-bcg: #{ $c-thunderbird-4 };
+    --spinner-color: #{ $c-thunderbird-1 };
     --spinner-size: 24px;
 }
 

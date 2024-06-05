@@ -7,7 +7,7 @@
 
 :root {
     --header-profile-color: #{ $c-grey--700 };
-    --header-avatar-background: #{ $c-forest--darker };
+    --header-avatar-background: #{ $c-thunderbird-1 };
     --header-avatar-color: #{ $c-white };
     --header-menu-footer-background: #{ $c-grey--100 };
     --header-menu-footer-border: #{ color.scale($c-black, $alpha: -88%) };
@@ -24,13 +24,15 @@
     &__profile {
         align-items: center;
         display: flex;
+        font-family: $font-barlow;
+        font-weight: $weight-medium;
         gap: 1rem;
         position: relative;
 
         &--link {
             &:focus,
             &:hover {
-                --header-avatar-background: #{ $c-forest--darkest };
+                --header-avatar-background: #{ $c-thunderbird-2 };
                 --header-profile-color: #{ $c-grey--900 };
             }
 
@@ -44,6 +46,8 @@
         @include style-text-small;
 
         color: var(--header-profile-color);
+        font-family: $font-barlow;
+        font-weight: $weight-medium;
     }
 
     &__avatar {
@@ -55,6 +59,7 @@
         font-size: 1.125rem;
         height: 32px;
         justify-content: center;
+        padding-bottom: 2px; // Make up for font alignment base
         text-transform: uppercase;
         width: 32px;
     }

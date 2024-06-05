@@ -5,27 +5,27 @@
 
 // Text styles
 @mixin style-text {
-    font-family: $font-roboto;
+    font-family: $font-open-sans;
     font-size: var(--text-font-size);
     line-height: 1.4;
 }
 
 @mixin style-text-large {
-    font-family: $font-roboto;
+    font-family: $font-open-sans;
     font-size: var(--text-font-size-large);
     line-height: 1.5;
 }
 
 @mixin style-text-small {
-    font-family: $font-roboto;
+    font-family: $font-open-sans;
     font-size: var(--text-font-size-small);
     line-height: 1.125;
 }
 
 // Header Styles
 @mixin style-heading {
-    font-family: $font-roboto;
-    font-weight: $weight-normal;
+    font-family: $font-barlow;
+    font-weight: $weight-medium;
     line-height: 1.2;
 }
 
@@ -60,8 +60,8 @@
 }
 
 @mixin style-heading-dialog {
-    font-family: $font-roboto;
+    font-family: $font-barlow;
     font-size: var(--heading-dialog-font-size);
-    font-weight: $weight-bold;
+    font-weight: $weight-semibold;
     line-height: 1.3;
 }

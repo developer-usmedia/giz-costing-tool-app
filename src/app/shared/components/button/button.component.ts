@@ -13,7 +13,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
 })
 export class ButtonComponent {
     @Input() buttonType: 'default' | 'stroke' | 'link' = 'default';
-    @Input() theme: 'basic' | 'primary' | 'warning' = 'primary';
+    @Input() theme: 'basic' | 'primary' = 'primary';
     @Input() icon?: ICON;
     @Input() iconPosition: 'left' | 'right' = 'left';
 
@@ -48,11 +48,6 @@ export class ButtonComponent {
     @HostBinding('class.button--basic') get modBasic(): boolean {
         return this.theme === 'basic';
     }
-
-    @HostBinding('class.button--warning') get modWarning(): boolean {
-        return this.theme === 'warning';
-    }
-
 
     private determineButtonType(): void {
         const host = this.getHostElement();

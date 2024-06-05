@@ -1,28 +1,60 @@
 @use 'sass:color';
 
-// Forest
-$c-forest--darkest: #005351;
-$c-forest--darker: #00625fff;
-$c-forest--dark: #33817fff;
-$c-forest: #66a09fff;
-$c-forest--light: #9ac0bfff;
-$c-forest--lighter: #cde0dfff;
-$c-forest--lightest: #e0eceb;
+// Thunderbird
+$c-thunderbird-1: #c30f08;
+$c-thunderbird-2: #cf3f39;
+$c-thunderbird-3: #db6f6b;
+$c-thunderbird-4: #e79f9c;
+$c-thunderbird-5: #f3cfce;
 
-// Rose
-$c-rose--darker: #f44336;
-$c-rose--dark: #f6695e;
-$c-rose: #f88e86;
-$c-rose--light: #fbb4af;
-$c-rose-lighter: #fdd9d7;
-$c-rose-lightest: #fde8e6;
+// Dove Grey
+$c-dov-grey-1: #6f6f6f;
+$c-dov-grey-2: #8c8c8c;
+$c-dov-grey-3: #a9a9a9;
+$c-dov-grey-4: #c5c5c5;
+$c-dov-grey-5: #e2e2e2;
 
-// Stone
-$c-stone--darker: #2d2d32ff;
-$c-stone--dark: #57575bff;
-$c-stone: #818184ff;
-$c-stone--light: #ababadff;
-$c-stone--lighter: #d5d5d6ff;
+// Schoolbus
+$c-schoolbus-1: #fdc400;
+$c-schoolbus-2: #fdd033;
+$c-schoolbus-3: #fedc66;
+$c-schoolbus-4: #fee799;
+$c-schoolbus-5: #fff3cc;
+
+// Carrot
+$c-carrot-1: #ef9424;
+$c-carrot-2: #f2a950;
+$c-carrot-3: #f5bf7c;
+$c-carrot-4: #f9d4a7;
+$c-carrot-5: #fcead3;
+
+// Ce Soir
+$c-ce-soir-1: #876ba1;
+$c-ce-soir-2: #9f89b4;
+$c-ce-soir-3: #b7a6c7;
+$c-ce-soir-4: #cfc4d9;
+$c-ce-soir-5: #e7e1ec;
+
+// Lima
+$c-lima-1: #89ae19;
+$c-lima-2: #a1be47;
+$c-lima-3: #b8ce75;
+$c-lima-4: #d0dfa3;
+$c-lima-5: #e7efd1;
+
+// Pacific
+$c-pacific-1: #009bc2;
+$c-pacific-2: #33afce;
+$c-pacific-3: #66c3da;
+$c-pacific-4: #99d7e7;
+$c-pacific-5: #ccebf3;
+
+// Deep cerulean
+$c-deep-cerulean-1: #0077b2;
+$c-deep-cerulean-2: #3392c1;
+$c-deep-cerulean-3: #66add1;
+$c-deep-cerulean-4: #99c9e0;
+$c-deep-cerulean-5: #cce4f0;
 
 // Greyscale
 $c-grey--900: #2d2d32;

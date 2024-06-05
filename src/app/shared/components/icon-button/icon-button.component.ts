@@ -22,7 +22,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
 export class IconButtonComponent implements AfterViewInit {
     @Input({ required: true }) icon!: ICON;
     @Input() buttonType: 'default' | 'stroke' = 'default';
-    @Input() theme: 'basic' | 'primary' | 'warning' = 'primary';
+    @Input() theme: 'basic' | 'primary' = 'primary';
     @Input() size: 'default' | 'small' = 'default';
 
     @Input()
@@ -53,10 +53,6 @@ export class IconButtonComponent implements AfterViewInit {
 
     @HostBinding('class.icon-button--basic') get modBasic(): boolean {
         return this.theme === 'basic';
-    }
-
-    @HostBinding('class.icon-button--warning') get modWarning(): boolean {
-        return this.theme === 'warning';
     }
 
     @HostBinding('class.icon-button--small') get modSmall(): boolean {

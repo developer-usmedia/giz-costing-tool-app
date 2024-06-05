@@ -5,10 +5,10 @@
 :root {
     --icon-button-background: transparent;
     --icon-button-border: transparent;
-    --icon-button-color: #{ $c-forest--darker };
-    --icon-button-background-hover: #{ $c-forest--lightest };
-    --icon-button-border-hover: #{ $c-forest--lightest };
-    --icon-button-color-hover: #{ $c-forest--darker };
+    --icon-button-color: #{ $c-thunderbird-1 };
+    --icon-button-background-hover: #{ $c-thunderbird-5 };
+    --icon-button-border-hover: #{ $c-thunderbird-5 };
+    --icon-button-color-hover: #{ $c-thunderbird-1 };
     --icon-button-background-disabled: transparent;
     --icon-button-border-disabled: transparent;
     --icon-button-color-disabled: #{ $c-grey--400 };
@@ -43,15 +43,6 @@
         --icon-button-background-hover: #{ color.scale($c-black, $alpha: -94%) };
         --icon-button-border-hover: #{ color.scale($c-black, $alpha: -94%) };
         --icon-button-color-hover: #{ $c-grey--900 };
-        --icon-button-background-disabled: transparent;
-        --icon-button-border-disabled: transparent;
-    }
-
-    &--warning {
-        --icon-button-color: #{ $c-rose--darker };
-        --icon-button-background-hover: #{ $c-rose-lightest };
-        --icon-button-border-hover: #{ $c-rose-lightest };
-        --icon-button-color-hover: #{ $c-rose--darker };
         --icon-button-background-disabled: transparent;
         --icon-button-border-disabled: transparent;
     }

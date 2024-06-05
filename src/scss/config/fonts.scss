@@ -1,5 +1,7 @@
 // System
-$font-roboto: 'Roboto', sans-serif;
+$font-open-sans: 'Roboto', sans-serif;
+$font-open-sans: 'Open Sans', sans-serif;
+$font-barlow: 'Barlow', sans-serif;
 $font-monospace: monospace, sans-serif;
 $font-system: /* stylelint-disable-line scss/dollar-variable-colon-space-after */
     -apple-system,
@@ -13,5 +15,7 @@ $font-system: /* stylelint-disable-line scss/dollar-variable-colon-space-after *
     sans-serif;
 
 // Font - Weights
-$weight-normal: 400;
-$weight-bold: 700;
+$weight-normal: 400; // Barlow, Roboto
+$weight-medium: 500; // Barlow
+$weight-semibold: 600; // Barlow
+$weight-bold: 700; // Barlow, Roboto

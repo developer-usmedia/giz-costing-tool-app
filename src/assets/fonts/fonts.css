@@ -1,3 +1,4 @@
+/* Roboto */
 @font-face {
     font-display: swap;
     font-family: Roboto;
@@ -18,4 +19,54 @@
         local('Roboto'),
         url('./roboto/roboto-700.woff2') format('woff2'),
         url('./roboto/roboto-700.woff') format('woff');
+}
+
+/* Open Sans */
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./open-sans/open-sans-v40-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./open-sans/open-sans-v40-latin-700.woff2') format('woff2');
+}
+
+/* Barlow */
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./barlow/barlow-v12-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./barlow/barlow-v12-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./barlow/barlow-v12-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./barlow/barlow-v12-latin-700.woff2') format('woff2');
 }
