@@ -1,5 +1,6 @@
 @import 'config/colors';
 @import 'config/sizes';
+@import 'mixins/screen';
 
 :host {
     display: flex;
@@ -24,12 +25,24 @@
     &__content {
         flex: 1 1 auto;
         margin: 0 auto;
-        padding: 3.75rem $p-gutter;
+        padding: 2rem $p-gutter;
         position: relative;
         width: min(100%, 1024px);
     }
 
     &__footer {
         flex: 0 0 auto;
+    }
+
+    @include screen($screen-normal) {
+        &__content {
+            padding: 2.5rem $p-gutter;
+        }
+    }
+
+    @include screen($screen-large) {
+        &__content {
+            padding: 3rem $p-gutter;
+        }
     }
 }

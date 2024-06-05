@@ -17,6 +17,10 @@
         margin-right: -$p-gutter;
     }
 
+    &__spinner {
+        padding: $p-gutter;
+    }
+
     @include screen($screen-simple) {
         &__header {
             align-items: flex-end;

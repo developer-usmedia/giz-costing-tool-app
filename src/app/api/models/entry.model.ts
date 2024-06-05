@@ -7,8 +7,12 @@ export interface Entry extends EntityResponse {
     administrativeCosts: number;
     defaultEmployerTax: number;
     defaultEmployeeTax: number;
+    nrOfJobcategories: number;
+    nrOfWorkers: number;
+    nrOfWorkersBelowLW: number;
     facility: Facility;
     benchmark: Benchmark;
+    matrixId?: string;
     verified?: boolean;
 }
 

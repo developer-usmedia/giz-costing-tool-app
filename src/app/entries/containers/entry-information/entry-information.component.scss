@@ -9,7 +9,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    justify-content: center;
 
     &__table {
         line-height: 1.7;
@@ -28,6 +27,10 @@
 
     &__copy-cell {
         white-space: nowrap;
+    }
+
+    &__spinner {
+        margin: 0 auto;
     }
 
     @include screen($screen-simple) {

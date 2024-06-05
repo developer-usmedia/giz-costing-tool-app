@@ -16,7 +16,44 @@ export class ExamplesComponent {
     @ViewChild('dialogTemplateRef') private readonly dialogTemplateRef!: TemplateRef<any>;
 
     public icons: ICON[] = Object.entries(ICON).map(entry => entry[1]);
-    public entry!: Entry;
+    public entry: Entry = {
+        id: 'bd101a34-0438-4065-b84c-a4efc7258204',
+        year: '2023',
+        administrativeCosts: 200,
+        defaultEmployerTax: 3,
+        defaultEmployeeTax: 5,
+        nrOfJobcategories: 45,
+        nrOfWorkers: 200,
+        nrOfWorkersBelowLW: 120,
+        status: 'submitted',
+        createdAt: '2023-11-05',
+        updatedAt: '2023-29-05',
+        facility: {
+            id: 'BRMASO-0002',
+            name: 'Facility Name',
+            countryCode: 'BR',
+            currencyCode: 'BRL',
+            product: 'Bananas',
+            unitOfProduction: 'Box',
+            annualProduction: 200000,
+            buyerName: 'Lidl',
+            buyerProportion: 50,
+        },
+        benchmark: {
+            year: '2023',
+            source: 'source',
+            region: 'São Paulo',
+            locality: 'Rural',
+            localValue: 462,
+            currencyCode:'BRL',
+            currencyName: 'Brazilian Real',
+        },
+        _links: {
+            self: {
+                href: '/',
+            },
+        },
+    };
 
     protected readonly routes = ROOT_ROUTE;
     protected readonly moduleRoute = MODULE_ROUTE;
@@ -30,7 +67,6 @@ export class ExamplesComponent {
         private readonly entriesService: EntriesService,
         private readonly toastr: ToastrService,
     ) {
-        this.entry = this.entriesService.getEntry('bd101a34-0438-4065-b84c-a4efc7258204');
     }
 
     public showToaster(type: 'info' | 'success' | 'warning' | 'error' | 'warning-filled' | 'critical') {

@@ -2,10 +2,11 @@ import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 
 import { ENTRY_ROUTE, MODULE_ROUTE, RouteName } from '@core/models';
 import { ActivatedRoute, Params } from '@angular/router';
-import { BehaviorSubject, distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
+import { distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Entry } from '@api/models';
 import { EntriesService } from '@core/services';
+import { CreateQueryResult } from '@tanstack/angular-query-experimental';
 
 @Component({
     selector: 'giz-entry-detail',
@@ -15,9 +16,8 @@ import { EntriesService } from '@core/services';
 })
 export class EntryDetailComponent implements OnDestroy {
     public id$: Observable<string>;
-    public loading$ = new BehaviorSubject<boolean>(true);
     public readonly routes = ENTRY_ROUTE;
-    public entry?: Entry;
+    public entry: CreateQueryResult<Entry, Error> | null = null;
 
     protected readonly icon = ICON;
     protected readonly moduleRoute = MODULE_ROUTE;
@@ -38,9 +38,7 @@ export class EntryDetailComponent implements OnDestroy {
 
         this.id$.subscribe((id) => {
             if (id) {
-                // TODO: Load right entry + get loading from angular query
                 this.entry = this.entriesService.getEntry(id);
-                this.loading$.next(false);
             }
         });
     }
@@ -48,15 +46,10 @@ export class EntryDetailComponent implements OnDestroy {
     public ngOnDestroy(): void {
         this.destroyed$.next();
         this.destroyed$.complete();
-        // TODO: Clear query for entry ?
-    }
-
-    public download() {
-        // TODO: download original excel (?)
     }
 
     public tabDisabled(_routeName: RouteName): boolean {
-        // TODO: Get this from entry
+        // TODO: Get this from entry status
         return true;
     }
 }

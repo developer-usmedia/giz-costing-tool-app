@@ -13,10 +13,10 @@
         </div>
     </div>
 
-    @if (entries && entries.length > 0) {
+    @if (entries.data() && entries.data()?._embedded?.simulations?.length) {
         <h2 class="dashboard__subtitle" i18n="dashboard continue">Continue with</h2>
         <ul class="dashboard__entries">
-            @for (entry of entries; track entry.id) {
+            @for (entry of entries.data()?._embedded?.simulations; track entry) {
                 <li class="dashboard__entry">
                     <giz-entry-card [entry]="entry" [link]="[(moduleRoute.ENTRIES), entry.id]"></giz-entry-card>
                 </li>
@@ -26,7 +26,7 @@
     <div class="dashboard__buttons">
         <button giz-stroke-button [routerLink]="[(moduleRoute.ENTRIES)]" i18n="entries create-new">Create new entry</button>
 
-        @if (entries && entries.length > 0) {
+        @if (entries.data() && entries.data()?._embedded?.simulations?.length) {
             <a giz-link-button [routerLink]="[(moduleRoute.ENTRIES)]" i18n="entries view-all">View all</a>
         }
     </div>

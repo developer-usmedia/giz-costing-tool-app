@@ -24,7 +24,7 @@
     &__content {
         flex: 1 1 auto;
         margin: 0 auto;
-        padding: 10vh $p-gutter;
+        padding: 5vh $p-gutter;
         position: relative;
         width: min(100%, 880px);
     }
@@ -42,6 +42,7 @@
 
     &--wide {
         #{ $self }__content {
+            padding-top: 10vh;
             width: min(100%, 1064px);
         }
     }

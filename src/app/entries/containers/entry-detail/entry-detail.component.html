@@ -1,12 +1,14 @@
 <div class="entry">
     <div class="entry__header">
         <div class="entry__info">
-            @if (loading$ | async) {
-                <giz-spinner></giz-spinner>
-            } @else if (entry) {
-                <giz-entry-card [entry]="entry" [isMain]="true" [showStatus]="false"></giz-entry-card>
+            @if (!entry || entry.isLoading()) {
+                <giz-spinner class="entry__spinner"></giz-spinner>
             } @else {
-                Entry not found
+                @if (entry.data(); as entry) {
+                    <giz-entry-card [entry]="entry" [isMain]="true" [showStatus]="false"></giz-entry-card>
+                } @else {
+                    <p class="entry__no-result" i18n="entry error not-found">Entry not found</p>
+                }
             }
         </div>
 

@@ -3,133 +3,158 @@
     [backButton]="{
         icon: icon.LIST,
         text: backTitle,
-        link: [moduleRoute.ENTRIES],
+        link: [moduleRoute.ENTRIES]
     }"
 >
-    <a giz-stroke-button [routerLink]="[moduleRoute.ENTRIES, (id$ | async), entryRoute.SCENARIO]"
+    <a giz-stroke-button [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.SCENARIO ]"
        i18n="entry information continue">Continue</a>
 </giz-entry-header>
-
 <div class="info">
-    @if (loading$ | async) {
-        <giz-spinner [size]="'large'"></giz-spinner>
+    @if (!entry || entry.isLoading()) {
+        <giz-spinner class="info__spinner" [size]="'large'"></giz-spinner>
+
     } @else {
-        <div class="info__column">
-            <table class="info__table">
-                <caption i18n="entry general title">General</caption>
-                <tbody>
-                    <tr>
-                        <th i18n="entry facility label">Facility</th>
-                        <td>Facility name</td>
-                    </tr>
-                    <tr>
-                        <th i18n="entry country label">Country</th>
-                        <td>Brazil</td>
-                    </tr>
-                    <tr>
-                        <th i18n="entry currency label">Currency</th>
-                        <td>Brazilian Real (BRL)</td>
-                    </tr>
-                </tbody>
-            </table>
+        @if (entry.data(); as entry) {
+            <div class="info__column">
+                <table class="info__table">
+                    <caption i18n="entry general title">General</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="entry facility label">Facility</th>
+                            <td>{{ entry.facility.name | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry country label">Country</th>
+                            <td>{{ entry.facility.countryCode | countryName | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry currency label">Currency</th>
+                            <td>{{ entry.facility.currencyCode | empty }}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <table class="info__table">
-                <caption i18n="entry product-information title">Product information</caption>
-                <tbody>
-                    <tr>
-                        <th i18n="entry products label">Product(s)</th>
-                        <td>Bananas</td>
-                    </tr>
-                    <tr>
-                        <th i18n="entry annual-production label">Annual production</th>
-                        <td>150.000 Boxes</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="info__table">
+                    <caption i18n="entry product-information title">Product information</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="entry products label">Product(s)</th>
+                            <td>{{ entry.facility.product | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry annual-production label">Annual production</th>
+                            <td>{{ entry.facility.annualProduction | empty }}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <table class="info__table">
-                <caption i18n="entry payroll title">Payroll</caption>
-                <tbody>
-                    <tr>
-                        <th i18n="entry year label">Year</th>
-                        <td>2023</td>
-                    </tr>
-                    <tr>
-                        <th i18n="entry job-categories label"># Job categories</th>
-                        <td>35</td>
-                    </tr>
-                    <tr>
-                        <th i18n="entry workers label"># Workers</th>
-                        <td>467</td>
-                    </tr>
-                    <tr>
-                        <th i18n="entry workers-below-living-wage label"># Workers - Below living wage</th>
-                        <td>154</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="info__column">
-            <table class="info__table">
-                <caption i18n="entry salary-matrix title">Salary Matrix</caption>
-                <tbody>
-                <tr>
-                    <th i18n="entry matrix-id label">Matrix ID</th>
-                    <td class="info__copy-cell">
-                        <button giz-icon-button [icon]="icon.COPY" [theme]="'basic'"[size]="'small'"
-                                [cdkCopyToClipboard]="'B1NAZ5C7-8914-1M623-AV6ME5C7'" i18n="copy">Copy</button>&nbsp;
-                        B1NAZ5C7-8914-1M623-AV6ME5C7
-                    </td>
-                </tr>
-                <tr>
-                    <th i18n="entry facility-id label">Facility ID</th>
-                    <td class="info__copy-cell">
-                        <button giz-icon-button [icon]="icon.COPY" [theme]="'basic'" [size]="'small'"
-                                [cdkCopyToClipboard]="'BRMASO-0002'" i18n="copy">Copy</button>
-                        BRMASO-0002
-                    </td>
-                </tr>
-                <tr>
-                    <th i18n="entry verified label">Verified?</th>
-                    <td>Not verified</td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="info__table">
-                <caption i18n="entry benchmark title">Benchmark</caption>
-                <tbody>
-                <tr>
-                    <th i18n="entry region label">Region</th>
-                    <td>São Paulo</td>
-                </tr>
-                <tr>
-                    <th i18n="entry amount label">Amount</th>
-                    <td>462.00 BRL</td>
-                </tr>
-
-                </tbody>
-            </table>
-            <table class="info__table">
-                <caption i18n="entry entry title">Entry</caption>
-                <tbody>
-                <tr>
-                    <th i18n="entry entry-id label">Entry ID</th>
-                    <td class="info__copy-cell">
-                        <button giz-icon-button [icon]="icon.COPY" [theme]="'basic'" [size]="'small'"
-                                [cdkCopyToClipboard]="'D60AA0E4-4726-4B47-9MAV-EM1A7C'" i18n="copy">Copy</button>
-                        D60AA0E4-4726-4B47-9MAV-EM1A7C
-                    </td>
-                </tr>
-                <tr>
-                    <th i18n="entry created-on label">Created on</th>
-                    <td>{{ '2023-11-05' | date: 'MMM. dd, yyyy' }}</td>
-                </tr>
-                <tr>
-                    <th i18n="entry edited-on label">Edited on</th>
-                    <td>{{ '2023-11-29' | date: 'MMM. dd, yyyy' }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+                <table class="info__table">
+                    <caption i18n="entry payroll title">Payroll</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="entry year label">Year</th>
+                            <td>{{ entry.year | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry job-categories label"># Job categories</th>
+                            <td>{{ entry.nrOfJobcategories | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry workers label"># Workers</th>
+                            <td>{{ entry.nrOfWorkers | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry workers-below-living-wage label"># Workers - Below living wage</th>
+                            <td>{{ entry.nrOfWorkersBelowLW | empty }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="info__column">
+                <table class="info__table">
+                    <caption i18n="entry salary-matrix title">Salary Matrix</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="entry matrix-id label">Matrix ID</th>
+                            <td class="info__copy-cell">
+                                @if (entry.matrixId) {
+                                    <button
+                                        giz-icon-button
+                                        [icon]="icon.COPY"
+                                        [theme]="'basic'"
+                                        [size]="'small'"
+                                        [cdkCopyToClipboard]="entry.matrixId"
+                                        i18n="copy"
+                                    >Copy</button>
+                                }
+                                {{ entry.matrixId | empty }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry facility-id label">Facility ID</th>
+                            <td class="info__copy-cell">
+                                @if (entry.facility.id) {
+                                    <button
+                                        giz-icon-button
+                                        [icon]="icon.COPY"
+                                        [theme]="'basic'"
+                                        [size]="'small'"
+                                        [cdkCopyToClipboard]="entry.facility.id"
+                                        i18n="copy"
+                                    >Copy</button>
+                                }
+                                {{ entry.facility.id | empty }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry verified label">Verified?</th>
+                            <td>{{ !!entry.verified | verified }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="info__table">
+                    <caption i18n="entry benchmark title">Benchmark</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="entry region label">Region</th>
+                            <td>{{ entry.benchmark.region | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry amount label">Amount</th>
+                            <td>{{ entry.benchmark.localValue | empty }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="info__table">
+                    <caption i18n="entry entry title">Entry</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="entry entry-id label">Entry ID</th>
+                            <td class="info__copy-cell">
+                                <button
+                                    giz-icon-button
+                                    [icon]="icon.COPY"
+                                    [theme]="'basic'"
+                                    [size]="'small'"
+                                    [cdkCopyToClipboard]="entry.id"
+                                    i18n="copy"
+                                >Copy</button>
+                                {{ entry.id | empty }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry created-on label">Created on</th>
+                            <td>{{ entry.createdAt | empty }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="entry edited-on label">Edited on</th>
+                            <td>{{ entry.updatedAt | empty }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        } @else {
+            <p class="info__no-result" i18n="entry error not-found">Entry not found</p>
+        }
     }
 </div>

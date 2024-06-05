@@ -11,6 +11,7 @@ export const useQuery = <TData>(
         queryKey: queryKey,
         queryFn: queryFn,
         retry: 1,
+        staleTime: Infinity, // TODO Koen: figure out why this is out so i can explain it well to other
         ...otherProps,
     }));
 };

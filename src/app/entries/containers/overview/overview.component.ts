@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
 import { MODULE_ROUTE } from '@core/models';
+import { EntriesService } from '@core/services/entries.service';
 
 @Component({
     selector: 'giz-overview',
@@ -8,6 +10,9 @@ import { MODULE_ROUTE } from '@core/models';
 })
 export class OverviewComponent {
     public readonly moduleRoute = MODULE_ROUTE;
-
-    // TODO: GET ENTRIES
+    public entriesService = inject(EntriesService);
+    public entries = this.entriesService.getEntries({
+        index: 0,
+        size: 25,
+    });
 }

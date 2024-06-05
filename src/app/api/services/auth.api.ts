@@ -15,8 +15,8 @@ import {
     VerifyEmailForm,
     VerifyEmailReponse,
 } from '@api/models';
-import { BaseApi } from '@core/services/api/base.api';
 import { environment } from 'environments/environment';
+import { BaseApi } from '@api/services/base.api';
 
 @Injectable({ providedIn: 'root' })
 export class AuthApi extends BaseApi {

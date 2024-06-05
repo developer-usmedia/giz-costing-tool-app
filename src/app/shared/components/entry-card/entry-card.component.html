@@ -4,7 +4,7 @@
             {{ entry.facility.name }}
             @if (entry.verified) {
                 <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
-            } @else {
+            } @else if (entry.matrixId) {
                 <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
             }
         </h1>
@@ -13,16 +13,16 @@
             {{ entry.facility.name }}
             @if (entry.verified) {
                 <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
-            } @else {
+            } @else if (entry.matrixId) {
                 <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
             }
         </h3>
     }
-    <p class="entry-card__info">{{ entry.year }}, {{ countryCode }}</p>
+    <p class="entry-card__info">{{ entry.year }}, {{ entry.facility.countryCode | countryName }}</p>
 </div>
-@if (showStatus && entryStatus) {
+@if (showStatus && entry.status) {
     <div class="entry-card__status">
-        <giz-status [status]="entryStatus"></giz-status>
+        <giz-status [status]="entry.status | status"></giz-status>
     </div>
 }
 @if (link) {

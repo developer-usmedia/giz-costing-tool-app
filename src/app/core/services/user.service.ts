@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { AuthApi } from '@api/services';
-import { UserApi } from './api/user.api';
-import { useQuery } from './query/use-query';
 import { User } from '@api/models';
+import { AuthApi, UserApi } from '@api/services';
+import { useQuery } from './query/use-query';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {

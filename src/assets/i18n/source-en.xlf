@@ -102,7 +102,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">10,13</context>
+          <context context-type="linenumber">10,12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
@@ -390,7 +390,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">12,14</context>
+          <context context-type="linenumber">17,19</context>
         </context-group>
         <note priority="1" from="description">register signup hint</note>
       </trans-unit>
@@ -506,6 +506,62 @@
         </context-group>
         <note priority="1" from="description">content load error</note>
       </trans-unit>
+      <trans-unit id="3492007542396725315" datatype="html">
+        <source>Welcome</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <note priority="1" from="description">dashboard title</note>
+      </trans-unit>
+      <trans-unit id="8623056396663447180" datatype="html">
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">dashboard description line-1</note>
+      </trans-unit>
+      <trans-unit id="1446456661478594619" datatype="html">
+        <source>Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+        <note priority="1" from="description">dashboard description line-2</note>
+      </trans-unit>
+      <trans-unit id="1500857032693406432" datatype="html">
+        <source>Continue with</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">dashboard continue</note>
+      </trans-unit>
+      <trans-unit id="8547109075340284021" datatype="html">
+        <source>Create new entry</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+        <note priority="1" from="description">entries create-new</note>
+      </trans-unit>
+      <trans-unit id="2734780694152757859" datatype="html">
+        <source>View all</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">30,33</context>
+        </context-group>
+        <note priority="1" from="description">entries view-all</note>
+      </trans-unit>
       <trans-unit id="5641945527911431559" datatype="html">
         <source>Error: <x id="INTERPOLATION" equiv-text="{{ code }}"/></source>
         <context-group purpose="location">
@@ -513,6 +569,30 @@
           <context context-type="linenumber">2,3</context>
         </context-group>
         <note priority="1" from="description">error title</note>
+      </trans-unit>
+      <trans-unit id="6570363013146073520" datatype="html">
+        <source>Dashboard</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.html</context>
+          <context context-type="linenumber">9,11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">breadcrumb dashboard title</note>
+      </trans-unit>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.html</context>
+          <context context-type="linenumber">12,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">breadcrumb dashboard title</note>
       </trans-unit>
       <trans-unit id="2275328567992347600" datatype="html">
         <source>Page not found</source>
@@ -568,7 +648,7 @@
         <source>Welcome to the Costing Tool</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">2,4</context>
+          <context context-type="linenumber">4,5</context>
         </context-group>
         <note priority="1" from="description">homepage title</note>
       </trans-unit>
@@ -576,11 +656,11 @@
         <source>Login</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">8,10</context>
+          <context context-type="linenumber">13,14</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">10,12</context>
+          <context context-type="linenumber">15,17</context>
         </context-group>
         <note priority="1" from="description">homepage login</note>
       </trans-unit>
@@ -600,15 +680,27 @@
         </context-group>
         <note priority="1" from="description">unauthorized description</note>
       </trans-unit>
+      <trans-unit id="8935697831870964383" datatype="html">
+        <source>Entry not found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">157,161</context>
+        </context-group>
+        <note priority="1" from="description">entry error not-found</note>
+      </trans-unit>
       <trans-unit id="5037437391296624618" datatype="html">
         <source>Information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">20,22</context>
+          <context context-type="linenumber">22,24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
@@ -620,7 +712,7 @@
         <source>Scenarios</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">25,27</context>
+          <context context-type="linenumber">27,29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
@@ -632,7 +724,7 @@
         <source>Distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">31,33</context>
+          <context context-type="linenumber">33,35</context>
         </context-group>
         <note priority="1" from="description">entry tab distribution</note>
       </trans-unit>
@@ -640,7 +732,7 @@
         <source>Buyer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">37,38</context>
+          <context context-type="linenumber">39,40</context>
         </context-group>
         <note priority="1" from="description">entry tab buyer</note>
       </trans-unit>
@@ -648,7 +740,7 @@
         <source>Report</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">43,44</context>
+          <context context-type="linenumber">45,46</context>
         </context-group>
         <note priority="1" from="description">entry tab report</note>
       </trans-unit>
@@ -656,7 +748,7 @@
         <source>General</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">20,21</context>
         </context-group>
         <note priority="1" from="description">entry general title</note>
       </trans-unit>
@@ -664,7 +756,7 @@
         <source>Facility</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="linenumber">23,24</context>
         </context-group>
         <note priority="1" from="description">entry facility label</note>
       </trans-unit>
@@ -672,7 +764,7 @@
         <source>Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">26,27</context>
+          <context context-type="linenumber">27,28</context>
         </context-group>
         <note priority="1" from="description">entry country label</note>
       </trans-unit>
@@ -680,7 +772,7 @@
         <source>Currency</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">30,31</context>
+          <context context-type="linenumber">31,32</context>
         </context-group>
         <note priority="1" from="description">entry currency label</note>
       </trans-unit>
@@ -688,7 +780,7 @@
         <source>Product information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">37,39</context>
+          <context context-type="linenumber">38,40</context>
         </context-group>
         <note priority="1" from="description">entry product-information title</note>
       </trans-unit>
@@ -696,7 +788,7 @@
         <source>Product(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">41,42</context>
         </context-group>
         <note priority="1" from="description">entry products label</note>
       </trans-unit>
@@ -704,7 +796,7 @@
         <source>Annual production</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">44,45</context>
+          <context context-type="linenumber">45,46</context>
         </context-group>
         <note priority="1" from="description">entry annual-production label</note>
       </trans-unit>
@@ -712,7 +804,7 @@
         <source>Payroll</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">51,52</context>
+          <context context-type="linenumber">52,53</context>
         </context-group>
         <note priority="1" from="description">entry payroll title</note>
       </trans-unit>
@@ -720,7 +812,7 @@
         <source>Year</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">54,55</context>
+          <context context-type="linenumber">55,56</context>
         </context-group>
         <note priority="1" from="description">entry year label</note>
       </trans-unit>
@@ -728,7 +820,7 @@
         <source># Job categories</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">58,59</context>
+          <context context-type="linenumber">59,60</context>
         </context-group>
         <note priority="1" from="description">entry job-categories label</note>
       </trans-unit>
@@ -736,7 +828,7 @@
         <source># Workers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">62,63</context>
+          <context context-type="linenumber">63,64</context>
         </context-group>
         <note priority="1" from="description">entry workers label</note>
       </trans-unit>
@@ -744,7 +836,7 @@
         <source># Workers - Below living wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">66,68</context>
+          <context context-type="linenumber">67,68</context>
         </context-group>
         <note priority="1" from="description">entry workers-below-living-wage label</note>
       </trans-unit>
@@ -752,7 +844,7 @@
         <source>Salary Matrix</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">74,76</context>
+          <context context-type="linenumber">75,76</context>
         </context-group>
         <note priority="1" from="description">entry salary-matrix title</note>
       </trans-unit>
@@ -760,7 +852,7 @@
         <source>Matrix ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">77,78</context>
+          <context context-type="linenumber">78,79</context>
         </context-group>
         <note priority="1" from="description">entry matrix-id label</note>
       </trans-unit>
@@ -768,15 +860,15 @@
         <source>Copy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">80,81</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
           <context context-type="linenumber">88,89</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">119,120</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">141,142</context>
         </context-group>
         <note priority="1" from="description">copy</note>
       </trans-unit>
@@ -784,7 +876,7 @@
         <source>Facility ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">85,86</context>
+          <context context-type="linenumber">94,95</context>
         </context-group>
         <note priority="1" from="description">entry facility-id label</note>
       </trans-unit>
@@ -792,7 +884,7 @@
         <source>Verified?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">93,94</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
         <note priority="1" from="description">entry verified label</note>
       </trans-unit>
@@ -800,7 +892,7 @@
         <source>Benchmark</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">99,100</context>
+          <context context-type="linenumber">116,117</context>
         </context-group>
         <note priority="1" from="description">entry benchmark title</note>
       </trans-unit>
@@ -808,7 +900,7 @@
         <source>Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">102,103</context>
+          <context context-type="linenumber">119,120</context>
         </context-group>
         <note priority="1" from="description">entry region label</note>
       </trans-unit>
@@ -816,7 +908,7 @@
         <source>Amount</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">106,107</context>
+          <context context-type="linenumber">123,124</context>
         </context-group>
         <note priority="1" from="description">entry amount label</note>
       </trans-unit>
@@ -824,7 +916,7 @@
         <source>Entry</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">113,114</context>
+          <context context-type="linenumber">129,130</context>
         </context-group>
         <note priority="1" from="description">entry entry title</note>
       </trans-unit>
@@ -832,7 +924,7 @@
         <source>Entry ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">116,117</context>
+          <context context-type="linenumber">132,133</context>
         </context-group>
         <note priority="1" from="description">entry entry-id label</note>
       </trans-unit>
@@ -840,7 +932,7 @@
         <source>Created on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">124,125</context>
+          <context context-type="linenumber">146,147</context>
         </context-group>
         <note priority="1" from="description">entry created-on label</note>
       </trans-unit>
@@ -848,7 +940,7 @@
         <source>Edited on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">128,129</context>
+          <context context-type="linenumber">150,151</context>
         </context-group>
         <note priority="1" from="description">entry edited-on label</note>
       </trans-unit>
@@ -856,9 +948,17 @@
         <source>Back to overview</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">entry back-to-overview</note>
+      </trans-unit>
+      <trans-unit id="542783023966474099" datatype="html">
+        <source>No entries found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+        <note priority="1" from="description">entries not-found</note>
       </trans-unit>
       <trans-unit id="7819314041543176992" datatype="html">
         <source>Close</source>
@@ -908,22 +1008,6 @@
         </context-group>
         <note priority="1" from="description">password-strength great</note>
       </trans-unit>
-      <trans-unit id="6570363013146073520" datatype="html">
-        <source>Dashboard</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <note priority="1" from="description">breadcrumb dashboard title</note>
-      </trans-unit>
-      <trans-unit id="2821179408673282599" datatype="html">
-        <source>Home</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <note priority="1" from="description">breadcrumb homepage title</note>
-      </trans-unit>
       <trans-unit id="8559170870663360229" datatype="html">
         <source>Examples</source>
         <context-group purpose="location">
@@ -947,6 +1031,22 @@
           <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">breadcrumb entries title</note>
+      </trans-unit>
+      <trans-unit id="5014960004929658159" datatype="html">
+        <source>Verified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/verifiedpipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">entry verified</note>
+      </trans-unit>
+      <trans-unit id="991761096918819245" datatype="html">
+        <source>Not verified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/verifiedpipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">entry verified</note>
       </trans-unit>
     </body>
   </file>
