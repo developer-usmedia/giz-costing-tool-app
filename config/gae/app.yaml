@@ -58,6 +58,16 @@ handlers:
     secure: always
     redirect_http_response_code: 301
 
+  - url: /en/media
+    static_dir: browser/en/media
+    secure: always
+    redirect_http_response_code: 301
+
+  - url: /es/media
+    static_dir: browser/es/media
+    secure: always
+    redirect_http_response_code: 301
+
   # Serve favicon directly
   - url: /favicon\.ico
     static_files: browser/en/assets/favicons/favicon.ico
