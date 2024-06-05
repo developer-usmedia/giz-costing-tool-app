@@ -38,6 +38,14 @@
                 <a [routerLink]="(routes.EXAMPLES)" fragment="menu"
                    type="button" giz-stroke-button>Menu</a>
             </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="status"
+                   type="button" giz-stroke-button>Status</a>
+            </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="entry-card"
+                   type="button" giz-stroke-button>Entry card</a>
+            </li>
         </ul>
     </section>
 
@@ -457,6 +465,30 @@
                 <a giz-menu-item [routerLink]="[routes.EXAMPLES]">Item</a>
             </giz-menu>
         </ng-template>
+    </section>
+
+    <section class="examples__section" id="status">
+        <h2 class="examples__title">Status</h2>
+        <giz-status status="empty"></giz-status>
+        <giz-status status="started"></giz-status>
+        <giz-status status="ongoing"></giz-status>
+        <giz-status status="done"></giz-status>
+    </section>
+
+    <section class="examples__section" id="entry-card">
+        <h2 class="examples__title">Entry card</h2>
+
+        <ul class="examples__list">
+            <li class="examples__item">
+                <giz-entry-card [entry]="entry" [isMain]="true" [showStatus]="false"></giz-entry-card>
+            </li>
+            <li class="examples__item">
+                <giz-entry-card [entry]="entry" [showStatus]="false"></giz-entry-card>
+            </li>
+            <li class="examples__item">
+                <giz-entry-card [entry]="entry" [link]="[(moduleRoute.ENTRIES), entry.id]"></giz-entry-card>
+            </li>
+        </ul>
     </section>
 
     <a [routerLink]="(routes.DASHBOARD)" fragment="anchor-menu"

@@ -1,0 +1,30 @@
+<div class="entry-card__content">
+    @if (isMain) {
+        <h1 class="entry-card__title entry-card__title--main">
+            {{ entry.facility.name }}
+            @if (entry.verified) {
+                <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
+            } @else {
+                <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
+            }
+        </h1>
+    } @else {
+        <h3 class="entry-card__title">
+            {{ entry.facility.name }}
+            @if (entry.verified) {
+                <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
+            } @else {
+                <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
+            }
+        </h3>
+    }
+    <p class="entry-card__info">{{ entry.year }}, {{ countryCode }}</p>
+</div>
+@if (showStatus && entryStatus) {
+    <div class="entry-card__status">
+        <giz-status [status]="entryStatus"></giz-status>
+    </div>
+}
+@if (link) {
+    <a [routerLink]="link" class="entry-card__link"><span>{{ entry.facility.name }}</span></a>
+}

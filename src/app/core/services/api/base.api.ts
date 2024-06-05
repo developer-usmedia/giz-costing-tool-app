@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { getHttpParamsFromPagingParams } from '@shared/helpers/paging.helper';
+import { getHttpParamsFromPagingParams } from '@shared/helpers';
 import { PagingParams } from '@core/models';
 
 interface Request {

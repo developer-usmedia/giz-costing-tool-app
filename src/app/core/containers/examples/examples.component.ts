@@ -3,7 +3,9 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { ICON } from '@shared/components/icon/icon.enum';
-import { ROOT_ROUTE } from '@core/models';
+import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
+import { Entry } from '@api/models';
+import { EntriesService } from '@core/services/entries.service';
 
 @Component({
     selector: 'giz-examples',
@@ -14,8 +16,10 @@ export class ExamplesComponent {
     @ViewChild('dialogTemplateRef') private readonly dialogTemplateRef!: TemplateRef<any>;
 
     public icons: ICON[] = Object.entries(ICON).map(entry => entry[1]);
+    public entry!: Entry;
 
     protected readonly routes = ROOT_ROUTE;
+    protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly icon = ICON;
 
     private activeToaster?: number;
@@ -23,8 +27,10 @@ export class ExamplesComponent {
 
     constructor(
         public dialog: Dialog,
+        private readonly entriesService: EntriesService,
         private readonly toastr: ToastrService,
     ) {
+        this.entry = this.entriesService.getEntry('bd101a34-0438-4065-b84c-a4efc7258204');
     }
 
     public showToaster(type: 'info' | 'success' | 'warning' | 'error' | 'warning-filled' | 'critical') {

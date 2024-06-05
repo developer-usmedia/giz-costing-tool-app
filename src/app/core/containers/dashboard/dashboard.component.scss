@@ -1,6 +1,21 @@
+@import 'config/sizes';
+@import 'mixins/screen';
+
 .dashboard {
+    &__entries {
+        display: grid;
+        gap: $p-gutter;
+        margin-bottom: $p-gutter;
+    }
+
     &__buttons {
         display: flex;
         gap: 1rem;
+    }
+
+    @include screen($screen-simple) {
+        &__entries {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }

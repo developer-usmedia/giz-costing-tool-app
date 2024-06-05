@@ -1,0 +1,26 @@
+@import './config/colors';
+
+:root {
+    --status-empty: #{ $c-grey--400 };
+    --status-started: #{ $c-carrot-1 };
+    --status-ongoing: #{ $c-pacific-1 };
+    --status-done: #{ $c-lima-1 };
+}
+
+.status {
+    &--empty {
+        color: var(--status-empty);
+    }
+
+    &--started {
+        color: var(--status-started);
+    }
+
+    &--ongoing {
+        color: var(--status-ongoing);
+    }
+
+    &--done {
+        color: var(--status-done);
+    }
+}

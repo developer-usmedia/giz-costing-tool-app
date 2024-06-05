@@ -4,8 +4,6 @@
 @import 'mixins/typography';
 
 :root {
-    --entry-detail-subtitle-color: #{ $c-grey--600 };
-    --entry-detail-icon-color: #{ $c-grey--600 };
     --entry-detail-border-color: #{ $c-grey--300 };
 }
 
@@ -15,31 +13,8 @@
         margin-bottom: $p-gutter * 2;
     }
 
-    &__info {
-        padding: $p-gutter;
-    }
-
-    &__title {
-        @include style-heading-2;
-
-        align-items: center;
-        display: flex;
-        gap: 0.25rem;
-        margin: 0 0 0.4rem;
-    }
-
-    &__subtitle {
-        color: var(--entry-detail-subtitle-color);
-        margin: 0;
-    }
-
     &__tabs {
         margin-right: -$p-gutter;
-    }
-
-    &__icon {
-        color: var(--entry-detail-icon-color);
-        padding-top: 2px;
     }
 
     @include screen($screen-simple) {

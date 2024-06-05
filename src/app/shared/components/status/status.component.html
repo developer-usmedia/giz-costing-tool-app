@@ -1,0 +1,12 @@
+@if (status === 'empty') {
+    <giz-icon [icon]="icon.PROGRESS_EMPTY"></giz-icon>
+}
+@else if (status === 'started') {
+    <giz-icon [icon]="icon.PROGRESS_STARTED"></giz-icon>
+}
+@else if (status === 'ongoing') {
+    <giz-icon [icon]="icon.PROGRESS_ONGOING"></giz-icon>
+}
+@else if (status === 'done') {
+    <giz-icon [icon]="icon.PROGRESS_DONE"></giz-icon>
+}

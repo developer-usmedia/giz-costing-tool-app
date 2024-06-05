@@ -1,7 +1,12 @@
 <div class="dashboard">
+    <ul class="dashboard__entries">
+        @for (entry of entries; track entry.id) {
+            <li class="dashboard__entry">
+                <giz-entry-card [entry]="entry" [link]="[(moduleRoute.ENTRIES), entry.id]"></giz-entry-card>
+            </li>
+        }
+    </ul>
     <div class="dashboard__buttons">
         <a giz-stroke-button [routerLink]="[(moduleRoute.ENTRIES)]">Entry overview</a>
-        <a giz-stroke-button
-           [routerLink]="[(moduleRoute.ENTRIES), 'bd101a34-0438-4065-b84c-a4efc7258204' ]">Entry</a>
     </div>
 </div>

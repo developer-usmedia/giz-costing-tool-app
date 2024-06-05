@@ -3,15 +3,10 @@
         <div class="entry__info">
             @if (loading$ | async) {
                 <giz-spinner></giz-spinner>
+            } @else if (entry) {
+                <giz-entry-card [entry]="entry" [isMain]="true" [showStatus]="false"></giz-entry-card>
             } @else {
-                <h1 class="entry__title">Facility name
-                    @if (verified) {
-                        <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry__icon"></giz-icon>
-                    } @else {
-                        <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry__icon"></giz-icon>
-                    }
-                </h1>
-                <p class="entry__subtitle">2023, Brazil</p>
+                Entry not found
             }
         </div>
 
