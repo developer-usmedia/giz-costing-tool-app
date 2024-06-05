@@ -1,4 +1,7 @@
 <giz-content-page>
-    <h1 i18n="imprint title">Imprint</h1>
-    <div class="todo">CONTENT</div>
+    @if (loading$ | async) {
+        <giz-spinner size="large"></giz-spinner>
+    } @else {
+        <div [innerHTML]="(this.markdown ?? '') | markdown"></div>
+    }
 </giz-content-page>

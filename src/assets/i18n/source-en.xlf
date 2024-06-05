@@ -440,10 +440,6 @@
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">8,10</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/cp-terms/cp-terms.component.html</context>
-          <context context-type="linenumber">2,3</context>
-        </context-group>
         <note priority="1" from="description">terms title</note>
       </trans-unit>
       <trans-unit id="9055665654201606988" datatype="html">
@@ -452,10 +448,6 @@
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">12,14</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/cp-data-protection/cp-data-protection.component.html</context>
-          <context context-type="linenumber">2,3</context>
-        </context-group>
         <note priority="1" from="description">dataProtection title</note>
       </trans-unit>
       <trans-unit id="5891707175321515013" datatype="html">
@@ -463,10 +455,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">16,18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/cp-imprint/cp-imprint.component.html</context>
-          <context context-type="linenumber">2,3</context>
         </context-group>
         <note priority="1" from="description">imprint title</note>
       </trans-unit>
@@ -501,6 +489,22 @@
           <context context-type="linenumber">21,23</context>
         </context-group>
         <note priority="1" from="description">menu logout</note>
+      </trans-unit>
+      <trans-unit id="6268235922064899774" datatype="html">
+        <source>Failed to get markdown file</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-data-protection/cp-data-protection.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-imprint/cp-imprint.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-terms/cp-terms.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">content load error</note>
       </trans-unit>
       <trans-unit id="4449392692590364756" datatype="html">
         <source>Welcome to the Costing Tool</source>
@@ -698,7 +702,7 @@
         <source>Matrix ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">77,79</context>
+          <context context-type="linenumber">77,78</context>
         </context-group>
         <note priority="1" from="description">entry matrix-id label</note>
       </trans-unit>
@@ -722,7 +726,7 @@
         <source>Facility ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">85,87</context>
+          <context context-type="linenumber">85,86</context>
         </context-group>
         <note priority="1" from="description">entry facility-id label</note>
       </trans-unit>
@@ -770,7 +774,7 @@
         <source>Entry ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">116,118</context>
+          <context context-type="linenumber">116,117</context>
         </context-group>
         <note priority="1" from="description">entry entry-id label</note>
       </trans-unit>

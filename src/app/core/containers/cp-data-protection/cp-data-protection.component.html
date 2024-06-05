@@ -1,4 +1,7 @@
 <giz-content-page>
-    <h1 i18n="data-protection title">Data Protection</h1>
-    <div class="todo">CONTENT</div>
+    @if (loading$ | async) {
+        <giz-spinner size="large"></giz-spinner>
+    } @else {
+        <div [innerHTML]="(this.markdown ?? '') | markdown"></div>
+    }
 </giz-content-page>
