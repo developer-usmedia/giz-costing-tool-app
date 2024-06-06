@@ -54,8 +54,9 @@
     &--link {
         background: var(--entry-card-background);
         border: 1px solid var(--entry-card-border-color);
-        min-width: 300px;
+        min-width: 0;
         transition: box-shadow 0.2s;
+        width: min(100%, 300px);
 
         &:hover,
         &:focus {

@@ -40,6 +40,14 @@
         }
     }
 
+    &__item {
+        flex: 0 0 auto;
+
+        &--card {
+            flex: 1;
+        }
+    }
+
     &__icon {
         @include style-text-small;
 

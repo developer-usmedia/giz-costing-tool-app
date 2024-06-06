@@ -479,13 +479,13 @@
         <h2 class="examples__title">Entry card</h2>
 
         <ul class="examples__list">
-            <li class="examples__item">
+            <li class="examples__item examples__item--card">
                 <giz-entry-card [entry]="entry" [isMain]="true" [showStatus]="false"></giz-entry-card>
             </li>
-            <li class="examples__item">
+            <li class="examples__item examples__item--card">
                 <giz-entry-card [entry]="entry" [showStatus]="false"></giz-entry-card>
             </li>
-            <li class="examples__item">
+            <li class="examples__item examples__item--card">
                 <giz-entry-card [entry]="entry" [link]="[(moduleRoute.ENTRIES), entry.id]"></giz-entry-card>
             </li>
         </ul>

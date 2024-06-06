@@ -1,7 +1,27 @@
+@import 'config/colors';
 @import 'config/sizes';
 @import 'mixins/screen';
+@import 'mixins/typography';
 
 .dashboard {
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__title {
+        @include style-heading-1-hero;
+
+        margin: 0 0 0.25rem;
+    }
+
+    &__version {
+        @include style-text-small;
+
+        color: var(--version-color);
+    }
+
     &__entries {
         display: grid;
         gap: $p-gutter;
@@ -16,6 +36,21 @@
     @include screen($screen-simple) {
         &__entries {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @include screen($screen-normal) {
+        &__intro {
+            flex-direction: row;
+        }
+
+        &__content {
+            margin-bottom: 2rem;
+            padding-top: 5rem;
+        }
+
+        &__logos {
+            margin-left: -6rem;
         }
     }
 }

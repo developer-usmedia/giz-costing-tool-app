@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { AuthService } from '@core/services';
 
@@ -6,7 +6,6 @@ import { AuthService } from '@core/services';
     selector: 'giz-homepage',
     templateUrl: './homepage.component.html',
     styleUrl: './homepage.component.scss',
-    encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent {
     public loggedIn = this.authService.isLoggedIn();
