@@ -5,7 +5,7 @@ export enum MODULE_ROUTE {
 export enum ROOT_ROUTE {
     ACCOUNT = '/account',
     DASHBOARD = '/dashboard',
-    HOME = '/home',
+    HOME = '/',
     DATA_PROTECTION = '/data-protection',
     EXAMPLES = '/examples',
     IMPRINT = '/imprint',

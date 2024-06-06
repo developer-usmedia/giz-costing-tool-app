@@ -1,13 +1,14 @@
 import { inject, Injectable } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
-import { AUTH_COOKIE_NAME } from '@api/models';
+import { AuthService } from '@core/services';
 
 @Injectable({
     providedIn: 'root',
 })
 class PermissionsService {
     constructor(
+        private readonly authService: AuthService,
         private readonly router: Router,
     ) {
     }
@@ -16,7 +17,7 @@ class PermissionsService {
         // TODO: add check for session here?
         // solves the case where cookie is present but no longer valid
         // Or when cookie is missing somehow
-        if (document.cookie.includes(AUTH_COOKIE_NAME)) {
+        if (this.authService.isLoggedIn()) {
             return true;
         }
 

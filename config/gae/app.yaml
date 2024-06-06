@@ -108,9 +108,9 @@ handlers:
     secure: always
     redirect_http_response_code: 301
 
-  # Serve app TODO: this needs to redirect depending on browser language
-  - url: /
-    static_files: browser/en/index.html
-    upload: browser/en/index.html
+  # Redirect / via index.html
+  - url: /.*
+    static_files: index.html
+    upload: index.html
     secure: always
     redirect_http_response_code: 301

@@ -5,7 +5,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { BreadcrumbItem, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { User } from '@api/models';
-import { UserService } from '@core/services/user.service';
+import { UserService } from '@core/services';
 import { getBreadCrumbTitle } from '@shared/helpers';
 
 @Component({

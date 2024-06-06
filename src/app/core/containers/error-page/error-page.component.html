@@ -1,10 +1,14 @@
 <div class="error error--{{ code }}">
-    <span class="error__subtitle">Error: {{ code }}</span>
+    <span class="error__subtitle" i18n="error title">Error: {{ code }}</span>
     <h1 class="error__title">{{ title }}</h1>
 
-    <p class="error__description" [innerHtml]="description"></p>
+    <p class="error__description" [innerHtml]="description | markdown"></p>
 
     <div class="error__actions">
-        <a giz-stroke-button [theme]="'primary'" [routerLink]="[routes.DASHBOARD]">Homepage</a>
+        @if (loggedIn) {
+            <a giz-stroke-button [theme]="'primary'" [routerLink]="[routes.DASHBOARD]" i18n="breadcrumb dashboard title">Dashboard</a>
+        } @else {
+            <a giz-stroke-button [theme]="'primary'" [routerLink]="[routes.HOME]" i18n="breadcrumb dashboard title">Home</a>
+        }
     </div>
 </div>

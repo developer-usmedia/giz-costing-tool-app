@@ -506,6 +506,64 @@
         </context-group>
         <note priority="1" from="description">content load error</note>
       </trans-unit>
+      <trans-unit id="5641945527911431559" datatype="html">
+        <source>Error: <x id="INTERPOLATION" equiv-text="{{ code }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+        <note priority="1" from="description">error title</note>
+      </trans-unit>
+      <trans-unit id="2275328567992347600" datatype="html">
+        <source>Page not found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">error title not-found</note>
+      </trans-unit>
+      <trans-unit id="1333299003321536122" datatype="html">
+        <source>Access forbidden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">error title forbidden</note>
+      </trans-unit>
+      <trans-unit id="2657043015926552641" datatype="html">
+        <source>Unknown error</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">error title unknown</note>
+      </trans-unit>
+      <trans-unit id="570824501637912866" datatype="html">
+        <source>Oops! Looks like you hit a dead end. This page doesn&apos;t exist.
+             But don&apos;t worry, we have a simple sitemap to help you find what you&apos;re looking for.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+        <note priority="1" from="description">error description not-found</note>
+      </trans-unit>
+      <trans-unit id="2643149342211152372" datatype="html">
+        <source>Oops! It seems you don&apos;t have permission to access this page.
+             Don&apos;t worry, we have a simple sitemap to help you find what you&apos;re looking for.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+        <note priority="1" from="description">error description not-found</note>
+      </trans-unit>
+      <trans-unit id="531022467353337314" datatype="html">
+        <source>Oops! Something went wrong but we do not really know what happened. Please try again later.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">error description not-found</note>
+      </trans-unit>
       <trans-unit id="4449392692590364756" datatype="html">
         <source>Welcome to the Costing Tool</source>
         <context-group purpose="location">
@@ -546,7 +604,7 @@
         <source>Information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">25,27</context>
+          <context context-type="linenumber">20,22</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
@@ -562,7 +620,7 @@
         <source>Scenarios</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">30,32</context>
+          <context context-type="linenumber">25,27</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
@@ -574,7 +632,7 @@
         <source>Distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">36,38</context>
+          <context context-type="linenumber">31,33</context>
         </context-group>
         <note priority="1" from="description">entry tab distribution</note>
       </trans-unit>
@@ -582,7 +640,7 @@
         <source>Buyer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">42,43</context>
+          <context context-type="linenumber">37,38</context>
         </context-group>
         <note priority="1" from="description">entry tab buyer</note>
       </trans-unit>
@@ -590,7 +648,7 @@
         <source>Report</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">48,49</context>
+          <context context-type="linenumber">43,44</context>
         </context-group>
         <note priority="1" from="description">entry tab report</note>
       </trans-unit>

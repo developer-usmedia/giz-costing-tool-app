@@ -16,13 +16,14 @@ import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 
 const routes: Routes = [
     {
+        path: '',
+        pathMatch: 'full',
+        component: HomepageComponent,
+    },
+    {
         path: MODULE_ROUTE.AUTH.replace(/\//g, ''),
         component: BaseAuthComponent,
         loadChildren: () => import('./auth/auth.module').then((p) => p.AuthModule),
-    },
-    {
-        path: ROOT_ROUTE.HOME.replace(/\//g, ''),
-        component: HomepageComponent,
     },
     {
         path: ROOT_ROUTE.IMPRINT.replace(/\//g, ''),
@@ -41,11 +42,6 @@ const routes: Routes = [
         component: BaseComponent,
         canActivate: [AuthGuard],
         children: [
-            {
-                path: '',
-                redirectTo: ROOT_ROUTE.DASHBOARD.replace(/\//g, ''),
-                pathMatch: 'full',
-            },
             {
                 path: ROOT_ROUTE.DASHBOARD.replace(/\//g, ''),
                 component: DashboardComponent,

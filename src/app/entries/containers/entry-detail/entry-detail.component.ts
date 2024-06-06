@@ -5,7 +5,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { BehaviorSubject, distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Entry } from '@api/models';
-import { EntriesService } from '@core/services/entries.service';
+import { EntriesService } from '@core/services';
 
 @Component({
     selector: 'giz-entry-detail',

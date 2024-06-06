@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GIZ Costing Tool</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            // Check for IE -- see https://stackoverflow.com/a/9851769
+            if (/*@cc_on!@*/ false && !!document.documentMode) {
+                window.location.href = '/legacy.html';
+            }
+
+            const browserLanguage = navigator.language;
+            let language = 'en';
+            if (!language && ['en', 'es'].includes(browserLanguage)) {
+                language = browserLanguage;
+            }
+            window.location.replace(`/${language}/${ window.location.pathname }`);
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <h2>No javascript detected</h2>
+            <p>Please enable javascript to use this website.</p>
+        </noscript>
+    </body>
+</html>

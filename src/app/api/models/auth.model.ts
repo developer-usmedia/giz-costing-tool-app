@@ -1,5 +1,3 @@
-export const AUTH_COOKIE_NAME = 'GIZ-COOKIE';
-
 export interface RegisterForm {
     email: string;
     password: string;

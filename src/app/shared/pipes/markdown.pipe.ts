@@ -6,6 +6,10 @@ import { marked, MarkedOptions } from 'marked';
 })
 export class MarkdownPipe implements PipeTransform {
     transform(markdown: string, options?: MarkedOptions) {
+        options = {
+            breaks: true,
+            ...options,
+        };
         if (markdown == null) return '';
         return marked(markdown, options);
     }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { MODULE_ROUTE } from '@core/models';
 import { Entry } from '@api/models';
-import { EntriesService } from '@core/services/entries.service';
+import { EntriesService } from '@core/services';
 
 @Component({
     selector: 'giz-dashboard',
