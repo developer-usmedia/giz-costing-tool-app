@@ -28,6 +28,7 @@ import { ScrollOverflowDirective } from '@shared/directives/scroll-overflow.dire
 import { ScrollOverflowContainerDirective } from '@shared/directives/scroll-overflow-container.directive';
 import { EntryCardComponent } from './components/entry-card/entry-card.component';
 import { StatusComponent } from './components/status/status.component';
+import { LogosComponent } from './components/logos/logos.component';
 
 const PIPES = [
     EmptyPipe,
@@ -64,6 +65,7 @@ const DIRECTIVES = [
         ...PIPES,
         EntryCardComponent,
         StatusComponent,
+        LogosComponent,
     ],
     exports: [
         ...COMPONENTS,
@@ -71,6 +73,7 @@ const DIRECTIVES = [
         ...PIPES,
         EntryCardComponent,
         StatusComponent,
+        LogosComponent,
     ],
     imports: [
         CommonModule,

@@ -1,4 +1,4 @@
-<div class="cp">
+<div class="cp" [ngClass]="{ 'cp--wide': size === 'wide' }">
     <div class="cp__header">
         <giz-header
             [breadcrumb]="breadcrumb"
@@ -10,4 +10,10 @@
     <div class="cp__footer">
         <giz-footer></giz-footer>
     </div>
+
+    @if (showBackground) {
+        <img class="cp__background"
+             [src]="baseHref + 'assets/images/home-background.svg'" alt=""
+             height="500" width="1280"/>
+    }
 </div>

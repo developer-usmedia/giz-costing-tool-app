@@ -32,4 +32,17 @@
     &__footer {
         flex: 0 0 auto;
     }
+
+    &__background {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &--wide {
+        #{ $self }__content {
+            width: min(100%, 1064px);
+        }
+    }
 }

@@ -1,9 +1,39 @@
+@import 'config/colors';
 @import 'config/sizes';
+@import 'mixins/typography';
 
-.home {
+:root {
+    --homepage-version-color: #{ $c-grey--600 };
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__title {
+        @include style-heading-1-hero;
+
+        margin: 0 0 0.25rem;
+    }
+
+    &__version {
+        @include style-text-small;
+
+        color: var(--homepage-version-color);
+    }
+
     &__buttons {
         display: flex;
         gap: 1rem;
-        margin-top: $p-gutter;
+        margin-top: 2rem;
+    }
+
+    @include screen($screen-normal) {
+        flex-direction: row;
+
+        &__logos {
+            padding-top: 1.5rem;
+        }
     }
 }
