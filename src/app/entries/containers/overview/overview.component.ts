@@ -1,9 +1,13 @@
-import { Component, inject } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { Component, inject } from '@angular/core';
 
+import { Entry } from '@api/models';
 import { MODULE_ROUTE } from '@core/models';
 import { EntriesService } from '@core/services';
-import { Entry } from '@api/models';
+import {
+    CreateEntryDialogComponent,
+    CreateEntryResult,
+} from '@shared/containers/create-entry-dialog/create-entry-dialog.component';
 import { DeleteEntryResult, EntryDeleteDialogComponent } from '../entry-delete-dialog/entry-delete-dialog.component';
 
 @Component({
@@ -20,10 +24,17 @@ export class OverviewComponent {
     });
 
     private readonly dialog = inject(Dialog);
-    private readonly dialogRef?: DialogRef<DeleteEntryResult, EntryDeleteDialogComponent>;
+    private dialogCreateRef?: DialogRef<CreateEntryResult, CreateEntryDialogComponent>;
+    private dialogDeleteRef?: DialogRef<DeleteEntryResult, EntryDeleteDialogComponent>;
+
+    public createEntry(): void  {
+        this.dialogCreateRef = this.dialog.open(CreateEntryDialogComponent, {
+            disableClose: true,
+        });
+    }
 
     public deleteEntry(entry: Entry) {
-        this.dialog.open(EntryDeleteDialogComponent, {
+        this.dialogDeleteRef = this.dialog.open(EntryDeleteDialogComponent, {
             data: entry,
         });
     }

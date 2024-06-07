@@ -1,0 +1,139 @@
+@if (state === 'start' || state === 'uploading') {
+    <giz-dialog
+        class="create-entry"
+        [title]="getTitle('start')"
+        [size]="'large'"
+        [showCloseButton]="state !== 'uploading'"
+        (closeDialog)="cancel()"
+    >
+        <p i18n="import file-upload description">Upload your downloaded excel file. You can download the excel file from <a
+            href="https://salarymatrix.idhtrade.org/">https://salarymatrix.idhtrade.org</a></p>
+
+        <giz-file-upload
+            [allowedExtensions]="['.xlsx']"
+            [inProgress]="state === 'uploading'"
+            [progress]="uploadProgress"
+            [cancel]="!!(cancelled$ | async)"
+            (fileSelected)="onFileSelect($event)"
+        ></giz-file-upload>
+
+        <ng-container footer-right>
+            <button type="button" giz-stroke-button theme="basic"
+                    [disabled]="state === 'uploading'"
+                    (click)="cancel()"
+                    i18n="import cancel"
+            >Cancel
+            </button>
+
+            <button type="button" giz-stroke-button
+                    [disabled]="!this.file || state === 'uploading'"
+                    (click)="uploadFile()"
+                    i18n="import upload"
+            >Select file
+            </button>
+        </ng-container>
+    </giz-dialog>
+}
+
+@if (state === 'validation-errors') {
+    <giz-dialog
+        class="create-entry"
+        [title]="getTitle('validation-errors')"
+        [size]="'large'"
+        (closeDialog)="cancel()"
+    >
+        <p class="create-entry__warning">
+            <span i18n="import validation-result description">Uploaded file invalid, found {{ validationErrors?.length ?? 'unknown' }} issues.</span>
+            <giz-icon [icon]="icon.WARNING"></giz-icon>
+        </p>
+
+        <table class="create-entry__table">
+            <caption i18n="excel caption">Validation errors</caption>
+            <thead>
+            <tr>
+                <th i18n="excel tab">Tab</th>
+                <th i18n="excel row">Row</th>
+                <th i18n="excel column">Column</th>
+                <th i18n="excel validation-error">Validation error</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (error of validationErrors; track error; ) {
+                    <tr>
+                        <td>{{ error.sheetIndex }}</td>
+                        <td>{{ error.rowIndex }}</td>
+                        <td>{{ error.column }}</td>
+                        <td>{{ getMessageForErrorType(error) }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <ng-container footer-right>
+            <button type="button" giz-stroke-button theme="basic"
+                    (click)="cancel()" i18n="import cancel">Cancel
+            </button>
+            <button type="button" giz-stroke-button
+                    (click)="startOver()" i18n="import upload-new">Upload new file
+            </button>
+        </ng-container>
+    </giz-dialog>
+}
+
+@if (state === 'error') {
+    <giz-dialog
+        class="create-entry"
+        [title]="getTitle('error')"
+        (closeDialog)="cancel()"
+    >
+        <p i18n="import error description">An unexpected error occurred during your import. The import has been cancelled as it was incomplete.</p>
+
+        <p i18n="import error try-again">Please try again.</p>
+
+        <ng-container footer-right>
+            <button type="button" giz-stroke-button theme="basic"
+                    (click)="cancel()"
+                    i18n="import cancel"
+            >Cancel
+            </button>
+            <button type="button" giz-stroke-button
+                    (click)="startOver()"
+                    i18n="import try-again"
+            >Try again
+            </button>
+        </ng-container>
+    </giz-dialog>
+}
+
+@if (state === 'success') {
+    <giz-dialog
+        [title]="getTitle('success')"
+        (closeDialog)="continue()"
+    >
+        <ul class="import-progress">
+            <li class="import-progress__item is-success">
+                <giz-icon [icon]="icon.CHECK" class="import-progress__icon"></giz-icon>
+                <span i18n="import progress upload-file">Upload file</span>
+            </li>
+            <li class="import-progress__item is-success">
+                <giz-icon [icon]="icon.CHECK" class="import-progress__icon"></giz-icon>
+                <span i18n="import progress data-validation">Data Validation</span>
+            </li>
+            <li class="import-progress__item is-success">
+                <giz-icon [icon]="icon.CHECK" class="import-progress__icon"></giz-icon>
+                <span i18n="import progress importing">Importing file</span>
+            </li>
+            <li class="import-progress__item is-success">
+                <giz-icon [icon]="icon.CHECK" class="import-progress__icon"></giz-icon>
+                <span i18n="import progress done">Done</span>
+            </li>
+        </ul>
+
+        <ng-container footer-right>
+            <button type="button" giz-stroke-button
+                    (click)="continue()"
+                    i18n="import success">Continue
+            </button>
+        </ng-container>
+    </giz-dialog>
+}

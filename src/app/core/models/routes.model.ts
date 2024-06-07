@@ -11,6 +11,7 @@ export enum ROOT_ROUTE {
     IMPRINT = '/imprint',
     TERMS = '/terms',
 }
+export const ROOT_ROUTES: string[] = Object.values(ROOT_ROUTE);
 
 export enum AUTH_ROUTE {
     LOGIN = 'login',
@@ -19,6 +20,7 @@ export enum AUTH_ROUTE {
     PASSWORD_RESET = 'password-reset',
     REGISTER = 'register',
 }
+export const AUTH_ROUTES: string[] = Object.values(AUTH_ROUTE);
 
 export enum ENTRY_ROUTE {
     SCENARIO = 'scenario',
@@ -27,6 +29,7 @@ export enum ENTRY_ROUTE {
     BUYER = 'buyer',
     REPORT = 'report',
 }
+export const ENTRY_ROUTES: string[] = Object.values(ENTRY_ROUTE);
 
 export type RouteName = MODULE_ROUTE | ROOT_ROUTE | AUTH_ROUTE | ENTRY_ROUTE;
 export const ALL_ROUTES = { ...ROOT_ROUTE, ...MODULE_ROUTE, ...AUTH_ROUTE, ...ENTRY_ROUTE };

@@ -1,7 +1,8 @@
 import { Component, inject, Inject } from '@angular/core';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import { Entry } from '@api/models';
 import { ToastrService } from 'ngx-toastr';
+
+import { Entry } from '@api/models';
 import { EntriesService } from '@core/services';
 
 export interface DeleteEntryResult {

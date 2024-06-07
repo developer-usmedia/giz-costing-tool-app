@@ -1,0 +1,25 @@
+<input type="file" class="file-upload__input"
+       (change)="onFileSelected()"
+       [accept]="allowedExtensions ? allowedExtensions.join(',') : ''"
+       #fileInput xmlns="http://www.w3.org/1999/html">
+
+<div class="file-upload__content">
+    <div class="file-upload__info">
+        <giz-icon class="file-upload__icon" [icon]="icon.UPLOAD_FILE" size="extraLarge"></giz-icon>
+
+        @if (inProgress) {
+            <p class="file-upload__name"><strong i18n="file-upload uploading">Uploading:</strong> {{ fileName | empty }}
+        } @else if (fileName) {
+            <p class="file-upload__name"><strong i18n="file-upload selected">Selected:</strong> {{ fileName }}
+        } @else {
+            <p class="file-upload__name"><strong i18n="file-upload select" class="file-upload__click">Click to select file</strong><span i18n="file-upload drag"> or drag and drop.</span></p>
+            @if (allowedExtensions) {
+                <p class="file-upload__extensions" i18n="file-upload extensions">Supported file: {{ allowedExtensions.join(', ') }}</p>
+            }
+        }
+    </div>
+
+    @if (inProgress) {
+        <giz-progress-bar [progress]="progress"></giz-progress-bar>
+    }
+</div>

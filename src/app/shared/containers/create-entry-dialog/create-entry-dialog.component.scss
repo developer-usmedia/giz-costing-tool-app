@@ -1,0 +1,92 @@
+@use 'sass:color';
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/sr-only';
+@import 'mixins/typography';
+
+:root {
+    --create-entry-table-background: #{ $c-grey--100 };
+    --create-entry-warning: #{ $c-error };
+    --import-progress-border: #{ color.scale($c-black, $alpha: -88%) };
+    --import-progress-color-open: #{ $c-grey--400 };
+}
+
+.create-entry {
+    &__warning {
+        align-items: center;
+        display: flex;
+        gap: 0.25rem;
+
+        .icon {
+            color: var(--create-entry-warning);
+        }
+    }
+
+    /* stylelint-disable no-descending-specificity */
+    &__table {
+        table-layout: fixed;
+
+        caption {
+            @include sr-only;
+        }
+
+        td,
+        th {
+            &:not(:last-child) {
+                --table-head-cell-padding: 5px;
+                --table-cell-padding: 5px;
+
+                background: var(--create-entry-table-background);
+                border-right: 1px solid var(--table-border-color);
+                font-family: $font-barlow;
+                font-weight: $weight-medium;
+                overflow: hidden;
+                text-align: center;
+                white-space: nowrap;
+                width: 65px;
+            }
+        }
+
+        thead {
+            th {
+                @include style-text-small;
+
+                font-family: $font-barlow;
+                font-weight: $weight-bold;
+
+                &:not(:last-child) {
+                    font-weight: $weight-bold;
+                }
+            }
+        }
+    }
+    /* stylelint-enable no-descending-specificity */
+}
+
+.import-progress {
+    $self: &;
+
+    border: 1px solid var(--import-progress-border);
+    border-radius: $b-radius;
+    padding: $p-gutter;
+
+    &__item {
+        display: flex;
+        gap: 10px;
+        padding: 0.25rem 0;
+
+        &.is-success {
+            #{ $self }__icon {
+                color: $c-success;
+            }
+        }
+
+        &.is-open {
+            color: var(--import-progress-color-open);
+
+            #{ $self }__icon {
+                color: transparent;
+            }
+        }
+    }
+}

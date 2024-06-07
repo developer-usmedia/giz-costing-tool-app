@@ -1,13 +1,13 @@
+import { HttpEvent, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 
 import { PagedResponse } from '@api/models';
 import { Entry } from '@api/models/entry.model';
 import { BaseApi } from '@api/services/base.api';
-import { environment } from 'environments/environment';
 import { PagingParams } from '@core/models';
 import { getHttpParamsFromPagingParams, GetParamsCodec } from '@shared/helpers';
-import { HttpParams } from '@angular/common/http';
+import { environment } from 'environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class EntriesApi extends BaseApi {
@@ -15,6 +15,7 @@ export class EntriesApi extends BaseApi {
 
     private readonly endpoints = {
         simulations: `${ this.baseUrl }/simulations`,
+        import: `${ this.baseUrl }/simulations/import`,
     };
 
     public getOne(id: string): Promise<Entry> {
@@ -34,5 +35,11 @@ export class EntriesApi extends BaseApi {
 
     public deleteEntry(id: string): Promise<Entry> {
         return lastValueFrom(this.delete<Entry>(`${ this.endpoints.simulations }/${ id }`));
+    }
+
+    public import(file: File): Observable<HttpEvent<Entry>> {
+        const formData = new FormData();
+        formData.append('file', file);
+        return this.postWithProgress<Entry>(this.endpoints.import, formData);
     }
 }

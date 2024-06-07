@@ -1,0 +1,69 @@
+@use 'sass:color';
+@import './config/colors';
+@import './config/sizes';
+@import './mixins/stretch';
+
+:root {
+    --file-upload-background: #{ $c-white };
+    --file-upload-border: #{ color.scale($c-black, $alpha: -88%) };
+    --file-upload-color: #{ $c-thunderbird-1 };
+}
+
+.file-upload {
+    $self: &;
+
+    border: 1px solid var(--file-upload-border);
+    color: var(--file-upload-color);
+    display: block;
+    height: 250px;
+    position: relative;
+
+    &__input {
+        @include stretch;
+
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+
+        &:focus,
+        &:hover {
+            & ~ #{ $self }__content {
+                #{ $self }__click {
+                    border-bottom-color: currentColor;
+                }
+            }
+        }
+    }
+
+    &__content {
+        align-items: center;
+        background: $c-white;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+
+    &__info {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    &__name {
+        font-size: 1rem;
+        margin: 0 0 0.125rem;
+    }
+
+    &__icon {
+        margin-bottom: 0.75rem;
+    }
+
+    &__click {
+        border-bottom: 1px solid transparent;
+        transition: border-bottom-color 0.2s;
+    }
+
+    &__extensions {
+        margin-bottom: 0;
+    }
+}

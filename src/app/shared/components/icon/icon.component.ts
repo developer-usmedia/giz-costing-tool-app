@@ -20,7 +20,7 @@ import { APP_BASE_HREF } from '@angular/common';
 })
 export class IconComponent {
     @Input({ required: true }) icon!: ICON;
-    @Input() size: 'small' | 'default' | 'large' = 'default';
+    @Input() size: 'small' | 'default' | 'large' | 'extraLarge' = 'default';
 
     @HostBinding('role') role = 'img';
     @HostBinding('class') cssClass = 'icon';
@@ -43,6 +43,10 @@ export class IconComponent {
 
     @HostBinding('class.icon--large') get large(): boolean {
         return this.size === 'large';
+    }
+
+    @HostBinding('class.icon--extra-large') get extraLarge(): boolean {
+        return this.size === 'extraLarge';
     }
 
     get href(): string {

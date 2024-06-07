@@ -21,7 +21,7 @@ export class EntriesService {
 
     public getEntries(paging?: PagingParams) {
         return useQuery<PagedResponse<'simulations', Entry>>(
-            ['entries', { paging } ],
+            ['entries', { paging }],
             () => this.entriesApi.getMany(paging),
         );
     }

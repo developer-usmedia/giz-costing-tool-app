@@ -55,8 +55,8 @@ import { LogoutComponent } from './containers/logout/logout.component';
             },
             {
                 path: AUTH_ROUTE.EMAIL_VERIFICATION,
-                canActivate: [AuthGuard],
                 component: EmailVerificationComponent,
+                canActivate: [AuthGuard],
             },
         ]),
         SharedModule,

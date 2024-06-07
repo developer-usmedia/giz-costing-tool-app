@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -40,6 +40,14 @@ export class BaseApi {
         });
     }
 
+    protected postWithProgress<TResponse>(url: string, data?: unknown): Observable<HttpEvent<TResponse>> {
+        return this.requestWithProgress<TResponse>({
+            method: 'post',
+            url: url,
+            data: data,
+        });
+    }
+
     protected patch<TResponse>(url: string, data?: unknown): Observable<TResponse> {
         return this.request<TResponse>({
             method: 'patch',
@@ -55,11 +63,19 @@ export class BaseApi {
         });
     }
 
-    protected request<TResponse>({ method, url, data, params }: Request) {
+    protected request<TResponse>({ method, url, data, params }: Request): Observable<TResponse> {
         return this.http.request<TResponse>(method, url, {
             body: data,
             params: params,
-            withCredentials: true,
+        });
+    }
+
+    protected requestWithProgress<TResponse>({ method, url, data, params }: Request): Observable<HttpEvent<TResponse>> {
+        return this.http.request<TResponse>(method, url, {
+            body: data,
+            params: params,
+            reportProgress: true,
+            observe: 'events',
         });
     }
 }

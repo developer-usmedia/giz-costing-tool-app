@@ -230,6 +230,7 @@ hr {
 table {
     border: 1px solid var(--table-border-color);
     border-radius: $b-radius;
+    border-spacing: 0;
     margin: 0 0 1rem;
     overflow: hidden;
     text-align: left;

@@ -1,4 +1,5 @@
 <div class="todo">Styling as designed</div>
+<button giz-stroke-button (click)="createEntry()">Create</button>
 @if (entries.data() && entries.data()?._embedded?.simulations?.length) {
     <table>
         <thead>

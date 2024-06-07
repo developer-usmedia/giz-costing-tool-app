@@ -37,3 +37,20 @@ export interface Benchmark {
     currencyName: string;
     localValue: number;
 }
+
+export enum CellValidationError {
+    TODO = 'TODO',
+    MISSING_INFO_SHEET = 'MISSING_INFO_SHEET',
+    MISSING_PAYROLL_SHEET = 'MISSING_PAYROLL_SHEET',
+    VERSION_MISMATCH = 'VERSION_MISMATCH',
+}
+
+export interface ImportValidationError {
+    sheetIndex?: number;
+    rowIndex?: number;
+    column?: string;
+    property?: string;
+    message?: string;
+    value?: string;
+    errorType: CellValidationError;
+}

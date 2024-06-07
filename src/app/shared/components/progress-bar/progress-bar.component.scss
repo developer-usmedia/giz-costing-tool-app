@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use 'sass:math';
+@import './config/colors';
+
+:root {
+    --progress-bar-background: #{ color.scale($c-thunderbird-1, $alpha: -88%) };
+    --progress-bar-background-progress: #{ $c-thunderbird-1 };
+}
+
+.progress-bar {
+    $self: &;
+
+    background: var(--progress-bar-background);
+    display: block;
+    height: 8px;
+    position: relative;
+    width: min(100%, 350px);
+
+    &::after {
+        background: var(--progress-bar-background-progress);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: width 0.4s linear;
+        width: 8px;
+    }
+
+    @for $i from 1 through 100 {
+        &[data-progress='#{$i}'] {
+            &::after {
+                width: math.round(math.percentage(math.div($i, 100)));
+            }
+        }
+    }
+}

@@ -5,7 +5,6 @@ import { ToastrService } from 'ngx-toastr';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { Entry } from '@api/models';
-import { EntriesService } from '@core/services';
 
 @Component({
     selector: 'giz-examples',
@@ -64,7 +63,6 @@ export class ExamplesComponent {
 
     constructor(
         public dialog: Dialog,
-        private readonly entriesService: EntriesService,
         private readonly toastr: ToastrService,
     ) {
     }

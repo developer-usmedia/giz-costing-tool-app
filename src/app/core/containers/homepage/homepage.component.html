@@ -10,11 +10,11 @@
 
             <div class="homepage__buttons">
                 @if (loggedIn) {
-                    <a giz-stroke-button [routerLink]="[routRoute.DASHBOARD]" i18n="homepage login">Login</a>
+                    <a giz-stroke-button [routerLink]="[routRoute.DASHBOARD]" i18n="homepage dashboard">Dashboard</a>
                 } @else {
                     <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="homepage login">Login</a>
+                    <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.REGISTER]" i18n="homepage create">Create account</a>
                 }
-                <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.REGISTER]" i18n="homepage create">Create account</a>
             </div>
         </div>
         <div class="homepage__logos">

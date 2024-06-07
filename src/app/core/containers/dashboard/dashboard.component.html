@@ -24,7 +24,7 @@
         </ul>
     }
     <div class="dashboard__buttons">
-        <button giz-stroke-button [routerLink]="[(moduleRoute.ENTRIES)]" i18n="entries create-new">Create new entry</button>
+        <button giz-stroke-button (click)="createEntry()" i18n="entries create-new">Create new entry</button>
 
         @if (entries.data() && entries.data()?._embedded?.simulations?.length) {
             <a giz-link-button [routerLink]="[(moduleRoute.ENTRIES)]" i18n="entries view-all">View all</a>
