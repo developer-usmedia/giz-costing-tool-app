@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
 
 import { MODULE_ROUTE } from '@core/models';
-import { EntriesService } from '@core/services/entries.service';
+import { EntriesService } from '@core/services';
+import { Entry } from '@api/models';
+import { DeleteEntryResult, EntryDeleteDialogComponent } from '../entry-delete-dialog/entry-delete-dialog.component';
 
 @Component({
     selector: 'giz-overview',
@@ -15,4 +18,13 @@ export class OverviewComponent {
         index: 0,
         size: 25,
     });
+
+    private readonly dialog = inject(Dialog);
+    private readonly dialogRef?: DialogRef<DeleteEntryResult, EntryDeleteDialogComponent>;
+
+    public deleteEntry(entry: Entry) {
+        this.dialog.open(EntryDeleteDialogComponent, {
+            data: entry,
+        });
+    }
 }

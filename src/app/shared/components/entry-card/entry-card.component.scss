@@ -9,16 +9,20 @@
     --entry-card-info-color: #{ $c-grey--600 };
     --entry-card-icon-color: #{ $c-grey--600 };
     --entry-card-border-color: #{ $c-grey--300 };
+    --entry-card-width: 100%;
 }
 
 .entry-card {
+    background: var(--entry-card-background);
+    border: 1px solid var(--entry-card-border-color);
     border-radius: $b-radius;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
-    min-width: 200px;
     padding: $p-gutter;
     position: relative;
+    transition: box-shadow 0.2s;
+    width: var(--entry-card-width);
 
     &__title {
         @include style-heading-3;
@@ -51,13 +55,12 @@
         }
     }
 
-    &--link {
-        background: var(--entry-card-background);
-        border: 1px solid var(--entry-card-border-color);
-        min-width: 0;
-        transition: box-shadow 0.2s;
-        width: min(100%, 300px);
+    &--main {
+        background: transparent;
+        border: none;
+    }
 
+    &--link {
         &:hover,
         &:focus {
             box-shadow: $c-shadow-6;

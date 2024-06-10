@@ -2,20 +2,22 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CdkCopyToClipboard } from '@angular/cdk/clipboard';
 
 import { CoreModule } from '@core/core.module';
 import { ENTRY_ROUTE } from '@core/models';
 import { SharedModule } from '@shared/shared.module';
 import { EntryDetailComponent } from './containers/entry-detail/entry-detail.component';
-import { OverviewComponent } from './containers/overview/overview.component';
+import { EntryDeleteDialogComponent } from './containers/entry-delete-dialog/entry-delete-dialog.component';
 import { EntryInformationComponent } from './containers/entry-information/entry-information.component';
 import { EntryHeaderComponent } from './components/entry-header/entry-header.component';
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
-import { CdkCopyToClipboard } from '@angular/cdk/clipboard';
+import { OverviewComponent } from './containers/overview/overview.component';
 
 @NgModule({
     declarations: [
         EntryDetailComponent,
+        EntryDeleteDialogComponent,
         EntryHeaderComponent,
         EntryInformationComponent,
         EntryScenariosComponent,

@@ -8,6 +8,7 @@
                 <th>Country</th>
                 <th>Editted on</th>
                 <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                     <td>{{ entry.facility.countryCode }}</td>
                     <td>{{ entry.updatedAt }}</td>
                     <td><giz-status [status]="entry.status | status"></giz-status></td>
+                    <td><button giz-stroke-button (click)="deleteEntry(entry)">Delete</button></td>
                 </tr>
             }
         </tbody>

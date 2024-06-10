@@ -1,0 +1,30 @@
+<giz-dialog [title]="title"
+            (closeDialog)="cancel()"
+>
+    <p class="entry-delete__description" i18n="entry-delete description">
+        Are you sure you want to delete this entry? <br> This action cannot be undone.</p>
+
+    <div class="entry-delete__entry">
+        <giz-entry-card [entry]="entry" [showStatus]="false"></giz-entry-card>
+    </div>
+
+    <ng-container footer-left>
+        @if (entryMutation.isPending()) {
+            <giz-spinner theme="grey">
+                <span i18n="entry-delete loading">Deleting...</span>
+            </giz-spinner>
+        }
+    </ng-container>
+    <ng-container footer-right>
+        <button type="button" giz-stroke-button theme="basic"
+                [disabled]="entryMutation.isPending()"
+                (click)="cancel()"
+                i18n="entry-delete cancel"
+        >Cancel</button>
+        <button type="button" giz-button
+                [disabled]="entryMutation.isPending()"
+                (click)="delete()"
+                i18n="entry-delete delete"
+        >Delete</button>
+    </ng-container>
+</giz-dialog>

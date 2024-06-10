@@ -31,4 +31,8 @@ export class EntriesApi extends BaseApi {
             this.get<PagedResponse<'simulations', Entry>>(this.endpoints.simulations, params)
         );
     }
+
+    public deleteEntry(id: string): Promise<Entry> {
+        return lastValueFrom(this.delete<Entry>(`${ this.endpoints.simulations }/${ id }`));
+    }
 }

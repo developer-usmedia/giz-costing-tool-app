@@ -23,4 +23,8 @@ export class EntryCardComponent {
     @HostBinding('class.entry-card--link') get modLink(): boolean {
         return !!this.link;
     }
+
+    @HostBinding('class.entry-card--main') get modMain(): boolean {
+        return this.isMain;
+    }
 }

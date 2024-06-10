@@ -27,6 +27,11 @@
         width: var(--spinner-size);
     }
 
+    > * {
+        font-style: italic;
+        margin-left: 0.5rem;
+    }
+
     &--large {
         --spinner-size: 60px;
     }
