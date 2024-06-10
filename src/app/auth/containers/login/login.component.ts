@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
 import { injectQueryClient } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 
 import { LoginForm } from '@api/models';
-import { AuthApi } from '@api/services';
 import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
+import { AuthService } from '@core/services';
 import { STATUS } from '@shared/helpers';
-import { HttpErrorResponse } from '@angular/common/http';
 import { SaveUserDetails } from '@store/app.actions';
-import { Store } from '@ngxs/store';
 
 @Component({
     selector: 'giz-login',
@@ -21,14 +21,12 @@ export class LoginComponent {
     public wrongPassword = false;
     protected readonly authRoute = AUTH_ROUTE;
     protected readonly moduleRoute = MODULE_ROUTE;
-    private readonly queryClient = injectQueryClient();
 
-    constructor(
-        private readonly authApi: AuthApi,
-        private readonly router: Router,
-        private readonly store: Store,
-        private readonly toastr: ToastrService,
-    ) {}
+    private readonly authApi = inject(AuthService);
+    private readonly router = inject(Router);
+    private readonly store = inject(Store);
+    private readonly toastr = inject(ToastrService);
+    private readonly queryClient = injectQueryClient();
 
     get title(): string {
         return $localize`:login title:Welcome Back!`;

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AccountComponent } from '@core/containers/account/account.component';
-import { AuthGuard } from '@core/guards/auth.guard';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
 import { BaseComponent } from '@core/containers/base/base.component';
 import { CpDataProtectionComponent } from '@core/containers/cp-data-protection/cp-data-protection.component';
@@ -12,6 +11,7 @@ import { DashboardComponent } from '@core/containers/dashboard/dashboard.compone
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
 import { HomepageComponent } from '@core/containers/homepage/homepage.component';
+import { AuthGuard } from '@core/guards/auth.guard';
 import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 
 const routes: Routes = [

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
+
 import { Entry } from '@api/models';
-import { Status } from '@shared/components/status/status.type';
 import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({

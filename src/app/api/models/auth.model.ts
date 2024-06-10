@@ -23,23 +23,21 @@ export interface ResetPasswordForm {
     resetToken: string;
 }
 
-export interface LoginResponse {
+export interface SuccessReponse {
     success: boolean;
 }
 
-export interface LogoutResponse {
-    success: boolean;
+export type LogoutResponse = SuccessReponse;
+export type ForgotPasswordResponse = SuccessReponse;
+export type ResetPasswordResponse = SuccessReponse;
+export type VerifyEmailReponse = SuccessReponse;
+
+export interface TokenResponse {
+    accessToken: string;
+    refreshToken: string;
 }
 
-export interface ForgotPasswordResponse {
-    success: boolean;
-}
+export type LoginResponse = TokenResponse;
+export type RefreshTokenResponse = TokenResponse;
 
-export interface ResetPasswordResponse {
-    success: boolean;
-}
-
-export interface VerifyEmailReponse {
-    success: boolean;
-}
 

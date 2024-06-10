@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { Select } from '@ngxs/store';
-import { AppStore } from '@store/app.store';
-import { Observable, take } from 'rxjs';
-import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE, UserDetails } from '@core/models';
-import { AuthApi } from '@api/services';
-import { ToastrService } from 'ngx-toastr';
 import { HttpErrorResponse } from '@angular/common/http';
-import { STATUS } from '@shared/helpers';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Select } from '@ngxs/store';
+import { ToastrService } from 'ngx-toastr';
+import { Observable, take } from 'rxjs';
+
+import { AuthApi } from '@api/services';
+import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE, UserDetails } from '@core/models';
+import { AuthService } from '@core/services';
+import { STATUS } from '@shared/helpers';
+import { AppStore } from '@store/app.store';
 
 @Component({
     selector: 'giz-email-verification',
@@ -21,11 +23,12 @@ export class EmailVerificationComponent {
     public submitting = false;
     public codeInvalid = false;
 
-    constructor(
-        private readonly authService: AuthApi,
-        private readonly toastr: ToastrService,
-        private readonly router: Router,
-    ) {
+    private readonly authApi = inject(AuthApi);
+    private readonly authService = inject(AuthService);
+    private readonly toastr = inject(ToastrService);
+    private readonly router = inject(Router);
+
+    constructor() {
         this.userDetails$
             .pipe(take(1),)
             .subscribe((userDetails) => {
@@ -79,11 +82,9 @@ export class EmailVerificationComponent {
                     return;
                 }
 
-                this.authService
+                this.authApi
                     .verifyEmail({ email: userDetails.email })
-                    .pipe(take(1))
-                    .subscribe({
-                        error: (error: HttpErrorResponse) => {
+                    .catch((error: HttpErrorResponse) => {
                             if (error.status === STATUS.TOO_MANY_REQUESTS) {
                                 this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
                             } else {
@@ -91,7 +92,7 @@ export class EmailVerificationComponent {
                             }
                             console.error(error);
                         },
-                    });
+                    );
             });
     }
 }

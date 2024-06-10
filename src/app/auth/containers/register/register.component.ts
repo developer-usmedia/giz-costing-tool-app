@@ -1,15 +1,16 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, ViewEncapsulation, inject } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, Subject, take, takeUntil } from 'rxjs';
 
 import { RegisterForm } from '@api/models';
 import { AuthApi } from '@api/services';
 import { AUTH_ROUTE, MODULE_ROUTE, UserDetails } from '@core/models';
+import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
-import { Select, Store } from '@ngxs/store';
 import { SaveUserDetails } from '@store/app.actions';
 import { AppStore } from '@store/app.store';
 
@@ -42,12 +43,12 @@ export class RegisterComponent implements OnDestroy {
     protected readonly moduleRoute = MODULE_ROUTE;
 
     private readonly destroyed$ = new Subject<void>();
+    private readonly authApi = inject(AuthApi);
+    private readonly authService = inject(AuthService);
+    private readonly store = inject(Store);
+    private readonly toastr = inject(ToastrService);
 
-    constructor(
-        private readonly authApi: AuthApi,
-        private readonly store: Store,
-        private readonly toastr: ToastrService,
-    ) {
+    constructor() {
         this.steps = [
             {
                 index: REGISTER_STEPS.REGISTER,
@@ -103,7 +104,7 @@ export class RegisterComponent implements OnDestroy {
         this.userDetails$
             .pipe(take(1))
             .subscribe((userDetails) => {
-                this.authApi
+                this.authService
                     .login({
                         email: userDetails.email,
                         password: userDetails.password,
@@ -131,9 +132,8 @@ export class RegisterComponent implements OnDestroy {
 
                 this.authApi
                     .verifyEmail({ email: userDetails.email })
-                    .pipe(take(1))
-                    .subscribe({
-                        error: (error: HttpErrorResponse) => {
+                    .then(() => this.toastr.success($localize`:verificationCode send success:New code sent`,))
+                    .catch((error: HttpErrorResponse) => {
                             if (error.status === STATUS.TOO_MANY_REQUESTS) {
                                 this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
                             } else {
@@ -141,7 +141,7 @@ export class RegisterComponent implements OnDestroy {
                             }
                             console.error(error);
                         },
-                    });
+                    );
             });
     }
 

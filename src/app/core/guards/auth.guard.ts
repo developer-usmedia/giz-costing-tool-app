@@ -1,30 +1,32 @@
-import { inject, Injectable } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
-import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { Injectable, inject } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
+import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { AuthService } from '@core/services';
 
 @Injectable({
     providedIn: 'root',
 })
 class PermissionsService {
-    constructor(
-        private readonly authService: AuthService,
-        private readonly router: Router,
-    ) {
-    }
+    private readonly authService = inject(AuthService);
+    private readonly router = inject(Router);
 
-    async canActivate(): Promise<boolean> {
-        // TODO: add check for session here?
-        // solves the case where cookie is present but no longer valid
-        // Or when cookie is missing somehow
-        if (this.authService.isLoggedIn()) {
+    async canActivate(_activatedRoute: ActivatedRouteSnapshot, routeState: RouterStateSnapshot): Promise<boolean> {
+        const loggedIn = this.authService.isLoggedIn();
+        const onAuthRoute = routeState.url.includes(MODULE_ROUTE.AUTH);
+
+        if (loggedIn && onAuthRoute) {
+            return await this.router.navigate([ROOT_ROUTE.DASHBOARD]);
+        }
+
+        if (loggedIn || onAuthRoute) {
             return true;
         }
 
-        return await this.router.navigate([ MODULE_ROUTE.AUTH, AUTH_ROUTE.LOGIN ]);
+        await this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.LOGIN]);
+        return false;
     }
 }
 
-export const AuthGuard: CanActivateFn = async (): Promise<boolean> => {
-    return await inject(PermissionsService).canActivate();
+export const AuthGuard: CanActivateFn = async (activatedRoute, routeState): Promise<boolean> => {
+    return await inject(PermissionsService).canActivate(activatedRoute, routeState);
 };

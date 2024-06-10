@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
-import { AuthApi } from '@api/services';
-import { HttpErrorResponse } from '@angular/common/http';
-import { take } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'giz-logout',
@@ -16,11 +14,7 @@ export class LogoutComponent implements OnInit {
     protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly icon = ICON;
 
-    constructor(
-        private readonly authApi: AuthApi,
-        private readonly toastr: ToastrService,
-    ) {
-    }
+    private readonly authService = inject(AuthService);
 
     get title(): string {
         return $localize`:logout title:Logged out`;
@@ -31,15 +25,6 @@ export class LogoutComponent implements OnInit {
     }
 
     public ngOnInit() {
-       this.authApi.logout()
-           .pipe(take(1))
-           .subscribe({
-               error: (error: HttpErrorResponse) => {
-                   this.toastr.error(
-                       $localize`:logout error:Something went wrong logging out`,
-                       `Error ${ error.status }: ${ error.message }`
-                   );
-               },
-           });
+        this.authService.logout();
     }
 }

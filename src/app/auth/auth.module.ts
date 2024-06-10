@@ -11,10 +11,11 @@ import { SignupComponent } from '@auth/components/signup/signup.component';
 import { VerificationComponent } from '@auth/components/verification/verification.component';
 import { LoginComponent } from '@auth/containers/login/login.component';
 import { RegisterComponent } from '@auth/containers/register/register.component';
+import { AuthGuard } from '@core/guards/auth.guard';
 import { AUTH_ROUTE } from '@core/models';
 import { SharedModule } from '@shared/shared.module';
-import { LogoutComponent } from './containers/logout/logout.component';
 import { EmailVerificationComponent } from './containers/email-verification/email-verification.component';
+import { LogoutComponent } from './containers/logout/logout.component';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import { EmailVerificationComponent } from './containers/email-verification/emai
             {
                 path: AUTH_ROUTE.LOGIN,
                 component: LoginComponent,
+                canActivate: [AuthGuard],
             },
             {
                 path: AUTH_ROUTE.LOGOUT,
@@ -49,9 +51,11 @@ import { EmailVerificationComponent } from './containers/email-verification/emai
             {
                 path: AUTH_ROUTE.REGISTER,
                 component: RegisterComponent,
+                canActivate: [AuthGuard],
             },
             {
                 path: AUTH_ROUTE.EMAIL_VERIFICATION,
+                canActivate: [AuthGuard],
                 component: EmailVerificationComponent,
             },
         ]),
