@@ -69,4 +69,13 @@
         right: $p-gutter;
         z-index: 1;
     }
+
+    &__password-strength {
+        display: block;
+        max-width: 300px;
+    }
+
+    .file-upload {
+        margin-bottom: 1rem;
+    }
 }

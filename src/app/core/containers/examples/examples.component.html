@@ -46,6 +46,22 @@
                 <a [routerLink]="(routes.EXAMPLES)" fragment="entry-card"
                    type="button" giz-stroke-button>Entry card</a>
             </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="stepper"
+                   type="button" giz-stroke-button>Stepper</a>
+            </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="file-upload"
+                   type="button" giz-stroke-button>File upload</a>
+            </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="logos"
+                   type="button" giz-stroke-button>Logo's</a>
+            </li>
+            <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="password-strength"
+                   type="button" giz-stroke-button>Password strength</a>
+            </li>
         </ul>
     </section>
 
@@ -455,7 +471,8 @@
     <section class="examples__section" id="menu">
         <h2 class="examples__title">Menu</h2>
         <button type="button" giz-button [cdkMenuTriggerFor]="menu"
-        >Menu</button>
+        >Menu
+        </button>
 
         <ng-template #menu>
             <giz-menu>
@@ -490,7 +507,43 @@
         </ul>
     </section>
 
-    <a [routerLink]="(routes.DASHBOARD)" fragment="anchor-menu"
+    <section class="examples__section" id="stepper">
+        <h2 class="examples__title">Stepper</h2>
+
+        <giz-stepper
+            [steps]="[{ index: 1, description: 'Step 1' }, { index: 2, description: 'Step 2' }, { index: 3, description: 'Step 3' }  ]"
+            [activeStep]="1"
+        ></giz-stepper>
+    </section>
+
+    <section class="examples__section" id="file-upload">
+        <h2 class="examples__title">File upload & Progress bar</h2>
+        <p>Note: container should handle the upload itself. The component only has input + output. For working example
+            check Create Entry on the entries overview.</p>
+        <giz-file-upload></giz-file-upload>
+
+        <p>If you add progress to the file-upload input it shows a progress bar:</p>
+
+        <giz-file-upload [inProgress]="true" [progress]="40"></giz-file-upload>
+
+        <p>You can also use the progress bar on it's own:</p>
+        <giz-progress-bar [progress]="40"></giz-progress-bar>
+    </section>
+
+    <section class="examples__section" id="logos">
+        <h2 class="examples__title">Logo's</h2>
+
+        <giz-logos></giz-logos>
+    </section>
+
+    <section class="examples__section" id="password-strength">
+        <h2 class="examples__title">Password strength</h2>
+
+        <p>Password: FakePassword1</p>
+        <giz-password-strength [password]="'FakePassword1'" class="examples__password-strength"></giz-password-strength>
+    </section>
+
+    <a [routerLink]="(routes.EXAMPLES)" fragment="anchor-menu"
        giz-icon-button buttonType="stroke" [icon]="icon.ARROW_UP"
        class="examples__top">Go to top</a>
 </div>

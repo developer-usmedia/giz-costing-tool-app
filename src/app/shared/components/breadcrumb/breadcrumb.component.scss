@@ -1,14 +1,14 @@
 @import 'config/colors';
 @import 'mixins/sr-only';
 
-:host {
-    display: inline-block;
-}
-
 :root {
     --breadcrumb-color: #{ $c-grey--600 };
     --breadcrumb-color-active: #{ $c-grey--900 };
     --breadcrumb-color-hover: #{ $c-grey--900 };
+}
+
+giz-breadcrumb {
+    display: inline-block;
 }
 
 .breadcrumb {
