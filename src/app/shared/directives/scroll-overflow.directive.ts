@@ -29,6 +29,10 @@ export class ScrollOverflowDirective implements AfterViewInit {
     ) {
     }
 
+    @HostBinding('class.is-overflowing') get modOverflowing(): boolean {
+        return this.overflowing;
+    }
+
     @HostBinding('class.is-overflow-right') get modOverflowRight(): boolean {
         return this.overflowRight;
     }
@@ -43,13 +47,14 @@ export class ScrollOverflowDirective implements AfterViewInit {
     }
 
     public ngAfterViewInit(): void {
-        this.checkOverflow();
-
-        if (this.scrollContainer.length > 0) {
-            this.scrollContainer.first.elementRef.nativeElement.addEventListener('scroll', () => {
-                this.checkOverflow();
-            });
-        }
+        requestAnimationFrame(() => {
+            this.checkOverflow();
+            if (this.scrollContainer.length > 0) {
+                this.scrollContainer.first.elementRef.nativeElement.addEventListener('scroll', () => {
+                    this.checkOverflow();
+                });
+            }
+        });
     }
 
     public checkOverflow(): void {
@@ -58,28 +63,21 @@ export class ScrollOverflowDirective implements AfterViewInit {
         }
 
         const nativeElem = this.elementRef.nativeElement;
-        const tabNativeElem = this.scrollContainer.first.elementRef.nativeElement;
+        const containerNativeElem = this.scrollContainer.first.elementRef.nativeElement;
         this.scrollDistance = this.scrollContainer.first.elementRef.nativeElement.scrollLeft;
-
         const elemWidth = nativeElem.offsetWidth +
             parseFloat(window.getComputedStyle(nativeElem).marginLeft) +
             parseFloat(window.getComputedStyle(nativeElem).marginRight);
-        const overflowing = tabNativeElem.scrollWidth > elemWidth;
-        if (overflowing === this.overflowing) {
-            if (overflowing) {
-                this.checkLeftRightOverflow();
-            }
-            // No need to change overflow
-            return;
-        }
+        const containerWidth = containerNativeElem.scrollWidth + parseFloat(window.getComputedStyle(nativeElem).marginRight);
 
-        this.overflowing = overflowing;
+        this.overflowing = containerWidth > elemWidth;
         this.checkLeftRightOverflow();
         this.changeDetectorRef.markForCheck();
     }
 
     public checkLeftRightOverflow(): void {
         const maxScroll = this.scrollContainer.first.elementRef.nativeElement.scrollWidth - this.elementRef.nativeElement.scrollWidth;
+
         if (!this.overflowing) {
             this.overflowLeft = false;
             this.overflowRight = false;

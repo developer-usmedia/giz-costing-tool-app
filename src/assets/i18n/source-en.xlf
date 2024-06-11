@@ -178,7 +178,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">140</context>
         </context-group>
         <note priority="1" from="description">login forgot-password</note>
       </trans-unit>
@@ -410,15 +410,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">75</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">115</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">132</context>
+          <context context-type="linenumber">131</context>
         </context-group>
         <note priority="1" from="description">verificationCode send error</note>
       </trans-unit>
@@ -434,15 +434,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">73</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">114</context>
+          <context context-type="linenumber">113</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <note priority="1" from="description">verificationCode send error-limit</note>
       </trans-unit>
@@ -582,7 +582,7 @@
         <source>Enter email for reset instructions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <note priority="1" from="description">reset-password email hint</note>
       </trans-unit>
@@ -590,7 +590,7 @@
         <source>Enter reset code received via email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <note priority="1" from="description">reset-password code hint</note>
       </trans-unit>
@@ -598,11 +598,11 @@
         <source>Set new password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <note priority="1" from="description">reset-password password hint</note>
       </trans-unit>
@@ -610,7 +610,7 @@
         <source>Reset password done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">59</context>
         </context-group>
         <note priority="1" from="description">reset-password finalize hint</note>
       </trans-unit>
@@ -618,7 +618,7 @@
         <source>Reset Code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <note priority="1" from="description">forgot-password code title</note>
       </trans-unit>
@@ -626,7 +626,7 @@
         <source>All done!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">147</context>
+          <context context-type="linenumber">146</context>
         </context-group>
         <note priority="1" from="description">forgot-password finalize title</note>
       </trans-unit>
@@ -634,7 +634,7 @@
         <source>No worries, we&apos;ll send reset instructions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">154</context>
+          <context context-type="linenumber">153</context>
         </context-group>
         <note priority="1" from="description">forgot-password email description</note>
       </trans-unit>
@@ -642,7 +642,7 @@
         <source>We&apos;ve sent an email to [<x id="PH" equiv-text="this.emailAddress"/>](mailto:<x id="PH_1" equiv-text="this.emailAddress"/>) with a reset code, please enter it below to continue.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">156</context>
+          <context context-type="linenumber">155</context>
         </context-group>
         <note priority="1" from="description">forgot-password code description</note>
       </trans-unit>
@@ -650,7 +650,7 @@
         <source>Must be at least 8 characters.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">158</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <note priority="1" from="description">forgot-password password description</note>
       </trans-unit>
@@ -658,7 +658,7 @@
         <source>Your password has been reset. You can log in using your new password.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">159</context>
         </context-group>
         <note priority="1" from="description">forgot-password finalize description</note>
       </trans-unit>
@@ -770,7 +770,7 @@
         <source>Continue with</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">17,18</context>
+          <context context-type="linenumber">19,20</context>
         </context-group>
         <note priority="1" from="description">dashboard continue</note>
       </trans-unit>
@@ -778,7 +778,7 @@
         <source>Create new entry</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">27,29</context>
+          <context context-type="linenumber">29,31</context>
         </context-group>
         <note priority="1" from="description">entries create-new</note>
       </trans-unit>
@@ -786,7 +786,7 @@
         <source>View all</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">30,33</context>
+          <context context-type="linenumber">32,35</context>
         </context-group>
         <note priority="1" from="description">entries view-all</note>
       </trans-unit>
@@ -1042,6 +1042,10 @@
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
           <context context-type="linenumber">23,24</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
         <note priority="1" from="description">entry facility label</note>
       </trans-unit>
       <trans-unit id="516176798986294299" datatype="html">
@@ -1049,6 +1053,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
           <context context-type="linenumber">27,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">53,54</context>
         </context-group>
         <note priority="1" from="description">entry country label</note>
       </trans-unit>
@@ -1226,6 +1234,10 @@
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
           <context context-type="linenumber">150,151</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
         <note priority="1" from="description">entry edited-on label</note>
       </trans-unit>
       <trans-unit id="7949529201488904319" datatype="html">
@@ -1236,11 +1248,107 @@
         </context-group>
         <note priority="1" from="description">entry back-to-overview</note>
       </trans-unit>
-      <trans-unit id="542783023966474099" datatype="html">
-        <source>No entries found</source>
+      <trans-unit id="1043593761419826119" datatype="html">
+        <source>Create entry</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
-          <context context-type="linenumber">29,31</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <note priority="1" from="description">entry create</note>
+      </trans-unit>
+      <trans-unit id="3398475352529742161" datatype="html">
+        <source>Sort </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">sort</note>
+      </trans-unit>
+      <trans-unit id="907859747339689465" datatype="html">
+        <source>Edited on </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+        <note priority="1" from="description">entries sort editted-on</note>
+      </trans-unit>
+      <trans-unit id="8519814284528487046" datatype="html">
+        <source>Facility </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+        <note priority="1" from="description">entries sort facility-name</note>
+      </trans-unit>
+      <trans-unit id="8223383498437766892" datatype="html">
+        <source>Year </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+        <note priority="1" from="description">entries sort year</note>
+      </trans-unit>
+      <trans-unit id="2955166255971324523" datatype="html">
+        <source>Error getting entries.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <note priority="1" from="description">entries error</note>
+      </trans-unit>
+      <trans-unit id="8271624483355626480" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ entries.data()?.paging?.totalEntities }}"/> entries</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+        <note priority="1" from="description">entries total</note>
+      </trans-unit>
+      <trans-unit id="750216926701398989" datatype="html">
+        <source>Payroll year</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+        <note priority="1" from="description">entry payroll-year label</note>
+      </trans-unit>
+      <trans-unit id="5611592591303869712" datatype="html">
+        <source>Status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+        <note priority="1" from="description">entry status label</note>
+      </trans-unit>
+      <trans-unit id="3193976279273491157" datatype="html">
+        <source>Actions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+        <note priority="1" from="description">entry action</note>
+      </trans-unit>
+      <trans-unit id="4511253995751966646" datatype="html">
+        <source>Show actions </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+        <note priority="1" from="description">entry actions-menu</note>
+      </trans-unit>
+      <trans-unit id="6093075988016169363" datatype="html">
+        <source>Delete </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+        <note priority="1" from="description">entry delete</note>
+      </trans-unit>
+      <trans-unit id="4958946940233632319" datatype="html">
+        <source>No entries found.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">105,107</context>
         </context-group>
         <note priority="1" from="description">entries not-found</note>
       </trans-unit>
@@ -1291,6 +1399,58 @@
           <context context-type="linenumber">17,18</context>
         </context-group>
         <note priority="1" from="description">file-upload extensions</note>
+      </trans-unit>
+      <trans-unit id="2907695779840121822" datatype="html">
+        <source>Rows per page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+        <note priority="1" from="description">paginator rows</note>
+      </trans-unit>
+      <trans-unit id="5881876145178332550" datatype="html">
+        <source>of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <note priority="1" from="description">paginator page-of</note>
+      </trans-unit>
+      <trans-unit id="2241508602425256033" datatype="html">
+        <source>First</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.html</context>
+          <context context-type="linenumber">35,38</context>
+        </context-group>
+        <note priority="1" from="description">paginator first</note>
+      </trans-unit>
+      <trans-unit id="4452427314943113135" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.html</context>
+          <context context-type="linenumber">47,50</context>
+        </context-group>
+        <note priority="1" from="description">paginator previous</note>
+      </trans-unit>
+      <trans-unit id="3885497195825665706" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.html</context>
+          <context context-type="linenumber">58,60</context>
+        </context-group>
+        <note priority="1" from="description">paginator next</note>
+      </trans-unit>
+      <trans-unit id="4882268002141858767" datatype="html">
+        <source>Last</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/paginator/paginator.component.html</context>
+          <context context-type="linenumber">70,73</context>
+        </context-group>
+        <note priority="1" from="description">paginator last</note>
       </trans-unit>
       <trans-unit id="3012667740913383440" datatype="html">
         <source>Very weak</source>
@@ -1568,7 +1728,7 @@
       <trans-unit id="5014960004929658159" datatype="html">
         <source>Verified</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/pipes/verifiedpipe.ts</context>
+          <context context-type="sourcefile">src/app/shared/pipes/verified.pipe.ts</context>
           <context context-type="linenumber">6</context>
         </context-group>
         <note priority="1" from="description">entry verified</note>
@@ -1576,7 +1736,7 @@
       <trans-unit id="991761096918819245" datatype="html">
         <source>Not verified</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/pipes/verifiedpipe.ts</context>
+          <context context-type="sourcefile">src/app/shared/pipes/verified.pipe.ts</context>
           <context context-type="linenumber">6</context>
         </context-group>
         <note priority="1" from="description">entry verified</note>

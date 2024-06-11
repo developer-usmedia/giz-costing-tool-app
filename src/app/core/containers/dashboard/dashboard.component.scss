@@ -13,7 +13,7 @@
     &__title {
         @include style-heading-1-hero;
 
-        margin: 0 0 0.25rem;
+        margin: 0 0 $p-gutter--small;
     }
 
     &__version {

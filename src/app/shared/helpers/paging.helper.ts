@@ -1,5 +1,7 @@
+import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { HttpParameterCodec, HttpParams } from '@angular/common/http';
-import { PagingParams } from '@core/models';
+import { Params } from '@angular/router';
+import { PageFilter, PageSort, PagingParams, Sort } from '@core/models';
 
 /**
  * Creating a default codec for get-params. The default from angular doesn't fully encode all chars
@@ -50,4 +52,106 @@ export const getHttpParamsFromPagingParams = (paging: PagingParams, params?: Htt
     }
 
     return params;
+};
+
+
+/**
+ * Converts the PagingParams to Params which the router accepts
+ * @param paging params to convert
+ * @param params optional base
+ * @returns Params
+ */
+export const getParamsFromPagingParams = <T extends PagingParams>(paging: T, params?: URLSearchParams): Params => {
+    if (!params) {
+        params = new URLSearchParams();
+    }
+
+    if (paging.index) {
+       params.set('index', paging.index.toString());
+    }
+
+    if (paging.size) {
+        params.set('size', paging.size.toString());
+    }
+
+    if (paging.sort) {
+        for (const [attr, sort] of Object.entries(paging.sort)) {
+            params.append('sort', `${attr},${sort}`);
+        }
+    }
+
+    if (paging.filter) {
+        for (const [attr, value] of Object.entries(paging.filter)) {
+            if (Array.isArray(value)) {
+                const filters = value.map(item => String(item));
+                params.set(attr, filters.join(','));
+            } else if (value !== undefined && value !== null && value !== '') {
+                params.set(attr, String(value));
+            }
+        }
+    }
+
+    const result: Record<string, any> = {};
+    for (const [key, value] of params.entries()) {
+        result[key] = value;
+    }
+    return result;
+};
+
+
+export const getPageSortFromSearchParams = (params: URLSearchParams): PageSort => {
+    const sort: PageSort = {};
+
+    if (params.has('sort')) {
+        const sortParams = params.getAll('sort');
+
+        for (const param of sortParams) {
+            const [ attr, order ] = param.split(',');
+
+            if (attr && order) {
+                sort[ attr ] = (order.toLowerCase() === 'desc' ? Sort.DESC : Sort.ASC);
+            }
+        }
+    }
+
+    return sort;
+};
+
+export const getPageFiltersFromSearchParams = (params: URLSearchParams): PageFilter => {
+    const filters: PageFilter = {};
+
+    for (const key of params.keys()) {
+        if ([ 'index', 'size', 'sort' ].indexOf(key) === -1) {
+            const rawValues = params.getAll(key);
+
+            if (!rawValues || 0 === rawValues.length) {
+                break;
+            }
+
+            const values = rawValues.map(value => {
+                // convert to boolean
+                if (value === 'true' || value === 'false') {
+                    return (value === 'true');
+                }
+
+                // +param tries to convert it to a number
+                return (isNaN(+value) ? value : +value);
+            });
+
+            filters[ key ] = (values.length === 1 ? values[ 0 ] : values);
+        }
+    }
+
+    return filters;
+};
+
+export const getPagingParamsFromQueryParams = <T extends PagingParams>(queryParams: Params): T => {
+    const searchParams = new URLSearchParams(queryParams);
+
+    return {
+        index: Math.max(coerceNumberProperty(searchParams.get('index')) - 1, 0),
+        size: coerceNumberProperty(searchParams.get('size')) || 10,
+        sort: getPageSortFromSearchParams(searchParams),
+        filter: getPageFiltersFromSearchParams(searchParams),
+    } as T;
 };

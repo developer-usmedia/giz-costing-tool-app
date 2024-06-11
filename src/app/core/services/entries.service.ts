@@ -1,11 +1,11 @@
 import { inject, Injectable } from '@angular/core';
 
-import { Entry, PagedResponse } from '@api/models';
+import { Entry } from '@api/models';
+import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
 import { EntriesApi } from '@api/services';
-import { PagingParams } from '@core/models';
-import { useQuery } from './query/use-query';
-import { injectQueryClient } from '@tanstack/angular-query-experimental';
 import { useMutation } from '@core/services/query/use-mutation';
+import { injectQueryClient } from '@tanstack/angular-query-experimental';
+import { useQuery } from './query/use-query';
 
 @Injectable({ providedIn: 'root' })
 export class EntriesService {
@@ -19,8 +19,8 @@ export class EntriesService {
         );
     }
 
-    public getEntries(paging?: PagingParams) {
-        return useQuery<PagedResponse<'entries', Entry>>(
+    public getEntries(paging?: EntriesPagingParams) {
+        return useQuery<EntriesListResponse>(
             ['entries', { paging }],
             () => this.entriesApi.getMany(paging),
         );

@@ -29,7 +29,7 @@
 
         align-items: center;
         display: flex;
-        gap: 0.25rem;
+        gap: $p-gutter--small;
         margin: 0 0 0.4rem;
 
         &--main {

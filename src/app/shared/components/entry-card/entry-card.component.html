@@ -22,7 +22,7 @@
 </div>
 @if (showStatus && entry.status) {
     <div class="entry-card__status">
-        <giz-status [status]="entry.status | status"></giz-status>
+        <giz-status [status]="entry.status | entryStatus"></giz-status>
     </div>
 }
 @if (link) {

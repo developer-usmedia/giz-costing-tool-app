@@ -3,7 +3,7 @@ import { EntityResponse } from '@api/models/response.model';
 export interface Entry extends EntityResponse {
     id: string;
     year: string;
-    status: string;
+    status: EntryStatus;
     administrativeCosts: number;
     defaultEmployerTax: number;
     defaultEmployeeTax: number;
@@ -38,6 +38,11 @@ export interface Benchmark {
     localValue: number;
 }
 
+export enum EntryStatus {
+    OPEN = 'STATUS_OPEN',
+    FINALIZED = 'STATUS_FINALIZED',
+}
+
 export enum CellValidationError {
     TODO = 'TODO',
     MISSING_INFO_SHEET = 'MISSING_INFO_SHEET',
@@ -54,3 +59,4 @@ export interface ImportValidationError {
     value?: string;
     errorType: CellValidationError;
 }
+

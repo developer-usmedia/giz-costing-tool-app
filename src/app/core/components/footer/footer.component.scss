@@ -9,7 +9,7 @@
 .footer {
     $self: &;
 
-    padding: calc($p-gutter / 2) $p-gutter;
+    padding: $p-gutter--small $p-gutter;
 
     &__items {
         display: flex;

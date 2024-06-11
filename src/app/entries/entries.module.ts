@@ -1,3 +1,4 @@
+import { CdkMenuTrigger } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -61,6 +62,7 @@ import { OverviewComponent } from './containers/overview/overview.component';
         CoreModule,
         SharedModule,
         CdkCopyToClipboard,
+        CdkMenuTrigger,
     ],
 })
 export class EntriesModule {}

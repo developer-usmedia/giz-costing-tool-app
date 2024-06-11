@@ -51,4 +51,7 @@
 
     // Other
     --version-color: #{ $c-grey--600 };
+    --overflow-gradient-width: 40px;
+    --overflow-gradient-left: #{ linear-gradient(to right, $c-grey--200, transparent) };
+    --overflow-gradient-right: #{ linear-gradient(to left, $c-grey--200, transparent) };
 }

@@ -13,10 +13,6 @@
         margin-bottom: $p-gutter * 2;
     }
 
-    &__tabs {
-        margin-right: -$p-gutter;
-    }
-
     &__spinner {
         padding: $p-gutter;
     }
@@ -26,10 +22,6 @@
             align-items: flex-end;
             display: flex;
             justify-content: space-between;
-        }
-
-        &__tabs {
-            margin-right: 0;
         }
     }
 }

@@ -1,10 +1,10 @@
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { Entry, EntryStatus } from '@api/models';
+import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 
 import { ICON } from '@shared/components/icon/icon.enum';
-import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
-import { Entry } from '@api/models';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'giz-examples',
@@ -24,7 +24,7 @@ export class ExamplesComponent {
         nrOfJobcategories: 45,
         nrOfWorkers: 200,
         nrOfWorkersBelowLW: 120,
-        status: 'submitted',
+        status: EntryStatus.OPEN,
         createdAt: '2023-11-05',
         updatedAt: '2023-29-05',
         facility: {

@@ -4,7 +4,7 @@
 @import 'mixins/typography';
 
 .info {
-    --table-cell-padding: 0.5rem #{ $p-gutter * 0.5 };
+    --table-cell-padding: 0.5rem #{ $p-gutter--small };
 
     display: flex;
     flex-direction: column;

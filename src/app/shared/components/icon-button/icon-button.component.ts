@@ -9,6 +9,7 @@ import {
     ViewChild,
     ViewEncapsulation,
 } from '@angular/core';
+
 import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
@@ -60,9 +61,8 @@ export class IconButtonComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        this.title = String(this.text?.nativeElement.innerText);
-
         requestAnimationFrame(() => {
+            this.title = String(this.text?.nativeElement.innerText);
             this.changeDetectorRef.markForCheck();
         });
     }

@@ -1,7 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ViewEncapsulation, inject } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject } from 'rxjs';
+import { Component, inject } from '@angular/core';
 
 import { ForgotPasswordForm, ResetPasswordForm } from '@api/models';
 import { AuthApi } from '@api/services';
@@ -9,6 +7,8 @@ import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
+import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject } from 'rxjs';
 
 enum RESET_PASSWORD_STEPS {
     FORGOT_PASSWORD = 1,

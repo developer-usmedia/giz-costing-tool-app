@@ -134,13 +134,13 @@ export class RegisterComponent implements OnDestroy {
                     .verifyEmail({ email: userDetails.email })
                     .then(() => this.toastr.success($localize`:verificationCode send success:New code sent`,))
                     .catch((error: HttpErrorResponse) => {
-                            if (error.status === STATUS.TOO_MANY_REQUESTS) {
-                                this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
-                            } else {
-                                this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
-                            }
-                            console.error(error);
-                        },
+                        if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                            this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
+                        } else {
+                            this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);
+                        }
+                        console.error(error);
+                    },
                     );
             });
     }

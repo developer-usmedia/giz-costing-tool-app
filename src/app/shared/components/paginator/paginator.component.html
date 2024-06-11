@@ -1,0 +1,72 @@
+<div class="paginator__size">
+    <span class="paginator__text" i18n="paginator rows">Rows per page</span>
+    <div class="paginator__select">
+        <select name="row" [formControl]="inputPageSize" (change)="updateSize()">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+</div>
+
+<div class="paginator__total">
+    {{ entriesForPage }}
+</div>
+
+<div class="paginator__pages">
+    <div class="paginator__input">
+        <input type="number" min="1" step="1" name="page" [formControl]="inputPage" (change)="goToPage()"/>
+    </div>
+    <span class="paginator__text" i18n="paginator page-of">of</span>
+    <span class="paginator__text">{{ total }}</span>
+</div>
+
+<div class="paginator__nav">
+    @if (showFirstLast) {
+        <button
+            class="paginator__button"
+            giz-icon-button
+            theme="basic"
+            i18n="paginator first"
+            [icon]="icon.FIRST_PAGE"
+            [attr.aria-label]="'First'"
+            [disabled]="prevButtonDisabled"
+            (click)="firstPage()"
+        >First</button>
+    }
+
+    <button
+        class="paginator__button"
+        giz-icon-button
+        theme="basic"
+        i18n="paginator previous"
+        [icon]="icon.CHEVRON_LEFT"
+        [attr.aria-label]="'Previous'"
+        [disabled]="prevButtonDisabled"
+        (click)="prevPage()"
+    >Previous</button>
+
+    <button
+        class="paginator__button"
+        giz-icon-button
+        theme="basic"
+        i18n="paginator next"
+        [icon]="icon.CHEVRON_RIGHT"
+        [attr.aria-label]="'Next'"
+        [disabled]="nextButtonDisabled"
+        (click)="nextPage()"
+    >Next</button>
+
+    @if (showFirstLast) {
+        <button
+            class="paginator__button"
+            giz-icon-button
+            theme="basic"
+            i18n="paginator last"
+            [icon]="icon.LAST_PAGE"
+            [attr.aria-label]="'Last'"
+            [disabled]="nextButtonDisabled"
+            (click)="lastPage()"
+        >Last</button>
+    }
+</div>

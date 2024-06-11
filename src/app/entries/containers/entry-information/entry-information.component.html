@@ -144,11 +144,11 @@
                         </tr>
                         <tr>
                             <th i18n="entry created-on label">Created on</th>
-                            <td>{{ entry.createdAt | empty | date }}</td>
+                            <td>{{ entry.createdAt | date | empty }}</td>
                         </tr>
                         <tr>
                             <th i18n="entry edited-on label">Edited on</th>
-                            <td>{{ entry.updatedAt | empty | date }}</td>
+                            <td>{{ entry.updatedAt | date | empty }}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -115,7 +115,7 @@ caption {
     @include style-text-small;
 
     color: var(--caption-color);
-    margin: 0 0 ($p-gutter * 0.5);
+    margin: 0 0 $p-gutter--small;
     text-align: left;
 }
 
@@ -254,6 +254,7 @@ td {
 
 th {
     color: var(--table-heading-color);
+    font-family: $font-barlow;
     font-weight: $weight-bold;
 }
 

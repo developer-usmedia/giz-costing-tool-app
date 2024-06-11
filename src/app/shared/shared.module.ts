@@ -2,6 +2,7 @@ import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 import { CdkObserveContent } from '@angular/cdk/observers';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.component';
@@ -14,6 +15,7 @@ import { IconComponent } from '@shared/components/icon/icon.component';
 import { LogosComponent } from '@shared/components/logos/logos.component';
 import { MenuItemComponent } from '@shared/components/menu-item/menu-item.component';
 import { MenuComponent } from '@shared/components/menu/menu.component';
+import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
 import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
 import { ProgressBarComponent } from '@shared/components/progress-bar/progress-bar.component';
 import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
@@ -24,19 +26,26 @@ import { TabComponent } from '@shared/components/tab/tab.component';
 import { CreateEntryDialogComponent } from '@shared/containers/create-entry-dialog/create-entry-dialog.component';
 import { ScrollOverflowContainerDirective } from '@shared/directives/scroll-overflow-container.directive';
 import { ScrollOverflowDirective } from '@shared/directives/scroll-overflow.directive';
-import { EmptyPipe, HasErrorPipe, HasValuePipe, MarkdownPipe, ShowErrorPipe, TruncatePipe } from '@shared/pipes';
-import { CountryNamePipe } from '@shared/pipes/country-name.pipe';
-import { StatusPipe } from '@shared/pipes/status.pipe';
-import { VerifiedPipe } from '@shared/pipes/verifiedpipe';
-
-const PIPES = [
+import {
     CountryNamePipe,
     EmptyPipe,
+    EntryStatusPipe,
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
     ShowErrorPipe,
-    StatusPipe,
+    TruncatePipe,
+    VerifiedPipe,
+} from '@shared/pipes';
+
+const PIPES = [
+    CountryNamePipe,
+    EmptyPipe,
+    EntryStatusPipe,
+    HasErrorPipe,
+    HasValuePipe,
+    MarkdownPipe,
+    ShowErrorPipe,
     TruncatePipe,
     VerifiedPipe,
 ];
@@ -53,6 +62,7 @@ const COMPONENTS = [
     LogosComponent,
     MenuComponent,
     MenuItemComponent,
+    PaginatorComponent,
     PasswordStrengthComponent,
     ProgressBarComponent,
     SpinnerComponent,
@@ -85,6 +95,7 @@ const DIRECTIVES = [
         RouterLink,
         CdkObserveContent,
         ...DIRECTIVES,
+        ReactiveFormsModule,
     ],
 })
 export class SharedModule {

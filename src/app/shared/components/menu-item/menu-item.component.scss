@@ -1,4 +1,5 @@
 @import './config/colors';
+@import './config/sizes';
 
 :root {
     --menu-item-bcg: #{ $c-white };
@@ -10,12 +11,13 @@
     align-items: center;
     background: var(--menu-item-bcg);
     display: flex;
+    gap: $p-gutter--small;
     padding: 0.625rem 1rem;
     text-decoration: none;
     transition: background-color 0.2s;
     width: 100%;
 
-    &:focus,
+    &:focus-visible,
     &:hover {
         background: var(--menu-item-bcg-hover);
     }

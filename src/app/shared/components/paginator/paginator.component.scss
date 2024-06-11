@@ -1,0 +1,87 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/form';
+@import 'mixins/screen';
+@import 'mixins/svg';
+@import 'mixins/typography';
+
+:root {
+    --paginator-color: #{ $c-grey--700 };
+}
+
+.paginator {
+    $self: &;
+
+    --form-input-bcg: transparent;
+    --form-input-disabled-bcg: transparent;
+
+    align-items: center;
+    color: var(--paginator-color);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $font-barlow;
+    gap: 1rem;
+    height: 50px;
+    justify-content: flex-end;
+    width: 100%;
+
+    &__size,
+    &__pages {
+        align-items: center;
+        display: flex;
+        margin-bottom: 0;
+    }
+
+    &__text {
+        display: inline-block;
+        font-weight: $weight-medium;
+        margin-right: 0.5rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__input {
+        input {
+            @include style-text;
+
+            color: var(--paginator-color);
+            font-family: $font-barlow;
+            font-weight: $weight-medium;
+            height: 26px;
+            padding: 0;
+            text-align: center;
+            width: 26px;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &__select {
+        @include form-select;
+
+        select {
+            @include style-text;
+
+            --form-input-border: transparent;
+
+            color: var(--paginator-color);
+            font-family: $font-barlow;
+            font-weight: $weight-medium;
+            height: 26px;
+            padding: 0;
+            width: 36px;
+        }
+
+        &::before {
+            right: 0;
+        }
+    }
+
+    @include screen($screen-simple) {
+        gap: 1.75rem;
+    }
+}

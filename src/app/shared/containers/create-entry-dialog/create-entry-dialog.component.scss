@@ -15,7 +15,7 @@
     &__warning {
         align-items: center;
         display: flex;
-        gap: 0.25rem;
+        gap: $p-gutter--small;
 
         .icon {
             color: var(--create-entry-warning);
@@ -73,7 +73,7 @@
     &__item {
         display: flex;
         gap: 10px;
-        padding: 0.25rem 0;
+        padding: $p-gutter--small 0;
 
         &.is-success {
             #{ $self }__icon {

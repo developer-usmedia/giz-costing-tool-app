@@ -192,14 +192,14 @@
     }
 
     &::before {
-        @include svg('chevron-down', $c-grey--700);
+        @include svg('arrow-dropdown', $c-grey--600);
 
         display: block;
         height: 16px;
         pointer-events: none;
         position: absolute;
         right: 0.75rem;
-        top: 46%;
+        top: 50%;
         transform: translateY(-50%);
         width: 16px;
     }

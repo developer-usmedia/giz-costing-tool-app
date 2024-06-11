@@ -12,7 +12,9 @@
             <giz-logos></giz-logos>
         </div>
     </div>
-
+    @if (!entries || entries.isLoading()) {
+        <giz-spinner class="info__spinner" [size]="'large'"></giz-spinner>
+    }
     @if (entries.data() && entries.data()?._embedded?.entries?.length) {
         <h2 class="dashboard__subtitle" i18n="dashboard continue">Continue with</h2>
         <ul class="dashboard__entries">
@@ -26,7 +28,7 @@
     <div class="dashboard__buttons">
         <button giz-stroke-button (click)="createEntry()" i18n="entries create-new">Create new entry</button>
 
-        @if (entries.data() && entries.data()?._embedded?.entries?.length) {
+        @if (!entries.isLoading() && entries.data() && entries.data()?._embedded?.entries?.length) {
             <a giz-link-button [routerLink]="[(moduleRoute.ENTRIES)]" i18n="entries view-all">View all</a>
         }
     </div>

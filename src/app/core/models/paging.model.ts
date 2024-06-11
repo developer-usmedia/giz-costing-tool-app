@@ -1,6 +1,6 @@
 export enum Sort {
-    ASC = 'asc',
-    DESC = 'desc',
+    ASC = 'ASC',
+    DESC = 'DESC',
 }
 
 export interface PageSort {
