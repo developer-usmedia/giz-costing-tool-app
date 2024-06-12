@@ -22,7 +22,7 @@ export class EntryDeleteDialogComponent {
 
     constructor(
         @Inject(DIALOG_DATA) public entry: Entry,
-        private readonly dialogRef: DialogRef,
+        private readonly dialogRef: DialogRef<DeleteEntryResult>,
     ) {
     }
 
@@ -31,7 +31,7 @@ export class EntryDeleteDialogComponent {
     }
 
     public cancel() {
-        this.dialogRef?.close({ delete: false });
+        this.dialogRef?.close({ deleted: false });
     }
 
     public delete() {

@@ -14,6 +14,8 @@ import { EntryInformationComponent } from './containers/entry-information/entry-
 import { EntryHeaderComponent } from './components/entry-header/entry-header.component';
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
 import { OverviewComponent } from './containers/overview/overview.component';
+import { ScenarioCardComponent } from './components/scenario-card/scenario-card.component';
+import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog/reset-scenario-dialog.component';
 
 @NgModule({
     declarations: [
@@ -23,6 +25,8 @@ import { OverviewComponent } from './containers/overview/overview.component';
         EntryInformationComponent,
         EntryScenariosComponent,
         OverviewComponent,
+        ScenarioCardComponent,
+        ResetScenarioDialogComponent,
     ],
     imports: [
         HttpClientModule,

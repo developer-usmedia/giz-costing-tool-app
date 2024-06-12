@@ -3,12 +3,12 @@
 .examples {
     &__section {
         border-bottom: 2px solid var(--hr-color);
-        padding: 2rem 0;
+        padding: $p-gutter--large 0;
     }
 
     &__title {
         font-size: var(--heading-1-hero-font-size);
-        margin: 0 0 2rem;
+        margin: 0 0 $p-gutter--large;
         text-align: center;
     }
 

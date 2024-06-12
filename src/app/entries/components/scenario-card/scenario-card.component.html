@@ -1,0 +1,12 @@
+<h2 class="scenario-card__title">{{ scenario.title }}</h2>
+<p class="scenario-card__description">{{ scenario.description }}</p>
+<figure class="scenario-card__image">
+    <img [src]="baseHref + scenario.imageUrl" i18n-alt alt="Graphic representation of scenario"
+         height="80" width="150"/>
+</figure>
+
+@if (selectable) {
+    <button class="scenario-card__button" type="button" (click)="select()">
+        <span i18n="scenario select">Select scenario</span>
+    </button>
+}

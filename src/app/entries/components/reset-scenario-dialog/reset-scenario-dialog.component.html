@@ -1,0 +1,10 @@
+<giz-dialog [title]="title" (closeDialog)="cancel()">
+    <p class="scenarios-reset__description" i18n="scenario-reset description">
+        Are you sure you want to reset scenarios? <br> This action cannot be undone.</p>
+
+    <ng-container footer-right>
+        <button type="button" giz-stroke-button theme="basic" (click)="cancel()"
+                i18n="scenario-reset cancel">Cancel</button>
+        <button type="button" giz-button (click)="reset()" i18n="scenario-reset reset">Reset</button>
+    </ng-container>
+</giz-dialog>

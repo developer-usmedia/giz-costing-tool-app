@@ -1,0 +1,54 @@
+@import 'config/sizes';
+@import 'mixins/screen';
+
+.scenarios {
+    &__intro {
+        margin-bottom: $p-gutter--large;
+        max-width: 750px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: $p-gutter;
+        margin-bottom: $p-gutter--large;
+    }
+
+    &__buttons {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__columns {
+        display: flex;
+        flex-direction: column;
+        gap: $p-gutter--large;
+    }
+
+    &__card {
+        margin-bottom: $p-gutter--large;
+    }
+
+    @include screen($screen-simple) {
+        &__list {
+            flex-direction: row;
+        }
+
+        &__item {
+            flex: 1 1 50%;
+        }
+
+        &__columns {
+            flex-direction: row;
+        }
+
+        &__info {
+            flex: 0 0 400px;
+        }
+
+        &__specification {
+            flex: 1;
+        }
+    }
+}
