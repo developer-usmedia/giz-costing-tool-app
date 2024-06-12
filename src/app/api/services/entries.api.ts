@@ -14,27 +14,27 @@ export class EntriesApi extends BaseApi {
     private readonly baseUrl = `${ environment.apiUrl }/api`;
 
     private readonly endpoints = {
-        simulations: `${ this.baseUrl }/simulations`,
-        import: `${ this.baseUrl }/simulations/import`,
+        entries: `${ this.baseUrl }/entries`,
+        import: `${ this.baseUrl }/entries/import`,
     };
 
     public getOne(id: string): Promise<Entry> {
-        return lastValueFrom(this.get<Entry>(`${ this.endpoints.simulations }/${ id }`));
+        return lastValueFrom(this.get<Entry>(`${ this.endpoints.entries }/${ id }`));
     }
 
-    public getMany(paging?: PagingParams): Promise<PagedResponse<'simulations', Entry>> {
+    public getMany(paging?: PagingParams): Promise<PagedResponse<'entries', Entry>> {
         let params = new HttpParams({ encoder: new GetParamsCodec() });
         if (paging) {
             params = getHttpParamsFromPagingParams(paging, params);
         }
 
         return lastValueFrom(
-            this.get<PagedResponse<'simulations', Entry>>(this.endpoints.simulations, params)
+            this.get<PagedResponse<'entries', Entry>>(this.endpoints.entries, params)
         );
     }
 
     public deleteEntry(id: string): Promise<Entry> {
-        return lastValueFrom(this.delete<Entry>(`${ this.endpoints.simulations }/${ id }`));
+        return lastValueFrom(this.delete<Entry>(`${ this.endpoints.entries }/${ id }`));
     }
 
     public import(file: File): Observable<HttpEvent<Entry>> {

@@ -1,6 +1,6 @@
 <div class="todo">Styling as designed</div>
 <button giz-stroke-button (click)="createEntry()">Create</button>
-@if (entries.data() && entries.data()?._embedded?.simulations?.length) {
+@if (entries.data() && entries.data()?._embedded?.entries?.length) {
     <table>
         <thead>
             <tr>
@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            @for (entry of entries.data()?._embedded?.simulations; track entry) {
+            @for (entry of entries.data()?._embedded?.entries; track entry) {
                 <tr>
                     <td><a giz-link-button [routerLink]="[moduleRoute.ENTRIES, entry.id]">{{ entry.facility.name }}</a></td>
                     <td>{{ entry.year }}</td>
