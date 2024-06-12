@@ -23,6 +23,11 @@ export interface ResetPasswordForm {
     resetToken: string;
 }
 
+export interface VerifyResetCodeForm {
+    email: string;
+    code: string;
+}
+
 export interface SuccessReponse {
     success: boolean;
 }
@@ -30,6 +35,7 @@ export interface SuccessReponse {
 export type LogoutResponse = SuccessReponse;
 export type ForgotPasswordResponse = SuccessReponse;
 export type ResetPasswordResponse = SuccessReponse;
+export type VerifyResetCodeResponse = SuccessReponse;
 export type VerifyEmailReponse = SuccessReponse;
 
 export interface TokenResponse {

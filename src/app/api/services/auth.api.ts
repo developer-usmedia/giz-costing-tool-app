@@ -15,6 +15,8 @@ import {
     UserResponse,
     VerifyEmailForm,
     VerifyEmailReponse,
+    VerifyResetCodeForm,
+    VerifyResetCodeResponse,
 } from '@api/models';
 import { BaseApi } from '@api/services/base.api';
 import { environment } from 'environments/environment';
@@ -31,6 +33,7 @@ export class AuthApi extends BaseApi {
         refresh: `${ this.baseUrl }/refresh`,
         forgotPassword: `${ this.baseUrl }/forgot-password`,
         resetPassword: `${ this.baseUrl }/reset-password`,
+        verifyCode: `${ this.baseUrl }/verify-code`,
         verifyEmail: `${ this.baseUrl }/verify-email`,
         twoFactorEnable: `${ this.baseUrl }/2fa/enable`,
         twoFactorVerify: `${ this.baseUrl }/2fa/verify/{code}`,
@@ -67,5 +70,9 @@ export class AuthApi extends BaseApi {
 
     public resetPassword(resetPasswordForm: ResetPasswordForm): Promise<ResetPasswordResponse> {
         return lastValueFrom(this.post<ResetPasswordResponse>(this.endpoints.resetPassword, resetPasswordForm));
+    }
+
+    public verifyResetCode(verifyResetCodeForm: VerifyResetCodeForm): Promise<VerifyResetCodeResponse> {
+        return lastValueFrom(this.post<VerifyResetCodeResponse>(this.endpoints.verifyCode, verifyResetCodeForm));
     }
 }

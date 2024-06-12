@@ -16,13 +16,21 @@ import { AUTH_ROUTE } from '@core/models';
 import { SharedModule } from '@shared/shared.module';
 import { EmailVerificationComponent } from './containers/email-verification/email-verification.component';
 import { LogoutComponent } from './containers/logout/logout.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './containers/reset-password/reset-password.component';
+import { ResetComponent } from './components/reset/reset.component';
+import { NewPasswordComponent } from './components/new-password/new-password.component';
 
 @NgModule({
     declarations: [
         AuthContentComponent,
+        ForgotPasswordComponent,
         LoginComponent,
         LoginFormComponent,
+        NewPasswordComponent,
         RegisterComponent,
+        ResetComponent,
+        ResetPasswordComponent,
         SignupComponent,
         VerificationComponent,
         LogoutComponent,
@@ -57,6 +65,10 @@ import { LogoutComponent } from './containers/logout/logout.component';
                 path: AUTH_ROUTE.EMAIL_VERIFICATION,
                 component: EmailVerificationComponent,
                 canActivate: [AuthGuard],
+            },
+            {
+                path: AUTH_ROUTE.PASSWORD_RESET,
+                component: ResetPasswordComponent,
             },
         ]),
         SharedModule,

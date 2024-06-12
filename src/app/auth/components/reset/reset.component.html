@@ -1,0 +1,46 @@
+<form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form__field" [ngClass]="{
+        'is-error': form | hasError: 'resetCode',
+        'has-value': form | hasValue: 'resetCode',
+    }">
+        <div class="form__input">
+            <label class="form__label" for="resetCode" i18n="form resetCode label">Code</label>
+            <input type="text" id="resetCode" formControlName="resetCode"/>
+        </div>
+        @if (form | showError: 'resetCode' :'required') {
+            <div class="form__error" i18n="form resetCode errors required">Code is required</div>
+        }
+        @if ((form | showError: 'resetCode' :'minlength') ||
+        (form | showError: 'resetCode' :'maxlength')) {
+            <div class="form__error" i18n="form resetCode errors length">Code has to be 6 characters</div>
+        }
+        @if (codeInvalid) {
+            <div class="form__error" i18n="form resetCode errors invalid">Code is invalid or expired</div>
+        }
+
+        <div class="form__hint">
+            <button type="button" giz-link-button theme="basic" (click)="sendCode()">
+                <span i18n="form resetCode resend button">Send me a new code</span>
+            </button>
+            @if (newCodeSent) {
+                <p i18n="form resetCode resend success">You will receive a new code via email</p>
+            }
+        </div>
+    </div>
+
+    @if (submitting) {
+        <div class="form__spinner">
+            <giz-spinner [theme]="'grey'"></giz-spinner>
+            <span i18n="form state verifying">Verifying...</span>
+        </div>
+    }
+
+    <div class="form__footer">
+        <div class="form__buttons">
+            <a giz-link-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="login back">Back to login</a>
+        </div>
+        <div class="form__buttons">
+            <button type="submit" giz-button i18n="continue">Continue</button>
+        </div>
+    </div>
+</form>
