@@ -136,13 +136,38 @@ export class CreateEntryDialogComponent implements OnDestroy {
     }
 
     public getMessageForErrorType(validationError: ImportValidationError): string {
+        const nrRegexp = new RegExp('\\d+');
+        let limit = '-';
+        if (validationError.message) {
+            const limitMatch = nrRegexp.exec(validationError.message);
+            if (limitMatch) {
+                limit = limitMatch[0].toString();
+            }
+        }
+
         switch (validationError.errorType) {
             case CellValidationError.VERSION_MISMATCH:
-                return  $localize`:import validation-error version-mismatch:Version is not matching`;
+                return $localize`:import validation-error version-mismatch:Version is not matching`;
             case CellValidationError.MISSING_PAYROLL_SHEET:
-                return  $localize`:import validation-error missing-payroll-sheet:Payroll sheet is missing`;
+                return $localize`:import validation-error missing-payroll-sheet:Payroll sheet is missing`;
             case CellValidationError.MISSING_INFO_SHEET:
-                return  $localize`:import validation-error missing-info-sheet:Info sheet is missing`;
+                return $localize`:import validation-error missing-info-sheet:Info sheet is missing`;
+            case CellValidationError.NUMBER_BASE:
+                return $localize`:import validation-error number-base:${ validationError.property }, given value **must be a number**`;
+            case CellValidationError.NUMBER_MIN:
+                return $localize`:import validation-error number-min:${ validationError.property }, given value **must be greater than or equal to ${ limit }**`;
+            case CellValidationError.NUMBER_MAX:
+                return $localize`:import validation-error number-max:${ validationError.property }, given value **must be less than or equal to ${ limit }**`;
+            case CellValidationError.STRING_BASE:
+                return $localize`:import validation-error string-base:${ validationError.property }, given value **must be a string**`;
+            case CellValidationError.STRING_MIN:
+                return $localize`:import validation-error string-min:${ validationError.property }, given value **length must be at least ${ limit } characters long**`;
+            case CellValidationError.STRING_MAX:
+                return $localize`:import validation-error string-max:${ validationError.property }, given value **length must be less than or equal to ${ limit } characters long**`;
+            case CellValidationError.STRING_TRIM:
+                return $localize`:import validation-error string-trim:${ validationError.property }, given value **must not have leading or trailing whitespace**`;
+            case CellValidationError.REQUIRED:
+                return $localize`:import validation-error required:${ validationError.property }, **is required**`;
             default:
                 return validationError.message || 'Unknown error';
         }

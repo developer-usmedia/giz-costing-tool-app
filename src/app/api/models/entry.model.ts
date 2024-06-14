@@ -44,10 +44,17 @@ export enum EntryStatus {
 }
 
 export enum CellValidationError {
-    TODO = 'TODO',
     MISSING_INFO_SHEET = 'MISSING_INFO_SHEET',
     MISSING_PAYROLL_SHEET = 'MISSING_PAYROLL_SHEET',
     VERSION_MISMATCH = 'VERSION_MISMATCH',
+    NUMBER_BASE = 'number.base',
+    NUMBER_MIN = 'number.min',
+    NUMBER_MAX = 'number.max',
+    STRING_BASE = 'string.base',
+    STRING_MIN = 'string.min',
+    STRING_MAX = 'string.max',
+    STRING_TRIM = 'string.trim',
+    REQUIRED = 'any.required',
 }
 
 export interface ImportValidationError {

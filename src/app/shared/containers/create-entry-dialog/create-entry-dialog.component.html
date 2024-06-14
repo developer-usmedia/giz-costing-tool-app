@@ -63,7 +63,7 @@
                         <td>{{ error.sheetIndex }}</td>
                         <td>{{ error.rowIndex }}</td>
                         <td>{{ error.column }}</td>
-                        <td>{{ getMessageForErrorType(error) }}</td>
+                        <td [innerHTML]="getMessageForErrorType(error) | markdown"></td>
                     </tr>
                 }
             </tbody>

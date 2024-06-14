@@ -45,6 +45,14 @@
                 white-space: nowrap;
                 width: 65px;
             }
+
+            p {
+                margin: 0;
+
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
         }
 
         thead {

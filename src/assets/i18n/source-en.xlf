@@ -1772,7 +1772,7 @@
         <source>Version is not matching</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">151</context>
         </context-group>
         <note priority="1" from="description">import validation-error version-mismatch</note>
       </trans-unit>
@@ -1780,17 +1780,81 @@
         <source>Payroll sheet is missing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="linenumber">153</context>
         </context-group>
-        <note priority="1" from="description">import validation-error missing-payroll-sheet</note>
+        <note priority="1" from="description">import validation-   error missing-payroll-sheet</note>
       </trans-unit>
       <trans-unit id="7475764315401683716" datatype="html">
         <source>Info sheet is missing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">155</context>
         </context-group>
         <note priority="1" from="description">import validation-error missing-info-sheet</note>
+      </trans-unit>
+      <trans-unit id="1484388861765953514" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **must be a number**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error number-base</note>
+      </trans-unit>
+      <trans-unit id="8653218055099915904" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **must be greater than or equal to <x id="PH_1" equiv-text="limit"/>**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error number-min</note>
+      </trans-unit>
+      <trans-unit id="8502698544659255631" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **must be less than or equal to <x id="PH_1" equiv-text="limit"/>**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error number-max</note>
+      </trans-unit>
+      <trans-unit id="2190048762097049078" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **must be a string**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error string-base</note>
+      </trans-unit>
+      <trans-unit id="109068267821507788" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **length must be at least <x id="PH_1" equiv-text="limit"/> characters long**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">165</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error string-min</note>
+      </trans-unit>
+      <trans-unit id="4065923790608983912" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **length must be less than or equal to <x id="PH_1" equiv-text="limit"/> characters long**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">167</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error string-max</note>
+      </trans-unit>
+      <trans-unit id="4461148016347450659" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, given value **must not have leading or trailing whitespace**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error string-trim</note>
+      </trans-unit>
+      <trans-unit id="2520201888145192204" datatype="html">
+        <source><x id="PH" equiv-text="validationError.property"/>, **is required**</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+        <note priority="1" from="description">import validation-error required</note>
       </trans-unit>
       <trans-unit id="8559170870663360229" datatype="html">
         <source>Examples</source>
