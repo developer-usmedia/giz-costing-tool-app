@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { CreateQueryResult } from '@tanstack/angular-query-experimental';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, inject, OnDestroy, signal } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
+import { CreateQueryResult, injectQuery } from '@tanstack/angular-query-experimental';
+import { filter, Subject, takeUntil } from 'rxjs';
 
+import { Entry, User } from '@api/models';
+import { EntriesApi } from '@api/services';
 import { BreadcrumbItem, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
-import { ICON } from '@shared/components/icon/icon.enum';
-import { User } from '@api/models';
 import { UserService } from '@core/services';
+import { ICON } from '@shared/components/icon/icon.enum';
 import { getBreadCrumbTitle } from '@shared/helpers';
 
 @Component({
@@ -13,23 +17,55 @@ import { getBreadCrumbTitle } from '@shared/helpers';
     templateUrl: './base.component.html',
     styleUrls: ['./base.component.scss'],
 })
-export class BaseComponent implements OnInit {
+export class BaseComponent implements OnDestroy {
     public readonly userSession: CreateQueryResult<User, Error> = this.userService.getUserSession();
     public breadcrumb: BreadcrumbItem[] = [];
+
+    public entriesApi = inject(EntriesApi);
+    public entryId = signal<string | undefined>(undefined);
+    public entry = injectQuery<Entry, HttpErrorResponse>(() => ({
+        enabled: this.entryId() != undefined,
+        queryKey: ['entry', { id: this.entryId() }],
+        queryFn: () => this.entriesApi.getOne(this.entryId() as string),
+        retry: 1,
+        staleTime: Infinity,
+    }));
+
+    private readonly destroyed$ = new Subject<void>();
 
     constructor(
         private readonly router: Router,
         private readonly userService: UserService,
     ) {
-        router.events.subscribe((value) => {
-            if (value instanceof NavigationEnd) {
+        router.events
+            .pipe(
+                filter(e => e instanceof NavigationEnd),
+                takeUntil(this.destroyed$),
+            )
+            .subscribe(() => {
+                const entryRegex = /entries\/([^/\s]+)(?:\/|$)/;
+                const match = this.router.url.match(entryRegex);
+                if (match && match[1]) {
+                    this.entryId.set(match[1]);
+                } else {
+                    this.entryId.set(undefined);
+                }
                 this.getBreadcrumbs();
-            }
-        });
+            });
+
+        toObservable(this.entry.data)
+            .pipe(takeUntil(this.destroyed$))
+            .subscribe((entry) => {
+                if (!entry) {
+                    return;
+                }
+                this.getBreadcrumbs();
+            });
     }
 
-    public ngOnInit() {
-        this.getBreadcrumbs();
+    public ngOnDestroy(): void {
+        this.destroyed$.next();
+        this.destroyed$.complete();
     }
 
     private getBreadcrumbs() {
@@ -50,12 +86,9 @@ export class BaseComponent implements OnInit {
                 link: MODULE_ROUTE.ENTRIES,
             });
 
-            // TODO: Make this work with api
-            // const id = this.router.url.split('/').pop();
-            // const item = await this.entryService.getOneById(id);
-            // const name = `${ item.title } (${ item.year })`;
+            const entryName = this.entry?.data() ? `${ this.entry.data()?.facility.name ?? '' } (${ this.entry.data()?.year ?? '' })` : '';
             this.breadcrumb.push({
-                name: 'Facility name (2023)',
+                name: entryName,
                 active: true,
             });
         }
