@@ -1,10 +1,10 @@
 import { inject, Injectable } from '@angular/core';
+import { injectQueryClient } from '@tanstack/angular-query-experimental';
 
 import { Entry } from '@api/models';
 import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
 import { EntriesApi } from '@api/services';
 import { useMutation } from '@core/services/query/use-mutation';
-import { injectQueryClient } from '@tanstack/angular-query-experimental';
 import { useQuery } from './query/use-query';
 
 @Injectable({ providedIn: 'root' })

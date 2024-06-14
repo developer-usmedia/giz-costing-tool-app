@@ -1,5 +1,5 @@
-import { Component, inject, Inject } from '@angular/core';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+import { Component, inject, Inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { Entry } from '@api/models';
@@ -37,6 +37,7 @@ export class EntryDeleteDialogComponent {
     public delete() {
         this.entryMutation.mutate(this.entry.id, {
             onSuccess: () => {
+                this.toastr.success($localize`:entry-delete success:Your entry has been successfully deleted`);
                 this.dialogRef?.close({ deleted: true });
             },
             onError: (error) => {

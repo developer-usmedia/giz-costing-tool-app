@@ -999,11 +999,19 @@
         </context-group>
         <note priority="1" from="description">entry-delete title</note>
       </trans-unit>
+      <trans-unit id="3109028008416701928" datatype="html">
+        <source>Your entry has been successfully deleted</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">entry-delete success</note>
+      </trans-unit>
       <trans-unit id="525019542563748114" datatype="html">
         <source>Something went wrong deleting the entry</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <note priority="1" from="description">entry-delete error</note>
       </trans-unit>
