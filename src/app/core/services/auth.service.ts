@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, from } from 'rxjs';
 
@@ -68,6 +69,7 @@ export class AuthService {
                 })
                 .finally(() => {
                     this.removeToken();
+                    this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.LOGOUT]);
                 });
         }
     }
