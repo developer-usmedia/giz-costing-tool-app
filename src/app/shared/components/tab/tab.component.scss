@@ -47,7 +47,7 @@
 
     &.is-disabled {
         color: var(--tab-color-disabled);
-        cursor: not-allowed;
+        pointer-events: none;
     }
 
     &.is-active {
