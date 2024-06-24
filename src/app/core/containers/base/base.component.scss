@@ -27,7 +27,7 @@
         margin: 0 auto;
         padding: $p-gutter--large $p-gutter;
         position: relative;
-        width: min(100%, 1024px);
+        width: min(100%, #{ $w-site });
     }
 
     &__footer {

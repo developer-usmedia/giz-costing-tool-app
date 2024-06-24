@@ -4,6 +4,9 @@
 @import 'mixins/typography';
 
 .dashboard {
+    margin: 0 auto;
+    max-width: 984px;
+
     &__intro {
         display: flex;
         flex-direction: column;
