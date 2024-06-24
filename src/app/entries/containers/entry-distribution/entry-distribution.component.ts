@@ -10,13 +10,13 @@ import { ENTRY_ROUTE, MODULE_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
-    selector: 'giz-entry-information',
-    templateUrl: './entry-information.component.html',
-    styleUrl: './entry-information.component.scss',
+    selector: 'giz-entry-distribution',
+    templateUrl: './entry-distribution.component.html',
+    styleUrl: './entry-distribution.component.scss',
 })
-export class EntryInformationComponent implements OnDestroy {
-    public backTitle = $localize`:entry back-to-overview:Back to overview`;
-    public title = $localize`:entry information title:Information`;
+export class EntryDistributionComponent implements OnDestroy {
+    public backTitle = $localize`:entry scenarios title:Scenarios`;
+    public title = $localize`:entry distribution title:Distribution`;
 
     public id$: Observable<string>;
     public entriesApi = inject(EntriesApi);

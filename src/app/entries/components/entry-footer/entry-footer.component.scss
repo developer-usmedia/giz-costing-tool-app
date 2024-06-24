@@ -1,0 +1,14 @@
+@import 'config/sizes';
+
+.entry-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $p-gutter--small;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
+    }
+}

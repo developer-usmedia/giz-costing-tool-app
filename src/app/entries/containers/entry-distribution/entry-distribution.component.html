@@ -1,0 +1,19 @@
+<giz-entry-header
+    [title]="title"
+    [backButton]="{
+        icon: icon.LIST,
+        text: backTitle,
+        link: [moduleRoute.ENTRIES, (id$ | async), entryRoute.SCENARIO],
+    }"
+>
+    <a giz-stroke-button [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.BUYER ]"
+       i18n="continue">Continue</a>
+</giz-entry-header>
+<div class="distribution">
+    @if (!entry || entry.isLoading()) {
+        <giz-spinner class="distribution__spinner" [size]="'large'"></giz-spinner>
+
+    } @else {
+        <div class="todo">Distribution</div>
+    }
+</div>

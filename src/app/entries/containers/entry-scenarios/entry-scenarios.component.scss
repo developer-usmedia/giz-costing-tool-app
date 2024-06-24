@@ -20,16 +20,6 @@
         justify-content: flex-end;
     }
 
-    &__columns {
-        display: flex;
-        flex-direction: column;
-        gap: $p-gutter--large;
-    }
-
-    &__card {
-        margin-bottom: $p-gutter--large;
-    }
-
     @include screen($screen-simple) {
         &__list {
             flex-direction: row;
@@ -37,18 +27,6 @@
 
         &__item {
             flex: 1 1 50%;
-        }
-
-        &__columns {
-            flex-direction: row;
-        }
-
-        &__info {
-            flex: 0 0 400px;
-        }
-
-        &__specification {
-            flex: 1;
         }
     }
 }

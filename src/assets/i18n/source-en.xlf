@@ -113,8 +113,20 @@
           <context context-type="linenumber">43,44</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
           <context context-type="linenumber">10,11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
+          <context context-type="linenumber">78,80</context>
         </context-group>
         <note priority="1" from="description">continue</note>
       </trans-unit>
@@ -690,7 +702,7 @@
         </context-group>
         <note priority="1" from="description">menu account</note>
       </trans-unit>
-      <trans-unit id="2949848596707725099" datatype="html">
+      <trans-unit id="7507948636555938109" datatype="html">
         <source>Log out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
@@ -888,11 +900,75 @@
         </context-group>
         <note priority="1" from="description">unauthorized description</note>
       </trans-unit>
+      <trans-unit id="16265498921503083" datatype="html">
+        <source> Close the living wage gap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">scenario close-gap title</note>
+      </trans-unit>
+      <trans-unit id="4645422732519172477" datatype="html">
+        <source>Closing the living wage gap by increasing wage levels of all workers below living wage to living wage</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">scenario close-gap description</note>
+      </trans-unit>
+      <trans-unit id="8965490590268417161" datatype="html">
+        <source>Sed condimentum purus lectus, dignissim euismod arcu sagittis sed. Nulla dictum magna at nunc hendrerit, quis placerat nulla vulputate. Donec sodales at mauris nec sodales.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">scenario close-gap comment-1</note>
+      </trans-unit>
+      <trans-unit id="3388452656573855174" datatype="html">
+        <source>Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">scenario close-gap comment-2</note>
+      </trans-unit>
+      <trans-unit id="6251269467218886517" datatype="html">
+        <source> Absolute wage increase</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">scenario absolute-increase title</note>
+      </trans-unit>
+      <trans-unit id="2083058040228377634" datatype="html">
+        <source>Closing the living wage gap by an absolute wage increase for all workers.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">scenario absolute-increase description</note>
+      </trans-unit>
       <trans-unit id="639546403850221881" datatype="html">
         <source>Something went wrong logging out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <note priority="1" from="description">logout error</note>
       </trans-unit>
@@ -938,6 +1014,10 @@
           <context context-type="sourcefile">src/app/entries/components/scenario-card/scenario-card.component.html</context>
           <context context-type="linenumber">4,5</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="6556258602101850592" datatype="html">
         <source>Select scenario</source>
@@ -945,11 +1025,179 @@
           <context context-type="sourcefile">src/app/entries/components/scenario-card/scenario-card.component.html</context>
           <context context-type="linenumber">10,13</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">50,52</context>
-        </context-group>
         <note priority="1" from="description">scenario select</note>
+      </trans-unit>
+      <trans-unit id="6154338858131704843" datatype="html">
+        <source>Specifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+        <note priority="1" from="description">specs title</note>
+      </trans-unit>
+      <trans-unit id="5355310281817378507" datatype="html">
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">5,8</context>
+        </context-group>
+        <note priority="1" from="description">specs intro</note>
+      </trans-unit>
+      <trans-unit id="3679411987882892046" datatype="html">
+        <source>Minimum wage increase</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+        <note priority="1" from="description">form absoluteIncrease label</note>
+      </trans-unit>
+      <trans-unit id="7873623519470670250" datatype="html">
+        <source>Field is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">62,64</context>
+        </context-group>
+        <note priority="1" from="description">form absoluteIncrease errors required</note>
+      </trans-unit>
+      <trans-unit id="624786732736767005" datatype="html">
+        <source>Minimum is 0</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">25,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">65,67</context>
+        </context-group>
+        <note priority="1" from="description">form absoluteIncrease errors min</note>
+      </trans-unit>
+      <trans-unit id="1295845679455462809" datatype="html">
+        <source>Levies and taxes employee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <note priority="1" from="description">form employeeTax label</note>
+      </trans-unit>
+      <trans-unit id="1658426081513960387" datatype="html">
+        <source>Maximum is 100</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">47,51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">68,72</context>
+        </context-group>
+        <note priority="1" from="description">form employeeTax errors max</note>
+      </trans-unit>
+      <trans-unit id="7598535915029054801" datatype="html">
+        <source>Levies and taxes employer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">55,57</context>
+        </context-group>
+        <note priority="1" from="description">form employerTax label</note>
+      </trans-unit>
+      <trans-unit id="4474894550900672100" datatype="html">
+        <source>Average living wag gap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">74,75</context>
+        </context-group>
+        <note priority="1" from="description">specs average-gap</note>
+      </trans-unit>
+      <trans-unit id="8088282377334494520" datatype="html">
+        <source>Largest living wag gap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+        <note priority="1" from="description">specs largest-gap</note>
+      </trans-unit>
+      <trans-unit id="3407061818321766940" datatype="html">
+        <source>Saving...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">88,89</context>
+        </context-group>
+        <note priority="1" from="description">specs saving</note>
+      </trans-unit>
+      <trans-unit id="574579636082611565" datatype="html">
+        <source>Save and continue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">91,94</context>
+        </context-group>
+        <note priority="1" from="description">save-and-continue</note>
+      </trans-unit>
+      <trans-unit id="3807699453257291879" datatype="html">
+        <source>Comments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+        <note priority="1" from="description">scenario comments-title</note>
+      </trans-unit>
+      <trans-unit id="8526838789084733654" datatype="html">
+        <source>Close living wage gap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <note priority="1" from="description">scenario close-gap label</note>
+      </trans-unit>
+      <trans-unit id="2807800733729323332" datatype="html">
+        <source>Yes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">yes</note>
+      </trans-unit>
+      <trans-unit id="4878771234984761418" datatype="html">
+        <source>Taxes and levies employee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <note priority="1" from="description">scenario taxes-employee label</note>
+      </trans-unit>
+      <trans-unit id="4605134862635608528" datatype="html">
+        <source>Taxes and levies employer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <note priority="1" from="description">scenario taxes-employer label</note>
+      </trans-unit>
+      <trans-unit id="2614607010577950577" datatype="html">
+        <source>Overview</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+        <note priority="1" from="description">scenario overview-title</note>
       </trans-unit>
       <trans-unit id="8997334476277229514" datatype="html">
         <source> Are you sure you want to delete this entry? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
@@ -1019,11 +1267,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <note priority="1" from="description">entry tab information</note>
       </trans-unit>
@@ -1034,8 +1282,12 @@
           <context context-type="linenumber">27,29</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">entry tab scenarios</note>
       </trans-unit>
@@ -1044,6 +1296,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
           <context context-type="linenumber">33,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <note priority="1" from="description">entry tab distribution</note>
       </trans-unit>
@@ -1279,7 +1535,7 @@
         <source>Back to overview</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">entry back-to-overview</note>
       </trans-unit>
@@ -1287,49 +1543,73 @@
         <source>Select different scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">10,12</context>
+          <context context-type="linenumber">15,17</context>
         </context-group>
         <note priority="1" from="description">scenario reset</note>
+      </trans-unit>
+      <trans-unit id="2707927221353020550" datatype="html">
+        <source>Change specifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+        <note priority="1" from="description">scenario change-specs</note>
+      </trans-unit>
+      <trans-unit id="4809773059013012808" datatype="html">
+        <source>Error getting entry.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <note priority="1" from="description">entry error</note>
       </trans-unit>
       <trans-unit id="9124904634127834829" datatype="html">
         <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id sem pretium, malesuada elit vitae, ullamcorper tellus. Maecenas lacus odio, vulputate quis magna id, interdum elementum mauris. Phasellus magna quam, luctus quis elit eu, porta tempus metus.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">30,32</context>
+          <context context-type="linenumber">45,47</context>
         </context-group>
         <note priority="1" from="description">secnario intro</note>
       </trans-unit>
-      <trans-unit id="16265498921503083" datatype="html">
-        <source> Close the living wage gap</source>
+      <trans-unit id="1845025500384940851" datatype="html">
+        <source> Select scenario</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
+          <context context-type="linenumber">66</context>
         </context-group>
-        <note priority="1" from="description">scenario close-gap title</note>
+        <note priority="1" from="description">scenario select</note>
       </trans-unit>
-      <trans-unit id="4645422732519172477" datatype="html">
-        <source>Closing the living wage gap by increasing wage levels of all workers below living wage to living wage</source>
+      <trans-unit id="3120324644324798881" datatype="html">
+        <source>Successfully updated scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">105</context>
         </context-group>
-        <note priority="1" from="description">scenario close-gap description</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+        <note priority="1" from="description">scenario-update success</note>
       </trans-unit>
-      <trans-unit id="6251269467218886517" datatype="html">
-        <source> Absolute wage increase</source>
+      <trans-unit id="5268892589886625269" datatype="html">
+        <source>Something went wrong updating the scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">108</context>
         </context-group>
-        <note priority="1" from="description">scenario absolute-increase title</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+        <note priority="1" from="description">scenario-update error</note>
       </trans-unit>
-      <trans-unit id="2083058040228377634" datatype="html">
-        <source>Closing the living wage gap by an absolute wage increase for all workers.</source>
+      <trans-unit id="8320928227874047237" datatype="html">
+        <source>Something went wrong while resetting the scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">141</context>
         </context-group>
-        <note priority="1" from="description">scenario absolute-increase description</note>
+        <note priority="1" from="description">scenario-delete error</note>
       </trans-unit>
       <trans-unit id="1043593761419826119" datatype="html">
         <source>Create entry</source>

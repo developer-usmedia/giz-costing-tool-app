@@ -2,6 +2,7 @@ import { CdkMenuTrigger } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CdkCopyToClipboard } from '@angular/cdk/clipboard';
 
@@ -10,12 +11,16 @@ import { ENTRY_ROUTE } from '@core/models';
 import { SharedModule } from '@shared/shared.module';
 import { EntryDetailComponent } from './containers/entry-detail/entry-detail.component';
 import { EntryDeleteDialogComponent } from './containers/entry-delete-dialog/entry-delete-dialog.component';
+import { EntryDistributionComponent } from './containers/entry-distribution/entry-distribution.component';
 import { EntryInformationComponent } from './containers/entry-information/entry-information.component';
 import { EntryHeaderComponent } from './components/entry-header/entry-header.component';
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
 import { OverviewComponent } from './containers/overview/overview.component';
 import { ScenarioCardComponent } from './components/scenario-card/scenario-card.component';
 import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog/reset-scenario-dialog.component';
+import { ScenarioComponent } from './components/scenario/scenario.component';
+import { ScenarioSpecsFormComponent } from './components/scenario-specs-form/scenario-specs-form.component';
+import { EntryFooterComponent } from './components/entry-footer/entry-footer.component';
 
 @NgModule({
     declarations: [
@@ -23,10 +28,14 @@ import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog
         EntryDeleteDialogComponent,
         EntryHeaderComponent,
         EntryInformationComponent,
+        EntryDistributionComponent,
         EntryScenariosComponent,
         OverviewComponent,
         ScenarioCardComponent,
         ResetScenarioDialogComponent,
+        ScenarioComponent,
+        ScenarioSpecsFormComponent,
+        EntryFooterComponent,
     ],
     imports: [
         HttpClientModule,
@@ -49,7 +58,7 @@ import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog
                     },
                     {
                         path: ENTRY_ROUTE.DISTRIBUTION,
-                        component: EntryInformationComponent,
+                        component: EntryDistributionComponent,
                     },
                     {
                         path: ENTRY_ROUTE.BUYER,
@@ -67,6 +76,8 @@ import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog
         SharedModule,
         CdkCopyToClipboard,
         CdkMenuTrigger,
+        FormsModule,
+        ReactiveFormsModule,
     ],
 })
 export class EntriesModule {}

@@ -1,0 +1,10 @@
+<div class="entry-footer">
+    @if (backButton) {
+        <a giz-icon-button [buttonType]="'stroke'" [icon]="backButton.icon" [theme]="'basic'"
+           [routerLink]="backButton.link" class="entry__back">{{ backButton.text }}</a>
+    }
+
+    <div class="entry-header__actions">
+        <ng-content></ng-content>
+    </div>
+</div>

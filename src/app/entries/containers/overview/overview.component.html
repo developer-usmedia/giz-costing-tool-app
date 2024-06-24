@@ -65,7 +65,7 @@
                                         <a class="overview__link" [routerLink]="[moduleRoute.ENTRIES, entry.id]">{{ entry.facility.name }}</a>
                                     </td>
                                     <td class="overview__table-cell overview__table-cell--year">{{ entry.year | empty }}</td>
-                                    <td class="overview__table-cell overview__table-cell--country">{{ entry.facility.countryCode | countryName | empty }}</td>
+                                    <td class="overview__table-cell overview__table-cell--country">{{ entry.facility.country | empty }}</td>
                                     <td class="overview__table-cell overview__table-cell--date">{{ entry.updatedAt | date | empty }}</td>
                                     <td class="overview__table-cell overview__table-cell--status">
                                         <giz-status [status]="entry.status | entryStatus"></giz-status>

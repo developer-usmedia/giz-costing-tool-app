@@ -67,6 +67,7 @@ $c-grey--200: #eee;
 $c-grey--100: #fafafa;
 $c-black: #000;
 $c-white: #fff;
+$c-black-transparent: color.scale($c-black, $alpha: -88%);
 
 // Branding
 $c-giz-red: #da1c23;

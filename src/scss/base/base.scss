@@ -112,9 +112,11 @@ figcaption {
 }
 
 caption {
-    @include style-text-small;
+    @include style-text;
 
     color: var(--caption-color);
+    font-family: $font-barlow;
+    font-weight: $weight-medium;
     margin: 0 0 $p-gutter--small;
     text-align: left;
 }

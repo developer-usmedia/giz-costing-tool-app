@@ -11,9 +11,9 @@ import {
 } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { RegisterForm } from '@api/models';
-import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import { LoginForm } from '@api/models';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
 interface LoginFormGroup {
     email: FormControl<string>;
@@ -29,7 +29,7 @@ interface LoginFormGroup {
 export class LoginFormComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;
 
-    @Output() submitForm = new EventEmitter<RegisterForm>();
+    @Output() submitForm = new EventEmitter<LoginForm>();
 
     public form: FormGroup<LoginFormGroup> = new FormGroup(
         {
@@ -96,7 +96,7 @@ export class LoginFormComponent implements OnInit, OnChanges, OnDestroy {
 
         if (this.form.valid) {
             const formValue = this.form.getRawValue();
-            const form: RegisterForm = {
+            const form: LoginForm = {
                 email: formValue.email,
                 password: formValue.password,
             };

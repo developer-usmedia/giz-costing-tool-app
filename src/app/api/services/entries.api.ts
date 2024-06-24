@@ -4,6 +4,7 @@ import { lastValueFrom, Observable } from 'rxjs';
 
 import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
 import { Entry } from '@api/models/entry.model';
+import { ScenarioCreate, ScenarioUpdate } from '@api/models/scenario.model';
 import { BaseApi } from '@api/services/base.api';
 import { getHttpParamsFromPagingParams, GetParamsCodec } from '@shared/helpers';
 import { environment } from 'environments/environment';
@@ -15,6 +16,7 @@ export class EntriesApi extends BaseApi {
     private readonly endpoints = {
         entries: `${ this.baseUrl }/entries`,
         import: `${ this.baseUrl }/entries/import`,
+        scenario: `${ this.baseUrl }/entries/:id/scenario`,
     };
 
     public getOne(id: string): Promise<Entry> {
@@ -41,5 +43,20 @@ export class EntriesApi extends BaseApi {
         const formData = new FormData();
         formData.append('file', file);
         return this.postWithProgress<Entry>(this.endpoints.import, formData);
+    }
+
+    public createScenario(entryId: string, scenarioCreate: ScenarioCreate) {
+        const url = this.endpoints.scenario.replace(':id', entryId);
+        return lastValueFrom(this.post<Entry>(url, scenarioCreate));
+    }
+
+    public updateScenario(entryId: string, scenarioUpdate: ScenarioUpdate) {
+        const url = this.endpoints.scenario.replace(':id', entryId);
+        return lastValueFrom(this.patch<Entry>(url, scenarioUpdate));
+    }
+
+    public deleteScenario(entryId: string) {
+        const url = this.endpoints.scenario.replace(':id', entryId);
+        return lastValueFrom(this.delete<Entry>(url));
     }
 }

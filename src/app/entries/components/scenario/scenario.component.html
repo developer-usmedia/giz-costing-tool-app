@@ -1,0 +1,63 @@
+<div class="scenario" [ngClass]="{ 'scenario--edit' : state === 'edit' } ">
+    <div class="scenario__info">
+        <h3 class="scenario__title">{{ scenario.title }}</h3>
+        <p class="scenario__description">{{ scenario.description }}</p>
+        <figure class="scenario__image">
+            <img [src]="baseHref + scenario.imageUrl" i18n-alt alt="Graphic representation of scenario"
+                 height="80" width="150"/>
+        </figure>
+
+        @if (state === 'edit') {
+            <div class="scenario__comments">
+                <h3 i18n="scenario comments-title">Comments</h3>
+                <p>{{ scenario.comment1 }}</p>
+
+                @if (scenario.comment2) {
+                    <p>{{ scenario.comment2 }}</p>
+                }
+            </div>
+        }
+    </div>
+    <div class="scenario__specification">
+        @if (state === 'edit' && entry) {
+            <giz-scenario-specs-form
+                [type]="scenario.type"
+                [entry]="entry"
+                [submitting]="!!saving"
+                (submitForm)="onSubmitSpecs($event)"
+            ></giz-scenario-specs-form>
+        } @else if (entry) {
+            <table class="scenario__table">
+                <caption i18n="scenario specs title">Specifications</caption>
+                <tbody>
+                    @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
+                        <tr>
+                            <th i18n="scenario taxes-employer label">Minimum wage increase</th>
+                            <td>{{ entry.scenario?.specifications?.absoluteIncrease }} {{ entry.facility.currencyCode }}</td>
+                        </tr>
+                    }
+                    <tr>
+                        <th i18n="scenario close-gap label">Close living wage gap</th>
+                        <td i18n="yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <th i18n="scenario taxes-employee label">Taxes and levies employee</th>
+                        <td>{{ entry.scenario?.specifications?.employeeTax }} %</td>
+                    </tr>
+                    <tr>
+                        <th i18n="scenario taxes-employer label">Taxes and levies employer</th>
+                        <td>{{ entry.scenario?.specifications?.employerTax }} %</td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+
+    @if (state === 'view') {
+        <div class="scenario__categories">
+            <h3 i18n="scenario overview-title">Overview</h3>
+            <p class="scenario__intro">{{ scenario.overviewIntro }}</p>
+            <div class="todo">Job categories specifications</div>
+        </div>
+    }
+</div>

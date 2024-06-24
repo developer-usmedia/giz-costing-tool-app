@@ -8,7 +8,7 @@
 @import 'mixins/typography';
 
 :root {
-    --scenario-card-border: #{ color.scale($c-black, $alpha: -88%) };
+    --scenario-card-border: #{ $c-black-transparent };
     --scenario-card-border-active: #{ $c-thunderbird-1 };
     --scenario-card-color: #{ $c-grey--600 };
 }

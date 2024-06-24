@@ -1,7 +1,10 @@
+@import 'config/sizes';
 @import 'mixins/typography';
 
 .entry-header {
     display: flex;
+    flex-wrap: wrap;
+    gap: $p-gutter--small;
     justify-content: space-between;
     margin-bottom: 2rem;
 
@@ -15,5 +18,10 @@
         @include style-heading-2;
 
         margin: 0;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
     }
 }

@@ -9,6 +9,6 @@ export class HasValuePipe implements PipeTransform {
     ): boolean {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const value: any = form.get(name)?.value;
-        return (value !== '' && value !== undefined && value !== null);
+        return value !== '' && value !== undefined && value !== null && !Number.isNaN(value);
     }
 }

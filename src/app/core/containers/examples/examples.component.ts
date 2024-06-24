@@ -27,6 +27,9 @@ export class ExamplesComponent {
         status: EntryStatus.OPEN,
         createdAt: '2023-11-05',
         updatedAt: '2023-29-05',
+        averageLwGap: 200,
+        largestLwGap: 400,
+        scenario: null,
         facility: {
             id: 'BRMASO-0002',
             name: 'Facility Name',

@@ -13,7 +13,7 @@
     font-size: 1rem;
     font-weight: $weight-normal;
     outline: none;
-    padding: 1.5rem $p-input 0.5rem;
+    padding: var(--form-input-padding-vertical) var(--form-input-padding-horizontal);
     transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s ease;
     width: 100%;
 

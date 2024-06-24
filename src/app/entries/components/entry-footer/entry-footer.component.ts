@@ -2,18 +2,16 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
-    selector: 'giz-entry-header',
-    templateUrl: './entry-header.component.html',
-    styleUrl: './entry-header.component.scss',
+    selector: 'giz-entry-footer',
+    templateUrl: './entry-footer.component.html',
+    styleUrl: './entry-footer.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
 })
-export class EntryHeaderComponent {
+export class EntryFooterComponent {
     @Input() backButton?: {
         text: string;
         icon: ICON;
         link: string | any[];
     };
-
-    @Input({required: true}) title!: string;
 }

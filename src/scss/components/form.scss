@@ -8,32 +8,61 @@
     position: relative;
     width: 100%;
 
+    &__container {
+        background: var(--form-bcg);
+        border: 1px solid var(--form-border);
+        border-radius: $b-radius;
+        padding: $p-gutter;
+    }
+
+    &__header {
+        margin-bottom: $p-gutter--large;
+    }
+
+    &__title {
+        @include style-heading-2;
+
+        margin: 0 0 $p-gutter--small;
+    }
+
     &__field {
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: $p-gutter;
         position: relative;
 
         &.is-error {
             --form-input-border: #{ $c-error--dark };
-            --form-label-color: #{ $c-error--dark };
-        }
 
-        #{ $self }__label {
-            position: absolute;
-            top: 20px;
+            #{ $self }__input #{ $self }__label {
+                --form-label-color: #{ $c-error--dark };
+            }
         }
 
         &.has-value {
-            #{ $self }__label {
+            #{ $self }__input #{ $self }__label {
                 transform: scale(0.8) translateY(-100%);
             }
         }
     }
 
+    &__definition {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $p-gutter--small;
+        padding: $p-gutter--small 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        #{ $self }__label {
+            margin: 0;
+        }
+    }
+
     &__label {
         display: block;
-        transform-origin: left center;
-        transition: color 0.2s, transform 0.2s;
 
         .is-required & {
             &::after {
@@ -58,7 +87,7 @@
         margin: 4px 0 0;
 
         #{ $self }__field & {
-            padding-left: $p-input;
+            padding-left: var(--form-input-padding-horizontal);
         }
     }
 
@@ -68,10 +97,36 @@
         margin-top: 4px;
     }
 
+    &__text {
+        font-family: $font-barlow;
+        font-weight: $weight-medium;
+        margin: 0;
+    }
+
     &__input,
     &__select {
         position: relative;
         width: 100%;
+
+        input:has(+ #{ $self }__postfix) {
+            padding-right: calc(var(--form-input-padding-horizontal) + 1.5rem);
+        }
+
+        &:has(#{ $self }__label) {
+            input {
+                padding-top: 1.5rem;
+            }
+        }
+
+        #{ $self }__label {
+            --form-label-color: #{ $c-grey--600 };
+
+            padding: 0 var(--form-input-padding-horizontal);
+            position: absolute;
+            top: 20px;
+            transform-origin: left center;
+            transition: color 0.2s, transform 0.2s;
+        }
     }
 
     &__select {
@@ -86,12 +141,23 @@
         @include form-radio;
     }
 
+    &__postfix {
+        position: absolute;
+        right: $p-gutter--small;
+        top: 50%;
+        translate: 0 -50%;
+    }
+
     &__footer {
         align-content: center;
         display: flex;
         gap: 1rem;
         justify-content: space-between;
         margin-top: 2rem;
+
+        &--right {
+            justify-content: flex-end;
+        }
     }
 
     &__column {
@@ -106,5 +172,24 @@
         display: flex;
         font-style: italic;
         gap: 0.5rem;
+    }
+
+    @include screen($screen-minimal) {
+        &--horizontal {
+            #{ $self }__field {
+                align-items: center;
+                display: grid;
+                gap: 0 $p-gutter;
+                grid-template-columns: 200px 1fr;
+
+                > * {
+                    grid-column-start: 2;
+                }
+            }
+
+            #{ $self }__label {
+                grid-column-start: 1;
+            }
+        }
     }
 }

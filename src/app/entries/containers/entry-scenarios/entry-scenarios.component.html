@@ -6,48 +6,80 @@
         link: [moduleRoute.ENTRIES, (id$ | async)],
     }"
 >
-    @if (activeScenario) {
-        <button giz-stroke-button i18n="scenario reset" (click)="reset()">Select different scenario</button>
+    @if (scenarioState === 'specs') {
+        <button giz-stroke-button
+                theme="basic"
+                i18n="scenario reset"
+                [disabled]="scenarioUpdateMutation.isPending() || scenarioCreateMutation.isPending()"
+                (click)="reset()"
+        >Select different scenario</button>
+    }
+    @if (scenarioState === 'view') {
+        <button giz-stroke-button
+                theme="basic"
+                i18n="scenario change-specs"
+                (click)="changeSpecs()"
+        >Change specifications</button>
+
+        <a giz-stroke-button
+           [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.DISTRIBUTION ]"
+           i18n="continue">Continue</a>
     }
 </giz-entry-header>
 
 <div class="scenarios">
-    @if (activeScenario) {
-        <div class="scenarios__columns">
-            <div class="scenarios__info">
-                <giz-scenario-card
-                    class="scenarios__card"
-                    [scenario]="activeScenario"
-                    [selectable]="false"
-                ></giz-scenario-card>
-                <div class="todo">Extra info</div>
-            </div>
-            <div class="scenarios__specification">
-                <div class="todo">Specifications</div>
-            </div>
-        </div>
+    @if (!entry || entry.isLoading() || !scenarioState) {
+        <giz-spinner class="scenarios__spinner" [size]="'large'"></giz-spinner>
+    } @else if (entry.isError() || !entry.data()) {
+        <p i18n="entry error">Error getting entry.</p>
     } @else {
-        <p class="scenarios__intro" i18n="secnario intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id sem pretium, malesuada elit vitae, ullamcorper tellus. Maecenas lacus odio, vulputate quis magna id, interdum elementum mauris. Phasellus magna quam, luctus quis elit eu, porta tempus metus.</p>
+       @if (entry.data() && scenarioState !== 'start' && activeScenario) {
+          <giz-scenario
+              [scenario]="activeScenario"
+              [entry]="entry.data()"
+              [state]="scenarioState === 'view' ? 'view' : 'edit'"
+              [saving]="scenarioUpdateMutation.isPending() || scenarioCreateMutation.isPending()"
+              (submitSpecs)="saveSpecs($event)"
+          ></giz-scenario>
+        } @else {
+            <p class="scenarios__intro" i18n="secnario intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id sem pretium, malesuada elit vitae, ullamcorper tellus. Maecenas lacus odio, vulputate quis magna id, interdum elementum mauris. Phasellus magna quam, luctus quis elit eu, porta tempus metus.</p>
 
-        <ul class="scenarios__list">
-            @for (scenario of scenarios; track scenario) {
-                <li class="scenarios__item">
-                    <giz-scenario-card
-                        [scenario]="scenario"
-                        [selectable]="true"
-                        [active]="scenario.id === selectedScenario?.id"
-                        (selected)="selectScenario(scenario)"
-                    ></giz-scenario-card>
-                </li>
-            }
-        </ul>
+            <ul class="scenarios__list">
+                @for (scenario of scenarios; track scenario) {
+                    <li class="scenarios__item">
+                        <giz-scenario-card
+                            [scenario]="scenario"
+                            [selectable]="true"
+                            [active]="scenario.type === selectedScenario?.type"
+                            (selected)="selectScenario(scenario)"
+                        ></giz-scenario-card>
+                    </li>
+                }
+            </ul>
 
-        <div class="scenarios__buttons">
-            <button giz-stroke-button
+            <div class="scenarios__buttons">
+                <button
+                    giz-stroke-button
                     i18n="scenario select"
                     [disabled]="!selectedScenario"
-                    (click)="saveScenario()"
-            >Select scenario</button>
-        </div>
+                    (click)="saveScenario()">
+                    Select scenario</button>
+            </div>
+        }
     }
 </div>
+
+
+@if (scenarioState === 'view') {
+    <giz-entry-footer
+        [backButton]="{
+            icon: icon.ARROW_BACK,
+            text: backTitle,
+            link: [moduleRoute.ENTRIES, (id$ | async)],
+        }"
+    >
+        <a giz-stroke-button
+           [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.DISTRIBUTION ]"
+           i18n="continue">Continue</a>
+    </giz-entry-footer>
+}

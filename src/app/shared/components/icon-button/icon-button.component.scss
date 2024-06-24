@@ -51,9 +51,9 @@
         border-radius: $b-radius;
 
         --icon-button-background: #{ $c-white };
-        --icon-button-border: #{ color.scale($c-black, $alpha: -88%)};
-        --icon-button-border-hover: #{ color.scale($c-black, $alpha: -88%)};
-        --icon-button-border-disabled: #{ color.scale($c-black, $alpha: -88%)};
+        --icon-button-border: #{ $c-black-transparent};
+        --icon-button-border-hover: #{ $c-black-transparent};
+        --icon-button-border-disabled: #{ $c-black-transparent};
     }
 
     &--small {

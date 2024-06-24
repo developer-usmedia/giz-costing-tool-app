@@ -10,7 +10,7 @@
     --header-avatar-background: #{ $c-thunderbird-1 };
     --header-avatar-color: #{ $c-white };
     --header-menu-footer-background: #{ $c-grey--100 };
-    --header-menu-footer-border: #{ color.scale($c-black, $alpha: -88%) };
+    --header-menu-footer-border: #{ $c-black-transparent };
 }
 
 .header {

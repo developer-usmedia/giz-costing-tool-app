@@ -10,7 +10,7 @@ import {
     Output,
     ViewEncapsulation,
 } from '@angular/core';
-import { Scenario } from '@core/models';
+import { ScenarioInfo } from '@core/models';
 
 @Component({
     selector: 'giz-scenario-card',
@@ -20,11 +20,11 @@ import { Scenario } from '@core/models';
     encapsulation: ViewEncapsulation.None,
 })
 export class ScenarioCardComponent {
-    @Input({ required: true }) scenario!: Scenario;
+    @Input({ required: true }) scenario!: ScenarioInfo;
     @Input() selectable = false;
     @Input() active = false;
 
-    @Output() selected = new EventEmitter<Scenario>();
+    @Output() selected = new EventEmitter<ScenarioInfo>();
 
     @HostBinding('class') cssClass = 'scenario-card';
 

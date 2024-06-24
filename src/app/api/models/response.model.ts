@@ -32,3 +32,7 @@ export interface PagedResponse<K extends string, E = Record<string, any>> {
     };
     paging: Pagination;
 }
+
+export interface SuccessResponse {
+    success: boolean;
+}

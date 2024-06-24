@@ -27,7 +27,7 @@
     // Button sizing
     --button-font-size: 1.375rem;
     --button-height: 36px;
-    --button-padding: 0 #{ $p-gutter };
+    --button-padding: 0 24px;
 
     // Table
     --table-bcg: #{ $c-white };
@@ -38,14 +38,18 @@
     --table-head-cell-padding: 0.75rem #{ $p-gutter };
 
     // Form
+    --form-bcg: #{ $c-white };
+    --form-border: #{ $c-black-transparent };
     --form-input-bcg: #{ $c-grey--100 };
+    --form-input-padding-horizontal: 1rem;
+    --form-input-padding-vertical: 0.5rem;
     --form-input-border: #{ $c-grey--300 };
     --form-input-border-focus: #{ $c-grey--600 };
     --form-input-color: #{ $c-grey--900 };
     --form-input-placeholder: #{ $c-grey--400 };
     --form-input-disabled-bcg: #{ $c-grey--200 };
     --form-input-checkmark: #{ $c-grey--900 };
-    --form-label-color: #{ $c-grey--600 };
+    --form-label-color: #{ $c-grey--900 };
     --form-error: #{ $c-error };
     --form-spinner: #{ $c-grey--600 };
 

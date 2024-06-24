@@ -1,0 +1,89 @@
+<form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form__container">
+        <div class="form__header">
+            <h3 class="form__title" i18n="specs title">Specifications</h3>
+            <p class="form__intro" i18n="specs intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</p>
+        </div>
+
+        @if (type === scenarioType.ABSOLUTE_INCREASE) {
+            <div class="form__definition">
+                <p class="form__label" i18n="specs average-gap">Average living wag gap</p>
+                <p class="form__text">{{ entry.averageLwGap }} {{ entry.facility.currencyCode }}</p>
+            </div>
+
+            <div class="form__definition">
+                <p class="form__label" i18n="specs largest-gap">Largest  living wag gap</p>
+                <p class="form__text">{{ entry.largestLwGap }} {{ entry.facility.currencyCode }}</p>
+            </div>
+
+            <div class="form__field" [ngClass]="{
+                'is-error': form | hasError: 'absoluteIncrease',
+                'has-value': form | hasValue: 'absoluteIncrease',
+            }">
+                <label class="form__label" for="absoluteIncrease" i18n="form absoluteIncrease label">Minimum wage increase</label>
+
+                <div class="form__input">
+                    <input type="number" id="absoluteIncrease" formControlName="absoluteIncrease"/>
+                    <span class="form__postfix">{{ entry.facility.currencyCode }}</span>
+                </div>
+                @if (form | showError: 'absoluteIncrease' :'required') {
+                    <div class="form__error" i18n="form absoluteIncrease errors required">Field is required</div>
+                }
+                @if (form | showError: 'absoluteIncrease' :'min') {
+                    <div class="form__error" i18n="form absoluteIncrease errors min">Minimum is 0</div>
+                }
+            </div>
+        }
+
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'employeeTax',
+            'has-value': form | hasValue: 'employeeTax',
+        }">
+            <label class="form__label" for="employeeTax" i18n="form employeeTax label">Levies and taxes employee</label>
+
+            <div class="form__input">
+                <input type="number" id="employeeTax" formControlName="employeeTax"/>
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'employeeTax' :'required') {
+                <div class="form__error" i18n="form employeeTax errors required">Field is required</div>
+            }
+            @if (form | showError: 'employeeTax' :'min') {
+                <div class="form__error" i18n="form employeeTax errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'employeeTax' :'max') {
+                <div class="form__error" i18n="form employeeTax errors max">Maximum is 100</div>
+            }
+        </div>
+
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'employerTax',
+            'has-value': form | hasValue: 'employerTax',
+        }">
+            <label class="form__label" for="employerTax" i18n="form employerTax label">Levies and taxes employer</label>
+
+            <div class="form__input">
+                <input type="number" id="employerTax" formControlName="employerTax"/>
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'employerTax' :'required') {
+                <div class="form__error" i18n="form employerTax errors required">Field is required</div>
+            }
+            @if (form | showError: 'employerTax' :'min') {
+                <div class="form__error" i18n="form employerTax errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'employerTax' :'max') {
+                <div class="form__error" i18n="form employerTax errors max">Maximum is 100</div>
+            }
+        </div>
+    </div>
+
+    <div class="form__footer form__footer--right">
+        @if (submitting) {
+            <giz-spinner theme="grey" [reverse]="true">
+                <span i18n="specs saving">Saving...</span>
+            </giz-spinner>
+        }
+        <button type="submit" giz-stroke-button i18n="save-and-continue">Save and continue</button>
+    </div>
+</form>

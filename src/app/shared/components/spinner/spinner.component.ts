@@ -10,6 +10,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulati
 export class SpinnerComponent {
     @Input() theme: 'primary' | 'grey' | 'darkgrey' = 'primary';
     @Input() size: 'default' | 'large' = 'default';
+    @Input() reverse = false;
 
     @HostBinding('class') cssClass = 'spinner';
 
@@ -23,5 +24,9 @@ export class SpinnerComponent {
 
     @HostBinding('class.spinner--large') get modLarge(): boolean {
         return this.size === 'large';
+    }
+
+    @HostBinding('class.spinner--reverse') get modReverse(): boolean {
+        return this.reverse;
     }
 }

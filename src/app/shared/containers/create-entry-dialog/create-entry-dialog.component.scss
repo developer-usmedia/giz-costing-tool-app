@@ -7,7 +7,7 @@
 :root {
     --create-entry-table-background: #{ $c-grey--100 };
     --create-entry-warning: #{ $c-error };
-    --import-progress-border: #{ color.scale($c-black, $alpha: -88%) };
+    --import-progress-border: #{ $c-black-transparent };
     --import-progress-color-open: #{ $c-grey--400 };
 }
 

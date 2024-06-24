@@ -1,4 +1,5 @@
 import { EntityResponse } from '@api/models/response.model';
+import { Scenario } from '@api/models/scenario.model';
 
 export interface Entry extends EntityResponse {
     id: string;
@@ -12,8 +13,11 @@ export interface Entry extends EntityResponse {
     nrOfWorkersBelowLW: number;
     facility: Facility;
     benchmark: Benchmark;
+    averageLwGap: number;
+    largestLwGap: number;
     matrixId?: string;
     verified?: boolean;
+    scenario?: Scenario | null;
 }
 
 export interface Facility {

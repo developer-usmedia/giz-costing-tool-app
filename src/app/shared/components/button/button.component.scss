@@ -69,24 +69,24 @@
 
     &--stroke {
         --button-background: #{ $c-white };
-        --button-border: #{ color.scale($c-black, $alpha: -88%)};
+        --button-border: #{ $c-black-transparent};
         --button-color: #{ $c-thunderbird-1 };
         --button-background-hover: #{ $c-thunderbird-5 };
-        --button-border-hover: #{ color.scale($c-black, $alpha: -88%) };
+        --button-border-hover: #{ $c-black-transparent };
         --button-color-hover: #{ $c-thunderbird-1 };
         --button-background-disabled: #{ $c-white };
-        --button-border-disabled: #{ color.scale($c-black, $alpha: -88%) };
+        --button-border-disabled: #{ $c-black-transparent };
         --button-color-disabled: #{ color.scale($c-thunderbird-1, $alpha: -50%) };
 
         &#{ $self }--basic {
             --button-background: #{ $c-white };
-            --button-border: #{ color.scale($c-black, $alpha: -88%)};
+            --button-border: #{ $c-black-transparent};
             --button-color: #{ $c-grey--900 };
             --button-background-hover: #{ color.scale($c-black, $alpha: -94%) };
-            --button-border-hover: #{ color.scale($c-black, $alpha: -88%) };
+            --button-border-hover: #{ $c-black-transparent };
             --button-color-hover: #{ $c-grey--900 };
             --button-background-disabled: #{ $c-white };
-            --button-border-disabled: #{ color.scale($c-black, $alpha: -88%) };
+            --button-border-disabled: #{ $c-black-transparent };
             --button-color-disabled: #{ color.scale($c-grey--900, $alpha: -50%) };
         }
     }

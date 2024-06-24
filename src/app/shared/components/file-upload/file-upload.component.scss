@@ -5,7 +5,7 @@
 
 :root {
     --file-upload-background: #{ $c-white };
-    --file-upload-border: #{ color.scale($c-black, $alpha: -88%) };
+    --file-upload-border: #{ $c-black-transparent };
     --file-upload-color: #{ $c-thunderbird-1 };
 }
 

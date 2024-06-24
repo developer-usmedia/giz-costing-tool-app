@@ -1,3 +1,5 @@
+import { SuccessResponse } from '@api/models/response.model';
+
 export interface RegisterForm {
     email: string;
     password: string;
@@ -28,15 +30,11 @@ export interface VerifyResetCodeForm {
     code: string;
 }
 
-export interface SuccessReponse {
-    success: boolean;
-}
-
-export type LogoutResponse = SuccessReponse;
-export type ForgotPasswordResponse = SuccessReponse;
-export type ResetPasswordResponse = SuccessReponse;
-export type VerifyResetCodeResponse = SuccessReponse;
-export type VerifyEmailReponse = SuccessReponse;
+export type LogoutResponse = SuccessResponse;
+export type ForgotPasswordResponse = SuccessResponse;
+export type ResetPasswordResponse = SuccessResponse;
+export type VerifyResetCodeResponse = SuccessResponse;
+export type VerifyEmailReponse = SuccessResponse;
 
 export interface TokenResponse {
     accessToken: string;
