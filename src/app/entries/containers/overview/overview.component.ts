@@ -77,6 +77,8 @@ export class OverviewComponent implements OnDestroy {
                         }
                     }
                     params.sort = sort;
+                } else {
+                    params.sort = { [EntrySortFilterKey.UPDATED_AT]: Sort.DESC };
                 }
 
                 return params;

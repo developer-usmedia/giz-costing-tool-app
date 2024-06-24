@@ -1,7 +1,8 @@
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { Component, inject } from '@angular/core';
 
-import { MODULE_ROUTE } from '@core/models';
+import { EntrySortFilterKey } from '@api/models/entries.model';
+import { MODULE_ROUTE, Sort } from '@core/models';
 import { EntriesService } from '@core/services';
 import {
     CreateEntryDialogComponent,
@@ -19,6 +20,7 @@ export class DashboardComponent {
     public entries = this.entriesService.getEntries({
         index: 0,
         size: 3,
+        sort: { [EntrySortFilterKey.UPDATED_AT]: Sort.DESC },
     });
 
     private readonly dialog = inject(Dialog);
