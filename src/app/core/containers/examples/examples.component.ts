@@ -30,6 +30,7 @@ export class ExamplesComponent {
         facility: {
             id: 'BRMASO-0002',
             name: 'Facility Name',
+            country: 'Brazil',
             countryCode: 'BR',
             currencyCode: 'BRL',
             product: 'Bananas',

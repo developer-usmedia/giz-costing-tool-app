@@ -19,6 +19,7 @@ export interface Entry extends EntityResponse {
 export interface Facility {
     id: string;
     name: string;
+    country: string;
     countryCode: string;
     currencyCode: string;
     product: string;
