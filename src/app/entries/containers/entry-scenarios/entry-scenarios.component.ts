@@ -28,13 +28,13 @@ export class EntryScenariosComponent implements OnDestroy {
             id: 'close-gap',
             title: $localize`:scenario close-gap title: Close the living wage gap`,
             description: $localize`:scenario close-gap description:Closing the living wage gap by increasing wage levels of all workers below living wage to living wage`,
-            imageUrl: 'assets/images/scenario-placeholder.png',
+            imageUrl: 'assets/images/scenario-close-gap.png',
         },
         {
             id: 'absolute-wage',
             title: $localize`:scenario absolute-increase title: Absolute wage increase`,
             description: $localize`:scenario absolute-increase description:Closing the living wage gap by an absolute wage increase for all workers.`,
-            imageUrl: 'assets/images/scenario-placeholder.png',
+            imageUrl: 'assets/images/scenario-absolute-wage.png',
         },
     ];
     public activeScenario?: Scenario;
