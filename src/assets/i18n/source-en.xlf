@@ -682,22 +682,6 @@
         </context-group>
         <note priority="1" from="description">imprint title</note>
       </trans-unit>
-      <trans-unit id="7535527225967694107" datatype="html">
-        <source>Español</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-        <note priority="1" from="description">language espagnol</note>
-      </trans-unit>
-      <trans-unit id="5866254605255506989" datatype="html">
-        <source>English</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-        <note priority="1" from="description">language english</note>
-      </trans-unit>
       <trans-unit id="4247400351982331798" datatype="html">
         <source>Account settings</source>
         <context-group purpose="location">
@@ -916,7 +900,7 @@
         <source> Are you sure you want to reset scenarios? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">5,7</context>
+          <context context-type="linenumber">3,5</context>
         </context-group>
         <note priority="1" from="description">scenario-reset description</note>
       </trans-unit>
@@ -924,7 +908,7 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">9,10</context>
+          <context context-type="linenumber">7,8</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
@@ -936,7 +920,7 @@
         <source>Reset</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">10,12</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
         <note priority="1" from="description">scenario-reset reset</note>
       </trans-unit>
@@ -959,7 +943,7 @@
         <source>Select scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-card/scenario-card.component.html</context>
-          <context context-type="linenumber">9,12</context>
+          <context context-type="linenumber">10,13</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
@@ -1780,7 +1764,7 @@
         <source>Version is not matching</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">151</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <note priority="1" from="description">import validation-error version-mismatch</note>
       </trans-unit>
@@ -1788,15 +1772,15 @@
         <source>Payroll sheet is missing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">152</context>
         </context-group>
-        <note priority="1" from="description">import validation-   error missing-payroll-sheet</note>
+        <note priority="1" from="description">import validation-error missing-payroll-sheet</note>
       </trans-unit>
       <trans-unit id="7475764315401683716" datatype="html">
         <source>Info sheet is missing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">154</context>
         </context-group>
         <note priority="1" from="description">import validation-error missing-info-sheet</note>
       </trans-unit>
@@ -1804,7 +1788,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be a number**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">157</context>
+          <context context-type="linenumber">156</context>
         </context-group>
         <note priority="1" from="description">import validation-error number-base</note>
       </trans-unit>
@@ -1812,7 +1796,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be greater than or equal to <x id="PH_1" equiv-text="limit"/>**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">158</context>
         </context-group>
         <note priority="1" from="description">import validation-error number-min</note>
       </trans-unit>
@@ -1820,7 +1804,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be less than or equal to <x id="PH_1" equiv-text="limit"/>**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">160</context>
         </context-group>
         <note priority="1" from="description">import validation-error number-max</note>
       </trans-unit>
@@ -1828,7 +1812,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be a string**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">162</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-base</note>
       </trans-unit>
@@ -1836,7 +1820,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **length must be at least <x id="PH_1" equiv-text="limit"/> characters long**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">164</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-min</note>
       </trans-unit>
@@ -1844,7 +1828,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **length must be less than or equal to <x id="PH_1" equiv-text="limit"/> characters long**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-max</note>
       </trans-unit>
@@ -1852,7 +1836,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must not have leading or trailing whitespace**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">169</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-trim</note>
       </trans-unit>
@@ -1860,7 +1844,7 @@
         <source><x id="PH" equiv-text="validationError.property"/>, **is required**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">171</context>
+          <context context-type="linenumber">170</context>
         </context-group>
         <note priority="1" from="description">import validation-error required</note>
       </trans-unit>

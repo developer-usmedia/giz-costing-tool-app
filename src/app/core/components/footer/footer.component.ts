@@ -24,9 +24,9 @@ export class FooterComponent {
     public languageLabel(locale: string): string {
         switch (locale) {
             case LOCALE.ES:
-                return $localize`:language espagnol:Español`;
+                return 'Español';
             default:
-                return $localize`:language english:English`;
+                return 'English';
         }
     }
 
