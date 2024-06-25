@@ -18,7 +18,7 @@
             }
         </h3>
     }
-    <p class="entry-card__info">{{ entry.year }}, {{ entry.facility.countryCode | countryName }}</p>
+    <p class="entry-card__info">{{ entry.year }}, {{ entry.facility.country }}</p>
 </div>
 @if (showStatus && entry.status) {
     <div class="entry-card__status">
