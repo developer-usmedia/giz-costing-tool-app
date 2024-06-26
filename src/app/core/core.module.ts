@@ -1,4 +1,5 @@
 import { DialogModule } from '@angular/cdk/dialog';
+import { CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { AsyncPipe, KeyValuePipe, SlicePipe, NgClass } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -39,13 +40,14 @@ import { SharedModule } from '@shared/shared.module';
     ],
     exports: [],
     imports: [
+        AsyncPipe,
+        CdkMenuTrigger,
+        CdkOverlayOrigin,
         DialogModule,
-        RouterModule,
-        SharedModule,
         KeyValuePipe,
         NgClass,
-        CdkMenuTrigger,
-        AsyncPipe,
+        RouterModule,
+        SharedModule,
         SlicePipe,
     ],
 })

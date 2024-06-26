@@ -1,5 +1,6 @@
 import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 import { CdkObserveContent } from '@angular/cdk/observers';
+import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -23,13 +24,18 @@ import { StatusComponent } from '@shared/components/status/status.component';
 import { StepperComponent } from '@shared/components/stepper/stepper.component';
 import { TabGroupComponent } from '@shared/components/tab-group/tab-group.component';
 import { TabComponent } from '@shared/components/tab/tab.component';
+import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
+import { TooltipComponent } from '@shared/components/tooltip/tooltip.component';
 import { CreateEntryDialogComponent } from '@shared/containers/create-entry-dialog/create-entry-dialog.component';
 import { ScrollOverflowContainerDirective } from '@shared/directives/scroll-overflow-container.directive';
 import { ScrollOverflowDirective } from '@shared/directives/scroll-overflow.directive';
+import { TooltipAdvancedDirective } from '@shared/directives/tooltip-advanced.directive';
+import { TooltipDirective } from '@shared/directives/tooltip.directive';
 import {
     CountryNamePipe,
     EmptyPipe,
     EntryStatusPipe,
+    EntryStatusTextPipe,
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
@@ -42,6 +48,7 @@ const PIPES = [
     CountryNamePipe,
     EmptyPipe,
     EntryStatusPipe,
+    EntryStatusTextPipe,
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
@@ -70,11 +77,15 @@ const COMPONENTS = [
     StepperComponent,
     TabComponent,
     TabGroupComponent,
+    TooltipComponent,
+    TooltipAdvancedComponent,
 ];
 
 const DIRECTIVES = [
     ScrollOverflowDirective,
     ScrollOverflowContainerDirective,
+    TooltipDirective,
+    TooltipAdvancedDirective,
 ];
 
 @NgModule({
@@ -94,8 +105,10 @@ const DIRECTIVES = [
         CdkMenuItem,
         RouterLink,
         CdkObserveContent,
-        ...DIRECTIVES,
         ReactiveFormsModule,
+        ...DIRECTIVES,
+        CdkOverlayOrigin,
+        CdkConnectedOverlay,
     ],
 })
 export class SharedModule {

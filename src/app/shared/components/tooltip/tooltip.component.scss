@@ -1,0 +1,22 @@
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/shadows';
+@import 'mixins/typography';
+
+:root {
+    --tooltip-bcg: #{ $c-grey--900 };
+    --tooltip-color: #{ $c-white };
+}
+
+.tooltip {
+    @include style-text-small;
+
+    background: var(--tooltip-bcg);
+    border-radius: $b-radius;
+    box-shadow: $c-shadow-6;
+    color: var(--tooltip-color);
+    font-family: $font-barlow;
+    font-weight: $weight-medium;
+    line-height: 1;
+    padding: 6px 12px;
+}

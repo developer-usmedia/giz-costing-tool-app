@@ -8,6 +8,8 @@
 }
 
 .status {
+    display: inline-block;
+
     &--empty {
         color: var(--status-empty);
     }

@@ -64,11 +64,17 @@
                                     <td class="overview__table-cell overview__table-cell--facility overview__table-cell--link">
                                         <a class="overview__link" [routerLink]="[moduleRoute.ENTRIES, entry.id]">{{ entry.facility.name }}</a>
                                     </td>
-                                    <td class="overview__table-cell overview__table-cell--year">{{ entry.year | empty }}</td>
-                                    <td class="overview__table-cell overview__table-cell--country">{{ entry.facility.country | empty }}</td>
-                                    <td class="overview__table-cell overview__table-cell--date">{{ entry.updatedAt | date | empty }}</td>
+                                    <td class="overview__table-cell overview__table-cell--year">
+                                        {{ entry.year | empty }}
+                                    </td>
+                                    <td class="overview__table-cell overview__table-cell--country">
+                                        {{ entry.facility.country | empty }}
+                                    </td>
+                                    <td class="overview__table-cell overview__table-cell--date">
+                                        <span gizTooltip [text]="entry.updatedAt">{{ entry.updatedAt | date | empty }}</span>
+                                    </td>
                                     <td class="overview__table-cell overview__table-cell--status">
-                                        <giz-status [status]="entry.status | entryStatus"></giz-status>
+                                        <giz-status [status]="entry.status | entryStatus" gizTooltip [text]="entry.status | entryStatusText"></giz-status>
                                     </td>
                                     <td class="overview__table-cell overview__table-cell--actions">
                                         <button type="button" giz-icon-button

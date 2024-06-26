@@ -1,6 +1,7 @@
 export * from './country-name.pipe';
 export * from './empty.pipe';
 export * from './entry-status.pipe';
+export * from './entry-status-text.pipe';
 export * from './has-error.pipe';
 export * from './has-value.pipe';
 export * from './markdown.pipe';

@@ -39,6 +39,10 @@
                    type="button" giz-stroke-button>Menu</a>
             </li>
             <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="tooltip"
+                   type="button" giz-stroke-button>Tooltip</a>
+            </li>
+            <li class="examples__item">
                 <a [routerLink]="(routes.EXAMPLES)" fragment="status"
                    type="button" giz-stroke-button>Status</a>
             </li>
@@ -481,6 +485,20 @@
                 <a giz-menu-item [routerLink]="[routes.EXAMPLES]">Item</a>
             </giz-menu>
         </ng-template>
+    </section>
+
+    <section class="examples__section" id="tooltip">
+        <h2 class="examples__title">Tooltip</h2>
+        <p><span gizTooltip [text]="'tooltip'">Tooltip simple</span></p>
+
+        <button
+            giz-icon-button
+            theme="basic"
+            [icon]="icon.HELP"
+            gizTooltipAdvanced
+            [text]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
+            [button]="{ label: 'Button', link: routes.DASHBOARD }"
+        >info</button>
     </section>
 
     <section class="examples__section" id="status">
