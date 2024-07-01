@@ -1,0 +1,12 @@
+<ng-content></ng-content>
+@if (type === 'header' && sortable) {
+    <button class="table-cell__sort" [ngClass]="{ 'inactive': arrowState === 'inactive' }" (click)="onSort()">
+        <giz-icon
+            class="table-cell__icon"
+            [@rotateArrow]="arrowDirection"
+            [@fadeArrow]="arrowState"
+            [icon]="icon.ARROW_DOWN"
+        ></giz-icon>
+        <span i18n="sort">Sort</span>
+    </button>
+}

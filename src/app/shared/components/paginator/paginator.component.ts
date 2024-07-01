@@ -12,14 +12,7 @@ import {
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { FormControl } from '@angular/forms';
 import { ICON } from '@shared/components/icon/icon.enum';
-
-export interface PageEvent {
-   previousPage: number;
-   page: number;
-   pageSize: number;
-   total: number;
-}
-
+import { PageEvent } from '@shared/components/paginator/paginator.model';
 @Component({
     selector: 'giz-paginator',
     templateUrl: './paginator.component.html',
@@ -31,7 +24,7 @@ export class PaginatorComponent implements OnChanges {
     @Input() disabled = false;
     @Input() showFirstLast = true;
 
-    @Output() readonly paging = new EventEmitter();
+    @Output() readonly paging = new EventEmitter<PageEvent>();
 
     @HostBinding('class') class = 'paginator';
 

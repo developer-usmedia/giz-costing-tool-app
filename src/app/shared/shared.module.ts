@@ -24,8 +24,11 @@ import { StatusComponent } from '@shared/components/status/status.component';
 import { StepperComponent } from '@shared/components/stepper/stepper.component';
 import { TabGroupComponent } from '@shared/components/tab-group/tab-group.component';
 import { TabComponent } from '@shared/components/tab/tab.component';
-import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
+import { TableCellComponent } from '@shared/components/table-cell/table-cell.component';
+import { TableRowComponent } from '@shared/components/table-row/table-row.component';
+import { TableComponent } from '@shared/components/table/table.component';
 import { TooltipComponent } from '@shared/components/tooltip/tooltip.component';
+import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
 import { CreateEntryDialogComponent } from '@shared/containers/create-entry-dialog/create-entry-dialog.component';
 import { ScrollOverflowContainerDirective } from '@shared/directives/scroll-overflow-container.directive';
 import { ScrollOverflowDirective } from '@shared/directives/scroll-overflow.directive';
@@ -36,6 +39,7 @@ import {
     EmptyPipe,
     EntryStatusPipe,
     EntryStatusTextPipe,
+    GenderPipe,
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
@@ -49,6 +53,7 @@ const PIPES = [
     EmptyPipe,
     EntryStatusPipe,
     EntryStatusTextPipe,
+    GenderPipe,
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
@@ -77,6 +82,9 @@ const COMPONENTS = [
     StepperComponent,
     TabComponent,
     TabGroupComponent,
+    TableComponent,
+    TableRowComponent,
+    TableCellComponent,
     TooltipComponent,
     TooltipAdvancedComponent,
 ];
@@ -105,10 +113,10 @@ const DIRECTIVES = [
         CdkMenuItem,
         RouterLink,
         CdkObserveContent,
-        ReactiveFormsModule,
-        ...DIRECTIVES,
         CdkOverlayOrigin,
         CdkConnectedOverlay,
+        ReactiveFormsModule,
+        ...DIRECTIVES,
     ],
 })
 export class SharedModule {

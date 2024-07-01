@@ -3,6 +3,7 @@ import { ConnectedPosition } from '@angular/cdk/overlay';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { distinctUntilChanged, map, Observable, startWith, Subject, take, takeUntil } from 'rxjs';
 
@@ -16,7 +17,6 @@ import {
 import { EntriesApi } from '@api/services';
 import { MODULE_ROUTE, ROOT_ROUTE, Sort } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
-import { PageEvent } from '@shared/components/paginator/paginator.component';
 import {
     CreateEntryDialogComponent,
     CreateEntryResult,
@@ -67,7 +67,7 @@ export class OverviewComponent implements OnDestroy {
     {
         this.pagingParams$ = this.activatedRoute.queryParams.pipe(
             takeUntil(this.destroyed),
-            map((params: Params) => getPagingParamsFromQueryParams<EntriesPagingParams>(params)),
+            map((params: Params) => getPagingParamsFromQueryParams<EntriesPagingParams>(params, 'entries')),
             map((params: EntriesPagingParams) => {
                 if (params?.sort && Object.keys(params.sort).length > 0) {
                     const sort = { ...params.sort } as Record<string, (Sort.ASC | Sort.DESC) >;
@@ -77,8 +77,6 @@ export class OverviewComponent implements OnDestroy {
                         }
                     }
                     params.sort = sort;
-                } else {
-                    params.sort = { [EntrySortFilterKey.UPDATED_AT]: Sort.DESC };
                 }
 
                 return params;
@@ -148,6 +146,14 @@ export class OverviewComponent implements OnDestroy {
         this.dialogDeleteRef = this.dialog.open(EntryDeleteDialogComponent, {
             data: entry,
         });
+    }
+
+    public getTableCaption(total?: number) {
+        return $localize`:entries table:${ total ?? '-' } entries`;
+    }
+
+    public onClickActions(event: Event): void {
+        event.stopPropagation();
     }
 
     public ngOnDestroy(): void {

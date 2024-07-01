@@ -1,7 +1,7 @@
 import {
-    ChangeDetectionStrategy, ChangeDetectorRef,
+    ChangeDetectionStrategy,
     Component,
-    EventEmitter, inject,
+    EventEmitter,
     Input,
     OnChanges,
     OnInit,

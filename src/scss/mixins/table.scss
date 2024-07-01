@@ -16,8 +16,4 @@
             text-align: right;
         }
     }
-
-    @include screen($screen-simple) {
-        --table-cell-padding: 0.5rem #{ $p-gutter };
-    }
 }

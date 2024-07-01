@@ -1,5 +1,7 @@
 import { HttpEvent, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { WorkerListResponse } from '@api/models';
+import { PagingParams } from '@core/models';
 import { lastValueFrom, Observable } from 'rxjs';
 
 import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
@@ -17,6 +19,7 @@ export class EntriesApi extends BaseApi {
         entries: `${ this.baseUrl }/entries`,
         import: `${ this.baseUrl }/entries/import`,
         scenario: `${ this.baseUrl }/entries/:id/scenario`,
+        workers: `${ this.baseUrl }/entries/:id/workers`,
     };
 
     public getOne(id: string): Promise<Entry> {
@@ -29,10 +32,18 @@ export class EntriesApi extends BaseApi {
         if (paging) {
             params = getHttpParamsFromPagingParams(paging, params);
         }
-
         return lastValueFrom(
             this.get<EntriesListResponse>(this.endpoints.entries, params)
         );
+    }
+
+    public getWorkers(entryId: string, paging?: PagingParams): Promise<WorkerListResponse> {
+        const url = this.endpoints.workers.replace(':id', entryId);
+        let params = new HttpParams({ encoder: new GetParamsCodec() });
+        if (paging) {
+            params = getHttpParamsFromPagingParams(paging, params);
+        }
+        return lastValueFrom(this.get<WorkerListResponse>(url, params));
     }
 
     public deleteEntry(id: string): Promise<Entry> {

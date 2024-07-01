@@ -37,8 +37,10 @@
           <giz-scenario
               [scenario]="activeScenario"
               [entry]="entry.data()"
+              [workers]="workers"
               [state]="scenarioState === 'view' ? 'view' : 'edit'"
               [saving]="scenarioUpdateMutation.isPending() || scenarioCreateMutation.isPending()"
+              (pagingUpdated)="onPageEvent($event)"
               (submitSpecs)="saveSpecs($event)"
           ></giz-scenario>
         } @else {

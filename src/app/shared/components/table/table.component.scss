@@ -1,0 +1,99 @@
+@import 'config/sizes';
+@import 'config/fonts';
+@import 'mixins/overflow-gradient';
+@import 'mixins/screen';
+@import 'mixins/table';
+@import 'mixins/sr-only';
+
+.table {
+    @include overflow-gradient;
+
+    --overflow-gradient-width: 60px;
+
+    position: relative;
+
+    &.is-overflowing {
+        margin-right: -$p-gutter;
+    }
+
+    &__container {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        width: 100%;
+
+        table {
+            min-width: 100%;
+            table-layout: fixed;
+            width: auto;
+        }
+    }
+
+    &__caption {
+        &--hide {
+            @include sr-only;
+        }
+    }
+
+    /* stylelint-disable no-descending-specificity  */
+    &--compact {
+        --table-cell-padding: 4px #{ $p-gutter };
+
+        td, th {
+            height: 32px;
+            white-space: nowrap;
+        }
+    }
+
+    &--info {
+        --table-cell-padding: 0.5rem #{ $p-gutter--small };
+
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+
+        td, th {
+            word-break: keep-all;
+        }
+
+        tbody {
+            td {
+                text-align: right;
+            }
+        }
+    }
+
+    &--overview {
+        td {
+            font-family: $font-barlow;
+            font-weight: $weight-medium;
+            height: 46px;
+        }
+    }
+
+    &.is-loading {
+        tbody {
+            animation: table-pulse 1s infinite forwards;
+        }
+    }
+    /* stylelint-enable no-descending-specificity  */
+
+    @include screen($screen-simple) {
+        &--info {
+            --table-cell-padding: 0.5rem #{ $p-gutter };
+        }
+    }
+}
+
+@keyframes table-pulse {
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}

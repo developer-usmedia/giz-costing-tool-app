@@ -1,6 +1,7 @@
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { HttpParameterCodec, HttpParams } from '@angular/common/http';
 import { Params } from '@angular/router';
+import { EntrySortFilterKey, WorkersSortFilterKey } from '@api/models';
 import { PageFilter, PageSort, PagingParams, Sort } from '@core/models';
 
 /**
@@ -145,13 +146,34 @@ export const getPageFiltersFromSearchParams = (params: URLSearchParams): PageFil
     return filters;
 };
 
-export const getPagingParamsFromQueryParams = <T extends PagingParams>(queryParams: Params): T => {
-    const searchParams = new URLSearchParams(queryParams);
+export const getDefaultSize = (type?: string): number => {
+    switch (type) {
+        case 'workers':
+            return 50;
+        default:
+            return 10;
+    }
+};
 
+export const getDefaultSort = (type?: string): PageSort => {
+    switch (type) {
+        case 'entries':
+            return { [EntrySortFilterKey.UPDATED_AT]: Sort.DESC };
+        case 'workers':
+            return { [WorkersSortFilterKey.NUMBER_OF_WORKERS]: Sort.DESC };
+        default:
+            return {};
+    }
+};
+
+export const getPagingParamsFromQueryParams = <T extends PagingParams>(queryParams: Params, type?: string): T => {
+    const searchParams = new URLSearchParams(queryParams);
+    const sort = getPageSortFromSearchParams(searchParams);
     return {
         index: Math.max(coerceNumberProperty(searchParams.get('index')) - 1, 0),
-        size: coerceNumberProperty(searchParams.get('size')) || 10,
-        sort: getPageSortFromSearchParams(searchParams),
+        size: coerceNumberProperty(searchParams.get('size')) || getDefaultSize(type),
+        sort: Object.keys(sort).length > 0 ? sort : getDefaultSort(type),
         filter: getPageFiltersFromSearchParams(searchParams),
     } as T;
 };
+

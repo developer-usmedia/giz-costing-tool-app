@@ -8,7 +8,8 @@
 }
 
 .status {
-    display: inline-block;
+    display: flex;
+    width: fit-content;
 
     &--empty {
         color: var(--status-empty);

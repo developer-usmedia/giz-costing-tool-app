@@ -1,0 +1,100 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/sr-only';
+@import 'mixins/screen';
+@import 'mixins/stretch';
+@import 'mixins/typography';
+
+:root {
+    --table-cell-subtitle: #{ $c-grey--600 };
+    --table-cell-icon: #{ $c-grey--700 };
+    --table-cell-icon-hover: #{ $c-grey--900 };
+}
+
+.table-cell {
+    $self: &;
+
+    font-family: $font-barlow;
+    font-weight: $weight-medium;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+
+    &__sort {
+        @include stretch;
+
+        color: var(--table-cell-icon);
+
+        span {
+            @include sr-only;
+        }
+
+        &:focus-visible,
+        &:hover {
+            color: var(--table-cell-icon-hover);
+        }
+
+        &.inactive {
+            &:focus-visible,
+            &:hover {
+                #{ $self }__icon {
+                    opacity: 0.8 !important;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        color: currentColor;
+        position: absolute;
+        right: $p-gutter--xsmall;
+        top: 0.5rem;
+        transition: color 0.2s;
+    }
+
+    &__subtitle {
+        color: var(--table-cell-subtitle);
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--wide {
+        text-align: left;
+        width: 100%;
+    }
+
+    &--header {
+        font-weight: $weight-bold;
+        padding: 0.6rem 1rem;
+        white-space: nowrap;
+    }
+
+    &--actions {
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-top: 0;
+
+        > span {
+            @include sr-only;
+        }
+    }
+
+    &--link {
+        padding: 0;
+
+        a {
+            display: block;
+            padding: var(--table-cell-padding);
+        }
+    }
+
+    &--sort {
+        padding-right: $p-gutter + $p-gutter--small;
+    }
+}

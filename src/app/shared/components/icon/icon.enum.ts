@@ -16,6 +16,7 @@ export enum ICON {
     DASHBOARD = 'dashboard',
     DELETE = 'delete',
     DOWNLOAD = 'download',
+    EDIT = 'edit',
     FIRST_PAGE = 'first-page',
     HELP = 'help',
     HOME = 'home',

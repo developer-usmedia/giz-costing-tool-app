@@ -20,85 +20,8 @@
         padding: $p-gutter--small $p-gutter;
     }
 
-    &__container {
-        @include overflow-gradient;
-
-        --overflow-gradient-width: 60px;
-
-        position: relative;
-
-        &.is-overflowing {
-            margin-right: -$p-gutter;
-        }
-    }
-
-    &__table {
-        --table-cell-padding: #{ $p-gutter--xsmall $p-gutter };
-
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        width: 100%;
-
-        table {
-            min-width: 100%;
-            table-layout: fixed;
-            width: auto;
-        }
-
-        th, td {
-            font-family: $font-barlow;
-            width: fit-content;
-
-            &.overview__table-cell--facility {
-                width: 100%;
-            }
-        }
-
-        td {
-            font-weight: $weight-medium;
-        }
-
-        caption {
-            @include sr-only;
-        }
-    }
-
-    &__table-cell {
-        text-align: center;
-        white-space: nowrap;
-
-        &--facility {
-            text-align: left;
-            width: 100%;
-        }
-
-        &--actions {
-            padding-left: 0;
-        }
-
-        &--link {
-            padding: 0;
-
-            a {
-                display: block;
-                padding: var(--table-cell-padding);
-            }
-        }
-    }
-
     &__link {
         text-decoration: none;
-        transition: color 0.2s;
-
-        &:focus,
-        &:hover {
-            color: var(--overview-link-color-hover);
-        }
-    }
-
-    &__hidden {
-        @include sr-only;
     }
 
     &__no-results {

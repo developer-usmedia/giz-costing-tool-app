@@ -1,4 +1,5 @@
 import { APP_BASE_HREF } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -8,9 +9,12 @@ import {
     Output,
     ViewEncapsulation,
 } from '@angular/core';
+import { CreateQueryResult } from '@tanstack/angular-query-experimental';
 
-import { Entry, Scenario, ScenarioSpecsForm, ScenarioType } from '@api/models';
-import { ScenarioInfo } from '@core/models';
+import { Entry, Scenario, ScenarioSpecsForm, ScenarioType, WorkerListResponse } from '@api/models';
+import { MODULE_ROUTE, ScenarioInfo } from '@core/models';
+import { ICON } from '@shared/components/icon/icon.enum';
+import { PageEvent } from '@shared/components/paginator/paginator.model';
 
 @Component({
     selector: 'giz-scenario',
@@ -22,12 +26,16 @@ import { ScenarioInfo } from '@core/models';
 export class ScenarioComponent {
     @Input({ required: true }) scenario!: ScenarioInfo;
     @Input({ required: true }) entry?: Entry;
+    @Input() workers?: CreateQueryResult<WorkerListResponse, HttpErrorResponse>;
     @Input() specs?: Scenario;
     @Input() saving?: boolean;
     @Input() state?: 'edit' | 'view' = 'edit';
 
-    @Output() submitSpecs = new EventEmitter<ScenarioSpecsForm>();
+    @Output() readonly pagingUpdated = new EventEmitter<PageEvent>();
+    @Output() readonly submitSpecs = new EventEmitter<ScenarioSpecsForm>();
 
+    protected readonly icon = ICON;
+    protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly scenarioType = ScenarioType;
 
     constructor(
@@ -37,5 +45,13 @@ export class ScenarioComponent {
 
     public onSubmitSpecs(scenarioForm: ScenarioSpecsForm) {
         this.submitSpecs.emit(scenarioForm);
+    }
+
+    public onPageEvent(pageEvent: PageEvent): void {
+        this.pagingUpdated.emit(pageEvent);
+    }
+
+    public getTableCaption(total?: number) {
+        return $localize`:job-categories table:${ total ?? '-' } job categories`;
     }
 }

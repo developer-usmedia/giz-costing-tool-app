@@ -1,0 +1,27 @@
+@import 'config/colors';
+
+.table-row {
+    &--clickable {
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:focus,
+        &:hover {
+            background-color: var(--table-bcg-hover);
+        }
+    }
+
+    &--editted {
+        position: relative;
+
+        &::after {
+            background: $c-schoolbus-1;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 4px;
+        }
+    }
+}

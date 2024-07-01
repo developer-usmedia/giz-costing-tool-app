@@ -42,62 +42,62 @@
         </div>
     } @else {
         @if (entries.data() && entries.data()?._embedded?.entries?.length) {
-            <div class="overview__container" gizScrollOverflow>
-                <div class="overview__table" gizScrollOverflowContainer>
-                    <table>
-                        <caption i18n="entries total">{{ entries.data()?.paging?.totalEntities }} entries</caption>
-                        <thead>
-                        <tr>
-                            <th class="overview__table-cell overview__table-cell--facility" i18n="entry facility label">Facility</th>
-                            <th class="overview__table-cell overview__table-cell--year" i18n="entry payroll-year label">Payroll year</th>
-                            <th class="overview__table-cell overview__table-cell--country" i18n="entry country label">Country</th>
-                            <th class="overview__table-cell overview__table-cell--date" i18n="entry edited-on label">Edited on</th>
-                            <th class="overview__table-cell overview__table-cell--status" i18n="entry status label">Status</th>
-                            <th class="overview__table-cell overview__table-cell--actions">
-                                <span class="overview__hidden" i18n="entry action">Actions</span>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @for (entry of entries.data()?._embedded?.entries; track entry) {
-                                <tr>
-                                    <td class="overview__table-cell overview__table-cell--facility overview__table-cell--link">
-                                        <a class="overview__link" [routerLink]="[moduleRoute.ENTRIES, entry.id]">{{ entry.facility.name }}</a>
-                                    </td>
-                                    <td class="overview__table-cell overview__table-cell--year">
-                                        {{ entry.year | empty }}
-                                    </td>
-                                    <td class="overview__table-cell overview__table-cell--country">
-                                        {{ entry.facility.country | empty }}
-                                    </td>
-                                    <td class="overview__table-cell overview__table-cell--date">
-                                        <span gizTooltip [text]="entry.updatedAt">{{ entry.updatedAt | date | empty }}</span>
-                                    </td>
-                                    <td class="overview__table-cell overview__table-cell--status">
-                                        <giz-status [status]="entry.status | entryStatus" gizTooltip [text]="entry.status | entryStatusText"></giz-status>
-                                    </td>
-                                    <td class="overview__table-cell overview__table-cell--actions">
-                                        <button type="button" giz-icon-button
-                                                theme="basic" [icon]="icon.MORE_VERT"
-                                                i18n="entry actions-menu"
-                                                [cdkMenuTriggerFor]="entryActions"
-                                                [cdkMenuPosition]="actionsMenuPosition"
-                                        >Show actions
+            <giz-table
+                [caption]="getTableCaption(entries.data()?.paging?.totalEntities)"
+                [hideCaption]="true"
+                type="overview"
+            >
+                <ng-container thead>
+                    <tr giz-table-header-row>
+                        <th giz-table-header-cell size="wide" i18n="entry facility label">Facility</th>
+                        <th giz-table-header-cell alignment="center" i18n="entry payroll-year label">Payroll year</th>
+                        <th giz-table-header-cell alignment="center" i18n="entry country label">Country</th>
+                        <th giz-table-header-cell alignment="center" i18n="entry edited-on label">Edited on</th>
+                        <th giz-table-header-cell alignment="center" i18n="entry status label">Status</th>
+                        <th giz-table-header-cell alignment="center" type="actions">
+                            <span i18n="entry action">Actions</span>
+                        </th>
+                    </tr>
+                </ng-container>
+                <ng-container>
+                    @for (entry of entries.data()?._embedded?.entries; track entry) {
+                        <tr giz-table-row [isClickable]="true" [routerLink]="[moduleRoute.ENTRIES, entry.id]">
+                            <td giz-table-cell size="wide" type="link">
+                                <a class="overview__link" [routerLink]="[moduleRoute.ENTRIES, entry.id]">{{ entry.facility.name }}</a>
+                            </td>
+                            <td giz-table-cell alignment="center">
+                                {{ entry.year | empty }}
+                            </td>
+                            <td giz-table-cell alignment="center">
+                                {{ entry.facility.country | empty }}
+                            </td>
+                            <td giz-table-cell alignment="center">
+                                <span gizTooltip [text]="entry.updatedAt">{{ entry.updatedAt | date | empty }}</span>
+                            </td>
+                            <td giz-table-cell alignment="center">
+                                <giz-status [status]="entry.status | entryStatus" gizTooltip [text]="entry.status | entryStatusText"></giz-status>
+                            </td>
+                            <td giz-table-cell alignment="center" type="actions">
+                                <button type="button" giz-icon-button
+                                        theme="basic" [icon]="icon.MORE_VERT"
+                                        i18n="entry actions-menu"
+                                        (click)="onClickActions($event)"
+                                        [cdkMenuTriggerFor]="entryActions"
+                                        [cdkMenuPosition]="actionsMenuPosition"
+                                >Show actions
+                                </button>
+                                <ng-template #entryActions>
+                                    <giz-menu>
+                                        <button giz-menu-item i18n="entry delete"
+                                                [icon]="icon.DELETE" (click)="deleteEntry(entry)">Delete
                                         </button>
-                                        <ng-template #entryActions>
-                                            <giz-menu>
-                                                <button giz-menu-item i18n="entry delete"
-                                                        [icon]="icon.DELETE" (click)="deleteEntry(entry)">Delete
-                                                </button>
-                                            </giz-menu>
-                                        </ng-template>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                                    </giz-menu>
+                                </ng-template>
+                            </td>
+                        </tr>
+                    }
+                </ng-container>
+            </giz-table>
             <giz-paginator
                 [page]="(entries.data()?.paging?.index ?? 0) + 1"
                 [pageSize]="entries.data()?.paging?.size ?? 25"

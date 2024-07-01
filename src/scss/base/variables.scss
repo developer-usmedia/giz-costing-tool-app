@@ -31,10 +31,11 @@
 
     // Table
     --table-bcg: #{ $c-white };
+    --table-bcg-hover: #{ $c-grey--200 };
     --table-border-color: #{ $c-grey--250 };
     --table-heading-color: #{ $c-grey--900 };
     --table-head-heading-color: #{ $c-grey--700 };
-    --table-cell-padding: 0.875rem #{ $p-gutter };
+    --table-cell-padding: #{ $p-gutter--small $p-gutter };
     --table-head-cell-padding: 0.75rem #{ $p-gutter };
 
     // Form

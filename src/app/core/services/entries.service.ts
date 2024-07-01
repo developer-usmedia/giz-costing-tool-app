@@ -6,7 +6,7 @@ import {
     EntriesPagingParams,
     Entry,
     ScenarioCreateMutation,
-    ScenarioUpdateMutation
+    ScenarioUpdateMutation,
 } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { useMutation } from '@core/services/query/use-mutation';
@@ -72,5 +72,4 @@ export class EntriesService {
             onSuccess: async (entry: Entry) => await this.refreshEntry(entry.id),
         });
     }
-
 }
