@@ -47,6 +47,10 @@
                    type="button" giz-stroke-button>Status</a>
             </li>
             <li class="examples__item">
+                <a [routerLink]="(routes.EXAMPLES)" fragment="alert"
+                   type="button" giz-stroke-button>Alert</a>
+            </li>
+            <li class="examples__item">
                 <a [routerLink]="(routes.EXAMPLES)" fragment="entry-card"
                    type="button" giz-stroke-button>Entry card</a>
             </li>
@@ -531,6 +535,14 @@
                 <giz-entry-card [entry]="entry" [link]="[(moduleRoute.ENTRIES), entry.id]"></giz-entry-card>
             </li>
         </ul>
+    </section>
+
+    <section class="examples__section" id="alert">
+        <h2 class="examples__title">Alert</h2>
+
+        <giz-alert>Info alert</giz-alert>
+        <giz-alert type="warning">Warning alert</giz-alert>
+        <giz-alert type="error">Error alert</giz-alert>
     </section>
 
     <section class="examples__section" id="stepper">

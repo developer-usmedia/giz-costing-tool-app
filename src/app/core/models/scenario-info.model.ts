@@ -18,7 +18,6 @@ export const SCENARIOS: ScenarioInfo[] = [
         description: $localize`:scenario close-gap description:Closing the living wage gap by increasing wage levels of all workers below living wage to living wage`,
         comment1: $localize`:scenario close-gap comment-1:Sed condimentum purus lectus, dignissim euismod arcu sagittis sed. Nulla dictum magna at nunc hendrerit, quis placerat nulla vulputate. Donec sodales at mauris nec sodales.`,
         comment2: $localize`:scenario close-gap comment-2:Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam.`,
-        overviewIntro: $localize`:scenario overview-intro:Below an overview per job-category. If you want, you can overrule the default increase per job-category.`,
     },
     {
         type: ScenarioType.ABSOLUTE_INCREASE,
@@ -27,5 +26,6 @@ export const SCENARIOS: ScenarioInfo[] = [
         description: $localize`:scenario absolute-increase description:Closing the living wage gap by an absolute wage increase for all workers.`,
         comment1: $localize`:scenario absolute-increase comment-1:Sed condimentum purus lectus, dignissim euismod arcu sagittis sed. Nulla dictum magna at nunc hendrerit, quis placerat nulla vulputate. Donec sodales at mauris nec sodales.`,
         comment2: $localize`:scenario absolute-increase comment-2:Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam.`,
+        overviewIntro: $localize`:scenario overview-intro:Below an overview per job-category. If you want, you can overrule the default increase per job-category.`,
     },
 ];

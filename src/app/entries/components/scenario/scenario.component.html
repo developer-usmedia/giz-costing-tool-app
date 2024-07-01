@@ -55,10 +55,19 @@
 
     @if (state === 'view') {
         <div class="scenario__categories">
-            <h3 i18n="scenario overview-title">Overview</h3>
-            @if (scenario.overviewIntro) {
-                <p class="scenario__intro">{{ scenario.overviewIntro }}</p>
-            }
+            <div class="scenario__header">
+                <h3 class="scenario__title" i18n="scenario overview-title">Overview</h3>
+
+                @if (scenario.overviewIntro) {
+                    <p class="scenario__intro">{{ scenario.overviewIntro }}</p>
+                }
+                @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
+                    <div class="scenario__buttons">
+                        <button giz-stroke-button theme="basic"
+                            i18n="workers reset" (click)="resetAll()">Reset all</button>
+                    </div>
+                }
+            </div>
 
             @if (!workers || workers.isLoading()) {
                 <giz-spinner class="scenario__spinner" [size]="'large'"></giz-spinner>
@@ -112,6 +121,7 @@
                                             <button type="button" giz-icon-button
                                                     theme="basic" [icon]="icon.EDIT"
                                                     i18n="scenario job-category edit"
+                                                    (click)="edit(worker)"
                                             >Edit wage increase
                                             </button>
                                         </td>

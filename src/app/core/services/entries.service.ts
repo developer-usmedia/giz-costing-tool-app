@@ -7,6 +7,10 @@ import {
     Entry,
     ScenarioCreateMutation,
     ScenarioUpdateMutation,
+    ScenarioWorkersResetMutation,
+    ScenarioWorkerUpdateMutation,
+    Worker,
+    WorkerListResponse,
 } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { useMutation } from '@core/services/query/use-mutation';
@@ -37,6 +41,10 @@ export class EntriesService {
 
     public refreshEntry(id: string): Promise<void> {
         return this.queryClient.invalidateQueries({ queryKey: ['entry', { id: id }] });
+    }
+
+    public refreshWorkers(): Promise<void> {
+        return this.queryClient.invalidateQueries({ queryKey: ['workers'] });
     }
 
     public deleteEntry() {
@@ -70,6 +78,24 @@ export class EntriesService {
                 return this.entriesApi.deleteScenario(entryId);
             },
             onSuccess: async (entry: Entry) => await this.refreshEntry(entry.id),
+        });
+    }
+
+    public updateScenarioWorker() {
+        return useMutation<ScenarioWorkerUpdateMutation, Worker>({
+            mutationFn: (mutation: ScenarioWorkerUpdateMutation) => {
+                return this.entriesApi.updateScenarioWorker(mutation.entryId, mutation.workerId, mutation.scenarioWorkerSpecsUpdate);
+            },
+            onSuccess: async () => await this.refreshWorkers(),
+        });
+    }
+
+    public resetScenarioWorkers() {
+        return useMutation<ScenarioWorkersResetMutation, WorkerListResponse>({
+            mutationFn: (mutation: ScenarioWorkersResetMutation) => {
+                return this.entriesApi.resetScenarioWorkers(mutation.entryId, mutation.scenarioWorkersReset);
+            },
+            onSuccess: async () => await this.refreshWorkers(),
         });
     }
 }

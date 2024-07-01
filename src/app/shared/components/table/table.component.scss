@@ -5,6 +5,10 @@
 @import 'mixins/table';
 @import 'mixins/sr-only';
 
+giz-table {
+    display: block;
+}
+
 .table {
     @include overflow-gradient;
 

@@ -46,11 +46,11 @@
     }
 
     &__definition {
-        align-items: center;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: $p-gutter--small;
         margin-bottom: $p-gutter--small;
-        padding: $p-gutter--small 0;
+        padding: $p-gutter--small $p-gutter--small $p-gutter--small 0;
 
         &:last-child {
             margin-bottom: 0;
@@ -98,9 +98,11 @@
     }
 
     &__text {
-        font-family: $font-barlow;
-        font-weight: $weight-medium;
         margin: 0;
+    }
+
+    &__subtext {
+        color: var(--form-subtext-color);
     }
 
     &__input,
@@ -175,6 +177,21 @@
     }
 
     @include screen($screen-minimal) {
+        &__definition {
+            align-items: center;
+            flex-direction: row;
+            gap: $p-gutter;
+            justify-content: space-between;
+
+            &--left {
+                justify-content: flex-start;
+            }
+
+            #{ $self }__label {
+                width: 200px;
+            }
+        }
+
         &--horizontal {
             #{ $self }__field {
                 align-items: center;

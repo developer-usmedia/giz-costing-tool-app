@@ -21,21 +21,25 @@ import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog
 import { ScenarioComponent } from './components/scenario/scenario.component';
 import { ScenarioSpecsFormComponent } from './components/scenario-specs-form/scenario-specs-form.component';
 import { EntryFooterComponent } from './components/entry-footer/entry-footer.component';
+import { ResetWorkersDialogComponent } from './containers/reset-workers-dialog/reset-workers-dialog.component';
+import { ScenarioWorkerSpecsDialogComponent } from './containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
 
 @NgModule({
     declarations: [
-        EntryDetailComponent,
         EntryDeleteDialogComponent,
+        EntryDetailComponent,
+        EntryDistributionComponent,
+        EntryFooterComponent,
         EntryHeaderComponent,
         EntryInformationComponent,
-        EntryDistributionComponent,
         EntryScenariosComponent,
         OverviewComponent,
-        ScenarioCardComponent,
         ResetScenarioDialogComponent,
+        ResetWorkersDialogComponent,
+        ScenarioCardComponent,
         ScenarioComponent,
         ScenarioSpecsFormComponent,
-        EntryFooterComponent,
+        ScenarioWorkerSpecsDialogComponent,
     ],
     imports: [
         HttpClientModule,

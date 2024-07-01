@@ -1,11 +1,8 @@
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { Dialog } from '@angular/cdk/dialog';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { injectQuery } from '@tanstack/angular-query-experimental';
-import { ToastrService } from 'ngx-toastr';
-import { distinctUntilChanged, map, Observable, Subject, take, takeUntil } from 'rxjs';
 
 import {
     Entry,
@@ -21,6 +18,9 @@ import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
+import { injectQuery } from '@tanstack/angular-query-experimental';
+import { ToastrService } from 'ngx-toastr';
+import { distinctUntilChanged, map, Observable, Subject, take, takeUntil } from 'rxjs';
 
 import {
     ResetScenarioDialogComponent,
@@ -74,7 +74,6 @@ export class EntryScenariosComponent implements OnDestroy {
     private readonly router = inject(Router);
     private readonly destroyed$ = new Subject<void>();
     private readonly dialog = inject(Dialog);
-    private dialogResetRef?: DialogRef<ResetScenarioResult, ResetScenarioDialogComponent>;
     private readonly toastr = inject(ToastrService);
     private readonly destroyed = new Subject();
 
@@ -166,8 +165,8 @@ export class EntryScenariosComponent implements OnDestroy {
     }
 
     public reset(): void {
-        this.dialogResetRef = this.dialog.open(ResetScenarioDialogComponent);
-        this.dialogResetRef.closed
+        const dialogResetRef = this.dialog.open<ResetScenarioResult, unknown, ResetScenarioDialogComponent>(ResetScenarioDialogComponent);
+        dialogResetRef.closed
             .pipe(take(1))
             .subscribe((result) => {
                 const entry = this.entry?.data();

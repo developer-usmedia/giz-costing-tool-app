@@ -20,6 +20,7 @@ export enum ICON {
     FIRST_PAGE = 'first-page',
     HELP = 'help',
     HOME = 'home',
+    INFO = 'info',
     LANGUAGE = 'language',
     LAST_PAGE = 'last-page',
     LIST = 'list',

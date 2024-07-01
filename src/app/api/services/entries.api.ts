@@ -1,15 +1,15 @@
 import { HttpEvent, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { WorkerListResponse } from '@api/models';
-import { PagingParams } from '@core/models';
-import { lastValueFrom, Observable } from 'rxjs';
+import { ScenarioWorkerSpecsForm, ScenarioWorkersReset, Worker, WorkerListResponse } from '@api/models';
 
 import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
 import { Entry } from '@api/models/entry.model';
 import { ScenarioCreate, ScenarioUpdate } from '@api/models/scenario.model';
 import { BaseApi } from '@api/services/base.api';
+import { PagingParams } from '@core/models';
 import { getHttpParamsFromPagingParams, GetParamsCodec } from '@shared/helpers';
 import { environment } from 'environments/environment';
+import { lastValueFrom, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class EntriesApi extends BaseApi {
@@ -20,6 +20,7 @@ export class EntriesApi extends BaseApi {
         import: `${ this.baseUrl }/entries/import`,
         scenario: `${ this.baseUrl }/entries/:id/scenario`,
         workers: `${ this.baseUrl }/entries/:id/workers`,
+        workersReset: `${ this.baseUrl }/entries/:id/workers/reset`,
     };
 
     public getOne(id: string): Promise<Entry> {
@@ -70,4 +71,15 @@ export class EntriesApi extends BaseApi {
         const url = this.endpoints.scenario.replace(':id', entryId);
         return lastValueFrom(this.delete<Entry>(url));
     }
+
+    public updateScenarioWorker(entryId: string, workerId: string, workerForm: ScenarioWorkerSpecsForm) {
+        const url = `${this.endpoints.workers.replace(':id', entryId) }/${ workerId }`;
+        return lastValueFrom(this.patch<Worker>(url, workerForm));
+    }
+
+    public resetScenarioWorkers(entryId: string, reset: ScenarioWorkersReset) {
+        const url = `${this.endpoints.workersReset.replace(':id', entryId) }`;
+        return lastValueFrom(this.post<WorkerListResponse>(url, reset));
+    }
+
 }

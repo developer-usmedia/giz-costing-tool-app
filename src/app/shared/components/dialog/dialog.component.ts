@@ -19,7 +19,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
 export class DialogComponent {
     @Input({ required: true }) title!: string;
     @Input() showCloseButton = true;
-    @Input() size: 'small' | 'normal' | 'large' = 'normal';
+    @Input() size: 'small' | 'normal' | 'medium' | 'large' = 'normal';
 
     @Output() closeDialog = new EventEmitter();
 
@@ -29,6 +29,10 @@ export class DialogComponent {
 
     @HostBinding('class.dialog--small') get modSmall(): boolean {
         return this.size === 'small';
+    }
+
+    @HostBinding('class.dialog--medium') get modMedium(): boolean {
+        return this.size === 'medium';
     }
 
     @HostBinding('class.dialog--large') get modLarge(): boolean {

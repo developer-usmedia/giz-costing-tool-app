@@ -924,7 +924,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap comment-1</note>
       </trans-unit>
@@ -936,23 +936,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap comment-2</note>
-      </trans-unit>
-      <trans-unit id="3434933493136380636" datatype="html">
-        <source>Below an overview per job-category. If you want, you can overrule the default increase per job-category.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-        <note priority="1" from="description">scenario overview-intro</note>
       </trans-unit>
       <trans-unit id="6251269467218886517" datatype="html">
         <source> Absolute wage increase</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">scenario absolute-increase title</note>
       </trans-unit>
@@ -960,9 +952,17 @@
         <source>Closing the living wage gap by an absolute wage increase for all workers.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <note priority="1" from="description">scenario absolute-increase description</note>
+      </trans-unit>
+      <trans-unit id="3434933493136380636" datatype="html">
+        <source>Below an overview per job-category. If you want, you can overrule the default increase per job-category.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">scenario overview-intro</note>
       </trans-unit>
       <trans-unit id="639546403850221881" datatype="html">
         <source>Something went wrong logging out</source>
@@ -990,21 +990,33 @@
           <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
           <context context-type="linenumber">23,24</context>
         </context-group>
-        <note priority="1" from="description">scenario-reset cancel</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+        <note priority="1" from="description">cancel</note>
       </trans-unit>
       <trans-unit id="7808756054397155068" datatype="html">
         <source>Reset</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">8,10</context>
+          <context context-type="linenumber">8,9</context>
         </context-group>
-        <note priority="1" from="description">scenario-reset reset</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">reset</note>
       </trans-unit>
       <trans-unit id="5089170722956064121" datatype="html">
         <source>Reset scenario selection?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">scenario-reset title</note>
       </trans-unit>
@@ -1073,6 +1085,10 @@
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
           <context context-type="linenumber">35,36</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
         <note priority="1" from="description">form absoluteIncrease label</note>
       </trans-unit>
       <trans-unit id="7873623519470670250" datatype="html">
@@ -1089,6 +1105,10 @@
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">70,72</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
         <note priority="1" from="description">form absoluteIncrease errors required</note>
       </trans-unit>
       <trans-unit id="624786732736767005" datatype="html">
@@ -1104,6 +1124,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">73,75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">34,38</context>
         </context-group>
         <note priority="1" from="description">form absoluteIncrease errors min</note>
       </trans-unit>
@@ -1195,15 +1219,23 @@
         <source>Overview</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">58,59</context>
+          <context context-type="linenumber">59,61</context>
         </context-group>
         <note priority="1" from="description">scenario overview-title</note>
+      </trans-unit>
+      <trans-unit id="294733613808522039" datatype="html">
+        <source>Reset all</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+        <note priority="1" from="description">workers reset</note>
       </trans-unit>
       <trans-unit id="6755751914784043101" datatype="html">
         <source>Error getting workers.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">67,68</context>
+          <context context-type="linenumber">76,77</context>
         </context-group>
         <note priority="1" from="description">workers error</note>
       </trans-unit>
@@ -1211,7 +1243,7 @@
         <source>Job category</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">81,82</context>
+          <context context-type="linenumber">90,91</context>
         </context-group>
         <note priority="1" from="description">workers job-category label</note>
       </trans-unit>
@@ -1219,7 +1251,7 @@
         <source>Total monthly remuneration</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">82,83</context>
+          <context context-type="linenumber">91,92</context>
         </context-group>
         <note priority="1" from="description">workers total-monthly-remnueration label</note>
       </trans-unit>
@@ -1227,7 +1259,7 @@
         <source>Living wage gap</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">83,84</context>
+          <context context-type="linenumber">92,93</context>
         </context-group>
         <note priority="1" from="description">workers living-wage-gap label</note>
       </trans-unit>
@@ -1235,7 +1267,7 @@
         <source>Wage Increase</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">84,85</context>
+          <context context-type="linenumber">93,94</context>
         </context-group>
         <note priority="1" from="description">workers wage-increase label</note>
       </trans-unit>
@@ -1243,7 +1275,7 @@
         <source>Actions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">87,88</context>
+          <context context-type="linenumber">96,97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
@@ -1255,7 +1287,11 @@
         <source>{VAR_PLURAL, plural, =1 {worker} other {workers}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description">workers</note>
       </trans-unit>
@@ -1263,7 +1299,7 @@
         <source>Edit wage increase </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">115,116</context>
+          <context context-type="linenumber">125,126</context>
         </context-group>
         <note priority="1" from="description">scenario job-category edit</note>
       </trans-unit>
@@ -1271,7 +1307,7 @@
         <source>No job categories found.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">136,137</context>
+          <context context-type="linenumber">146,147</context>
         </context-group>
         <note priority="1" from="description">workers not-found</note>
       </trans-unit>
@@ -1279,7 +1315,7 @@
         <source><x id="PH" equiv-text="total ?? &apos;-&apos;"/> job categories</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <note priority="1" from="description">job-categories table</note>
       </trans-unit>
@@ -1355,7 +1391,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <note priority="1" from="description">entry tab information</note>
       </trans-unit>
@@ -1371,7 +1407,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <note priority="1" from="description">entry tab scenarios</note>
       </trans-unit>
@@ -1667,11 +1703,11 @@
         <source>Successfully updated scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">146</context>
+          <context context-type="linenumber">141</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <note priority="1" from="description">scenario-update success</note>
       </trans-unit>
@@ -1679,11 +1715,11 @@
         <source>Something went wrong updating the scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">161</context>
         </context-group>
         <note priority="1" from="description">scenario-update error</note>
       </trans-unit>
@@ -1691,7 +1727,7 @@
         <source>Something went wrong while resetting the scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">194</context>
+          <context context-type="linenumber">189</context>
         </context-group>
         <note priority="1" from="description">scenario-delete error</note>
       </trans-unit>
@@ -1791,11 +1827,143 @@
         </context-group>
         <note priority="1" from="description">entries table</note>
       </trans-unit>
+      <trans-unit id="8658592545899209918" datatype="html">
+        <source> Are you sure you want to reset all job-categories? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <note priority="1" from="description">workers-reset description</note>
+      </trans-unit>
+      <trans-unit id="5126218690566601508" datatype="html">
+        <source>Resetting...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <note priority="1" from="description">workers-reset submitting</note>
+      </trans-unit>
+      <trans-unit id="4360518001038812234" datatype="html">
+        <source>Reset all job-categories?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">workers-reset-all title</note>
+      </trans-unit>
+      <trans-unit id="5780173799667079185" datatype="html">
+        <source>Something went wrong while resetting the job-categories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">scenario-workers-reset error</note>
+      </trans-unit>
+      <trans-unit id="7155191306868481652" datatype="html">
+        <source>Successfully reset the job-categories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <note priority="1" from="description">scenario-workers-reset success</note>
+      </trans-unit>
+      <trans-unit id="6050386603951460736" datatype="html">
+        <source> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit description</note>
+      </trans-unit>
+      <trans-unit id="2886523807619591085" datatype="html">
+        <source>Job-category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">worker-specs job-category</note>
+      </trans-unit>
+      <trans-unit id="3756081282663447693" datatype="html">
+        <source>Living wag gap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+        <note priority="1" from="description">worker-specs lw-gap</note>
+      </trans-unit>
+      <trans-unit id="3096270128484955927" datatype="html">
+        <source> Wage increase is set lower than living wage gap.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+        <note priority="1" from="description">wage-increase-too-low</note>
+      </trans-unit>
+      <trans-unit id="7773671942343493215" datatype="html">
+        <source>Reset to defaults</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit reset</note>
+      </trans-unit>
+      <trans-unit id="3493126540529865490" datatype="html">
+        <source>Submitting...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">49,51</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit submitting</note>
+      </trans-unit>
+      <trans-unit id="3768927257183755959" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit save</note>
+      </trans-unit>
+      <trans-unit id="3939221968477965004" datatype="html">
+        <source>Edit scenario for job-category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit title</note>
+      </trans-unit>
+      <trans-unit id="4391472316032604572" datatype="html">
+        <source>Something went wrong while resetting the scenario workers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <note priority="1" from="description">scenario-workers-reset error</note>
+      </trans-unit>
+      <trans-unit id="7475610564864214917" datatype="html">
+        <source>Successfully update the job-category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <note priority="1" from="description">scenario-worker-update success</note>
+      </trans-unit>
+      <trans-unit id="4822765794292528325" datatype="html">
+        <source>Something went wrong while updating the job-category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+        <note priority="1" from="description">scenario-worker-update error</note>
+      </trans-unit>
       <trans-unit id="7819314041543176992" datatype="html">
         <source>Close</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/dialog/dialog.component.html</context>
-          <context context-type="linenumber">7,10</context>
+          <context context-type="linenumber">6,9</context>
         </context-group>
         <note priority="1" from="description">close button</note>
       </trans-unit>
@@ -1935,7 +2103,7 @@
         <source>Sort</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/table-cell/table-cell.component.html</context>
-          <context context-type="linenumber">9,10</context>
+          <context context-type="linenumber">10,11</context>
         </context-group>
         <note priority="1" from="description">sort</note>
       </trans-unit>
@@ -1944,7 +2112,7 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/tooltip-advanced/tooltip-advanced.component.html</context>
-          <context context-type="linenumber">13,14</context>
+          <context context-type="linenumber">11,12</context>
         </context-group>
         <note priority="1" from="description">close button</note>
       </trans-unit>

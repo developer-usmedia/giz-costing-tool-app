@@ -47,6 +47,7 @@ import {
     TruncatePipe,
     VerifiedPipe,
 } from '@shared/pipes';
+import { AlertComponent } from './components/alert/alert.component';
 
 const PIPES = [
     CountryNamePipe,
@@ -63,6 +64,7 @@ const PIPES = [
 ];
 
 const COMPONENTS = [
+    AlertComponent,
     BreadcrumbComponent,
     ButtonComponent,
     CreateEntryDialogComponent,

@@ -1,0 +1,63 @@
+<giz-dialog [title]="title" (closeDialog)="cancel()" size="medium">
+    <p class="worker-edit__description" i18n="worker-edit description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</p>
+
+    <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form__definition form__definition--left">
+            <p class="form__label" i18n="worker-specs job-category">Job-category</p>
+            <p class="form__text">{{ data.worker.name }}
+                <span class="form__subtext"> - {{ data.worker.gender | gender }}, {{ data.worker.numberOfWorkers }}
+                    <span i18n="data.workers">{ data.worker.numberOfWorkers, plural, =1 {worker} other {workers}}</span>
+                </span>
+            </p>
+        </div>
+
+        <div class="form__definition form__definition--left">
+            <p class="form__label" i18n="worker-specs lw-gap">Living wag gap</p>
+            <p class="form__text">{{ data.worker.livingWageGap }} {{ data.entry.facility.currencyCode }}</p>
+        </div>
+
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'absoluteIncrease',
+            'has-value': form | hasValue: 'absoluteIncrease',
+        }">
+            <label class="form__label" for="absoluteIncrease" i18n="form absoluteIncrease label">Minimum wage increase</label>
+
+            <div class="form__input">
+                <input type="number" id="absoluteIncrease" formControlName="absoluteIncrease"/>
+                <span class="form__postfix">{{ data.entry.facility.currencyCode }}</span>
+            </div>
+            @if (form | showError: 'absoluteIncrease' :'required') {
+                <div class="form__error" i18n="form absoluteIncrease errors required">Field is required</div>
+            }
+            @if (form | showError: 'absoluteIncrease' :'min') {
+                <div class="form__error" i18n="form absoluteIncrease errors min">Minimum is 0</div>
+            }
+        </div>
+
+        @if (absoluteIncrease?.value && absoluteIncrease?.value < data.worker.livingWageGap) {
+            <giz-alert type="warning"><span i18n="wage-increase-too-low"> Wage increase is set lower than living wage gap.</span></giz-alert>
+        }
+    </form>
+
+    <ng-container footer-left>
+        <button type="button" giz-stroke-button
+                (click)="reset()" [disabled]="scenarioUpdateWorkerMutation.isPending()"
+                i18n="worker-edit reset">Reset to defaults</button>
+        @if (scenarioUpdateWorkerMutation.isPending()) {
+            <giz-spinner theme="grey">
+                <span i18n="worker-edit submitting">Submitting...</span>
+            </giz-spinner>
+        }
+    </ng-container>
+
+     <ng-container footer-right>
+         <button type="button" giz-stroke-button theme="basic"
+                 (click)="cancel()" [disabled]="scenarioUpdateWorkerMutation.isPending()"
+                 i18n="worker-edit cancel">Cancel</button>
+         <button type="submit" giz-stroke-button
+                 [disabled]="scenarioUpdateWorkerMutation.isPending()" (click)="submit()"
+                 i18n="worker-edit save">Save</button>
+    </ng-container>
+
+</giz-dialog>

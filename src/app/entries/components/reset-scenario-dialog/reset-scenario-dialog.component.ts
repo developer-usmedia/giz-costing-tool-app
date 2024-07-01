@@ -13,6 +13,8 @@ export interface ResetScenarioResult {
     encapsulation: ViewEncapsulation.None,
 })
 export class ResetScenarioDialogComponent {
+    // TODO: Make smart dialog instead of emitting
+
     constructor(
         private readonly dialogRef: DialogRef<ResetScenarioResult>,
     ) {
