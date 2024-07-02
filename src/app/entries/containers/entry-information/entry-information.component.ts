@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
-import { distinctUntilChanged, map, Observable, Subject, takeUntil } from 'rxjs';
+import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
 import { Entry } from '@api/models';
 import { EntriesApi } from '@api/services';
@@ -18,7 +18,6 @@ export class EntryInformationComponent implements OnDestroy {
     public backTitle = $localize`:entry back-to-overview:Back to overview`;
     public title = $localize`:entry information title:Information`;
 
-    public id$: Observable<string>;
     public entriesApi = inject(EntriesApi);
     public entryId = signal<string>('');
     public entry = injectQuery<Entry, HttpErrorResponse>(() => ({
@@ -37,13 +36,11 @@ export class EntryInformationComponent implements OnDestroy {
     private readonly destroyed$ = new Subject<void>();
 
     constructor() {
-        this.id$ = this.activatedRoute.params.pipe(
+        this.activatedRoute.params.pipe(
             map((params: Params) => String(params['id'])),
             takeUntil(this.destroyed$),
             distinctUntilChanged(),
-        );
-
-        this.id$?.subscribe((id) => {
+        ).subscribe((id) => {
             if (id) {
                 this.entryId.set(id);
             }

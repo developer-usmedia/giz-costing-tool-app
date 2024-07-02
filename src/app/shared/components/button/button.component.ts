@@ -49,6 +49,10 @@ export class ButtonComponent {
         return this.theme === 'basic';
     }
 
+    @HostBinding('class.is-disabled') get modDisabled(): boolean {
+        return !!this.disabled;
+    }
+
     private determineButtonType(): void {
         const host = this.getHostElement();
 

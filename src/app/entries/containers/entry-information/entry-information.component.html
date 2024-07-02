@@ -6,7 +6,7 @@
         link: [moduleRoute.ENTRIES]
     }"
 >
-    <a giz-stroke-button [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.SCENARIO ]"
+    <a giz-stroke-button [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.SCENARIO ]"
        i18n="continue">Continue</a>
 </giz-entry-header>
 <div class="info">

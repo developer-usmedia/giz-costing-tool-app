@@ -56,11 +56,13 @@
         fill: $color-hover;
     }
 
-    &:disabled {
+    &:disabled,
+    &.is-disabled {
         background-color: $background-disabled;
         border-color: $border-disabled;
         color: $color-disabled;
         cursor: not-allowed;
         fill: $color-disabled;
+        pointer-events: none;
     }
 }

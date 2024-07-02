@@ -15,31 +15,31 @@
         <div class="entry__tabs">
             <giz-tab-group>
                 <a giz-tab
-                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async)]"
+                   [routerLink]="[moduleRoute.ENTRIES, entryId()]"
                    [routerLinkActive]="['is-active']"
                    [routerLinkActiveOptions]="{ exact: true }"
                    i18n="entry tab information"
                 >Information</a>
                 <a giz-tab
-                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.SCENARIO]"
+                   [routerLink]="[moduleRoute.ENTRIES, entryId(), routes.SCENARIO]"
                    [routerLinkActive]="['is-active']"
                    i18n="entry tab scenarios"
                 >Scenarios</a>
                 <a giz-tab
                    [disabled]="tabDisabled(routes.DISTRIBUTION)"
-                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.DISTRIBUTION]"
+                   [routerLink]="[moduleRoute.ENTRIES, entryId(), routes.DISTRIBUTION]"
                    [routerLinkActive]="['is-active']"
                    i18n="entry tab distribution"
                 >Distribution</a>
                 <a giz-tab
                    [disabled]="tabDisabled(routes.BUYER)"
-                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.BUYER]"
+                   [routerLink]="[moduleRoute.ENTRIES, entryId(), routes.BUYER]"
                    [routerLinkActive]="['is-active']"
                    i18n="entry tab buyer"
                 >Buyer</a>
                 <a giz-tab
                    [disabled]="tabDisabled(routes.REPORT)"
-                   [routerLink]="[moduleRoute.ENTRIES, (id$ | async), routes.REPORT]"
+                   [routerLink]="[moduleRoute.ENTRIES, entryId(), routes.REPORT]"
                    [routerLinkActive]="['is-active']"
                    i18n="entry tab report"
                 >Report</a>

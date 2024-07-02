@@ -3,7 +3,7 @@
     [backButton]="{
         icon: icon.ARROW_BACK,
         text: backTitle,
-        link: [moduleRoute.ENTRIES, (id$ | async)],
+        link: [moduleRoute.ENTRIES, entryId()],
     }"
 >
     @if (scenarioState === 'specs') {
@@ -22,7 +22,7 @@
         >Change specifications</button>
 
         <a giz-stroke-button
-           [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.DISTRIBUTION ]"
+           [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.DISTRIBUTION ]"
            i18n="continue">Continue</a>
     }
 </giz-entry-header>
@@ -77,11 +77,11 @@
         [backButton]="{
             icon: icon.ARROW_BACK,
             text: backTitle,
-            link: [moduleRoute.ENTRIES, (id$ | async)],
+            link: [moduleRoute.ENTRIES, entryId()],
         }"
     >
         <a giz-stroke-button
-           [routerLink]=" [moduleRoute.ENTRIES, (id$ | async), entryRoute.DISTRIBUTION ]"
+           [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.DISTRIBUTION ]"
            i18n="continue">Continue</a>
     </giz-entry-footer>
 }

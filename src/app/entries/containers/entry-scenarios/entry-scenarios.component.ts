@@ -39,7 +39,6 @@ export class EntryScenariosComponent implements OnDestroy {
     public readonly entriesService = inject(EntriesService);
     public entriesApi = inject(EntriesApi);
 
-    public id$?: Observable<string>;
     public pagingParams$: Observable<WorkersPagingParams>;
     public pagingParams = signal<WorkersPagingParams | undefined>(undefined);
     public entryId = signal<string>('');
@@ -81,15 +80,13 @@ export class EntryScenariosComponent implements OnDestroy {
 
     constructor(
     ) {
-        this.id$ = this.activatedRoute.parent?.params.pipe(
+        this.activatedRoute.parent?.params.pipe(
             map((params: Params) => {
                 return String(params['id']);
             }),
             takeUntil(this.destroyed$),
             distinctUntilChanged(),
-        );
-
-        this.id$?.subscribe((id) => {
+        ).subscribe((id) => {
             if (id) {
                 this.entryId.set(id);
             }
