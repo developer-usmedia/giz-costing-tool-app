@@ -1,11 +1,9 @@
-<p class="tooltip-advanced__text">{{ text }}</p>
-
-@if (button) {
-    <div class="tooltip-advanced__buttons">
-        <a giz-stroke-button [routerLink]="button.link">{{ button.label }}</a>
-    </div>
-}
-
+<div class="tooltip-advanced__content">
+    <ng-content></ng-content>
+</div>
+<div class="tooltip-advanced__buttons">
+    <ng-content select="[buttons]"></ng-content>
+</div>
 <button
     class="tooltip-advanced__close" i18n="close button"
     giz-icon-button [icon]="icon.CLOSE" [theme]="'basic'"

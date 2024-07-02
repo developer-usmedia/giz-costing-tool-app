@@ -1,17 +1,18 @@
 import { Overlay, OverlayConfig, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
+import { TemplatePortal } from '@angular/cdk/portal';
 import {
     ChangeDetectorRef,
-    ComponentRef,
     Directive,
     ElementRef,
+    EmbeddedViewRef,
     HostListener,
     inject,
     Input,
     OnDestroy,
     OnInit,
+    TemplateRef,
+    ViewContainerRef,
 } from '@angular/core';
-import { Subscription } from 'rxjs';
 
 import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
 
@@ -20,19 +21,18 @@ import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/to
     standalone: true,
 })
 export class TooltipAdvancedDirective implements OnInit, OnDestroy {
-    @Input({ required: true }) text!: string;
-    @Input() button?: { label: string; link: string | any[] };
+    @Input({ required: true }) template!: TemplateRef<TooltipAdvancedComponent>;
 
     private readonly overlayPositionBuilder = inject(OverlayPositionBuilder);
     private readonly elementRef = inject(ElementRef);
     private readonly overlay = inject(Overlay);
     private readonly changeDetectorRef = inject(ChangeDetectorRef);
+    private readonly viewContainerRef = inject(ViewContainerRef);
 
-    private tooltipRef?: ComponentRef<TooltipAdvancedComponent>;
+    private tooltipRef?: EmbeddedViewRef<TooltipAdvancedComponent>;
     private overlayRef?: OverlayRef;
     private isOpen = false;
     private isClicked = false;
-    private subscription?: Subscription;
 
     @HostListener('click')
     show() {
@@ -72,13 +72,20 @@ export class TooltipAdvancedDirective implements OnInit, OnDestroy {
 
         this.isOpen = true;
         this.tooltipRef = this.overlayRef.attach(
-            new ComponentPortal(TooltipAdvancedComponent)
+            new TemplatePortal(this.template, this.viewContainerRef)
         );
-        this.tooltipRef.instance.text = this.text;
-        this.tooltipRef.instance.button = this.button;
-        this.subscription = this.tooltipRef.instance.closeTooltip.subscribe(() => {
-            this.close();
-        });
+
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+        const childNodes: NodeList = this.tooltipRef.rootNodes[0].childNodes;
+        if (childNodes) {
+            for (const node of childNodes) {
+                if ((node as HTMLElement).classList.contains('tooltip-advanced__close')) {
+                    node.addEventListener('click', () => {
+                        this.close();
+                    });
+                }
+            }
+        }
     }
 
     private close() {
@@ -88,7 +95,6 @@ export class TooltipAdvancedDirective implements OnInit, OnDestroy {
             this.isClicked = false;
             this.tooltipRef = undefined;
             this.changeDetectorRef.markForCheck();
-            this.subscription?.unsubscribe();
         }
     }
 

@@ -3,7 +3,6 @@ import {
     Component,
     EventEmitter,
     HostBinding,
-    Input,
     Output,
     ViewEncapsulation,
 } from '@angular/core';
@@ -18,9 +17,6 @@ import { ICON } from '@shared/components/icon/icon.enum';
     encapsulation: ViewEncapsulation.None,
 })
 export class TooltipAdvancedComponent {
-    @Input({ required: true }) text!: string;
-    @Input() button?: { label: string; link: string | any[] };
-
     @Output() closeTooltip = new EventEmitter();
 
     @HostBinding('class') cssClass = 'tooltip-advanced';

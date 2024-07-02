@@ -496,9 +496,17 @@
             theme="basic"
             [icon]="icon.HELP"
             gizTooltipAdvanced
-            [text]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
-            [button]="{ label: 'Button', link: routes.DASHBOARD }"
+            [template]="tooltipAdvanced"
         >info</button>
+
+        <ng-template #tooltipAdvanced>
+            <giz-tooltip-advanced>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <ng-container buttons>
+                    <a giz-stroke-button [routerLink]="(routes.DASHBOARD)">Button</a>
+                </ng-container>
+            </giz-tooltip-advanced>
+        </ng-template>
     </section>
 
     <section class="examples__section" id="status">
