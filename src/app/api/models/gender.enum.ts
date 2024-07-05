@@ -1,6 +1,6 @@
 export enum Gender {
-    MEN = 'men',
-    WOMEN = 'women',
+    MEN = 'MEN',
+    WOMEN = 'WOMEN',
 }
 
 export const GENDER_OPTIONS = [

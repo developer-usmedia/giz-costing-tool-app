@@ -86,7 +86,7 @@ export class BaseComponent implements OnDestroy {
                 link: MODULE_ROUTE.ENTRIES,
             });
 
-            const entryName = this.entry?.data() ? `${ this.entry.data()?.facility.name ?? '' } (${ this.entry.data()?.year ?? '' })` : '';
+            const entryName = this.entry?.data() ? `${ this.entry.data()?.facility.name ?? '' } (${ this.entry.data()?.payroll?.year ?? '' })` : '';
             this.breadcrumb.push({
                 name: entryName,
                 active: true,

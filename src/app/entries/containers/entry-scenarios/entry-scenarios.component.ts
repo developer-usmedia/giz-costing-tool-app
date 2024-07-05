@@ -20,7 +20,7 @@ import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
-import { distinctUntilChanged, map, Observable, Subject, take, takeUntil } from 'rxjs';
+import { distinctUntilChanged, map, Subject, take, takeUntil } from 'rxjs';
 
 import {
     ResetScenarioDialogComponent,
@@ -39,7 +39,6 @@ export class EntryScenariosComponent implements OnDestroy {
     public readonly entriesService = inject(EntriesService);
     public entriesApi = inject(EntriesApi);
 
-    public pagingParams$: Observable<WorkersPagingParams>;
     public pagingParams = signal<WorkersPagingParams | undefined>(undefined);
     public entryId = signal<string>('');
     public entry = injectQuery<Entry, HttpErrorResponse>(() => ({
@@ -58,7 +57,7 @@ export class EntryScenariosComponent implements OnDestroy {
     }));
 
     public scenarioCreateMutation = this.entriesService.createScenario();
-    public scenarioUpdateMutation = this.entriesService.updateScenarioSpecs();
+    public scenarioUpdateMutation = this.entriesService.updateScenario();
     public scenarioDeleteMutation = this.entriesService.deleteScenarioSpecs();
 
     public scenarios: ScenarioInfo[] = SCENARIOS;
@@ -75,7 +74,6 @@ export class EntryScenariosComponent implements OnDestroy {
     private readonly destroyed$ = new Subject<void>();
     private readonly dialog = inject(Dialog);
     private readonly toastr = inject(ToastrService);
-    private readonly destroyed = new Subject();
 
     constructor(
     ) {
@@ -91,13 +89,11 @@ export class EntryScenariosComponent implements OnDestroy {
             }
         });
 
-        this.pagingParams$ = this.activatedRoute.queryParams.pipe(
-            takeUntil(this.destroyed),
+        this.activatedRoute.queryParams.pipe(
+            takeUntil(this.destroyed$),
             map((params: Params) => getPagingParamsFromQueryParams<WorkersPagingParams>(params, 'workers')),
             distinctUntilChanged(),
-        );
-
-        this.pagingParams$.subscribe((params) => {
+        ).subscribe((params) => {
             this.pagingParams.set(params);
         });
 
@@ -141,7 +137,7 @@ export class EntryScenariosComponent implements OnDestroy {
                     this.toastr.success($localize`:scenario-update success:Successfully updated scenario`);
                 },
                 onError: (error) => {
-                    this.toastr.error($localize`:scenario-update error:Something went wrong updating the scenario`, error.message);
+                    this.toastr.error($localize`:scenario-update error:Something went wrong updating the scenario`);
                 },
             });
         } else {
@@ -158,7 +154,7 @@ export class EntryScenariosComponent implements OnDestroy {
                     this.scenarioState = 'view';
                 },
                 onError: (error) => {
-                    this.toastr.error($localize`:scenario-update error:Something went wrong updating the scenario`, error.message);
+                    this.toastr.error($localize`:scenario-update error:Something went wrong updating the scenario`);
                 },
             });
         }
@@ -186,27 +182,24 @@ export class EntryScenariosComponent implements OnDestroy {
                         this.scenarioState = 'start';
                     },
                     onError: (error) => {
-                        this.toastr.error($localize`:scenario-delete error:Something went wrong while resetting the scenario`, error.message);
+                        this.toastr.error($localize`:scenario-delete error:Something went wrong while resetting the scenario`);
                     },
                 });
             });
     }
 
     public onPageEvent(pageEvent: PageEvent): void {
-        this.pagingParams$
-            .pipe(take(1))
-            .subscribe((currentParams) => {
-                const params = {
-                    ...currentParams,
-                    index: pageEvent.page,
-                    size: pageEvent.pageSize,
-                };
+        const currentParams = this.pagingParams();
+        const params = {
+            ...currentParams,
+            index: pageEvent.page,
+            size: pageEvent.pageSize,
+        };
 
-                this.router.navigate(
-                    [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.SCENARIO],
-                    { queryParams: getParamsFromPagingParams<PagingParams>(params) }
-                );
-            });
+        this.router.navigate(
+            [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.SCENARIO],
+            { queryParams: getParamsFromPagingParams<PagingParams>(params) }
+        );
     }
 
     public ngOnDestroy(): void {
@@ -215,7 +208,7 @@ export class EntryScenariosComponent implements OnDestroy {
     }
 
     private determineState(entry?: Entry) {
-        if (!entry?.scenario) {
+        if (!entry?.scenario?.specification) {
             this.scenarioState = 'start';
             return;
         }

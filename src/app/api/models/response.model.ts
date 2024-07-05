@@ -11,6 +11,7 @@ export interface Pagination {
 }
 
 export interface EntityResponse {
+    id: string;
     createdAt: string;
     updatedAt: string;
     _links: {

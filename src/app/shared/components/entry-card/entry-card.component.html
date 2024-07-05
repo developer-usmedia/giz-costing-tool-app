@@ -2,23 +2,23 @@
     @if (isMain) {
         <h1 class="entry-card__title entry-card__title--main">
             {{ entry.facility.name }}
-            @if (entry.verified) {
+            @if (entry.matrix?.verified) {
                 <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
-            } @else if (entry.matrixId) {
+            } @else if (entry.matrix?.id) {
                 <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
             }
         </h1>
     } @else {
         <h3 class="entry-card__title">
             {{ entry.facility.name }}
-            @if (entry.verified) {
+            @if (entry.matrix?.verified) {
                 <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
-            } @else if (entry.matrixId) {
+            } @else if (entry.matrix?.verified) {
                 <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
             }
         </h3>
     }
-    <p class="entry-card__info">{{ entry.year }}, {{ entry.facility.country }}</p>
+    <p class="entry-card__info">{{ entry.payroll.year }}, {{ entry.facility.country }}</p>
 </div>
 @if (showStatus && entry.status) {
     <div class="entry-card__status">

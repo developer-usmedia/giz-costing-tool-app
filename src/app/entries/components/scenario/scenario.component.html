@@ -9,7 +9,7 @@
 
         @if (state === 'edit') {
             <div class="scenario__comments">
-                <h3 i18n="scenario comments-title">Comments</h3>
+                <h3 i18n="comments">Comments</h3>
                 <p>{{ scenario.comment1 }}</p>
 
                 @if (scenario.comment2) {
@@ -29,11 +29,12 @@
         } @else if (entry) {
             <table class="scenario__table">
                 <caption i18n="scenario specs title">Specifications</caption>
+                <!-- TODO: overheadCosts inputs like figma -->
                 <tbody>
                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
                         <tr>
                             <th i18n="scenario taxes-employer label">Minimum wage increase</th>
-                            <td>{{ entry.scenario?.specifications?.absoluteIncrease }} {{ entry.facility.currencyCode }}</td>
+                            <td>{{ entry.scenario?.specification?.remunerationIncrease }} {{ entry.payroll.currencyCode }}</td>
                         </tr>
                     }
                     <tr>
@@ -42,11 +43,11 @@
                     </tr>
                     <tr>
                         <th i18n="scenario taxes-employee label">Taxes and levies employee</th>
-                        <td>{{ entry.scenario?.specifications?.employeeTax }} %</td>
+                        <td>{{ entry.scenario?.specification?.taxEmployee }} %</td>
                     </tr>
                     <tr>
                         <th i18n="scenario taxes-employer label">Taxes and levies employer</th>
-                        <td>{{ entry.scenario?.specifications?.employerTax }} %</td>
+                        <td>{{ entry.scenario?.specification?.taxEmployer}} %</td>
                     </tr>
                 </tbody>
             </table>
@@ -100,21 +101,21 @@
                         </ng-container>
                         <ng-container>
                             @for (worker of workers.data()?._embedded?.workers; track worker) {
-                                <tr giz-table-row [editted]="!!worker.absoluteIncrease">
+                                <tr giz-table-row [editted]="!!worker.scenario.specification?.remunerationIncrease">
                                     <td giz-table-cell size="wide">
                                         {{ worker.name }}
-                                        <span class="table-cell__subtitle"> - {{ worker.gender | gender }}, {{ worker.numberOfWorkers }}
-                                            <span i18n="workers">{ worker.numberOfWorkers, plural, =1 {worker} other {workers}}</span>
+                                        <span class="table-cell__subtitle"> - {{ worker.gender | gender }}, {{ worker.nrOfWorkers }}
+                                            <span i18n="workers">{ worker.nrOfWorkers, plural, =1 {worker} other {workers}}</span>
                                         </span>
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{ worker.monthlyWage | currency: entry?.facility?.currencyCode : '' }} {{ entry?.facility?.currencyCode }}
+                                        {{ worker.remuneration?.baseWage | currency: entry?.payroll?.currencyCode : '' }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{ worker.livingWageGap | currency: entry?.facility?.currencyCode : '' | empty }} {{ entry?.facility?.currencyCode }}
+                                        {{ worker.livingWage?.livingWageGap | currency: entry?.payroll?.currencyCode : '' | empty }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{ (worker.absoluteIncrease ?? entry?.scenario?.specifications?.absoluteIncrease) ?? 0 | currency: entry?.facility?.currencyCode : '' | empty }} {{ entry?.facility?.currencyCode }}
+                                        {{ (worker.scenario.specification?.remunerationIncrease) ?? 0 | currency: entry?.payroll?.currencyCode : '' | empty }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
                                         <td giz-table-cell type="actions">

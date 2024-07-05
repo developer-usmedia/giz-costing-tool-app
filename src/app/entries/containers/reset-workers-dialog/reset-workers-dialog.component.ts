@@ -1,9 +1,14 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import { ChangeDetectionStrategy, Component, Inject, inject, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, ViewEncapsulation, inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { Entry, ScenarioWorkersResetMutation } from '@api/models';
 import { EntriesService } from '@core/services';
+
+export interface ResetWorkersData {
+    entry: Entry;
+    type: 'specifications' | 'distributions' | 'all';
+}
 
 export interface ResetWorkersResult {
     reset: boolean;
@@ -23,7 +28,7 @@ export class ResetWorkersDialogComponent {
     private readonly toastr = inject(ToastrService);
 
     constructor(
-        @Inject(DIALOG_DATA) public entry: Entry,
+        @Inject(DIALOG_DATA) public data: ResetWorkersData,
         private readonly dialogRef: DialogRef<ResetWorkersResult>,
     ) {
     }
@@ -37,15 +42,15 @@ export class ResetWorkersDialogComponent {
     }
 
     public reset() {
-        if (!this.entry || !this.entry.scenario) {
+        if (!this.data.entry || !this.data.entry.scenario) {
             this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the job-categories`);
             this.dialogRef?.close({ reset: false });
             return;
         }
 
         const mutation: ScenarioWorkersResetMutation = {
-            entryId: this.entry.id,
-            scenarioWorkersReset: { reset: 'specifications' },
+            entryId: this.data.entry.id,
+            scenarioWorkersReset: { reset: this.data.type },
         };
 
         this.scenarioResetWorkersMutation.mutate(mutation, {
@@ -54,7 +59,7 @@ export class ResetWorkersDialogComponent {
                 this.dialogRef?.close({ reset: true });
             },
             onError: (error) => {
-                this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the job-categories`, error.message);
+                this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the job-categories`);
                 this.dialogRef?.close({ reset: false });
             },
         });

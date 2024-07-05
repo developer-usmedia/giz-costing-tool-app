@@ -28,7 +28,7 @@ export class AuthApi extends BaseApi {
     public readonly endpoints = {
         register: `${ this.baseUrl }/register`,
         login: `${ this.baseUrl }/login`,
-        session: `${ this.baseUrl }/session`,
+        whoami: `${ this.baseUrl }/whoami`,
         logout: `${ this.baseUrl }/logout`,
         refresh: `${ this.baseUrl }/refresh`,
         forgotPassword: `${ this.baseUrl }/forgot-password`,
@@ -57,7 +57,7 @@ export class AuthApi extends BaseApi {
     }
 
     public session(): Promise<User> {
-        return lastValueFrom(this.get<User>(this.endpoints.session));
+        return lastValueFrom(this.get<User>(this.endpoints.whoami));
     }
 
     public verifyEmail(verifyForm: VerifyEmailForm): Promise<VerifyEmailReponse> {

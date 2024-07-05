@@ -1,7 +1,7 @@
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { HttpParameterCodec, HttpParams } from '@angular/common/http';
 import { Params } from '@angular/router';
-import { EntrySortFilterKey, WorkersSortFilterKey } from '@api/models';
+import { EntrySortFilterKey } from '@api/models';
 import { PageFilter, PageSort, PagingParams, Sort } from '@core/models';
 
 /**
@@ -160,7 +160,8 @@ export const getDefaultSort = (type?: string): PageSort => {
         case 'entries':
             return { [EntrySortFilterKey.UPDATED_AT]: Sort.DESC };
         case 'workers':
-            return { [WorkersSortFilterKey.NUMBER_OF_WORKERS]: Sort.DESC };
+            return {};
+            // return { [WorkersSortFilterKey.NUMBER_OF_WORKERS]: Sort.DESC }; // TODO: reintroduce this sort in api somehow
         default:
             return {};
     }

@@ -23,6 +23,7 @@ import { ScenarioSpecsFormComponent } from './components/scenario-specs-form/sce
 import { EntryFooterComponent } from './components/entry-footer/entry-footer.component';
 import { ResetWorkersDialogComponent } from './containers/reset-workers-dialog/reset-workers-dialog.component';
 import { ScenarioWorkerSpecsDialogComponent } from './containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
+import { DistributionFormComponent } from './components/distribution-form/distribution-form.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { ScenarioWorkerSpecsDialogComponent } from './containers/scenario-worker
         ScenarioComponent,
         ScenarioSpecsFormComponent,
         ScenarioWorkerSpecsDialogComponent,
+        DistributionFormComponent,
     ],
     imports: [
         HttpClientModule,

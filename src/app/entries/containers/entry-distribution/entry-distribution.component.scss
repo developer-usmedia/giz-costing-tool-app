@@ -1,0 +1,73 @@
+@import 'config/sizes';
+@import 'mixins/screen';
+@import 'mixins/table';
+
+.distribution {
+    display: flex;
+    flex-direction: column;
+    gap: $p-gutter--large;
+
+    &__header {
+        margin-bottom: $p-gutter;
+    }
+
+    &__table {
+        @include table-info;
+
+        caption {
+            font-size: 1rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    &__worker-distro-label {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include screen($screen-simple) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        &__categories,
+        &__buttons {
+            grid-column: span 2;
+        }
+    }
+
+    @include screen($screen-normal) {
+        &__header {
+            display: grid;
+            gap: 0 $p-gutter;
+            grid-template:
+                'title title' fit-content(100%)
+                'intro buttons' fit-content(100%) / 750px 1fr;
+        }
+
+        &__title {
+            grid-area: title;
+            margin: 0 0 $p-gutter--small;
+        }
+
+        &__intro {
+            align-self: center;
+            grid-area: intro;
+            margin-bottom: 0;
+        }
+
+        &__buttons {
+            grid-area: buttons;
+
+            > * {
+                justify-self: end;
+            }
+        }
+    }
+}

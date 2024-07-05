@@ -29,7 +29,7 @@
                         </tr>
                         <tr>
                             <th i18n="entry currency label">Currency</th>
-                            <td>{{ entry.facility.currencyCode | empty }}</td>
+                            <td>{{ entry.payroll.currencyCode | empty }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -39,11 +39,11 @@
                     <tbody>
                         <tr>
                             <th i18n="entry products label">Product(s)</th>
-                            <td>{{ entry.facility.product | empty }}</td>
+                            <td>{{ entry.facility.products | empty }}</td>
                         </tr>
                         <tr>
                             <th i18n="entry annual-production label">Annual production</th>
-                            <td>{{ entry.facility.annualProduction | empty }}</td>
+                            <td>{{ entry.facility.production.amount | empty }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -53,19 +53,19 @@
                     <tbody>
                         <tr>
                             <th i18n="entry year label">Year</th>
-                            <td>{{ entry.year | empty }}</td>
+                            <td>{{ entry.payroll.year | empty }}</td>
                         </tr>
                         <tr>
                             <th i18n="entry job-categories label"># Job categories</th>
-                            <td>{{ entry.nrOfJobcategories | empty }}</td>
+                            <td>{{ entry.payroll.nrOfJobCategories | empty }}</td>
                         </tr>
                         <tr>
                             <th i18n="entry workers label"># Workers</th>
-                            <td>{{ entry.nrOfWorkers | empty }}</td>
+                            <td>{{ entry.payroll.nrOfWorkers | empty }}</td>
                         </tr>
                         <tr>
                             <th i18n="entry workers-below-living-wage label"># Workers - Below living wage</th>
-                            <td>{{ entry.nrOfWorkersBelowLW | empty }}</td>
+                            <td>{{ entry.livingWage?.nrOfWorkersBelowLivingWage | empty }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -77,17 +77,17 @@
                         <tr>
                             <th i18n="entry matrix-id label">Matrix ID</th>
                             <td class="info__copy-cell">
-                                @if (entry.matrixId) {
+                                @if (entry.matrix?.id) {
                                     <button
                                         giz-icon-button
                                         [icon]="icon.COPY"
                                         [theme]="'basic'"
                                         [size]="'small'"
-                                        [cdkCopyToClipboard]="entry.matrixId"
+                                        [cdkCopyToClipboard]="entry.matrix?.id ?? ''"
                                         i18n="copy"
                                     >Copy</button>
                                 }
-                                {{ entry.matrixId | empty }}
+                                {{ entry.matrix?.id | empty }}
                             </td>
                         </tr>
                         <tr>
@@ -108,7 +108,7 @@
                         </tr>
                         <tr>
                             <th i18n="entry verified label">Verified?</th>
-                            <td>{{ !!entry.verified | verified }}</td>
+                            <td>{{ !!entry.matrix?.verified | verified }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -121,7 +121,7 @@
                         </tr>
                         <tr>
                             <th i18n="entry amount label">Amount</th>
-                            <td>{{ entry.benchmark.localValue | empty }}</td>
+                            <td>{{ entry.benchmark.value | empty }}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,13 +1,30 @@
+import { Dialog } from '@angular/cdk/dialog';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { toObservable } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { EntriesService } from '@core/services';
+import { PageEvent } from '@shared/components/paginator/paginator.model';
+import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
 import { injectQuery } from '@tanstack/angular-query-experimental';
+import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { Entry } from '@api/models';
+import {
+    Entry,
+    ScenarioDistroForm,
+    ScenarioType,
+    ScenarioUpdateMutation,
+    Worker, WorkerListResponse,
+    WorkersPagingParams,
+} from '@api/models';
 import { EntriesApi } from '@api/services';
-import { ENTRY_ROUTE, MODULE_ROUTE } from '@core/models';
+import { ENTRY_ROUTE, MODULE_ROUTE, PagingParams, ROOT_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { ResetWorkersDialogComponent } from '../reset-workers-dialog/reset-workers-dialog.component';
+import {
+    ScenarioWorkerSpecsDialogComponent,
+} from '../scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
 
 @Component({
     selector: 'giz-entry-distribution',
@@ -18,7 +35,13 @@ export class EntryDistributionComponent implements OnDestroy {
     public backTitle = $localize`:entry scenarios title:Scenarios`;
     public title = $localize`:entry distribution title:Distribution`;
 
+    public saving = false;
+
+    public state?: 'edit' | 'view' = 'edit';
+    public readonly entriesService = inject(EntriesService);
     public entriesApi = inject(EntriesApi);
+
+    public pagingParams = signal<WorkersPagingParams | undefined>(undefined);
     public entryId = signal<string>('');
     public entry = injectQuery<Entry, HttpErrorResponse>(() => ({
         enabled: this.entryId() != '',
@@ -27,13 +50,27 @@ export class EntryDistributionComponent implements OnDestroy {
         retry: 1,
         staleTime: Infinity,
     }));
+    public workers = injectQuery<WorkerListResponse, HttpErrorResponse>(() => ({
+        enabled: this.pagingParams() != undefined,
+        queryKey: ['workers', { id: this.entryId(), ...this.pagingParams() }],
+        queryFn: () => this.entriesApi.getWorkers(this.entryId(), this.pagingParams()),
+        retry: 1,
+        staleTime: Infinity,
+    }));
+
+    public scenarioUpdateMutation = this.entriesService.updateScenario();
 
     protected readonly icon = ICON;
     protected readonly entryRoute = ENTRY_ROUTE;
     protected readonly moduleRoute = MODULE_ROUTE;
+    protected readonly scenarioType = ScenarioType;
+    protected readonly routes = ROOT_ROUTE;
 
     private readonly activatedRoute = inject(ActivatedRoute);
+    private readonly router = inject(Router);
     private readonly destroyed$ = new Subject<void>();
+    private readonly dialog = inject(Dialog);
+    private readonly toastr = inject(ToastrService);
 
     constructor() {
         this.activatedRoute.parent?.params.pipe(
@@ -41,10 +78,85 @@ export class EntryDistributionComponent implements OnDestroy {
             takeUntil(this.destroyed$),
             distinctUntilChanged(),
         ).subscribe((id) => {
-            if (id) {
-                this.entryId.set(id);
-            }
+            if (id) this.entryId.set(id);
         });
+
+        this.activatedRoute.queryParams.pipe(
+            takeUntil(this.destroyed$),
+            map((params: Params) => getPagingParamsFromQueryParams<WorkersPagingParams>(params, 'workers')),
+            distinctUntilChanged(),
+        ).subscribe((params) => {
+            this.pagingParams.set(params);
+        });
+
+        toObservable(this.entry.data).subscribe((entry) => {
+            this.state = entry?.scenario?.distribution ? 'view' : 'edit';
+        });
+    }
+
+    public changeSpecs(): void {
+        this.state = 'edit';
+    }
+
+    public saveDistribution(distroForm: ScenarioDistroForm): void {
+        const entry = this.entry?.data();
+        if (!entry) {
+            return;
+        }
+
+        const mutation: ScenarioUpdateMutation = {
+            entryId: entry.id,
+            scenarioUpdate: {
+                distributions: distroForm,
+            },
+        };
+
+        this.scenarioUpdateMutation.mutate(mutation, {
+            onSuccess: () => {
+                this.state = 'view';
+                this.toastr.success($localize`:distribution-update success:Successfully updated distribution`);
+            },
+            onError: (error) => {
+                console.error(error);
+                this.toastr.error($localize`:distribution-update error:Something went wrong updating the distribution`);
+            },
+        });
+    }
+
+    public editWorker(worker: Worker) {
+        this.dialog.open(ScenarioWorkerSpecsDialogComponent, {
+            data: {
+                entry: this.entry,
+                worker: worker,
+            },
+        });
+    }
+
+    public resetAll() {
+        this.dialog.open(ResetWorkersDialogComponent, {
+            data: {
+                entry: this.entry,
+                type: 'distributions',
+            },
+        });
+    }
+
+    public getTableCaption(total?: number) {
+        return $localize`:job-categories table:${ total ?? '-' } job categories`;
+    }
+
+    public onPageEvent(pageEvent: PageEvent): void {
+        const currentParams = this.pagingParams();
+        const params = {
+            ...currentParams,
+            index: pageEvent.page,
+            size: pageEvent.pageSize,
+        };
+
+        this.router.navigate(
+            [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.SCENARIO],
+            { queryParams: getParamsFromPagingParams<PagingParams>(params) }
+        );
     }
 
     public ngOnDestroy(): void {

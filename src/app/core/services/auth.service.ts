@@ -62,10 +62,7 @@ export class AuthService {
             this.authApi
                 .logout()
                 .catch((error: HttpErrorResponse) => {
-                    this.toastr.error(
-                        $localize`:logout error:Something went wrong logging out`,
-                        `Error ${error.status}: ${error.message}`,
-                    );
+                    this.toastr.error($localize`:logout error:Something went wrong logging out`);
                 })
                 .finally(() => {
                     this.removeToken();

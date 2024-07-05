@@ -1,5 +1,5 @@
 <giz-dialog [title]="title" (closeDialog)="cancel()" size="medium">
-    <p class="worker-edit__description" i18n="worker-edit description">
+    <p class="worker-distribution__description" i18n="worker-distribution description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</p>
 
     <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
@@ -12,32 +12,9 @@
             </p>
         </div>
 
-        <div class="form__definition form__definition--left">
-            <p class="form__label" i18n="worker-specs lw-gap">Living wag gap</p>
-            <p class="form__text">{{ data.worker.livingWage?.livingWageGap }} {{ data.entry.payroll.currencyCode }}</p>
+        <div class="todo">
+            FORM
         </div>
-
-        <div class="form__field" [ngClass]="{
-            'is-error': form | hasError: 'remunerationIncrease',
-            'has-value': form | hasValue: 'remunerationIncrease',
-        }">
-            <label class="form__label" for="remunerationIncrease" i18n="form remunerationIncrease label">Minimum wage increase</label>
-
-            <div class="form__input">
-                <input type="number" id="remunerationIncrease" formControlName="remunerationIncrease"/>
-                <span class="form__postfix">{{ data.entry.payroll.currencyCode }}</span>
-            </div>
-            @if (form | showError: 'remunerationIncrease' :'required') {
-                <div class="form__error" i18n="form remunerationIncrease errors required">Field is required</div>
-            }
-            @if (form | showError: 'remunerationIncrease' :'min') {
-                <div class="form__error" i18n="form remunerationIncrease errors min">Minimum is 0</div>
-            }
-        </div>
-
-        @if (remunerationIncrease?.value && remunerationIncrease?.value < (data.worker.livingWage?.livingWageGap ?? 0)) {
-            <giz-alert type="warning"><span i18n="wage-increase-too-low"> Wage increase is set lower than living wage gap.</span></giz-alert>
-        }
     </form>
 
     <ng-container footer-left>

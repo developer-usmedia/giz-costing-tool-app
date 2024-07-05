@@ -1,39 +1,71 @@
 import { EntityResponse } from '@api/models/response.model';
+import { AnnualCosts } from './annual-costs';
+import { FacilityLwDetails } from './living-wage-details';
 
 // Entity
 export enum ScenarioType {
-    CLOSE_GAP = 'TYPE_CLOSE_GAP',
-    ABSOLUTE_INCREASE = 'TYPE_ABSOLUTE_INCREASE',
+    CLOSE_GAP = 'CLOSE_GAP',
+    ABSOLUTE_INCREASE = 'ABSOLUTE_INCREASE',
+}
+
+export interface ScenarioSpecification {
+    taxEmployee: number;
+    taxEmployer: number;
+    overheadCosts: number;
+    remunerationIncrease: number;
+}
+
+export interface ScenarioDistribution {
+    baseWagePerc: number;
+    bonusesPerc: number;
+    ikbPerc: number;
+    ikbHousingPerc: number;
+    ikbFoodPerc: number;
+    ikbTransportPerc: number;
+    ikbHealthcarePerc: number;
+    ikbChildcarePerc: number;
+    ikbChildEducationPerc: number;
 }
 
 export interface Scenario extends EntityResponse {
-    id: string;
     type: ScenarioType;
-    specifications: {
-        employeeTax: number;
-        employerTax: number;
-        absoluteIncrease: number;
-    };
+    specification?: ScenarioSpecification;
+    distribution?: ScenarioDistribution; 
+    livingWage?: FacilityLwDetails;
+    annualCosts?: AnnualCosts;
 }
 
 // Forms
 export interface ScenarioSpecsForm {
-    employeeTax: number;
-    employerTax: number;
-    absoluteIncrease?: number;
+    taxEmployee: number;
+    taxEmployer: number;
+    overheadCosts?: number;
+    remunerationIncrease?: number;
+}
+
+export interface ScenarioDistroForm {
+    bonusesPerc: number;
+    ikbHousingPerc: number;
+    ikbFoodPerc: number;
+    ikbTransportPerc: number;
+    ikbHealthcarePerc: number;
+    ikbChildcarePerc: number;
+    ikbChildEducationPerc: number;
 }
 
 export interface ScenarioWorkerSpecsForm {
-    absoluteIncrease?: number | null;
+    remunerationIncrease?: number | null;
 }
 
 export interface ScenarioCreate {
     type: ScenarioType;
-    specifications?: ScenarioSpecsForm;
+    specifications: ScenarioSpecsForm;
+    distributions?: ScenarioDistroForm;
 }
 
 export interface ScenarioUpdate {
     specifications?: ScenarioSpecsForm;
+    distributions?: ScenarioDistroForm;
 }
 
 export interface ScenarioWorkersReset {

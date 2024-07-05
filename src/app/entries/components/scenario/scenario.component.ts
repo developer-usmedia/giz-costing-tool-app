@@ -17,7 +17,9 @@ import { Entry, Scenario, ScenarioSpecsForm, ScenarioType, Worker, WorkerListRes
 import { MODULE_ROUTE, ScenarioInfo } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
-import { ResetWorkersDialogComponent } from '../../containers/reset-workers-dialog/reset-workers-dialog.component';
+import {
+    ResetWorkersDialogComponent,
+} from '../../containers/reset-workers-dialog/reset-workers-dialog.component';
 import { ScenarioWorkerSpecsDialogComponent } from '../../containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
 
 @Component({
@@ -64,7 +66,10 @@ export class ScenarioComponent {
 
     public resetAll() {
         this.dialog.open(ResetWorkersDialogComponent, {
-            data: this.entry,
+            data: {
+                entry: this.entry,
+                type: 'specifications',
+            },
         });
     }
 

@@ -1,20 +1,55 @@
 import { Gender } from '@api/models/gender.enum';
 import { EntityResponse, PagedResponse } from '@api/models/response.model';
 import { PagingParams, Sort } from '@core/models';
+import { WorkerLwDetails } from './living-wage-details';
+import { Scenario, ScenarioSpecification } from './scenario.model';
+import { WorkerRemuneration } from './worker-remuneration';
+
+export type WorkerScenarioSpecification = ScenarioSpecification;
+export type WorkerScenarioDistribution = ScenarioSpecification;
+
+export interface WorkerScenario {
+    specification?: WorkerScenarioSpecification;
+    distribution?: {
+        baseWagePerc: number;
+        bonusesPerc: number;
+        ikbPerc: number;
+        ikbHousingPerc: number;
+        ikbFoodPerc: number;
+        ikbTransportPerc: number;
+        ikbHealthcarePerc: number;
+        ikbChildcarePerc: number;
+        ikbChildEducationPerc: number;
+    };
+    remuneration?: {
+        baseWage: number;
+        bonuses: number;
+        ikb: number;
+        ikbHousing: number;
+        ikbFood: number;
+        ikbTransport: number;
+        ikbHealthcare: number;
+        ikbChildcare: number;
+        ikbChildEducation: number;
+        total: number;
+    };
+    livingWage?: WorkerLwDetails;
+}
 
 export interface Worker extends EntityResponse {
     id: string;
     entryId: string;
     name: string;
     gender: Gender;
-    numberOfWorkers: number;
-    monthlyWage: number;
-    monthlyBonus: number;
-    percentageOfYearWorked: number;
-    employeeTax: number;
-    employerTax: number;
-    livingWageGap: number;
-    absoluteIncrease?: number;
+    nrOfWorkers: number;
+    percOfYearWorked: number;
+    remuneration?: WorkerRemuneration;
+    livingWage?: {
+        livingWageGap: number;
+        annualLivingWageGap: number;
+        annualLivingWageGapAllWorkers: number;
+    };
+    scenario: Scenario;
 }
 
 export type WorkerListResponse = PagedResponse<'workers', Worker>;
@@ -28,6 +63,6 @@ export enum WorkersSortFilterKey {
 }
 
 export interface WorkersPagingParams extends PagingParams {
-    sort?: { [key in WorkersSortFilterKey]?: (Sort.ASC | Sort.DESC) };
+    sort?: { [key in WorkersSortFilterKey]?: Sort.ASC | Sort.DESC };
     filter?: { [key in WorkersSortFilterKey]: string | number | boolean | (string | number | boolean)[] };
 }

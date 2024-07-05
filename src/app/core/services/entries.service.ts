@@ -59,11 +59,14 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioCreateMutation) => {
                 return this.entriesApi.createScenario(mutation.entryId, mutation.scenarioCreate);
             },
-            onSuccess: async (entry: Entry) => await this.refreshEntry(entry.id),
+            onSuccess: async (entry: Entry) => {
+                await this.refreshEntry(entry.id);
+                await this.refreshWorkers();
+            },
         });
     }
 
-    public updateScenarioSpecs() {
+    public updateScenario() {
         return useMutation<ScenarioUpdateMutation, Entry>({
             mutationFn: (mutation: ScenarioUpdateMutation) => {
                 return this.entriesApi.updateScenario(mutation.entryId, mutation.scenarioUpdate);

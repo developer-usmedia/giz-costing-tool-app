@@ -15,9 +15,9 @@ import { Entry, ScenarioSpecsForm, ScenarioType } from '@api/models';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 
 interface ScenarioSpecsFormGroup {
-    employeeTax: FormControl<number | null>;
-    employerTax: FormControl<number | null>;
-    absoluteIncrease?: FormControl<number | null>;
+    taxEmployee: FormControl<number | null>;
+    taxEmployer: FormControl<number | null>;
+    remunerationIncrease?: FormControl<number | null>;
 }
 
 @Component({
@@ -35,8 +35,8 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
 
     public form: FormGroup<ScenarioSpecsFormGroup> = new FormGroup(
         {
-            employeeTax: new FormControl<number | null>(
-                this.entry?.scenario?.specifications?.employeeTax ?? null,
+            taxEmployee: new FormControl<number | null>(
+                this.entry?.scenario?.specification?.taxEmployee ?? null,
                 {
                     validators: [
                         Validators.required,
@@ -45,8 +45,8 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
                     ],
                 },
             ),
-            employerTax: new FormControl<number | null>(
-                this.entry?.scenario?.specifications?.employerTax ?? null,
+            taxEmployer: new FormControl<number | null>(
+                this.entry?.scenario?.specification?.taxEmployer ?? null,
                 {
                     validators: [
                         Validators.required,
@@ -64,9 +64,9 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
 
     public ngOnInit() {
         if (this.type === ScenarioType.ABSOLUTE_INCREASE) {
-            this.form.addControl('absoluteIncrease',
+            this.form.addControl('remunerationIncrease',
                 new FormControl<number | null>(
-                    this.entry?.scenario?.specifications?.absoluteIncrease ?? null,
+                    this.entry?.scenario?.specification?.remunerationIncrease ?? null,
                     {
                         validators: [
                             Validators.required,
@@ -91,24 +91,25 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
     }
 
     public patchForm() {
-        const employeeTax = this.entry?.scenario?.specifications?.employeeTax;
-        if (employeeTax !== undefined && employeeTax !== null) {
+        // TODO: take a look at distribution-form.comp.ts -> patchForm to possible clean this up
+        const taxEmployee = this.entry?.scenario?.specification?.taxEmployee;
+        if (taxEmployee !== undefined && taxEmployee !== null) {
             this.form.patchValue({
-                employeeTax: employeeTax,
+                taxEmployee: taxEmployee,
             });
         }
 
-        const employerTax = this.entry?.scenario?.specifications?.employerTax;
-        if (employerTax !== undefined && employerTax !== null) {
+        const taxEmployer = this.entry?.scenario?.specification?.taxEmployer;
+        if (taxEmployer !== undefined && taxEmployer !== null) {
             this.form.patchValue({
-                employerTax: employerTax,
+                taxEmployer: taxEmployer,
             });
         }
 
-        const absoluteIncrease = this.entry?.scenario?.specifications?.absoluteIncrease;
-        if (absoluteIncrease !== undefined && absoluteIncrease !== null) {
+        const remunerationIncrease = this.entry?.scenario?.specification?.remunerationIncrease;
+        if (remunerationIncrease !== undefined && remunerationIncrease !== null) {
             this.form.patchValue({
-                absoluteIncrease: absoluteIncrease,
+                remunerationIncrease: remunerationIncrease,
             });
         }
     }

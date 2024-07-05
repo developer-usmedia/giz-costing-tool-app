@@ -13,7 +13,6 @@
     box-shadow: $c-shadow-6;
     padding: $p-gutter calc(var(--button-height) + #{ $p-gutter--small }) $p-gutter $p-gutter;
     position: relative;
-    width: min(100vw, 350px);
 
     &__buttons {
         display: flex;

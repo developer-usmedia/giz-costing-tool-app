@@ -6,13 +6,222 @@
         link: [moduleRoute.ENTRIES, entryId(), entryRoute.SCENARIO],
     }"
 >
-    <a giz-stroke-button [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.BUYER ]"
-       i18n="continue" [disabled]="true">Continue</a>
+    @if (state === 'view') {
+        <!-- [disabled]="tabDisabled(routes.DISTRIBUTION)" -->
+        <button giz-stroke-button
+                theme="basic"
+                i18n="distribution change-specs"
+                (click)="changeSpecs()"
+        >Change specifications</button>
+
+        <a giz-stroke-button
+           [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.BUYER ]"
+           i18n="continue">Continue</a>
+    }
 </giz-entry-header>
+
 <div class="distribution">
     @if (!entry || entry.isLoading()) {
         <giz-spinner class="distribution__spinner" [size]="'large'"></giz-spinner>
+    } @else if (entry.isError() || !entry.data()) {
+        <p i18n="entry error">Error getting entry.</p>
     } @else {
-        <div class="todo">Distribution</div>
+        <div class="distribution__info">
+            <h3 class="distribution__title" i18n="description">Description</h3>
+            <p class="distribution__description" i18n="distribution description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia in lacus scelerisque mattis. In bibendum bibendum dolor laoreet </p>
+
+            @if (state === 'edit') {
+                <div class="distribution__comments">
+                    <h3 i18n="comments">Comments</h3>
+                    <p i18n="distribution comment1">Sed condimentum purus lectus, dignissim euismod arcu sagittis sed. Nulla dictum magna at nunc hendrerit, quis placerat nulla vulputate. Donec sodales at mauris nec sodales.</p>
+                    <p i18n="distribution comment2">Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam. </p>
+                </div>
+            }
+        </div>
+        <div class="distribution__specification">
+            @if (state === 'edit' && entry.data(); as entry) {
+               <giz-distribution-form
+                   [entry]="entry"
+                   [submitting]="!!saving"
+                   (submitForm)="saveDistribution($event)"
+               ></giz-distribution-form>
+            } 
+            @if (state !== 'edit' && entry.data(); as entry) {
+                <table class="distribution__table">
+                    <caption i18n="distributions specs title">Specifications</caption>
+                    <tbody>
+                        <tr>
+                            <th i18n="distribution base-wage label">Base wage</th>
+                            <td>{{ entry?.scenario?.distribution?.baseWagePerc }} %</td>
+                        </tr>
+                        <tr>
+                            <th i18n="distribution bonuses label">Bonuses</th>
+                            <td>{{ entry?.scenario?.distribution?.bonusesPerc }} %</td>
+                        </tr>
+                        <tr>
+                            <th i18n="distribution ikb label">In-kind benefits</th>
+                            <td>{{ entry?.scenario?.distribution?.ikbPerc }} %</td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+
+        @if (state === 'view') {
+            <div class="distribution__categories">
+                <div class="distribution__header">
+                    <h3 class="distribution__title" i18n="scenario overview-title">Overview</h3>
+                    <p class="distribution__intro" i18n="distribution overview-description">Below an overview per job-category. If you want, you can overrule the default distribution per job-category.</p>
+                    <div class="distribution__buttons">
+                        <button giz-stroke-button theme="basic"
+                                i18n="workers reset" (click)="resetAll()">Reset all</button>
+                    </div>
+
+                </div>
+
+                @if (!workers || workers.isLoading()) {
+                    <giz-spinner class="distribution__spinner" [size]="'large'"></giz-spinner>
+                } @else if (workers.isError()) {
+                    <div class="distribution__no-results">
+                        <p i18n="workers error">Error getting workers.</p>
+                        @for (error of workers.error().error | keyvalue; track error) {
+                            <p>{{ error.value }}</p>
+                        }
+                    </div>
+                } @else {
+                    @if (workers.data() && workers.data()?._embedded?.workers?.length) {
+                        <giz-table
+                            [caption]="getTableCaption(workers.data()?.paging?.totalEntities)"
+                            [hideCaption]="true"
+                            [type]="'compact'"
+                        >
+                            <ng-container thead>
+                                <tr giz-table-header-row>
+                                    <th giz-table-header-cell size="wide" i18n="workers job-category label">Job category</th>
+                                    <th giz-table-header-cell alignment="right" i18n="workers total-monthly-remnueration label">Total monthly remuneration</th>
+                                    <th giz-table-header-cell alignment="right" i18n="workers wage-increase label">Wage Increase</th>
+                                    <th giz-table-header-cell alignment="right" class="distribution__worker-distro-label">
+                                        <span i18n="workers distribution label">Distribution</span>
+                                        <span class="table-cell__subtitle" i18n="workers distribution sublabel">Base wage / Bonusses / IKB</span>
+                                    </th>
+                                    <th giz-table-header-cell type="actions"><span i18n="entry action">Actions</span></th>
+                                </tr>
+                            </ng-container>
+                            <ng-container>
+                                @for (worker of workers.data()?._embedded?.workers; track worker) {
+                                    <tr giz-table-row [editted]="!!worker.scenario.specification?.remunerationIncrease">
+                                        <td giz-table-cell size="wide">
+                                            {{ worker.name }}
+                                            <span class="table-cell__subtitle"> - {{ worker.gender | gender }}, {{ worker.nrOfWorkers }}
+                                                <span i18n="workers">{ worker.nrOfWorkers, plural, =1 {worker} other {workers}}</span>
+                                        </span>
+                                        </td>
+                                        <td giz-table-cell alignment="right">
+                                            {{ worker.remuneration?.baseWage | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                        </td>
+                                        <td giz-table-cell alignment="right">
+                                            {{ (worker.scenario.specification?.remunerationIncrease ?? entry.data()?.scenario?.specification?.remunerationIncrease) ?? 0 | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
+                                        </td>
+                                        <td giz-table-cell alignment="right" gizTooltipAdvanced [template]="tooltipIKB"
+                                        >
+                                            {{ worker.scenario.distribution?.baseWagePerc }}% /  {{ worker.scenario.distribution?.bonusesPerc }}% /  {{ worker.scenario.distribution?.ikbPerc }}%
+                                            <ng-template #tooltipIKB>
+                                                <giz-tooltip-advanced>
+                                                    <table>
+                                                        <caption i18n="distribution">Distribution</caption>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th i18n="base-wage">Base Wage</th>
+                                                                <td>{{ worker.scenario.distribution?.baseWagePerc }}%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th i18n="base-wage">Bonuses</th>
+                                                                <td>{{ worker.scenario.distribution?.bonusesPerc }}%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th i18n="base-wage">In-kind benefits</th>
+                                                                <td>{{ worker.scenario.distribution?.ikbPerc }}%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th i18n="base-wage">In-kind benefits</th>
+                                                                <td>
+                                                                    @if (worker.scenario.distribution?.ikbFoodPerc && worker.scenario.distribution?.ikbFoodPerc ?? 0 > 0) {
+                                                                        <span>{{ worker.scenario.distribution?.ikbFoodPerc }}% <span i18n="housing">Housing</span></span>
+                                                                        <br>
+                                                                    }
+                                                                    @if (worker.scenario.distribution?.ikbFoodPerc && worker.scenario.distribution?.ikbFoodPerc ?? 0 > 0) {
+                                                                        <span>{{ worker.scenario.distribution?.ikbFoodPerc }}% <span i18n="food">Food</span></span>
+                                                                        <br>
+                                                                    }
+                                                                    @if (worker.scenario.distribution?.ikbTransportPerc && worker.scenario.distribution?.ikbTransportPerc ?? 0 > 0) {
+                                                                        <span>{{ worker.scenario.distribution?.ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>
+                                                                        <br>
+                                                                    }
+                                                                    @if (worker.scenario.distribution?.ikbHealthcarePerc && worker.scenario.distribution?.ikbHealthcarePerc ?? 0 > 0) {
+                                                                        <span>{{ worker.scenario.distribution?.ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>
+                                                                        <br>
+                                                                    }
+                                                                    @if (worker.scenario.distribution?.ikbChildcarePerc && worker.scenario.distribution?.ikbChildcarePerc ?? 0 > 0) {
+                                                                        <span>{{ worker.scenario.distribution?.ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>
+                                                                        <br>
+                                                                    }
+                                                                    @if (worker.scenario.distribution?.ikbChildEducationPerc && worker.scenario.distribution?.ikbChildEducationPerc ?? 0 > 0) {
+                                                                        <span>{{ worker.scenario.distribution?.ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
+                                                                    }
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- <ng-container buttons>
+                                                        <a giz-stroke-button [routerLink]="(routes.DASHBOARD)">Button</a>
+                                                    </ng-container> -->
+                                                </giz-tooltip-advanced>
+                                            </ng-template>
+                                        </td>
+                                        <td giz-table-cell type="actions">
+                                            <button type="button" giz-icon-button
+                                                    theme="basic" [icon]="icon.EDIT"
+                                                    i18n="distribution worker edit"
+                                                    (click)="editWorker(worker)"
+                                            >Edit distribution
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            </ng-container>
+                        </giz-table>
+
+                        @if ((workers.data()?.paging?.totalPages ?? 1 ) > 1) {
+                            <giz-paginator
+                                [page]="(workers.data()?.paging?.index ?? 0) + 1"
+                                [pageSize]="workers.data()?.paging?.size ?? 25"
+                                [total]="workers.data()?.paging?.totalPages ?? 0"
+                                [totalEntries]="workers.data()?.paging?.totalEntities ?? 0"
+                                [showFirstLast]="false"
+                                (paging)="onPageEvent($event)"
+                            ></giz-paginator>
+                        }
+                    } @else {
+                        <div class="workers__no-results">
+                            <p i18n="workers not-found">No job categories found.</p>
+                        </div>
+                    }
+                }
+            </div>
+        }
     }
 </div>
+
+<giz-entry-footer
+    [backButton]="{
+            icon: icon.ARROW_BACK,
+            text: backTitle,
+        link: [moduleRoute.ENTRIES, entryId(), entryRoute.SCENARIO],
+        }"
+>
+    @if (state === 'view') {
+        <a giz-stroke-button
+           [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.BUYER ]"
+           i18n="continue">Continue</a>
+    }
+</giz-entry-footer>

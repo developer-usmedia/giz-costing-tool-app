@@ -7,9 +7,13 @@ import { Status } from '@shared/components/status/status.type';
 export class EntryStatusPipe implements PipeTransform {
     public transform(status: EntryStatus): Status {
         switch (status) {
-            case EntryStatus.OPEN:
+            case EntryStatus.INFO_DONE:
+            case EntryStatus.PAYROLL_DONE:
                 return 'started';
-            case EntryStatus.FINALIZED:
+            case EntryStatus.SCENARIO_DONE:
+            case EntryStatus.DISTRIBUTION_DONE:
+                return 'ongoing';
+            case EntryStatus.COMPLETED:
                 return 'done';
             default:
                 return 'empty';

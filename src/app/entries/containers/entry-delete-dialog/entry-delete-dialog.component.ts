@@ -1,5 +1,5 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import { Component, inject, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { Entry } from '@api/models';
@@ -41,7 +41,7 @@ export class EntryDeleteDialogComponent {
                 this.dialogRef?.close({ deleted: true });
             },
             onError: (error) => {
-                this.toastr.error($localize`:entry-delete error:Something went wrong deleting the entry`, error.message);
+                this.toastr.error($localize`:entry-delete error:Something went wrong deleting the entry`);
                 this.dialogRef?.close({ deleted: false });
             },
         });

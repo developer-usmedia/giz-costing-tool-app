@@ -1,51 +1,62 @@
 import { EntityResponse } from '@api/models/response.model';
 import { Scenario } from '@api/models/scenario.model';
+import { FacilityLwDetails } from './living-wage-details';
 
 export interface Entry extends EntityResponse {
     id: string;
-    year: string;
     status: EntryStatus;
-    administrativeCosts: number;
-    defaultEmployerTax: number;
-    defaultEmployeeTax: number;
-    nrOfJobcategories: number;
-    nrOfWorkers: number;
-    nrOfWorkersBelowLW: number;
-    facility: Facility;
-    benchmark: Benchmark;
-    averageLwGap: number;
-    largestLwGap: number;
-    matrixId?: string;
-    verified?: boolean;
-    scenario?: Scenario | null;
-}
-
-export interface Facility {
-    id: string;
-    name: string;
-    country: string;
-    countryCode: string;
-    currencyCode: string;
-    product: string;
-    unitOfProduction: string;
-    annualProduction: number;
-    buyerName: string;
-    buyerProportion: number;
-}
-
-export interface Benchmark {
-    year: string;
-    source: string;
-    locality: string;
-    region: string;
-    currencyCode: string;
-    currencyName: string;
-    localValue: number;
+    facility: {
+        id?: string;
+        name: string;
+        country: string;
+        products: string;
+        production: {
+            unit: string;
+            amount: number;
+        };
+    };
+    matrix?: {
+        id: string;
+        verified: number;
+    };
+    payroll: {
+        year: string;
+        currencyCode: string;
+        nrOfJobCategories: number;
+        nrOfWorkers: number;
+    };
+    benchmark: {
+        year: string;
+        source: string;
+        region: string;
+        locality: string;
+        value: number;
+    };
+    livingWage?: FacilityLwDetails;
+    buyer?: {
+        name: string;
+        proportion: {
+            amount: number;
+            unit: string;
+        };
+        annualCosts?: {
+            remunerationIncrease: number;
+            taxCosts: number;
+            additionalCosts: number;
+            totalCosts: number;
+            totalCostsPerUnit: number;
+        };
+    };
+    scenario?: Scenario;
 }
 
 export enum EntryStatus {
-    OPEN = 'STATUS_OPEN',
-    FINALIZED = 'STATUS_FINALIZED',
+    CREATED = 'CREATED',              // Grey
+    INFO_DONE = 'INFO_DONE',          // Yellow
+    PAYROLL_DONE = 'PAYROLL_DONE',
+    SCENARIO_DONE = 'SCENARIO_DONE',  // Blue
+    DISTRIBUTION_DONE = 'DISTRIBUTION_DONE',
+    COMPLETED = 'COMPLETED',          // Green
 }
 
 export enum CellValidationError {
@@ -71,4 +82,3 @@ export interface ImportValidationError {
     value?: string;
     errorType: CellValidationError;
 }
-

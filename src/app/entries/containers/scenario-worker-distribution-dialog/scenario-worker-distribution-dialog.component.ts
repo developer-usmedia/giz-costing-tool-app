@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Entry, ScenarioWorkerSpecsForm, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
 import { EntriesService } from '@core/services';
 
+// TODO: THIS IS A COPY OF SCENARIO WORKER SPECS: CHANGE TO DISTRIBUTION
 interface ScenarioWorkerSpecsFormGroup {
     remunerationIncrease: FormControl<number | null>;
 }
@@ -23,13 +24,13 @@ export interface ScenarioWorkerSpecsResult {
 }
 
 @Component({
-    selector: 'giz-scenario-worker-specs-dialog',
-    templateUrl: './scenario-worker-specs-dialog.component.html',
-    styleUrl: './scenario-worker-specs-dialog.component.scss',
+    selector: 'giz-scenario-worker-distribution-dialog',
+    templateUrl: './scenario-worker-distribution-dialog.component.html',
+    styleUrl: './scenario-worker-distribution-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
 })
-export class ScenarioWorkerSpecsDialogComponent implements OnChanges {
+export class ScenarioWorkerDistributionDialogComponent implements OnChanges {
     public readonly entriesService = inject(EntriesService);
     public scenarioUpdateWorkerMutation = this.entriesService.updateScenarioWorker();
 
@@ -121,7 +122,7 @@ export class ScenarioWorkerSpecsDialogComponent implements OnChanges {
                 this.toastr.success($localize`:scenario-worker-update success:Successfully updated the job-category`);
                 this.dialogRef?.close({ update: true });
             },
-            onError: () => {
+            onError: (error) => {
                 this.toastr.error($localize`:scenario-worker-update error:Something went wrong while updating the job-category`);
                 this.dialogRef?.close({ update: false });
             },

@@ -8,72 +8,72 @@
         @if (type === scenarioType.ABSOLUTE_INCREASE) {
             <div class="form__definition">
                 <p class="form__label" i18n="specs average-gap">Average living wag gap</p>
-                <p class="form__text">{{ entry.averageLwGap }} {{ entry.facility.currencyCode }}</p>
+                <p class="form__text">{{ entry.livingWage?.avgLivingWageGap }} {{ entry.payroll.currencyCode }}</p>
             </div>
 
             <div class="form__definition">
-                <p class="form__label" i18n="specs largest-gap">Largest living wag gap</p>
-                <p class="form__text">{{ entry.largestLwGap }} {{ entry.facility.currencyCode }}</p>
+                <p class="form__label" i18n="specs largest-gap">Largest  living wag gap</p>
+                <p class="form__text">{{ entry.livingWage?.largestLivingWageGap }} {{ entry.payroll.currencyCode }}</p>
             </div>
 
             <div class="form__field" [ngClass]="{
-                'is-error': form | hasError: 'absoluteIncrease',
-                'has-value': form | hasValue: 'absoluteIncrease',
+                'is-error': form | hasError: 'remunerationIncrease',
+                'has-value': form | hasValue: 'remunerationIncrease',
             }">
-                <label class="form__label" for="absoluteIncrease" i18n="form absoluteIncrease label">Minimum wage increase</label>
+                <label class="form__label" for="remunerationIncrease" i18n="form remunerationIncrease label">Minimum wage increase</label>
 
                 <div class="form__input">
-                    <input type="number" id="absoluteIncrease" formControlName="absoluteIncrease"/>
-                    <span class="form__postfix">{{ entry.facility.currencyCode }}</span>
+                    <input type="number" id="remunerationIncrease" formControlName="remunerationIncrease"/>
+                    <span class="form__postfix">{{ entry.payroll.currencyCode }}</span>
                 </div>
-                @if (form | showError: 'absoluteIncrease' :'required') {
-                    <div class="form__error" i18n="form absoluteIncrease errors required">Field is required</div>
+                @if (form | showError: 'remunerationIncrease' :'required') {
+                    <div class="form__error" i18n="form remunerationIncrease errors required">Field is required</div>
                 }
-                @if (form | showError: 'absoluteIncrease' :'min') {
-                    <div class="form__error" i18n="form absoluteIncrease errors min">Minimum is 0</div>
+                @if (form | showError: 'remunerationIncrease' :'min') {
+                    <div class="form__error" i18n="form remunerationIncrease errors min">Minimum is 0</div>
                 }
             </div>
         }
 
         <div class="form__field" [ngClass]="{
-            'is-error': form | hasError: 'employeeTax',
-            'has-value': form | hasValue: 'employeeTax',
+            'is-error': form | hasError: 'taxEmployee',
+            'has-value': form | hasValue: 'taxEmployee',
         }">
-            <label class="form__label" for="employeeTax" i18n="form employeeTax label">Levies and taxes employee</label>
+            <label class="form__label" for="taxEmployee" i18n="form taxEmployee label">Levies and taxes employee</label>
 
             <div class="form__input">
-                <input type="number" id="employeeTax" formControlName="employeeTax"/>
+                <input type="number" id="taxEmployee" formControlName="taxEmployee"/>
                 <span class="form__postfix">%</span>
             </div>
-            @if (form | showError: 'employeeTax' :'required') {
-                <div class="form__error" i18n="form employeeTax errors required">Field is required</div>
+            @if (form | showError: 'taxEmployee' :'required') {
+                <div class="form__error" i18n="form taxEmployee errors required">Field is required</div>
             }
-            @if (form | showError: 'employeeTax' :'min') {
-                <div class="form__error" i18n="form employeeTax errors min">Minimum is 0</div>
+            @if (form | showError: 'taxEmployee' :'min') {
+                <div class="form__error" i18n="form taxEmployee errors min">Minimum is 0</div>
             }
-            @if (form | showError: 'employeeTax' :'max') {
-                <div class="form__error" i18n="form employeeTax errors max">Maximum is 100</div>
+            @if (form | showError: 'taxEmployee' :'max') {
+                <div class="form__error" i18n="form taxEmployee errors max">Maximum is 100</div>
             }
         </div>
 
         <div class="form__field" [ngClass]="{
-            'is-error': form | hasError: 'employerTax',
-            'has-value': form | hasValue: 'employerTax',
+            'is-error': form | hasError: 'taxEmployer',
+            'has-value': form | hasValue: 'taxEmployer',
         }">
-            <label class="form__label" for="employerTax" i18n="form employerTax label">Levies and taxes employer</label>
+            <label class="form__label" for="taxEmployer" i18n="form taxEmployer label">Levies and taxes employer</label>
 
             <div class="form__input">
-                <input type="number" id="employerTax" formControlName="employerTax"/>
+                <input type="number" id="taxEmployer" formControlName="taxEmployer"/>
                 <span class="form__postfix">%</span>
             </div>
-            @if (form | showError: 'employerTax' :'required') {
-                <div class="form__error" i18n="form employerTax errors required">Field is required</div>
+            @if (form | showError: 'taxEmployer' :'required') {
+                <div class="form__error" i18n="form taxEmployer errors required">Field is required</div>
             }
-            @if (form | showError: 'employerTax' :'min') {
-                <div class="form__error" i18n="form employerTax errors min">Minimum is 0</div>
+            @if (form | showError: 'taxEmployer' :'min') {
+                <div class="form__error" i18n="form taxEmployer errors min">Minimum is 0</div>
             }
-            @if (form | showError: 'employerTax' :'max') {
-                <div class="form__error" i18n="form employerTax errors max">Maximum is 100</div>
+            @if (form | showError: 'taxEmployer' :'max') {
+                <div class="form__error" i18n="form taxEmployer errors max">Maximum is 100</div>
             }
         </div>
     </div>

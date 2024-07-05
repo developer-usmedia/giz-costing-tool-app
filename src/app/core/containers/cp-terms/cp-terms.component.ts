@@ -1,8 +1,8 @@
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
-import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
     selector: 'giz-cp-terms',
@@ -29,7 +29,7 @@ export class CpTermsComponent implements OnInit {
                 this.loading$.next(false);
             },
             error: (error: HttpErrorResponse) => {
-                this.toastr.error($localize`:content load error:Failed to get markdown file`, error.message);
+                this.toastr.error($localize`:content load error:Failed to get markdown file`);
                 console.error(error);
             },
         });

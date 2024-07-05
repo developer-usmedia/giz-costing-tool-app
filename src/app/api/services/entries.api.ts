@@ -1,7 +1,14 @@
 import { HttpEvent, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ScenarioWorkerSpecsForm, ScenarioWorkersReset, Worker, WorkerListResponse } from '@api/models';
+import { lastValueFrom, Observable } from 'rxjs';
 
+import {
+    ScenarioSpecsForm,
+    ScenarioWorkerSpecsForm,
+    ScenarioWorkersReset,
+    Worker,
+    WorkerListResponse,
+} from '@api/models';
 import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
 import { Entry } from '@api/models/entry.model';
 import { ScenarioCreate, ScenarioUpdate } from '@api/models/scenario.model';
@@ -9,7 +16,6 @@ import { BaseApi } from '@api/services/base.api';
 import { PagingParams } from '@core/models';
 import { getHttpParamsFromPagingParams, GetParamsCodec } from '@shared/helpers';
 import { environment } from 'environments/environment';
-import { lastValueFrom, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class EntriesApi extends BaseApi {

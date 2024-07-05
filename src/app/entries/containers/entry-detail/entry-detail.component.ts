@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { Entry } from '@api/models';
+import { Entry, EntryStatus } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, RouteName } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
@@ -59,7 +59,7 @@ export class EntryDetailComponent implements OnDestroy {
         }
 
         if (routeName === ENTRY_ROUTE.DISTRIBUTION) {
-            return !entry.scenario;
+            return ![EntryStatus.PAYROLL_DONE, EntryStatus.SCENARIO_DONE].includes(entry.status);
         }
         //
         // if (routeName === ENTRY_ROUTE.BUYER) {
