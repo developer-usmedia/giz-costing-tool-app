@@ -1,20 +1,19 @@
 import { HttpEvent, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { lastValueFrom, Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 
 import {
-    ScenarioSpecsForm,
-    ScenarioWorkerSpecsForm,
+    ScenarioWorkerForm,
     ScenarioWorkersReset,
     Worker,
     WorkerListResponse,
 } from '@api/models';
 import { EntriesListResponse, EntriesPagingParams } from '@api/models/entries.model';
-import { Entry } from '@api/models/entry.model';
+import { Entry, EntryUpdateForm } from '@api/models/entry.model';
 import { ScenarioCreate, ScenarioUpdate } from '@api/models/scenario.model';
 import { BaseApi } from '@api/services/base.api';
 import { PagingParams } from '@core/models';
-import { getHttpParamsFromPagingParams, GetParamsCodec } from '@shared/helpers';
+import { GetParamsCodec, getHttpParamsFromPagingParams } from '@shared/helpers';
 import { environment } from 'environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -44,6 +43,14 @@ export class EntriesApi extends BaseApi {
         );
     }
 
+    public updateEntry(id: string, updateForm: EntryUpdateForm): Promise<Entry> {
+        return lastValueFrom(this.patch<Entry>(`${ this.endpoints.entries }/${ id }`, updateForm));
+    }
+    
+    public deleteEntry(id: string): Promise<Entry> {
+        return lastValueFrom(this.delete<Entry>(`${ this.endpoints.entries }/${ id }`));
+    }
+
     public getWorkers(entryId: string, paging?: PagingParams): Promise<WorkerListResponse> {
         const url = this.endpoints.workers.replace(':id', entryId);
         let params = new HttpParams({ encoder: new GetParamsCodec() });
@@ -51,10 +58,6 @@ export class EntriesApi extends BaseApi {
             params = getHttpParamsFromPagingParams(paging, params);
         }
         return lastValueFrom(this.get<WorkerListResponse>(url, params));
-    }
-
-    public deleteEntry(id: string): Promise<Entry> {
-        return lastValueFrom(this.delete<Entry>(`${ this.endpoints.entries }/${ id }`));
     }
 
     public import(file: File): Observable<HttpEvent<Entry>> {
@@ -78,7 +81,7 @@ export class EntriesApi extends BaseApi {
         return lastValueFrom(this.delete<Entry>(url));
     }
 
-    public updateScenarioWorker(entryId: string, workerId: string, workerForm: ScenarioWorkerSpecsForm) {
+    public updateScenarioWorker(entryId: string, workerId: string, workerForm: ScenarioWorkerForm) {
         const url = `${this.endpoints.workers.replace(':id', entryId) }/${ workerId }`;
         return lastValueFrom(this.patch<Worker>(url, workerForm));
     }

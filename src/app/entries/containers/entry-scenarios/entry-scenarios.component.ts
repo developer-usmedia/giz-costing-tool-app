@@ -136,7 +136,7 @@ export class EntryScenariosComponent implements OnDestroy {
                     this.scenarioState = 'view';
                     this.toastr.success($localize`:scenario-update success:Successfully updated scenario`);
                 },
-                onError: (error) => {
+                onError: () => {
                     this.toastr.error($localize`:scenario-update error:Something went wrong updating the scenario`);
                 },
             });
@@ -153,7 +153,7 @@ export class EntryScenariosComponent implements OnDestroy {
                     this.toastr.success($localize`:scenario-update success:Successfully updated scenario`);
                     this.scenarioState = 'view';
                 },
-                onError: (error) => {
+                onError: () => {
                     this.toastr.error($localize`:scenario-update error:Something went wrong updating the scenario`);
                 },
             });
@@ -181,7 +181,7 @@ export class EntryScenariosComponent implements OnDestroy {
                         this.selectedScenario = undefined;
                         this.scenarioState = 'start';
                     },
-                    onError: (error) => {
+                    onError: () => {
                         this.toastr.error($localize`:scenario-delete error:Something went wrong while resetting the scenario`);
                     },
                 });

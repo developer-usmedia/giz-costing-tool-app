@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject, Input, LOCALE_ID, ViewEncapsulation } from '@angular/core';
 
-import { ICON } from '@shared/components/icon/icon.enum';
 import { LOCALE, LOCALES, ROOT_ROUTE } from '@core/models';
+import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
     selector: 'giz-footer',
@@ -20,6 +20,10 @@ export class FooterComponent {
     constructor(
         @Inject(LOCALE_ID) public currentLocale: string,
     ) {}
+
+    get year(): number {
+        return new Date().getFullYear();
+    }
 
     public languageLabel(locale: string): string {
         switch (locale) {

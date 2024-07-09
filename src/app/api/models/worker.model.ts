@@ -66,3 +66,26 @@ export interface WorkersPagingParams extends PagingParams {
     sort?: { [key in WorkersSortFilterKey]?: Sort.ASC | Sort.DESC };
     filter?: { [key in WorkersSortFilterKey]: string | number | boolean | (string | number | boolean)[] };
 }
+
+// Forms
+export interface WorkerDistroForm {
+    bonusesPerc: number;
+    ikbHousingPerc: number;
+    ikbFoodPerc: number;
+    ikbTransportPerc: number;
+    ikbHealthcarePerc: number;
+    ikbChildcarePerc: number;
+    ikbChildEducationPerc: number;
+}
+
+export interface ScenarioWorkerForm {
+    remunerationIncrease?: number | null;
+    distribution?: WorkerDistroForm;
+}
+
+// Mutations
+export interface ScenarioWorkerUpdateMutation {
+    entryId: string;
+    workerId: string;
+    scenarioWorkerUpdate: ScenarioWorkerForm;
+}

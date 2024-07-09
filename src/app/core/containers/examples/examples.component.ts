@@ -1,6 +1,6 @@
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { Entry, EntryStatus } from '@api/models';
+import { BuyerUnit, Entry, EntryStatus } from '@api/models';
 import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 
 import { ICON } from '@shared/components/icon/icon.enum';
@@ -26,7 +26,7 @@ export class ExamplesComponent {
             country: 'Brazil',
             products: 'Bananas',
             production: {
-                unit: 'Box',
+                unit: BuyerUnit.UNIT,
                 amount: 20000,
             },
         },
@@ -57,7 +57,7 @@ export class ExamplesComponent {
             name: 'Lidl',
             proportion: {
                 amount: 50,
-                unit: 'percentage',
+                unit: BuyerUnit.PERCENTAGE,
             },
         },
         _links: {

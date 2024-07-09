@@ -5,6 +5,7 @@ import {
     EntriesListResponse,
     EntriesPagingParams,
     Entry,
+    EntryUpdateMutation,
     ScenarioCreateMutation,
     ScenarioUpdateMutation,
     ScenarioWorkersResetMutation,
@@ -47,6 +48,15 @@ export class EntriesService {
         return this.queryClient.invalidateQueries({ queryKey: ['workers'] });
     }
 
+    public updateEntry() {
+        return useMutation<EntryUpdateMutation, Entry>({
+            mutationFn: (form: EntryUpdateMutation) => {
+                return this.entriesApi.updateEntry(form.entryId, form.entryUpdate);
+            },
+            onSuccess: async (entry: Entry) => await this.refreshEntry(entry.id),
+        });
+    }
+
     public deleteEntry() {
         return useMutation<string, Entry>({
             mutationFn: (id: string) => this.entriesApi.deleteEntry(id),
@@ -87,7 +97,7 @@ export class EntriesService {
     public updateScenarioWorker() {
         return useMutation<ScenarioWorkerUpdateMutation, Worker>({
             mutationFn: (mutation: ScenarioWorkerUpdateMutation) => {
-                return this.entriesApi.updateScenarioWorker(mutation.entryId, mutation.workerId, mutation.scenarioWorkerSpecsUpdate);
+                return this.entriesApi.updateScenarioWorker(mutation.entryId, mutation.workerId, mutation.scenarioWorkerUpdate);
             },
             onSuccess: async () => await this.refreshWorkers(),
         });

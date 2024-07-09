@@ -39,8 +39,8 @@ export interface Scenario extends EntityResponse {
 export interface ScenarioSpecsForm {
     taxEmployee: number;
     taxEmployer: number;
-    overheadCosts?: number;
-    remunerationIncrease?: number;
+    overheadCosts: number;
+    remunerationIncrease: number;
 }
 
 export interface ScenarioDistroForm {
@@ -53,9 +53,6 @@ export interface ScenarioDistroForm {
     ikbChildEducationPerc: number;
 }
 
-export interface ScenarioWorkerSpecsForm {
-    remunerationIncrease?: number | null;
-}
 
 export interface ScenarioCreate {
     type: ScenarioType;
@@ -81,12 +78,6 @@ export interface ScenarioCreateMutation {
 export interface ScenarioUpdateMutation {
     entryId: string;
     scenarioUpdate: ScenarioUpdate;
-}
-
-export interface ScenarioWorkerUpdateMutation {
-    entryId: string;
-    workerId: string;
-    scenarioWorkerSpecsUpdate: ScenarioWorkerSpecsForm;
 }
 
 export interface ScenarioWorkersResetMutation {

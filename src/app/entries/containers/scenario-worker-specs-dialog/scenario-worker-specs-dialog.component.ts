@@ -11,7 +11,7 @@ import {
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
-import { Entry, ScenarioWorkerSpecsForm, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
+import { Entry, ScenarioWorkerForm, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
 import { EntriesService } from '@core/services';
 
 interface ScenarioWorkerSpecsFormGroup {
@@ -88,12 +88,12 @@ export class ScenarioWorkerSpecsDialogComponent implements OnChanges {
             this.form.disable();
             const formValue = this.form.getRawValue();
 
-            this.update(formValue as ScenarioWorkerSpecsForm);
+            this.update(formValue as ScenarioWorkerForm);
         }
     }
 
     public reset() {
-        const form: ScenarioWorkerSpecsForm = {
+        const form: ScenarioWorkerForm = {
             remunerationIncrease: null,
         };
         this.update(form);
@@ -103,7 +103,7 @@ export class ScenarioWorkerSpecsDialogComponent implements OnChanges {
         this.dialogRef?.close({ update: false });
     }
 
-    private update(form: ScenarioWorkerSpecsForm) {
+    private update(form: ScenarioWorkerForm) {
         if (!this.data.entry || !this.data.entry.scenario) {
             this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the scenario workers`);
             this.dialogRef?.close({ update: false });
@@ -113,7 +113,7 @@ export class ScenarioWorkerSpecsDialogComponent implements OnChanges {
         const mutation: ScenarioWorkerUpdateMutation = {
             entryId: this.data.entry.id,
             workerId: this.data.worker.id,
-            scenarioWorkerSpecsUpdate: form,
+            scenarioWorkerUpdate: form,
         };
 
         this.scenarioUpdateWorkerMutation.mutate(mutation, {

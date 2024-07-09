@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
@@ -61,7 +60,7 @@ export class AuthService {
         if (this.getToken().accessToken) {
             this.authApi
                 .logout()
-                .catch((error: HttpErrorResponse) => {
+                .catch(() => {
                     this.toastr.error($localize`:logout error:Something went wrong logging out`);
                 })
                 .finally(() => {

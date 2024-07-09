@@ -19,7 +19,7 @@ export class ButtonComponent {
 
     @Input()
     @HostBinding('disabled')
-    disabled: boolean | null = null;
+    disabled = false;
 
     @Input()
     @HostBinding('tabindex')

@@ -58,7 +58,7 @@ export class ResetWorkersDialogComponent {
                 this.toastr.error($localize`:scenario-workers-reset success:Successfully reset the job-categories`);
                 this.dialogRef?.close({ reset: true });
             },
-            onError: (error) => {
+            onError: () => {
                 this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the job-categories`);
                 this.dialogRef?.close({ reset: false });
             },

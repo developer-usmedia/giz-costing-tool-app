@@ -15,16 +15,15 @@ import {
     ScenarioDistroForm,
     ScenarioType,
     ScenarioUpdateMutation,
-    Worker, WorkerListResponse,
+    Worker,
+    WorkerListResponse,
     WorkersPagingParams,
 } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, PagingParams, ROOT_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { ResetWorkersDialogComponent } from '../reset-workers-dialog/reset-workers-dialog.component';
-import {
-    ScenarioWorkerSpecsDialogComponent,
-} from '../scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
+import { ScenarioWorkerDistroDialogComponent } from '../scenario-worker-distro-dialog/scenario-worker-ditrso-dialog.component';
 
 @Component({
     selector: 'giz-entry-distribution',
@@ -124,9 +123,9 @@ export class EntryDistributionComponent implements OnDestroy {
     }
 
     public editWorker(worker: Worker) {
-        this.dialog.open(ScenarioWorkerSpecsDialogComponent, {
+        this.dialog.open(ScenarioWorkerDistroDialogComponent, {
             data: {
-                entry: this.entry,
+                entry: this.entry.data(),
                 worker: worker,
             },
         });

@@ -1,7 +1,7 @@
 <div class="footer" [ngClass]="{ 'footer--white': theme === 'white' }">
     <ul class="footer__items">
         <li class="footer__item">
-            <span class="footer__legal" translate="no">© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH</span>
+            <span class="footer__legal" translate="no">© GIZ (GmbH) {{ year }}</span>
         </li>
         <li class="footer__item">
             <a [routerLink]="(routes.TERMS)"

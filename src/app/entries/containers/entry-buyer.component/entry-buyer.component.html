@@ -1,0 +1,118 @@
+<giz-entry-header
+    [title]="title"
+    [backButton]="{
+        icon: icon.ARROW_BACK,
+        text: backTitle,
+        link: [moduleRoute.ENTRIES, entryId(), entryRoute.DISTRIBUTION]
+    }"
+>
+    <!-- [disabled]="tabDisabled(routes.buyer)" -->
+    @if (submitting) {
+        <giz-spinner theme="grey" [reverse]="true">
+            <span i18n="distro saving">Saving...</span>
+        </giz-spinner>
+    }
+    <button type="submit" giz-stroke-button i18n="save-and-continue" (click)="submit()">Save and continue</button>
+</giz-entry-header>
+
+
+<div class="buyer">
+    @if (!entry || entry.isLoading()) {
+        <giz-spinner class="buyer__spinner" [size]="'large'"></giz-spinner>
+    } @else if (entry.isError() || !entry.data()) {
+        <p i18n="entry error">Error getting entry.</p>
+    } @else {
+        <div class="buyer__info todo">
+            <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form__container">
+                    <div class="form__header">
+                        <h3 class="form__title" i18n="buyer title">Buyer specification (optional)</h3>
+                        <p class="form__intro" i18n="buyer intro">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt
+                            molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.
+                        </p>
+                    </div>
+
+                    <div
+                        class="form__field"
+                        [ngClass]="{
+                            'is-error': form | hasError: 'buyerName',
+                            'has-value': form | hasValue: 'buyerName'
+                        }"
+                    >
+                        <label class="form__label" for="buyerName" i18n="form buyerName label">Name*</label>
+
+                        <div class="form__input">
+                            <input type="text" id="buyerName" formControlName="buyerName" />
+                        </div>
+                        @if (form | showError: 'buyerName' : 'required') {
+                            <div class="form__error" i18n="form buyerName errors required">Field is required</div>
+                        }
+                    </div>
+
+                    <div
+                        class="form__field"
+                        [ngClass]="{
+                            'is-error': form | hasError: 'buyerAmount',
+                            'has-value': form | hasValue: 'buyerAmount'
+                        }"
+                    >
+                        <label class="form__label" for="buyerAmount" i18n="form buyerAmount label"
+                            >Buying proportion</label
+                        >
+
+                        <div class="form__input">
+                            <input type="number" id="buyerAmount" formControlName="buyerAmount" />
+                        </div>
+                        @if (form | showError: 'buyerAmount' : 'required') {
+                            <div class="form__error" i18n="form buyerAmount errors required">Field is required</div>
+                        }
+                        @if (form | showError: 'buyerAmount' : 'min') {
+                            <div class="form__error" i18n="form buyerAmount errors min">Minimum is 0</div>
+                        }
+                        @if (form | showError: 'buyerAmount' : 'max') {
+                            <div class="form__error" i18n="form buyerAmount errors max">Maximum is 100</div>
+                        }
+
+                        <!-- <div class="form__input">
+                            <select formControlName="buyerUnit">
+                                @for (unit of buyerUnits; track $index) {
+                                    <option [ngValue]="unit">{{ unit }}</option>
+                                }
+                            </select>
+                        </div> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="buyer__specification">
+            @if (entry.data(); as entry) {
+                <table class="buyer__table">
+                    <tbody>
+                        <tr>
+                            <th i18n="buyer base-wage label">Entry ID</th>
+                            <td>{{ entry?.id }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="buyer bonuses label">Created on</th>
+                            <td>{{ entry?.createdAt | date }}</td>
+                        </tr>
+                        <tr>
+                            <th i18n="buyer ikb label">Edited on</th>
+                            <td>{{ entry?.updatedAt | date }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+    }
+</div>
+
+<giz-entry-footer
+    [backButton]="{
+        icon: icon.ARROW_BACK,
+        text: backTitle,
+        link: [moduleRoute.ENTRIES, entryId(), entryRoute.DISTRIBUTION]
+    }"
+>
+</giz-entry-footer>

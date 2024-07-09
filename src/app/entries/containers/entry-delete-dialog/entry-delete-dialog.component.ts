@@ -40,7 +40,7 @@ export class EntryDeleteDialogComponent {
                 this.toastr.success($localize`:entry-delete success:Your entry has been successfully deleted`);
                 this.dialogRef?.close({ deleted: true });
             },
-            onError: (error) => {
+            onError: () => {
                 this.toastr.error($localize`:entry-delete error:Something went wrong deleting the entry`);
                 this.dialogRef?.close({ deleted: false });
             },

@@ -109,7 +109,8 @@
                             </ng-container>
                             <ng-container>
                                 @for (worker of workers.data()?._embedded?.workers; track worker) {
-                                    <tr giz-table-row [editted]="!!worker.scenario.specification?.remunerationIncrease">
+                                    <tr giz-table-row>
+                                    <!-- [editted]="!!worker.scenario.distribution?.baseWagePerc" -->
                                         <td giz-table-cell size="wide">
                                             {{ worker.name }}
                                             <span class="table-cell__subtitle"> - {{ worker.gender | gender }}, {{ worker.nrOfWorkers }}
@@ -124,7 +125,7 @@
                                         </td>
                                         <td giz-table-cell alignment="right" gizTooltipAdvanced [template]="tooltipIKB"
                                         >
-                                            {{ worker.scenario.distribution?.baseWagePerc }}% /  {{ worker.scenario.distribution?.bonusesPerc }}% /  {{ worker.scenario.distribution?.ikbPerc }}%
+                                            {{ worker.scenario.distribution?.baseWagePerc ?? entry.data()?.scenario?.distribution?.baseWagePerc }}% /  {{ worker.scenario.distribution?.bonusesPerc ?? entry.data()?.scenario?.distribution?.bonusesPerc }}% /  {{ worker.scenario.distribution?.ikbPerc  ?? entry.data()?.scenario?.distribution?.ikbPerc }}%
                                             <ng-template #tooltipIKB>
                                                 <giz-tooltip-advanced>
                                                     <table>
@@ -132,42 +133,31 @@
                                                         <tbody>
                                                             <tr>
                                                                 <th i18n="base-wage">Base Wage</th>
-                                                                <td>{{ worker.scenario.distribution?.baseWagePerc }}%</td>
+                                                                <td>{{ worker.scenario.distribution?.baseWagePerc ?? entry.data()?.scenario?.distribution?.baseWagePerc }}%</td>
                                                             </tr>
                                                             <tr>
                                                                 <th i18n="base-wage">Bonuses</th>
-                                                                <td>{{ worker.scenario.distribution?.bonusesPerc }}%</td>
+                                                                <td>{{ worker.scenario.distribution?.bonusesPerc ?? entry.data()?.scenario?.distribution?.bonusesPerc }}%</td>
                                                             </tr>
                                                             <tr>
                                                                 <th i18n="base-wage">In-kind benefits</th>
-                                                                <td>{{ worker.scenario.distribution?.ikbPerc }}%</td>
+                                                                <td>{{ worker.scenario.distribution?.ikbPerc ?? entry.data()?.scenario?.distribution?.ikbPerc }}%</td>
                                                             </tr>
                                                             <tr>
                                                                 <th i18n="base-wage">In-kind benefits</th>
                                                                 <td>
-                                                                    @if (worker.scenario.distribution?.ikbFoodPerc && worker.scenario.distribution?.ikbFoodPerc ?? 0 > 0) {
-                                                                        <span>{{ worker.scenario.distribution?.ikbFoodPerc }}% <span i18n="housing">Housing</span></span>
-                                                                        <br>
-                                                                    }
-                                                                    @if (worker.scenario.distribution?.ikbFoodPerc && worker.scenario.distribution?.ikbFoodPerc ?? 0 > 0) {
-                                                                        <span>{{ worker.scenario.distribution?.ikbFoodPerc }}% <span i18n="food">Food</span></span>
-                                                                        <br>
-                                                                    }
-                                                                    @if (worker.scenario.distribution?.ikbTransportPerc && worker.scenario.distribution?.ikbTransportPerc ?? 0 > 0) {
-                                                                        <span>{{ worker.scenario.distribution?.ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>
-                                                                        <br>
-                                                                    }
-                                                                    @if (worker.scenario.distribution?.ikbHealthcarePerc && worker.scenario.distribution?.ikbHealthcarePerc ?? 0 > 0) {
-                                                                        <span>{{ worker.scenario.distribution?.ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>
-                                                                        <br>
-                                                                    }
-                                                                    @if (worker.scenario.distribution?.ikbChildcarePerc && worker.scenario.distribution?.ikbChildcarePerc ?? 0 > 0) {
-                                                                        <span>{{ worker.scenario.distribution?.ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>
-                                                                        <br>
-                                                                    }
-                                                                    @if (worker.scenario.distribution?.ikbChildEducationPerc && worker.scenario.distribution?.ikbChildEducationPerc ?? 0 > 0) {
-                                                                        <span>{{ worker.scenario.distribution?.ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
-                                                                    }
+                                                                    <!-- TODO: Fix this via getter -->
+                                                                    <span>{{ worker.scenario.distribution?.ikbHousingPerc ?? entry.data()?.scenario?.distribution?.ikbHousingPerc }}% <span i18n="housing">Housing</span></span>
+                                                                    <br>
+                                                                    <span>{{ worker.scenario.distribution?.ikbFoodPerc ?? entry.data()?.scenario?.distribution?.ikbFoodPerc }}% <span i18n="food">Food</span></span>
+                                                                    <br>
+                                                                    <span>{{ worker.scenario.distribution?.ikbTransportPerc ?? entry.data()?.scenario?.distribution?.ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>
+                                                                    <br>
+                                                                    <span>{{ worker.scenario.distribution?.ikbHealthcarePerc ?? entry.data()?.scenario?.distribution?.ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>
+                                                                    <br>
+                                                                    <span>{{ worker.scenario.distribution?.ikbChildcarePerc ?? entry.data()?.scenario?.distribution?.ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>
+                                                                    <br>
+                                                                    <span>{{ worker.scenario.distribution?.ikbChildEducationPerc ?? entry.data()?.scenario?.distribution?.ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -188,6 +178,7 @@
                                         </td>
                                     </tr>
                                 }
+                                
                             </ng-container>
                         </giz-table>
 
@@ -207,6 +198,7 @@
                         </div>
                     }
                 }
+                
             </div>
         }
     }

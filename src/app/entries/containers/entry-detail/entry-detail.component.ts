@@ -35,15 +35,17 @@ export class EntryDetailComponent implements OnDestroy {
     private readonly destroyed$ = new Subject<void>();
 
     constructor() {
-       this.activatedRoute.params.pipe(
-            map((params: Params) => String(params['id'])),
-            takeUntil(this.destroyed$),
-            distinctUntilChanged(),
-        ).subscribe((id) => {
-            if (id) {
-                this.entryId.set(id);
-            }
-        });
+        this.activatedRoute.params
+            .pipe(
+                map((params: Params) => String(params['id'])),
+                takeUntil(this.destroyed$),
+                distinctUntilChanged(),
+            )
+            .subscribe((id) => {
+                if (id) {
+                    this.entryId.set(id);
+                }
+            });
     }
 
     public ngOnDestroy(): void {
@@ -59,16 +61,25 @@ export class EntryDetailComponent implements OnDestroy {
         }
 
         if (routeName === ENTRY_ROUTE.DISTRIBUTION) {
-            return ![EntryStatus.PAYROLL_DONE, EntryStatus.SCENARIO_DONE].includes(entry.status);
+            return ![
+                EntryStatus.SCENARIO_DONE, 
+                EntryStatus.DISTRIBUTION_DONE, 
+                EntryStatus.COMPLETED,
+            ].includes(entry.status);
         }
-        //
-        // if (routeName === ENTRY_ROUTE.BUYER) {
-        //     return !entry.scenario && !entry.distribution;
-        // }
-        //
-        // if (routeName === ENTRY_ROUTE.REPORT) {
-        //     return !entry.scenario && !entry.distribution && !entry.facility.buyerProportion;
-        // }
+
+        if (routeName === ENTRY_ROUTE.BUYER) {
+            return ![
+                EntryStatus.DISTRIBUTION_DONE, 
+                EntryStatus.COMPLETED,
+            ].includes(entry.status);
+        }
+        
+        if (routeName === ENTRY_ROUTE.REPORT) {
+            return ![
+                EntryStatus.COMPLETED,
+            ].includes(entry.status);
+        }
 
         return true;
     }

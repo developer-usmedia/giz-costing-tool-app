@@ -17,7 +17,8 @@ import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 interface ScenarioSpecsFormGroup {
     taxEmployee: FormControl<number | null>;
     taxEmployer: FormControl<number | null>;
-    remunerationIncrease?: FormControl<number | null>;
+    overheadCosts: FormControl<number | null>;
+    remunerationIncrease: FormControl<number | null>;
 }
 
 @Component({
@@ -33,30 +34,33 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
     @Input() submitting = false;
     @Output() submitForm = new EventEmitter<ScenarioSpecsForm>();
 
-    public form: FormGroup<ScenarioSpecsFormGroup> = new FormGroup(
-        {
-            taxEmployee: new FormControl<number | null>(
-                this.entry?.scenario?.specification?.taxEmployee ?? null,
-                {
-                    validators: [
-                        Validators.required,
-                        Validators.min(0),
-                        Validators.max(100),
-                    ],
-                },
-            ),
-            taxEmployer: new FormControl<number | null>(
-                this.entry?.scenario?.specification?.taxEmployer ?? null,
-                {
-                    validators: [
-                        Validators.required,
-                        Validators.min(0),
-                        Validators.max(100),
-                    ],
-                },
-            ),
-        },
-    );
+    public form: FormGroup<ScenarioSpecsFormGroup> = new FormGroup({
+        taxEmployee: new FormControl<number | null>(
+            this.entry?.scenario?.specification?.taxEmployee ?? null, 
+            { 
+                validators: [Validators.required, Validators.min(0), Validators.max(100)],
+            }
+        ),
+        taxEmployer: new FormControl<number | null>(
+            this.entry?.scenario?.specification?.taxEmployer ?? null, 
+            {
+                validators: [Validators.required, Validators.min(0), Validators.max(100)],
+            }
+        ),
+        // Hidden fields for now
+        overheadCosts: new FormControl<number | null>(
+            this.entry?.scenario?.specification?.overheadCosts ?? null, 
+            {
+                validators: [Validators.min(0), Validators.max(999999999)],
+            }
+        ),
+        remunerationIncrease: new FormControl<number | null>(
+            this.entry?.scenario?.specification?.remunerationIncrease ?? null,
+            {
+                validators: [Validators.min(0)], // Required is added in onInit
+            },
+        ),
+    });
 
     protected readonly authroute = AUTH_ROUTE;
     protected readonly moduleRoute = MODULE_ROUTE;
@@ -64,17 +68,9 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
 
     public ngOnInit() {
         if (this.type === ScenarioType.ABSOLUTE_INCREASE) {
-            this.form.addControl('remunerationIncrease',
-                new FormControl<number | null>(
-                    this.entry?.scenario?.specification?.remunerationIncrease ?? null,
-                    {
-                        validators: [
-                            Validators.required,
-                            Validators.min(0),
-                        ],
-                    }
-                ),
-            );
+            // TODO: Thisneeds fixing before merge
+            this.form.controls.remunerationIncrease.addValidators(Validators.required);
+            // this.form.controls['overheadCosts'].addValidators(Validators.required); // TODO: remove when field is added
         }
     }
 
@@ -121,7 +117,13 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
             this.submitting = true;
             this.form.disable();
             const formValue = this.form.getRawValue();
-            this.submitForm.emit(formValue as ScenarioSpecsForm);
+            const formData: ScenarioSpecsForm = {
+                taxEmployee: formValue.taxEmployee ?? 0,
+                taxEmployer: formValue.taxEmployer ?? 0,
+                overheadCosts: formValue.overheadCosts ?? 0,
+                remunerationIncrease: formValue.remunerationIncrease ?? 0,
+            };
+            this.submitForm.emit(formData);
         }
     }
 }

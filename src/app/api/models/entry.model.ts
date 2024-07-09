@@ -11,7 +11,7 @@ export interface Entry extends EntityResponse {
         country: string;
         products: string;
         production: {
-            unit: string;
+            unit: BuyerUnit;
             amount: number;
         };
     };
@@ -37,7 +37,7 @@ export interface Entry extends EntityResponse {
         name: string;
         proportion: {
             amount: number;
-            unit: string;
+            unit: BuyerUnit;
         };
         annualCosts?: {
             remunerationIncrease: number;
@@ -57,6 +57,11 @@ export enum EntryStatus {
     SCENARIO_DONE = 'SCENARIO_DONE',  // Blue
     DISTRIBUTION_DONE = 'DISTRIBUTION_DONE',
     COMPLETED = 'COMPLETED',          // Green
+}
+
+export enum BuyerUnit {
+    UNIT = 'UNIT',
+    PERCENTAGE = 'PERCENTAGE',
 }
 
 export enum CellValidationError {
@@ -81,4 +86,41 @@ export interface ImportValidationError {
     message?: string;
     value?: string;
     errorType: CellValidationError;
+}
+
+// Forms
+export interface EntryUpdateForm {
+    year?: number;
+    overheadCosts?: number;
+    taxEmployer?: number;
+    taxEmployee?: number;
+    currencyCode?: string;
+    buyer?: {
+        buyerName: string;
+        buyerProportion: number;
+        buyerUnit: BuyerUnit;
+    };
+    facility?: {
+        facilityId: string;
+        name: string;
+        countryCode: string;
+        country: string;
+        product: string;
+        productionUnit: string;
+        productionAmount: number;
+    };
+    benchmark?: {
+        year: number;
+        country: string;
+        region: string;
+        value: number;
+        locality: string;
+    };
+}
+
+
+// Mutations
+export interface EntryUpdateMutation {
+    entryId: string;
+    entryUpdate: EntryUpdateForm;
 }
