@@ -58,7 +58,17 @@
                         </tr>
                         <tr giz-table-row>
                             <th giz-table-header-cell i18n="distribution ikb label">In-kind benefits</th>
-                            <td giz-table-cell>{{ entry?.scenario?.distribution?.ikbPerc }} %</td>
+                            <td giz-table-cell>
+                                {{ entry?.scenario?.distribution?.ikbPerc }} %
+                                <p class="table-cell__subtitle">
+                                    <span>{{ entry?.scenario?.distribution?.ikbHousingPerc }}% <span i18n="housing">Housing</span></span>,
+                                    <span>{{ entry?.scenario?.distribution?.ikbFoodPerc }}% <span i18n="food">Food</span></span>,
+                                    <span>{{ entry?.scenario?.distribution?.ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>,
+                                    <span>{{ entry?.scenario?.distribution?.ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>,
+                                    <span>{{ entry?.scenario?.distribution?.ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>,
+                                    <span>{{ entry?.scenario?.distribution?.ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
+                                </p>
+                            </td>
                         </tr>
                     </ng-container>
                 </giz-table>
@@ -143,8 +153,8 @@
                                                                 <td giz-table-cell>{{ getDistribution(worker).bonusesPerc }}%</td>
                                                             </tr>
                                                             <tr giz-table-row>
-                                                                <th giz-table-header-cell i18n="base-wage">In-kind benefits</th>
-                                                                <td giz-table-cell>{{ getDistribution(worker).ikbPerc }}%</td>
+                                                                <th giz-table-header-cell i18n="base-wage" class="table-cell--ikb">In-kind benefits</th>
+                                                                <td giz-table-cell class="table-cell--ikb">{{ getDistribution(worker).ikbPerc }}%</td>
                                                             </tr>
                                                             <tr giz-table-row>
                                                                 <td giz-table-cell [colSpan]="2" alignment="right">
@@ -198,17 +208,16 @@
         }
     }
 </div>
-
-<giz-entry-footer
-    [backButton]="{
+@if (state === 'view') {
+    <giz-entry-footer
+        [backButton]="{
             icon: icon.ARROW_BACK,
             text: backTitle,
-        link: [moduleRoute.ENTRIES, entryId(), entryRoute.SCENARIO],
+            link: [moduleRoute.ENTRIES, entryId(), entryRoute.SCENARIO],
         }"
->
-    @if (state === 'view') {
+    >
         <a giz-stroke-button
            [routerLink]=" [moduleRoute.ENTRIES, entryId(), entryRoute.BUYER ]"
            i18n="continue">Continue</a>
-    }
-</giz-entry-footer>
+    </giz-entry-footer>
+}

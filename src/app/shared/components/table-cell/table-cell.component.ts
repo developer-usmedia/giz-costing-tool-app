@@ -34,7 +34,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
 })
 export class TableCellComponent implements OnChanges {
     @Input() alignment: 'left' | 'right' | 'center' = 'left';
-    @Input() type: 'default' | 'header' | 'actions' | 'link' = 'default';
+    @Input() type: 'default' | 'header' | 'actions' | 'link' | 'copy' = 'default';
     @Input() size: 'default' | 'wide' = 'default';
     @Input() sortable = false;
     @Input() sort?: Sort;
@@ -56,6 +56,8 @@ export class TableCellComponent implements OnChanges {
 
     @HostBinding('class.table-cell--header') get modHeader(): boolean { return this.type === 'header'; }
     @HostBinding('class.table-cell--actions') get modActions(): boolean { return this.type === 'actions'; }
+    @HostBinding('class.table-cell--link') get modLink(): boolean { return this.type === 'link'; }
+    @HostBinding('class.table-cell--copy') get modCopy(): boolean { return this.type === 'copy'; }
     @HostBinding('class.table-cell--sort') get modSort(): boolean { return this.sortable; }
     @HostBinding('class.table-cell--wide') get modeSizeWide(): boolean { return this.size === 'wide'; }
     @HostBinding('class.table-cell--center') get modeAlignmentCenter(): boolean { return this.alignment === 'center'; }

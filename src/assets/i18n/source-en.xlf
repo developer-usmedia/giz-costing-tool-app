@@ -114,11 +114,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">19,21</context>
+          <context context-type="linenumber">18,20</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">225,227</context>
+          <context context-type="linenumber">221,222</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -702,7 +702,7 @@
         <source>Account settings</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">25,27</context>
         </context-group>
         <note priority="1" from="description">menu account</note>
       </trans-unit>
@@ -710,7 +710,7 @@
         <source>Log out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">21,23</context>
+          <context context-type="linenumber">27,29</context>
         </context-group>
         <note priority="1" from="description">menu logout</note>
       </trans-unit>
@@ -932,7 +932,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">36,37</context>
+          <context context-type="linenumber">35,36</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap comment-1</note>
       </trans-unit>
@@ -976,7 +976,7 @@
         <source>Something went wrong logging out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">64</context>
         </context-group>
         <note priority="1" from="description">logout error</note>
       </trans-unit>
@@ -984,39 +984,75 @@
         <source>Specifications</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
+          <context context-type="linenumber">26,28</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">4,5</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">31,32</context>
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
+          <context context-type="linenumber">56</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">51,52</context>
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
+          <context context-type="linenumber">174</context>
         </context-group>
-        <note priority="1" from="description">distro title</note>
+        <note priority="1" from="description">distribution title</note>
       </trans-unit>
       <trans-unit id="1377439816855561266" datatype="html">
         <source> Please specify how you would like to redistribute the additional funds (in % per category). If no specifications are chosen all funds will be allocated to the base wage. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">6,7</context>
+          <context context-type="linenumber">8,9</context>
         </context-group>
-        <note priority="1" from="description">distro intro</note>
+        <note priority="1" from="description">distribution intro</note>
+      </trans-unit>
+      <trans-unit id="2886523807619591085" datatype="html">
+        <source>Job-category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">worker-specs job-category</note>
+      </trans-unit>
+      <trans-unit id="4852876626163360610" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {worker} other {workers}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">106,107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">124,125</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+        <note priority="1" from="description">data.workers</note>
       </trans-unit>
       <trans-unit id="8221824617679593083" datatype="html">
         <source>Base wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">16,18</context>
+          <context context-type="linenumber">33,35</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">54,55</context>
+          <context context-type="linenumber">52,53</context>
         </context-group>
         <note priority="1" from="description">form baseWage label</note>
       </trans-unit>
@@ -1024,39 +1060,39 @@
         <source>Minimum is 0</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">23,25</context>
+          <context context-type="linenumber">40,42</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">47,49</context>
+          <context context-type="linenumber">64,66</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">67,69</context>
+          <context context-type="linenumber">84,86</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">90,92</context>
+          <context context-type="linenumber">108,110</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">113,115</context>
+          <context context-type="linenumber">131,133</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">136,138</context>
+          <context context-type="linenumber">154,156</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">159,161</context>
+          <context context-type="linenumber">177,179</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">182,184</context>
+          <context context-type="linenumber">200,202</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">205,207</context>
+          <context context-type="linenumber">223,225</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
@@ -1071,7 +1107,11 @@
           <context context-type="linenumber">73,75</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">71,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">34,38</context>
         </context-group>
         <note priority="1" from="description">form baseWagePerc errors min</note>
@@ -1080,39 +1120,39 @@
         <source>Maximum is <x id="INTERPOLATION" equiv-text="{{ this.maxIkbPercMapping[&apos;baseWagePerc&apos;] }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">26,27</context>
+          <context context-type="linenumber">43,44</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">67,68</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">70,71</context>
+          <context context-type="linenumber">87,88</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">93,94</context>
+          <context context-type="linenumber">111,112</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">116,117</context>
+          <context context-type="linenumber">134,135</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">139,140</context>
+          <context context-type="linenumber">157,158</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">162,163</context>
+          <context context-type="linenumber">180,181</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">185,186</context>
+          <context context-type="linenumber">203,204</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">208,209</context>
+          <context context-type="linenumber">226,227</context>
         </context-group>
         <note priority="1" from="description">form baseWagePerc errors imax</note>
       </trans-unit>
@@ -1120,7 +1160,7 @@
         <source>Unallocated funds will go to base wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">28,31</context>
+          <context context-type="linenumber">45,48</context>
         </context-group>
         <note priority="1" from="description">form basewage hint</note>
       </trans-unit>
@@ -1128,15 +1168,15 @@
         <source>Bonuses</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">37,39</context>
+          <context context-type="linenumber">54,56</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">58,59</context>
+          <context context-type="linenumber">56,57</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">138,139</context>
+          <context context-type="linenumber">152,153</context>
         </context-group>
         <note priority="1" from="description">form bonus label</note>
       </trans-unit>
@@ -1144,31 +1184,31 @@
         <source>Field is required</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">44,46</context>
+          <context context-type="linenumber">61,63</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">87,89</context>
+          <context context-type="linenumber">105,107</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">110,112</context>
+          <context context-type="linenumber">128,130</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">133,135</context>
+          <context context-type="linenumber">151,153</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">156,158</context>
+          <context context-type="linenumber">174,176</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">179,181</context>
+          <context context-type="linenumber">197,199</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">202,204</context>
+          <context context-type="linenumber">220,222</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
@@ -1183,7 +1223,15 @@
           <context context-type="linenumber">70,72</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">49,51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">68,70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">31,33</context>
         </context-group>
         <note priority="1" from="description">form bonusesPerc errors required</note>
@@ -1192,19 +1240,15 @@
         <source>In-kind benefits</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">60,62</context>
+          <context context-type="linenumber">77,79</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">62,63</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">142,143</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">146,147</context>
+          <context context-type="linenumber">156,157</context>
         </context-group>
         <note priority="1" from="description">form ikb label</note>
       </trans-unit>
@@ -1212,11 +1256,15 @@
         <source>Housing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">80,82</context>
+          <context context-type="linenumber">98,100</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">149,150</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">162,163</context>
         </context-group>
         <note priority="1" from="description">form ikb-housing label</note>
       </trans-unit>
@@ -1224,11 +1272,15 @@
         <source>Food</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">103,105</context>
+          <context context-type="linenumber">121,123</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">153,154</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">163,164</context>
         </context-group>
         <note priority="1" from="description">form ikb-food label</note>
       </trans-unit>
@@ -1236,11 +1288,15 @@
         <source>Transportation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">126,128</context>
+          <context context-type="linenumber">144,146</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">157,158</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">164,165</context>
         </context-group>
         <note priority="1" from="description">form ikb-transport label</note>
       </trans-unit>
@@ -1248,11 +1304,15 @@
         <source>Healthcare</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">149,151</context>
+          <context context-type="linenumber">167,169</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">161,162</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">165,166</context>
         </context-group>
         <note priority="1" from="description">form ikb-healthcare label</note>
       </trans-unit>
@@ -1260,7 +1320,7 @@
         <source>Child care</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">172,174</context>
+          <context context-type="linenumber">190,192</context>
         </context-group>
         <note priority="1" from="description">form ikb-childcare label</note>
       </trans-unit>
@@ -1268,11 +1328,15 @@
         <source>Child education</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">195,197</context>
+          <context context-type="linenumber">213,215</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">169,170</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">167,168</context>
         </context-group>
         <note priority="1" from="description">form ikb-education label</note>
       </trans-unit>
@@ -1280,23 +1344,35 @@
         <source>Saving...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">216,217</context>
+          <context context-type="linenumber">237,238</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">84,85</context>
         </context-group>
-        <note priority="1" from="description">distro saving</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+        <note priority="1" from="description">distribution saving</note>
       </trans-unit>
       <trans-unit id="574579636082611565" datatype="html">
         <source>Save and continue</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">219,222</context>
+          <context context-type="linenumber">240,242</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">87,90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">15,17</context>
         </context-group>
         <note priority="1" from="description">save-and-continue</note>
       </trans-unit>
@@ -1323,7 +1399,7 @@
           <context context-type="linenumber">14,15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">57,58</context>
         </context-group>
         <note priority="1" from="description">cancel</note>
@@ -1399,10 +1475,10 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">36,37</context>
+          <context context-type="linenumber">34,35</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">24,26</context>
         </context-group>
         <note priority="1" from="description">form remunerationIncrease label</note>
@@ -1425,6 +1501,10 @@
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">76,79</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">74,77</context>
+        </context-group>
         <note priority="1" from="description">form taxEmployee errors max</note>
       </trans-unit>
       <trans-unit id="7598535915029054801" datatype="html">
@@ -1443,7 +1523,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">35,36</context>
+          <context context-type="linenumber">34,35</context>
         </context-group>
         <note priority="1" from="description">comments</note>
       </trans-unit>
@@ -1451,7 +1531,7 @@
         <source>Close living wage gap</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">41,42</context>
+          <context context-type="linenumber">39,40</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap label</note>
       </trans-unit>
@@ -1459,7 +1539,7 @@
         <source>Yes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">41</context>
         </context-group>
         <note priority="1" from="description">yes</note>
       </trans-unit>
@@ -1467,7 +1547,7 @@
         <source>Taxes and levies employee</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">45,46</context>
+          <context context-type="linenumber">43,44</context>
         </context-group>
         <note priority="1" from="description">scenario taxes-employee label</note>
       </trans-unit>
@@ -1475,7 +1555,7 @@
         <source>Taxes and levies employer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">49,50</context>
+          <context context-type="linenumber">47,48</context>
         </context-group>
         <note priority="1" from="description">scenario taxes-employer label</note>
       </trans-unit>
@@ -1483,11 +1563,11 @@
         <source>Overview</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">60,62</context>
+          <context context-type="linenumber">58,60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">73,74</context>
+          <context context-type="linenumber">81,82</context>
         </context-group>
         <note priority="1" from="description">scenario overview-title</note>
       </trans-unit>
@@ -1495,11 +1575,11 @@
         <source>Reset all</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">68,69</context>
+          <context context-type="linenumber">66,67</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">77,78</context>
+          <context context-type="linenumber">85,86</context>
         </context-group>
         <note priority="1" from="description">workers reset</note>
       </trans-unit>
@@ -1507,11 +1587,11 @@
         <source>Error getting workers.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">77,78</context>
+          <context context-type="linenumber">75,76</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">86,87</context>
+          <context context-type="linenumber">94,95</context>
         </context-group>
         <note priority="1" from="description">workers error</note>
       </trans-unit>
@@ -1519,11 +1599,11 @@
         <source>Job category</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">91,92</context>
+          <context context-type="linenumber">89,90</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">100,101</context>
+          <context context-type="linenumber">108,109</context>
         </context-group>
         <note priority="1" from="description">workers job-category label</note>
       </trans-unit>
@@ -1531,11 +1611,11 @@
         <source>Total monthly remuneration</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">92,93</context>
+          <context context-type="linenumber">90,91</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">101,102</context>
+          <context context-type="linenumber">109,110</context>
         </context-group>
         <note priority="1" from="description">workers total-monthly-remnueration label</note>
       </trans-unit>
@@ -1543,7 +1623,7 @@
         <source>Living wage gap</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">93,94</context>
+          <context context-type="linenumber">91,92</context>
         </context-group>
         <note priority="1" from="description">workers living-wage-gap label</note>
       </trans-unit>
@@ -1551,11 +1631,11 @@
         <source>Wage Increase</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">94,95</context>
+          <context context-type="linenumber">92,93</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">102,103</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
         <note priority="1" from="description">workers wage-increase label</note>
       </trans-unit>
@@ -1563,11 +1643,11 @@
         <source>Actions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">97,98</context>
+          <context context-type="linenumber">95,96</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">107,108</context>
+          <context context-type="linenumber">115,116</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
@@ -1575,27 +1655,11 @@
         </context-group>
         <note priority="1" from="description">entry action</note>
       </trans-unit>
-      <trans-unit id="4852876626163360610" datatype="html">
-        <source>{VAR_PLURAL, plural, =1 {worker} other {workers}}</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">108,109</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">116,117</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
-          <context context-type="linenumber">10,11</context>
-        </context-group>
-        <note priority="1" from="description">workers</note>
-      </trans-unit>
       <trans-unit id="8695053182879947944" datatype="html">
         <source>Edit wage increase </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">126,127</context>
+          <context context-type="linenumber">124,125</context>
         </context-group>
         <note priority="1" from="description">scenario job-category edit</note>
       </trans-unit>
@@ -1603,11 +1667,11 @@
         <source>No job categories found.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
-          <context context-type="linenumber">147,148</context>
+          <context context-type="linenumber">145,146</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">206,207</context>
+          <context context-type="linenumber">202,203</context>
         </context-group>
         <note priority="1" from="description">workers not-found</note>
       </trans-unit>
@@ -1615,13 +1679,141 @@
         <source><x id="PH" equiv-text="total ?? &apos;-&apos;"/> job categories</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">86</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">170</context>
         </context-group>
         <note priority="1" from="description">job-categories table</note>
+      </trans-unit>
+      <trans-unit id="4809773059013012808" datatype="html">
+        <source>Error getting entry.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <note priority="1" from="description">entry error</note>
+      </trans-unit>
+      <trans-unit id="1625557282659064804" datatype="html">
+        <source>Buyer specification (optional)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+        <note priority="1" from="description">buyer title</note>
+      </trans-unit>
+      <trans-unit id="6721721958091366600" datatype="html">
+        <source> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <note priority="1" from="description">buyer intro</note>
+      </trans-unit>
+      <trans-unit id="7609748400763849959" datatype="html">
+        <source>Name*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+        <note priority="1" from="description">form buyerName label</note>
+      </trans-unit>
+      <trans-unit id="957863876617539663" datatype="html">
+        <source>Buying proportion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">61,64</context>
+        </context-group>
+        <note priority="1" from="description">form buyerAmount label</note>
+      </trans-unit>
+      <trans-unit id="2830146403309406023" datatype="html">
+        <source>Entry ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">93,94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">132,133</context>
+        </context-group>
+        <note priority="1" from="description">buyer base-wage label</note>
+      </trans-unit>
+      <trans-unit id="5736998174800408999" datatype="html">
+        <source>Created on</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">97,98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">146,147</context>
+        </context-group>
+        <note priority="1" from="description">buyer bonuses label</note>
+      </trans-unit>
+      <trans-unit id="5018167827249094529" datatype="html">
+        <source>Edited on</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">150,151</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+        <note priority="1" from="description">buyer ikb label</note>
+      </trans-unit>
+      <trans-unit id="1470503036790362672" datatype="html">
+        <source>Scenarios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">entry scenarios title</note>
+      </trans-unit>
+      <trans-unit id="5758832175407132868" datatype="html">
+        <source>Buyer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+        <note priority="1" from="description">entry buyer title</note>
+      </trans-unit>
+      <trans-unit id="6144961930761391732" datatype="html">
+        <source>Entry information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <note priority="1" from="description">entry-info title</note>
       </trans-unit>
       <trans-unit id="8997334476277229514" datatype="html">
         <source> Are you sure you want to delete this entry? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
@@ -1699,22 +1891,6 @@
         </context-group>
         <note priority="1" from="description">entry tab information</note>
       </trans-unit>
-      <trans-unit id="1470503036790362672" datatype="html">
-        <source>Scenarios</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">27,29</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">37</context>
-        </context-group>
-        <note priority="1" from="description">entry tab scenarios</note>
-      </trans-unit>
       <trans-unit id="3364877139419250569" datatype="html">
         <source>Distribution</source>
         <context-group purpose="location">
@@ -1723,25 +1899,17 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">104,105</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">131,132</context>
+          <context context-type="linenumber">112,113</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
+          <context context-type="linenumber">178</context>
         </context-group>
         <note priority="1" from="description">entry tab distribution</note>
-      </trans-unit>
-      <trans-unit id="5758832175407132868" datatype="html">
-        <source>Buyer</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">39,40</context>
-        </context-group>
-        <note priority="1" from="description">entry tab buyer</note>
       </trans-unit>
       <trans-unit id="7008439939460403347" datatype="html">
         <source>Report</source>
@@ -1755,7 +1923,7 @@
         <source>Change specifications</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
@@ -1763,23 +1931,11 @@
         </context-group>
         <note priority="1" from="description">distribution change-specs</note>
       </trans-unit>
-      <trans-unit id="4809773059013012808" datatype="html">
-        <source>Error getting entry.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">27,29</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">34,36</context>
-        </context-group>
-        <note priority="1" from="description">entry error</note>
-      </trans-unit>
       <trans-unit id="4902817035128594900" datatype="html">
         <source>Description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">30,31</context>
+          <context context-type="linenumber">29,30</context>
         </context-group>
         <note priority="1" from="description">description</note>
       </trans-unit>
@@ -1787,7 +1943,7 @@
         <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia in lacus scelerisque mattis. In bibendum bibendum dolor laoreet </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">31,33</context>
+          <context context-type="linenumber">30,32</context>
         </context-group>
         <note priority="1" from="description">distribution description</note>
       </trans-unit>
@@ -1795,15 +1951,27 @@
         <source>Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">37,39</context>
+          <context context-type="linenumber">36,38</context>
         </context-group>
         <note priority="1" from="description">distribution comment2</note>
+      </trans-unit>
+      <trans-unit id="3606331639094182283" datatype="html">
+        <source>Childcare</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">166,167</context>
+        </context-group>
+        <note priority="1" from="description">childcare</note>
       </trans-unit>
       <trans-unit id="8459828344934763915" datatype="html">
         <source>Below an overview per job-category. If you want, you can overrule the default distribution per job-category.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">74,75</context>
+          <context context-type="linenumber">82,83</context>
         </context-group>
         <note priority="1" from="description">distribution overview-description</note>
       </trans-unit>
@@ -1811,7 +1979,7 @@
         <source>Base wage / Bonusses / IKB</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">105,106</context>
+          <context context-type="linenumber">113,114</context>
         </context-group>
         <note priority="1" from="description">workers distribution sublabel</note>
       </trans-unit>
@@ -1819,23 +1987,15 @@
         <source>Base Wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">134,135</context>
+          <context context-type="linenumber">148,149</context>
         </context-group>
         <note priority="1" from="description">base-wage</note>
-      </trans-unit>
-      <trans-unit id="3606331639094182283" datatype="html">
-        <source>Childcare</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">165,166</context>
-        </context-group>
-        <note priority="1" from="description">childcare</note>
       </trans-unit>
       <trans-unit id="2198510667381193193" datatype="html">
         <source>Edit distribution </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">186,187</context>
+          <context context-type="linenumber">181,182</context>
         </context-group>
         <note priority="1" from="description">distribution worker edit</note>
       </trans-unit>
@@ -1843,7 +2003,7 @@
         <source>Successfully updated distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">121</context>
         </context-group>
         <note priority="1" from="description">distribution-update success</note>
       </trans-unit>
@@ -1851,7 +2011,7 @@
         <source>Something went wrong updating the distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">121</context>
+          <context context-type="linenumber">125</context>
         </context-group>
         <note priority="1" from="description">distribution-update error</note>
       </trans-unit>
@@ -2038,34 +2198,6 @@
           <context context-type="linenumber">129,130</context>
         </context-group>
         <note priority="1" from="description">entry entry title</note>
-      </trans-unit>
-      <trans-unit id="2830146403309406023" datatype="html">
-        <source>Entry ID</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">132,133</context>
-        </context-group>
-        <note priority="1" from="description">entry entry-id label</note>
-      </trans-unit>
-      <trans-unit id="5736998174800408999" datatype="html">
-        <source>Created on</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">146,147</context>
-        </context-group>
-        <note priority="1" from="description">entry created-on label</note>
-      </trans-unit>
-      <trans-unit id="5018167827249094529" datatype="html">
-        <source>Edited on</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">150,151</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
-          <context context-type="linenumber">55,56</context>
-        </context-group>
-        <note priority="1" from="description">entry edited-on label</note>
       </trans-unit>
       <trans-unit id="7949529201488904319" datatype="html">
         <source>Back to overview</source>
@@ -2271,26 +2403,90 @@
         </context-group>
         <note priority="1" from="description">scenario-workers-reset success</note>
       </trans-unit>
+      <trans-unit id="123342882357456712" datatype="html">
+        <source>Reset to defaults </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit reset</note>
+      </trans-unit>
+      <trans-unit id="7453395888030210040" datatype="html">
+        <source>Cancel </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
+          <context context-type="linenumber">75,76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
+          <context context-type="linenumber">98,99</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit cancel</note>
+      </trans-unit>
+      <trans-unit id="662506850593821474" datatype="html">
+        <source>Save </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit save</note>
+      </trans-unit>
+      <trans-unit id="7322814825699309120" datatype="html">
+        <source>Edit distribution for job-category</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">worker-edit title</note>
+      </trans-unit>
+      <trans-unit id="4391472316032604572" datatype="html">
+        <source>Something went wrong while resetting the scenario workers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+        <note priority="1" from="description">scenario-workers-reset error</note>
+      </trans-unit>
+      <trans-unit id="7046580487416980831" datatype="html">
+        <source>Successfully updated the job-category distribution</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <note priority="1" from="description">scenario-worker-update success</note>
+      </trans-unit>
+      <trans-unit id="6665692864067485236" datatype="html">
+        <source>Something went wrong while updating the job-category distribution</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <note priority="1" from="description">scenario-worker-update error</note>
+      </trans-unit>
       <trans-unit id="6050386603951460736" datatype="html">
         <source> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">3,5</context>
         </context-group>
         <note priority="1" from="description">worker-edit description</note>
       </trans-unit>
-      <trans-unit id="2886523807619591085" datatype="html">
-        <source>Job-category</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
-        </context-group>
-        <note priority="1" from="description">worker-specs job-category</note>
-      </trans-unit>
       <trans-unit id="3756081282663447693" datatype="html">
         <source>Living wag gap</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">16,17</context>
         </context-group>
         <note priority="1" from="description">worker-specs lw-gap</note>
@@ -2298,7 +2494,7 @@
       <trans-unit id="3096270128484955927" datatype="html">
         <source> Wage increase is set lower than living wage gap.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">39,41</context>
         </context-group>
         <note priority="1" from="description">wage-increase-too-low</note>
@@ -2306,7 +2502,7 @@
       <trans-unit id="7773671942343493215" datatype="html">
         <source>Reset to defaults</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">46,47</context>
         </context-group>
         <note priority="1" from="description">worker-edit reset</note>
@@ -2314,7 +2510,7 @@
       <trans-unit id="3493126540529865490" datatype="html">
         <source>Submitting...</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">49,51</context>
         </context-group>
         <note priority="1" from="description">worker-edit submitting</note>
@@ -2322,7 +2518,7 @@
       <trans-unit id="3768927257183755959" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.html</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
           <context context-type="linenumber">60,61</context>
         </context-group>
         <note priority="1" from="description">worker-edit save</note>
@@ -2330,23 +2526,15 @@
       <trans-unit id="3939221968477965004" datatype="html">
         <source>Edit scenario for job-category</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.ts</context>
           <context context-type="linenumber">62</context>
         </context-group>
         <note priority="1" from="description">worker-edit title</note>
       </trans-unit>
-      <trans-unit id="4391472316032604572" datatype="html">
-        <source>Something went wrong while resetting the scenario workers</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
-          <context context-type="linenumber">108</context>
-        </context-group>
-        <note priority="1" from="description">scenario-workers-reset error</note>
-      </trans-unit>
       <trans-unit id="2294023032790116500" datatype="html">
         <source>Successfully updated the job-category</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.ts</context>
           <context context-type="linenumber">121</context>
         </context-group>
         <note priority="1" from="description">scenario-worker-update success</note>
@@ -2354,7 +2542,7 @@
       <trans-unit id="4822765794292528325" datatype="html">
         <source>Something went wrong while updating the job-category</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component.ts</context>
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.ts</context>
           <context context-type="linenumber">125</context>
         </context-group>
         <note priority="1" from="description">scenario-worker-update error</note>
@@ -2524,22 +2712,6 @@
           <context context-type="linenumber">9,12</context>
         </context-group>
         <note priority="1" from="description">import file-upload description</note>
-      </trans-unit>
-      <trans-unit id="7453395888030210040" datatype="html">
-        <source>Cancel </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">26,28</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">75,76</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">98,99</context>
-        </context-group>
-        <note priority="1" from="description">import cancel</note>
       </trans-unit>
       <trans-unit id="2988182192591835823" datatype="html">
         <source>Select file </source>

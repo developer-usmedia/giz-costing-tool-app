@@ -113,7 +113,7 @@
                                         {{ worker.livingWage?.livingWageGap | currency: entry?.payroll?.currencyCode : '' | empty }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{  getWageIncrease(worker)  | currency: entry?.payroll?.currencyCode : '' | empty }} {{ entry?.payroll?.currencyCode }}
+                                        {{  getWageIncrease(worker) | currency: entry?.payroll?.currencyCode : '' | empty }}  {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
                                         <td giz-table-cell type="actions">

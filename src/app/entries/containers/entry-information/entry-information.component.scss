@@ -1,7 +1,6 @@
 @import 'config/colors';
 @import 'config/sizes';
 @import 'mixins/screen';
-@import 'mixins/table';
 @import 'mixins/typography';
 
 .info {
@@ -10,7 +9,20 @@
     gap: 1.5rem;
 
     &__table {
-        @include table-info;
+        --table-cell-padding: 0.5rem #{ $p-gutter--small };
+
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+
+        td, th {
+            word-break: keep-all;
+        }
+
+        tbody {
+            td {
+                text-align: right;
+            }
+        }
     }
 
     &__copy-cell {

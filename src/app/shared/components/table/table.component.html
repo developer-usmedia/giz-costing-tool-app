@@ -1,5 +1,6 @@
 <div class="table" gizScrollOverflow [ngClass]="{
     'is-loading': this.loading,
+    'table--compact': this.type === 'compact',
     'table--info': this.type === 'info',
     'table--overview': this.type === 'overview',
     'table--no-border': noBorder,

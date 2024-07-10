@@ -109,4 +109,13 @@
     &--sort {
         padding-right: $p-gutter + $p-gutter--small;
     }
+
+    &--copy {
+        white-space: nowrap;
+    }
+
+    &--ikb {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
 }
