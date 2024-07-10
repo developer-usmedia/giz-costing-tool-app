@@ -42,13 +42,13 @@ export class WorkerDistributionDialogComponent {
 
     public reset() {
         const form: DistributionForm = {
-            bonusesPerc: 0,
-            ikbHousingPerc: 0,
-            ikbFoodPerc: 0,
-            ikbTransportPerc: 0,
-            ikbHealthcarePerc: 0,
-            ikbChildcarePerc: 0,
-            ikbChildEducationPerc: 0,
+            bonusesPerc: null,
+            ikbHousingPerc: null,
+            ikbFoodPerc: null,
+            ikbTransportPerc: null,
+            ikbHealthcarePerc: null,
+            ikbChildcarePerc: null,
+            ikbChildEducationPerc: null,
         };
         this.update(form);
     }

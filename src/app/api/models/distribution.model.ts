@@ -11,11 +11,11 @@ export interface Distribution {
 }
 
 export interface DistributionForm {
-    bonusesPerc: number;
-    ikbHousingPerc: number;
-    ikbFoodPerc: number;
-    ikbTransportPerc: number;
-    ikbHealthcarePerc: number;
-    ikbChildcarePerc: number;
-    ikbChildEducationPerc: number;
+    bonusesPerc: number | null;
+    ikbHousingPerc: number | null;
+    ikbFoodPerc: number | null;
+    ikbTransportPerc: number | null;
+    ikbHealthcarePerc: number | null;
+    ikbChildcarePerc: number | null;
+    ikbChildEducationPerc: number | null;
 }

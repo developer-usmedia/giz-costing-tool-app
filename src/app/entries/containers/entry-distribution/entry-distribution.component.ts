@@ -24,7 +24,11 @@ import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
-import { ResetWorkersDialogComponent } from '../reset-workers-dialog/reset-workers-dialog.component';
+import {
+    ResetWorkersData,
+    ResetWorkersDialogComponent,
+    ResetWorkersResult,
+} from '../reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerDistributionDialogComponent } from '../worker-distribution-dialog/worker-distribution-dialog.component';
 
 @Component({
@@ -164,10 +168,10 @@ export class EntryDistributionComponent implements OnDestroy {
     }
 
     public resetAll() {
-        this.dialog.open(ResetWorkersDialogComponent, {
+        this.dialog.open<ResetWorkersResult, ResetWorkersData, ResetWorkersDialogComponent>(ResetWorkersDialogComponent, {
             data: {
-                entry: this.entry,
-                type: 'distributions',
+                entry: this.entry.data(),
+                type: 'distribution',
             },
         });
     }

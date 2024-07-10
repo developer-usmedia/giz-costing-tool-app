@@ -44,7 +44,7 @@ export interface ScenarioUpdate {
 }
 
 export interface ScenarioWorkersReset {
-    reset: 'specifications' | 'distributions' | 'all';
+    type: 'specification' | 'distribution' | 'all';
 }
 
 // Mutations

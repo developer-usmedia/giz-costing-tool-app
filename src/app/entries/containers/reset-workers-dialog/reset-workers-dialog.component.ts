@@ -6,8 +6,8 @@ import { Entry, ScenarioWorkersResetMutation } from '@api/models';
 import { EntriesService } from '@core/services';
 
 export interface ResetWorkersData {
-    entry: Entry;
-    type: 'specifications' | 'distributions' | 'all';
+    entry?: Entry;
+    type: 'specification' | 'distribution' | 'all';
 }
 
 export interface ResetWorkersResult {
@@ -42,7 +42,7 @@ export class ResetWorkersDialogComponent {
     }
 
     public reset() {
-        if (!this.data.entry || !this.data.entry.scenario) {
+        if (!this.data.entry || !this.data.entry?.scenario) {
             this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the job-categories`);
             this.dialogRef?.close({ reset: false });
             return;
@@ -50,12 +50,12 @@ export class ResetWorkersDialogComponent {
 
         const mutation: ScenarioWorkersResetMutation = {
             entryId: this.data.entry.id,
-            scenarioWorkersReset: { reset: this.data.type },
+            scenarioWorkersReset: { type: this.data.type },
         };
 
         this.scenarioResetWorkersMutation.mutate(mutation, {
             onSuccess: () => {
-                this.toastr.error($localize`:scenario-workers-reset success:Successfully reset the job-categories`);
+                this.toastr.success($localize`:scenario-workers-reset success:Successfully reset the job-categories`);
                 this.dialogRef?.close({ reset: true });
             },
             onError: () => {

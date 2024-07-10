@@ -19,7 +19,8 @@ import { MODULE_ROUTE, ScenarioInfo } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
 import {
-    ResetWorkersDialogComponent,
+    ResetWorkersData,
+    ResetWorkersDialogComponent, ResetWorkersResult,
 } from '../../containers/reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerScenarioSpecsDialogComponent } from '../../containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component';
 
@@ -77,10 +78,10 @@ export class ScenarioComponent {
     }
 
     public resetAll() {
-        this.dialog.open(ResetWorkersDialogComponent, {
+        this.dialog.open<ResetWorkersResult, ResetWorkersData, ResetWorkersDialogComponent>(ResetWorkersDialogComponent, {
             data: {
                 entry: this.entry,
-                type: 'specifications',
+                type: 'specification',
             },
         });
     }
