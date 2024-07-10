@@ -52,6 +52,10 @@ export class ScenarioComponent {
     ) {
     }
 
+    public getTableCaptionSpecs() {
+        return $localize`:specs title:Specifications`;
+    }
+
     public getWageIncrease(worker: Worker) {
         if(!this.entry) {
             return 0;

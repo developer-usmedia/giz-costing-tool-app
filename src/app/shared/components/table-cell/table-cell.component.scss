@@ -17,7 +17,6 @@
     font-family: $font-barlow;
     font-weight: $weight-medium;
     position: relative;
-    white-space: nowrap;
     width: fit-content;
 
     > p {
@@ -59,6 +58,14 @@
     &__subtitle {
         color: var(--table-cell-subtitle);
         font-weight: $weight-normal;
+
+        span {
+            white-space: nowrap;
+        }
+    }
+
+    &__tooltip {
+        padding: $p-gutter--xsmall $p-gutter--small;
     }
 
     &--center {

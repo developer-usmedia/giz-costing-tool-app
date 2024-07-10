@@ -52,8 +52,11 @@ giz-table {
     &--info {
         --table-cell-padding: 0.5rem #{ $p-gutter--small };
 
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
+        line-height: 1.4;
+
+        caption {
+            font-size: 1rem;
+        }
 
         td, th {
             word-break: keep-all;
@@ -71,6 +74,38 @@ giz-table {
             font-family: $font-barlow;
             font-weight: $weight-medium;
             height: 46px;
+            white-space: nowrap;
+        }
+    }
+
+    &--no-border {
+        table {
+            border: 0;
+            margin-bottom: 0;
+        }
+
+        tr {
+            &:first-child {
+                th, td {
+                    padding-top: 0;
+                }
+            }
+
+            &:last-child {
+                th, td {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        th, td {
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
         }
     }
 

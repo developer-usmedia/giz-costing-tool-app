@@ -12,4 +12,5 @@ export class TableComponent {
     @Input() caption = 'table';
     @Input() type: 'default' | 'compact' | 'info' | 'overview' = 'default';
     @Input() hideCaption = false;
+    @Input() noBorder = false;
 }

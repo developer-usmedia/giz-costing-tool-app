@@ -176,6 +176,14 @@ export class EntryDistributionComponent implements OnDestroy {
         return $localize`:job-categories table:${ total ?? '-' } job categories`;
     }
 
+    public getTableCaptionSpecs() {
+        return $localize`:specs title:Specifications`;
+    }
+
+    public getTableCaptionTooltip() {
+        return $localize`:distribution:Distribution`;
+    }
+
     public onPageEvent(pageEvent: PageEvent): void {
         const currentParams = this.pagingParams();
         const params = {

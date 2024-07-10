@@ -2,7 +2,7 @@ import {
     ChangeDetectionStrategy,
     Component,
     EventEmitter,
-    HostBinding,
+    HostBinding, Input,
     Output,
     ViewEncapsulation,
 } from '@angular/core';
@@ -17,11 +17,16 @@ import { ICON } from '@shared/components/icon/icon.enum';
     encapsulation: ViewEncapsulation.None,
 })
 export class TooltipAdvancedComponent {
+    @Input() size: 'small' | 'medium' = 'small';
     @Output() closeTooltip = new EventEmitter();
 
     @HostBinding('class') cssClass = 'tooltip-advanced';
 
     protected readonly icon = ICON;
+
+    @HostBinding('class.tooltip-advanced--medium') get modMedium(): boolean {
+        return this.size === 'medium';
+    }
 
     public close(): void {
         this.closeTooltip.emit();

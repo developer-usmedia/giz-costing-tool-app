@@ -46,23 +46,22 @@
                ></giz-distribution-form>
             }
             @if (state !== 'edit' && entry.data(); as entry) {
-                <table class="distribution__table">
-                    <caption i18n="distributions specs title">Specifications</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="distribution base-wage label">Base wage</th>
-                            <td>{{ entry?.scenario?.distribution?.baseWagePerc }} %</td>
+                <giz-table class="distribution__table" type="info" [caption]="getTableCaptionSpecs()">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="distribution base-wage label">Base wage</th>
+                            <td giz-table-cell>{{ entry?.scenario?.distribution?.baseWagePerc }} %</td>
                         </tr>
-                        <tr>
-                            <th i18n="distribution bonuses label">Bonuses</th>
-                            <td>{{ entry?.scenario?.distribution?.bonusesPerc }} %</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="distribution bonuses label">Bonuses</th>
+                            <td giz-table-cell>{{ entry?.scenario?.distribution?.bonusesPerc }} %</td>
                         </tr>
-                        <tr>
-                            <th i18n="distribution ikb label">In-kind benefits</th>
-                            <td>{{ entry?.scenario?.distribution?.ikbPerc }} %</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="distribution ikb label">In-kind benefits</th>
+                            <td giz-table-cell>{{ entry?.scenario?.distribution?.ikbPerc }} %</td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-container>
+                </giz-table>
             }
         </div>
 
@@ -121,44 +120,46 @@
                                         <td giz-table-cell alignment="right">
                                             {{  getWageIncrease(worker) | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
                                         </td>
-                                        <td giz-table-cell alignment="center" gizTooltipAdvanced [template]="tooltipIKB"
+                                        <td giz-table-cell alignment="center"
                                         >
-                                            {{ getDistribution(worker).baseWagePerc }}% /  {{ getDistribution(worker).bonusesPerc }}% /  {{ getDistribution(worker).ikbPerc }}%
+                                            <span gizTooltipAdvanced [template]="tooltipIKB" class="table-cell__tooltip">
+                                                {{ getDistribution(worker).baseWagePerc }}% /  {{ getDistribution(worker).bonusesPerc }}% /  {{ getDistribution(worker).ikbPerc }}%
+                                            </span>
                                             <ng-template #tooltipIKB>
                                                 <giz-tooltip-advanced>
-                                                    <table>
-                                                        <caption i18n="distribution">Distribution</caption>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th i18n="base-wage">Base Wage</th>
-                                                                <td>{{ getDistribution(worker).baseWagePerc }}%</td>
+                                                    <giz-table
+                                                        [type]="'info'"
+                                                        [caption]="getTableCaptionTooltip()"
+                                                        [hideCaption]="true"
+                                                        [noBorder]="true"
+                                                    >
+                                                        <ng-container>
+                                                            <tr giz-table-row>
+                                                                <th giz-table-header-cell i18n="base-wage">Base Wage</th>
+                                                                <td giz-table-cell>{{ getDistribution(worker).baseWagePerc }}%</td>
                                                             </tr>
-                                                            <tr>
-                                                                <th i18n="base-wage">Bonuses</th>
-                                                                <td>{{ getDistribution(worker).bonusesPerc }}%</td>
+                                                            <tr giz-table-row>
+                                                                <th giz-table-header-cell i18n="base-wage">Bonuses</th>
+                                                                <td giz-table-cell>{{ getDistribution(worker).bonusesPerc }}%</td>
                                                             </tr>
-                                                            <tr>
-                                                                <th i18n="base-wage">In-kind benefits</th>
-                                                                <td>{{ getDistribution(worker).ikbPerc }}%</td>
+                                                            <tr giz-table-row>
+                                                                <th giz-table-header-cell i18n="base-wage">In-kind benefits</th>
+                                                                <td giz-table-cell>{{ getDistribution(worker).ikbPerc }}%</td>
                                                             </tr>
-                                                            <tr>
-                                                                <th i18n="base-wage">In-kind benefits</th>
-                                                                <td>
-                                                                    <span>{{ getDistribution(worker).ikbHousingPerc }}% <span i18n="housing">Housing</span></span>
-                                                                    <br>
-                                                                    <span>{{ getDistribution(worker).ikbFoodPerc }}% <span i18n="food">Food</span></span>
-                                                                    <br>
-                                                                    <span>{{ getDistribution(worker).ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>
-                                                                    <br>
-                                                                    <span>{{ getDistribution(worker).ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>
-                                                                    <br>
-                                                                    <span>{{ getDistribution(worker).ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>
-                                                                    <br>
+                                                            <tr giz-table-row>
+                                                                <td giz-table-cell [colSpan]="2" alignment="right">
+                                                                    <p class="table-cell__subtitle">
+                                                                    <span>{{ getDistribution(worker).ikbHousingPerc }}% <span i18n="housing">Housing</span></span>,
+                                                                    <span>{{ getDistribution(worker).ikbFoodPerc }}% <span i18n="food">Food</span></span>,
+                                                                    <span>{{ getDistribution(worker).ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>,
+                                                                    <span>{{ getDistribution(worker).ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>,
+                                                                    <span>{{ getDistribution(worker).ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>,
                                                                     <span>{{ getDistribution(worker).ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
+                                                                    </p>
                                                                 </td>
                                                             </tr>
-                                                        </tbody>
-                                                    </table>
+                                                        </ng-container>
+                                                </giz-table>
                                                 </giz-tooltip-advanced>
                                             </ng-template>
                                         </td>

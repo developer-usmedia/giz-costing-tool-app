@@ -4,7 +4,7 @@
 @mixin table-info {
     --table-cell-padding: 0.5rem #{ $p-gutter--small };
 
-    line-height: 1.7;
+    line-height: 1.4;
     margin-bottom: 1.5rem;
 
     td, th {

@@ -27,30 +27,28 @@
                 (submitForm)="onSubmitSpecs($event)"
             ></giz-scenario-specs-form>
         } @else if (entry) {
-            <table class="scenario__table">
-                <caption i18n="scenario specs title">Specifications</caption>
-                <!-- TODO: overheadCosts inputs like figma -->
-                <tbody>
+            <giz-table class="scenario__table" type="info" [caption]="getTableCaptionSpecs()">
+                <ng-container>
                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
-                        <tr>
-                            <th i18n="scenario taxes-employer label">Minimum wage increase</th>
-                            <td>{{ entry.scenario?.specification?.remunerationIncrease }} {{ entry.payroll.currencyCode }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="scenario taxes-employer label">Minimum wage increase</th>
+                            <td giz-table-cell>{{ entry.scenario?.specification?.remunerationIncrease }} {{ entry.payroll.currencyCode }}</td>
                         </tr>
                     }
-                    <tr>
-                        <th i18n="scenario close-gap label">Close living wage gap</th>
-                        <td i18n="yes">Yes</td>
+                    <tr giz-table-row>
+                        <th giz-table-header-cell i18n="scenario close-gap label">Close living wage gap</th>
+                        <td giz-table-cell i18n="yes">Yes</td>
                     </tr>
-                    <tr>
-                        <th i18n="scenario taxes-employee label">Taxes and levies employee</th>
-                        <td>{{ entry.scenario?.specification?.taxEmployee }} %</td>
+                    <tr giz-table-row>
+                        <th giz-table-header-cell i18n="scenario taxes-employee label">Taxes and levies employee</th>
+                        <td giz-table-cell>{{ entry.scenario?.specification?.taxEmployee }} %</td>
                     </tr>
-                    <tr>
-                        <th i18n="scenario taxes-employer label">Taxes and levies employer</th>
-                        <td>{{ entry.scenario?.specification?.taxEmployer}} %</td>
+                    <tr giz-table-row>
+                        <th giz-table-header-cell i18n="scenario taxes-employer label">Taxes and levies employer</th>
+                        <td giz-table-cell>{{ entry.scenario?.specification?.taxEmployer}} %</td>
                     </tr>
-                </tbody>
-            </table>
+                </ng-container>
+            </giz-table>
         }
     </div>
 

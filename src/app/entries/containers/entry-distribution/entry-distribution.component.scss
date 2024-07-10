@@ -1,6 +1,5 @@
 @import 'config/sizes';
 @import 'mixins/screen';
-@import 'mixins/table';
 
 .distribution {
     display: flex;
@@ -12,11 +11,7 @@
     }
 
     &__table {
-        @include table-info;
-
-        caption {
-            font-size: 1rem;
-        }
+        margin-bottom: 1.5rem;
     }
 
     &__buttons {
