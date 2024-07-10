@@ -88,142 +88,144 @@
                 }
             </div>
 
-            <div
-                class="form__field"
-                [ngClass]="{
+            <div class="form__subfields">
+                <div
+                    class="form__field"
+                    [ngClass]="{
                         'is-error': form | hasError: 'ikbHousingPerc',
                         'has-value': form | hasValue: 'ikbHousingPerc',
                 }">
-                <label class="form__label" for="ikbHousingPerc" i18n="form ikb-housing label">Housing</label>
+                    <label class="form__label" for="ikbHousingPerc" i18n="form ikb-housing label">Housing</label>
 
-                <div class="form__input">
-                    <input type="number" id="ikbHousingPerc" formControlName="ikbHousingPerc" />
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="ikbHousingPerc" formControlName="ikbHousingPerc" />
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | showError: 'ikbHousingPerc' :'required') {
+                        <div class="form__error" i18n="form ikbHousingPerc errors required">Field is required</div>
+                    }
+                    @if (form | showError: 'ikbHousingPerc' :'min') {
+                        <div class="form__error" i18n="form ikbHousingPerc errors min">Minimum is 0</div>
+                    }
+                    @if (form | showError: 'ikbHousingPerc' :'max') {
+                        <div class="form__error" i18n="form ikbHousingPerc errors imax">Maximum is  {{ this.maxIkbPercMapping['ikbHousingPerc'] }}</div>
+                    }
                 </div>
-                @if (form | showError: 'ikbHousingPerc' :'required') {
-                    <div class="form__error" i18n="form ikbHousingPerc errors required">Field is required</div>
-                }
-                @if (form | showError: 'ikbHousingPerc' :'min') {
-                    <div class="form__error" i18n="form ikbHousingPerc errors min">Minimum is 0</div>
-                }
-                @if (form | showError: 'ikbHousingPerc' :'max') {
-                    <div class="form__error" i18n="form ikbHousingPerc errors imax">Maximum is  {{ this.maxIkbPercMapping['ikbHousingPerc'] }}</div>
-                }
-            </div>
 
-            <div
-                class="form__field"
-                [ngClass]="{
+                <div
+                    class="form__field"
+                    [ngClass]="{
                         'is-error': form | hasError: 'ikbFoodPerc',
                         'has-value': form | hasValue: 'ikbFoodPerc',
                 }">
-                <label class="form__label" for="ikbFoodPerc" i18n="form ikb-food label">Food</label>
+                    <label class="form__label" for="ikbFoodPerc" i18n="form ikb-food label">Food</label>
 
-                <div class="form__input">
-                    <input type="number" id="ikbFoodPerc" formControlName="ikbFoodPerc" />
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="ikbFoodPerc" formControlName="ikbFoodPerc" />
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | showError: 'ikbFoodPerc' :'required') {
+                        <div class="form__error" i18n="form ikbFoodPerc errors required">Field is required</div>
+                    }
+                    @if (form | showError: 'ikbFoodPerc' :'min') {
+                        <div class="form__error" i18n="form ikbFoodPerc errors min">Minimum is 0</div>
+                    }
+                    @if (form | showError: 'ikbFoodPerc' :'max') {
+                        <div class="form__error" i18n="form ikbFoodPerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbFoodPerc'] }}</div>
+                    }
                 </div>
-                @if (form | showError: 'ikbFoodPerc' :'required') {
-                    <div class="form__error" i18n="form ikbFoodPerc errors required">Field is required</div>
-                }
-                @if (form | showError: 'ikbFoodPerc' :'min') {
-                    <div class="form__error" i18n="form ikbFoodPerc errors min">Minimum is 0</div>
-                }
-                @if (form | showError: 'ikbFoodPerc' :'max') {
-                    <div class="form__error" i18n="form ikbFoodPerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbFoodPerc'] }}</div>
-                }
-            </div>
 
-            <div
-                class="form__field"
-                [ngClass]="{
+                <div
+                    class="form__field"
+                    [ngClass]="{
                         'is-error': form | hasError: 'ikbTransportPerc',
                         'has-value': form | hasValue: 'ikbTransportPerc',
                 }">
-                <label class="form__label" for="ikbTransportPerc" i18n="form ikb-transport label">Transportation</label>
+                    <label class="form__label" for="ikbTransportPerc" i18n="form ikb-transport label">Transportation</label>
 
-                <div class="form__input">
-                    <input type="number" id="ikbTransportPerc" formControlName="ikbTransportPerc" />
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="ikbTransportPerc" formControlName="ikbTransportPerc" />
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | showError: 'ikbTransportPerc' :'required') {
+                        <div class="form__error" i18n="form ikbTransportPerc errors required">Field is required</div>
+                    }
+                    @if (form | showError: 'ikbTransportPerc' :'min') {
+                        <div class="form__error" i18n="form ikbTransportPerc errors min">Minimum is 0</div>
+                    }
+                    @if (form | showError: 'ikbTransportPerc' :'max') {
+                        <div class="form__error" i18n="form ikbTransportPerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbTransportPerc'] }}</div>
+                    }
                 </div>
-                @if (form | showError: 'ikbTransportPerc' :'required') {
-                    <div class="form__error" i18n="form ikbTransportPerc errors required">Field is required</div>
-                }
-                @if (form | showError: 'ikbTransportPerc' :'min') {
-                    <div class="form__error" i18n="form ikbTransportPerc errors min">Minimum is 0</div>
-                }
-                @if (form | showError: 'ikbTransportPerc' :'max') {
-                    <div class="form__error" i18n="form ikbTransportPerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbTransportPerc'] }}</div>
-                }
-            </div>
 
-            <div
-                class="form__field"
-                [ngClass]="{
+                <div
+                    class="form__field"
+                    [ngClass]="{
                         'is-error': form | hasError: 'ikbHealthcarePerc',
                         'has-value': form | hasValue: 'ikbHealthcarePerc',
                 }">
-                <label class="form__label" for="ikbHealthcarePerc" i18n="form ikb-healthcare label">Healthcare</label>
+                    <label class="form__label" for="ikbHealthcarePerc" i18n="form ikb-healthcare label">Healthcare</label>
 
-                <div class="form__input">
-                    <input type="number" id="ikbHealthcarePerc" formControlName="ikbHealthcarePerc" />
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="ikbHealthcarePerc" formControlName="ikbHealthcarePerc" />
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | showError: 'ikbHealthcarePerc' :'required') {
+                        <div class="form__error" i18n="form ikbHealthcarePerc errors required">Field is required</div>
+                    }
+                    @if (form | showError: 'ikbHealthcarePerc' :'min') {
+                        <div class="form__error" i18n="form ikbHealthcarePerc errors min">Minimum is 0</div>
+                    }
+                    @if (form | showError: 'ikbHealthcarePerc' :'max') {
+                        <div class="form__error" i18n="form ikbHealthcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbHealthcarePerc'] }}</div>
+                    }
                 </div>
-                @if (form | showError: 'ikbHealthcarePerc' :'required') {
-                    <div class="form__error" i18n="form ikbHealthcarePerc errors required">Field is required</div>
-                }
-                @if (form | showError: 'ikbHealthcarePerc' :'min') {
-                    <div class="form__error" i18n="form ikbHealthcarePerc errors min">Minimum is 0</div>
-                }
-                @if (form | showError: 'ikbHealthcarePerc' :'max') {
-                    <div class="form__error" i18n="form ikbHealthcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbHealthcarePerc'] }}</div>
-                }
-            </div>
 
-            <div
-                class="form__field"
-                [ngClass]="{
+                <div
+                    class="form__field"
+                    [ngClass]="{
                         'is-error': form | hasError: 'ikbChildcarePerc',
                         'has-value': form | hasValue: 'ikbChildcarePerc',
                 }">
-                <label class="form__label" for="ikbChildcarePerc" i18n="form ikb-childcare label">Child care</label>
+                    <label class="form__label" for="ikbChildcarePerc" i18n="form ikb-childcare label">Child care</label>
 
-                <div class="form__input">
-                    <input type="number" id="ikbChildcarePerc" formControlName="ikbChildcarePerc" />
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="ikbChildcarePerc" formControlName="ikbChildcarePerc" />
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | showError: 'ikbChildcarePerc' :'required') {
+                        <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
+                    }
+                    @if (form | showError: 'ikbChildcarePerc' :'min') {
+                        <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
+                    }
+                    @if (form | showError: 'ikbChildcarePerc' :'max') {
+                        <div class="form__error" i18n="form ikbChildcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbChildcarePerc'] }}</div>
+                    }
                 </div>
-                @if (form | showError: 'ikbChildcarePerc' :'required') {
-                    <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
-                }
-                @if (form | showError: 'ikbChildcarePerc' :'min') {
-                    <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
-                }
-                @if (form | showError: 'ikbChildcarePerc' :'max') {
-                    <div class="form__error" i18n="form ikbChildcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbChildcarePerc'] }}</div>
-                }
-            </div>
 
-            <div
-                class="form__field"
-                [ngClass]="{
+                <div
+                    class="form__field"
+                    [ngClass]="{
                         'is-error': form | hasError: 'ikbChildEducationPerc',
                         'has-value': form | hasValue: 'ikbChildEducationPerc',
                 }">
-                <label class="form__label" for="ikbChildEducationPerc" i18n="form ikb-education label">Child education</label>
+                    <label class="form__label" for="ikbChildEducationPerc" i18n="form ikb-education label">Child education</label>
 
-                <div class="form__input">
-                    <input type="number" id="ikbChildEducationPerc" formControlName="ikbChildEducationPerc" />
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="ikbChildEducationPerc" formControlName="ikbChildEducationPerc" />
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | showError: 'ikbChildEducationPerc' :'required') {
+                        <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
+                    }
+                    @if (form | showError: 'ikbChildEducationPerc' :'min') {
+                        <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
+                    }
+                    @if (form | showError: 'ikbChildEducationPerc' :'max') {
+                        <div class="form__error" i18n="form ikbChildcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbChildEducationPerc'] }}</div>
+                    }
                 </div>
-                @if (form | showError: 'ikbChildEducationPerc' :'required') {
-                    <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
-                }
-                @if (form | showError: 'ikbChildEducationPerc' :'min') {
-                    <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
-                }
-                @if (form | showError: 'ikbChildEducationPerc' :'max') {
-                    <div class="form__error" i18n="form ikbChildcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbChildEducationPerc'] }}</div>
-                }
             </div>
         </fieldset>
     </div>

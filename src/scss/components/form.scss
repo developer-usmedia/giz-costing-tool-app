@@ -25,6 +25,44 @@
         margin: 0 0 $p-gutter--small;
     }
 
+    &__subfields {
+        margin-bottom: $p-gutter;
+        padding-left: 45px;
+        position: relative;
+
+        &::before {
+            border: 2px solid var(--form-input-border);
+            border-radius: $b-radius 0 0 $b-radius;
+            border-right: 0;
+            content: '';
+            display: block;
+            height: 100%;
+            left: $p-gutter;
+            position: absolute;
+            top: 0;
+            width: 15px;
+        }
+
+        &::after {
+            border: solid var(--form-input-border);
+            border-radius: 0 0 0 $b-radius;
+            border-width: 0 0 2px 2px;
+            content: '';
+            display: block;
+            height: 44px;
+            left: $p-gutter - 15px;
+            position: absolute;
+            top: -22px;
+            width: 15px;
+        }
+
+        #{ $self }__field {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     &__field {
         display: block;
         margin-bottom: $p-gutter;
@@ -94,6 +132,7 @@
     &__hint {
         @include style-text-small;
 
+        color: var(--form-input-hint-color);
         margin-top: 4px;
     }
 
@@ -197,7 +236,7 @@
                 align-items: center;
                 display: grid;
                 gap: 0 $p-gutter;
-                grid-template-columns: 200px 1fr;
+                grid-template-columns: var(--form-horizontal-label-width) 1fr;
 
                 > * {
                     grid-column-start: 2;
@@ -207,6 +246,15 @@
             #{ $self }__label {
                 grid-column-start: 1;
             }
+        }
+    }
+
+    @include screen($screen-normal) {
+        &__subfields {
+            column-gap: $p-gutter;
+            columns: 2;
+
+            --form-horizontal-label-width: 50%;
         }
     }
 }
