@@ -65,7 +65,7 @@ export class EntryBuyerComponent implements OnDestroy {
 
     private readonly activatedRoute = inject(ActivatedRoute);
     private readonly destroyed$ = new Subject<void>();
-    
+
     constructor() {
         this.activatedRoute.parent?.params
             .pipe(
@@ -86,6 +86,11 @@ export class EntryBuyerComponent implements OnDestroy {
             .subscribe((params) => {
                 this.pagingParams.set(params);
             });
+    }
+
+
+    public getTableCaption() {
+        return $localize`:entry-info title:Entry information`;
     }
 
     public submit(): void {

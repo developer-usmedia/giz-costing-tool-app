@@ -87,11 +87,11 @@
         </div>
         <div class="buyer__specification">
             @if (entry.data(); as entry) {
-                <table class="buyer__table">
-                    <tbody>
-                        <tr>
-                            <th i18n="buyer base-wage label">Entry ID</th>
-                            <td class="info__copy-cell">
+                <giz-table class="buyer__table" type="info" [caption]="getTableCaption()" [hideCaption]="true">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="buyer base-wage label">Entry ID</th>
+                            <td giz-table-cell>
                                 <button
                                     giz-icon-button
                                     [icon]="icon.COPY"
@@ -103,16 +103,16 @@
                                 {{ entry.id | empty }}
                             </td>
                         </tr>
-                        <tr>
-                            <th i18n="buyer bonuses label">Created on</th>
-                            <td>{{ entry?.createdAt | date }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="buyer bonuses label">Created on</th>
+                            <td giz-table-cell>{{ entry?.createdAt | date }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="buyer ikb label">Edited on</th>
-                            <td>{{ entry?.updatedAt | date }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="buyer ikb label">Edited on</th>
+                            <td giz-table-cell>{{ entry?.updatedAt | date }}</td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-container>
+                </giz-table>
             }
         </div>
     }

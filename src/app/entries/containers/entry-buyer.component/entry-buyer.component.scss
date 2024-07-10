@@ -1,6 +1,5 @@
 @import 'config/sizes';
 @import 'mixins/screen';
-@import 'mixins/table';
 
 .buyer {
     display: flex;
@@ -12,23 +11,13 @@
     }
 
     &__table {
-        @include table-info;
-
-        caption {
-            font-size: 1rem;
-        }
+        margin-bottom: 1.5rem;
     }
 
     &__buttons {
         display: flex;
         gap: 1rem;
         justify-content: flex-end;
-    }
-
-    &__worker-distro-label {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
     }
 
     @include screen($screen-simple) {
