@@ -2,6 +2,14 @@
     <p class="scenarios-reset__description" i18n="scenario-reset description">
         Are you sure you want to reset scenarios? <br> This action cannot be undone.</p>
 
+    <ng-container footer-left>
+        @if (scenarioDeleteMutation.isPending()) {
+            <giz-spinner theme="grey">
+                <span i18n="scenario-reset resetting">Resetting...</span>
+            </giz-spinner>
+        }
+    </ng-container>
+
     <ng-container footer-right>
         <button type="button" giz-stroke-button theme="basic" (click)="cancel()"
                 i18n="cancel">Cancel</button>

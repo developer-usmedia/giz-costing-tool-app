@@ -54,7 +54,6 @@ export class EntryDetailComponent implements OnDestroy {
     }
 
     public tabDisabled(routeName: RouteName): boolean {
-        // TODO: Get this from entry status
         const entry = this.entry.data();
         if (!entry) {
             return true;
@@ -62,19 +61,19 @@ export class EntryDetailComponent implements OnDestroy {
 
         if (routeName === ENTRY_ROUTE.DISTRIBUTION) {
             return ![
-                EntryStatus.SCENARIO_DONE, 
-                EntryStatus.DISTRIBUTION_DONE, 
+                EntryStatus.SCENARIO_DONE,
+                EntryStatus.DISTRIBUTION_DONE,
                 EntryStatus.COMPLETED,
             ].includes(entry.status);
         }
 
         if (routeName === ENTRY_ROUTE.BUYER) {
             return ![
-                EntryStatus.DISTRIBUTION_DONE, 
+                EntryStatus.DISTRIBUTION_DONE,
                 EntryStatus.COMPLETED,
             ].includes(entry.status);
         }
-        
+
         if (routeName === ENTRY_ROUTE.REPORT) {
             return ![
                 EntryStatus.COMPLETED,

@@ -12,7 +12,6 @@ import { SharedModule } from '@shared/shared.module';
 import { DistributionFormComponent } from './components/distribution-form/distribution-form.component';
 import { EntryFooterComponent } from './components/entry-footer/entry-footer.component';
 import { EntryHeaderComponent } from './components/entry-header/entry-header.component';
-import { ResetScenarioDialogComponent } from './components/reset-scenario-dialog/reset-scenario-dialog.component';
 import { ScenarioCardComponent } from './components/scenario-card/scenario-card.component';
 import { ScenarioSpecsFormComponent } from './components/scenario-specs-form/scenario-specs-form.component';
 import { ScenarioComponent } from './components/scenario/scenario.component';
@@ -23,6 +22,7 @@ import { EntryDistributionComponent } from './containers/entry-distribution/entr
 import { EntryInformationComponent } from './containers/entry-information/entry-information.component';
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
 import { OverviewComponent } from './containers/overview/overview.component';
+import { ResetScenarioDialogComponent } from './containers/reset-scenario-dialog/reset-scenario-dialog.component';
 import { ResetWorkersDialogComponent } from './containers/reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerDistributionDialogComponent } from './containers/worker-distribution-dialog/worker-distribution-dialog.component';
 import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component';

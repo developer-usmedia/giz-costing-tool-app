@@ -3,6 +3,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { injectQuery } from '@tanstack/angular-query-experimental';
+import { ToastrService } from 'ngx-toastr';
+import { distinctUntilChanged, map, Subject, take, takeUntil } from 'rxjs';
 
 import {
     Entry,
@@ -18,14 +21,13 @@ import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
-import { injectQuery } from '@tanstack/angular-query-experimental';
-import { ToastrService } from 'ngx-toastr';
-import { distinctUntilChanged, map, Subject, take, takeUntil } from 'rxjs';
 
 import {
+    ResetScenarioData,
     ResetScenarioDialogComponent,
-    ResetScenarioResult,
-} from '../../components/reset-scenario-dialog/reset-scenario-dialog.component';
+    ResetScenarioResult
+} from '../reset-scenario-dialog/reset-scenario-dialog.component';
+
 
 @Component({
     selector: 'giz-entry-scenarios',
@@ -58,7 +60,6 @@ export class EntryScenariosComponent implements OnDestroy {
 
     public scenarioCreateMutation = this.entriesService.createScenario();
     public scenarioUpdateMutation = this.entriesService.updateScenario();
-    public scenarioDeleteMutation = this.entriesService.deleteScenarioSpecs();
 
     public scenarios: ScenarioInfo[] = SCENARIOS;
     public selectedScenario?: ScenarioInfo;
@@ -163,30 +164,20 @@ export class EntryScenariosComponent implements OnDestroy {
     }
 
     public reset(): void {
-        const dialogResetRef = this.dialog.open<ResetScenarioResult, unknown, ResetScenarioDialogComponent>(ResetScenarioDialogComponent);
+        const dialogResetRef = this.dialog.open<ResetScenarioResult, ResetScenarioData, ResetScenarioDialogComponent>(ResetScenarioDialogComponent, {
+            data: {
+                entry: this.entry.data(),
+            },
+        });
+
         dialogResetRef.closed
             .pipe(take(1))
             .subscribe((result) => {
-                const entry = this.entry?.data();
-                if (!result?.reset || !entry) {
-                    return;
-                }
-
-                if (!entry.scenario) {
+                if (result?.reset) {
+                    this.activeScenario = undefined;
+                    this.selectedScenario = undefined;
                     this.scenarioState = 'start';
-                    return;
                 }
-
-                this.scenarioDeleteMutation.mutate(entry.id, {
-                    onSuccess: () => {
-                        this.activeScenario = undefined;
-                        this.selectedScenario = undefined;
-                        this.scenarioState = 'start';
-                    },
-                    onError: () => {
-                        this.toastr.error($localize`:scenario-delete error:Something went wrong while resetting the scenario`);
-                    },
-                });
             });
     }
 
