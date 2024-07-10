@@ -13,6 +13,7 @@ import {
 } from '@angular/core';
 import { CreateQueryResult } from '@tanstack/angular-query-experimental';
 
+import { determineWageIncrease } from '@api/helpers/worker.helper';
 import { Entry, Scenario, ScenarioSpecsForm, ScenarioType, Worker, WorkerListResponse } from '@api/models';
 import { MODULE_ROUTE, ScenarioInfo } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
@@ -49,6 +50,13 @@ export class ScenarioComponent {
     constructor(
         @Inject(APP_BASE_HREF) public baseHref: string,
     ) {
+    }
+
+    public getWageIncrease(worker: Worker) {
+        if(!this.entry) {
+            return 0;
+        }
+        return determineWageIncrease(worker, this.entry );
     }
 
     public onSubmitSpecs(scenarioForm: ScenarioSpecsForm) {

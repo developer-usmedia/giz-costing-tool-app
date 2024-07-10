@@ -10,6 +10,7 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
+import { determineWageIncrease } from '@api/helpers/worker.helper';
 import {
     Entry,
     ScenarioDistroForm,
@@ -93,6 +94,13 @@ export class EntryDistributionComponent implements OnDestroy {
         });
     }
 
+    public getWageIncrease(worker: Worker) {
+        if (!this.entry.data()) {
+            return 0;
+        }
+        return determineWageIncrease(worker, this.entry.data() as Entry);
+    }
+
     public changeSpecs(): void {
         this.state = 'edit';
     }
@@ -111,7 +119,9 @@ export class EntryDistributionComponent implements OnDestroy {
         };
 
         this.scenarioUpdateMutation.mutate(mutation, {
-            onSuccess: () => {
+            onSuccess: async () => {
+                await this.entriesService.refreshEntry(entry.id);
+                await this.entriesService.refreshWorkers();
                 this.state = 'view';
                 this.toastr.success($localize`:distribution-update success:Successfully updated distribution`);
             },

@@ -109,13 +109,13 @@
                                         </span>
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{ worker.remuneration?.baseWage | currency: entry?.payroll?.currencyCode : '' }}
+                                        {{ worker.remuneration?.baseWage | currency: entry?.payroll?.currencyCode : '' }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{ worker.livingWage?.livingWageGap | currency: entry?.payroll?.currencyCode : '' | empty }}
+                                        {{ worker.livingWage?.livingWageGap | currency: entry?.payroll?.currencyCode : '' | empty }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     <td giz-table-cell alignment="right">
-                                        {{  worker.scenario.specification?.remunerationIncrease ?? worker.livingWage?.livingWageGap | currency: entry?.payroll?.currencyCode : '' | empty }}
+                                        {{  getWageIncrease(worker)  | currency: entry?.payroll?.currencyCode : '' | empty }} {{ entry?.payroll?.currencyCode }}
                                     </td>
                                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
                                         <td giz-table-cell type="actions">

@@ -134,6 +134,8 @@ export class EntryScenariosComponent implements OnDestroy {
             this.scenarioUpdateMutation.mutate(mutation, {
                 onSuccess: () => {
                     this.scenarioState = 'view';
+                    this.entriesService.refreshEntry(entry.id);
+                    this.entriesService.refreshWorkers();
                     this.toastr.success($localize`:scenario-update success:Successfully updated scenario`);
                 },
                 onError: () => {

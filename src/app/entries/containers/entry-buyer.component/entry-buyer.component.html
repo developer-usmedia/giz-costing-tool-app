@@ -91,7 +91,17 @@
                     <tbody>
                         <tr>
                             <th i18n="buyer base-wage label">Entry ID</th>
-                            <td>{{ entry?.id }}</td>
+                            <td class="info__copy-cell">
+                                <button
+                                    giz-icon-button
+                                    [icon]="icon.COPY"
+                                    [theme]="'basic'"
+                                    [size]="'small'"
+                                    [cdkCopyToClipboard]="entry.id"
+                                    i18n="copy"
+                                >Copy</button>
+                                {{ entry.id | empty }}
+                            </td>
                         </tr>
                         <tr>
                             <th i18n="buyer bonuses label">Created on</th>

@@ -53,7 +53,6 @@ export class EntriesService {
             mutationFn: (form: EntryUpdateMutation) => {
                 return this.entriesApi.updateEntry(form.entryId, form.entryUpdate);
             },
-            onSuccess: async (entry: Entry) => await this.refreshEntry(entry.id),
         });
     }
 
@@ -81,7 +80,6 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioUpdateMutation) => {
                 return this.entriesApi.updateScenario(mutation.entryId, mutation.scenarioUpdate);
             },
-            onSuccess: async (entry: Entry) => await this.refreshEntry(entry.id),
         });
     }
 

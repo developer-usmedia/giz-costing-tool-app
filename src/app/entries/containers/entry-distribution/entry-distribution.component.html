@@ -121,7 +121,7 @@
                                             {{ worker.remuneration?.baseWage | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
                                         </td>
                                         <td giz-table-cell alignment="right">
-                                            {{ (worker.scenario.specification?.remunerationIncrease ?? entry.data()?.scenario?.specification?.remunerationIncrease) ?? 0 | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
+                                            {{  getWageIncrease(worker) | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
                                         </td>
                                         <td giz-table-cell alignment="right" gizTooltipAdvanced [template]="tooltipIKB"
                                         >
