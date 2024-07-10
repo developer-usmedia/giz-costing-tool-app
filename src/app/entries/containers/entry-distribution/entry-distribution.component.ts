@@ -3,17 +3,15 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { EntriesService } from '@core/services';
-import { PageEvent } from '@shared/components/paginator/paginator.model';
-import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
 import { determineWageIncrease } from '@api/helpers/worker.helper';
 import {
-    Entry,
+    Distribution,
     DistributionForm,
+    Entry,
     ScenarioType,
     ScenarioUpdateMutation,
     Worker,
@@ -22,7 +20,10 @@ import {
 } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, PagingParams, ROOT_ROUTE } from '@core/models';
+import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { PageEvent } from '@shared/components/paginator/paginator.model';
+import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
 import { ResetWorkersDialogComponent } from '../reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerDistributionDialogComponent } from '../worker-distribution-dialog/worker-distribution-dialog.component';
 
@@ -132,11 +133,32 @@ export class EntryDistributionComponent implements OnDestroy {
         });
     }
 
+    public getDistribution(worker: Worker): Distribution {
+        const entry = this.entry.data();
+        return {
+            baseWagePerc: (worker.scenario.distribution?.baseWagePerc ?? entry?.scenario?.distribution?.baseWagePerc) ?? 0,
+            bonusesPerc: (worker.scenario.distribution?.bonusesPerc ?? entry?.scenario?.distribution?.bonusesPerc) ?? 0,
+            ikbPerc: (worker.scenario.distribution?.ikbPerc ?? entry?.scenario?.distribution?.ikbPerc) ?? 0,
+            ikbHousingPerc: (worker.scenario.distribution?.ikbHousingPerc ?? entry?.scenario?.distribution?.ikbHousingPerc) ?? 0,
+            ikbFoodPerc: (worker.scenario.distribution?.ikbFoodPerc ?? entry?.scenario?.distribution?.ikbFoodPerc) ?? 0,
+            ikbTransportPerc: (worker.scenario.distribution?.ikbTransportPerc ?? entry?.scenario?.distribution?.ikbTransportPerc) ?? 0,
+            ikbHealthcarePerc: (worker.scenario.distribution?.ikbHealthcarePerc ?? entry?.scenario?.distribution?.ikbHealthcarePerc) ?? 0,
+            ikbChildcarePerc: (worker.scenario.distribution?.ikbChildcarePerc ?? entry?.scenario?.distribution?.ikbChildcarePerc) ?? 0,
+            ikbChildEducationPerc: (worker.scenario.distribution?.ikbChildEducationPerc ?? entry?.scenario?.distribution?.ikbChildEducationPerc) ?? 0,
+        };
+    }
+
+    public isEditted(worker: Worker): boolean {
+        const ikb = worker.scenario.distribution?.ikbPerc;
+        return ikb !== undefined && ikb !== null;
+    }
+
     public editWorker(worker: Worker) {
         this.dialog.open(WorkerDistributionDialogComponent, {
             data: {
                 entry: this.entry.data(),
                 worker: worker,
+                distribution: this.getDistribution(worker),
             },
         });
     }

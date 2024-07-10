@@ -20,6 +20,10 @@
     white-space: nowrap;
     width: fit-content;
 
+    > p {
+        margin: 0;
+    }
+
     &__sort {
         @include stretch;
 
@@ -54,6 +58,7 @@
 
     &__subtitle {
         color: var(--table-cell-subtitle);
+        font-weight: $weight-normal;
     }
 
     &--center {

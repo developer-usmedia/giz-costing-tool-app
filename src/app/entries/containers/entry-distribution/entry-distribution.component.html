@@ -99,17 +99,16 @@
                                     <th giz-table-header-cell size="wide" i18n="workers job-category label">Job category</th>
                                     <th giz-table-header-cell alignment="right" i18n="workers total-monthly-remnueration label">Total monthly remuneration</th>
                                     <th giz-table-header-cell alignment="right" i18n="workers wage-increase label">Wage Increase</th>
-                                    <th giz-table-header-cell alignment="right" class="distribution__worker-distro-label">
-                                        <span i18n="workers distribution label">Distribution</span>
-                                        <span class="table-cell__subtitle" i18n="workers distribution sublabel">Base wage / Bonusses / IKB</span>
+                                    <th giz-table-header-cell alignment="center">
+                                        <p i18n="workers distribution label">Distribution</p>
+                                        <p class="table-cell__subtitle" i18n="workers distribution sublabel">Base wage / Bonusses / IKB</p>
                                     </th>
                                     <th giz-table-header-cell type="actions"><span i18n="entry action">Actions</span></th>
                                 </tr>
                             </ng-container>
                             <ng-container>
                                 @for (worker of workers.data()?._embedded?.workers; track worker) {
-                                    <tr giz-table-row>
-                                    <!-- [editted]="!!worker.scenario.distribution?.baseWagePerc" -->
+                                    <tr giz-table-row [editted]="isEditted(worker)">
                                         <td giz-table-cell size="wide">
                                             {{ worker.name }}
                                             <span class="table-cell__subtitle"> - {{ worker.gender | gender }}, {{ worker.nrOfWorkers }}
@@ -122,9 +121,9 @@
                                         <td giz-table-cell alignment="right">
                                             {{  getWageIncrease(worker) | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
                                         </td>
-                                        <td giz-table-cell alignment="right" gizTooltipAdvanced [template]="tooltipIKB"
+                                        <td giz-table-cell alignment="center" gizTooltipAdvanced [template]="tooltipIKB"
                                         >
-                                            {{ worker.scenario.distribution?.baseWagePerc ?? entry.data()?.scenario?.distribution?.baseWagePerc }}% /  {{ worker.scenario.distribution?.bonusesPerc ?? entry.data()?.scenario?.distribution?.bonusesPerc }}% /  {{ worker.scenario.distribution?.ikbPerc  ?? entry.data()?.scenario?.distribution?.ikbPerc }}%
+                                            {{ getDistribution(worker).baseWagePerc }}% /  {{ getDistribution(worker).bonusesPerc }}% /  {{ getDistribution(worker).ikbPerc }}%
                                             <ng-template #tooltipIKB>
                                                 <giz-tooltip-advanced>
                                                     <table>
@@ -132,31 +131,30 @@
                                                         <tbody>
                                                             <tr>
                                                                 <th i18n="base-wage">Base Wage</th>
-                                                                <td>{{ worker.scenario.distribution?.baseWagePerc ?? entry.data()?.scenario?.distribution?.baseWagePerc }}%</td>
+                                                                <td>{{ getDistribution(worker).baseWagePerc }}%</td>
                                                             </tr>
                                                             <tr>
                                                                 <th i18n="base-wage">Bonuses</th>
-                                                                <td>{{ worker.scenario.distribution?.bonusesPerc ?? entry.data()?.scenario?.distribution?.bonusesPerc }}%</td>
+                                                                <td>{{ getDistribution(worker).bonusesPerc }}%</td>
                                                             </tr>
                                                             <tr>
                                                                 <th i18n="base-wage">In-kind benefits</th>
-                                                                <td>{{ worker.scenario.distribution?.ikbPerc ?? entry.data()?.scenario?.distribution?.ikbPerc }}%</td>
+                                                                <td>{{ getDistribution(worker).ikbPerc }}%</td>
                                                             </tr>
                                                             <tr>
                                                                 <th i18n="base-wage">In-kind benefits</th>
                                                                 <td>
-                                                                    <!-- TODO: Fix this via getter -->
-                                                                    <span>{{ worker.scenario.distribution?.ikbHousingPerc ?? entry.data()?.scenario?.distribution?.ikbHousingPerc }}% <span i18n="housing">Housing</span></span>
+                                                                    <span>{{ getDistribution(worker).ikbHousingPerc }}% <span i18n="housing">Housing</span></span>
                                                                     <br>
-                                                                    <span>{{ worker.scenario.distribution?.ikbFoodPerc ?? entry.data()?.scenario?.distribution?.ikbFoodPerc }}% <span i18n="food">Food</span></span>
+                                                                    <span>{{ getDistribution(worker).ikbFoodPerc }}% <span i18n="food">Food</span></span>
                                                                     <br>
-                                                                    <span>{{ worker.scenario.distribution?.ikbTransportPerc ?? entry.data()?.scenario?.distribution?.ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>
+                                                                    <span>{{ getDistribution(worker).ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>
                                                                     <br>
-                                                                    <span>{{ worker.scenario.distribution?.ikbHealthcarePerc ?? entry.data()?.scenario?.distribution?.ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>
+                                                                    <span>{{ getDistribution(worker).ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>
                                                                     <br>
-                                                                    <span>{{ worker.scenario.distribution?.ikbChildcarePerc ?? entry.data()?.scenario?.distribution?.ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>
+                                                                    <span>{{ getDistribution(worker).ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>
                                                                     <br>
-                                                                    <span>{{ worker.scenario.distribution?.ikbChildEducationPerc ?? entry.data()?.scenario?.distribution?.ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
+                                                                    <span>{{ getDistribution(worker).ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
                                                                 </td>
                                                             </tr>
                                                         </tbody>

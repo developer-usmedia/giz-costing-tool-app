@@ -2,7 +2,7 @@ import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { ChangeDetectionStrategy, Component, Inject, inject, signal, ViewEncapsulation } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
-import { DistributionForm, Entry, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
+import { Distribution, DistributionForm, Entry, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
 import { EntriesService } from '@core/services';
 
 export interface ScenarioWorkerDistroResult {
@@ -26,6 +26,7 @@ export class WorkerDistributionDialogComponent {
         @Inject(DIALOG_DATA) public data: {
             entry: Entry;
             worker: Worker;
+            distribution: Distribution;
         },
         private readonly dialogRef: DialogRef<ScenarioWorkerDistroResult>,
     ) {

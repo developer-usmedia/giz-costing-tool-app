@@ -25,10 +25,8 @@
         justify-content: flex-end;
     }
 
-    &__worker-distro-label {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
+    &__spinner {
+        grid-column: span 2;
     }
 
     @include screen($screen-simple) {
