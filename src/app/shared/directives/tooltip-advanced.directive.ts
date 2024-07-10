@@ -49,10 +49,11 @@ export class TooltipAdvancedDirective implements OnInit, OnDestroy {
         this.open();
     }
 
-    @HostListener('mouseleave')
-    mouseout() {
-        if (!this.isClicked) {
-            // TODO: Only close when mouse also no in opened tooltip
+    @HostListener('document:mousemove', ['$event'])
+    onMouseMove(e: Event) {
+        const target = e.target as HTMLElement;
+        if (this.isOpen && !(this.elementRef.nativeElement as HTMLElement).contains(target) &&
+            !(this.overlayRef && this.overlayRef.overlayElement?.contains(target))) {
             this.close();
         }
     }
@@ -102,18 +103,18 @@ export class TooltipAdvancedDirective implements OnInit, OnDestroy {
         const positionStrategy = this.overlayPositionBuilder
             .flexibleConnectedTo(this.elementRef)
             .withPositions([
-                // top right
-                {
-                    originX: 'end',
-                    originY: 'top',
-                    overlayX: 'start',
-                    overlayY: 'top',
-                },
                 // top left
                 {
                     originX: 'start',
                     originY: 'top',
                     overlayX: 'end',
+                    overlayY: 'top',
+                },
+                // top right
+                {
+                    originX: 'end',
+                    originY: 'top',
+                    overlayX: 'start',
                     overlayY: 'top',
                 },
                 // bottom center
@@ -122,7 +123,6 @@ export class TooltipAdvancedDirective implements OnInit, OnDestroy {
                     originY: 'bottom',
                     overlayX: 'center',
                     overlayY: 'top',
-                    offsetY: 4,
                 },
             ]);
 
