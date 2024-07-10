@@ -13,7 +13,7 @@ import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 import { determineWageIncrease } from '@api/helpers/worker.helper';
 import {
     Entry,
-    ScenarioDistroForm,
+    DistributionForm,
     ScenarioType,
     ScenarioUpdateMutation,
     Worker,
@@ -24,7 +24,7 @@ import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, PagingParams, ROOT_ROUTE } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { ResetWorkersDialogComponent } from '../reset-workers-dialog/reset-workers-dialog.component';
-import { ScenarioWorkerDistroDialogComponent } from '../scenario-worker-distro-dialog/scenario-worker-ditrso-dialog.component';
+import { WorkerDistributionDialogComponent } from '../worker-distribution-dialog/worker-distribution-dialog.component';
 
 @Component({
     selector: 'giz-entry-distribution',
@@ -105,7 +105,7 @@ export class EntryDistributionComponent implements OnDestroy {
         this.state = 'edit';
     }
 
-    public saveDistribution(distroForm: ScenarioDistroForm): void {
+    public saveDistribution(distributionForm: DistributionForm): void {
         const entry = this.entry?.data();
         if (!entry) {
             return;
@@ -114,7 +114,7 @@ export class EntryDistributionComponent implements OnDestroy {
         const mutation: ScenarioUpdateMutation = {
             entryId: entry.id,
             scenarioUpdate: {
-                distributions: distroForm,
+                distributions: distributionForm,
             },
         };
 
@@ -133,7 +133,7 @@ export class EntryDistributionComponent implements OnDestroy {
     }
 
     public editWorker(worker: Worker) {
-        this.dialog.open(ScenarioWorkerDistroDialogComponent, {
+        this.dialog.open(WorkerDistributionDialogComponent, {
             data: {
                 entry: this.entry.data(),
                 worker: worker,

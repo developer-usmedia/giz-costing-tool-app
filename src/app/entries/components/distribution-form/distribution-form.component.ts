@@ -10,11 +10,11 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject, distinctUntilChanged, takeUntil } from 'rxjs';
 
-import { Entry, ScenarioDistroForm } from '@api/models';
+import { Distribution, DistributionForm, Worker } from '@api/models';
+import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
-interface ScenarioDistroFormGroup {
+interface DistributionFormGroup {
     baseWagePerc: FormControl<number | null>;
     bonusesPerc: FormControl<number | null>;
     ikbPerc: FormControl<number | null>;
@@ -26,6 +26,18 @@ interface ScenarioDistroFormGroup {
     ikbChildEducationPerc: FormControl<number | null>;
 }
 
+interface DistributionFormValue {
+    baseWagePerc: number | null;
+    bonusesPerc: number | null;
+    ikbPerc: number | null;
+    ikbHousingPerc: number | null;
+    ikbFoodPerc: number | null;
+    ikbTransportPerc: number | null;
+    ikbHealthcarePerc: number | null;
+    ikbChildcarePerc: number | null;
+    ikbChildEducationPerc: number | null;
+}
+
 @Component({
     selector: 'giz-distribution-form',
     templateUrl: './distribution-form.component.html',
@@ -34,9 +46,12 @@ interface ScenarioDistroFormGroup {
     encapsulation: ViewEncapsulation.None,
 })
 export class DistributionFormComponent implements OnChanges, OnDestroy {
-    @Input({ required: true }) entry?: Entry;
+    @Input() distribution?: Distribution;
+    @Input() worker?: Worker;
+    @Input() inDialog = false;
+    @Input() submitEvent = false;
     @Input() submitting = false;
-    @Output() submitForm = new EventEmitter<ScenarioDistroForm>();
+    @Output() submitForm = new EventEmitter<DistributionForm>();
 
     public maxIkbPercMapping = {
         baseWagePerc: 100,
@@ -48,53 +63,15 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
         ikbHealthcarePerc: 10,
         ikbChildcarePerc: 10,
         ikbChildEducationPerc: 10,
-    } as const;
+    };
 
-
-    // TODO: baseWage and ikbPerc are now not disabled even though the its specified in the form -> fix;
-
-    public form: FormGroup<ScenarioDistroFormGroup> = new FormGroup({
-        baseWagePerc: new FormControl<number | null>(
-            { value: this.entry?.scenario?.distribution?.baseWagePerc ?? 100, disabled: true },
-            { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.baseWagePerc)] },
-        ),
-        bonusesPerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.bonusesPerc ?? 0, {
-            validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.bonusesPerc), Validators.required],
-        }),
-        ikbPerc: new FormControl<number | null>(
-            { value: this.entry?.scenario?.distribution?.ikbPerc ?? 0, disabled: true },
-            { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbPerc)] },
-        ),
-        ikbHousingPerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.ikbHousingPerc ?? 0, {
-            validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbHousingPerc), Validators.required],
-        }),
-        ikbFoodPerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.ikbFoodPerc ?? 0, {
-            validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbFoodPerc), Validators.required],
-        }),
-        ikbTransportPerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.ikbTransportPerc ?? 0, {
-            validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbTransportPerc), Validators.required],
-        }),
-        ikbHealthcarePerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.ikbHealthcarePerc ?? 0,
-            { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbHealthcarePerc), Validators.required] },
-        ),
-        ikbChildcarePerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.ikbChildcarePerc ?? 0, {
-            validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbChildcarePerc), Validators.required],
-        }),
-        ikbChildEducationPerc: new FormControl<number | null>(
-            this.entry?.scenario?.distribution?.ikbChildEducationPerc ?? 0,
-            { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbChildEducationPerc), Validators.required] },
-        ),
-    });
+    public form: FormGroup<DistributionFormGroup>;
+    public isDisabled = false;
 
     private readonly destroyed$ = new Subject<void>();
 
     constructor() {
+        this.form = this.buildForm();
         this.form.valueChanges
             .pipe(
                 distinctUntilChanged(),
@@ -104,41 +81,85 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
             });
     }
 
-    public updateIkbTotal(fields: Partial<ScenarioDistroFormGroup> | Record<string, any>): void {
-        /* eslint-disable */
-        const computedIkbTotal: number =
-            fields.ikbHousingPerc +
-            fields.ikbFoodPerc +
-            fields.ikbTransportPerc +
-            fields.ikbHealthcarePerc +
-            fields.ikbChildcarePerc +
-            fields.ikbChildEducationPerc;
-        /* eslint-enable */
+    public ngOnChanges(changes: SimpleChanges) {
+        if (changes['distribution'] && this.distribution) {
+            this.patchForm();
+        }
 
-        const computedWage: number = 100 - fields.bonusesPerc - computedIkbTotal;
+        if (changes['submitting'] && this.submitting) {
+            this.form.disable();
+            this.isDisabled = true;
+        } else if (changes['submitting'] && !this.submitting) {
+            this.isDisabled = false;
+        }
+
+        if (changes['submitEvent'] && this.submitEvent) {
+            this.submit();
+        }
+    }
+
+    public buildForm(): FormGroup<DistributionFormGroup> {
+        return new FormGroup({
+            baseWagePerc: new FormControl<number | null>(
+                { value: this.distribution?.baseWagePerc ?? 100, disabled: true },
+                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.baseWagePerc)] },
+            ),
+            bonusesPerc: new FormControl<number | null>(
+                this.distribution?.bonusesPerc ?? 0, {
+                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.bonusesPerc), Validators.required],
+                }),
+            ikbPerc: new FormControl<number | null>(
+                { value: this.distribution?.ikbPerc ?? 0, disabled: true },
+                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbPerc)] },
+            ),
+            ikbHousingPerc: new FormControl<number | null>(
+                this.distribution?.ikbHousingPerc ?? 0, {
+                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbHousingPerc), Validators.required],
+                }),
+            ikbFoodPerc: new FormControl<number | null>(
+                this.distribution?.ikbFoodPerc ?? 0, {
+                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbFoodPerc), Validators.required],
+                }),
+            ikbTransportPerc: new FormControl<number | null>(
+                this.distribution?.ikbTransportPerc ?? 0, {
+                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbTransportPerc), Validators.required],
+                }),
+            ikbHealthcarePerc: new FormControl<number | null>(
+                this.distribution?.ikbHealthcarePerc ?? 0,
+                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbHealthcarePerc), Validators.required] },
+            ),
+            ikbChildcarePerc: new FormControl<number | null>(
+                this.distribution?.ikbChildcarePerc ?? 0, {
+                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbChildcarePerc), Validators.required],
+                }),
+            ikbChildEducationPerc: new FormControl<number | null>(
+                this.distribution?.ikbChildEducationPerc ?? 0,
+                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbChildEducationPerc), Validators.required] },
+            ),
+        });
+    }
+
+    public updateIkbTotal(fields: Partial<DistributionFormValue>): void {
+        const computedIkbTotal: number =
+            (fields.ikbHousingPerc ?? 0) +
+            (fields.ikbFoodPerc ?? 0) +
+            (fields.ikbTransportPerc ?? 0) +
+            (fields.ikbHealthcarePerc ?? 0) +
+            (fields.ikbChildcarePerc ?? 0) +
+            (fields.ikbChildEducationPerc ?? 0);
+
+        const computedWage: number = 100 - (fields.bonusesPerc ?? 0) - computedIkbTotal;
 
         this.form.patchValue(
             {
                 baseWagePerc: computedWage,
                 ikbPerc: computedIkbTotal,
             },
-            { emitEvent: false }, // ! anti-infinte loop
+            { emitEvent: false }, // ! anti-infinity loop
         );
 
         this.form.get('baseWagePerc')?.markAsTouched();
         this.form.get('ikbPerc')?.markAsTouched();
-    }
-
-    public ngOnChanges(changes: SimpleChanges) {
-        if (changes['entry'] && this.entry) {
-            this.patchForm();
-        }
-
-        if (changes['submitting'] && this.submitting) {
-            this.form.disable();
-        } else if (changes['submitting'] && !this.submitting) {
-            this.form.enable();
-        }
     }
 
     public patchForm() {
@@ -152,7 +173,7 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
             ikbHealthcarePerc,
             ikbChildcarePerc,
             ikbChildEducationPerc,
-        } = this.entry?.scenario?.distribution ?? {};
+        } = this.distribution ?? {};
 
         this.form.patchValue({
             baseWagePerc: baseWagePerc ?? 0,
@@ -173,13 +194,27 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
         if (this.form.valid) {
             this.submitting = true;
             this.form.disable();
-            const formValue = this.form.getRawValue();
-            this.submitForm.emit(formValue as ScenarioDistroForm);
+            const formValue = this.parseFormValue();
+            this.submitForm.emit(formValue);
         }
     }
 
     public ngOnDestroy() {
         this.destroyed$.next();
         this.destroyed$.complete();
+    }
+
+    private parseFormValue(): DistributionForm {
+        const formValue = this.form.getRawValue() as DistributionFormValue;
+
+        return {
+            bonusesPerc: formValue.bonusesPerc ?? 0,
+            ikbHousingPerc: formValue.ikbHousingPerc ?? 0,
+            ikbFoodPerc: formValue.ikbFoodPerc ?? 0,
+            ikbTransportPerc: formValue.ikbTransportPerc ?? 0,
+            ikbHealthcarePerc: formValue.ikbHealthcarePerc ?? 0,
+            ikbChildcarePerc: formValue.ikbChildcarePerc ?? 0,
+            ikbChildEducationPerc: formValue.ikbChildEducationPerc ?? 0,
+        };
     }
 }

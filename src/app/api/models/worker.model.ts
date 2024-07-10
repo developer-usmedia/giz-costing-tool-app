@@ -1,9 +1,10 @@
+import { DistributionForm } from '@api/models/distribution.model';
 import { Gender } from '@api/models/gender.enum';
 import { EntityResponse, PagedResponse } from '@api/models/response.model';
 import { PagingParams, Sort } from '@core/models';
-import { WorkerLwDetails } from './living-wage-details';
+import { WorkerLwDetails } from './living-wage-details.model';
 import { Scenario, ScenarioSpecification } from './scenario.model';
-import { WorkerRemuneration } from './worker-remuneration';
+import { WorkerRemuneration } from './worker-remuneration.model';
 
 export type WorkerScenarioSpecification = ScenarioSpecification;
 export type WorkerScenarioDistribution = ScenarioSpecification;
@@ -68,19 +69,9 @@ export interface WorkersPagingParams extends PagingParams {
 }
 
 // Forms
-export interface WorkerDistroForm {
-    bonusesPerc: number;
-    ikbHousingPerc: number;
-    ikbFoodPerc: number;
-    ikbTransportPerc: number;
-    ikbHealthcarePerc: number;
-    ikbChildcarePerc: number;
-    ikbChildEducationPerc: number;
-}
-
 export interface ScenarioWorkerForm {
     remunerationIncrease?: number | null;
-    distribution?: WorkerDistroForm;
+    distribution?: DistributionForm;
 }
 
 // Mutations

@@ -1,6 +1,6 @@
 import { EntityResponse } from '@api/models/response.model';
 import { Scenario } from '@api/models/scenario.model';
-import { FacilityLwDetails } from './living-wage-details';
+import { FacilityLwDetails } from './living-wage-details.model';
 
 export interface Entry extends EntityResponse {
     id: string;

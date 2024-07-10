@@ -1,6 +1,7 @@
+import { Distribution, DistributionForm } from '@api/models/distribution.model';
 import { EntityResponse } from '@api/models/response.model';
-import { AnnualCosts } from './annual-costs';
-import { FacilityLwDetails } from './living-wage-details';
+import { AnnualCosts } from './annual-costs.model';
+import { FacilityLwDetails } from './living-wage-details.model';
 
 // Entity
 export enum ScenarioType {
@@ -15,22 +16,10 @@ export interface ScenarioSpecification {
     remunerationIncrease: number;
 }
 
-export interface ScenarioDistribution {
-    baseWagePerc: number;
-    bonusesPerc: number;
-    ikbPerc: number;
-    ikbHousingPerc: number;
-    ikbFoodPerc: number;
-    ikbTransportPerc: number;
-    ikbHealthcarePerc: number;
-    ikbChildcarePerc: number;
-    ikbChildEducationPerc: number;
-}
-
 export interface Scenario extends EntityResponse {
     type: ScenarioType;
     specification?: ScenarioSpecification;
-    distribution?: ScenarioDistribution; 
+    distribution?: Distribution;
     livingWage?: FacilityLwDetails;
     annualCosts?: AnnualCosts;
 }
@@ -43,26 +32,15 @@ export interface ScenarioSpecsForm {
     remunerationIncrease: number;
 }
 
-export interface ScenarioDistroForm {
-    bonusesPerc: number;
-    ikbHousingPerc: number;
-    ikbFoodPerc: number;
-    ikbTransportPerc: number;
-    ikbHealthcarePerc: number;
-    ikbChildcarePerc: number;
-    ikbChildEducationPerc: number;
-}
-
-
 export interface ScenarioCreate {
     type: ScenarioType;
     specifications: ScenarioSpecsForm;
-    distributions?: ScenarioDistroForm;
+    distributions?: DistributionForm;
 }
 
 export interface ScenarioUpdate {
     specifications?: ScenarioSpecsForm;
-    distributions?: ScenarioDistroForm;
+    distributions?: DistributionForm;
 }
 
 export interface ScenarioWorkersReset {

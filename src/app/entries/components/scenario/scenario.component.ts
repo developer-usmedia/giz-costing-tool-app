@@ -21,7 +21,7 @@ import { PageEvent } from '@shared/components/paginator/paginator.model';
 import {
     ResetWorkersDialogComponent,
 } from '../../containers/reset-workers-dialog/reset-workers-dialog.component';
-import { ScenarioWorkerSpecsDialogComponent } from '../../containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
+import { WorkerScenarioSpecsDialogComponent } from '../../containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component';
 
 @Component({
     selector: 'giz-scenario',
@@ -64,7 +64,7 @@ export class ScenarioComponent {
     }
 
     public edit(worker: Worker) {
-        this.dialog.open(ScenarioWorkerSpecsDialogComponent, {
+        this.dialog.open(WorkerScenarioSpecsDialogComponent, {
             data: {
                 entry: this.entry,
                 worker: worker,

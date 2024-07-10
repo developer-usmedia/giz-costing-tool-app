@@ -14,7 +14,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Entry, ScenarioWorkerForm, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
 import { EntriesService } from '@core/services';
 
-// TODO: THIS IS A COPY OF SCENARIO WORKER SPECS: CHANGE TO DISTRIBUTION
 interface ScenarioWorkerSpecsFormGroup {
     remunerationIncrease: FormControl<number | null>;
 }
@@ -24,13 +23,13 @@ export interface ScenarioWorkerSpecsResult {
 }
 
 @Component({
-    selector: 'giz-scenario-worker-distribution-dialog',
-    templateUrl: './scenario-worker-distribution-dialog.component.html',
-    styleUrl: './scenario-worker-distribution-dialog.component.scss',
+    selector: 'giz-worker-scenario-specs-dialog',
+    templateUrl: './worker-scenario-specs-dialog.component.html',
+    styleUrl: './worker-scenario-specs-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
 })
-export class ScenarioWorkerDistributionDialogComponent implements OnChanges {
+export class WorkerScenarioSpecsDialogComponent implements OnChanges {
     public readonly entriesService = inject(EntriesService);
     public scenarioUpdateWorkerMutation = this.entriesService.updateScenarioWorker();
 

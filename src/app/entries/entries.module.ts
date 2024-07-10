@@ -24,11 +24,12 @@ import { EntryInformationComponent } from './containers/entry-information/entry-
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
 import { OverviewComponent } from './containers/overview/overview.component';
 import { ResetWorkersDialogComponent } from './containers/reset-workers-dialog/reset-workers-dialog.component';
-import { ScenarioWorkerDistroDialogComponent } from './containers/scenario-worker-distro-dialog/scenario-worker-ditrso-dialog.component';
-import { ScenarioWorkerSpecsDialogComponent } from './containers/scenario-worker-specs-dialog/scenario-worker-specs-dialog.component';
+import { WorkerDistributionDialogComponent } from './containers/worker-distribution-dialog/worker-distribution-dialog.component';
+import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component';
 
 @NgModule({
     declarations: [
+        DistributionFormComponent,
         EntryBuyerComponent,
         EntryDeleteDialogComponent,
         EntryDetailComponent,
@@ -43,9 +44,8 @@ import { ScenarioWorkerSpecsDialogComponent } from './containers/scenario-worker
         ScenarioCardComponent,
         ScenarioComponent,
         ScenarioSpecsFormComponent,
-        ScenarioWorkerDistroDialogComponent,
-        ScenarioWorkerSpecsDialogComponent,
-        DistributionFormComponent,
+        WorkerDistributionDialogComponent,
+        WorkerScenarioSpecsDialogComponent,
     ],
     imports: [
         HttpClientModule,

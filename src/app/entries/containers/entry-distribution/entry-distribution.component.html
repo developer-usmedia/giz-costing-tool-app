@@ -7,7 +7,6 @@
     }"
 >
     @if (state === 'view') {
-        <!-- [disabled]="tabDisabled(routes.DISTRIBUTION)" -->
         <button giz-stroke-button
                 theme="basic"
                 i18n="distribution change-specs"
@@ -41,11 +40,11 @@
         <div class="distribution__specification">
             @if (state === 'edit' && entry.data(); as entry) {
                <giz-distribution-form
-                   [entry]="entry"
-                   [submitting]="!!saving"
+                   [distribution]="entry?.scenario?.distribution"
+                   [submitting]="saving"
                    (submitForm)="saveDistribution($event)"
                ></giz-distribution-form>
-            } 
+            }
             @if (state !== 'edit' && entry.data(); as entry) {
                 <table class="distribution__table">
                     <caption i18n="distributions specs title">Specifications</caption>
@@ -162,9 +161,6 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                    <!-- <ng-container buttons>
-                                                        <a giz-stroke-button [routerLink]="(routes.DASHBOARD)">Button</a>
-                                                    </ng-container> -->
                                                 </giz-tooltip-advanced>
                                             </ng-template>
                                         </td>
@@ -178,7 +174,7 @@
                                         </td>
                                     </tr>
                                 }
-                                
+
                             </ng-container>
                         </giz-table>
 
@@ -198,7 +194,7 @@
                         </div>
                     }
                 }
-                
+
             </div>
         }
     }

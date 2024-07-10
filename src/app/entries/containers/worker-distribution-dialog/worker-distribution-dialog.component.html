@@ -1,0 +1,46 @@
+<giz-dialog [title]="title" (closeDialog)="cancel()" size="medium">
+    <giz-distribution-form
+        [distribution]="data.worker.scenario.distribution"
+        [worker]="data.worker"
+        [inDialog]="true"
+        [submitEvent]="submitEvent()"
+        [submitting]="isPending()"
+        (submitForm)="update($event)"
+    ></giz-distribution-form>
+
+    <ng-container footer-left>
+        <button
+            type="button"
+            giz-stroke-button
+            (click)="reset()"
+            [disabled]="isPending()"
+            i18n="worker-edit reset"
+        >Reset to defaults
+        </button>
+        @if (isPending()) {
+            <giz-spinner theme="grey">
+                <span i18n="worker-edit submitting">Submitting...</span>
+            </giz-spinner>
+        }
+    </ng-container>
+
+    <ng-container footer-right>
+        <button
+            type="button"
+            giz-stroke-button
+            theme="basic"
+            (click)="cancel()"
+            [disabled]="isPending()"
+            i18n="worker-edit cancel"
+        >Cancel
+        </button>
+        <button
+            type="submit"
+            giz-stroke-button
+            [disabled]="isPending()"
+            (click)="submit()"
+            i18n="worker-edit save"
+        >Save
+        </button>
+    </ng-container>
+</giz-dialog>
