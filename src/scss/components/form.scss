@@ -231,9 +231,24 @@
             }
         }
 
-        &--horizontal {
+        &__group {
+            display: flex;
+            gap: $p-gutter--small;
+
             #{ $self }__field {
-                align-items: center;
+                flex: 1 1 auto;
+                flex-basis: 60%;
+
+                &:nth-child(2) {
+                    flex-basis: 40%;
+                }
+            }
+        }
+
+        &--horizontal {
+            #{ $self }__field,
+            #{ $self }__fieldset {
+                align-items: start;
                 display: grid;
                 gap: 0 $p-gutter;
                 grid-template-columns: var(--form-horizontal-label-width) 1fr;
@@ -243,8 +258,16 @@
                 }
             }
 
+            #{ $self }__group {
+                #{ $self }__field {
+                    display: flex;
+                    gap: $p-gutter--small;
+                }
+            }
+
             #{ $self }__label {
                 grid-column-start: 1;
+                padding-top: 12px;
             }
         }
     }

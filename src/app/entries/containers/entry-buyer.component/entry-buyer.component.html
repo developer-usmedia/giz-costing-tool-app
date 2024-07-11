@@ -6,15 +6,13 @@
         link: [moduleRoute.ENTRIES, entryId(), entryRoute.DISTRIBUTION]
     }"
 >
-    <!-- [disabled]="tabDisabled(routes.buyer)" -->
-    @if (submitting) {
+    @if (saving) {
         <giz-spinner theme="grey" [reverse]="true">
             <span i18n="distro saving">Saving...</span>
         </giz-spinner>
     }
-    <button type="submit" giz-stroke-button i18n="save-and-continue" (click)="submit()">Save and continue</button>
+    <button type="submit" giz-stroke-button i18n="save-and-continue" (click)="saveEntry()">Save and continue</button>
 </giz-entry-header>
-
 
 <div class="buyer">
     @if (!entry || entry.isLoading()) {
@@ -22,14 +20,14 @@
     } @else if (entry.isError() || !entry.data()) {
         <p i18n="entry error">Error getting entry.</p>
     } @else {
-        <div class="buyer__info todo">
-            <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="buyer__info">
+            <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="saveEntry()">
                 <div class="form__container">
                     <div class="form__header">
                         <h3 class="form__title" i18n="buyer title">Buyer specification (optional)</h3>
-                        <p class="form__intro" i18n="buyer intro">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt
-                            molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.
+                        <p class="form__subtext" i18n="buyer subtext"
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt
+                        molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.
                         </p>
                     </div>
 
@@ -41,7 +39,6 @@
                         }"
                     >
                         <label class="form__label" for="buyerName" i18n="form buyerName label">Name*</label>
-
                         <div class="form__input">
                             <input type="text" id="buyerName" formControlName="buyerName" />
                         </div>
@@ -50,42 +47,51 @@
                         }
                     </div>
 
-                    <div
-                        class="form__field"
-                        [ngClass]="{
-                            'is-error': form | hasError: 'buyerAmount',
-                            'has-value': form | hasValue: 'buyerAmount'
-                        }"
-                    >
-                        <label class="form__label" for="buyerAmount" i18n="form buyerAmount label"
-                            >Buying proportion</label
-                        >
+                    <div class="form__fieldset">
+                        <div class="form__label" i18n="form buyerAmount label">Buying proportion</div>
+                        <div class="form__group">
+                            <div
+                                class="form__field"
+                                [ngClass]="{
+                                    'is-error': form | hasError: 'buyerAmount',
+                                    'has-value': form | hasValue: 'buyerAmount'
+                                }"
+                            >
+                                <label class="form__label is-hidden" for="buyerAmount" i18n="form buyerAmount label">Buying proportion</label>
+                                <div class="form__input">
+                                    <input type="number" id="buyerAmount" formControlName="buyerAmount" />
+                                    <span class="form__hint" i18n="form buyerAmount hint">portion of total annual production</span>
+                                    @if (form | showError: 'buyerAmount' : 'required') {
+                                        <div class="form__error" i18n="form buyerAmount errors required">Field is required</div>
+                                    }
+                                    @if (form | showError: 'buyerAmount' : 'min') {
+                                        <div class="form__error" i18n="form buyerAmount errors min">Minimum is 0</div>
+                                    }
+                                </div>
+                            </div>
 
-                        <div class="form__input">
-                            <input type="number" id="buyerAmount" formControlName="buyerAmount" />
+                            <div
+                                class="form__field"
+                                [ngClass]="{
+                                    'is-error': form | hasError: 'buyerUnit',
+                                    'has-value': form | hasValue: 'buyerUnit'
+                                }"
+                            >
+                                <label class="form__label is-hidden" for="buyerUnit" i18n="form buyerUnit label">Unit</label>
+                                <div class="form__select">
+                                    <select id="buyerUnit" formControlName="buyerUnit">
+                                        @for (unit of buyerUnits; track $index) {
+                                            <option [ngValue]="unit">{{ getUnitLabel(unit) }}</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        @if (form | showError: 'buyerAmount' : 'required') {
-                            <div class="form__error" i18n="form buyerAmount errors required">Field is required</div>
-                        }
-                        @if (form | showError: 'buyerAmount' : 'min') {
-                            <div class="form__error" i18n="form buyerAmount errors min">Minimum is 0</div>
-                        }
-                        @if (form | showError: 'buyerAmount' : 'max') {
-                            <div class="form__error" i18n="form buyerAmount errors max">Maximum is 100</div>
-                        }
-
-                        <!-- <div class="form__input">
-                            <select formControlName="buyerUnit">
-                                @for (unit of buyerUnits; track $index) {
-                                    <option [ngValue]="unit">{{ unit }}</option>
-                                }
-                            </select>
-                        </div> -->
                     </div>
                 </div>
             </form>
         </div>
-        <div class="buyer__specification">
+        <div class="buyer__entry">
             @if (entry.data(); as entry) {
                 <giz-table class="buyer__table" type="info" [caption]="getTableCaption()" [hideCaption]="true">
                     <ng-container>
@@ -97,10 +103,10 @@
                                     [icon]="icon.COPY"
                                     [theme]="'basic'"
                                     [size]="'small'"
-                                    [cdkCopyToClipboard]="entry.id"
+                                    [cdkCopyToClipboard]="entry.id.toUpperCase()"
                                     i18n="copy"
                                 >Copy</button>
-                                {{ entry.id | empty }}
+                                {{ entry.id.toUpperCase()| empty }}
                             </td>
                         </tr>
                         <tr giz-table-row>
@@ -113,6 +119,7 @@
                         </tr>
                     </ng-container>
                 </giz-table>
+                <span class="form__hint buyer__form-hint" i18n="form field optional">(*) Optional field</span>
             }
         </div>
     }

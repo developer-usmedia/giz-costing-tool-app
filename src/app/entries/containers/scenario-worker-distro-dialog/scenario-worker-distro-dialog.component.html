@@ -1,0 +1,288 @@
+<giz-dialog [title]="title" (closeDialog)="cancel()" size="medium">
+    <p 
+        class="worker-edit__description" 
+        i18n="worker-edit-distro description"
+    >Please specify how you would like to redistribute the additional funds (in % per category). If no specifications
+        are chosen all funds will be allocated to the base wage
+    </p>
+
+    <div class="form__definition form__definition--left">
+        <p class="form__label" i18n="worker-specs job-category">Job-category</p>
+        <p class="form__text">
+            {{ data.worker.name }}
+            <span class="form__subtext">
+                - {{ data.worker.gender | gender }}, {{ data.worker.nrOfWorkers }}
+                <span i18n="data.workers">{data.worker.nrOfWorkers, plural, =1 {worker} other {workers}}</span>
+            </span>
+        </p>
+    </div>
+
+    <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'baseWagePerc',
+                'has-value': form | hasValue: 'baseWagePerc'
+            }"
+        >
+            <label class="form__label" for="baseWagePerc" i18n="form baseWage label">Base wage</label>
+
+            <div class="form__input">
+                <input type="number" id="baseWagePerc" formControlName="baseWagePerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'baseWagePerc' : 'min') {
+                <div class="form__error" i18n="form baseWagePerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'baseWagePerc' : 'max') {
+                <div class="form__error" i18n="form baseWagePerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['baseWagePerc'] }}
+                </div>
+            }
+            <span class="form__hint" i18n="form basewage hint">Unallocated funds will go to base wage</span>
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'bonusesPerc',
+                'has-value': form | hasValue: 'bonusesPerc'
+            }"
+        >
+            <label class="form__label" for="bonusesPerc" i18n="form bonus label">Bonuses</label>
+
+            <div class="form__input">
+                <input type="number" id="bonusesPerc" formControlName="bonusesPerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'bonusesPerc' : 'required') {
+                <div class="form__error" i18n="form bonusesPerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'bonusesPerc' : 'min') {
+                <div class="form__error" i18n="form bonusesPerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'bonusesPerc' : 'max') {
+                <div class="form__error" i18n="form bonusesPerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['baseWagePerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbPerc',
+                'has-value': form | hasValue: 'ikbPerc'
+            }"
+        >
+            <label class="form__label" for="ikbPerc" i18n="form ikb label">In-kind benefits</label>
+
+            <div class="form__input">
+                <input type="number" id="ikbPerc" formControlName="ikbPerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbPerc' : 'min') {
+                <div class="form__error" i18n="form ikbPerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbPerc' : 'max') {
+                <div class="form__error" i18n="form ikbPerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbPerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbHousingPerc',
+                'has-value': form | hasValue: 'ikbHousingPerc'
+            }"
+        >
+            <label class="form__label" for="ikbHousingPerc" i18n="form ikb-housing label">Housing</label>
+
+            <div class="form__input">
+                <input type="number" id="ikbHousingPerc" formControlName="ikbHousingPerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbHousingPerc' : 'required') {
+                <div class="form__error" i18n="form ikbHousingPerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'ikbHousingPerc' : 'min') {
+                <div class="form__error" i18n="form ikbHousingPerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbHousingPerc' : 'max') {
+                <div class="form__error" i18n="form ikbHousingPerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbHousingPerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbFoodPerc',
+                'has-value': form | hasValue: 'ikbFoodPerc'
+            }"
+        >
+            <label class="form__label" for="ikbFoodPerc" i18n="form ikb-food label">Food</label>
+
+            <div class="form__input">
+                <input type="number" id="ikbFoodPerc" formControlName="ikbFoodPerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbFoodPerc' : 'required') {
+                <div class="form__error" i18n="form ikbFoodPerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'ikbFoodPerc' : 'min') {
+                <div class="form__error" i18n="form ikbFoodPerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbFoodPerc' : 'max') {
+                <div class="form__error" i18n="form ikbFoodPerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbFoodPerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbTransportPerc',
+                'has-value': form | hasValue: 'ikbTransportPerc'
+            }"
+        >
+            <label class="form__label" for="ikbTransportPerc" i18n="form ikb-transport label">Transportation</label>
+
+            <div class="form__input">
+                <input type="number" id="ikbTransportPerc" formControlName="ikbTransportPerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbTransportPerc' : 'required') {
+                <div class="form__error" i18n="form ikbTransportPerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'ikbTransportPerc' : 'min') {
+                <div class="form__error" i18n="form ikbTransportPerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbTransportPerc' : 'max') {
+                <div class="form__error" i18n="form ikbTransportPerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbTransportPerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbHealthcarePerc',
+                'has-value': form | hasValue: 'ikbHealthcarePerc'
+            }"
+        >
+            <label class="form__label" for="ikbHealthcarePerc" i18n="form ikb-healthcare label">Healthcare</label>
+
+            <div class="form__input">
+                <input type="number" id="ikbHealthcarePerc" formControlName="ikbHealthcarePerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbHealthcarePerc' : 'required') {
+                <div class="form__error" i18n="form ikbHealthcarePerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'ikbHealthcarePerc' : 'min') {
+                <div class="form__error" i18n="form ikbHealthcarePerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbHealthcarePerc' : 'max') {
+                <div class="form__error" i18n="form ikbHealthcarePerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbHealthcarePerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbChildcarePerc',
+                'has-value': form | hasValue: 'ikbChildcarePerc'
+            }"
+        >
+            <label class="form__label" for="ikbChildcarePerc" i18n="form ikb-childcare label">Child care</label>
+
+            <div class="form__input">
+                <input type="number" id="ikbChildcarePerc" formControlName="ikbChildcarePerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbChildcarePerc' : 'required') {
+                <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'ikbChildcarePerc' : 'min') {
+                <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbChildcarePerc' : 'max') {
+                <div class="form__error" i18n="form ikbChildcarePerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbChildcarePerc'] }}
+                </div>
+            }
+        </div>
+
+        <div
+            class="form__field"
+            [ngClass]="{
+                'is-error': form | hasError: 'ikbChildEducationPerc',
+                'has-value': form | hasValue: 'ikbChildEducationPerc'
+            }"
+        >
+            <label class="form__label" for="ikbChildEducationPerc" i18n="form ikb-education label"
+                >Child education</label
+            >
+
+            <div class="form__input">
+                <input type="number" id="ikbChildEducationPerc" formControlName="ikbChildEducationPerc" />
+                <span class="form__postfix">%</span>
+            </div>
+            @if (form | showError: 'ikbChildEducationPerc' : 'required') {
+                <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
+            }
+            @if (form | showError: 'ikbChildEducationPerc' : 'min') {
+                <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
+            }
+            @if (form | showError: 'ikbChildEducationPerc' : 'max') {
+                <div class="form__error" i18n="form ikbChildcarePerc errors imax"
+                >Maximum is {{ this.maxIkbPercMapping['ikbChildEducationPerc'] }}
+                </div>
+            }
+        </div>
+    </form>
+
+    <ng-container footer-left>
+        <button
+            type="button"
+            giz-stroke-button
+            (click)="reset()"
+            [disabled]="isButtonDisabled()"
+            i18n="worker-edit reset"
+        >Reset to defaults
+        </button>
+        @if (scenarioWorkerUpdateMutation.isPending()) {
+            <giz-spinner theme="grey">
+                <span i18n="worker-edit submitting">Submitting...</span>
+            </giz-spinner>
+        }
+    </ng-container>
+
+    <ng-container footer-right>
+        <button
+            type="button"
+            giz-stroke-button
+            theme="basic"
+            (click)="cancel()"
+            [disabled]="isButtonDisabled()"
+            i18n="worker-edit cancel"
+        >Cancel
+        </button>
+        <button
+            type="submit"
+            giz-stroke-button
+            [disabled]="isButtonDisabled()"
+            (click)="submit()"
+            i18n="worker-edit save"
+        >Save
+        </button>
+    </ng-container>
+</giz-dialog>

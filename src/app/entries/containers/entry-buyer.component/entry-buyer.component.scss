@@ -1,5 +1,6 @@
 @import 'config/sizes';
 @import 'mixins/screen';
+@import 'mixins/typography';
 
 .buyer {
     display: flex;
@@ -10,25 +11,15 @@
         margin-bottom: $p-gutter;
     }
 
-    &__table {
-        margin-bottom: 1.5rem;
-    }
-
-    &__buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: flex-end;
+    &__form-hint {
+        font-style: italic;
+        padding: 0 1rem;
     }
 
     @include screen($screen-simple) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto;
-
-        &__categories,
-        &__buttons {
-            grid-column: span 2;
-        }
     }
 
     @include screen($screen-normal) {
@@ -37,7 +28,7 @@
             gap: 0 $p-gutter;
             grid-template:
                 'title title' fit-content(100%)
-                'intro buttons' fit-content(100%) / 750px 1fr;
+                'subtext buttons' fit-content(100%) / 750px 1fr;
         }
 
         &__title {
@@ -45,18 +36,10 @@
             margin: 0 0 $p-gutter--small;
         }
 
-        &__intro {
+        &__subtext {
             align-self: center;
-            grid-area: intro;
+            grid-area: subtext;
             margin-bottom: 0;
-        }
-
-        &__buttons {
-            grid-area: buttons;
-
-            > * {
-                justify-self: end;
-            }
         }
     }
 }

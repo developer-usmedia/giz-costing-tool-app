@@ -25,7 +25,7 @@ import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shar
 import {
     ResetScenarioData,
     ResetScenarioDialogComponent,
-    ResetScenarioResult
+    ResetScenarioResult,
 } from '../reset-scenario-dialog/reset-scenario-dialog.component';
 
 

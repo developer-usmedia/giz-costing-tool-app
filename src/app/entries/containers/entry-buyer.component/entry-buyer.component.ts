@@ -1,16 +1,24 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { EntriesService } from '@core/services';
-import { getPagingParamsFromQueryParams } from '@shared/helpers';
+import { toObservable } from '@angular/core/rxjs-interop';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
+import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { BuyerUnit, Entry, ScenarioType, WorkersPagingParams } from '@api/models';
+import { BuyerUnit, Entry, EntryUpdateMutation, ScenarioType } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
+import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
+
+
+export interface EntryBuyerForm {
+    buyerName: string;
+    buyerAmount: number;
+    buyerUnit: BuyerUnit;
+}
 
 interface EntryBuyerFormGroup {
     buyerName: FormControl<string | null>;
@@ -24,15 +32,14 @@ interface EntryBuyerFormGroup {
     styleUrl: './entry-buyer.component.scss',
 })
 export class EntryBuyerComponent implements OnDestroy {
-    public backTitle = $localize`:entry scenarios title:Scenarios`;
+    public backTitle = $localize`:entry scenarios title:Distribution`;
     public title = $localize`:entry buyer title:Buyer`;
-    public submitting: any;
-    public saving = false; // Replace with angular query mutationstatus
 
+    public readonly toastr = inject(ToastrService);
+    public readonly router = inject(Router);
+    public readonly entriesApi = inject(EntriesApi);
     public readonly entriesService = inject(EntriesService);
-    public entriesApi = inject(EntriesApi);
 
-    public pagingParams = signal<WorkersPagingParams | undefined>(undefined);
     public entryId = signal<string>('');
     public entry = injectQuery<Entry, HttpErrorResponse>(() => ({
         enabled: this.entryId() != '',
@@ -41,17 +48,17 @@ export class EntryBuyerComponent implements OnDestroy {
         retry: 1,
         staleTime: Infinity,
     }));
-
     public updateEntryMudation = this.entriesService.updateEntry();
+    public saving = this.updateEntryMudation.isPending();
 
     public form: FormGroup<EntryBuyerFormGroup> = new FormGroup({
-        buyerName: new FormControl<string | null>(this.entry.data()?.buyer?.name ?? null, {
+        buyerName: new FormControl<string | null>(null, {
             validators: [Validators.required],
         }),
-        buyerAmount: new FormControl<number | null>(this.entry.data()?.buyer?.proportion.amount ?? null, {
-            validators: [Validators.required],
+        buyerAmount: new FormControl<number | null>(null, {
+            validators: [Validators.required, Validators.min(0)],
         }),
-        buyerUnit: new FormControl<BuyerUnit | null>(this.entry.data()?.buyer?.proportion.unit ?? null, {
+        buyerUnit: new FormControl<BuyerUnit | null>(BuyerUnit.UNIT, {
             validators: [Validators.required],
         }),
     });
@@ -62,7 +69,6 @@ export class EntryBuyerComponent implements OnDestroy {
     protected readonly scenarioType = ScenarioType;
     protected readonly routes = ROOT_ROUTE;
     protected readonly buyerUnits = Object.values(BuyerUnit);
-
     private readonly activatedRoute = inject(ActivatedRoute);
     private readonly destroyed$ = new Subject<void>();
 
@@ -74,18 +80,14 @@ export class EntryBuyerComponent implements OnDestroy {
                 distinctUntilChanged(),
             )
             .subscribe((id) => {
-                if (id) this.entryId.set(id);
+                if (id) {
+                    this.entryId.set(id);
+                }
             });
 
-        this.activatedRoute.queryParams
-            .pipe(
-                takeUntil(this.destroyed$),
-                map((params: Params) => getPagingParamsFromQueryParams<WorkersPagingParams>(params, 'workers')),
-                distinctUntilChanged(),
-            )
-            .subscribe((params) => {
-                this.pagingParams.set(params);
-            });
+        toObservable(this.entry.data)
+            .pipe(takeUntil(this.destroyed$), distinctUntilChanged())
+            .subscribe(() => this.patchForm());
     }
 
 
@@ -93,39 +95,59 @@ export class EntryBuyerComponent implements OnDestroy {
         return $localize`:entry-info title:Entry information`;
     }
 
-    public submit(): void {
-        this.saving = true;
-        this.submitting = true;
-
-
-
-        if (this.form.valid && this.entry.data()) {
-            this.submitting = true;
-            this.form.disable();
-            // const formValue = this.form.getRawValue();
-
-            // const mutation: EntryUpdateMutation = {
-            //     entryId: this.entry.data()?.id as string,
-            //     entryUpdate: {
-            //         // buyer: {
-            //         //     buyerName: this
-            //         //     buyerProportion: number;
-            //         //     buyerUnit: BuyerUnit
-            //         // },
-            //     },
-            // };
-
-            // this.scenarioUpdateMutation.mutate(mutation, {
-            //     onSuccess: () => {
-            //         this.state = 'view';
-            //         this.toastr.success($localize`:distribution-update success:Successfully updated distribution`);
-            //     },
-            //     onError: (error) => {
-            //         console.error(error);
-            //         this.toastr.error($localize`:distribution-update error:Something went wrong updating the distribution`);
-            //     },
-            // });
+    public getUnitLabel(unit: BuyerUnit) {
+        switch (unit) {
+            case BuyerUnit.UNIT:
+                return $localize`:buyer unit title:Unit`;
+            case BuyerUnit.PERCENTAGE:
+                return '%';
+            default:
+                return '';
         }
+    }
+
+    public patchForm() {
+        if(!this.entry.data()) {
+            return;
+        }
+        const entry = this.entry.data();
+
+        this.form.patchValue({
+            buyerName: entry?.buyer?.name,
+            buyerAmount: entry?.buyer?.proportion?.amount,
+            buyerUnit: entry?.buyer?.proportion?.unit ?? BuyerUnit.UNIT,
+        });
+    }
+
+    public saveEntry(): void {
+        this.form.markAllAsTouched();
+
+        if(!this.form.valid) {
+            return;
+        }
+
+        const formValue = this.form.getRawValue() as EntryBuyerForm;
+        const mutation: EntryUpdateMutation = {
+            entryId: this.entryId(),
+            entryUpdate: {
+                buyer: {
+                    buyerName: formValue.buyerName,
+                    buyerProportion: formValue.buyerAmount,
+                    buyerUnit: formValue.buyerUnit,
+                },
+            },
+        };
+        this.updateEntryMudation.mutate(mutation, {
+            onSuccess: () => {
+                this.entriesService.refreshEntry(this.entryId());
+                this.router.navigate([this.moduleRoute.ENTRIES, this.entryId(), this.entryRoute.REPORT]);
+                this.toastr.success($localize`:buyer-update success:Successfully updated buyer information`);
+            },
+            onError: (error) => {
+                console.error(error);
+                this.toastr.error($localize`:buyer-update error:Something went wrong updating the buyer information`);
+            },
+        });
     }
 
     public ngOnDestroy(): void {

@@ -996,21 +996,21 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">184</context>
         </context-group>
         <note priority="1" from="description">distribution title</note>
       </trans-unit>
-      <trans-unit id="1377439816855561266" datatype="html">
-        <source> Please specify how you would like to redistribute the additional funds (in % per category). If no specifications are chosen all funds will be allocated to the base wage. </source>
+      <trans-unit id="7260627879142451894" datatype="html">
+        <source>Please specify how you would like to redistribute the additional funds (in % per category). If no specifications are chosen all funds will be allocated to the base wage. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">8,9</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
-        <note priority="1" from="description">distribution intro</note>
+        <note priority="1" from="description">distro intro</note>
       </trans-unit>
       <trans-unit id="2886523807619591085" datatype="html">
         <source>Job-category</source>
@@ -1108,7 +1108,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">71,73</context>
+          <context context-type="linenumber">68,69</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
@@ -1224,11 +1224,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">49,51</context>
+          <context context-type="linenumber">46,48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">68,70</context>
+          <context context-type="linenumber">65,67</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
@@ -1352,7 +1352,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">12,13</context>
+          <context context-type="linenumber">11,12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-distribution-dialog/worker-distribution-dialog.component.html</context>
@@ -1372,57 +1372,9 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
         <note priority="1" from="description">save-and-continue</note>
-      </trans-unit>
-      <trans-unit id="8492500412573690939" datatype="html">
-        <source> Are you sure you want to reset scenarios? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">3,5</context>
-        </context-group>
-        <note priority="1" from="description">scenario-reset description</note>
-      </trans-unit>
-      <trans-unit id="2159130950882492111" datatype="html">
-        <source>Cancel</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
-          <context context-type="linenumber">23,24</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
-          <context context-type="linenumber">14,15</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">57,58</context>
-        </context-group>
-        <note priority="1" from="description">cancel</note>
-      </trans-unit>
-      <trans-unit id="7808756054397155068" datatype="html">
-        <source>Reset</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">8,9</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
-          <context context-type="linenumber">17,18</context>
-        </context-group>
-        <note priority="1" from="description">reset</note>
-      </trans-unit>
-      <trans-unit id="5089170722956064121" datatype="html">
-        <source>Reset scenario selection?</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/reset-scenario-dialog/reset-scenario-dialog.component.ts</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-        <note priority="1" from="description">scenario-reset title</note>
       </trans-unit>
       <trans-unit id="4024676288268057944" datatype="html">
         <source>Graphic representation of scenario</source>
@@ -1449,7 +1401,7 @@
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">5,8</context>
         </context-group>
-        <note priority="1" from="description">specs intro</note>
+        <note priority="1" from="description">specs subtext</note>
       </trans-unit>
       <trans-unit id="4474894550900672100" datatype="html">
         <source>Average living wag gap</source>
@@ -1500,10 +1452,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">76,79</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">74,77</context>
         </context-group>
         <note priority="1" from="description">form taxEmployee errors max</note>
       </trans-unit>
@@ -1679,11 +1627,11 @@
         <source><x id="PH" equiv-text="total ?? &apos;-&apos;"/> job categories</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">180</context>
         </context-group>
         <note priority="1" from="description">job-categories table</note>
       </trans-unit>
@@ -1691,7 +1639,7 @@
         <source>Error getting entry.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">23,25</context>
+          <context context-type="linenumber">21,23</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
@@ -1707,23 +1655,23 @@
         <source>Buyer specification (optional)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">29,30</context>
+          <context context-type="linenumber">27,28</context>
         </context-group>
         <note priority="1" from="description">buyer title</note>
       </trans-unit>
-      <trans-unit id="6721721958091366600" datatype="html">
-        <source> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero. </source>
+      <trans-unit id="1374729245781156190" datatype="html">
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">31,32</context>
+          <context context-type="linenumber">29,31</context>
         </context-group>
-        <note priority="1" from="description">buyer intro</note>
+        <note priority="1" from="description">buyer subtext</note>
       </trans-unit>
       <trans-unit id="7609748400763849959" datatype="html">
         <source>Name*</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">43,45</context>
+          <context context-type="linenumber">41,42</context>
         </context-group>
         <note priority="1" from="description">form buyerName label</note>
       </trans-unit>
@@ -1731,15 +1679,39 @@
         <source>Buying proportion</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">61,64</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount label</note>
+      </trans-unit>
+      <trans-unit id="364432951088722182" datatype="html">
+        <source>portion of total annual production</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+        <note priority="1" from="description">form buyerAmount hint</note>
+      </trans-unit>
+      <trans-unit id="8932917860978648376" datatype="html">
+        <source>Unit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">80,81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <note priority="1" from="description">form buyerUnit label</note>
       </trans-unit>
       <trans-unit id="2830146403309406023" datatype="html">
         <source>Entry ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">93,94</context>
+          <context context-type="linenumber">99,100</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -1747,11 +1719,31 @@
         </context-group>
         <note priority="1" from="description">buyer base-wage label</note>
       </trans-unit>
+      <trans-unit id="4323470180912194028" datatype="html">
+        <source>Copy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">108,109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">88,89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">141,142</context>
+        </context-group>
+        <note priority="1" from="description">copy</note>
+      </trans-unit>
       <trans-unit id="5736998174800408999" datatype="html">
         <source>Created on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">97,98</context>
+          <context context-type="linenumber">113,114</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -1763,7 +1755,7 @@
         <source>Edited on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">101,102</context>
+          <context context-type="linenumber">117,118</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -1775,23 +1767,35 @@
         </context-group>
         <note priority="1" from="description">buyer ikb label</note>
       </trans-unit>
-      <trans-unit id="1470503036790362672" datatype="html">
-        <source>Scenarios</source>
+      <trans-unit id="640581944172119625" datatype="html">
+        <source>(*) Optional field</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">122,124</context>
+        </context-group>
+        <note priority="1" from="description">form field optional</note>
+      </trans-unit>
+      <trans-unit id="3364877139419250569" datatype="html">
+        <source>Distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">27,29</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">112,113</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">41</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
+          <context context-type="linenumber">188</context>
         </context-group>
         <note priority="1" from="description">entry scenarios title</note>
       </trans-unit>
@@ -1799,7 +1803,7 @@
         <source>Buyer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
@@ -1811,9 +1815,25 @@
         <source>Entry information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <note priority="1" from="description">entry-info title</note>
+      </trans-unit>
+      <trans-unit id="4018717492218975444" datatype="html">
+        <source>Successfully updated buyer information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+        <note priority="1" from="description">buyer-update success</note>
+      </trans-unit>
+      <trans-unit id="6448262033202855020" datatype="html">
+        <source>Something went wrong updating the buyer information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <note priority="1" from="description">buyer-update error</note>
       </trans-unit>
       <trans-unit id="8997334476277229514" datatype="html">
         <source> Are you sure you want to delete this entry? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
@@ -1830,6 +1850,26 @@
           <context context-type="linenumber">14,15</context>
         </context-group>
         <note priority="1" from="description">entry-delete loading</note>
+      </trans-unit>
+      <trans-unit id="2159130950882492111" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+        <note priority="1" from="description">entry-delete cancel</note>
       </trans-unit>
       <trans-unit id="7022070615528435141" datatype="html">
         <source>Delete</source>
@@ -1887,29 +1927,25 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">entry tab information</note>
       </trans-unit>
-      <trans-unit id="3364877139419250569" datatype="html">
-        <source>Distribution</source>
+      <trans-unit id="1470503036790362672" datatype="html">
+        <source>Scenarios</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
-          <context context-type="linenumber">33,35</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">112,113</context>
+          <context context-type="linenumber">27,29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
           <context context-type="linenumber">40</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">178</context>
+          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
+          <context context-type="linenumber">39</context>
         </context-group>
-        <note priority="1" from="description">entry tab distribution</note>
+        <note priority="1" from="description">entry tab scenarios</note>
       </trans-unit>
       <trans-unit id="7008439939460403347" datatype="html">
         <source>Report</source>
@@ -2003,7 +2039,7 @@
         <source>Successfully updated distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">121</context>
+          <context context-type="linenumber">131</context>
         </context-group>
         <note priority="1" from="description">distribution-update success</note>
       </trans-unit>
@@ -2011,7 +2047,7 @@
         <source>Something went wrong updating the distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">135</context>
         </context-group>
         <note priority="1" from="description">distribution-update error</note>
       </trans-unit>
@@ -2135,22 +2171,6 @@
         </context-group>
         <note priority="1" from="description">entry matrix-id label</note>
       </trans-unit>
-      <trans-unit id="4323470180912194028" datatype="html">
-        <source>Copy</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">88,89</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">104,105</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">141,142</context>
-        </context-group>
-        <note priority="1" from="description">copy</note>
-      </trans-unit>
       <trans-unit id="558421146230705709" datatype="html">
         <source>Facility ID</source>
         <context-group purpose="location">
@@ -2235,11 +2255,11 @@
         <source>Successfully updated scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">140</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">156</context>
         </context-group>
         <note priority="1" from="description">scenario-update success</note>
       </trans-unit>
@@ -2247,21 +2267,13 @@
         <source>Something went wrong updating the scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">143</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">157</context>
+          <context context-type="linenumber">160</context>
         </context-group>
         <note priority="1" from="description">scenario-update error</note>
-      </trans-unit>
-      <trans-unit id="8320928227874047237" datatype="html">
-        <source>Something went wrong while resetting the scenario</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
-          <context context-type="linenumber">185</context>
-        </context-group>
-        <note priority="1" from="description">scenario-delete error</note>
       </trans-unit>
       <trans-unit id="1043593761419826119" datatype="html">
         <source>Create entry</source>
@@ -2359,6 +2371,66 @@
         </context-group>
         <note priority="1" from="description">entries table</note>
       </trans-unit>
+      <trans-unit id="8492500412573690939" datatype="html">
+        <source> Are you sure you want to reset scenarios? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+        <note priority="1" from="description">scenario-reset description</note>
+      </trans-unit>
+      <trans-unit id="5126218690566601508" datatype="html">
+        <source>Resetting...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <note priority="1" from="description">scenario-reset resetting</note>
+      </trans-unit>
+      <trans-unit id="7808756054397155068" datatype="html">
+        <source>Reset</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">reset</note>
+      </trans-unit>
+      <trans-unit id="5089170722956064121" datatype="html">
+        <source>Reset scenario selection?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">scenario-reset title</note>
+      </trans-unit>
+      <trans-unit id="8320928227874047237" datatype="html">
+        <source>Something went wrong while resetting the scenario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <note priority="1" from="description">scenario-reset error</note>
+      </trans-unit>
+      <trans-unit id="1894899383259232583" datatype="html">
+        <source>Successfully reset the scenario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">scenario-reset success</note>
+      </trans-unit>
       <trans-unit id="8658592545899209918" datatype="html">
         <source> Are you sure you want to reset all job-categories? <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This action cannot be undone.</source>
         <context-group purpose="location">
@@ -2366,14 +2438,6 @@
           <context context-type="linenumber">3,4</context>
         </context-group>
         <note priority="1" from="description">workers-reset description</note>
-      </trans-unit>
-      <trans-unit id="5126218690566601508" datatype="html">
-        <source>Resetting...</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
-          <context context-type="linenumber">7,9</context>
-        </context-group>
-        <note priority="1" from="description">workers-reset submitting</note>
       </trans-unit>
       <trans-unit id="4360518001038812234" datatype="html">
         <source>Reset all job-categories?</source>
