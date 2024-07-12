@@ -71,7 +71,7 @@ export interface WorkersPagingParams extends PagingParams {
 // Forms
 export interface ScenarioWorkerForm {
     remunerationIncrease?: number | null;
-    distribution?: DistributionForm;
+    distribution?: DistributionForm | null;
 }
 
 // Mutations

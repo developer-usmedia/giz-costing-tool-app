@@ -50,7 +50,7 @@ export class WorkerDistributionDialogComponent {
             ikbChildcarePerc: null,
             ikbChildEducationPerc: null,
         };
-        this.update(form);
+        this.update(null);
     }
 
     public cancel() {
@@ -61,7 +61,7 @@ export class WorkerDistributionDialogComponent {
         this.submitEvent.set(true);
     }
 
-    public update(form: DistributionForm) {
+    public update(form: DistributionForm | null) {
         if (!this.data.entry || !this.data.entry.scenario) {
             this.toastr.error($localize`:scenario-workers-reset error:Something went wrong while resetting the scenario workers`);
             this.dialogRef?.close({ update: false });
