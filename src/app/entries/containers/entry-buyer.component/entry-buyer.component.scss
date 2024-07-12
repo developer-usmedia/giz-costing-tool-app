@@ -16,13 +16,11 @@
         padding: 0 1rem;
     }
 
-    @include screen($screen-simple) {
+    @include screen($screen-normal) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto;
-    }
 
-    @include screen($screen-normal) {
         &__header {
             display: grid;
             gap: 0 $p-gutter;

@@ -1,19 +1,9 @@
 <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
-    <div class="form__container">
-        <div class="form__header">
-            <h3 class="form__title" i18n="specs title">Specifications</h3>
-            <p class="form__subtext" i18n="specs subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</p>
-        </div>
-
-        @if (type === scenarioType.ABSOLUTE_INCREASE) {
-            <div class="form__definition">
-                <p class="form__label" i18n="specs average-gap">Average living wag gap</p>
-                <p class="form__text">{{ entry.livingWage?.avgLivingWageGap | currency: entry.payroll.currencyCode : ''  }} {{ entry.payroll.currencyCode }}</p>
-            </div>
-
-            <div class="form__definition">
-                <p class="form__label" i18n="specs largest-gap">Largest  living wag gap</p>
-                <p class="form__text">{{ entry.livingWage?.largestLivingWageGap | currency: entry.payroll.currencyCode : '' }} {{ entry.payroll.currencyCode }}</p>
+    @if (type === scenarioType.ABSOLUTE_INCREASE) {
+        <div class="form__container">
+            <div class="form__header">
+                <h3 class="form__title" i18n="specs title">Specifications</h3>
+                <p class="form__intro" i18n="specs subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</p>
             </div>
 
             <div class="form__field" [ngClass]="{
@@ -33,48 +23,95 @@
                     <div class="form__error" i18n="form remunerationIncrease errors min">Minimum is 0</div>
                 }
             </div>
-        }
 
-        <div class="form__field" [ngClass]="{
-            'is-error': form | hasError: 'taxEmployee',
-            'has-value': form | hasValue: 'taxEmployee',
-        }">
-            <label class="form__label" for="taxEmployee" i18n="form taxEmployee label">Levies and taxes employee</label>
-
-            <div class="form__input">
-                <input type="number" id="taxEmployee" formControlName="taxEmployee"/>
-                <span class="form__postfix">%</span>
+            <div class="form__definition">
+                <p class="form__label" i18n="specs average-gap">Average living wag gap</p>
+                <p class="form__text">{{ entry.livingWage?.avgLivingWageGap | currency: entry.payroll.currencyCode : ''  }} {{ entry.payroll.currencyCode }}</p>
             </div>
-            @if (form | showError: 'taxEmployee' :'required') {
-                <div class="form__error" i18n="form taxEmployee errors required">Field is required</div>
-            }
-            @if (form | showError: 'taxEmployee' :'min') {
-                <div class="form__error" i18n="form taxEmployee errors min">Minimum is 0</div>
-            }
-            @if (form | showError: 'taxEmployee' :'max') {
-                <div class="form__error" i18n="form taxEmployee errors max">Maximum is 100</div>
-            }
+
+            <div class="form__definition">
+                <p class="form__label" i18n="specs largest-gap">Largest living wag gap</p>
+                <p class="form__text">{{ entry.livingWage?.largestLivingWageGap | currency: entry.payroll.currencyCode : '' }} {{ entry.payroll.currencyCode }}</p>
+            </div>
+        </div>
+    }
+
+    <div class="form__container">
+        <div class="form__header">
+            <h3 class="form__title" i18n="additional-costs title">Additional costs</h3>
+            <p class="form__intro" i18n="additional-costs intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
 
         <div class="form__field" [ngClass]="{
-            'is-error': form | hasError: 'taxEmployer',
-            'has-value': form | hasValue: 'taxEmployer',
-        }">
-            <label class="form__label" for="taxEmployer" i18n="form taxEmployer label">Levies and taxes employer</label>
-
+                'is-error': form | hasError: 'overheadCosts',
+                'has-value': form | hasValue: 'overheadCosts',
+            }">
+            <label class="form__label form__label--multiline" for="overheadCosts" i18n="form overheadCosts label">
+                Overhead costs<p class="form__hint">e.g. administrative costs</p>
+            </label>
             <div class="form__input">
-                <input type="number" id="taxEmployer" formControlName="taxEmployer"/>
-                <span class="form__postfix">%</span>
+                <input type="number" id="overheadCosts" formControlName="overheadCosts"/>
+                <span class="form__postfix">{{ entry.payroll.currencyCode }}</span>
             </div>
-            @if (form | showError: 'taxEmployer' :'required') {
-                <div class="form__error" i18n="form taxEmployer errors required">Field is required</div>
+            @if (form | showError: 'overheadCosts' :'required') {
+                <div class="form__error" i18n="form overheadCosts errors required">Field is required</div>
             }
-            @if (form | showError: 'taxEmployer' :'min') {
-                <div class="form__error" i18n="form taxEmployer errors min">Minimum is 0</div>
+            @if (form | showError: 'overheadCosts' :'min') {
+                <div class="form__error" i18n="form overheadCosts errors min">Minimum is 0</div>
             }
-            @if (form | showError: 'taxEmployer' :'max') {
-                <div class="form__error" i18n="form taxEmployer errors max">Maximum is 100</div>
+            @if (form | showError: 'overheadCosts' :'max') {
+                <div class="form__error" i18n="form overheadCosts errors max">Maximum is 999999999</div>
             }
+        </div>
+
+        <div class="form__fieldset">
+            <p class="form__label" i18n="form levies-taxes label">Levies and taxes</p>
+            <div class="form__group">
+            <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'taxEmployee',
+            'has-value': form | hasValue: 'taxEmployee',
+        }">
+                <label class="form__label is-hidden" for="taxEmployee" i18n="form taxEmployee label">Levies and taxes employee</label>
+
+                <div class="form__input">
+                    <input type="number" id="taxEmployee" formControlName="taxEmployee"
+                           i18n-placeholder="form taxEmployee placeholder" placeholder="Employee"/>
+                    <span class="form__postfix">%</span>
+                </div>
+                @if (form | showError: 'taxEmployee' :'required') {
+                    <div class="form__error" i18n="form taxEmployee errors required">Field is required</div>
+                }
+                @if (form | showError: 'taxEmployee' :'min') {
+                    <div class="form__error" i18n="form taxEmployee errors min">Minimum is 0</div>
+                }
+                @if (form | showError: 'taxEmployee' :'max') {
+                    <div class="form__error" i18n="form taxEmployee errors max">Maximum is 100</div>
+                }
+            </div>
+
+            <div class="form__field" [ngClass]="{
+                'is-error': form | hasError: 'taxEmployer',
+                'has-value': form | hasValue: 'taxEmployer',
+            }">
+                <label class="form__label is-hidden" for="taxEmployer" i18n="form taxEmployer label">Levies and taxes employer</label>
+
+                <div class="form__input">
+                    <input type="number" id="taxEmployer" formControlName="taxEmployer"
+                           i18n-placeholder="form taxEmployer placeholder" placeholder="Employer"/>
+                    <span class="form__postfix">%</span>
+                </div>
+                @if (form | showError: 'taxEmployer' :'required') {
+                    <div class="form__error" i18n="form taxEmployer errors required">Field is required</div>
+                }
+                @if (form | showError: 'taxEmployer' :'min') {
+                    <div class="form__error" i18n="form taxEmployer errors min">Minimum is 0</div>
+                }
+                @if (form | showError: 'taxEmployer' :'max') {
+                    <div class="form__error" i18n="form taxEmployer errors max">Maximum is 100</div>
+                }
+            </div>
+
+        </div>
         </div>
     </div>
 

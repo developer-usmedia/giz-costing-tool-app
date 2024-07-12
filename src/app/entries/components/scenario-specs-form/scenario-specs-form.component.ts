@@ -36,20 +36,19 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
 
     public form: FormGroup<ScenarioSpecsFormGroup> = new FormGroup({
         taxEmployee: new FormControl<number | null>(
-            this.entry?.scenario?.specification?.taxEmployee ?? null, 
-            { 
-                validators: [Validators.required, Validators.min(0), Validators.max(100)],
-            }
-        ),
-        taxEmployer: new FormControl<number | null>(
-            this.entry?.scenario?.specification?.taxEmployer ?? null, 
+            this.entry?.scenario?.specification?.taxEmployee ?? null,
             {
                 validators: [Validators.required, Validators.min(0), Validators.max(100)],
             }
         ),
-        // Hidden fields for now
+        taxEmployer: new FormControl<number | null>(
+            this.entry?.scenario?.specification?.taxEmployer ?? null,
+            {
+                validators: [Validators.required, Validators.min(0), Validators.max(100)],
+            }
+        ),
         overheadCosts: new FormControl<number | null>(
-            this.entry?.scenario?.specification?.overheadCosts ?? null, 
+            this.entry?.scenario?.specification?.overheadCosts ?? null,
             {
                 validators: [Validators.min(0), Validators.max(999999999)],
             }
@@ -70,7 +69,6 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
         if (this.type === ScenarioType.ABSOLUTE_INCREASE) {
             // TODO: Thisneeds fixing before merge
             this.form.controls.remunerationIncrease.addValidators(Validators.required);
-            // this.form.controls['overheadCosts'].addValidators(Validators.required); // TODO: remove when field is added
         }
     }
 
@@ -87,27 +85,18 @@ export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
     }
 
     public patchForm() {
-        // TODO: take a look at distribution-form.comp.ts -> patchForm to possible clean this up
         const taxEmployee = this.entry?.scenario?.specification?.taxEmployee;
-        if (taxEmployee !== undefined && taxEmployee !== null) {
-            this.form.patchValue({
-                taxEmployee: taxEmployee,
-            });
-        }
-
         const taxEmployer = this.entry?.scenario?.specification?.taxEmployer;
-        if (taxEmployer !== undefined && taxEmployer !== null) {
-            this.form.patchValue({
-                taxEmployer: taxEmployer,
-            });
-        }
-
+        const overheadCosts = this.entry?.scenario?.specification?.overheadCosts;
         const remunerationIncrease = this.entry?.scenario?.specification?.remunerationIncrease;
-        if (remunerationIncrease !== undefined && remunerationIncrease !== null) {
-            this.form.patchValue({
-                remunerationIncrease: remunerationIncrease,
-            });
-        }
+
+        this.form.patchValue({
+            taxEmployee: taxEmployee ?? null,
+            taxEmployer: taxEmployer ?? null,
+            overheadCosts: overheadCosts ?? null,
+            remunerationIncrease: remunerationIncrease ?? null,
+
+        });
     }
 
     public submit(): void {

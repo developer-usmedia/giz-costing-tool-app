@@ -13,6 +13,10 @@
         border: 1px solid var(--form-border);
         border-radius: $b-radius;
         padding: $p-gutter;
+
+        & + #{ $self }__container {
+            margin-top: $p-gutter;
+        }
     }
 
     &__header {
@@ -116,6 +120,17 @@
         &.is-hidden {
             @include sr-only;
         }
+
+        #{ $self }__hint {
+            margin: 0;
+        }
+    }
+
+    &__sublabel {
+        @include style-text-small;
+
+        color: var(--form-sublabel-color);
+        margin: 0;
     }
 
     &__error {
@@ -133,15 +148,16 @@
         @include style-text-small;
 
         color: var(--form-input-hint-color);
-        margin-top: 4px;
+        margin: 4px 0 0;
     }
 
     &__text {
         margin: 0;
     }
 
+    &__intro,
     &__subtext {
-        color: var(--form-subtext-color);
+        color: var(--form-intro-color);
     }
 
     &__input,
@@ -237,10 +253,16 @@
 
             #{ $self }__field {
                 flex: 1 1 auto;
-                flex-basis: 60%;
+                flex-basis: 50%;
+            }
 
-                &:nth-child(2) {
-                    flex-basis: 40%;
+            &--unit {
+                #{ $self }__field {
+                    flex-basis: 60%;
+
+                    &:nth-child(2) {
+                        flex-basis: 40%;
+                    }
                 }
             }
         }
@@ -260,19 +282,22 @@
 
             #{ $self }__group {
                 #{ $self }__field {
-                    display: flex;
-                    gap: $p-gutter--small;
+                    display: block;
                 }
             }
 
             #{ $self }__label {
                 grid-column-start: 1;
                 padding-top: 12px;
+
+                &--multiline {
+                    padding-top: 2px;
+                }
             }
         }
     }
 
-    @include screen($screen-normal) {
+    @include screen($screen-simple) {
         &__subfields {
             column-gap: $p-gutter;
             columns: 2;

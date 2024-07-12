@@ -47,6 +47,10 @@
                         <th giz-table-header-cell i18n="scenario taxes-employer label">Taxes and levies employer</th>
                         <td giz-table-cell>{{ entry.scenario?.specification?.taxEmployer}} %</td>
                     </tr>
+                    <tr giz-table-row>
+                        <th giz-table-header-cell i18n="scenario overhead-costs label">Overhead costs</th>
+                        <td giz-table-cell>{{ entry.scenario?.specification?.overheadCosts | empty }}  {{ entry.payroll.currencyCode }}</td>
+                    </tr>
                 </ng-container>
             </giz-table>
         }

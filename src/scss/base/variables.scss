@@ -47,12 +47,14 @@
     --form-input-border: #{ $c-grey--300 };
     --form-input-border-focus: #{ $c-grey--600 };
     --form-input-color: #{ $c-grey--900 };
-    --form-input-hint-color: #{ $c-grey--700 };
+    --form-input-hint-color: #{ $c-grey--600 };
     --form-input-placeholder: #{ $c-grey--400 };
     --form-input-disabled-bcg: #{ $c-white };
     --form-input-disabled-color: #{ $c-grey--400 };
     --form-input-checkmark: #{ $c-grey--900 };
     --form-label-color: #{ $c-grey--900 };
+    --form-sublabel-color: #{ $c-grey--600 };
+    --form-intro-color: #{ $c-grey--600 };
     --form-subtext-color: #{ $c-grey--600 };
     --form-error: #{ $c-error };
     --form-spinner: #{ $c-grey--600 };
