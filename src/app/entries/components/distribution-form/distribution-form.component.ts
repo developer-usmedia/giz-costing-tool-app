@@ -101,7 +101,7 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
     public buildForm(): FormGroup<DistributionFormGroup> {
         return new FormGroup({
             baseWagePerc: new FormControl<number | null>(
-                { value: this.distribution?.baseWagePerc ?? 100, disabled: true },
+                this.distribution?.baseWagePerc ?? 100,
                 { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.baseWagePerc)] },
             ),
             bonusesPerc: new FormControl<number | null>(
@@ -109,7 +109,7 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
                     validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.bonusesPerc), Validators.required],
                 }),
             ikbPerc: new FormControl<number | null>(
-                { value: this.distribution?.ikbPerc ?? 0, disabled: true },
+                this.distribution?.ikbPerc ?? 0,
                 { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbPerc)] },
             ),
             ikbHousingPerc: new FormControl<number | null>(

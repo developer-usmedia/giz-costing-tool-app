@@ -33,7 +33,7 @@
                 <label class="form__label" for="baseWagePerc" i18n="form baseWage label">Base wage</label>
 
                 <div class="form__input">
-                    <input type="number" id="baseWagePerc" formControlName="baseWagePerc" />
+                    <input type="number" id="baseWagePerc" formControlName="baseWagePerc" [readonly]="true"/>
                     <span class="form__postfix">%</span>
                 </div>
                 @if (form | showError: 'baseWagePerc' :'min') {
@@ -77,7 +77,7 @@
                 <label class="form__label" for="ikbPerc" i18n="form ikb label">In-kind benefits</label>
 
                 <div class="form__input">
-                    <input type="number" id="ikbPerc" formControlName="ikbPerc" />
+                    <input type="number" id="ikbPerc" formControlName="ikbPerc" [readonly]="true"/>
                     <span class="form__postfix">%</span>
                 </div>
                 @if (form | showError: 'ikbPerc' :'min') {

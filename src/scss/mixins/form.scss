@@ -26,7 +26,8 @@
         outline: none;
     }
 
-    &:disabled {
+    &:disabled,
+    &:read-only {
         --form-input-bcg: var(--form-input-disabled-bcg);
         --form-input-color: var(--form-input-disabled-color);
     }
