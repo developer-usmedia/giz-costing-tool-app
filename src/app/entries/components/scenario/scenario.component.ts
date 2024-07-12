@@ -14,7 +14,7 @@ import {
 import { CreateQueryResult } from '@tanstack/angular-query-experimental';
 
 import { determineWageIncrease } from '@api/helpers/worker.helper';
-import { Entry, Scenario, ScenarioSpecsForm, ScenarioType, Worker, WorkerListResponse } from '@api/models';
+import { Entry, ScenarioSpecsForm, ScenarioType, Worker, WorkerListResponse } from '@api/models';
 import { MODULE_ROUTE, ScenarioInfo } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
@@ -35,7 +35,6 @@ export class ScenarioComponent {
     @Input({ required: true }) scenario!: ScenarioInfo;
     @Input({ required: true }) entry?: Entry;
     @Input() workers?: CreateQueryResult<WorkerListResponse, HttpErrorResponse>;
-    @Input() specs?: Scenario;
     @Input() saving?: boolean;
     @Input() state?: 'edit' | 'view' = 'edit';
 

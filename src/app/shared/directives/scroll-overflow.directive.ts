@@ -83,7 +83,7 @@ export class ScrollOverflowDirective implements AfterViewInit {
             this.overflowRight = false;
         } else {
             this.overflowLeft = this.scrollDistance !== 0;
-            this.overflowRight = this.scrollDistance !== maxScroll;
+            this.overflowRight = this.scrollDistance + 1 < maxScroll; // +1 because of chrome round bug
         }
 
         this.changeDetectorRef.markForCheck();

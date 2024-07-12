@@ -71,10 +71,6 @@
 
         <div class="report__section">
             <h2 i18n="payroll title" class="report__title">Payroll</h2>
-            <p class="todo">Payroll</p>
-        </div>
-
-        <div class="report__section">
             @if (!workers || workers.isLoading()) {
                 <giz-spinner class="report__spinner" [size]="'large'"></giz-spinner>
             } @else if (workers.isError()) {
@@ -85,6 +81,111 @@
                     }
                 </giz-no-results>
             } @else {
+                @if (workers.data() && workers.data()?._embedded?.workers?.length) {
+                    <giz-table
+                        [caption]="getTableCaption(workers.data()?.paging?.totalEntities)"
+                        [hideCaption]="true"
+                        [type]="'compact'"
+                        [stickyColumn]="true"
+                    >
+                        <ng-container thead>
+                            <tr giz-table-header-row>
+                                <th giz-table-header-cell size="wide" verticalAlignment="bottom" i18n="workers job-category label">Job category</th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers distribution label">Monthly-wage</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers monthly-bonusses label">Monthly bonusses</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p class="table-cell__subtitle" i18n="workers status-quo label">Status quo</p>
+                                    <p i18n="workers monthly-ikb label">Monthly IKB</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers total-monthly-remnueration label">Total monthly remuneration</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom" [divider]="true">
+                                    <p i18n="workers living-wage-gap-percentage label">Living wage gap %</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers monthly-wage label">Monthly wage</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers monthly-bonusses label">Monthly bonusses</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p class="table-cell__subtitle" i18n="workers scenario label">Scenario</p>
+                                    <p i18n="workers monthly-ikb label">Monthly IKB</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers total-monthly-remnueration label">Total monthly remuneration</p>
+                                </th>
+                                <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
+                                    <p i18n="workers living-wage-gap-percentage label">Living wage gap %</p>
+                                </th>
+                            </tr>
+                        </ng-container>
+                        <ng-container>
+                            @for (worker of workers.data()?._embedded?.workers; track worker) {
+                                <tr giz-table-row >
+                                    <td giz-table-cell size="wide">
+                                        {{ worker.name }}
+                                        <span class="table-cell__subtitle"> - {{ worker.gender | gender }}, {{ worker.nrOfWorkers }}
+                                            <span i18n="workers">{ worker.nrOfWorkers, plural, =1 {worker} other {workers}}</span>
+                                        </span>
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.remuneration?.baseWage | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.remuneration?.bonuses | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.remuneration?.ikb | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.remuneration?.total | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right" [divider]="true"
+                                        [style]="(worker?.livingWage?.livingWageGapPerc ?? 0) > 0 ? 'error' : 'default'">
+                                        {{  worker.livingWage?.livingWageGapPerc | number: '1.2-2'}} %
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.scenario.remuneration?.baseWage | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.scenario.remuneration?.bonuses | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.scenario.remuneration?.ikb | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right">
+                                        {{ worker.scenario.remuneration?.total | currency: entry.data()?.payroll?.currencyCode : '' | empty }} {{ entry.data()?.payroll?.currencyCode }}
+                                    </td>
+                                    <td giz-table-cell alignment="right"
+                                        [style]="(worker?.scenario?.livingWage?.livingWageGapPerc ?? 0) > 0 ? 'error' : 'default'">
+                                        {{ worker?.scenario?.livingWage?.livingWageGapPerc | number: '1.2-2'}} %
+                                    </td>
+                                </tr>
+                            }
+                        </ng-container>
+                    </giz-table>
+
+                    @if ((workers.data()?.paging?.totalPages ?? 1 ) > 1) {
+                        <giz-paginator
+                            [page]="(workers.data()?.paging?.index ?? 0) + 1"
+                            [pageSize]="workers.data()?.paging?.size ?? 25"
+                            [total]="workers.data()?.paging?.totalPages ?? 0"
+                            [totalEntries]="workers.data()?.paging?.totalEntities ?? 0"
+                            [showFirstLast]="false"
+                            (paging)="onPageEvent($event)"
+                        ></giz-paginator>
+                    }
+                } @else {
+                    <giz-no-results>
+                        <p i18n="workers not-found">No job categories found.</p>
+                    </giz-no-results>
+                }
             }
         </div>
 

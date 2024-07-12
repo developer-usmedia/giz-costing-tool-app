@@ -34,9 +34,12 @@ import { ICON } from '@shared/components/icon/icon.enum';
 })
 export class TableCellComponent implements OnChanges {
     @Input() alignment: 'left' | 'right' | 'center' = 'left';
+    @Input() verticalAlignment: 'top' | 'bottom' | 'center' = 'center';
     @Input() type: 'default' | 'header' | 'actions' | 'link' | 'copy' = 'default';
     @Input() size: 'default' | 'wide' = 'default';
+    @Input() style: 'default' | 'error' = 'default';
     @Input() sortable = false;
+    @Input() divider = false;
     @Input() sort?: Sort;
 
     @Output() sortEvent = new EventEmitter<Sort>();
@@ -62,6 +65,10 @@ export class TableCellComponent implements OnChanges {
     @HostBinding('class.table-cell--wide') get modeSizeWide(): boolean { return this.size === 'wide'; }
     @HostBinding('class.table-cell--center') get modeAlignmentCenter(): boolean { return this.alignment === 'center'; }
     @HostBinding('class.table-cell--right') get modeAlignmentRight(): boolean { return this.alignment === 'right'; }
+    @HostBinding('class.table-cell--top') get modAlignmentTop(): boolean { return this.verticalAlignment === 'top'; }
+    @HostBinding('class.table-cell--bottom') get modAlignmentBottom(): boolean { return this.verticalAlignment === 'bottom'; }
+    @HostBinding('class.table-cell--error') get modError(): boolean { return this.style === 'error'; }
+    @HostBinding('class.table-cell--divider') get modDivider(): boolean { return this.divider; }
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (changes['sort']) {

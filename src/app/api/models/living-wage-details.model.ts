@@ -7,6 +7,7 @@ export interface FacilityLwDetails {
 
 export interface WorkerLwDetails {
     livingWageGap: number;
+    livingWageGapPerc: number;
     annualLivingWageGap: number;
     annualLivingWageGapAllWorkers: number;
 }

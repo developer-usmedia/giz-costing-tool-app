@@ -13,4 +13,5 @@ export class TableComponent {
     @Input() type: 'default' | 'compact' | 'info' | 'overview' = 'default';
     @Input() hideCaption = false;
     @Input() noBorder = false;
+    @Input() stickyColumn = false;
 }

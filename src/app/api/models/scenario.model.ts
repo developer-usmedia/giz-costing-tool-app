@@ -1,5 +1,4 @@
 import { Distribution, DistributionForm } from '@api/models/distribution.model';
-import { EntityResponse } from '@api/models/response.model';
 import { AnnualCosts } from './annual-costs.model';
 import { FacilityLwDetails } from './living-wage-details.model';
 
@@ -16,7 +15,7 @@ export interface ScenarioSpecification {
     remunerationIncrease: number;
 }
 
-export interface Scenario extends EntityResponse {
+export interface Scenario {
     type: ScenarioType;
     specification?: ScenarioSpecification;
     distribution?: Distribution;

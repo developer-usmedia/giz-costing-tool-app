@@ -76,6 +76,14 @@
         text-align: right;
     }
 
+    &--top {
+        vertical-align: top;
+    }
+
+    &--bottom {
+        vertical-align: bottom;
+    }
+
     &--wide {
         text-align: left;
         width: 100%;
@@ -117,5 +125,13 @@
     &--ikb {
         border-bottom: 0;
         padding-bottom: 0;
+    }
+
+    &--error {
+        color: var(--error-color);
+    }
+
+    &--divider {
+        border-right: 1px solid var(--table-border-color);
     }
 }

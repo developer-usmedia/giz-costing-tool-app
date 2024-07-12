@@ -14,6 +14,7 @@ giz-table {
     --overflow-gradient-width: 60px;
 
     position: relative;
+    width: 100%;
 
     &.is-overflowing {
         margin-right: -$p-gutter;
@@ -22,11 +23,11 @@ giz-table {
     &__container {
         overflow-x: auto;
         scroll-behavior: smooth;
-        scrollbar-width: none;
         width: 100%;
 
         table {
             min-width: 100%;
+            overflow: auto;
             table-layout: fixed;
             width: auto;
         }
@@ -118,6 +119,32 @@ giz-table {
         }
     }
     /* stylelint-enable no-descending-specificity  */
+
+    @include screen($screen-minimal) {
+        &--sticky {
+            table {
+                border-left: 0;
+            }
+
+            th, td {
+                &:first-child {
+                    background: var(--table-bcg);
+                    border-left: 1px solid var(--table-border-color);
+                    border-right: 1px solid var(--table-border-color);
+                    left: 0;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1;
+                }
+            }
+
+            &.is-overflow-left {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
 
     @include screen($screen-simple) {
         &--info {

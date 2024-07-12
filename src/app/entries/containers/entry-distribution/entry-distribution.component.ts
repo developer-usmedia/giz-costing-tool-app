@@ -7,7 +7,7 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { determineWageIncrease } from '@api/helpers/worker.helper';
+import { determineWageIncrease, getWorkerDistribution } from '@api/helpers/worker.helper';
 import {
     Distribution,
     DistributionForm,
@@ -138,18 +138,7 @@ export class EntryDistributionComponent implements OnDestroy {
     }
 
     public getDistribution(worker: Worker): Distribution {
-        const entry = this.entry.data();
-        return {
-            baseWagePerc: (worker.scenario.distribution?.baseWagePerc ?? entry?.scenario?.distribution?.baseWagePerc) ?? 0,
-            bonusesPerc: (worker.scenario.distribution?.bonusesPerc ?? entry?.scenario?.distribution?.bonusesPerc) ?? 0,
-            ikbPerc: (worker.scenario.distribution?.ikbPerc ?? entry?.scenario?.distribution?.ikbPerc) ?? 0,
-            ikbHousingPerc: (worker.scenario.distribution?.ikbHousingPerc ?? entry?.scenario?.distribution?.ikbHousingPerc) ?? 0,
-            ikbFoodPerc: (worker.scenario.distribution?.ikbFoodPerc ?? entry?.scenario?.distribution?.ikbFoodPerc) ?? 0,
-            ikbTransportPerc: (worker.scenario.distribution?.ikbTransportPerc ?? entry?.scenario?.distribution?.ikbTransportPerc) ?? 0,
-            ikbHealthcarePerc: (worker.scenario.distribution?.ikbHealthcarePerc ?? entry?.scenario?.distribution?.ikbHealthcarePerc) ?? 0,
-            ikbChildcarePerc: (worker.scenario.distribution?.ikbChildcarePerc ?? entry?.scenario?.distribution?.ikbChildcarePerc) ?? 0,
-            ikbChildEducationPerc: (worker.scenario.distribution?.ikbChildEducationPerc ?? entry?.scenario?.distribution?.ikbChildEducationPerc) ?? 0,
-        };
+        return getWorkerDistribution(worker, this.entry.data() as Entry);
     }
 
     public isEditted(worker: Worker): boolean {

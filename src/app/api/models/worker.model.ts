@@ -1,40 +1,16 @@
-import { DistributionForm } from '@api/models/distribution.model';
+import { Distribution, DistributionForm } from '@api/models/distribution.model';
 import { Gender } from '@api/models/gender.enum';
 import { EntityResponse, PagedResponse } from '@api/models/response.model';
 import { PagingParams, Sort } from '@core/models';
 import { WorkerLwDetails } from './living-wage-details.model';
-import { Scenario, ScenarioSpecification } from './scenario.model';
+import { ScenarioSpecification } from './scenario.model';
 import { WorkerRemuneration } from './worker-remuneration.model';
 
-export type WorkerScenarioSpecification = ScenarioSpecification;
-export type WorkerScenarioDistribution = ScenarioSpecification;
-
 export interface WorkerScenario {
-    specification?: WorkerScenarioSpecification;
-    distribution?: {
-        baseWagePerc: number;
-        bonusesPerc: number;
-        ikbPerc: number;
-        ikbHousingPerc: number;
-        ikbFoodPerc: number;
-        ikbTransportPerc: number;
-        ikbHealthcarePerc: number;
-        ikbChildcarePerc: number;
-        ikbChildEducationPerc: number;
-    };
-    remuneration?: {
-        baseWage: number;
-        bonuses: number;
-        ikb: number;
-        ikbHousing: number;
-        ikbFood: number;
-        ikbTransport: number;
-        ikbHealthcare: number;
-        ikbChildcare: number;
-        ikbChildEducation: number;
-        total: number;
-    };
+    specification?: ScenarioSpecification;
+    distribution?: Distribution;
     livingWage?: WorkerLwDetails;
+    remuneration?: WorkerRemuneration;
 }
 
 export interface Worker extends EntityResponse {
@@ -45,12 +21,8 @@ export interface Worker extends EntityResponse {
     nrOfWorkers: number;
     percOfYearWorked: number;
     remuneration?: WorkerRemuneration;
-    livingWage?: {
-        livingWageGap: number;
-        annualLivingWageGap: number;
-        annualLivingWageGapAllWorkers: number;
-    };
-    scenario: Scenario;
+    livingWage?: WorkerLwDetails;
+    scenario: WorkerScenario;
 }
 
 export type WorkerListResponse = PagedResponse<'workers', Worker>;
@@ -60,7 +32,7 @@ export enum WorkersSortFilterKey {
     CREATED_AT = '_createdAt',
     UPDATED_AT = '_updatedAt',
     NAME = '_name',
-    NUMBER_OF_WORKERS = '_numberOfWorkers',
+    NUMBER_OF_WORKERS = '_nrOfWorkers',
 }
 
 export interface WorkersPagingParams extends PagingParams {
