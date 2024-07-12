@@ -90,12 +90,12 @@
                 @if (!workers || workers.isLoading()) {
                     <giz-spinner class="distribution__spinner" [size]="'large'"></giz-spinner>
                 } @else if (workers.isError()) {
-                    <div class="distribution__no-results">
+                    <giz-no-results>
                         <p i18n="workers error">Error getting workers.</p>
                         @for (error of workers.error().error | keyvalue; track error) {
                             <p>{{ error.value }}</p>
                         }
-                    </div>
+                    </giz-no-results>
                 } @else {
                     @if (workers.data() && workers.data()?._embedded?.workers?.length) {
                         <giz-table
@@ -183,7 +183,6 @@
                                         </td>
                                     </tr>
                                 }
-
                             </ng-container>
                         </giz-table>
 
@@ -198,9 +197,9 @@
                             ></giz-paginator>
                         }
                     } @else {
-                        <div class="workers__no-results">
+                        <giz-no-results>
                             <p i18n="workers not-found">No job categories found.</p>
-                        </div>
+                        </giz-no-results>
                     }
                 }
 

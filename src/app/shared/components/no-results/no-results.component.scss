@@ -1,0 +1,27 @@
+@import 'mixins/typography';
+
+:root {
+    --noresults-background: #{ $c-white };
+    --noresults-border: #{ $c-grey--250 };
+}
+
+.giz-no-results {
+    display: block;
+}
+
+.no-results {
+    @include style-heading-3;
+
+    align-items: center;
+    background: var(--noresults-background);
+    border: 1px solid var(--noresults-border);
+    border-radius: $b-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem $p-gutter;
+
+    p {
+        margin-bottom: 0;
+    }
+}

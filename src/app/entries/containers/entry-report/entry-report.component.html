@@ -1,0 +1,96 @@
+<giz-entry-header
+    [title]="title"
+    [backButton]="{
+        icon: icon.ARROW_BACK,
+        text: backTitle,
+        link: [moduleRoute.ENTRIES, entryId(), entryRoute.BUYER],
+    }"
+>
+    <button giz-stroke-button i18n="download-report" (click)="download()">Download Report</button>
+</giz-entry-header>
+
+<div class="report">
+    @if (!entry || entry.isLoading()) {
+        <giz-spinner class="report__spinner" [size]="'large'"></giz-spinner>
+    } @else if (entry.isError() || !entry.data() || !activeScenario) {
+        <giz-no-results>
+            <p i18n="report error">Error getting entry or scenario.</p>
+        </giz-no-results>
+    } @else {
+        <div class="report__section report__section--intro">
+            <div class="report__info">
+                <h3 class="report__title">{{ activeScenario.title }}</h3>
+                <p class="report__description">{{ activeScenario.description }}</p>
+                <figure class="report__image">
+                    <img [src]="baseHref + activeScenario.imageUrl" i18n-alt alt="Graphic representation of report"
+                         height="80" width="150"/>
+                </figure>
+
+            </div>
+            <div class="report__specs">
+                <giz-table class="scenario__table" type="info" [caption]="getTableCaptionSpecs()">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="scenario close-gap label">Close living wage gap</th>
+                            <td giz-table-cell i18n="yes">Yes</td>
+                        </tr>
+                        @if (activeScenario.type === scenarioType.ABSOLUTE_INCREASE) {
+                            <tr giz-table-row>
+                                <th giz-table-header-cell i18n="scenario taxes-employer label">Minimum wage increase</th>
+                                <td giz-table-cell>{{ entry.data()?.scenario?.specification?.remunerationIncrease | currency: entry.data()?.payroll?.currencyCode : '' }} {{ entry.data()?.payroll?.currencyCode }}</td>
+                            </tr>
+                        }
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="distribution ikb label">In-kind benefits</th>
+                            <td giz-table-cell>
+                                {{ entry.data()?.scenario?.distribution?.ikbPerc }} %
+                                <p class="table-cell__subtitle">
+                                    <span>{{ entry.data()?.scenario?.distribution?.ikbHousingPerc }}% <span i18n="housing">Housing</span></span>,
+                                    <span>{{ entry.data()?.scenario?.distribution?.ikbFoodPerc }}% <span i18n="food">Food</span></span>,
+                                    <span>{{ entry.data()?.scenario?.distribution?.ikbTransportPerc }}% <span i18n="transportation">Transportation</span></span>,
+                                    <span>{{ entry.data()?.scenario?.distribution?.ikbHealthcarePerc }}% <span i18n="healthcare">Healthcare</span></span>,
+                                    <span>{{ entry.data()?.scenario?.distribution?.ikbChildcarePerc }}% <span i18n="childcare">Childcare</span></span>,
+                                    <span>{{ entry.data()?.scenario?.distribution?.ikbChildEducationPerc }}% <span i18n="childEducation">Child education</span></span>
+                                </p>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </giz-table>
+            </div>
+        </div>
+
+        <div class="report__section">
+            <h2 i18n="comparision title" class="report__title">Comparison</h2>
+            <p class="todo">Comparison</p>
+        </div>
+
+        <div class="report__section">
+            <h2 i18n="annual-costs title" class="report__title">Annual costs</h2>
+            <p class="todo">Annual costs</p>
+        </div>
+
+        <div class="report__section">
+            <h2 i18n="payroll title" class="report__title">Payroll</h2>
+            <p class="todo">Payroll</p>
+        </div>
+
+        <div class="report__section">
+            @if (!workers || workers.isLoading()) {
+                <giz-spinner class="report__spinner" [size]="'large'"></giz-spinner>
+            } @else if (workers.isError()) {
+                <giz-no-results>
+                    <p i18n="workers error">Error getting workers.</p>
+                    @for (error of workers.error().error | keyvalue; track error) {
+                        <p>{{ error.value }}</p>
+                    }
+                </giz-no-results>
+            } @else {
+            }
+        </div>
+
+        <div class="report__section">
+            <h2 i18n="wage-graph title" class="report__title">Wage graph</h2>
+            <p class="todo">Wage graph</p>
+        </div>
+    }
+</div>

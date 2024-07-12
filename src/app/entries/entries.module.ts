@@ -20,6 +20,7 @@ import { EntryDeleteDialogComponent } from './containers/entry-delete-dialog/ent
 import { EntryDetailComponent } from './containers/entry-detail/entry-detail.component';
 import { EntryDistributionComponent } from './containers/entry-distribution/entry-distribution.component';
 import { EntryInformationComponent } from './containers/entry-information/entry-information.component';
+import { EntryReportComponent } from './containers/entry-report/entry-report.component';
 import { EntryScenariosComponent } from './containers/entry-scenarios/entry-scenarios.component';
 import { OverviewComponent } from './containers/overview/overview.component';
 import { ResetScenarioDialogComponent } from './containers/reset-scenario-dialog/reset-scenario-dialog.component';
@@ -37,6 +38,7 @@ import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario
         EntryFooterComponent,
         EntryHeaderComponent,
         EntryInformationComponent,
+        EntryReportComponent,
         EntryScenariosComponent,
         OverviewComponent,
         ResetScenarioDialogComponent,
@@ -76,7 +78,7 @@ import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario
                     },
                     {
                         path: ENTRY_ROUTE.REPORT,
-                        component: EntryInformationComponent,
+                        component: EntryReportComponent,
                     },
                 ],
             },

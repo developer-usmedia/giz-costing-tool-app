@@ -12,7 +12,10 @@
 <div class="info">
     @if (!entry || entry.isLoading()) {
         <giz-spinner class="info__spinner" [size]="'large'"></giz-spinner>
-
+    } @else if (entry.isError() || !entry.data()) {
+        <giz-no-results>
+            <p i18n="entry error">Error getting entry.</p>
+        </giz-no-results>
     } @else {
         @if (entry.data(); as entry) {
             <div class="info__column">
@@ -154,7 +157,9 @@
                 </table>
             </div>
         } @else {
-            <p class="info__no-result" i18n="entry error not-found">Entry not found</p>
+            <giz-no-results>
+                <p i18n="entry error not-found">Entry not found</p>
+            </giz-no-results>
         }
     }
 </div>

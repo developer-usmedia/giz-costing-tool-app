@@ -34,12 +34,12 @@
     @if (!entries || entries.isLoading()) {
         <giz-spinner class="overview__spinner" [size]="'large'"></giz-spinner>
     } @else if (entries.isError()) {
-        <div class="overview__no-results">
+        <giz-no-results>
             <p i18n="entries error">Error getting entries.</p>
             @for (error of entries.error().error | keyvalue; track error) {
                 <p>{{ error.value }}</p>
             }
-        </div>
+        </giz-no-results>
     } @else {
         @if (entries.data() && entries.data()?._embedded?.entries?.length) {
             <giz-table
@@ -107,9 +107,9 @@
                 (paging)="onPageEvent($event)"
             ></giz-paginator>
         } @else {
-            <div class="overview__no-results">
+            <giz-no-results>
                 <p i18n="entries not-found">No entries found.</p>
-            </div>
+            </giz-no-results>
         }
     }
 </div>

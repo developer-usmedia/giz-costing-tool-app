@@ -31,7 +31,9 @@
     @if (!entry || entry.isLoading() || !scenarioState) {
         <giz-spinner class="scenarios__spinner" [size]="'large'"></giz-spinner>
     } @else if (entry.isError() || !entry.data()) {
-        <p i18n="entry error">Error getting entry.</p>
+        <giz-no-results>
+            <p i18n="entry error">Error getting entry.</p>
+        </giz-no-results>
     } @else {
        @if (entry.data() && scenarioState !== 'start' && activeScenario) {
           <giz-scenario

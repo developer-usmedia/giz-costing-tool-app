@@ -48,6 +48,7 @@ import {
     VerifiedPipe,
 } from '@shared/pipes';
 import { AlertComponent } from './components/alert/alert.component';
+import { NoResultsComponent } from './components/no-results/no-results.component';
 
 const PIPES = [
     CountryNamePipe,
@@ -102,12 +103,14 @@ const DIRECTIVES = [
     declarations: [
         ...COMPONENTS,
         ...PIPES,
+        NoResultsComponent,
 
     ],
     exports: [
         ...COMPONENTS,
         ...DIRECTIVES,
         ...PIPES,
+        NoResultsComponent,
     ],
     imports: [
         CommonModule,

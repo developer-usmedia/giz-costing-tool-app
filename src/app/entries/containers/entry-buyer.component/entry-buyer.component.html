@@ -18,7 +18,9 @@
     @if (!entry || entry.isLoading()) {
         <giz-spinner class="buyer__spinner" [size]="'large'"></giz-spinner>
     } @else if (entry.isError() || !entry.data()) {
-        <p i18n="entry error">Error getting entry.</p>
+        <giz-no-results>
+            <p i18n="entry error">Error getting entry.</p>
+        </giz-no-results>
     } @else {
         <div class="buyer__info">
             <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="saveEntry()">

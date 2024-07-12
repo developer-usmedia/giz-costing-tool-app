@@ -33,7 +33,7 @@ interface EntryBuyerFormGroup {
     styleUrl: './entry-buyer.component.scss',
 })
 export class EntryBuyerComponent implements OnDestroy {
-    public backTitle = $localize`:entry scenarios title:Distribution`;
+    public backTitle = $localize`:entry distribution title:Distribution`;
     public title = $localize`:entry buyer title:Buyer`;
 
     public readonly toastr = inject(ToastrService);

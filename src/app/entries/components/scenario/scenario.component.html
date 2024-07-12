@@ -32,7 +32,7 @@
                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
                         <tr giz-table-row>
                             <th giz-table-header-cell i18n="scenario taxes-employer label">Minimum wage increase</th>
-                            <td giz-table-cell>{{ entry.scenario?.specification?.remunerationIncrease }} {{ entry.payroll.currencyCode }}</td>
+                            <td giz-table-cell>{{ entry.scenario?.specification?.remunerationIncrease | currency: entry.payroll.currencyCode : '' }} {{ entry.payroll.currencyCode }}</td>
                         </tr>
                     }
                     <tr giz-table-row>
@@ -49,7 +49,7 @@
                     </tr>
                     <tr giz-table-row>
                         <th giz-table-header-cell i18n="scenario overhead-costs label">Overhead costs</th>
-                        <td giz-table-cell>{{ entry.scenario?.specification?.overheadCosts | empty }}  {{ entry.payroll.currencyCode }}</td>
+                        <td giz-table-cell>{{ entry.scenario?.specification?.overheadCosts | currency: entry.payroll.currencyCode : '' }}  {{ entry.payroll.currencyCode }}</td>
                     </tr>
                 </ng-container>
             </giz-table>
@@ -145,9 +145,9 @@
                         ></giz-paginator>
                     }
                 } @else {
-                    <div class="workers__no-results">
+                    <giz-no-results>
                         <p i18n="workers not-found">No job categories found.</p>
-                    </div>
+                    </giz-no-results>
                 }
             }
         </div>
