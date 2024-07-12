@@ -1,7 +1,9 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { BuyerUnit } from '@api/models';
 import { PasswordService } from '@shared/services/password.service';
 
 export class CustomValidators {
+    // Main form validators
     static matchPassword(control: AbstractControl): ValidationErrors | null {
         const password = String(control.get('password')?.value);
         const confirmPassword = String(control.get('passwordConfirm')?.value);
@@ -9,6 +11,14 @@ export class CustomValidators {
         return inValid ? { noMatch: true } : null;
     }
 
+    static buyerAmount(control: AbstractControl): ValidationErrors | null {
+        const amount = parseInt(String(control.get('buyerAmount')?.value), 10);
+        const unit = String(control.get('buyerUnit')?.value);
+        const inValid = unit === BuyerUnit.PERCENTAGE && amount > 100;
+        return inValid ? { aboveMax: true } : null;
+    }
+
+    // Field validators
     public static passwordLength(control: AbstractControl): ValidationErrors | null {
         if (control.value === '' || control.value === null) {
             return null;

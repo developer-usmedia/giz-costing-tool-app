@@ -9,6 +9,14 @@ select {
     @include style-text;
 }
 
+input,
+select,
+textarea {
+    &::-ms-expand {
+        display: none;
+    }
+}
+
 input {
     box-shadow: none;
     outline: none;
@@ -76,6 +84,12 @@ textarea {
 
 select {
     @include form-input;
+
+    // Undo readonly because select gets readonly attr because of custom styling appearance none
+    &:read-only {
+        --form-input-bcg: var(--form-input-bcg);
+        --form-input-color: var(--form-input-color);
+    }
 }
 
 legend,
@@ -86,12 +100,4 @@ label {
     display: block;
     font-weight: $weight-normal;
     margin: 0 0 0.25rem;
-}
-
-input,
-select,
-textarea {
-    &::-ms-expand {
-        display: none;
-    }
 }

@@ -42,9 +42,6 @@
                         <div class="form__input">
                             <input type="text" id="buyerName" formControlName="buyerName" />
                         </div>
-                        @if (form | showError: 'buyerName' : 'required') {
-                            <div class="form__error" i18n="form buyerName errors required">Field is required</div>
-                        }
                     </div>
 
                     <div class="form__fieldset">
@@ -61,11 +58,11 @@
                                 <div class="form__input">
                                     <input type="number" id="buyerAmount" formControlName="buyerAmount" />
                                     <span class="form__hint" i18n="form buyerAmount hint">portion of total annual production</span>
-                                    @if (form | showError: 'buyerAmount' : 'required') {
-                                        <div class="form__error" i18n="form buyerAmount errors required">Field is required</div>
-                                    }
                                     @if (form | showError: 'buyerAmount' : 'min') {
                                         <div class="form__error" i18n="form buyerAmount errors min">Minimum is 0</div>
+                                    }
+                                    @if (form.hasError('aboveMax')) {
+                                        <div class="form__error" i18n="form buyerAmount errors max">Maximum is 100</div>
                                     }
                                 </div>
                             </div>

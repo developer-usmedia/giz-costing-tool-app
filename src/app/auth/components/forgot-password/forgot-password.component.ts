@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnD
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ForgotPasswordForm } from '@api/models';
 import { MODULE_ROUTE, AUTH_ROUTE } from '@core/models';
-import { CustomValidators } from '@shared/services';
 import { Subject, distinctUntilChanged, takeUntil } from 'rxjs';
 
 interface ForgotPasswordFormGroup {
@@ -30,9 +29,6 @@ export class ForgotPasswordComponent implements OnInit, OnChanges, OnDestroy {
                     Validators.email,
                 ],
             }),
-        },
-        {
-            validators: [CustomValidators.matchPassword],
         }
     );
 

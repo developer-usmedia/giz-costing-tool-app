@@ -7,10 +7,11 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { BuyerUnit, Entry, EntryUpdateMutation, ScenarioType } from '@api/models';
+import { BuyerUnit, Entry, EntryUpdateMutation } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { EntriesService } from '@core/services';
+import { CustomValidators } from '@shared/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 
 
@@ -52,21 +53,16 @@ export class EntryBuyerComponent implements OnDestroy {
     public saving = this.updateEntryMudation.isPending();
 
     public form: FormGroup<EntryBuyerFormGroup> = new FormGroup({
-        buyerName: new FormControl<string | null>(null, {
-            validators: [Validators.required],
-        }),
+        buyerName: new FormControl<string | null>(null),
         buyerAmount: new FormControl<number | null>(null, {
-            validators: [Validators.required, Validators.min(0)],
+            validators: [Validators.min(0)],
         }),
-        buyerUnit: new FormControl<BuyerUnit | null>(BuyerUnit.UNIT, {
-            validators: [Validators.required],
-        }),
-    });
+        buyerUnit: new FormControl<BuyerUnit | null>(BuyerUnit.UNIT),
+    }, { validators: [CustomValidators.buyerAmount] });
 
     protected readonly icon = ICON;
     protected readonly entryRoute = ENTRY_ROUTE;
     protected readonly moduleRoute = MODULE_ROUTE;
-    protected readonly scenarioType = ScenarioType;
     protected readonly routes = ROOT_ROUTE;
     protected readonly buyerUnits = Object.values(BuyerUnit);
     private readonly activatedRoute = inject(ActivatedRoute);
