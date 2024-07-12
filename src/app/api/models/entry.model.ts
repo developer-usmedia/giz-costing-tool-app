@@ -11,8 +11,8 @@ export interface Entry extends EntityResponse {
         country: string;
         products: string;
         production: {
-            unit: BuyerUnit;
             amount: number;
+            unit: string;
         };
     };
     matrix?: {
@@ -42,7 +42,7 @@ export interface Entry extends EntityResponse {
         annualCosts?: {
             remunerationIncrease: number;
             taxCosts: number;
-            additionalCosts: number;
+            overheadCosts: number;
             totalCosts: number;
             totalCostsPerUnit: number;
         };

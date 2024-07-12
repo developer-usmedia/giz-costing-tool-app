@@ -80,7 +80,7 @@
                                 <div class="form__select">
                                     <select id="buyerUnit" formControlName="buyerUnit">
                                         @for (unit of buyerUnits; track $index) {
-                                            <option [ngValue]="unit">{{ getUnitLabel(unit) }}</option>
+                                            <option [ngValue]="unit">{{ unit | buyerUnit }}</option>
                                         }
                                     </select>
                                 </div>
@@ -123,12 +123,3 @@
         </div>
     }
 </div>
-
-<giz-entry-footer
-    [backButton]="{
-        icon: icon.ARROW_BACK,
-        text: backTitle,
-        link: [moduleRoute.ENTRIES, entryId(), entryRoute.DISTRIBUTION]
-    }"
->
-</giz-entry-footer>

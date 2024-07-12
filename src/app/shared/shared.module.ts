@@ -35,6 +35,7 @@ import { ScrollOverflowDirective } from '@shared/directives/scroll-overflow.dire
 import { TooltipAdvancedDirective } from '@shared/directives/tooltip-advanced.directive';
 import { TooltipDirective } from '@shared/directives/tooltip.directive';
 import {
+    BuyerUnitPipe,
     CountryNamePipe,
     EmptyPipe,
     EntryStatusPipe,
@@ -51,6 +52,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { NoResultsComponent } from './components/no-results/no-results.component';
 
 const PIPES = [
+    BuyerUnitPipe,
     CountryNamePipe,
     EmptyPipe,
     EntryStatusPipe,
@@ -77,6 +79,7 @@ const COMPONENTS = [
     LogosComponent,
     MenuComponent,
     MenuItemComponent,
+    NoResultsComponent,
     PaginatorComponent,
     PasswordStrengthComponent,
     ProgressBarComponent,
@@ -103,14 +106,12 @@ const DIRECTIVES = [
     declarations: [
         ...COMPONENTS,
         ...PIPES,
-        NoResultsComponent,
 
     ],
     exports: [
         ...COMPONENTS,
         ...DIRECTIVES,
         ...PIPES,
-        NoResultsComponent,
     ],
     imports: [
         CommonModule,

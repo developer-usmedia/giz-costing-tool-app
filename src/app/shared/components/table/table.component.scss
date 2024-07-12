@@ -49,6 +49,32 @@ giz-table {
         }
     }
 
+    &--report {
+        --table-cell-padding: #{ $p-gutter--xsmall } #{ $p-gutter };
+
+        td, th {
+            height: 48px;
+            white-space: nowrap;
+
+            &:not(:first-child) {
+                width: 300px;
+            }
+        }
+
+        td {
+            font-family: $font-open-sans;
+        }
+
+        thead {
+            th {
+                --table-head-cell-padding: 4px #{ $p-gutter };
+
+                height: 32px;
+                white-space: nowrap;
+            }
+        }
+    }
+
     &--info {
         --table-cell-padding: 0.5rem #{ $p-gutter--small };
 

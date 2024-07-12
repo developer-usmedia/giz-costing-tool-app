@@ -7,8 +7,7 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { determineWageIncrease } from '@api/helpers/worker.helper';
-import { Entry, ScenarioType, Worker, WorkerListResponse, WorkersPagingParams } from '@api/models';
+import { BuyerUnit, Entry, ScenarioType, WorkerListResponse, WorkersPagingParams } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, PagingParams, ScenarioInfo, SCENARIOS } from '@core/models';
 import { EntriesService } from '@core/services';
@@ -86,6 +85,62 @@ export class EntryReportComponent implements OnDestroy {
         });
     }
 
+    get percOfWorkersBelowLivingWage(): number {
+        const belowLw = this.entry.data()?.livingWage?.nrOfWorkersBelowLivingWage ?? 0;
+        const total = this.entry.data()?.payroll?.nrOfWorkers ?? 0;
+        return belowLw / total;
+    }
+
+    get percOfWorkersBelowLivingWageScenario(): number {
+        const belowLw = this.entry.data()?.scenario?.livingWage?.nrOfWorkersBelowLivingWage ?? 0;
+        const total = this.entry.data()?.payroll?.nrOfWorkers ?? 0;
+        return belowLw / total;
+    }
+
+    get percAvgLivingWageGap(): number {
+        const belowLw = this.entry.data()?.livingWage?.avgLivingWageGap ?? 0;
+        const total = this.entry.data()?.benchmark.value ?? 0;
+        return belowLw / total;
+    }
+
+    get percAvgLivingWageGapScenario(): number {
+        const belowLw = this.entry.data()?.scenario?.livingWage?.avgLivingWageGap ?? 0;
+        const total = this.entry.data()?.benchmark.value ?? 0;
+        return belowLw / total;
+    }
+
+    get showBuyerColumn(): boolean {
+        return this.entry.data()?.buyer?.proportion?.amount !== undefined;
+    }
+
+    get buyerPercentage(): number | null {
+        const unit = this.entry.data()?.buyer?.proportion?.unit;
+        const amount = this.entry.data()?.buyer?.proportion?.amount;
+        const amountFacility = this.entry.data()?.facility.production.amount ?? 0;
+
+        if (!amount) {
+            return null;
+        }
+
+        if (unit === BuyerUnit.PERCENTAGE) {
+            return amount;
+        }
+
+        return amount / amountFacility * 100;
+    }
+
+    get buyerAnnualProduction(): number | null {
+        const annualProduction = this.entry.data()?.facility.production.amount;
+        if (this.buyerPercentage === null || !annualProduction) {
+            return null;
+        }
+        return annualProduction * (this.buyerPercentage / 100);
+    }
+
+    get currencyCode(): string {
+        return this.entry.data()?.payroll?.currencyCode ?? '';
+    }
+
     public onPageEvent(pageEvent: PageEvent): void {
         const currentParams = this.pagingParams();
         const params = {
@@ -100,19 +155,24 @@ export class EntryReportComponent implements OnDestroy {
         );
     }
 
-    public getTableCaption(total?: number) {
-        return $localize`:job-categories table:${ total ?? '-' } job categories`;
-    }
-
     public getTableCaptionSpecs() {
         return $localize`:specs title:Specifications`;
     }
 
-    public getWageIncrease(worker: Worker) {
-        if (!this.entry.data()) {
-            return 0;
-        }
-        return determineWageIncrease(worker, this.entry.data() as Entry);
+    public getTableCaptionDistribution() {
+        return $localize`:distribution:Distribution`;
+    }
+
+    public getTableCaptionWorkers(total?: number) {
+        return $localize`:job-categories table:${ total ?? '-' } job categories`;
+    }
+
+    public getTableCaptionComparison() {
+        return $localize`:comparison title:Comparison`;
+    }
+
+    public getTableCaptionAnnualCosts() {
+        return $localize`:annual-costs title:Annual costs`;
     }
 
     public download(): void {

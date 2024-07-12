@@ -91,17 +91,6 @@ export class EntryBuyerComponent implements OnDestroy {
         return $localize`:entry-info title:Entry information`;
     }
 
-    public getUnitLabel(unit: BuyerUnit) {
-        switch (unit) {
-            case BuyerUnit.UNIT:
-                return $localize`:buyer unit title:Unit`;
-            case BuyerUnit.PERCENTAGE:
-                return '%';
-            default:
-                return '';
-        }
-    }
-
     public patchForm() {
         if(!this.entry.data()) {
             return;
