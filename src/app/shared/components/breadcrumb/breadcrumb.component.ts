@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+
 import { BreadcrumbItem } from '@core/models';
+import { ICON } from '@shared/components/icon/icon.enum';
 
 @Component({
     selector: 'giz-breadcrumb',
@@ -10,4 +12,6 @@ import { BreadcrumbItem } from '@core/models';
 })
 export class BreadcrumbComponent {
     @Input({ required: true }) breadcrumb: BreadcrumbItem[] = [];
+
+    protected readonly icon = ICON;
 }

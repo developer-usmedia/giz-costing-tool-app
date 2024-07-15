@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-    @for (item of breadcrumb; track item.name) {
+    @for (item of breadcrumb; track item.name; let i = $index) {
         <li class="breadcrumb__item" [ngClass]="{
              'is-active': item.active,
              'breadcrumb__item--icon': !!item.icon,
@@ -19,6 +19,10 @@
                 </a>
             } @else {
                 <span class="breadcrumb__text">{{ item.name }}</span>
+            }
+
+            @if (i !== 0 && i !== breadcrumb.length - 1) {
+                <giz-icon class="breadcrumb__divider" [icon]="icon.CHEVRON_RIGHT" size="small"></giz-icon>
             }
         </li>
     }

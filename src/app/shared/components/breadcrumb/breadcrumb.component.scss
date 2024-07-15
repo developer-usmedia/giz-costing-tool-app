@@ -1,5 +1,6 @@
 @import 'config/colors';
 @import 'mixins/sr-only';
+@import 'mixins/svg';
 
 :root {
     --breadcrumb-color: #{ $c-grey--600 };
@@ -34,18 +35,6 @@ giz-breadcrumb {
         &.is-active {
             color: var(--breadcrumb-color-active);
         }
-
-        &::after {
-            content: '>';
-            margin-left: 0.5rem;
-        }
-
-        &:first-child,
-        &:last-child {
-            &::after {
-                display: none;
-            }
-        }
     }
 
     &__link {
@@ -60,5 +49,11 @@ giz-breadcrumb {
         &:hover {
             color: var(--breadcrumb-color-hover);
         }
+    }
+
+    &__divider {
+        align-self: flex-end;
+        color: var(--breadcrumb-color);
+        margin-left: 0.5rem;
     }
 }
