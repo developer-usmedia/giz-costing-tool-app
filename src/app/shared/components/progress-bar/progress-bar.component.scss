@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use 'sass:math';
 @import './config/colors';
+@import './config/sizes';
 
 :root {
     --progress-bar-background: #{ color.scale($c-thunderbird-1, $alpha: -88%) };
@@ -11,8 +12,10 @@
     $self: &;
 
     background: var(--progress-bar-background);
+    border-radius: $b-radius;
     display: block;
     height: 8px;
+    overflow: hidden;
     position: relative;
     width: min(100%, 350px);
 
