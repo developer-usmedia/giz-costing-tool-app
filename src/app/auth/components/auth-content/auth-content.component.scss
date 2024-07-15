@@ -18,6 +18,10 @@
         flex-direction: column;
         justify-content: center;
         margin-bottom: 2rem;
+
+        > .button {
+            width: fit-content;
+        }
     }
 
     &__header {
