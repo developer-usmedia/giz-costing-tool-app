@@ -77,10 +77,6 @@
           <context context-type="linenumber">74,76</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
-          <context context-type="linenumber">40,42</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.html</context>
           <context context-type="linenumber">7,9</context>
         </context-group>
@@ -110,7 +106,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
-          <context context-type="linenumber">43,44</context>
+          <context context-type="linenumber">42,43</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
@@ -342,7 +338,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
-          <context context-type="linenumber">23,25</context>
+          <context context-type="linenumber">38,41</context>
         </context-group>
         <note priority="1" from="description">form resetCode resend button</note>
       </trans-unit>
@@ -354,7 +350,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
-          <context context-type="linenumber">26,31</context>
+          <context context-type="linenumber">23,28</context>
         </context-group>
         <note priority="1" from="description">form resetCode resend success</note>
       </trans-unit>
@@ -366,7 +362,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
-          <context context-type="linenumber">34,38</context>
+          <context context-type="linenumber">31,35</context>
         </context-group>
         <note priority="1" from="description">form state verifying</note>
       </trans-unit>
@@ -386,7 +382,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">152</context>
         </context-group>
         <note priority="1" from="description">register verification title</note>
       </trans-unit>
@@ -398,7 +394,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">163</context>
         </context-group>
         <note priority="1" from="description">register verification description</note>
       </trans-unit>
@@ -414,11 +410,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">128</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">139</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -442,7 +438,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">138</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -514,27 +510,23 @@
         </context-group>
         <note priority="1" from="description">logout description</note>
       </trans-unit>
-      <trans-unit id="3432829306936850573" datatype="html">
-        <source>Continue to login</source>
+      <trans-unit id="3354520094500773911" datatype="html">
+        <source>Continue to dashboard</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">24,27</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.html</context>
-          <context context-type="linenumber">33,36</context>
-        </context-group>
-        <note priority="1" from="description">continue</note>
+        <note priority="1" from="description">continue-to-dashboard</note>
       </trans-unit>
       <trans-unit id="5907476126990913307" datatype="html">
         <source>Create account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">54</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">151</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
@@ -546,7 +538,7 @@
         <source>Enter verification code received via email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <note priority="1" from="description">register verification hint</note>
       </trans-unit>
@@ -554,7 +546,7 @@
         <source>Registration done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">62</context>
         </context-group>
         <note priority="1" from="description">register finalize hint</note>
       </trans-unit>
@@ -562,7 +554,7 @@
         <source>New code sent</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">134</context>
         </context-group>
         <note priority="1" from="description">verificationCode send success</note>
       </trans-unit>
@@ -570,7 +562,7 @@
         <source>All done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">154</context>
         </context-group>
         <note priority="1" from="description">register finalize title</note>
       </trans-unit>
@@ -578,7 +570,7 @@
         <source>Please fill in the details below to create your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">161</context>
         </context-group>
         <note priority="1" from="description">register signup description</note>
       </trans-unit>
@@ -586,9 +578,17 @@
         <source>Your account has been created and you are ready to start using the tool</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">165</context>
         </context-group>
         <note priority="1" from="description">register finalize description</note>
+      </trans-unit>
+      <trans-unit id="3432829306936850573" datatype="html">
+        <source>Continue to login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">33,36</context>
+        </context-group>
+        <note priority="1" from="description">continue</note>
       </trans-unit>
       <trans-unit id="4673699239143061199" datatype="html">
         <source>Enter email for reset instructions</source>
@@ -1004,7 +1004,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">159</context>
         </context-group>
         <note priority="1" from="description">distribution title</note>
       </trans-unit>
@@ -1791,7 +1791,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">167</context>
         </context-group>
         <note priority="1" from="description">job-categories table</note>
       </trans-unit>
@@ -1871,7 +1871,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/pipes/buyerUnit.pipe.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description">form buyerUnit label</note>
       </trans-unit>
@@ -1971,7 +1971,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">163</context>
         </context-group>
         <note priority="1" from="description">entry distribution title</note>
       </trans-unit>
@@ -1987,7 +1987,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">entry buyer title</note>
       </trans-unit>
@@ -2135,7 +2135,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">entry tab report</note>
       </trans-unit>
@@ -2462,7 +2462,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">172</context>
+          <context context-type="linenumber">171</context>
         </context-group>
         <note priority="1" from="description">comparision title</note>
       </trans-unit>
@@ -2546,7 +2546,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">176</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <note priority="1" from="description">annual-costs title</note>
       </trans-unit>
@@ -2678,7 +2678,7 @@
         <source>Download report failed</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">181</context>
+          <context context-type="linenumber">180</context>
         </context-group>
         <note priority="1" from="description">report-download error</note>
       </trans-unit>
@@ -3182,8 +3182,8 @@
         </context-group>
         <note priority="1" from="description">password-strength medium</note>
       </trans-unit>
-      <trans-unit id="29167121133682512" datatype="html">
-        <source>Good</source>
+      <trans-unit id="5083916381512433285" datatype="html">
+        <source>Almost ok</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/password-strength/password-strength.component.html</context>
           <context context-type="linenumber">25,26</context>
