@@ -72,7 +72,7 @@
                                 {{ entry.facility.country | empty }}
                             </td>
                             <td giz-table-cell alignment="center">
-                                <span gizTooltip [text]="entry.updatedAt">{{ entry.updatedAt | date | empty }}</span>
+                                <span gizTooltip [text]="(entry.updatedAt | date:'medium') ?? ''">{{ entry.updatedAt | date | empty }}</span>
                             </td>
                             <td giz-table-cell alignment="center">
                                 <giz-status [status]="entry.status | entryStatus" gizTooltip [text]="entry.status | entryStatusText"></giz-status>
