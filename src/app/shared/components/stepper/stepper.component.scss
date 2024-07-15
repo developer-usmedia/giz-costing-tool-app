@@ -5,6 +5,7 @@
 
 :root {
     --stepper-circle-bcg: #{ $c-white };
+    --stepper-line: #{ $c-grey--300 };
     --stepper-circle-border: #{ $c-grey--300 };
     --stepper-circle-label: #{ $c-grey--900 };
 }
@@ -34,7 +35,7 @@
 
         & + & {
             &::before {
-                background: var(--stepper-circle-border);
+                background: var(--stepper-line);
                 content: '';
                 display: block;
                 height: 1px;
