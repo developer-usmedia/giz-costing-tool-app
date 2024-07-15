@@ -6,6 +6,7 @@
     @include overflow-gradient;
 
     display: block;
+    margin-bottom: -1px;
     position: relative;
 
     &.is-overflowing {
