@@ -47,6 +47,7 @@ export class PasswordStrengthComponent implements OnChanges {
 
     private rankPassword() {
         let score = 0;
+        const maxScore = 4;
 
         // If no password or too short
         if (!this.password || !PasswordService.checkLength(this.password)) {
@@ -68,22 +69,12 @@ export class PasswordStrengthComponent implements OnChanges {
             score++;
         }
 
-        // Penalize if there aren't at least three char types
-        if (score < 3) {
-            score--;
-        }
-
-        if (this.password.length > PasswordService.MINLENGTH) {
-            // Increment the score for every 2 chars longer than the minimum
-            score += Math.floor((this.password.length - PasswordService.MINLENGTH) / 2);
-        }
-
         // Set score
-        if (score < 3) {
+        if (score < 2) {
             this.passwordScore = RANK.WEAK;
-        } else if (score < 4) {
+        } else if (score < 3) {
             this.passwordScore = RANK.MEDIUM;
-        } else if (score < 6) {
+        } else if (score < maxScore) {
             this.passwordScore = RANK.STRONG;
         } else {
             this.passwordScore = RANK.VERY_STRONG;
