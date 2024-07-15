@@ -21,7 +21,7 @@
     }
 
     @if (currentStep$.value === registerSteps.DONE) {
-        <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="continue">Continue to login</a>
+        <a giz-stroke-button [routerLink]="[rootRoute.DASHBOARD]" i18n="continue-to-dashboard">Continue to dashboard</a>
     }
 
     <ng-container auth-footer>
