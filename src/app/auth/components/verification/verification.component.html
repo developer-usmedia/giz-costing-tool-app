@@ -19,9 +19,6 @@
         }
 
         <div class="form__hint">
-            <button type="button" giz-link-button theme="basic" (click)="sendCode()">
-                <span i18n="form verificationCode resend button">Send me a new code</span>
-            </button>
             @if (newCodeSent) {
                 <p i18n="form verificationCode resend success">You will receive a new code via email</p>
             }
@@ -37,7 +34,9 @@
 
     <div class="form__footer">
         <div class="form__buttons">
-            <a giz-link-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="login back">Back to login</a>
+            <button type="button" giz-link-button (click)="sendCode()">
+                <span i18n="form verificationCode resend button">Send me a new code</span>
+            </button>
         </div>
         <div class="form__buttons">
             <button type="submit" giz-stroke-button i18n="continue">Continue</button>
