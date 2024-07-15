@@ -102,10 +102,10 @@
                                     [icon]="icon.COPY"
                                     [theme]="'basic'"
                                     [size]="'small'"
-                                    [cdkCopyToClipboard]="entry.id.toUpperCase()"
+                                    [cdkCopyToClipboard]="entry.id  | uppercase"
                                     i18n="copy"
                                 >Copy</button>
-                                {{ entry.id.toUpperCase()| empty }}
+                                {{ entry.id | uppercase | empty }}
                             </td>
                         </tr>
                         <tr giz-table-row>

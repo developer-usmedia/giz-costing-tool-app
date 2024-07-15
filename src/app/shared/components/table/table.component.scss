@@ -9,6 +9,8 @@ giz-table {
 }
 
 .table {
+    $self: &;
+
     @include overflow-gradient;
 
     --overflow-gradient-width: 60px;
@@ -80,8 +82,12 @@ giz-table {
 
         line-height: 1.4;
 
-        caption {
+        #{ $self }__caption {
             font-size: 1rem;
+
+            &--small {
+                font-size: var(--text-font-size);
+            }
         }
 
         td, th {

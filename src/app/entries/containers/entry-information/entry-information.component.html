@@ -19,83 +19,79 @@
     } @else {
         @if (entry.data(); as entry) {
             <div class="info__column">
-                <table class="info__table">
-                    <caption i18n="entry general title">General</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="entry facility label">Facility</th>
-                            <td>{{ entry.facility.name | empty }}</td>
+                <giz-table type="info" [caption]="captionGeneral" captionSize="small" class="info__table">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry facility label">Facility</th>
+                            <td giz-table-cell>{{ entry.facility.name | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry country label">Country</th>
-                            <td>{{ entry.facility.country | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry country label">Country</th>
+                            <td giz-table-cell>{{ entry.facility.country | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry currency label">Currency</th>
-                            <td>{{ entry.payroll.currencyCode | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry currency label">Currency</th>
+                            <td giz-table-cell>{{ entry.payroll.currencyCode | empty }}</td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-container>
+                </giz-table>
 
-                <table class="info__table">
-                    <caption i18n="entry product-information title">Product information</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="entry products label">Product(s)</th>
-                            <td>{{ entry.facility.products | empty }}</td>
+                <giz-table type="info" [caption]="captionProductionInfo" captionSize="small" class="info__table">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry products label">Product(s)</th>
+                            <td giz-table-cell>{{ entry.facility.products | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry annual-production label">Annual production</th>
-                            <td>{{ entry.facility.production.amount | empty }} {{ entry.facility.production.unit }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-celli18n="entry annual-production label">Annual production</th>
+                            <td giz-table-cell>{{ entry.facility.production.amount | empty }} {{ entry.facility.production.unit }}</td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-container>
+                </giz-table>
 
-                <table class="info__table">
-                    <caption i18n="entry payroll title">Payroll</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="entry year label">Year</th>
-                            <td>{{ entry.payroll.year | empty }}</td>
+                <giz-table type="info" [caption]="captionPayroll" captionSize="small" class="info__table">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry year label">Year</th>
+                            <td giz-table-cell>{{ entry.payroll.year | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry job-categories label"># Job categories</th>
-                            <td>{{ entry.payroll.nrOfJobCategories | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry job-categories label"># Job categories</th>
+                            <td giz-table-cell>{{ entry.payroll.nrOfJobCategories | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry workers label"># Workers</th>
-                            <td>{{ entry.payroll.nrOfWorkers | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry workers label"># Workers</th>
+                            <td giz-table-cell>{{ entry.payroll.nrOfWorkers | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry workers-below-living-wage label"># Workers - Below living wage</th>
-                            <td>{{ entry.livingWage?.nrOfWorkersBelowLivingWage | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry workers-below-living-wage label"># Workers - Below living wage</th>
+                            <td giz-table-cell>{{ entry.livingWage?.nrOfWorkersBelowLivingWage | empty }}</td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-container>
+                </giz-table>
             </div>
             <div class="info__column">
-                <table class="info__table">
-                    <caption i18n="entry salary-matrix title">Salary Matrix</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="entry matrix-id label">Matrix ID</th>
-                            <td class="info__copy-cell">
+                <giz-table type="info" [caption]="captionSalaryMatrix" captionSize="small" class="info__table">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry matrix-id label">Matrix ID</th>
+                            <td giz-table-cell type="copy">
                                 @if (entry.matrix?.id) {
                                     <button
                                         giz-icon-button
                                         [icon]="icon.COPY"
                                         [theme]="'basic'"
                                         [size]="'small'"
-                                        [cdkCopyToClipboard]="entry.matrix?.id ?? ''"
+                                        [cdkCopyToClipboard]="entry.matrix?.id ?? '' | uppercase"
                                         i18n="copy"
                                     >Copy</button>
                                 }
-                                {{ entry.matrix?.id | empty }}
+                                {{ entry.matrix?.id | uppercase | empty }}
                             </td>
                         </tr>
-                        <tr>
-                            <th i18n="entry facility-id label">Facility ID</th>
-                            <td class="info__copy-cell">
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry facility-id label">Facility ID</th>
+                            <td giz-table-cell type="copy">
                                 @if (entry.facility.id) {
                                     <button
                                         giz-icon-button
@@ -109,52 +105,50 @@
                                 {{ entry.facility.id | empty }}
                             </td>
                         </tr>
-                        <tr>
-                            <th i18n="entry verified label">Verified?</th>
-                            <td>{{ !!entry.matrix?.verified | verified }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry verified label">Verified?</th>
+                            <td giz-table-cell>{{ !!entry.matrix?.verified | verified }}</td>
                         </tr>
-                    </tbody>
-                </table>
-                <table class="info__table">
-                    <caption i18n="entry benchmark title">Benchmark</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="entry region label">Region</th>
-                            <td>{{ entry.benchmark.region | empty }}</td>
+                    </ng-container>
+                </giz-table>
+                <giz-table type="info" [caption]="captionBenchmark" captionSize="small" class="info__table">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry region label">Region</th>
+                            <td giz-table-cell>{{ entry.benchmark.region | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry amount label">Amount</th>
-                            <td>{{ entry.benchmark.value | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry amount label">Amount</th>
+                            <td giz-table-cell>{{ entry.benchmark.value | empty }} {{ entry.payroll.currencyCode }}</td>
                         </tr>
-                    </tbody>
-                </table>
-                <table class="info__table">
-                    <caption i18n="entry entry title">Entry</caption>
-                    <tbody>
-                        <tr>
-                            <th i18n="entry entry-id label">Entry ID</th>
-                            <td class="info__copy-cell">
+                    </ng-container>
+                </giz-table>
+                <giz-table type="info" [caption]="captionEntry" captionSize="small" class="info__table">
+                    <ng-container>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry entry-id label">Entry ID</th>
+                            <td giz-table-cell type="copy">
                                 <button
                                     giz-icon-button
                                     [icon]="icon.COPY"
                                     [theme]="'basic'"
                                     [size]="'small'"
-                                    [cdkCopyToClipboard]="entry.id"
+                                    [cdkCopyToClipboard]="entry.id | uppercase"
                                     i18n="copy"
                                 >Copy</button>
-                                {{ entry.id | empty }}
+                                {{ entry.id | uppercase | empty }}
                             </td>
                         </tr>
-                        <tr>
-                            <th i18n="entry created-on label">Created on</th>
-                            <td>{{ entry.createdAt | date | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry created-on label">Created on</th>
+                            <td giz-table-cell>{{ entry.createdAt | date | empty }}</td>
                         </tr>
-                        <tr>
-                            <th i18n="entry edited-on label">Edited on</th>
-                            <td>{{ entry.updatedAt | date | empty }}</td>
+                        <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry edited-on label">Edited on</th>
+                            <td giz-table-cell>{{ entry.updatedAt | date | empty }}</td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-container>
+                </giz-table>
             </div>
         } @else {
             <giz-no-results>

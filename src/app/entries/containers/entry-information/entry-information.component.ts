@@ -47,6 +47,30 @@ export class EntryInformationComponent implements OnDestroy {
         });
     }
 
+    get captionGeneral() {
+        return $localize`:entry general title:General`;
+    }
+
+    get captionProductionInfo() {
+        return $localize`:entry product-information title:Product information`;
+    }
+
+    get captionPayroll() {
+        return $localize`:entry payroll title:Payroll`;
+    }
+
+    get captionSalaryMatrix() {
+        return $localize`:entry salary-matrix title:Salary Matrix`;
+    }
+
+    get captionBenchmark() {
+        return $localize`:entry benchmark title:Benchmark`;
+    }
+
+    get captionEntry() {
+        return $localize`:entry entry title:Entry`;
+    }
+
     public ngOnDestroy(): void {
         this.destroyed$.next();
         this.destroyed$.complete();

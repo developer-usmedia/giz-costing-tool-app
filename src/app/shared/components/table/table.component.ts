@@ -10,6 +10,7 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 export class TableComponent {
     @Input() loading = false;
     @Input() caption = 'table';
+    @Input() captionSize: 'default' | 'small' = 'default';
     @Input() type: 'default' | 'compact' | 'info' | 'overview' | 'report' = 'default';
     @Input() hideCaption = false;
     @Input() noBorder = false;

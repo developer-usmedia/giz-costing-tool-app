@@ -9,7 +9,10 @@
 }">
     <div class="table__container" gizScrollOverflowContainer>
         <table>
-            <caption class="table__caption" [ngClass]="{ 'table__caption--hide': hideCaption }">{{ caption }}</caption>
+            <caption class="table__caption" [ngClass]="{
+                'table__caption--hide': hideCaption,
+                'table__caption--small': captionSize === 'small'
+            }">{{ caption }}</caption>
             <thead role="rowgroup"><ng-content select="[thead]"></ng-content></thead>
             <tbody role="rowgroup"><ng-content></ng-content></tbody>
         </table>
