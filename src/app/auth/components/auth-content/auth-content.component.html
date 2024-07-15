@@ -8,7 +8,7 @@
         <h1 class="auth-content__title">{{ title }}</h1>
     </div>
     @if (description) {
-        <p class="auth-content__description" [innerHTML]="description | markdown"></p>
+        <div class="auth-content__description" [innerHTML]="description | markdown"></div>
     }
     <ng-content></ng-content>
 </div>
