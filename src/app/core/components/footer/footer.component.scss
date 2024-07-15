@@ -1,9 +1,11 @@
+@use 'sass:color';
 @import 'config/colors';
 @import 'config/sizes';
 @import 'mixins/screen';
 
 :root {
     --footer-link-color: #{ $c-grey--700 };
+    --footer-divider-color: #{ color.scale($c-grey--900, $alpha: -80%) };
 }
 
 .footer {
@@ -19,9 +21,13 @@
 
     &__item {
         &::after {
-            color: var(--footer-link-color);
-            content: '|';
+            background: var(--footer-divider-color);
+            content: '';
+            display: inline-block;
+            height: 14px;
             margin-left: 1rem;
+            vertical-align: middle;
+            width: 1px;
         }
 
         &:last-child::after {
