@@ -29,7 +29,6 @@ giz-table {
 
         table {
             min-width: 100%;
-            overflow: auto;
             table-layout: fixed;
             width: auto;
         }
@@ -156,6 +155,7 @@ giz-table {
         &--sticky {
             table {
                 border-left: 0;
+                overflow: auto;
             }
 
             th, td {

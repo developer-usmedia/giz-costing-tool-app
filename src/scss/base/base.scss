@@ -230,9 +230,10 @@ hr {
 }
 
 table {
+    background: var(--table-bcg);
     border: 1px solid var(--table-border-color);
     border-radius: $b-radius;
-    border-spacing: 0;
+    border-spacing: 1px;
     margin: 0 0 1rem;
     overflow: hidden;
     text-align: left;
