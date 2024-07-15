@@ -142,6 +142,10 @@
         #{ $self }__field & {
             padding-left: var(--form-input-padding-horizontal);
         }
+
+        &:last-child {
+            margin-bottom: -14px;
+        }
     }
 
     &__hint {
