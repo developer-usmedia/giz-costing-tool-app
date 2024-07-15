@@ -46,6 +46,7 @@ export class EntryReportComponent implements OnDestroy {
 
     public scenarios: ScenarioInfo[] = SCENARIOS;
     public activeScenario?: ScenarioInfo;
+    public exporting = false;
 
     protected readonly icon = ICON;
     protected readonly entryRoute = ENTRY_ROUTE;
@@ -155,6 +156,14 @@ export class EntryReportComponent implements OnDestroy {
         );
     }
 
+    public getReportDownloadUrl(): string {
+        return this.entriesApi.getExportUrl(this.entryId());
+    }
+    
+    public getFileDownloadError(): string {
+        return $localize`:report-download error:Download report failed`;
+    }
+
     public getTableCaptionSpecs() {
         return $localize`:specs title:Specifications`;
     }
@@ -175,9 +184,8 @@ export class EntryReportComponent implements OnDestroy {
         return $localize`:annual-costs title:Annual costs`;
     }
 
-    public download(): void {
-        // TOOD: DOWNLOAD
-        this.toastr.error($localize`:report-download error:Download report failed`);
+    public setExporting(value: boolean): void {
+        this.exporting = value;
     }
 
     public ngOnDestroy(): void {

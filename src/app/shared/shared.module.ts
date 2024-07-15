@@ -50,6 +50,7 @@ import {
 } from '@shared/pipes';
 import { AlertComponent } from './components/alert/alert.component';
 import { NoResultsComponent } from './components/no-results/no-results.component';
+import { FileDownloadDirective } from './directives/file-download.directive';
 
 const PIPES = [
     BuyerUnitPipe,
@@ -96,6 +97,7 @@ const COMPONENTS = [
 ];
 
 const DIRECTIVES = [
+    FileDownloadDirective,
     ScrollOverflowDirective,
     ScrollOverflowContainerDirective,
     TooltipDirective,

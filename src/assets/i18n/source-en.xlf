@@ -1004,7 +1004,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">160</context>
         </context-group>
         <note priority="1" from="description">distribution title</note>
       </trans-unit>
@@ -1044,15 +1044,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">127</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">120</context>
+          <context context-type="linenumber">131</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">317,318</context>
+          <context context-type="linenumber">328,329</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
@@ -1200,7 +1200,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">65,66</context>
+          <context context-type="linenumber">76,77</context>
         </context-group>
         <note priority="1" from="description">form bonus label</note>
       </trans-unit>
@@ -1272,7 +1272,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">69,70</context>
+          <context context-type="linenumber">80,81</context>
         </context-group>
         <note priority="1" from="description">form ikb label</note>
       </trans-unit>
@@ -1292,7 +1292,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">75,76</context>
+          <context context-type="linenumber">86,87</context>
         </context-group>
         <note priority="1" from="description">form ikb-housing label</note>
       </trans-unit>
@@ -1312,7 +1312,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">76,77</context>
+          <context context-type="linenumber">87,88</context>
         </context-group>
         <note priority="1" from="description">form ikb-food label</note>
       </trans-unit>
@@ -1332,7 +1332,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">77,78</context>
+          <context context-type="linenumber">88,89</context>
         </context-group>
         <note priority="1" from="description">form ikb-transport label</note>
       </trans-unit>
@@ -1352,7 +1352,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">78,79</context>
+          <context context-type="linenumber">89,90</context>
         </context-group>
         <note priority="1" from="description">form ikb-healthcare label</note>
       </trans-unit>
@@ -1380,7 +1380,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">80,81</context>
+          <context context-type="linenumber">91,92</context>
         </context-group>
         <note priority="1" from="description">form ikb-education label</note>
       </trans-unit>
@@ -1459,7 +1459,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">42,43</context>
+          <context context-type="linenumber">53,54</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
@@ -1475,7 +1475,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">126,127</context>
+          <context context-type="linenumber">137,138</context>
         </context-group>
         <note priority="1" from="description">specs average-gap</note>
       </trans-unit>
@@ -1595,7 +1595,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">37,38</context>
+          <context context-type="linenumber">48,49</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap label</note>
       </trans-unit>
@@ -1607,7 +1607,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <note priority="1" from="description">yes</note>
       </trans-unit>
@@ -1635,7 +1635,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">199,200</context>
+          <context context-type="linenumber">210,211</context>
         </context-group>
         <note priority="1" from="description">scenario overhead-costs label</note>
       </trans-unit>
@@ -1675,7 +1675,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">261,262</context>
+          <context context-type="linenumber">272,273</context>
         </context-group>
         <note priority="1" from="description">workers error</note>
       </trans-unit>
@@ -1691,7 +1691,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">276,277</context>
+          <context context-type="linenumber">287,288</context>
         </context-group>
         <note priority="1" from="description">workers job-category label</note>
       </trans-unit>
@@ -1707,11 +1707,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">288,290</context>
+          <context context-type="linenumber">299,301</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">304,306</context>
+          <context context-type="linenumber">315,317</context>
         </context-group>
         <note priority="1" from="description">workers total-monthly-remnueration label</note>
       </trans-unit>
@@ -1775,7 +1775,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">369,370</context>
+          <context context-type="linenumber">380,381</context>
         </context-group>
         <note priority="1" from="description">workers not-found</note>
       </trans-unit>
@@ -1791,7 +1791,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="description">job-categories table</note>
       </trans-unit>
@@ -1967,11 +1967,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">47,48</context>
+          <context context-type="linenumber">58,59</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">164</context>
         </context-group>
         <note priority="1" from="description">entry distribution title</note>
       </trans-unit>
@@ -2187,7 +2187,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">79,80</context>
+          <context context-type="linenumber">90,91</context>
         </context-group>
         <note priority="1" from="description">childcare</note>
       </trans-unit>
@@ -2207,7 +2207,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">61,62</context>
         </context-group>
         <note priority="1" from="description">workers distribution sublabel</note>
       </trans-unit>
@@ -2219,7 +2219,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">61,62</context>
+          <context context-type="linenumber">72,73</context>
         </context-group>
         <note priority="1" from="description">base-wage</note>
       </trans-unit>
@@ -2311,7 +2311,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">226,227</context>
+          <context context-type="linenumber">237,238</context>
         </context-group>
         <note priority="1" from="description">entry annual-production label</note>
       </trans-unit>
@@ -2323,7 +2323,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">256,257</context>
+          <context context-type="linenumber">267,268</context>
         </context-group>
         <note priority="1" from="description">entry payroll title</note>
       </trans-unit>
@@ -2431,11 +2431,19 @@
         </context-group>
         <note priority="1" from="description">entry back-to-overview</note>
       </trans-unit>
+      <trans-unit id="9160383968157153741" datatype="html">
+        <source>Exporting...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+        <note priority="1" from="description">report exporting</note>
+      </trans-unit>
       <trans-unit id="2396101419972902272" datatype="html">
         <source>Download Report</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">9,10</context>
+          <context context-type="linenumber">20,21</context>
         </context-group>
         <note priority="1" from="description">download-report</note>
       </trans-unit>
@@ -2443,7 +2451,7 @@
         <source>Error getting entry or scenario.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">18,19</context>
+          <context context-type="linenumber">29,30</context>
         </context-group>
         <note priority="1" from="description">report error</note>
       </trans-unit>
@@ -2451,18 +2459,18 @@
         <source>Graphic representation of report</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">28,29</context>
+          <context context-type="linenumber">39,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6832879550227262389" datatype="html">
         <source>Comparison</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">97,98</context>
+          <context context-type="linenumber">108,109</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">171</context>
+          <context context-type="linenumber">172</context>
         </context-group>
         <note priority="1" from="description">comparision title</note>
       </trans-unit>
@@ -2470,11 +2478,11 @@
         <source>Status quo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">106,107</context>
+          <context context-type="linenumber">117,118</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">284,285</context>
+          <context context-type="linenumber">295,296</context>
         </context-group>
         <note priority="1" from="description">status-quo label</note>
       </trans-unit>
@@ -2482,11 +2490,11 @@
         <source>Scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">107,108</context>
+          <context context-type="linenumber">118,119</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">300,301</context>
+          <context context-type="linenumber">311,312</context>
         </context-group>
         <note priority="1" from="description">scenario label</note>
       </trans-unit>
@@ -2494,7 +2502,7 @@
         <source>Employees below living wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">113,114</context>
+          <context context-type="linenumber">124,125</context>
         </context-group>
         <note priority="1" from="description">report employees-below-lw</note>
       </trans-unit>
@@ -2502,11 +2510,11 @@
         <source>of total</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">117,118</context>
+          <context context-type="linenumber">128,129</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">121,122</context>
+          <context context-type="linenumber">132,133</context>
         </context-group>
         <note priority="1" from="description">of total</note>
       </trans-unit>
@@ -2514,7 +2522,7 @@
         <source>For employees below living wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">127,129</context>
+          <context context-type="linenumber">138,140</context>
         </context-group>
         <note priority="1" from="description">report average-lw-gap hint</note>
       </trans-unit>
@@ -2522,11 +2530,11 @@
         <source>of benchmark</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">131,132</context>
+          <context context-type="linenumber">142,143</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">135,136</context>
+          <context context-type="linenumber">146,147</context>
         </context-group>
         <note priority="1" from="description">of benchmark</note>
       </trans-unit>
@@ -2534,7 +2542,7 @@
         <source>Facility wide living wage gap</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">140,141</context>
+          <context context-type="linenumber">151,152</context>
         </context-group>
         <note priority="1" from="description">report facility-lw-gap</note>
       </trans-unit>
@@ -2542,11 +2550,11 @@
         <source>Annual costs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">154,155</context>
+          <context context-type="linenumber">165,166</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">176</context>
         </context-group>
         <note priority="1" from="description">annual-costs title</note>
       </trans-unit>
@@ -2554,7 +2562,7 @@
         <source>Facility (100%)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">163,164</context>
+          <context context-type="linenumber">174,175</context>
         </context-group>
         <note priority="1" from="description">facility label</note>
       </trans-unit>
@@ -2562,7 +2570,7 @@
         <source>Buyer (<x id="INTERPOLATION" equiv-text="{{ buyerPercentage | number: &apos;1.0-2&apos; }}"/>%)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">165,166</context>
+          <context context-type="linenumber">176,177</context>
         </context-group>
         <note priority="1" from="description">buyer label</note>
       </trans-unit>
@@ -2570,7 +2578,7 @@
         <source>Voluntary contribution requested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">172,173</context>
+          <context context-type="linenumber">183,184</context>
         </context-group>
         <note priority="1" from="description">report contribution</note>
       </trans-unit>
@@ -2578,7 +2586,7 @@
         <source>Additional labor costs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">185,186</context>
+          <context context-type="linenumber">196,197</context>
         </context-group>
         <note priority="1" from="description">report additional-labor-costs</note>
       </trans-unit>
@@ -2586,7 +2594,7 @@
         <source>Including levies and taxes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">186,188</context>
+          <context context-type="linenumber">197,199</context>
         </context-group>
         <note priority="1" from="description">report additional-labor-costs levies</note>
       </trans-unit>
@@ -2594,7 +2602,7 @@
         <source>e.g. administrative costs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">200,202</context>
+          <context context-type="linenumber">211,213</context>
         </context-group>
         <note priority="1" from="description">report overhead-costs hint</note>
       </trans-unit>
@@ -2602,7 +2610,7 @@
         <source>Total costs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">213,214</context>
+          <context context-type="linenumber">224,225</context>
         </context-group>
         <note priority="1" from="description">report total-costs</note>
       </trans-unit>
@@ -2610,7 +2618,7 @@
         <source>Cost implication per unit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">239,240</context>
+          <context context-type="linenumber">250,251</context>
         </context-group>
         <note priority="1" from="description">report cost-implecation</note>
       </trans-unit>
@@ -2618,7 +2626,7 @@
         <source>Monthly-wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">278,279</context>
+          <context context-type="linenumber">289,290</context>
         </context-group>
         <note priority="1" from="description">workers distribution label</note>
       </trans-unit>
@@ -2626,11 +2634,11 @@
         <source>Monthly bonusses</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">281,282</context>
+          <context context-type="linenumber">292,293</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">297,298</context>
+          <context context-type="linenumber">308,309</context>
         </context-group>
         <note priority="1" from="description">workers monthly-bonusses label</note>
       </trans-unit>
@@ -2638,11 +2646,11 @@
         <source>Monthly IKB</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">285,286</context>
+          <context context-type="linenumber">296,297</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">301,302</context>
+          <context context-type="linenumber">312,313</context>
         </context-group>
         <note priority="1" from="description">workers monthly-ikb label</note>
       </trans-unit>
@@ -2650,11 +2658,11 @@
         <source>Living wage gap %</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">291,293</context>
+          <context context-type="linenumber">302,304</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">307,309</context>
+          <context context-type="linenumber">318,320</context>
         </context-group>
         <note priority="1" from="description">workers living-wage-gap-percentage label</note>
       </trans-unit>
@@ -2662,7 +2670,7 @@
         <source>Monthly wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">294,295</context>
+          <context context-type="linenumber">305,306</context>
         </context-group>
         <note priority="1" from="description">workers monthly-wage label</note>
       </trans-unit>
@@ -2670,7 +2678,7 @@
         <source>Wage graph</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">376,377</context>
+          <context context-type="linenumber">387,388</context>
         </context-group>
         <note priority="1" from="description">wage-graph title</note>
       </trans-unit>
@@ -2678,7 +2686,7 @@
         <source>Download report failed</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
-          <context context-type="linenumber">180</context>
+          <context context-type="linenumber">181</context>
         </context-group>
         <note priority="1" from="description">report-download error</note>
       </trans-unit>
@@ -3475,6 +3483,14 @@
           <context context-type="linenumber">170</context>
         </context-group>
         <note priority="1" from="description">import validation-error required</note>
+      </trans-unit>
+      <trans-unit id="3230503472782879649" datatype="html">
+        <source>Something went wrong downloading this file</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/directives/file-download.directive.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">file-download error</note>
       </trans-unit>
       <trans-unit id="8559170870663360229" datatype="html">
         <source>Examples</source>

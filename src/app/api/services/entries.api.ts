@@ -24,6 +24,7 @@ export class EntriesApi extends BaseApi {
         entries: `${ this.baseUrl }/entries`,
         import: `${ this.baseUrl }/entries/import`,
         scenario: `${ this.baseUrl }/entries/:id/scenario`,
+        export: `${ this.baseUrl }/entries/:id/export`,
         workers: `${ this.baseUrl }/entries/:id/workers`,
         workersReset: `${ this.baseUrl }/entries/:id/workers/reset`,
     };
@@ -38,9 +39,7 @@ export class EntriesApi extends BaseApi {
         if (paging) {
             params = getHttpParamsFromPagingParams(paging, params);
         }
-        return lastValueFrom(
-            this.get<EntriesListResponse>(this.endpoints.entries, params)
-        );
+        return lastValueFrom(this.get<EntriesListResponse>(this.endpoints.entries, params));
     }
 
     public updateEntry(id: string, updateForm: EntryUpdateForm): Promise<Entry> {
@@ -64,6 +63,10 @@ export class EntriesApi extends BaseApi {
         const formData = new FormData();
         formData.append('file', file);
         return this.postWithProgress<Entry>(this.endpoints.import, formData);
+    }
+
+    public getExportUrl(entryId: string): string {
+        return this.endpoints.export.replace(':id', entryId);
     }
 
     public createScenario(entryId: string, scenarioCreate: ScenarioCreate) {

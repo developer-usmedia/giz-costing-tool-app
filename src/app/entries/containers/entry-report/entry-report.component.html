@@ -6,7 +6,18 @@
         link: [moduleRoute.ENTRIES, entryId(), entryRoute.BUYER],
     }"
 >
-    <button giz-stroke-button i18n="download-report" (click)="download()">Download Report</button>
+    @if (this.exporting) {
+        <giz-spinner theme="grey" [reverse]="true">
+            <span i18n="report exporting">Exporting...</span>
+        </giz-spinner>
+    }
+    <button 
+        giz-stroke-button 
+        i18n="download-report" 
+        [gizFileDownload]="getReportDownloadUrl()" 
+        [errorMessage]="getFileDownloadError()"
+        (loading)="setExporting($event)"
+    >Download Report</button>
 </giz-entry-header>
 
 <div class="report">
