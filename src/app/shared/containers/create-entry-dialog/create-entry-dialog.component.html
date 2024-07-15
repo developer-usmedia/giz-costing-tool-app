@@ -6,8 +6,7 @@
         [showCloseButton]="state !== 'uploading'"
         (closeDialog)="cancel()"
     >
-        <p i18n="import file-upload description">Upload your downloaded excel file. You can download the excel file from <a
-            href="https://salarymatrix.idhtrade.org/">https://salarymatrix.idhtrade.org</a></p>
+        <p i18n="import file-upload description">Upload your downloaded excel file. You can download the excel file from the Salary Matrix</p>
 
         <giz-file-upload
             [allowedExtensions]="['.xlsx']"
