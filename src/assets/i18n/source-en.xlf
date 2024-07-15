@@ -3228,7 +3228,7 @@
         <note priority="1" from="description">import file-upload description</note>
       </trans-unit>
       <trans-unit id="2988182192591835823" datatype="html">
-        <source>Select file </source>
+        <source>Upload file </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
           <context context-type="linenumber">31,33</context>
