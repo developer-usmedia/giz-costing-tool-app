@@ -13,7 +13,7 @@
         </div>
     </div>
     @if (!entries || entries.isLoading()) {
-        <giz-spinner class="info__spinner" [size]="'large'"></giz-spinner>
+        <giz-spinner class="dashboard__spinner"></giz-spinner>
     }
     @if (entries.data() && entries.data()?._embedded?.entries?.length) {
         <h2 class="dashboard__subtitle" i18n="dashboard continue">Continue with</h2>

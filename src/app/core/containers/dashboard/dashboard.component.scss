@@ -36,6 +36,11 @@
         gap: 1rem;
     }
 
+    &__spinner {
+        display: inline-flex;
+        margin-bottom: 1rem;
+    }
+
     @include screen($screen-simple) {
         &__entries {
             grid-template-columns: repeat(3, 1fr);
