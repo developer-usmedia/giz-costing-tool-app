@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AccountComponent } from '@core/containers/account/account.component';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
+import { BaseContentComponent } from '@core/containers/base-content/base-content.component';
 import { BaseComponent } from '@core/containers/base/base.component';
 import { CpDataProtectionComponent } from '@core/containers/cp-data-protection/cp-data-protection.component';
 import { CpImprintComponent } from '@core/containers/cp-imprint/cp-imprint.component';
@@ -17,25 +18,31 @@ import { MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 const routes: Routes = [
     {
         path: '',
-        pathMatch: 'full',
-        component: HomepageComponent,
+        component: BaseContentComponent,
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                component: HomepageComponent,
+            },
+            {
+                path: ROOT_ROUTE.IMPRINT.replace(/\//g, ''),
+                component: CpImprintComponent,
+            },
+            {
+                path: ROOT_ROUTE.TERMS.replace(/\//g, ''),
+                component: CpTermsComponent,
+            },
+            {
+                path: ROOT_ROUTE.DATA_PROTECTION.replace(/\//g, ''),
+                component: CpDataProtectionComponent,
+            },
+        ],
     },
     {
         path: MODULE_ROUTE.AUTH.replace(/\//g, ''),
         component: BaseAuthComponent,
         loadChildren: () => import('./auth/auth.module').then((p) => p.AuthModule),
-    },
-    {
-        path: ROOT_ROUTE.IMPRINT.replace(/\//g, ''),
-        component: CpImprintComponent,
-    },
-    {
-        path: ROOT_ROUTE.TERMS.replace(/\//g, ''),
-        component: CpTermsComponent,
-    },
-    {
-        path: ROOT_ROUTE.DATA_PROTECTION.replace(/\//g, ''),
-        component: CpDataProtectionComponent,
     },
     {
         path: '',

@@ -32,4 +32,8 @@
             padding-top: 1.5rem;
         }
     }
+
+    @include screen($screen-large) {
+        padding-top: 5vh;
+    }
 }

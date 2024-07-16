@@ -2,29 +2,27 @@
     <giz-breadcrumb [breadcrumb]="breadcrumb"></giz-breadcrumb>
 </div>
 
-<button
-    class="header__profile header__profile--link"
-    [cdkMenuTriggerFor]="accountMenu"
-    [cdkMenuPosition]="headerMenuPosition"
->
-    <span class="header__email">{{ user?.email }}</span>
-    <span class="header__avatar">{{ (user?.email | slice: 0 : 1) ?? '?' }}</span>
-</button>
-<ng-template #accountMenu>
-    <giz-menu class="header__menu">
-        @if (user) {
+@if (user) {
+    <button
+        class="header__profile header__profile--link"
+        [cdkMenuTriggerFor]="accountMenu"
+        [cdkMenuPosition]="headerMenuPosition"
+    >
+        <span class="header__email">{{ user.email }}</span>
+        <span class="header__avatar">{{ (user.email | slice: 0 : 1) ?? '?' }}</span>
+    </button>
+    <ng-template #accountMenu>
+        <giz-menu class="header__menu">
             <div class="header__menu-heading">
                 <div class="header__profile">
                     <span class="header__avatar">{{ user.email | slice: 0 : 1 }}</span>
                     <span class="header__email">{{ user.email }}</span>
                 </div>
             </div>
-        }
-        <div class="header__menu-footer">
-            @if (user) {
+            <div class="header__menu-footer">
                 <a giz-stroke-button theme="basic" [routerLink]="[rootRoute.ACCOUNT]" i18n="menu account">Account settings</a>
-            }
-            <a giz-stroke-button theme="basic" [routerLink]="[moduleRoute.AUTH, authRoute.LOGOUT]" i18n="menu logout">Log out</a>
-        </div>
-    </giz-menu>
-</ng-template>
+                <a giz-stroke-button theme="basic" [routerLink]="[moduleRoute.AUTH, authRoute.LOGOUT]" i18n="menu logout">Log out</a>
+            </div>
+        </giz-menu>
+    </ng-template>
+}

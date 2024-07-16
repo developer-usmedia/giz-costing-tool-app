@@ -7,10 +7,10 @@ import { RouterModule } from '@angular/router';
 import { CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { AccountComponent } from '@core/containers/account/account.component';
+import { BaseContentComponent } from '@core/containers/base-content/base-content.component';
 import { ApiInterceptor } from '@core/interceptors';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
 import { BaseComponent } from '@core/containers/base/base.component';
-import { ContentPageComponent } from './components/content-page/content-page.component';
 import { CpDataProtectionComponent } from './containers/cp-data-protection/cp-data-protection.component';
 import { CpImprintComponent } from './containers/cp-imprint/cp-imprint.component';
 import { CpTermsComponent } from './containers/cp-terms/cp-terms.component';
@@ -27,7 +27,7 @@ import { SharedModule } from '@shared/shared.module';
         AccountComponent,
         BaseAuthComponent,
         BaseComponent,
-        ContentPageComponent,
+        BaseContentComponent,
         CpDataProtectionComponent,
         CpImprintComponent,
         CpTermsComponent,

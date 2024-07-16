@@ -1,25 +1,23 @@
-<giz-content-page [size]="'wide'" [showBackground]="true">
-    <div class="homepage">
-        <div class="homepage__content">
-            <h1 class="homepage__title" i18n="homepage title">Welcome to the Costing Tool</h1>
-            <p class="homepage__version">v1.15.0</p>
-            <div class="homepage__description">
-                <p i18n="homepage description line-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus.</p>
-                <p i18n="homepage description line-2">Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.</p>
-            </div>
-
-            <div class="homepage__buttons">
-                @if (loggedIn) {
-                    <a giz-stroke-button [routerLink]="[routRoute.DASHBOARD]" i18n="homepage dashboard">Dashboard</a>
-                } @else {
-                    <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="homepage login">Login</a>
-                    <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.REGISTER]" i18n="homepage create">Create account</a>
-                }
-            </div>
+<div class="homepage">
+    <div class="homepage__content">
+        <h1 class="homepage__title" i18n="homepage title">Welcome to the Costing Tool</h1>
+        <p class="homepage__version">v1.15.0</p>
+        <div class="homepage__description">
+            <p i18n="homepage description line-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus.</p>
+            <p i18n="homepage description line-2">Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.</p>
         </div>
-        <div class="homepage__logos">
-            <p>Powered by:</p>
-            <giz-logos></giz-logos>
+
+        <div class="homepage__buttons">
+            @if (loggedIn) {
+                <a giz-stroke-button [routerLink]="[routRoute.DASHBOARD]" i18n="homepage dashboard">Dashboard</a>
+            } @else {
+                <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.LOGIN]" i18n="homepage login">Login</a>
+                <a giz-stroke-button [routerLink]="[moduleRoute.AUTH, authRoute.REGISTER]" i18n="homepage create">Create account</a>
+            }
         </div>
     </div>
-</giz-content-page>
+    <div class="homepage__logos">
+        <p>Powered by:</p>
+        <giz-logos></giz-logos>
+    </div>
+</div>
