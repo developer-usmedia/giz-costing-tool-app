@@ -1,0 +1,22 @@
+<div class="base-content" [ngClass]="{ 'base-content--wide': isHomepage }">
+    <div class="base-content__header">
+        <giz-header
+            [breadcrumb]="breadcrumb"
+            [user]="userSession.data()"
+        ></giz-header>
+    </div>
+
+    <main class="base-content__content">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+    </main>
+
+    <div class="base-content__footer">
+        <giz-footer></giz-footer>
+    </div>
+
+    @if (isHomepage) {
+        <img class="base-content__background"
+             [src]="baseHref + 'assets/images/home-background.svg'" alt=""
+             height="500" width="1280"/>
+    }
+</div>
