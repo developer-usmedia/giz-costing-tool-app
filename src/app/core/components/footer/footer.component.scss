@@ -66,6 +66,7 @@
 
     &--white {
         --footer-link-color: #{ $c-white };
+        --footer-divider-color: #{ color.scale($c-white, $alpha: -80%) };
 
         .button--link.button--basic {
             --button-color: #{ $c-white };
