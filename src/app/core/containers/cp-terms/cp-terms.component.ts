@@ -1,37 +1,21 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'giz-cp-terms',
     templateUrl: './cp-terms.component.html',
     styleUrl: './cp-terms.component.scss',
 })
-export class CpTermsComponent implements OnInit {
-    public markdown?: string;
-    public loading$ = new BehaviorSubject<boolean>(true);
+export class CpTermsComponent {
+    public markdown: string = this.getMarkdown();
 
-    constructor(
-        @Inject(LOCALE_ID) public currentLocale: string,
-        @Inject(APP_BASE_HREF) public baseHref: string,
-        private readonly http: HttpClient,
-        private readonly toastr: ToastrService,
-    ) {
-    }
+    // eslint-disable-next-line max-lines-per-function
+    private getMarkdown() {
+        return $localize`:terms body:
+# Terms and conditions
 
-    public ngOnInit() {
-        const file = `${ this.baseHref }assets/markdown/terms-${ this.currentLocale }.md`;
-        this.http.get(file, { responseType: 'text' }).subscribe({
-            next: (response) => {
-                this.markdown = response;
-                this.loading$.next(false);
-            },
-            error: (error: HttpErrorResponse) => {
-                this.toastr.error($localize`:content load error:Failed to get markdown file`);
-                console.error(error);
-            },
-        });
+*August 21, 2023*
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.
+`;
     }
 }

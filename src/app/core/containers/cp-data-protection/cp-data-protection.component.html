@@ -1,7 +1,3 @@
 <giz-content-page>
-    @if (loading$ | async) {
-        <giz-spinner size="large"></giz-spinner>
-    } @else {
-        <div [innerHTML]="(this.markdown ?? '') | markdown"></div>
-    }
+    <div [innerHTML]="this.markdown | markdown"></div>
 </giz-content-page>

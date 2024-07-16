@@ -714,21 +714,145 @@
         </context-group>
         <note priority="1" from="description">menu logout</note>
       </trans-unit>
-      <trans-unit id="6268235922064899774" datatype="html">
-        <source>Failed to get markdown file</source>
+      <trans-unit id="4968868687419118528" datatype="html">
+        <source>
+# Data Protection
+
+*August 21, 2023*
+
+The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH attaches great importance to responsible and transparent management of personal data. Below we provide users with information as to
+
+- who they can contact at GIZ on the subject of data protection
+- what data is processed when they visit the website
+- what data is processed when users contact us, subscribe to newsletters or press releases or use other GIZ online services
+- how they can opt out of the storage of data
+- what rights they have with respect to us
+
+## Data controller and data protection officer
+
+Please contact GIZ’s data protection officer if you have questions specifically about how your data are protected:
+datenschutzbeauftragter(at)giz.de
+
+## Address
+
+Friedrich-Ebert-Allee 32 + 36, 53113 Bonn
+Dag-Hammarskjöld-Weg 1–5, 65760 Eschborn
+info(at)giz.de
+
+Data processing is the responsibility of Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH.
+
+## Information on the collection of personal data
+
+### General
+
+GIZ processes personal data exclusively in accordance with the EU General Data Protection Regulation (GDPR) and the German Federal Data Protection Act (Bundesdatenschutzgesetz, BDSG).
+
+Personal data are, for example, name, address, email addresses and user behaviour.
+
+GIZ only processes personal data to the extent necessary. Which data is required and processed for which purpose and on what basis is largely determined by the type of service you use or the purpose for which the data is required.
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/cp-data-protection/cp-data-protection.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">12,47</context>
         </context-group>
+        <note priority="1" from="description">data-protection body</note>
+      </trans-unit>
+      <trans-unit id="6878574915146224212" datatype="html">
+        <source>
+# Imprint
+
+*August 21, 2023*
+
+Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH
+
+## Coordination and editing
+
+Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH
+Sustainable Supply Chains Initiative (INA)
+Programme for sustainable agricultural supply chains and standards
+
+Tel.: +49 (0) 228 4460 4155
+E-Mail: ina(at)giz.de
+
+## Registered offices
+
+Bonn und Eschborn
+
+Friedrich-Ebert-Allee 32 + 36
+53113 Bonn, Germany
+Phone: +49 228 4460-0
+Fax: +49 228 4460-1766
+
+Dag-Hammarskjöld-Weg 1–5
+65760 Eschborn, Germany
+Phone: +49 6196 79-0
+Fax: +49 6196 79-1115
+
+E-Mail: info(at)giz.de
+Homepage: www.giz.de
+
+## Registered at
+
+Local court (Amtsgericht) Bonn, Germany: HRB 18384
+Local court (Amtsgericht) Frankfurt am Main, Germany: HRB 12394
+
+## Vat (no.) DE 113891176
+
+## Chairperson of the Supervisory Board
+
+Jochen Flasbarth, State Secretary in the Federal Ministry for Economic Cooperation and Development
+
+## Management Board
+
+Thorsten Schäfer-Gümbel (Chair)
+Ingrid-Gabriela Hoven (Vice-Chair)
+Anna Sophie Herken
+
+## Legal notice on liability
+
+GIZ makes every effort to ensure that the information provided on this website is correct and up-to-date. Nevertheless, errors and ambiguities cannot be completely ruled out. For this reason, GIZ does not assume any liability for the topicality, correctness, completeness or quality of the information provided. GIZ shall not be liable for any material or immaterial damage caused directly or indirectly by the use or non-use of the information provided or by the use of incorrect or incomplete information, unless it can be proven that GIZ acted with intent or gross negligence. Parts of the pages or the complete publication including all offers and information might be extended, changed or partly or completely deleted by GIZ without separate announcement.
+
+References to &quot;third-party content&quot;, which is provided by direct or indirect links to other providers, are adequately marked. GIZ has no influence whatsoever on &quot;third-party content&quot; and does not adopt this content as its own. GIZ has no positive knowledge of illegal or offensive content on the linked pages of other providers. Should the linked pages of external providers nevertheless contain illegal or offensive content, GIZ expressly distances itself from this content.
+
+## Legal notes on copyright
+
+The layout of the homepage, the graphics used and the other contents are protected by copyright.
+
+## Coordination and editing
+
+Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH
+Sustainable Supply Chains Initiative (INA)
+Programme for sustainable agricultural supply chains and standards
+Tel.: +49 (0) 228 4460 4155
+E-Mail: ina(at)giz.de
+
+## Information architecture, design, implementation, hosting and operations management
+
+Us Media
+Danzigerkade 221
+1013 AP Amsterdam
+Nederland
+Web: www.usmedia.nl
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/cp-imprint/cp-imprint.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">12,87</context>
         </context-group>
+        <note priority="1" from="description">imprint body</note>
+      </trans-unit>
+      <trans-unit id="2649962206742092084" datatype="html">
+        <source>
+# Terms and conditions
+
+*August 21, 2023*
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus.  Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/cp-terms/cp-terms.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">12,20</context>
         </context-group>
-        <note priority="1" from="description">content load error</note>
+        <note priority="1" from="description">terms body</note>
       </trans-unit>
       <trans-unit id="3492007542396725315" datatype="html">
         <source>Welcome</source>
@@ -834,7 +958,7 @@
         <source>Access forbidden</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">28,31</context>
         </context-group>
         <note priority="1" from="description">error title forbidden</note>
       </trans-unit>
@@ -842,7 +966,7 @@
         <source>Unknown error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">31,34</context>
         </context-group>
         <note priority="1" from="description">error title unknown</note>
       </trans-unit>
@@ -860,7 +984,7 @@
              Don&apos;t worry, we have a simple sitemap to help you find what you&apos;re looking for.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <note priority="1" from="description">error description not-found</note>
       </trans-unit>
@@ -868,7 +992,7 @@
         <source>Oops! Something went wrong but we do not really know what happened. Please try again later.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/error-page/error-page.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <note priority="1" from="description">error description not-found</note>
       </trans-unit>
@@ -3227,7 +3351,7 @@
         </context-group>
         <note priority="1" from="description">import file-upload description</note>
       </trans-unit>
-      <trans-unit id="2988182192591835823" datatype="html">
+      <trans-unit id="3245332597285014799" datatype="html">
         <source>Upload file </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
