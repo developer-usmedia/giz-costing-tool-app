@@ -2,10 +2,16 @@
     @if (isMain) {
         <h1 class="entry-card__title entry-card__title--main">
             {{ entry.facility.name }}
-            @if (entry.matrix?.verified) {
-                <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon"></giz-icon>
-            } @else if (entry.matrix?.id) {
-                <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon"></giz-icon>
+
+            @if (entry.matrix?.verified || entry.matrix?.id) {
+                <div class="entry-card__icons">
+                    @if (entry.matrix?.verified) {
+                        <giz-icon [icon]="icon.VERIFIED" [size]="'small'" class="entry-card__icon" gizTooltip [text]="tooltipVerified"></giz-icon>
+                    }
+                    @if (entry.matrix?.id) {
+                        <giz-icon [icon]="icon.DOWNLOAD" [size]="'small'"  class="entry-card__icon" gizTooltip [text]="tooltipImport"></giz-icon>
+                    }
+                </div>
             }
         </h1>
     } @else {

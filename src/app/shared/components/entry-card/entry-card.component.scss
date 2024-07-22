@@ -27,7 +27,7 @@
     &__title {
         @include style-heading-3;
 
-        align-items: center;
+        align-items: flex-end;
         display: flex;
         gap: $p-gutter--small;
         margin: 0 0 0.4rem;
@@ -44,7 +44,6 @@
 
     &__icon {
         color: var(--entry-card-icon-color);
-        padding-top: 2px;
     }
 
     &__link {
@@ -59,6 +58,13 @@
         background: transparent;
         border: none;
         padding: 1rem 0;
+    }
+
+    &__icons {
+        align-items: center;
+        display: flex;
+        gap: $p-gutter--small;
+        padding-top: 2px;
     }
 
     &--link {

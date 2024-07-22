@@ -27,4 +27,12 @@ export class EntryCardComponent {
     @HostBinding('class.entry-card--main') get modMain(): boolean {
         return this.isMain;
     }
+
+    get tooltipImport(): string {
+        return $localize`:entry import:Imported from Salary Matrix`;
+    }
+
+    get tooltipVerified(): string {
+        return $localize`:entry verified:Verified in Salary Matrix`;
+    }
 }
