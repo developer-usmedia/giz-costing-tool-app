@@ -6,7 +6,7 @@
         link: [moduleRoute.ENTRIES, entryId()],
     }"
 >
-    @if (scenarioState === 'specs') {
+    @if (scenarioState !== 'start') {
         <button giz-stroke-button
                 theme="basic"
                 i18n="scenario reset"
