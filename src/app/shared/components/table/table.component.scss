@@ -41,6 +41,15 @@ giz-table {
     }
 
     /* stylelint-disable no-descending-specificity  */
+
+    thead {
+        tr + tr {
+            th {
+                padding-top: 0;
+            }
+        }
+    }
+
     &--compact {
         --table-cell-padding: 4px #{ $p-gutter };
 

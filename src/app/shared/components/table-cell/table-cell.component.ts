@@ -35,7 +35,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
 export class TableCellComponent implements OnChanges {
     @Input() alignment: 'left' | 'right' | 'center' = 'left';
     @Input() verticalAlignment: 'top' | 'bottom' | 'center' = 'center';
-    @Input() type: 'default' | 'header' | 'actions' | 'link' | 'copy' | 'subtotal' | 'total' = 'default';
+    @Input() type: 'default' | 'header' | 'actions' | 'link' | 'copy' | 'subtotal' | 'total' | 'title' = 'default';
     @Input() size: 'default' | 'wide' = 'default';
     @Input() style: 'default' | 'error' = 'default';
     @Input() sortable = false;
@@ -63,6 +63,7 @@ export class TableCellComponent implements OnChanges {
     @HostBinding('class.table-cell--copy') get modCopy(): boolean { return this.type === 'copy'; }
     @HostBinding('class.table-cell--subtotal') get modSubtotal(): boolean { return this.type === 'subtotal'; }
     @HostBinding('class.table-cell--total') get modTotal(): boolean { return this.type === 'total'; }
+    @HostBinding('class.table-cell--title') get modTitle(): boolean { return this.type === 'title'; }
     @HostBinding('class.table-cell--sort') get modSort(): boolean { return this.sortable; }
     @HostBinding('class.table-cell--wide') get modeSizeWide(): boolean { return this.size === 'wide'; }
     @HostBinding('class.table-cell--center') get modeAlignmentCenter(): boolean { return this.alignment === 'center'; }

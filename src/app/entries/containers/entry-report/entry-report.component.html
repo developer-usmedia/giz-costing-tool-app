@@ -286,38 +286,61 @@
                         >
                             <ng-container thead>
                                 <tr giz-table-header-row>
+                                    <th giz-table-header-cell type="title"></th>
+                                    <th giz-table-header-cell type="title" colspan="5" [divider]="true">
+                                        <span i18n="workers status-quo label">Status quo</span>
+                                        <button
+                                            giz-icon-button
+                                            theme="basic" size="small"
+                                            [icon]="icon.HELP"
+                                            [showTitleAttr]="false"
+                                            gizTooltip
+                                            [text]="getTooltipStatusQuo()"
+                                        ></button>
+                                    </th>
+                                    <th giz-table-header-cell type="title" colspan="5">
+                                        <span i18n="workers scenario label">Scenario</span>
+                                        <button
+                                            giz-icon-button
+                                            theme="basic" size="small"
+                                            [icon]="icon.HELP"
+                                            [showTitleAttr]="false"
+                                            gizTooltip
+                                           [text]="getTooltipScenario()"
+                                        ></button>
+                                    </th>
+                                </tr>
+                                <tr giz-table-header-row>
                                     <th giz-table-header-cell size="wide" verticalAlignment="bottom" i18n="workers job-category label">Job category</th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers distribution label">Monthly-wage</p>
+                                        <p class="table-cell__subtitle" i18n="workers distribution label">Monthly-wage</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers monthly-bonusses label">Monthly bonusses</p>
+                                        <p class="table-cell__subtitle" i18n="workers monthly-bonusses label">Monthly bonusses</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p class="table-cell__subtitle" i18n="workers status-quo label">Status quo</p>
-                                        <p i18n="workers monthly-ikb label">Monthly IKB</p>
+                                        <p class="table-cell__subtitle" i18n="workers monthly-ikb label">Monthly IKB</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers total-monthly-remnueration label">Total monthly remuneration</p>
+                                        <p class="table-cell__subtitle" i18n="workers total-monthly-remnueration label">Total monthly remuneration</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom" [divider]="true">
-                                        <p i18n="workers living-wage-gap-percentage label">Living wage gap %</p>
+                                        <p class="table-cell__subtitle" i18n="workers living-wage-gap-percentage label">Living wage gap %</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers monthly-wage label">Monthly wage</p>
+                                        <p class="table-cell__subtitle" i18n="workers monthly-wage label">Monthly wage</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers monthly-bonusses label">Monthly bonusses</p>
+                                        <p class="table-cell__subtitle" i18n="workers monthly-bonusses label">Monthly bonusses</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p class="table-cell__subtitle" i18n="workers scenario label">Scenario</p>
-                                        <p i18n="workers monthly-ikb label">Monthly IKB</p>
+                                        <p class="table-cell__subtitle" i18n="workers monthly-ikb label">Monthly IKB</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers total-monthly-remnueration label">Total monthly remuneration</p>
+                                        <p class="table-cell__subtitle" i18n="workers total-monthly-remnueration label">Total monthly remuneration</p>
                                     </th>
                                     <th giz-table-header-cell alignment="right" verticalAlignment="bottom">
-                                        <p i18n="workers living-wage-gap-percentage label">Living wage gap %</p>
+                                        <p class="table-cell__subtitle" i18n="workers living-wage-gap-percentage label">Living wage gap %</p>
                                     </th>
                                 </tr>
                             </ng-container>

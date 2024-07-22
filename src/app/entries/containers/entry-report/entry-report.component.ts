@@ -184,6 +184,14 @@ export class EntryReportComponent implements OnDestroy {
         return $localize`:annual-costs title:Annual costs`;
     }
 
+    public getTooltipStatusQuo() {
+        return $localize`:status-quo tooltip:Current remuneration and living wage gap`;
+    }
+
+    public getTooltipScenario() {
+        return $localize`:scenario tooltip:Remuneration and living wage gap after applying the scenario`;
+    }
+
     public setExporting(value: boolean): void {
         this.exporting = value;
     }

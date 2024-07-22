@@ -150,4 +150,15 @@
     &--total {
         font-weight: $weight-bold;
     }
+
+    &--title {
+        --table-head-cell-padding: 4px #{ $p-gutter } 0;
+
+        border-bottom: 0;
+        font-size: var(--text-font-size-medium);
+        font-weight: $weight-bold;
+        line-height: 1;
+        margin-bottom: 4px;
+        text-align: center;
+    }
 }

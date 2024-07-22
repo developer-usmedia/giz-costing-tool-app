@@ -25,6 +25,7 @@ export class IconButtonComponent implements AfterViewInit {
     @Input() buttonType: 'default' | 'stroke' = 'default';
     @Input() theme: 'basic' | 'primary' = 'primary';
     @Input() size: 'default' | 'small' = 'default';
+    @Input() showTitleAttr = true;
 
     @Input()
     @HostBinding('disabled')
@@ -61,9 +62,11 @@ export class IconButtonComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        requestAnimationFrame(() => {
-            this.title = String(this.text?.nativeElement.innerText);
-            this.changeDetectorRef.markForCheck();
-        });
+        if (this.showTitleAttr) {
+            requestAnimationFrame(() => {
+                this.title = String(this.text?.nativeElement.innerText);
+                this.changeDetectorRef.markForCheck();
+            });
+        }
     }
 }
