@@ -173,7 +173,9 @@
                             <th giz-table-header-cell></th>
                             <th giz-table-header-cell alignment="right" i18n="facility label">Facility (100%)</th>
                             @if (showBuyerColumn) {
-                                <th giz-table-header-cell alignment="right" i18n="buyer label">Buyer ({{ buyerPercentage | number: '1.0-2' }}%)</th>
+                                <th giz-table-header-cell alignment="right" i18n="buyer label">
+                                    {{ entry.buyer?.name ?? 'Buyer' }} ({{ buyerPercentage | number: '1.0-2' }}%)
+                                </th>
                             }
                         </tr>
                     </ng-container>
