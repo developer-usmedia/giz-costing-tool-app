@@ -47,6 +47,10 @@ export class EntryInformationComponent implements OnDestroy {
         });
     }
 
+    get currencyCode(): string {
+        return this.entry.data()?.payroll?.currencyCode ?? '';
+    }
+
     get captionGeneral() {
         return $localize`:entry general title:General`;
     }

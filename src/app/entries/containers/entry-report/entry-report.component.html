@@ -11,10 +11,10 @@
             <span i18n="report exporting">Exporting...</span>
         </giz-spinner>
     }
-    <button 
-        giz-stroke-button 
-        i18n="download-report" 
-        [gizFileDownload]="getReportDownloadUrl()" 
+    <button
+        giz-stroke-button
+        i18n="download-report"
+        [gizFileDownload]="getReportDownloadUrl()"
         [errorMessage]="getFileDownloadError()"
         (loading)="setExporting($event)"
     >Download Report</button>
@@ -151,10 +151,10 @@
                                 <p i18n="report facility-lw-gap">Facility wide living wage gap</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                               {{ entry.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}
                             </td>
                             <td giz-table-cell alignment="right">
-                               {{ entry.scenario?.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.scenario?.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}
                             </td>
                         </tr>
                     </ng-container>
@@ -201,7 +201,7 @@
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right">
-                                   + {{ entry.buyer?.annualCosts?.taxCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                    + {{ entry.buyer?.annualCosts?.taxCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
                                 </td>
                             }
                         </tr>
