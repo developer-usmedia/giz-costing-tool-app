@@ -359,7 +359,7 @@
                                             {{ worker.scenario.remuneration?.total | currency: currencyCode : '' | empty }} {{ currencyCode }}
                                         </td>
                                         <td giz-table-cell alignment="right"
-                                            [style]="(worker?.scenario?.livingWage?.livingWageGapPerc ?? 0) > 0 ? 'error' : 'default'">
+                                            [style]="isBelowLw(worker) ? 'error' : 'default'">
                                             {{ worker?.scenario?.livingWage?.livingWageGapPerc | number: '1.2-2' }} %
                                         </td>
                                     </tr>

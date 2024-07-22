@@ -7,7 +7,7 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
-import { BuyerUnit, Entry, ScenarioType, WorkerListResponse, WorkersPagingParams } from '@api/models';
+import { BuyerUnit, Entry, ScenarioType, Worker, WorkerListResponse, WorkersPagingParams } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, PagingParams, ScenarioInfo, SCENARIOS } from '@core/models';
 import { EntriesService } from '@core/services';
@@ -159,7 +159,7 @@ export class EntryReportComponent implements OnDestroy {
     public getReportDownloadUrl(): string {
         return this.entriesApi.getExportUrl(this.entryId());
     }
-    
+
     public getFileDownloadError(): string {
         return $localize`:report-download error:Download report failed`;
     }
@@ -186,6 +186,11 @@ export class EntryReportComponent implements OnDestroy {
 
     public setExporting(value: boolean): void {
         this.exporting = value;
+    }
+
+    public isBelowLw(worker: Worker): boolean {
+        const lw = worker?.scenario?.livingWage?.livingWageGapPerc ?? 0;
+        return Math.round((lw + Number.EPSILON) * 100) / 100 > 0;
     }
 
     public ngOnDestroy(): void {
