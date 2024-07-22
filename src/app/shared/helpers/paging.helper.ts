@@ -159,9 +159,6 @@ export const getDefaultSort = (type?: string): PageSort => {
     switch (type) {
         case 'entries':
             return { [EntrySortFilterKey.UPDATED_AT]: Sort.DESC };
-        case 'workers':
-            return {};
-            // return { [WorkersSortFilterKey.NUMBER_OF_WORKERS]: Sort.DESC }; // TODO: reintroduce this sort in api somehow
         default:
             return {};
     }
