@@ -1,7 +1,11 @@
 <div class="base-auth">
     <img class="base-auth__image"
-         [src]="baseHref + 'assets/images/auth-background.jpeg'" alt=""
-         height="626" width="1007"/>
+         [src]="baseHref + 'assets/images/' + backgroundImage"
+         alt="" height="626" width="1007"/>
+
+    @if (backgroundCopyright) {
+        <span class="base-auth__copyright">&copy; {{ backgroundCopyright }}</span>
+    }
 
     <div class="base-auth__container">
         <div class="base-auth__content">

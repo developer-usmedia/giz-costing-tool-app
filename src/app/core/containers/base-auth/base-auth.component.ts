@@ -10,6 +10,9 @@ import { APP_BASE_HREF } from '@angular/common';
 export class BaseAuthComponent {
    @HostBinding('class') cssClass = 'bass-auth';
 
+   public backgroundImage = 'auth-background.jpg';
+   public backgroundCopyright = 'GIZGmbH';
+
    constructor(
        @Inject(APP_BASE_HREF) public baseHref: string,
    ) {}
