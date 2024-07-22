@@ -147,7 +147,7 @@ export class CreateEntryDialogComponent implements OnDestroy {
 
         switch (validationError.errorType) {
             case CellValidationError.VERSION_MISMATCH:
-                return $localize`:import validation-error version-mismatch:Version is not matching`;
+                return $localize`:import validation-error version-mismatch:Version is not matching. Try to export the salary matrix again from the latest version.`;
             case CellValidationError.MISSING_PAYROLL_SHEET:
                 return $localize`:import validation-error missing-payroll-sheet:Payroll sheet is missing`;
             case CellValidationError.MISSING_INFO_SHEET:
