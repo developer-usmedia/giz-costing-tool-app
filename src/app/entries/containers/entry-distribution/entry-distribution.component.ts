@@ -12,7 +12,6 @@ import {
     Distribution,
     DistributionForm,
     Entry,
-    ScenarioType,
     ScenarioUpdateMutation,
     Worker,
     WorkerListResponse,

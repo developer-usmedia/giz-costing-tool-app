@@ -1,10 +1,12 @@
 import { CdkCopyToClipboard } from '@angular/cdk/clipboard';
 import { CdkMenuTrigger } from '@angular/cdk/menu';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { GenderPipe } from '@shared/pipes';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { CoreModule } from '@core/core.module';
 import { ENTRY_ROUTE } from '@core/models';
@@ -27,6 +29,7 @@ import { ResetScenarioDialogComponent } from './containers/reset-scenario-dialog
 import { ResetWorkersDialogComponent } from './containers/reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerDistributionDialogComponent } from './containers/worker-distribution-dialog/worker-distribution-dialog.component';
 import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component';
+import { ReportWorkersChartComponent } from './components/report-workers-chart/report-workers-chart.component';
 
 @NgModule({
     declarations: [
@@ -48,6 +51,7 @@ import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario
         ScenarioSpecsFormComponent,
         WorkerDistributionDialogComponent,
         WorkerScenarioSpecsDialogComponent,
+        ReportWorkersChartComponent,
     ],
     imports: [
         HttpClientModule,
@@ -89,7 +93,12 @@ import { WorkerScenarioSpecsDialogComponent } from './containers/worker-scenario
         CdkCopyToClipboard,
         CdkMenuTrigger,
         FormsModule,
+        NgApexchartsModule,
         ReactiveFormsModule,
+    ],
+    providers: [
+        CurrencyPipe,
+        GenderPipe,
     ],
 })
 export class EntriesModule {}

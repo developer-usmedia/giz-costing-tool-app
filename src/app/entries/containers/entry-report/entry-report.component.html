@@ -105,7 +105,7 @@
             </div>
 
             <div class="report__section">
-                <h2 i18n="comparision title" class="report__title">Comparison</h2>
+                <h2 i18n="comparision title" class="report__title" id="comparison">Comparison</h2>
                 <giz-table
                     type="report"
                     [caption]="getTableCaptionComparison()"
@@ -266,7 +266,20 @@
             </div>
 
             <div class="report__section">
-                <h2 i18n="payroll title" class="report__title">Payroll</h2>
+                <h2 i18n="wage-graph title" class="report__title" id="wage-graph">Wage graph</h2>
+                @if (!workers || workers.isLoading()) {
+                    <giz-spinner class="report__spinner" [size]="'large'"></giz-spinner>
+                } @else if (!workers.isError() && workers.data() && workers.data()?._embedded?.workers?.length) {
+                    <giz-report-workers-chart
+                        [workers]="workers.data()?._embedded?.workers"
+                        [currencyCode]="currencyCode"
+                        [benchmark]="entry.benchmark.value"
+                    ></giz-report-workers-chart>
+                }
+            </div>
+
+            <div class="report__section">
+                <h2 i18n="payroll title" class="report__title" id="payroll">Payroll</h2>
                 @if (!workers || workers.isLoading()) {
                     <giz-spinner class="report__spinner" [size]="'large'"></giz-spinner>
                 } @else if (workers.isError()) {
@@ -406,11 +419,6 @@
                         </giz-no-results>
                     }
                 }
-            </div>
-
-            <div class="report__section">
-                <h2 i18n="wage-graph title" class="report__title">Wage graph</h2>
-                <p class="todo">Wage graph</p>
             </div>
         }
     }
