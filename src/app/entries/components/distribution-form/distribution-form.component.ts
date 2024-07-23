@@ -110,7 +110,7 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
                 }),
             ikbPerc: new FormControl<number | null>(
                 this.distribution?.ikbPerc ?? 0,
-                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbPerc)] },
+                { validators: [Validators.min(0)] },
             ),
             ikbHousingPerc: new FormControl<number | null>(
                 this.distribution?.ikbHousingPerc ?? 0, {

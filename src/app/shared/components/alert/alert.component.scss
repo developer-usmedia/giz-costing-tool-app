@@ -37,4 +37,13 @@
         --alert-border: #{ $c-thunderbird-1 };
         --alert-icon: #{ $c-thunderbird-1 };
     }
+
+    &--simple {
+        --alert-background: transparent;
+
+        align-items: flex-end;
+        border: 0;
+        gap: $p-gutter--small;
+        padding: 0;
+    }
 }

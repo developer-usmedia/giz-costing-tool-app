@@ -64,7 +64,7 @@
                     <div class="form__error" i18n="form bonusesPerc errors min">Minimum is 0</div>
                 }
                 @if (form | showError: 'bonusesPerc' :'max') {
-                    <div class="form__error" i18n="form bonusesPerc errors imax">Maximum is {{ this.maxIkbPercMapping['baseWagePerc'] }}</div>
+                    <div class="form__error" i18n="form bonusesPerc errors imax">Maximum is {{ this.maxIkbPercMapping['bonusesPerc'] }}</div>
                 }
             </div>
 
@@ -83,8 +83,8 @@
                 @if (form | showError: 'ikbPerc' :'min') {
                     <div class="form__error" i18n="form ikbPerc errors min">Minimum is 0</div>
                 }
-                @if (form | showError: 'ikbPerc' :'max') {
-                    <div class="form__error" i18n="form ikbPerc errors imax">Maximum is  {{ this.maxIkbPercMapping['ikbPerc'] }}</div>
+                @if (form.get('ikbPerc')?.value && (form.get('ikbPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbPerc']) {
+                    <giz-alert type="warning" display="simple" class="form__alert">Maximum is  {{ this.maxIkbPercMapping['ikbPerc'] }}</giz-alert>
                 }
             </div>
 
