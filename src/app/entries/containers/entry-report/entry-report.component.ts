@@ -151,7 +151,7 @@ export class EntryReportComponent implements OnDestroy {
         };
 
         this.router.navigate(
-            [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.SCENARIO],
+            [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.REPORT],
             { queryParams: getParamsFromPagingParams<PagingParams>(params) }
         );
     }

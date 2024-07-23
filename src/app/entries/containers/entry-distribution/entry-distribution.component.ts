@@ -68,7 +68,6 @@ export class EntryDistributionComponent implements OnDestroy {
     protected readonly icon = ICON;
     protected readonly entryRoute = ENTRY_ROUTE;
     protected readonly moduleRoute = MODULE_ROUTE;
-    protected readonly scenarioType = ScenarioType;
     protected readonly routes = ROOT_ROUTE;
 
     private readonly activatedRoute = inject(ActivatedRoute);
@@ -186,7 +185,7 @@ export class EntryDistributionComponent implements OnDestroy {
         };
 
         this.router.navigate(
-            [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.SCENARIO],
+            [MODULE_ROUTE.ENTRIES, this.entryId(), ENTRY_ROUTE.DISTRIBUTION],
             { queryParams: getParamsFromPagingParams<PagingParams>(params) }
         );
     }
