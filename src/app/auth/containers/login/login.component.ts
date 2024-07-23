@@ -37,6 +37,8 @@ export class LoginComponent {
     }
 
     public login(loginForm: LoginForm): void {
+        this.submitting = true;
+
         this.authApi
             .login(loginForm)
             .then(() => this.queryClient.invalidateQueries({ queryKey: ['session'] }))
