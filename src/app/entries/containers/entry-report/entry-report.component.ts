@@ -89,25 +89,25 @@ export class EntryReportComponent implements OnDestroy {
     get percOfWorkersBelowLivingWage(): number {
         const belowLw = this.entry.data()?.livingWage?.nrOfWorkersBelowLivingWage ?? 0;
         const total = this.entry.data()?.payroll?.nrOfWorkers ?? 0;
-        return belowLw / total;
+        return belowLw / total * 100;
     }
 
     get percOfWorkersBelowLivingWageScenario(): number {
         const belowLw = this.entry.data()?.scenario?.livingWage?.nrOfWorkersBelowLivingWage ?? 0;
         const total = this.entry.data()?.payroll?.nrOfWorkers ?? 0;
-        return belowLw / total;
+        return belowLw / total * 100;
     }
 
     get percAvgLivingWageGap(): number {
         const belowLw = this.entry.data()?.livingWage?.avgLivingWageGap ?? 0;
         const total = this.entry.data()?.benchmark.value ?? 0;
-        return belowLw / total;
+        return belowLw / total * 100;
     }
 
     get percAvgLivingWageGapScenario(): number {
         const belowLw = this.entry.data()?.scenario?.livingWage?.avgLivingWageGap ?? 0;
         const total = this.entry.data()?.benchmark.value ?? 0;
-        return belowLw / total;
+        return belowLw / total * 100;
     }
 
     get showBuyerColumn(): boolean {
