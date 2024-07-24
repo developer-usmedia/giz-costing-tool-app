@@ -1,0 +1,103 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/screen';
+@import 'mixins/typography';
+
+:root {
+    --settings-border-color: #{ $c-black-transparent };
+    --settings-footer-background: #{ $c-grey--100 };
+}
+
+.account {
+    margin: 0 auto;
+    width: min(100%, $screen-normal);
+
+    &__heading {
+        margin-bottom: $p-gutter--large;
+        text-align: center;
+    }
+
+    &__title {
+        @include style-heading-1-hero;
+
+        margin: 0 0 1rem;
+    }
+
+    &__intro {
+        @include style-text-large;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $p-gutter;
+        justify-content: space-between;
+    }
+
+    @include screen($screen-simple) {
+        &__heading {
+            margin-bottom: $p-gutter--xlarge;
+        }
+
+        &__content {
+            flex-direction: row;
+
+            > * {
+                flex: 1 1 50%;
+            }
+        }
+    }
+}
+
+.settings {
+    --settings-image-column: 140px;
+
+    border: 1px solid var(--settings-border-color);
+    border-radius: $b-radius;
+    display: grid;
+    grid-template:
+        'content image' 1fr
+        'footer footer' fit-content(100%) / minmax(100px, 1fr) var(--settings-image-column);
+
+    &__title {
+        margin: 0 0 $p-gutter;
+    }
+
+    &__content {
+        grid-column: span 2;
+        padding: $p-gutter;
+    }
+
+    &__image {
+        align-self: center;
+        display: none;
+        padding: $p-gutter $p-gutter $p-gutter 0;
+    }
+
+    &__footer {
+        background: var(--settings-footer-background);
+        border-top: 1px solid var(--settings-border-color);
+        display: flex;
+        gap: $p-gutter;
+        grid-area: footer;
+        padding: $p-gutter;
+    }
+
+    @include screen($screen-minimal) {
+        &__content {
+            grid-column: span 1;
+        }
+
+        &__image {
+            display: block;
+        }
+    }
+
+    @include screen($screen-simple) {
+        --settings-image-column: 120px;
+    }
+
+    @include screen($screen-normal) {
+        --settings-image-column: 175px;
+    }
+}

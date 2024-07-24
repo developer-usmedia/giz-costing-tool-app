@@ -18,7 +18,7 @@ import { getBreadCrumbTitle } from '@shared/helpers';
     styleUrls: ['./base.component.scss'],
 })
 export class BaseComponent implements OnDestroy {
-    public readonly userSession: CreateQueryResult<User, Error> = this.userService.getUserSession();
+    public readonly userSession: CreateQueryResult<User, Error> = this.userService.getUser();
     public breadcrumb: BreadcrumbItem[] = [];
 
     public entriesApi = inject(EntriesApi);

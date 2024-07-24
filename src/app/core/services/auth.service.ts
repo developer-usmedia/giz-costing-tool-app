@@ -1,11 +1,13 @@
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
-import { ToastrService } from 'ngx-toastr';
-import { Observable, from } from 'rxjs';
 
 import { LoginForm, LoginResponse, RefreshTokenResponse } from '@api/models';
 import { AuthApi } from '@api/services';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { useMutation } from '@core/services/query/use-mutation';
+import { UserService } from '@core/services/user.service';
+import { ToastrService } from 'ngx-toastr';
+import { from, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -15,6 +17,8 @@ export class AuthService {
 
     public readonly tokenName = 'GIZ-TOKEN';
     public readonly refreshTokenName = 'GIZ-REFRESH';
+
+    private readonly userService = inject(UserService);
 
     public isLoggedIn(): boolean {
         const token = this.getToken();
@@ -69,4 +73,42 @@ export class AuthService {
                 });
         }
     }
+
+    /* eslint-disable no-console */
+    public removeAccount() {
+        return useMutation<string, void>({
+            mutationFn: (_todo: string) => new Promise(() => {
+                console.log('todo remove account');
+            }),
+            onSuccess: () => this.logout(),
+        });
+    }
+
+    public changePassword() {
+        return useMutation<string, void>({
+            mutationFn: (_todo: string) => new Promise(() => {
+                console.log('todo change password');
+            }),
+            onSuccess: async () => await this.userService.refreshUser(),
+        });
+    }
+
+    public enable2FA() {
+        return useMutation<string, void>({
+            mutationFn: (_todo: string) => new Promise(() => {
+                console.log('todo enable 2fa');
+            }),
+            onSuccess: async () => await this.userService.refreshUser(),
+        });
+    }
+
+    public disable2FA() {
+        return useMutation<string, void>({
+            mutationFn: (_todo: string) => new Promise(() => {
+                console.log('todo disable 2fa');
+            }),
+            onSuccess: async () => await this.userService.refreshUser(),
+        });
+    }
+    /* eslint-enable no-console */
 }

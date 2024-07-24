@@ -4,6 +4,7 @@ export interface User extends EntityResponse {
     id: string;
     email: string;
     emailVerified: boolean;
+    passwordCreatedAt: string;
     twoFactorEnabled: boolean;
 }
 

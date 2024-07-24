@@ -1,1 +1,74 @@
-<p class="todo">Account</p>
+<div class="account">
+    <div class="account__heading">
+        <h1 class="account__title" i18n="account title">Account settings</h1>
+        <p class="account__intro" i18n="account description">Here you can manage your profile and security.</p>
+    </div>
+
+    @if (userSession.data(); as user) {
+        <div class="account__content">
+            <div class="settings">
+                <div class="settings__content">
+                    <h2 class="settings__title" i18n="account profile title">Profile</h2>
+                    <dl class="settings__info">
+                        <dt class="settings__label" i18n="email label">E-mail</dt>
+                        <dd class="settings__value">{{ user.email }}</dd>
+                    </dl>
+                </div>
+
+                <div class="settings__image">
+                    <img [src]="baseHref + 'assets/images/account-settings-profile.svg'"
+                         alt="" height="135" width="135"/>
+                </div>
+
+                <div class="settings__footer">
+                    <button giz-stroke-button i18n="account remove" (click)="removeAccount()">Remove account</button>
+                </div>
+            </div>
+
+            <div class="settings">
+                <div class="settings__content">
+                    <h2 class="settings__title" i18n="account security title">Security</h2>
+                    <dl class="settings__info">
+                        <dt class="settings__label" i18n="password-age label">Password Age</dt>
+                        <dd class="settings__value">
+                            {{ getPasswordAge(user.passwordCreatedAt) | empty }}
+                            <span i18n="days">days</span>
+                        </dd>
+
+                        <dt class="settings__label" i18n="2fa label">2-Factor Authentication</dt>
+                        @if (user.twoFactorEnabled) {
+                            <dd class="settings__value" i18n="enabled">Enabled</dd>
+                        } @else {
+                            <dd class="settings__value" i18n="disabled">Disabled</dd>
+                        }
+                    </dl>
+                </div>
+                <div class="settings__image">
+                    <img [src]="baseHref + 'assets/images/account-settings-security.svg'"
+                         alt="" height="135" width="135"/>
+                </div>
+                <div class="settings__footer">
+                    <button giz-stroke-button
+                            theme="basic"
+                            i18n="account change-password"
+                            (click)="changePassword()"
+                    >Change password</button>
+
+                    @if (user.twoFactorEnabled) {
+                        <button giz-stroke-button
+                                theme="basic"
+                                i18n="account disable-2fa"
+                                (click)="disable2FA()"
+                        >Disable 2FA </button>
+                    } @else {
+                        <button giz-stroke-button
+                                theme="basic"
+                                i18n="account enable-2fa"
+                                (click)="enable2FA()"
+                        >Enable 2FA </button>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -704,6 +704,10 @@
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">23,24</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
         <note priority="1" from="description">menu account</note>
       </trans-unit>
       <trans-unit id="7507948636555938109" datatype="html">
@@ -713,6 +717,290 @@
           <context context-type="linenumber">24,26</context>
         </context-group>
         <note priority="1" from="description">menu logout</note>
+      </trans-unit>
+      <trans-unit id="3155504588637566135" datatype="html">
+        <source>Updating...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">updating</note>
+      </trans-unit>
+      <trans-unit id="2159130950882492111" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+        <note priority="1" from="description">cancel</note>
+      </trans-unit>
+      <trans-unit id="6309828574111583895" datatype="html">
+        <source>Change password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">55,57</context>
+        </context-group>
+        <note priority="1" from="description">change-password</note>
+      </trans-unit>
+      <trans-unit id="1375188762769896369" datatype="html">
+        <source>Change your password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">change-password title</note>
+      </trans-unit>
+      <trans-unit id="5462306218747490529" datatype="html">
+        <source>Successfully changed password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">change-password success</note>
+      </trans-unit>
+      <trans-unit id="2512351779419812674" datatype="html">
+        <source>Something went wrong changing your password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">change-password error</note>
+      </trans-unit>
+      <trans-unit id="6433408940720593511" datatype="html">
+        <source>Disable 2FA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <note priority="1" from="description">disable-2fa</note>
+      </trans-unit>
+      <trans-unit id="2658424416565652268" datatype="html">
+        <source>Disable two-factor authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">2factor-disable title</note>
+      </trans-unit>
+      <trans-unit id="2094524100217967949" datatype="html">
+        <source>Successfully disabled two-factor authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">2factor-disable success</note>
+      </trans-unit>
+      <trans-unit id="2575255443216507529" datatype="html">
+        <source>Something went wrong while disabling two-factor authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">2factor-disable error</note>
+      </trans-unit>
+      <trans-unit id="1942589452924885240" datatype="html">
+        <source>Enable 2FA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <note priority="1" from="description">enable-2fa</note>
+      </trans-unit>
+      <trans-unit id="2955617286542082394" datatype="html">
+        <source>Enable two-factor authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable title</note>
+      </trans-unit>
+      <trans-unit id="5785835277874246675" datatype="html">
+        <source>Successfully enabled two-factor authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable success</note>
+      </trans-unit>
+      <trans-unit id="5066510767073862379" datatype="html">
+        <source>Something went wrong while enabling two-factor authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable error</note>
+      </trans-unit>
+      <trans-unit id="5659505396289019250" datatype="html">
+        <source>Removing...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <note priority="1" from="description">removing</note>
+      </trans-unit>
+      <trans-unit id="4307437351813936049" datatype="html">
+        <source>Remove account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+        <note priority="1" from="description">remove-account</note>
+      </trans-unit>
+      <trans-unit id="5821460301178074249" datatype="html">
+        <source>Remove your account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">account-remove title</note>
+      </trans-unit>
+      <trans-unit id="2730569157634499521" datatype="html">
+        <source>Successfully removed your account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">account-remove success</note>
+      </trans-unit>
+      <trans-unit id="1255803202857201733" datatype="html">
+        <source>Something went wrong while removing your account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">account-remove error</note>
+      </trans-unit>
+      <trans-unit id="3533028228842272093" datatype="html">
+        <source>Here you can manage your profile and security.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">4,7</context>
+        </context-group>
+        <note priority="1" from="description">account description</note>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+        <note priority="1" from="description">account profile title</note>
+      </trans-unit>
+      <trans-unit id="1890300073702152532" datatype="html">
+        <source>E-mail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+        <note priority="1" from="description">email label</note>
+      </trans-unit>
+      <trans-unit id="8878700331247603166" datatype="html">
+        <source>Security</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+        <note priority="1" from="description">account security title</note>
+      </trans-unit>
+      <trans-unit id="3595736451812383001" datatype="html">
+        <source>Password Age</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+        <note priority="1" from="description">password-age label</note>
+      </trans-unit>
+      <trans-unit id="7036284206110282007" datatype="html">
+        <source>days</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <note priority="1" from="description">days</note>
+      </trans-unit>
+      <trans-unit id="9213310001177988902" datatype="html">
+        <source>2-Factor Authentication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <note priority="1" from="description">2fa label</note>
+      </trans-unit>
+      <trans-unit id="4816216590591222133" datatype="html">
+        <source>Enabled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+        <note priority="1" from="description">enabled</note>
+      </trans-unit>
+      <trans-unit id="5769292297914455214" datatype="html">
+        <source>Disabled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+        <note priority="1" from="description">disabled</note>
+      </trans-unit>
+      <trans-unit id="8541805017272347487" datatype="html">
+        <source>Disable 2FA </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">62,63</context>
+        </context-group>
+        <note priority="1" from="description">account disable-2fa</note>
+      </trans-unit>
+      <trans-unit id="8010294228285839995" datatype="html">
+        <source>Enable 2FA </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+        <note priority="1" from="description">account enable-2fa</note>
       </trans-unit>
       <trans-unit id="4968868687419118528" datatype="html">
         <source>
@@ -1100,7 +1388,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Something went wrong logging out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">68</context>
         </context-group>
         <note priority="1" from="description">logout error</note>
       </trans-unit>
@@ -1124,7 +1412,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">172</context>
+          <context context-type="linenumber">171</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
@@ -1176,7 +1464,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">353,354</context>
+          <context context-type="linenumber">366,367</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
@@ -1269,10 +1557,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
           <context context-type="linenumber">67,68</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">87,88</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
@@ -1544,6 +1828,82 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">save-and-continue</note>
       </trans-unit>
+      <trans-unit id="1931353503905413384" datatype="html">
+        <source>Benchmark</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <note priority="1" from="description">benchmark</note>
+      </trans-unit>
+      <trans-unit id="3363375834313095277" datatype="html">
+        <source>Base wage (status-quo)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">224</context>
+        </context-group>
+        <note priority="1" from="description">baseWage status-quo label</note>
+      </trans-unit>
+      <trans-unit id="8311516684547634000" datatype="html">
+        <source>Bonuses (status-quo)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">235</context>
+        </context-group>
+        <note priority="1" from="description">bonuses status-quo label</note>
+      </trans-unit>
+      <trans-unit id="333525595139633515" datatype="html">
+        <source>IKB (status-quo)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">246</context>
+        </context-group>
+        <note priority="1" from="description">ikb status-quo label</note>
+      </trans-unit>
+      <trans-unit id="4885971567699061652" datatype="html">
+        <source>Base wage (scenario)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">257</context>
+        </context-group>
+        <note priority="1" from="description">baseWage scenario label</note>
+      </trans-unit>
+      <trans-unit id="7131564514890341886" datatype="html">
+        <source>Bonuses (scenario)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">268</context>
+        </context-group>
+        <note priority="1" from="description">bonuses scenario label</note>
+      </trans-unit>
+      <trans-unit id="5111562740526689474" datatype="html">
+        <source>IKB (scenario)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">279</context>
+        </context-group>
+        <note priority="1" from="description">ikb scenario label</note>
+      </trans-unit>
+      <trans-unit id="5756895170250081192" datatype="html">
+        <source>workers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">347</context>
+        </context-group>
+        <note priority="1" from="description">workers</note>
+      </trans-unit>
+      <trans-unit id="1856970118394548197" datatype="html">
+        <source>worker</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
+          <context context-type="linenumber">348</context>
+        </context-group>
+        <note priority="1" from="description">worker</note>
+      </trans-unit>
       <trans-unit id="4024676288268057944" datatype="html">
         <source>Graphic representation of scenario</source>
         <context-group purpose="location">
@@ -1799,7 +2159,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">274,275</context>
+          <context context-type="linenumber">287,288</context>
         </context-group>
         <note priority="1" from="description">workers error</note>
       </trans-unit>
@@ -1815,7 +2175,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">314,315</context>
+          <context context-type="linenumber">327,328</context>
         </context-group>
         <note priority="1" from="description">workers job-category label</note>
       </trans-unit>
@@ -1831,11 +2191,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">325,327</context>
+          <context context-type="linenumber">338,340</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">340,342</context>
+          <context context-type="linenumber">353,355</context>
         </context-group>
         <note priority="1" from="description">workers total-monthly-remnueration label</note>
       </trans-unit>
@@ -1899,7 +2259,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">405,406</context>
+          <context context-type="linenumber">418,419</context>
         </context-group>
         <note priority="1" from="description">workers not-found</note>
       </trans-unit>
@@ -1911,7 +2271,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">167</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.ts</context>
@@ -2083,11 +2443,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">176</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2154,26 +2514,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           <context context-type="linenumber">14,15</context>
         </context-group>
         <note priority="1" from="description">entry-delete loading</note>
-      </trans-unit>
-      <trans-unit id="2159130950882492111" datatype="html">
-        <source>Cancel</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
-          <context context-type="linenumber">23,24</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/reset-scenario-dialog/reset-scenario-dialog.component.html</context>
-          <context context-type="linenumber">15,16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/reset-workers-dialog/reset-workers-dialog.component.html</context>
-          <context context-type="linenumber">14,15</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">57,58</context>
-        </context-group>
-        <note priority="1" from="description">entry-delete cancel</note>
       </trans-unit>
       <trans-unit id="7022070615528435141" datatype="html">
         <source>Delete</source>
@@ -2243,7 +2583,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.ts</context>
@@ -2359,7 +2699,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Successfully updated distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <note priority="1" from="description">distribution-update success</note>
       </trans-unit>
@@ -2367,7 +2707,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Something went wrong updating the distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">133</context>
         </context-group>
         <note priority="1" from="description">distribution-update error</note>
       </trans-unit>
@@ -2515,7 +2855,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">269,270</context>
+          <context context-type="linenumber">282,283</context>
         </context-group>
         <note priority="1" from="description">entry payroll title</note>
       </trans-unit>
@@ -2526,14 +2866,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           <context context-type="linenumber">67</context>
         </context-group>
         <note priority="1" from="description">entry salary-matrix title</note>
-      </trans-unit>
-      <trans-unit id="1931353503905413384" datatype="html">
-        <source>Benchmark</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.ts</context>
-          <context context-type="linenumber">71</context>
-        </context-group>
-        <note priority="1" from="description">entry benchmark title</note>
       </trans-unit>
       <trans-unit id="5539102139398381855" datatype="html">
         <source>Entry</source>
@@ -2594,7 +2926,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">291,292</context>
+          <context context-type="linenumber">304,305</context>
         </context-group>
         <note priority="1" from="description">status-quo label</note>
       </trans-unit>
@@ -2606,7 +2938,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">302,303</context>
+          <context context-type="linenumber">315,316</context>
         </context-group>
         <note priority="1" from="description">scenario label</note>
       </trans-unit>
@@ -2742,11 +3074,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">report cost-implecation</note>
       </trans-unit>
+      <trans-unit id="7457672631196078712" datatype="html">
+        <source>Wage graph</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
+          <context context-type="linenumber">269,270</context>
+        </context-group>
+        <note priority="1" from="description">wage-graph title</note>
+      </trans-unit>
       <trans-unit id="2243955508195905931" datatype="html">
         <source>Monthly-wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">316,317</context>
+          <context context-type="linenumber">329,330</context>
         </context-group>
         <note priority="1" from="description">workers distribution label</note>
       </trans-unit>
@@ -2754,11 +3094,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Monthly bonusses</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">319,320</context>
+          <context context-type="linenumber">332,333</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">334,335</context>
+          <context context-type="linenumber">347,348</context>
         </context-group>
         <note priority="1" from="description">workers monthly-bonusses label</note>
       </trans-unit>
@@ -2766,11 +3106,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Monthly IKB</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">322,323</context>
+          <context context-type="linenumber">335,336</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">337,338</context>
+          <context context-type="linenumber">350,351</context>
         </context-group>
         <note priority="1" from="description">workers monthly-ikb label</note>
       </trans-unit>
@@ -2778,11 +3118,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Living wage gap %</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">328,330</context>
+          <context context-type="linenumber">341,343</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">343,345</context>
+          <context context-type="linenumber">356,358</context>
         </context-group>
         <note priority="1" from="description">workers living-wage-gap-percentage label</note>
       </trans-unit>
@@ -2790,17 +3130,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Monthly wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">331,332</context>
+          <context context-type="linenumber">344,345</context>
         </context-group>
         <note priority="1" from="description">workers monthly-wage label</note>
-      </trans-unit>
-      <trans-unit id="7457672631196078712" datatype="html">
-        <source>Wage graph</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">412,413</context>
-        </context-group>
-        <note priority="1" from="description">wage-graph title</note>
       </trans-unit>
       <trans-unit id="34309344047490379" datatype="html">
         <source>Download report failed</source>
