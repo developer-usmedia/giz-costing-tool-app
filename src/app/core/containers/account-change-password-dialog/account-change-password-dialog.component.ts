@@ -4,7 +4,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
-import { ChangePasswordForm, User } from '@api/models';
+import { ChangePasswordForm, ErrorResponse, User } from '@api/models';
 import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { STATUS } from '@shared/helpers';
@@ -145,7 +145,7 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
                     this.dialogRef?.close({ updated: true });
                 },
                 onError: (error) => {
-                    const errorBody = error.error as ({ error: string; message: string; statusCode: number });
+                    const errorBody = error.error as ErrorResponse;
 
                     if (errorBody.statusCode === STATUS.BAD_REQUEST) {
                         if (errorBody.message?.includes('Invalid credentials')) {

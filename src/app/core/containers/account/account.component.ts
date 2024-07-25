@@ -38,7 +38,10 @@ export class AccountComponent {
     ) {}
 
     public removeAccount(): void {
-        this.dialog.open<AccountRemoveResult, unknown, AccountRemoveDialogComponent>(AccountRemoveDialogComponent);
+        this.dialog.open<AccountRemoveResult, unknown, AccountRemoveDialogComponent>(
+            AccountRemoveDialogComponent,
+            {  data: { user: this.user.data() } }
+        );
     }
 
     public changePassword(): void {

@@ -1,5 +1,63 @@
-<giz-dialog [title]="title" (closeDialog)="cancel()">
-    <p class="todo">TODO</p>
+<giz-dialog [title]="title" (closeDialog)="cancel()" class="account-remove" size="medium">
+    <p i18n="remove-account intro">Are you sure you want to remove your account (and all associated data)?<br>This action cannot be undone.</p>
+    <hr>
+    <p i18n="remove-account help">Repeat your e-mail address "{{data.user.email}}" to remove your account.</p>
+
+    <form class="form" autocomplete="off"[formGroup]="form" (ngSubmit)="submit()">
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'email',
+            'has-value': form | hasValue: 'email',
+        }">
+            <div class="form__input">
+                <label class="form__label" for="email" i18n="form email label">Email</label>
+                <input type="email" id="email" formControlName="email"/>
+            </div>
+            @if (form | showError: 'email' :'required') {
+                <div class="form__error" i18n="form email errors required">Email is required</div>
+            }
+            @if (form | showError: 'email' :'email') {
+                <div class="form__error" i18n="form email errors invalid">Email is invalid</div>
+            }
+        </div>
+
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'password',
+            'has-value': form | hasValue: 'password',
+        }">
+            <div class="form__input">
+                <label class="form__label" for="password" i18n="form password label">Password</label>
+                <input type="password" id="password" formControlName="password"/>
+            </div>
+            @if (form | showError: 'password' :'required') {
+                <div class="form__error" i18n="form password errors required">Password is required</div>
+            }
+            @if (invalidPassword) {
+                <div class="form__error" i18n="form password errors incorrect">Either your email address or your password is incorrect.</div>
+            }
+        </div>
+
+        @if (data.user.twoFactorEnabled) {
+            <div class="form__field" [ngClass]="{
+                'is-error': form | hasError: 'otpCode',
+                'has-value': form | hasValue: 'otpCode',
+            }">
+                <div class="form__input">
+                    <label class="form__label" for="otpCode" i18n="form otpCode label">Code</label>
+                    <input type="text" id="otpCode" formControlName="otpCode"/>
+                </div>
+                @if (form | showError: 'otpCode' :'required') {
+                    <div class="form__error" i18n="form otpCode errors required">Code is required</div>
+                }
+                @if ((form | showError: 'otpCode' :'minlength') ||
+                    (form | showError: 'otpCode' :'maxlength')) {
+                    <div class="form__error" i18n="form otpCode errors length">Code has to be 6 characters</div>
+                }
+                @if (invalidOtpCode) {
+                    <div class="form__error" i18n="form otpCode errors invalid">Code is invalid or expired</div>
+                }
+            </div>
+        }
+    </form>
 
     <ng-container footer-left>
         @if (mutation.isPending()) {
@@ -20,7 +78,7 @@
         <button type="button"
                 giz-button
                 [disabled]="mutation.isPending()"
-                (click)="remove()"
+                (click)="submit()"
                 i18n="remove-account"
         >Remove account</button>
     </ng-container>

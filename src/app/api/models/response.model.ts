@@ -37,3 +37,9 @@ export interface PagedResponse<K extends string, E = Record<string, any>> {
 export interface SuccessResponse {
     success: boolean;
 }
+
+export interface ErrorResponse {
+    error: string;
+    message: string;
+    statusCode: number;
+}

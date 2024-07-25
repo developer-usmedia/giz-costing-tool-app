@@ -1,9 +1,11 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, catchError, filter, switchMap, take, throwError } from 'rxjs';
 
 import { AuthApi } from '@api/services';
+import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { AuthService } from '@core/services';
 import { STATUS } from '@shared/helpers';
 import { environment } from 'environments/environment';
@@ -13,6 +15,7 @@ export class ApiInterceptor implements HttpInterceptor {
     private readonly toastr = inject(ToastrService);
     private readonly authApi = inject(AuthApi);
     private readonly authService = inject(AuthService);
+    private readonly router = inject(Router);
 
     private isRefreshing = false;
     private readonly refreshTokenSubject = new BehaviorSubject<string | null>(null);
@@ -24,7 +27,7 @@ export class ApiInterceptor implements HttpInterceptor {
                 withCredentials: true,
                 setHeaders: {
                     // eslint-disable-next-line @typescript-eslint/naming-convention
-                    Authorization: `Bearer ${token.accessToken}`,
+                    Authorization: `Bearer ${ token?.accessToken ?? '' }`,
                 },
             });
         }
@@ -57,7 +60,7 @@ export class ApiInterceptor implements HttpInterceptor {
             return this.authService.refreshToken().pipe(
                 catchError((error: HttpErrorResponse) => {
                     this.isRefreshing = false;
-                    this.authService.logout();
+                    this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.LOGIN]);
 
                     return throwError(() => error);
                 }),

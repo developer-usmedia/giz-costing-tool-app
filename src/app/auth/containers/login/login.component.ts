@@ -5,7 +5,7 @@ import { Store } from '@ngxs/store';
 import { injectQueryClient } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 
-import { LoginForm } from '@api/models';
+import { ErrorResponse, LoginForm } from '@api/models';
 import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { AuthService } from '@core/services';
 import { STATUS } from '@shared/helpers';
@@ -44,7 +44,7 @@ export class LoginComponent {
             .then(() => this.queryClient.invalidateQueries({ queryKey: ['session'] }))
             .then(() => this.router.navigate([ROOT_ROUTE.DASHBOARD]))
             .catch(async (error: HttpErrorResponse) => {
-                const errorBody = error.error as ({ error: string; message: string; statusCode: number });
+                const errorBody = error.error as ErrorResponse;
                 if (error.status === STATUS.BAD_REQUEST && errorBody?.message.includes('emailVerificationCode')) {
                     this.store.dispatch(new SaveUserDetails({
                         email: loginForm.email,

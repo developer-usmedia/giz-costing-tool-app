@@ -56,10 +56,11 @@ export class BaseApi {
         });
     }
 
-    protected delete<TResponse>(url: string): Observable<TResponse> {
+    protected delete<TResponse>(url: string, data?: unknown): Observable<TResponse> {
         return this.request<TResponse>({
             method: 'delete',
             url: url,
+            data: data,
         });
     }
 

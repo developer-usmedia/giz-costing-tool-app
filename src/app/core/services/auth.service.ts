@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { from, Observable } from 'rxjs';
+import { from, Observable, throwError } from 'rxjs';
 
 import {
     ChangePasswordForm,
@@ -9,6 +9,8 @@ import {
     LoginForm,
     LoginResponse,
     RefreshTokenResponse,
+    RemoveAccountForm,
+    RemoveAccountResponse,
 } from '@api/models';
 import { AuthApi } from '@api/services';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
@@ -38,6 +40,11 @@ export class AuthService {
 
     public refreshToken(): Observable<RefreshTokenResponse> {
         const token = this.getToken();
+
+        if (!token.refreshToken) {
+            return throwError(() => 'Error: no refreshToken found.');
+        }
+
         return from(this.authApi.refreshToken(token.refreshToken));
     }
 
@@ -56,8 +63,8 @@ export class AuthService {
 
     public getToken() {
         return {
-            accessToken: localStorage.getItem(this.tokenName) ?? '',
-            refreshToken: localStorage.getItem(this.refreshTokenName) ?? '',
+            accessToken: localStorage.getItem(this.tokenName),
+            refreshToken: localStorage.getItem(this.refreshTokenName),
         };
     }
 
@@ -82,11 +89,11 @@ export class AuthService {
 
     /* eslint-disable no-console */
     public removeAccount() {
-        return useMutation<string, void>({
-            mutationFn: (_todo: string) => new Promise(() => {
-                console.log('todo remove account');
-            }),
-            onSuccess: () => this.logout(),
+        return useMutation<RemoveAccountForm, RemoveAccountResponse>({
+            mutationFn: (form: RemoveAccountForm) => {
+                return this.authApi.removeAccount(form);
+            },
+            onSuccess: () => this.removeToken(),
         });
     }
 

@@ -37,12 +37,19 @@ export interface ChangePasswordForm {
     otpCode?: string;
 }
 
+export interface RemoveAccountForm {
+    email: string;
+    password: string;
+    otpCode?: string;
+}
+
 export type LogoutResponse = SuccessResponse;
 export type ForgotPasswordResponse = SuccessResponse;
 export type ResetPasswordResponse = SuccessResponse;
 export type ChangePasswordResponse = SuccessResponse;
 export type VerifyResetCodeResponse = SuccessResponse;
 export type VerifyEmailReponse = SuccessResponse;
+export type RemoveAccountResponse = SuccessResponse;
 
 export interface TokenResponse {
     accessToken: string;
