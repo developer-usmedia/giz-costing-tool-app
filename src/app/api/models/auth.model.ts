@@ -30,9 +30,16 @@ export interface VerifyResetCodeForm {
     code: string;
 }
 
+export interface ChangePasswordForm {
+    currentPassword: string;
+    password: string;
+    otpCode?: number;
+}
+
 export type LogoutResponse = SuccessResponse;
 export type ForgotPasswordResponse = SuccessResponse;
 export type ResetPasswordResponse = SuccessResponse;
+export type ChangePasswordResponse = SuccessResponse;
 export type VerifyResetCodeResponse = SuccessResponse;
 export type VerifyEmailReponse = SuccessResponse;
 

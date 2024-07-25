@@ -206,11 +206,16 @@
         @include form-radio;
     }
 
-    &__postfix {
+    &__postfix,
+    &__tooltip {
         position: absolute;
         right: $p-gutter--small;
         top: 50%;
         translate: 0 -50%;
+    }
+
+    &__tooltip {
+        position: absolute !important;
     }
 
     &__footer {

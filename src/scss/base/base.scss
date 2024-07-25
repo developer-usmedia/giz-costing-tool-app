@@ -214,7 +214,11 @@ dt {
     @include style-text;
 
     font-weight: $weight-bold;
-    margin: 0.75rem 0 0.125rem;
+    margin: 1rem 0 0.125rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 dd {

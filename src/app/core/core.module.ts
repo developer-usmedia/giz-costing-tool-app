@@ -4,6 +4,7 @@ import { CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { AsyncPipe, DatePipe, KeyValuePipe, NgClass, SlicePipe } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from '@core/components/footer/footer.component';
@@ -64,6 +65,7 @@ import { HomepageComponent } from './containers/homepage/homepage.component';
         SharedModule,
         SlicePipe,
         DatePipe,
+        ReactiveFormsModule,
     ],
 })
 export class CoreModule {

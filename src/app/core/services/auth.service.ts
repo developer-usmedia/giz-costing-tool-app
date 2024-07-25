@@ -1,13 +1,19 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { from, Observable } from 'rxjs';
 
-import { LoginForm, LoginResponse, RefreshTokenResponse } from '@api/models';
+import {
+    ChangePasswordForm,
+    ChangePasswordResponse,
+    LoginForm,
+    LoginResponse,
+    RefreshTokenResponse,
+} from '@api/models';
 import { AuthApi } from '@api/services';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { useMutation } from '@core/services/query/use-mutation';
 import { UserService } from '@core/services/user.service';
-import { ToastrService } from 'ngx-toastr';
-import { from, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -85,10 +91,10 @@ export class AuthService {
     }
 
     public changePassword() {
-        return useMutation<string, void>({
-            mutationFn: (_todo: string) => new Promise(() => {
-                console.log('todo change password');
-            }),
+        return useMutation<ChangePasswordForm, ChangePasswordResponse>({
+            mutationFn: (form: ChangePasswordForm) => {
+                return this.authApi.changePassword(form);
+            },
             onSuccess: async () => await this.userService.refreshUser(),
         });
     }

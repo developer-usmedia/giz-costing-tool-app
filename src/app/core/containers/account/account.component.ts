@@ -1,6 +1,6 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { APP_BASE_HREF } from '@angular/common';
-import { Component, Inject, inject, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { CreateQueryResult } from '@tanstack/angular-query-experimental';
 
 import { User } from '@api/models';
@@ -27,15 +27,19 @@ import { UserService } from '@core/services';
     styleUrl: './account.component.scss',
     encapsulation: ViewEncapsulation.None,
 })
-export class AccountComponent {
+export class AccountComponent implements OnInit {
     public readonly userService = inject(UserService);
-    public readonly userSession: CreateQueryResult<User, Error> = this.userService.getUser();
+    public readonly user: CreateQueryResult<User, Error> = this.userService.getUser();
 
     private readonly dialog = inject(Dialog);
 
     constructor(
         @Inject(APP_BASE_HREF) public baseHref: string,
     ) {}
+
+    ngOnInit() {
+        this.dialog.open<AccountChangePasswordResult, unknown, AccountChangePasswordDialogComponent>(AccountChangePasswordDialogComponent);
+    }
 
     public removeAccount(): void {
         this.dialog.open<AccountRemoveResult, unknown, AccountRemoveDialogComponent>(AccountRemoveDialogComponent);

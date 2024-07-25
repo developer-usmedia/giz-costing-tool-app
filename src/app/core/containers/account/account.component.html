@@ -4,7 +4,7 @@
         <p class="account__intro" i18n="account description">Here you can manage your profile and security.</p>
     </div>
 
-    @if (userSession.data(); as user) {
+    @if (user.data(); as user) {
         <div class="account__content">
             <div class="settings">
                 <div class="settings__content">

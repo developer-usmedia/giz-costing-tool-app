@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom, Observable } from 'rxjs';
 
 import {
+    ChangePasswordForm, ChangePasswordResponse,
     ForgotPasswordForm,
     ForgotPasswordResponse,
     LoginForm,
@@ -33,6 +34,7 @@ export class AuthApi extends BaseApi {
         refresh: `${ this.baseUrl }/refresh`,
         forgotPassword: `${ this.baseUrl }/forgot-password`,
         resetPassword: `${ this.baseUrl }/reset-password`,
+        changePassword: `${ this.baseUrl }/change-password`,
         verifyCode: `${ this.baseUrl }/verify-code`,
         verifyEmail: `${ this.baseUrl }/verify-email`,
         twoFactorEnable: `${ this.baseUrl }/2fa/enable`,
@@ -70,6 +72,10 @@ export class AuthApi extends BaseApi {
 
     public resetPassword(resetPasswordForm: ResetPasswordForm): Promise<ResetPasswordResponse> {
         return lastValueFrom(this.post<ResetPasswordResponse>(this.endpoints.resetPassword, resetPasswordForm));
+    }
+
+    public changePassword(changePasswordForm: ChangePasswordForm): Promise<ChangePasswordResponse> {
+        return lastValueFrom(this.post<ChangePasswordResponse>(this.endpoints.changePassword, changePasswordForm));
     }
 
     public verifyResetCode(verifyResetCodeForm: VerifyResetCodeForm): Promise<VerifyResetCodeResponse> {

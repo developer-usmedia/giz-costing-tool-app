@@ -9,6 +9,6 @@ export class ShowErrorPipe implements PipeTransform {
         errorCode: string
     ): boolean {
         const control = form.get(name);
-        return (!!control?.invalid) && (control.dirty || control.touched) && control.hasError(errorCode);
+        return (!!control?.invalid) && (control.dirty && control.touched) && control.hasError(errorCode);
     }
 }

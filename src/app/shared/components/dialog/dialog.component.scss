@@ -56,9 +56,15 @@
     }
 
     &__column {
-        align-items: center;
-        display: flex;
-        gap: 1rem;
+        &--footer {
+            align-items: center;
+            display: flex;
+            gap: 1rem;
+
+            &:last-child {
+                justify-content: flex-end;
+            }
+        }
     }
 
     &__close {
@@ -76,5 +82,20 @@
 
     &--large {
         --dialog-width: 800px;
+    }
+
+    @include screen($screen-normal) {
+        &__content {
+            display: flex;
+            gap: $p-gutter--large;
+        }
+
+        &__column {
+            flex: 1;
+
+            &:empty {
+                display: none;
+            }
+        }
     }
 }
