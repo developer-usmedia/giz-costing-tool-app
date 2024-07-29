@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { MutationFunction, MutationOptions, QueryClient, injectMutation } from '@tanstack/angular-query-experimental';
 
 export const useMutation = <TInput, TOutput>(
@@ -10,7 +11,7 @@ export const useMutation = <TInput, TOutput>(
     },
     ...otherProps: MutationOptions<TInput>[]
 ) => {
-    return injectMutation((client) => ({
+    return injectMutation<TOutput, HttpErrorResponse, TInput>((client) => ({
         mutationFn: props.mutationFn,
         onSuccess: (data: TOutput) => (props.onSuccess ? props.onSuccess(data, client) : null),
         onError: (error) => (props.onError ? props.onError(client, error) : null),

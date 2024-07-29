@@ -1,13 +1,13 @@
-import { DialogRef } from '@angular/cdk/dialog';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+import { Component, Inject, inject, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CreateQueryResult } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
 import { ChangePasswordForm, User } from '@api/models';
-import { AuthService, UserService } from '@core/services';
+import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { STATUS } from '@shared/helpers';
 import { CustomValidators } from '@shared/services';
 
 interface ChangePasswordFormGroup {
@@ -35,8 +35,6 @@ export interface AccountChangePasswordResult {
 })
 export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
     public readonly authService = inject(AuthService);
-    public readonly userService = inject(UserService);
-    public readonly user: CreateQueryResult<User, Error> = this.userService.getUser();
     public mutation = this.authService.changePassword();
     public wrongPassword = false;
     public wrongOTP = false;
@@ -80,6 +78,9 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
     private readonly destroyed$ = new Subject<void>();
 
     constructor(
+        @Inject(DIALOG_DATA) public data: {
+            user: User;
+        },
         private readonly dialogRef: DialogRef<AccountChangePasswordResult>,
     ) {
     }
@@ -101,7 +102,7 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
     }
 
     public ngOnInit() {
-        if (this.user.data()?.twoFactorEnabled) {
+        if (this.data.user.twoFactorEnabled) {
             this.form.controls.otpCode.addValidators(Validators.required);
         }
 
@@ -137,21 +138,28 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
             this.wrongOTP = false;
 
             this.form.disable();
-            const formValue = this.parseFormValue();
+            const formValue = this.setupMutationData();
             this.mutation.mutate(formValue, {
                 onSuccess: () => {
                     this.toastr.success($localize`:change-password success:Successfully changed password`);
                     this.dialogRef?.close({ updated: true });
                 },
-                onError: (error: Error) => {
-                    // TODO HOW TO CHECK FOR WRONG PASSWORD OR OTP
-                    // if (error.status === STATUS.BAD_REQUEST) {
-                    //     this.wrongPassword = true;
-                    // }
+                onError: (error) => {
+                    const errorBody = error.error as ({ error: string; message: string; statusCode: number });
 
-                    console.error(error);
-                    this.toastr.error($localize`:change-password error:Something went wrong changing your password`);
-                    this.dialogRef?.close({ updated: false });
+                    if (errorBody.statusCode === STATUS.BAD_REQUEST) {
+                        if (errorBody.message?.includes('Invalid credentials')) {
+                            this.wrongPassword = true;
+                        }
+
+                        if (errorBody.message?.includes('Two-factor code is invalid')) {
+                            this.wrongOTP = true;
+                        }
+                    } else {
+                        this.toastr.error($localize`:change-password error:Something went wrong changing your password`);
+                    }
+
+                    this.form.enable();
                 },
             });
         }
@@ -161,13 +169,14 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
         this.dialogRef?.close({ updated: false });
     }
 
-    private parseFormValue(): ChangePasswordForm {
+    private setupMutationData(): ChangePasswordForm {
         const formValue = this.form.getRawValue() as ChangePasswordFormValue;
 
         return {
-            currentPassword: formValue.currentPassword,
-            password: formValue.password,
-            otpCode: formValue.otpCode ?? undefined,
+            email: this.data.user.email ?? '',
+            password: formValue.currentPassword,
+            newPassword: formValue.password,
+            otpCode: formValue.otpCode?.toString(),
         };
     }
 }
