@@ -16,10 +16,10 @@
                     <input type="number" id="remunerationIncrease" formControlName="remunerationIncrease"/>
                     <span class="form__postfix">{{ entry.payroll.currencyCode }}</span>
                 </div>
-                @if (form | showError: 'remunerationIncrease' :'required') {
+                @if (form | hasError: 'remunerationIncrease' :'required') {
                     <div class="form__error" i18n="form remunerationIncrease errors required">Field is required</div>
                 }
-                @if (form | showError: 'remunerationIncrease' :'min') {
+                @if (form | hasError: 'remunerationIncrease' :'min') {
                     <div class="form__error" i18n="form remunerationIncrease errors min">Minimum is 0</div>
                 }
             </div>
@@ -53,13 +53,13 @@
                 <input type="number" id="overheadCosts" formControlName="overheadCosts"/>
                 <span class="form__postfix">{{ entry.payroll.currencyCode }}</span>
             </div>
-            @if (form | showError: 'overheadCosts' :'required') {
+            @if (form | hasError: 'overheadCosts' :'required') {
                 <div class="form__error" i18n="form overheadCosts errors required">Field is required</div>
             }
-            @if (form | showError: 'overheadCosts' :'min') {
+            @if (form | hasError: 'overheadCosts' :'min') {
                 <div class="form__error" i18n="form overheadCosts errors min">Minimum is 0</div>
             }
-            @if (form | showError: 'overheadCosts' :'max') {
+            @if (form | hasError: 'overheadCosts' :'max') {
                 <div class="form__error" i18n="form overheadCosts errors max">Maximum is 999999999</div>
             }
         </div>
@@ -78,13 +78,13 @@
                            i18n-placeholder="form taxEmployee placeholder" placeholder="Employee"/>
                     <span class="form__postfix">%</span>
                 </div>
-                @if (form | showError: 'taxEmployee' :'required') {
+                @if (form | hasError: 'taxEmployee' :'required') {
                     <div class="form__error" i18n="form taxEmployee errors required">Field is required</div>
                 }
-                @if (form | showError: 'taxEmployee' :'min') {
+                @if (form | hasError: 'taxEmployee' :'min') {
                     <div class="form__error" i18n="form taxEmployee errors min">Minimum is 0</div>
                 }
-                @if (form | showError: 'taxEmployee' :'max') {
+                @if (form | hasError: 'taxEmployee' :'max') {
                     <div class="form__error" i18n="form taxEmployee errors max">Maximum is 100</div>
                 }
             </div>
@@ -100,13 +100,13 @@
                            i18n-placeholder="form taxEmployer placeholder" placeholder="Employer"/>
                     <span class="form__postfix">%</span>
                 </div>
-                @if (form | showError: 'taxEmployer' :'required') {
+                @if (form | hasError: 'taxEmployer' :'required') {
                     <div class="form__error" i18n="form taxEmployer errors required">Field is required</div>
                 }
-                @if (form | showError: 'taxEmployer' :'min') {
+                @if (form | hasError: 'taxEmployer' :'min') {
                     <div class="form__error" i18n="form taxEmployer errors min">Minimum is 0</div>
                 }
-                @if (form | showError: 'taxEmployer' :'max') {
+                @if (form | hasError: 'taxEmployer' :'max') {
                     <div class="form__error" i18n="form taxEmployer errors max">Maximum is 100</div>
                 }
             </div>

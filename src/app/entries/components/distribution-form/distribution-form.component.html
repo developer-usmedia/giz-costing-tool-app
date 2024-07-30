@@ -36,10 +36,10 @@
                     <input type="number" id="baseWagePerc" formControlName="baseWagePerc" [readonly]="true"/>
                     <span class="form__postfix">%</span>
                 </div>
-                @if (form | showError: 'baseWagePerc' :'min') {
+                @if (form | hasError: 'baseWagePerc' :'min') {
                     <div class="form__error" i18n="form baseWagePerc errors min">Minimum is 0</div>
                 }
-                @if (form | showError: 'baseWagePerc' :'max') {
+                @if (form | hasError: 'baseWagePerc' :'max') {
                     <div class="form__error" i18n="form baseWagePerc errors imax">Maximum is {{ this.maxIkbPercMapping['baseWagePerc'] }}</div>
                 }
                 <span class="form__hint" i18n="form basewage hint">Unallocated funds will go to base wage</span>
@@ -57,13 +57,13 @@
                     <input type="number" id="bonusesPerc" formControlName="bonusesPerc" />
                     <span class="form__postfix">%</span>
                 </div>
-                @if (form | showError: 'bonusesPerc' :'required') {
+                @if (form | hasError: 'bonusesPerc' :'required') {
                     <div class="form__error" i18n="form bonusesPerc errors required">Field is required</div>
                 }
-                @if (form | showError: 'bonusesPerc' :'min') {
+                @if (form | hasError: 'bonusesPerc' :'min') {
                     <div class="form__error" i18n="form bonusesPerc errors min">Minimum is 0</div>
                 }
-                @if (form | showError: 'bonusesPerc' :'max') {
+                @if (form | hasError: 'bonusesPerc' :'max') {
                     <div class="form__error" i18n="form bonusesPerc errors imax">Maximum is {{ this.maxIkbPercMapping['bonusesPerc'] }}</div>
                 }
             </div>
@@ -80,7 +80,7 @@
                     <input type="number" id="ikbPerc" formControlName="ikbPerc" [readonly]="true"/>
                     <span class="form__postfix">%</span>
                 </div>
-                @if (form | showError: 'ikbPerc' :'min') {
+                @if (form | hasError: 'ikbPerc' :'min') {
                     <div class="form__error" i18n="form ikbPerc errors min">Minimum is 0</div>
                 }
                 @if (form.get('ikbPerc')?.value && (form.get('ikbPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbPerc']) {
@@ -101,13 +101,13 @@
                         <input type="number" id="ikbHousingPerc" formControlName="ikbHousingPerc" />
                         <span class="form__postfix">%</span>
                     </div>
-                    @if (form | showError: 'ikbHousingPerc' :'required') {
+                    @if (form | hasError: 'ikbHousingPerc' :'required') {
                         <div class="form__error" i18n="form ikbHousingPerc errors required">Field is required</div>
                     }
-                    @if (form | showError: 'ikbHousingPerc' :'min') {
+                    @if (form | hasError: 'ikbHousingPerc' :'min') {
                         <div class="form__error" i18n="form ikbHousingPerc errors min">Minimum is 0</div>
                     }
-                    @if (form | showError: 'ikbHousingPerc' :'max') {
+                    @if (form | hasError: 'ikbHousingPerc' :'max') {
                         <div class="form__error" i18n="form ikbHousingPerc errors imax">Maximum is  {{ this.maxIkbPercMapping['ikbHousingPerc'] }}</div>
                     }
                 </div>
@@ -124,13 +124,13 @@
                         <input type="number" id="ikbFoodPerc" formControlName="ikbFoodPerc" />
                         <span class="form__postfix">%</span>
                     </div>
-                    @if (form | showError: 'ikbFoodPerc' :'required') {
+                    @if (form | hasError: 'ikbFoodPerc' :'required') {
                         <div class="form__error" i18n="form ikbFoodPerc errors required">Field is required</div>
                     }
-                    @if (form | showError: 'ikbFoodPerc' :'min') {
+                    @if (form | hasError: 'ikbFoodPerc' :'min') {
                         <div class="form__error" i18n="form ikbFoodPerc errors min">Minimum is 0</div>
                     }
-                    @if (form | showError: 'ikbFoodPerc' :'max') {
+                    @if (form | hasError: 'ikbFoodPerc' :'max') {
                         <div class="form__error" i18n="form ikbFoodPerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbFoodPerc'] }}</div>
                     }
                 </div>
@@ -147,13 +147,13 @@
                         <input type="number" id="ikbTransportPerc" formControlName="ikbTransportPerc" />
                         <span class="form__postfix">%</span>
                     </div>
-                    @if (form | showError: 'ikbTransportPerc' :'required') {
+                    @if (form | hasError: 'ikbTransportPerc' :'required') {
                         <div class="form__error" i18n="form ikbTransportPerc errors required">Field is required</div>
                     }
-                    @if (form | showError: 'ikbTransportPerc' :'min') {
+                    @if (form | hasError: 'ikbTransportPerc' :'min') {
                         <div class="form__error" i18n="form ikbTransportPerc errors min">Minimum is 0</div>
                     }
-                    @if (form | showError: 'ikbTransportPerc' :'max') {
+                    @if (form | hasError: 'ikbTransportPerc' :'max') {
                         <div class="form__error" i18n="form ikbTransportPerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbTransportPerc'] }}</div>
                     }
                 </div>
@@ -170,13 +170,13 @@
                         <input type="number" id="ikbHealthcarePerc" formControlName="ikbHealthcarePerc" />
                         <span class="form__postfix">%</span>
                     </div>
-                    @if (form | showError: 'ikbHealthcarePerc' :'required') {
+                    @if (form | hasError: 'ikbHealthcarePerc' :'required') {
                         <div class="form__error" i18n="form ikbHealthcarePerc errors required">Field is required</div>
                     }
-                    @if (form | showError: 'ikbHealthcarePerc' :'min') {
+                    @if (form | hasError: 'ikbHealthcarePerc' :'min') {
                         <div class="form__error" i18n="form ikbHealthcarePerc errors min">Minimum is 0</div>
                     }
-                    @if (form | showError: 'ikbHealthcarePerc' :'max') {
+                    @if (form | hasError: 'ikbHealthcarePerc' :'max') {
                         <div class="form__error" i18n="form ikbHealthcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbHealthcarePerc'] }}</div>
                     }
                 </div>
@@ -193,13 +193,13 @@
                         <input type="number" id="ikbChildcarePerc" formControlName="ikbChildcarePerc" />
                         <span class="form__postfix">%</span>
                     </div>
-                    @if (form | showError: 'ikbChildcarePerc' :'required') {
+                    @if (form | hasError: 'ikbChildcarePerc' :'required') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
                     }
-                    @if (form | showError: 'ikbChildcarePerc' :'min') {
+                    @if (form | hasError: 'ikbChildcarePerc' :'min') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
                     }
-                    @if (form | showError: 'ikbChildcarePerc' :'max') {
+                    @if (form | hasError: 'ikbChildcarePerc' :'max') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbChildcarePerc'] }}</div>
                     }
                 </div>
@@ -216,13 +216,13 @@
                         <input type="number" id="ikbChildEducationPerc" formControlName="ikbChildEducationPerc" />
                         <span class="form__postfix">%</span>
                     </div>
-                    @if (form | showError: 'ikbChildEducationPerc' :'required') {
+                    @if (form | hasError: 'ikbChildEducationPerc' :'required') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors required">Field is required</div>
                     }
-                    @if (form | showError: 'ikbChildEducationPerc' :'min') {
+                    @if (form | hasError: 'ikbChildEducationPerc' :'min') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
                     }
-                    @if (form | showError: 'ikbChildEducationPerc' :'max') {
+                    @if (form | hasError: 'ikbChildEducationPerc' :'max') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors imax">Maximum is {{ this.maxIkbPercMapping['ikbChildEducationPerc'] }}</div>
                     }
                 </div>

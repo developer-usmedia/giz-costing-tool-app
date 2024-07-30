@@ -54,7 +54,7 @@
                             (click)="changePassword()"
                     >Change password</button>
 
-                    @if (user.twoFactorEnabled) {
+                    @if (!user.twoFactorEnabled) {
                         <button giz-stroke-button
                                 theme="basic"
                                 i18n="account disable-2fa"

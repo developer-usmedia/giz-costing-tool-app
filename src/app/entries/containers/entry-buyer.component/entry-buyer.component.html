@@ -60,7 +60,7 @@
                                 <div class="form__input">
                                     <input type="number" id="buyerAmount" formControlName="buyerAmount" />
                                     <span class="form__hint" i18n="form buyerAmount hint">portion of total annual production</span>
-                                    @if (form | showError: 'buyerAmount' : 'min') {
+                                    @if (form | hasError: 'buyerAmount' : 'min') {
                                         <div class="form__error" i18n="form buyerAmount errors min">Minimum is 0</div>
                                     }
                                     @if (form.hasError('aboveMax')) {

@@ -7,11 +7,11 @@
             <label class="form__label" for="resetCode" i18n="form resetCode label">Code</label>
             <input type="text" id="resetCode" formControlName="resetCode"/>
         </div>
-        @if (form | showError: 'resetCode' :'required') {
+        @if (form | hasError: 'resetCode' :'required') {
             <div class="form__error" i18n="form resetCode errors required">Code is required</div>
         }
-        @if ((form | showError: 'resetCode' :'minlength') ||
-        (form | showError: 'resetCode' :'maxlength')) {
+        @if ((form | hasError: 'resetCode' :'minlength') ||
+        (form | hasError: 'resetCode' :'maxlength')) {
             <div class="form__error" i18n="form resetCode errors length">Code has to be 6 characters</div>
         }
         @if (codeInvalid) {

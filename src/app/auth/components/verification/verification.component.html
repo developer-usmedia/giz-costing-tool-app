@@ -7,11 +7,11 @@
             <label class="form__label" for="verificationCode" i18n="form verificationCode label">Code</label>
             <input type="text" id="verificationCode" formControlName="verificationCode"/>
         </div>
-        @if (form | showError: 'verificationCode' :'required') {
+        @if (form | hasError: 'verificationCode' :'required') {
             <div class="form__error" i18n="form verificationCode errors required">Code is required</div>
         }
-        @if ((form | showError: 'verificationCode' :'minlength') ||
-        (form | showError: 'verificationCode' :'maxlength')) {
+        @if ((form | hasError: 'verificationCode' :'minlength') ||
+        (form | hasError: 'verificationCode' :'maxlength')) {
             <div class="form__error" i18n="form verificationCode errors length">Code has to be 6 characters</div>
         }
         @if (codeInvalid) {

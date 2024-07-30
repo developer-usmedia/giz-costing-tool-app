@@ -27,10 +27,10 @@
                 <input type="number" id="remunerationIncrease" formControlName="remunerationIncrease"/>
                 <span class="form__postfix">{{ data.entry.payroll.currencyCode }}</span>
             </div>
-            @if (form | showError: 'remunerationIncrease' :'required') {
+            @if (form | hasError: 'remunerationIncrease' :'required') {
                 <div class="form__error" i18n="form remunerationIncrease errors required">Field is required</div>
             }
-            @if (form | showError: 'remunerationIncrease' :'min') {
+            @if (form | hasError: 'remunerationIncrease' :'min') {
                 <div class="form__error" i18n="form remunerationIncrease errors min">Minimum is 0</div>
             }
         </div>

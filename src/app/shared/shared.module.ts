@@ -44,7 +44,6 @@ import {
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
-    ShowErrorPipe,
     TruncatePipe,
     VerifiedPipe,
 } from '@shared/pipes';
@@ -62,7 +61,6 @@ const PIPES = [
     HasErrorPipe,
     HasValuePipe,
     MarkdownPipe,
-    ShowErrorPipe,
     TruncatePipe,
     VerifiedPipe,
 ];
