@@ -84,7 +84,7 @@ export class AuthApi extends BaseApi {
     public verifyResetCode(verifyResetCodeForm: VerifyResetCodeForm): Promise<VerifyResetCodeResponse> {
         return lastValueFrom(this.post<VerifyResetCodeResponse>(this.endpoints.verifyCode, verifyResetCodeForm));
     }
-    
+
     public removeAccount(form: RemoveAccountForm): Promise<RemoveAccountResponse> {
         return lastValueFrom(this.delete<RemoveAccountResponse>(this.endpoints.account, form));
     }

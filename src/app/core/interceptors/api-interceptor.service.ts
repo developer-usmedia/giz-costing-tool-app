@@ -20,6 +20,18 @@ export class ApiInterceptor implements HttpInterceptor {
     private isRefreshing = false;
     private readonly refreshTokenSubject = new BehaviorSubject<string | null>(null);
 
+    // Endpoints that don't need token
+    private readonly openEndpoints = [
+        this.authApi.endpoints.register,
+        this.authApi.endpoints.login,
+        this.authApi.endpoints.logout,
+        this.authApi.endpoints.refresh,
+        this.authApi.endpoints.forgotPassword,
+        this.authApi.endpoints.resetPassword,
+        this.authApi.endpoints.verifyCode,
+        this.authApi.endpoints.verifyEmail,
+    ];
+
     public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (request.url.startsWith(environment.apiUrl)) {
             const token = this.authService.getToken();
@@ -34,7 +46,8 @@ export class ApiInterceptor implements HttpInterceptor {
 
         return next.handle(request).pipe(
             catchError((error: HttpErrorResponse) => {
-                if (error.status === STATUS.UNAUTHORIZED && !error.url?.includes(this.authApi.baseUrl)) {
+                const url = error.url ? error.url.split('?')[0] : '';
+                if (error.status === STATUS.UNAUTHORIZED && error.url && !this.openEndpoints.includes(url)) {
                     // Refresh token only if error is not from an auth (logout/refresh etc) route
                     return this.handle401Response(request, next);
                 } else if (error.status === STATUS.FORBIDDEN) {
