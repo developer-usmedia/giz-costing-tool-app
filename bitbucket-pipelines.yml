@@ -33,7 +33,7 @@ definitions:
         image: usmedia/cloud-sdk:latest
         script:
           # Get version for deployment
-          - export VERSION=$(if [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; else date +"%Y-%m-%d-build-${BITBUCKET_BUILD_NUMBER}"; fi)
+          - export VERSION=$(if [ "${BITBUCKET_BRANCH}" = "develop" ]; then echo "staging"; elif [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; else date +"%Y-%m-%d-build-${BITBUCKET_BUILD_NUMBER}"; fi)
 
           # Fill index.html with env variables
           - export BASE_HREF='/en/'
@@ -52,7 +52,6 @@ definitions:
           - dist/**
         after-script:
           - ./config/gae/clean-versions.sh
-
 
 pipelines:
   pull-requests:
