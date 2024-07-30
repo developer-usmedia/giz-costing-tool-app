@@ -52,6 +52,10 @@ export class ScenarioComponent {
     ) {
     }
 
+    get currencyCode(): string {
+        return this.entry?.payroll?.currencyCode ?? '';
+    }
+
     public getTableCaptionSpecs() {
         return $localize`:specs title:Specifications`;
     }

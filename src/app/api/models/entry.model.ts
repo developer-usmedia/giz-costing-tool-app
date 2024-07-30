@@ -26,6 +26,7 @@ export interface Entry extends EntityResponse {
         nrOfWorkers: number;
     };
     benchmark: {
+        name: string;
         year: string;
         source: string;
         region: string;

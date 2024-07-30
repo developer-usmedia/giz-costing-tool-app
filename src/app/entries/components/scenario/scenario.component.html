@@ -29,10 +29,14 @@
         } @else if (entry) {
             <giz-table class="scenario__table" type="info" [caption]="getTableCaptionSpecs()">
                 <ng-container>
+                    <tr giz-table-row>
+                        <th giz-table-header-cell i18n="scenario benchmark label">Benchmark value</th>
+                        <td giz-table-cell>{{ entry.benchmark.value | currency: currencyCode }} {{ currencyCode }}</td>
+                    </tr>
                     @if (scenario.type === scenarioType.ABSOLUTE_INCREASE) {
                         <tr giz-table-row>
                             <th giz-table-header-cell i18n="scenario taxes-employer label">Minimum wage increase</th>
-                            <td giz-table-cell>{{ entry.scenario?.specification?.remunerationIncrease | currency: entry.payroll.currencyCode : '' }} {{ entry.payroll.currencyCode }}</td>
+                            <td giz-table-cell>{{ entry.scenario?.specification?.remunerationIncrease | currency: currencyCode }} {{ currencyCode }}</td>
                         </tr>
                     }
                     <tr giz-table-row>
@@ -49,7 +53,7 @@
                     </tr>
                     <tr giz-table-row>
                         <th giz-table-header-cell i18n="scenario overhead-costs label">Overhead costs</th>
-                        <td giz-table-cell>{{ entry.scenario?.specification?.overheadCosts | currency: entry.payroll.currencyCode : '' }}  {{ entry.payroll.currencyCode }}</td>
+                        <td giz-table-cell>{{ entry.scenario?.specification?.overheadCosts | currency: currencyCode }}  {{ currencyCode }}</td>
                     </tr>
                 </ng-container>
             </giz-table>

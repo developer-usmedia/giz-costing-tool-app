@@ -114,6 +114,10 @@
                 <giz-table type="info" [caption]="captionBenchmark" captionSize="small" class="info__table">
                     <ng-container>
                         <tr giz-table-row>
+                            <th giz-table-header-cell i18n="entry benchmark label">Name</th>
+                            <td giz-table-cell>{{ entry.benchmark.name | empty }}</td>
+                        </tr>
+                        <tr giz-table-row>
                             <th giz-table-header-cell i18n="entry region label">Region</th>
                             <td giz-table-cell>{{ entry.benchmark.region | empty }}</td>
                         </tr>

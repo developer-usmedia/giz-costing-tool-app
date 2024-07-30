@@ -31,6 +31,7 @@ export class ExamplesComponent {
             },
         },
         benchmark: {
+            name: '2023 - São Paulo - ORG-1',
             year: '2023',
             source: 'source',
             region: 'São Paulo',
