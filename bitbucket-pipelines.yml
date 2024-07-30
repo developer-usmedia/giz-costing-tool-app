@@ -53,11 +53,14 @@ definitions:
         after-script:
           - ./config/gae/clean-versions.sh
 
+
 pipelines:
   pull-requests:
     '**':
-      - step: *build-and-save
-      - step: *lint
+      - parallel:
+          steps:
+            - step: *build-and-save
+            - step: *lint
       - step:
           name: Deploy to staging - PR preview
           deployment: staging
@@ -91,4 +94,16 @@ pipelines:
           name: Deploy to staging
           deployment: staging
           <<: *deploy
+      - step:
+          name: Deploy to old staging project
+          deployment: staging-old
+          <<: *deploy
+
+    master:
+      - step: *build-and-save
+      - step:
+          name: Deploy to production
+          deployment: production
+          <<: *deploy
+
 
