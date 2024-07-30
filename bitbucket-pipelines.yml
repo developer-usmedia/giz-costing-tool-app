@@ -91,12 +91,12 @@ pipelines:
     develop:
       - step: *build-and-save
       - step:
-          name: Deploy to staging
-          deployment: staging
-          <<: *deploy
-      - step:
           name: Deploy to old staging project
           deployment: staging-old
+          <<: *deploy
+      - step:
+          name: Deploy to staging
+          deployment: staging
           <<: *deploy
 
     master:
