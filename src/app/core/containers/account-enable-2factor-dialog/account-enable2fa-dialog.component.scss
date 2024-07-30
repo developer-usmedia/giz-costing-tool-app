@@ -1,0 +1,39 @@
+@import 'config/colors';
+@import 'config/sizes';
+@import 'mixins/stretch';
+@import 'mixins/typography';
+
+:root {
+    --qr-border: #{ $c-black-transparent };
+    --qr-background-hover: #{ $c-grey--200 };
+}
+
+.qr {
+    align-items: center;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--qr-border);
+    border-radius: $b-radius;
+    display: flex;
+    justify-content: center;
+
+    &__view {
+        align-items: center;
+        display: flex;
+        font-weight: $weight-bold;
+        height: 100%;
+        justify-content: center;
+        transition: background-color 0.2s;
+        width: 100%;
+
+        &:focus,
+        &:hover {
+            background-color: var(--qr-background-hover);
+        }
+    }
+
+    &__image {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}

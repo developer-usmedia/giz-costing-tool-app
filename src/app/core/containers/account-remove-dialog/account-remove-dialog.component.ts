@@ -114,15 +114,14 @@ export class AccountRemoveDialogComponent implements OnInit, OnDestroy {
                 },
                 onError: (error) => {
                     const errorBody = error.error as ErrorResponse;
-                    if (errorBody.statusCode === STATUS.BAD_REQUEST) {
-                        if (errorBody.message.includes('Two-factor code is invalid')) {
-                            this.invalidOtpCode = true;
-                        }
-
-                        if (errorBody.message.includes('Invalid credentials')) {
-                            this.invalidPassword = true;
-                        }
-                    } else {
+                    const isBadRequest = errorBody.statusCode === STATUS.BAD_REQUEST;
+                    if (isBadRequest && errorBody.message.includes('Two-factor code is invalid')) {
+                        this.invalidOtpCode = true;
+                    }
+                    else if (isBadRequest && errorBody.message.includes('Invalid credentials')) {
+                        this.invalidPassword = true;
+                    }
+                    else {
                         this.toastr.error($localize`:account-remove error:Something went wrong while removing your account`);
                     }
 

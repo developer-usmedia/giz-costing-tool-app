@@ -25,6 +25,12 @@
         top: 14px;
     }
 
+    &__content {
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
     @include screen($screen-minimal) {
         &--medium {
             width: 350px;

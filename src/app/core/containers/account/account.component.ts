@@ -9,11 +9,11 @@ import {
     AccountChangePasswordResult,
 } from '@core/containers/account-change-password-dialog/account-change-password-dialog.component';
 import {
-    Account2FADisableResult,
+    Disable2FAResult,
     AccountDisable2FaDialogComponent,
 } from '@core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component';
 import {
-    Account2FAEnableResult, AccountEnable2FaDialogComponent,
+    Enable2FAResult, AccountEnable2FaDialogComponent,
 } from '@core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component';
 import {
     AccountRemoveDialogComponent,
@@ -52,11 +52,11 @@ export class AccountComponent {
     }
 
     public enable2FA(): void {
-        this.dialog.open<Account2FAEnableResult, unknown, AccountEnable2FaDialogComponent>(AccountEnable2FaDialogComponent);
+        this.dialog.open<Enable2FAResult, unknown, AccountEnable2FaDialogComponent>(AccountEnable2FaDialogComponent);
     }
 
     public disable2FA(): void {
-        this.dialog.open<Account2FADisableResult, unknown, AccountDisable2FaDialogComponent>(AccountDisable2FaDialogComponent);
+        this.dialog.open<Disable2FAResult, unknown, AccountDisable2FaDialogComponent>(AccountDisable2FaDialogComponent);
     }
 
     public getPasswordAge(dateString: string): number | null {

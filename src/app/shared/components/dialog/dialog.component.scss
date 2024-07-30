@@ -5,10 +5,13 @@
 
 :root {
     --dialog-background: #{ $c-white };
+    --dialog-text: #{ $c-grey--700 };
     --dialog-width: 500px;
 }
 
 .dialog {
+    $self: &;
+
     background-color: var(--dialog-background);
     border-radius: $b-radius;
     box-shadow: $c-shadow-24;
@@ -21,11 +24,14 @@
     width: min(calc(100vw - (2 * $p-gutter)), var(--dialog-width));
 
     &__header {
+        margin-bottom: $p-gutter;
+    }
+
+    &__heading {
         align-items: flex-start;
         display: flex;
         flex: none;
         justify-content: space-between;
-        margin-bottom: $p-gutter;
         width: 100%;
     }
 
@@ -36,7 +42,13 @@
         margin: 0;
     }
 
+    &__intro {
+        color: var(--dialog-text);
+        margin: 1rem 0 0.5rem;
+    }
+
     &__content {
+        color: var(--dialog-text);
         flex: auto;
         overflow-y: auto;
     }
@@ -95,6 +107,16 @@
 
             &:empty {
                 display: none;
+            }
+        }
+
+        &--uneven {
+            #{ $self }__column:first-child {
+                flex-basis: 55%;
+            }
+
+            #{ $self }__column:last-child {
+                flex-basis: 45%;
             }
         }
     }

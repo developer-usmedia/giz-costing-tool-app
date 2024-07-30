@@ -146,16 +146,14 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
                 },
                 onError: (error) => {
                     const errorBody = error.error as ErrorResponse;
-
-                    if (errorBody.statusCode === STATUS.BAD_REQUEST) {
-                        if (errorBody.message?.includes('Invalid credentials')) {
-                            this.wrongPassword = true;
-                        }
-
-                        if (errorBody.message?.includes('Two-factor code is invalid')) {
-                            this.wrongOTP = true;
-                        }
-                    } else {
+                    const isBadRequest = errorBody.statusCode === STATUS.BAD_REQUEST;
+                    if (isBadRequest && errorBody.message?.includes('Invalid credentials')) {
+                        this.wrongPassword = true;
+                    }
+                    else if (isBadRequest && errorBody.message?.includes('Two-factor code is invalid')) {
+                        this.wrongOTP = true;
+                    }
+                    else {
                         this.toastr.error($localize`:change-password error:Something went wrong changing your password`);
                     }
 

@@ -1,0 +1,37 @@
+<form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'otpCode',
+            'has-value': form | hasValue: 'otpCode',
+        }">
+        <div class="form__input">
+            <label class="form__label"  for="otpCode" i18n="form otpCode label">OTP Code</label>
+            <input type="text" id="otpCode" formControlName="otpCode"/>
+        </div>
+        @if (form | hasError: 'otpCode' :'required') {
+            <div class="form__error" i18n="form otpCode errors required">OTP Code is required</div>
+        }
+        @if ((form | hasError: 'otpCode' :'minlength') ||
+        (form | hasError: 'otpCode' :'maxlength')) {
+            <div class="form__error" i18n="form otpCode errors length">OTP Code has to be 6 characters</div>
+        }
+        @if (wrongOTP) {
+            <div class="form__error" i18n="form otpCode errors incorrect">OTP Code is not correct</div>
+        }
+    </div>
+
+    @if (submitting) {
+        <div class="form__spinner">
+            <giz-spinner [theme]="'grey'"></giz-spinner>
+            <span i18n="form state login">Login in...</span>
+        </div>
+    }
+
+    <div class="form__footer">
+        <div class="form__button">
+            <button type="button" giz-link-button (click)="back()" i18n="login back">Back to login</button>
+        </div>
+        <div class="form__button">
+            <button type="submit" giz-stroke-button i18n="continue">Continue</button>
+        </div>
+    </div>
+</form>

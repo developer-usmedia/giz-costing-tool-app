@@ -11,7 +11,7 @@ import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
-import { SaveUserDetails } from '@store/app.actions';
+import { ClearUserDetails, SaveUserDetails } from '@store/app.actions';
 import { AppStore } from '@store/app.store';
 
 enum REGISTER_STEPS {
@@ -109,7 +109,10 @@ export class RegisterComponent implements OnDestroy {
                         password: userDetails.password,
                         emailVerificationCode: code,
                     })
-                    .then(() => this.currentStep$.next(REGISTER_STEPS.DONE))
+                    .then(() => {
+                        this.store.dispatch(new ClearUserDetails());
+                        this.currentStep$.next(REGISTER_STEPS.DONE);
+                    })
                     .catch((error: HttpErrorResponse) => {
                         if (error.status === STATUS.BAD_REQUEST) {
                             this.codeInvalid = true;

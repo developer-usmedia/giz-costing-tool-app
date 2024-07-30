@@ -7,11 +7,15 @@ import { from, Observable, throwError } from 'rxjs';
 import {
     ChangePasswordForm,
     ChangePasswordResponse,
+    Disable2FAForm,
+    Disable2FAResponse,
+    Verify2FAForm,
+    Enable2FAResponse,
     LoginForm,
     LoginResponse,
     RefreshTokenResponse,
     RemoveAccountForm,
-    RemoveAccountResponse,
+    RemoveAccountResponse, Verify2FAResponse,
 } from '@api/models';
 import { AuthApi } from '@api/services';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
@@ -90,7 +94,6 @@ export class AuthService {
         }
     }
 
-    /* eslint-disable no-console */
     public removeAccount() {
         return useMutation<RemoveAccountForm, RemoveAccountResponse>({
             mutationFn: (form: RemoveAccountForm) => {
@@ -110,21 +113,29 @@ export class AuthService {
     }
 
     public enable2FA() {
-        return useMutation<string, void>({
-            mutationFn: (_todo: string) => new Promise(() => {
-                console.log('todo enable 2fa');
-            }),
+        return useMutation<unknown, Enable2FAResponse>({
+            mutationFn: () => {
+                return this.authApi.enable2FA();
+            },
+            onSuccess: async () => await this.userService.refreshUser(),
+        });
+    }
+
+    public verify2FA() {
+        return useMutation<Verify2FAForm, Verify2FAResponse>({
+            mutationFn: (form: Verify2FAForm) => {
+                return this.authApi.verify2FA(form);
+            },
             onSuccess: async () => await this.userService.refreshUser(),
         });
     }
 
     public disable2FA() {
-        return useMutation<string, void>({
-            mutationFn: (_todo: string) => new Promise(() => {
-                console.log('todo disable 2fa');
-            }),
+        return useMutation<Disable2FAForm, Disable2FAResponse>({
+            mutationFn: (form: Disable2FAForm) => {
+                return this.authApi.disable2FA(form);
+            },
             onSuccess: async () => await this.userService.refreshUser(),
         });
     }
-    /* eslint-enable no-console */
 }

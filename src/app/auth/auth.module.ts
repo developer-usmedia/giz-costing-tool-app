@@ -20,6 +20,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './containers/reset-password/reset-password.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { TwofactorFormComponent } from './components/twofactor-form/twofactor-form.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { NewPasswordComponent } from './components/new-password/new-password.com
         VerificationComponent,
         LogoutComponent,
         EmailVerificationComponent,
+        TwofactorFormComponent,
     ],
     imports: [
         CommonModule,

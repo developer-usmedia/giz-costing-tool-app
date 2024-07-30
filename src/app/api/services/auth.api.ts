@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom, Observable } from 'rxjs';
 
 import {
-    ChangePasswordForm, ChangePasswordResponse,
+    ChangePasswordForm,
+    ChangePasswordResponse,
+    Disable2FAForm,
+    Disable2FAResponse,
+    Enable2FAResponse,
     ForgotPasswordForm,
     ForgotPasswordResponse,
     LoginForm,
@@ -16,6 +20,8 @@ import {
     ResetPasswordResponse,
     User,
     UserResponse,
+    Verify2FAForm,
+    Verify2FAResponse,
     VerifyEmailForm,
     VerifyEmailReponse,
     VerifyResetCodeForm,
@@ -41,7 +47,7 @@ export class AuthApi extends BaseApi {
         verifyCode: `${ this.baseUrl }/verify-code`,
         verifyEmail: `${ this.baseUrl }/verify-email`,
         twoFactorEnable: `${ this.baseUrl }/2fa/enable`,
-        twoFactorVerify: `${ this.baseUrl }/2fa/verify/{code}`,
+        twoFactorVerify: `${ this.baseUrl }/2fa/verify`,
         twoFactorDisable: `${ this.baseUrl }/2fa/disable`,
     };
 
@@ -83,6 +89,18 @@ export class AuthApi extends BaseApi {
 
     public verifyResetCode(verifyResetCodeForm: VerifyResetCodeForm): Promise<VerifyResetCodeResponse> {
         return lastValueFrom(this.post<VerifyResetCodeResponse>(this.endpoints.verifyCode, verifyResetCodeForm));
+    }
+
+    public enable2FA(): Promise<Enable2FAResponse> {
+        return lastValueFrom(this.post<Enable2FAResponse>(this.endpoints.twoFactorEnable));
+    }
+
+    public verify2FA(form: Verify2FAForm): Promise<Verify2FAResponse> {
+        return lastValueFrom(this.post<Verify2FAResponse>(this.endpoints.twoFactorVerify, form));
+    }
+
+    public disable2FA(form: Disable2FAForm): Promise<Disable2FAResponse> {
+        return lastValueFrom(this.post<Disable2FAResponse>(this.endpoints.twoFactorDisable, form));
     }
 
     public removeAccount(form: RemoveAccountForm): Promise<RemoveAccountResponse> {

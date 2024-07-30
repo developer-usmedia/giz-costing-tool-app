@@ -41,7 +41,7 @@ export class EntryDistributionComponent implements OnDestroy {
 
     public saving = false;
 
-    public state?: 'edit' | 'view' = 'edit';
+    public state: 'edit' | 'view' = 'edit';
     public readonly entriesService = inject(EntriesService);
     public entriesApi = inject(EntriesApi);
 

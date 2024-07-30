@@ -1,8 +1,70 @@
-<giz-dialog [title]="title" (closeDialog)="cancel()">
-    <p class="todo">TODO</p>
+<giz-dialog [title]="title" [intro]="intro" [size]="'large'" [columnSplit]="'uneven'" (closeDialog)="cancel()">
+    <form class="form" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'password',
+            'has-value': form | hasValue: 'password',
+        }">
+            <div class="form__input">
+                <label class="form__label" for="password" i18n="form current-password label">Current password</label>
+                <input type="password" id="password" formControlName="password"/>
+            </div>
+            @if (form | hasError: 'password' :'required') {
+                <div class="form__error" i18n="form password errors required">Password is required</div>
+            }
+            @if (wrongPassword) {
+                <div class="form__error" i18n="form password errors incorrect">Password is incorrect.</div>
+            }
+        </div>
+
+        <div class="form__field" [ngClass]="{
+            'is-error': form | hasError: 'otpCode',
+            'has-value': form | hasValue: 'otpCode',
+        }">
+            <div class="form__input">
+                <label class="form__label"  for="otpCode" i18n="form otpCode label">OTP Code</label>
+                <input type="text" id="otpCode" formControlName="otpCode"/>
+
+                <button type="button"
+                        class="form__tooltip"
+                        giz-icon-button
+                        theme="basic"
+                        [icon]="icon.HELP"
+                        gizTooltipAdvanced
+                        [template]="tooltipOTP"></button>
+
+                <ng-template #tooltipOTP>
+                    <giz-tooltip-advanced>
+                        <p>Enter the code from your authenticator app for verification and activation for this account</p>
+                    </giz-tooltip-advanced>
+                </ng-template>
+            </div>
+            @if (form | hasError: 'otpCode' :'required') {
+                <div class="form__error" i18n="form otpCode errors required">OTP Code is required</div>
+            }
+            @if ((form | hasError: 'otpCode' :'minlength') ||
+            (form | hasError: 'otpCode' :'maxlength')) {
+                <div class="form__error" i18n="form otpCode errors length">OTP Code has to be 6 characters</div>
+            }
+            @if (wrongOTP) {
+                <div class="form__error" i18n="form otpCode errors incorrect">OTP Code is not correct</div>
+            }
+        </div>
+    </form>
+
+    <ng-container content-right>
+        <div class="qr">
+            @if (qrImage) {
+                <img [src]="qrImage" alt="QR" class="qr__image" />
+            } @else if (enableMutation.isPending()) {
+                <giz-spinner theme="grey" class="qr__spinner"></giz-spinner>
+            } @else {
+                <button class="qr__view" (click)="viewQR()" i18n="qr view">View QR Code</button>
+            }
+        </div>
+    </ng-container>
 
     <ng-container footer-left>
-        @if (mutation.isPending()) {
+        @if (verifyMutation.isPending()) {
             <giz-spinner theme="grey">
                 <span i18n="updating">Updating...</span>
             </giz-spinner>
@@ -13,14 +75,14 @@
         <button type="button"
                 giz-stroke-button
                 theme="basic"
-                [disabled]="mutation.isPending()"
+                [disabled]="verifyMutation.isPending()"
                 (click)="cancel()"
                 i18n="cancel"
         >Cancel</button>
         <button type="button"
                 giz-stroke-button
-                [disabled]="mutation.isPending()"
-                (click)="enable()"
+                [disabled]="verifyMutation.isPending()"
+                (click)="submit()"
                 i18n="enable-2fa"
         >Enable 2FA</button>
     </ng-container>

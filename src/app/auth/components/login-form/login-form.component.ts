@@ -68,7 +68,7 @@ export class LoginFormComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     public ngOnInit() {
-        this.form.controls.email.valueChanges
+        this.form.controls.password.valueChanges
             .pipe(
                 distinctUntilChanged(),
                 takeUntil(this.destroyed$),

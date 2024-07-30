@@ -23,4 +23,9 @@ export class AppStore {
         }
         context.patchState({ userDetails: action.userDetails });
     }
+
+    @Action(Actions.ClearUserDetails)
+    public clearUserDetails(context: StateContext<AppState>, _action: Actions.ClearUserDetails): void {
+        context.patchState({ userDetails: undefined });
+    }
 }

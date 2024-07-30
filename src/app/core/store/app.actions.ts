@@ -8,3 +8,8 @@ export class SaveUserDetails {
         public readonly userDetails: UserDetails,
     ) {}
 }
+
+export class ClearUserDetails {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    static readonly type = '[App] Clear User Details';
+}

@@ -13,6 +13,7 @@ export interface LoginForm {
     email: string;
     password: string;
     emailVerificationCode?: string;
+    otpCode?: string;
 }
 
 export interface ForgotPasswordForm {
@@ -43,6 +44,16 @@ export interface RemoveAccountForm {
     otpCode?: string;
 }
 
+export interface Disable2FAForm {
+    password: string;
+    otpCode: string;
+}
+
+export interface Verify2FAForm {
+    password: string;
+    otpCode: string;
+}
+
 export type LogoutResponse = SuccessResponse;
 export type ForgotPasswordResponse = SuccessResponse;
 export type ResetPasswordResponse = SuccessResponse;
@@ -50,6 +61,12 @@ export type ChangePasswordResponse = SuccessResponse;
 export type VerifyResetCodeResponse = SuccessResponse;
 export type VerifyEmailReponse = SuccessResponse;
 export type RemoveAccountResponse = SuccessResponse;
+export type Disable2FAResponse = SuccessResponse;
+export type Verify2FAResponse = SuccessResponse;
+
+export type Enable2FAResponse = {
+    qrcode: string;
+};
 
 export interface TokenResponse {
     accessToken: string;

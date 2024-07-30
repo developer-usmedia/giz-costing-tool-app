@@ -1,7 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Select } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
+import { ClearUserDetails } from '@store/app.actions';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, take } from 'rxjs';
 
@@ -27,6 +28,7 @@ export class EmailVerificationComponent {
     private readonly authService = inject(AuthService);
     private readonly toastr = inject(ToastrService);
     private readonly router = inject(Router);
+    private readonly store = inject(Store);
 
     constructor() {
         this.userDetails$
@@ -62,6 +64,7 @@ export class EmailVerificationComponent {
                         emailVerificationCode: code,
                     })
                     .then(() => {
+                        this.store.dispatch(new ClearUserDetails());
                         this.router.navigate([ROOT_ROUTE.DASHBOARD]);
                     })
                     .catch((error: HttpErrorResponse) => {

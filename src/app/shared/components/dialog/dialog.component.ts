@@ -18,8 +18,10 @@ import { ICON } from '@shared/components/icon/icon.enum';
 })
 export class DialogComponent {
     @Input({ required: true }) title!: string;
+    @Input() intro?: string;
     @Input() showCloseButton = true;
     @Input() size: 'small' | 'normal' | 'medium' | 'large' = 'normal';
+    @Input() columnSplit: 'half' | 'uneven' = 'half';
 
     @Output() closeDialog = new EventEmitter();
 
@@ -37,6 +39,10 @@ export class DialogComponent {
 
     @HostBinding('class.dialog--large') get modLarge(): boolean {
         return this.size === 'large';
+    }
+
+    @HostBinding('class.dialog--uneven') get modUneven(): boolean {
+        return this.columnSplit === 'uneven';
     }
 
     public close(): void {
