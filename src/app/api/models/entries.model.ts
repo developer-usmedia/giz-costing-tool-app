@@ -10,9 +10,9 @@ export enum EntrySortFilterKey {
     UPDATED_AT = '_updatedAt',
     VERSION = '_version',
     MATRIXID = '_matrixId',
-    YEAR = '_year',
+    YEAR = 'payroll__year',
     STATUS = '_status',
-    FACILITY_NAME = 'facility_name',
+    FACILITY_NAME = 'facility__name',
 }
 
 export interface EntriesPagingParams extends PagingParams {
