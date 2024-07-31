@@ -1,16 +1,3 @@
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'giz-cp-data-protection',
-    templateUrl: './cp-data-protection.component.html',
-    styleUrl: './cp-data-protection.component.scss',
-})
-export class CpDataProtectionComponent {
-    public markdown: string = this.getMarkdown();
-
-    // eslint-disable-next-line max-lines-per-function
-    private getMarkdown() {
-        return $localize`:data-protection body:
 # Data Protection
 
 The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH attaches great importance to responsible and transparent management of personal data. Below we provide users with information as to
@@ -40,7 +27,7 @@ GIZ processes personal data exclusively in accordance with the EU General Data P
 
 Personal data are, for example, name, address, email addresses and user behaviour.
 
-GIZ only processes personal data to the extent necessary. Which data is required and processed for which purpose and on what basis is largely determined by the type of service you use or the purpose for which the data is required.
+GIZ only processes personal data to the extent necessary. Which data is required and processed for which purpose and on what basis is largely determined by the type of service you use or the purpose for which the data is required. 
 
 ## Collection of personal data when visiting our website
 When visiting the website of Initiative for Sustainable Agricultural Supply Chains (INA) from GIZ, the browser used automatically transmits data that is saved in a log file. GIZ itself processes only the data that is technically required in order to display the website correctly and to ensure its stability and security.
@@ -118,6 +105,3 @@ Visitors to the GIZ website have the right
 Users also have the right in accordance with Article 77 GDPR to lodge a complaint with the competent data protection supervisory authority. The competent authority is the Federal Commissioner for Data Protection and Freedom of Information (BfDI).
 
 *Last updated: January 2022*
-`;
-    }
-}

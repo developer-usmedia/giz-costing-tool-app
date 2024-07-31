@@ -10,11 +10,7 @@
         @if (state === 'edit') {
             <div class="scenario__comments">
                 <h3 i18n="comments">Comments</h3>
-                <p>{{ scenario.comment1 }}</p>
-
-                @if (scenario.comment2) {
-                    <p>{{ scenario.comment2 }}</p>
-                }
+                <div [innerHTML]="scenario.comments | markdown"></div>
             </div>
         }
     </div>

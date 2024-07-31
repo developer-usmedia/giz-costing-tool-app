@@ -3,7 +3,7 @@
         <div class="form__container">
             <div class="form__header">
                 <h3 class="form__title" i18n="specs title">Specifications</h3>
-                <p class="form__intro" i18n="specs subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</p>
+                <p class="form__intro" i18n="specs subtext">The minimum wage increase chosen will be applied to all job categories as a first step. In the following section you will have the opportunity of adapting the wage increase per job category. To close the LW gap for all workers the minumum wage increase has to be at least equal to the amount of the largest living wage gap.</p>
             </div>
 
             <div class="form__field" [ngClass]="{
@@ -39,7 +39,10 @@
     <div class="form__container">
         <div class="form__header">
             <h3 class="form__title" i18n="additional-costs title">Additional costs</h3>
-            <p class="form__intro" i18n="additional-costs intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="form__intro" i18n="additional-costs intro">To reflect that additional costs may be incurred when filling in the IDH Salary Matrix and the LW Costing Tool additional expenses may be entered. For example, these can arise from collecting necessary information or hiring an external person to complete the tools.</p>
+            <h3 class="form__title" i18n="levies-taxes title">Levies and taxes employer / employee</h3>
+            <p class="form__intro" i18n="levies-taxes intro">When closing the Living Wage (LW) gap, it is important to note that payment of an additional amount does not equate to an increase of the same amount in take-home wages for employees.
+                To accurately reflect this taxes and levies such as social contributions, users may specify country specific increases in both employee taxes and employer levies within the tool. This ensures that the true cost of closing the wage gap is accounted for, including the necessary adjustments for any applicable taxes and social contributions</p>
         </div>
 
         <div class="form__field" [ngClass]="{
@@ -66,52 +69,52 @@
 
         <div class="form__fieldset">
             <p class="form__label" i18n="form levies-taxes label">Levies and taxes</p>
+
             <div class="form__group">
-            <div class="form__field" [ngClass]="{
-            'is-error': form | hasError: 'taxEmployee',
-            'has-value': form | hasValue: 'taxEmployee',
-        }">
-                <label class="form__label is-hidden" for="taxEmployee" i18n="form taxEmployee label">Levies and taxes employee</label>
-
-                <div class="form__input">
-                    <input type="number" id="taxEmployee" formControlName="taxEmployee"
-                           i18n-placeholder="form taxEmployee placeholder" placeholder="Employee"/>
-                    <span class="form__postfix">%</span>
-                </div>
-                @if (form | hasError: 'taxEmployee' :'required') {
-                    <div class="form__error" i18n="form taxEmployee errors required">Field is required</div>
-                }
-                @if (form | hasError: 'taxEmployee' :'min') {
-                    <div class="form__error" i18n="form taxEmployee errors min">Minimum is 0</div>
-                }
-                @if (form | hasError: 'taxEmployee' :'max') {
-                    <div class="form__error" i18n="form taxEmployee errors max">Maximum is 100</div>
-                }
-            </div>
-
-            <div class="form__field" [ngClass]="{
-                'is-error': form | hasError: 'taxEmployer',
-                'has-value': form | hasValue: 'taxEmployer',
+                <div class="form__field" [ngClass]="{
+                'is-error': form | hasError: 'taxEmployee',
+                'has-value': form | hasValue: 'taxEmployee',
             }">
-                <label class="form__label is-hidden" for="taxEmployer" i18n="form taxEmployer label">Levies and taxes employer</label>
+                    <label class="form__label is-hidden" for="taxEmployee" i18n="form taxEmployee label">Levies and taxes employee</label>
 
-                <div class="form__input">
-                    <input type="number" id="taxEmployer" formControlName="taxEmployer"
-                           i18n-placeholder="form taxEmployer placeholder" placeholder="Employer"/>
-                    <span class="form__postfix">%</span>
+                    <div class="form__input">
+                        <input type="number" id="taxEmployee" formControlName="taxEmployee"
+                               i18n-placeholder="form taxEmployee placeholder" placeholder="Employee"/>
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | hasError: 'taxEmployee' :'required') {
+                        <div class="form__error" i18n="form taxEmployee errors required">Field is required</div>
+                    }
+                    @if (form | hasError: 'taxEmployee' :'min') {
+                        <div class="form__error" i18n="form taxEmployee errors min">Minimum is 0</div>
+                    }
+                    @if (form | hasError: 'taxEmployee' :'max') {
+                        <div class="form__error" i18n="form taxEmployee errors max">Maximum is 100</div>
+                    }
                 </div>
-                @if (form | hasError: 'taxEmployer' :'required') {
-                    <div class="form__error" i18n="form taxEmployer errors required">Field is required</div>
-                }
-                @if (form | hasError: 'taxEmployer' :'min') {
-                    <div class="form__error" i18n="form taxEmployer errors min">Minimum is 0</div>
-                }
-                @if (form | hasError: 'taxEmployer' :'max') {
-                    <div class="form__error" i18n="form taxEmployer errors max">Maximum is 100</div>
-                }
-            </div>
 
-        </div>
+                <div class="form__field" [ngClass]="{
+                    'is-error': form | hasError: 'taxEmployer',
+                    'has-value': form | hasValue: 'taxEmployer',
+                }">
+                    <label class="form__label is-hidden" for="taxEmployer" i18n="form taxEmployer label">Levies and taxes employer</label>
+
+                    <div class="form__input">
+                        <input type="number" id="taxEmployer" formControlName="taxEmployer"
+                               i18n-placeholder="form taxEmployer placeholder" placeholder="Employer"/>
+                        <span class="form__postfix">%</span>
+                    </div>
+                    @if (form | hasError: 'taxEmployer' :'required') {
+                        <div class="form__error" i18n="form taxEmployer errors required">Field is required</div>
+                    }
+                    @if (form | hasError: 'taxEmployer' :'min') {
+                        <div class="form__error" i18n="form taxEmployer errors min">Minimum is 0</div>
+                    }
+                    @if (form | hasError: 'taxEmployer' :'max') {
+                        <div class="form__error" i18n="form taxEmployer errors max">Maximum is 100</div>
+                    }
+                </div>
+            </div>
         </div>
     </div>
 

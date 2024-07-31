@@ -23,6 +23,7 @@ import { AccountComponent } from '@core/containers/account/account.component';
 import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.component';
 import { BaseContentComponent } from '@core/containers/base-content/base-content.component';
 import { BaseComponent } from '@core/containers/base/base.component';
+import { CpDocumentationComponent } from '@core/containers/cp-documentation/cp-documentation.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
 import { ErrorPageComponent } from '@core/containers/error-page/error-page.component';
 import { ExamplesComponent } from '@core/containers/examples/examples.component';
@@ -44,6 +45,7 @@ import { HomepageComponent } from './containers/homepage/homepage.component';
         BaseComponent,
         BaseContentComponent,
         CpDataProtectionComponent,
+        CpDocumentationComponent,
         CpImprintComponent,
         CpTermsComponent,
         DashboardComponent,

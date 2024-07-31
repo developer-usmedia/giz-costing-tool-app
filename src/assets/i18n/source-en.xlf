@@ -16,6 +16,10 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">7,8</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
         <note priority="1" from="description">form email label</note>
       </trans-unit>
       <trans-unit id="8552587679160911578" datatype="html">
@@ -32,6 +36,10 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">11,13</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
         <note priority="1" from="description">form email errors required</note>
       </trans-unit>
       <trans-unit id="5448447574828483730" datatype="html">
@@ -47,6 +55,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">14,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">19,23</context>
         </context-group>
         <note priority="1" from="description">form email errors invalid</note>
       </trans-unit>
@@ -77,6 +89,10 @@
           <context context-type="linenumber">74,76</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.html</context>
           <context context-type="linenumber">7,9</context>
         </context-group>
@@ -90,7 +106,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">47,48</context>
+          <context context-type="linenumber">46,47</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/new-password/new-password.component.html</context>
@@ -105,6 +121,10 @@
           <context context-type="linenumber">77,78</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
           <context context-type="linenumber">42,43</context>
         </context-group>
@@ -114,7 +134,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">220,221</context>
+          <context context-type="linenumber">221,222</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -126,7 +146,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">87,88</context>
+          <context context-type="linenumber">90,91</context>
         </context-group>
         <note priority="1" from="description">continue</note>
       </trans-unit>
@@ -144,6 +164,10 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">26,27</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
         <note priority="1" from="description">form password label</note>
       </trans-unit>
       <trans-unit id="205044832662301680" datatype="html">
@@ -160,21 +184,49 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">30,34</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
         <note priority="1" from="description">form password errors required</note>
       </trans-unit>
       <trans-unit id="3416225639449757818" datatype="html">
         <source>Either your email address or your password is incorrect.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">30,35</context>
+          <context context-type="linenumber">30,34</context>
         </context-group>
-        <note priority="1" from="description">form password errors incorrect</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">35,39</context>
+        </context-group>
+        <note priority="1" from="description">form password-email errors incorrect</note>
       </trans-unit>
       <trans-unit id="3002949707073442552" datatype="html">
         <source>Login in...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">38,41</context>
+          <context context-type="linenumber">37,40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">25,28</context>
         </context-group>
         <note priority="1" from="description">form state login</note>
       </trans-unit>
@@ -182,7 +234,7 @@
         <source>Forgot password?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">44,46</context>
+          <context context-type="linenumber">43,45</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -220,6 +272,14 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">46,50</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">60,62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">63,67</context>
+        </context-group>
         <note priority="1" from="description">form passwordConfirm errors equal</note>
       </trans-unit>
       <trans-unit id="8408165616429632224" datatype="html">
@@ -231,6 +291,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">53,55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">38,40</context>
         </context-group>
         <note priority="1" from="description">form password errors length</note>
       </trans-unit>
@@ -244,6 +308,10 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">56,58</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
         <note priority="1" from="description">form password errors case</note>
       </trans-unit>
       <trans-unit id="690040451368776081" datatype="html">
@@ -256,6 +324,10 @@
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">59,61</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
         <note priority="1" from="description">form password errors numbers</note>
       </trans-unit>
       <trans-unit id="4778291627781831910" datatype="html">
@@ -267,6 +339,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.html</context>
           <context context-type="linenumber">62,66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">47,51</context>
         </context-group>
         <note priority="1" from="description">form password errors special</note>
       </trans-unit>
@@ -292,6 +368,10 @@
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
           <context context-type="linenumber">7,8</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
         <note priority="1" from="description">form resetCode label</note>
       </trans-unit>
       <trans-unit id="8881952964804049753" datatype="html">
@@ -303,6 +383,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
           <context context-type="linenumber">11,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">49,51</context>
         </context-group>
         <note priority="1" from="description">form resetCode errors required</note>
       </trans-unit>
@@ -316,6 +400,10 @@
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
           <context context-type="linenumber">15,18</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">53,55</context>
+        </context-group>
         <note priority="1" from="description">form resetCode errors length</note>
       </trans-unit>
       <trans-unit id="1582937737650324624" datatype="html">
@@ -327,6 +415,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
           <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">56,58</context>
         </context-group>
         <note priority="1" from="description">form resetCode errors invalid</note>
       </trans-unit>
@@ -374,15 +466,95 @@
         </context-group>
         <note priority="1" from="description">form email errors taken</note>
       </trans-unit>
+      <trans-unit id="4904230059481537104" datatype="html">
+        <source>OTP Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+        <note priority="1" from="description">form otpCode label</note>
+      </trans-unit>
+      <trans-unit id="8921346350387128276" datatype="html">
+        <source>OTP Code is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">85,87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">42,44</context>
+        </context-group>
+        <note priority="1" from="description">form otpCode errors required</note>
+      </trans-unit>
+      <trans-unit id="1468394327687335190" datatype="html">
+        <source>OTP Code has to be 6 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">89,91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">47,49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">46,48</context>
+        </context-group>
+        <note priority="1" from="description">form otpCode errors length</note>
+      </trans-unit>
+      <trans-unit id="8616536631516701466" datatype="html">
+        <source>OTP Code is not correct</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
+          <context context-type="linenumber">18,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">92,94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">49,52</context>
+        </context-group>
+        <note priority="1" from="description">form otpCode errors incorrect</note>
+      </trans-unit>
       <trans-unit id="7451233168808859381" datatype="html">
         <source>Verification Code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">46</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">155</context>
         </context-group>
         <note priority="1" from="description">register verification title</note>
       </trans-unit>
@@ -390,11 +562,11 @@
         <source>We&apos;ve sent an email to [<x id="PH" equiv-text="this.emailAddress"/>](mailto:<x id="PH_1" equiv-text="this.emailAddress"/>) with a verification code, please enter it below to continue.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <note priority="1" from="description">register verification description</note>
       </trans-unit>
@@ -402,19 +574,19 @@
         <source>Something went wrong sending the code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">128</context>
+          <context context-type="linenumber">131</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">139</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -434,11 +606,11 @@
         <source>Too many requests, try again later</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/email-verification/email-verification.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">92</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">140</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -458,7 +630,7 @@
         <source>No account yet?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">login go-to-register</note>
       </trans-unit>
@@ -466,23 +638,39 @@
         <source>Create an account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
-          <context context-type="linenumber">13,15</context>
+          <context context-type="linenumber">24,26</context>
         </context-group>
         <note priority="1" from="description">login create-account</note>
+      </trans-unit>
+      <trans-unit id="3950684299039506417" datatype="html">
+        <source>Verification code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">login-2fa title</note>
       </trans-unit>
       <trans-unit id="1032145116648837291" datatype="html">
         <source>Welcome Back!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <note priority="1" from="description">login title</note>
+      </trans-unit>
+      <trans-unit id="4178539488729097387" datatype="html">
+        <source>Enter the code from your authenticator app</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">login-2fa description</note>
       </trans-unit>
       <trans-unit id="7375380732086541452" datatype="html">
         <source>Please login to continue</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">52</context>
         </context-group>
         <note priority="1" from="description">login description</note>
       </trans-unit>
@@ -490,7 +678,7 @@
         <source>Something went wrong logging in</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">106</context>
         </context-group>
         <note priority="1" from="description">login error</note>
       </trans-unit>
@@ -526,11 +714,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="linenumber">153</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
         <note priority="1" from="description">register signup hint</note>
       </trans-unit>
@@ -554,7 +742,7 @@
         <source>New code sent</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <note priority="1" from="description">verificationCode send success</note>
       </trans-unit>
@@ -562,7 +750,7 @@
         <source>All done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">154</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <note priority="1" from="description">register finalize title</note>
       </trans-unit>
@@ -570,7 +758,7 @@
         <source>Please fill in the details below to create your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">164</context>
         </context-group>
         <note priority="1" from="description">register signup description</note>
       </trans-unit>
@@ -578,7 +766,7 @@
         <source>Your account has been created and you are ready to start using the tool</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="description">register finalize description</note>
       </trans-unit>
@@ -710,27 +898,115 @@
         </context-group>
         <note priority="1" from="description">menu account</note>
       </trans-unit>
-      <trans-unit id="7507948636555938109" datatype="html">
-        <source>Log out</source>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">24,26</context>
         </context-group>
         <note priority="1" from="description">menu logout</note>
       </trans-unit>
+      <trans-unit id="7484388920110946761" datatype="html">
+        <source>Your current password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <note priority="1" from="description">form currentPassword label</note>
+      </trans-unit>
+      <trans-unit id="1922027233506151042" datatype="html">
+        <source>Password is incorrect.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">15,19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">16,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">15,19</context>
+        </context-group>
+        <note priority="1" from="description">form password errors incorrect</note>
+      </trans-unit>
+      <trans-unit id="1221596867309460035" datatype="html">
+        <source>New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+        <note priority="1" from="description">form passwordNew label</note>
+      </trans-unit>
+      <trans-unit id="8174919026012824751" datatype="html">
+        <source>Repeat new password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">56,57</context>
+        </context-group>
+        <note priority="1" from="description">form passwordNewConfirm label</note>
+      </trans-unit>
+      <trans-unit id="5000077099810437867" datatype="html">
+        <source>Use a strong password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+        <note priority="1" from="description">strong-password title</note>
+      </trans-unit>
+      <trans-unit id="8075808999189925335" datatype="html">
+        <source>Try to create a long password with a mix of letters, numbers, and symbols.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">101,103</context>
+        </context-group>
+        <note priority="1" from="description">strong-password description</note>
+      </trans-unit>
+      <trans-unit id="6562073368665734139" datatype="html">
+        <source>Avoid password reuse!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">103,104</context>
+        </context-group>
+        <note priority="1" from="description">password-reuse title</note>
+      </trans-unit>
+      <trans-unit id="1132233716492605524" datatype="html">
+        <source>Reusing passwords puts all your accounts at risk if one is compromised.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">104,106</context>
+        </context-group>
+        <note priority="1" from="description">password-reuse description</note>
+      </trans-unit>
+      <trans-unit id="2764657825556065519" datatype="html">
+        <source>Store passwords securely</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">106,107</context>
+        </context-group>
+        <note priority="1" from="description">password-secure title</note>
+      </trans-unit>
+      <trans-unit id="4335864713948178776" datatype="html">
+        <source>Keep passwords safe, not handwritten. Explore secure storage options like password managers.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
+          <context context-type="linenumber">107,110</context>
+        </context-group>
+        <note priority="1" from="description">password-secure description</note>
+      </trans-unit>
       <trans-unit id="3155504588637566135" datatype="html">
         <source>Updating...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">116,117</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">58,59</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">69,70</context>
         </context-group>
         <note priority="1" from="description">updating</note>
       </trans-unit>
@@ -738,19 +1014,19 @@
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">128,129</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">70,71</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">81,82</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">77,78</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-delete-dialog/entry-delete-dialog.component.html</context>
@@ -766,7 +1042,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">57,58</context>
+          <context context-type="linenumber">56,57</context>
         </context-group>
         <note priority="1" from="description">cancel</note>
       </trans-unit>
@@ -774,7 +1050,7 @@
         <source>Change password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">134,135</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
@@ -786,15 +1062,31 @@
         <source>Change your password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">89</context>
         </context-group>
         <note priority="1" from="description">change-password title</note>
+      </trans-unit>
+      <trans-unit id="2828751851574113392" datatype="html">
+        <source>This is the 2factor code you can view in your authenticator app.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <note priority="1" from="description">otp explanation</note>
+      </trans-unit>
+      <trans-unit id="5940388428048695642" datatype="html">
+        <source>Password must be between 12 &amp; 200 characters and must contain upper- and lowercase characters, numbers and special characters&lt;  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <note priority="1" from="description">password explanation</note>
       </trans-unit>
       <trans-unit id="5462306218747490529" datatype="html">
         <source>Successfully changed password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <note priority="1" from="description">change-password success</note>
       </trans-unit>
@@ -802,15 +1094,35 @@
         <source>Something went wrong changing your password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <note priority="1" from="description">change-password error</note>
+      </trans-unit>
+      <trans-unit id="6767877903643567078" datatype="html">
+        <source>To disable two-factor authentication, please provide your credentials</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+        <note priority="1" from="description">2fa disable description</note>
+      </trans-unit>
+      <trans-unit id="5340498030552368470" datatype="html">
+        <source>Current password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <note priority="1" from="description">form current-password label</note>
       </trans-unit>
       <trans-unit id="6433408940720593511" datatype="html">
         <source>Disable 2FA</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">76,77</context>
         </context-group>
         <note priority="1" from="description">disable-2fa</note>
       </trans-unit>
@@ -818,7 +1130,7 @@
         <source>Disable two-factor authentication</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <note priority="1" from="description">2factor-disable title</note>
       </trans-unit>
@@ -826,7 +1138,7 @@
         <source>Successfully disabled two-factor authentication</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">105</context>
         </context-group>
         <note priority="1" from="description">2factor-disable success</note>
       </trans-unit>
@@ -834,15 +1146,23 @@
         <source>Something went wrong while disabling two-factor authentication</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-disable-2factor-dialog/account-disable2fa-dialog.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">118</context>
         </context-group>
         <note priority="1" from="description">2factor-disable error</note>
+      </trans-unit>
+      <trans-unit id="320427058310787094" datatype="html">
+        <source>View QR Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+        <note priority="1" from="description">qr view</note>
       </trans-unit>
       <trans-unit id="1942589452924885240" datatype="html">
         <source>Enable 2FA</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">87,88</context>
         </context-group>
         <note priority="1" from="description">enable-2fa</note>
       </trans-unit>
@@ -850,31 +1170,80 @@
         <source>Enable two-factor authentication</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <note priority="1" from="description">2factor-enable title</note>
       </trans-unit>
-      <trans-unit id="5785835277874246675" datatype="html">
-        <source>Successfully enabled two-factor authentication</source>
+      <trans-unit id="170580432656029655" datatype="html">
+        <source>Two-Factor Authentication, or 2FA, significantly improves login security for your login.
+        2FA works with a number of TOTP-based apps like LastPass, 1Password, FreeOTP,  Authy and more.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable intro</note>
+      </trans-unit>
+      <trans-unit id="2403110675745496723" datatype="html">
+        <source>Two-factor authentication is already enabled.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable enabled error</note>
+      </trans-unit>
+      <trans-unit id="7207860446748150078" datatype="html">
+        <source>Something went wrong getting the QR Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable qr error</note>
+      </trans-unit>
+      <trans-unit id="9129337880561256406" datatype="html">
+        <source>Successfully enabled two-factor authentication.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <note priority="1" from="description">2factor-enable success</note>
+      </trans-unit>
+      <trans-unit id="4892838806625807337" datatype="html">
+        <source>Two-factor authentication is disabled.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+        <note priority="1" from="description">2factor-enable disabled error</note>
       </trans-unit>
       <trans-unit id="5066510767073862379" datatype="html">
         <source>Something went wrong while enabling two-factor authentication</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-enable-2factor-dialog/account-enable2fa-dialog.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">153</context>
         </context-group>
         <note priority="1" from="description">2factor-enable error</note>
+      </trans-unit>
+      <trans-unit id="1533163922030132586" datatype="html">
+        <source>Are you sure you want to remove your account (and all associated data)?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>This action cannot be undone.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">remove-account intro</note>
+      </trans-unit>
+      <trans-unit id="3679665272155837224" datatype="html">
+        <source>Repeat your e-mail address &quot;<x id="INTERPOLATION" equiv-text="{{data.user.email}}"/>&quot; to remove your account.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+        <note priority="1" from="description">remove-account help</note>
       </trans-unit>
       <trans-unit id="5659505396289019250" datatype="html">
         <source>Removing...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">65,66</context>
         </context-group>
         <note priority="1" from="description">removing</note>
       </trans-unit>
@@ -882,7 +1251,7 @@
         <source>Remove account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">83,84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account/account.component.html</context>
@@ -894,7 +1263,7 @@
         <source>Remove your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">80</context>
         </context-group>
         <note priority="1" from="description">account-remove title</note>
       </trans-unit>
@@ -902,7 +1271,7 @@
         <source>Successfully removed your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">111</context>
         </context-group>
         <note priority="1" from="description">account-remove success</note>
       </trans-unit>
@@ -910,7 +1279,7 @@
         <source>Something went wrong while removing your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">125</context>
         </context-group>
         <note priority="1" from="description">account-remove error</note>
       </trans-unit>
@@ -1002,17 +1371,15 @@
         </context-group>
         <note priority="1" from="description">account enable-2fa</note>
       </trans-unit>
-      <trans-unit id="4968868687419118528" datatype="html">
+      <trans-unit id="7428875383803200639" datatype="html">
         <source>
 # Data Protection
-
-*August 21, 2023*
 
 The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH attaches great importance to responsible and transparent management of personal data. Below we provide users with information as to
 
 - who they can contact at GIZ on the subject of data protection
 - what data is processed when they visit the website
-- what data is processed when users contact us, subscribe to newsletters or press releases or use other GIZ online services
+- what data is processed when users contact us
 - how they can opt out of the storage of data
 - what rights they have with respect to us
 
@@ -1022,7 +1389,6 @@ Please contact GIZ’s data protection officer if you have questions specificall
 datenschutzbeauftragter(at)giz.de
 
 ## Address
-
 Friedrich-Ebert-Allee 32 + 36, 53113 Bonn
 Dag-Hammarskjöld-Weg 1–5, 65760 Eschborn
 info(at)giz.de
@@ -1032,24 +1398,131 @@ Data processing is the responsibility of Deutsche Gesellschaft für Internationa
 ## Information on the collection of personal data
 
 ### General
-
 GIZ processes personal data exclusively in accordance with the EU General Data Protection Regulation (GDPR) and the German Federal Data Protection Act (Bundesdatenschutzgesetz, BDSG).
 
 Personal data are, for example, name, address, email addresses and user behaviour.
 
 GIZ only processes personal data to the extent necessary. Which data is required and processed for which purpose and on what basis is largely determined by the type of service you use or the purpose for which the data is required.
+
+## Collection of personal data when visiting our website
+When visiting the website of Initiative for Sustainable Agricultural Supply Chains (INA) from GIZ, the browser used automatically transmits data that is saved in a log file. GIZ itself processes only the data that is technically required in order to display the website correctly and to ensure its stability and security.
+
+Each time the website is accessed, the data stored includes, but is not limited to, the page that is viewed, the IP address of the accessing device, the page from which the user was redirected, as well as the date and time of access. A detailed list of the data stored is shown here.
+
+The data in the log file is deleted after seven days.
+
+### Further information on data storage and transfer
+GIZ is obliged to store the data beyond the time of the visit in order to ensure protection against attacks against GIZ’s internet infrastructure and federal communications technology (legal basis: Article 6 (1) e GDPR in conjunction with Section 5 of the German Act on the Federal Office for Information Security (BSIG). In the event of attacks on communications technology, this data is analysed and used to initiate legal and criminal action.
+
+Data that is logged when accessing the GIZ website is only transferred to third parties if there is a legal obligation to do so or if the transfer is necessary for legal or criminal prosecution in the event of attacks on federal communications technology. Data will not be passed on in any other cases. This data is not merged with other data sources at GIZ.
+
+## Cookies
+When you visit the  Living Wage online tool, small text files known as ‘cookies’ are stored on your computer. They are used to make the online presence more user-friendly and effective overall. Cookies cannot run programs or infect your computer with viruses.
+
+The tool&apos;s website uses cookies that are automatically deleted as soon as the browser on which the page is displayed is closed (referred to as temporary cookies or session cookies) This type of cookie makes it possible to assign various requests from a browser to a session and to recognise the browser when the website is visited again (session ID).
+
+### Matomo (User analysis)
+This website uses Matomo, a web analytics software. Matomo is using &quot;cookies&quot;, small text files, that are stored on your computer and are used for the purposes of analyzing website traffic.
+
+The data stored in the cookie (including an abbreviated IP address) is transfered to and stored on our server for the purpose of analyzing traffic, which is in turn helping us optimize our website. Your IP address is anonymized immediately, so that you remain anonymous as a user.
+
+The cookie information will not be shared with thrid parties. You can deactivate the usage of cookies directly inside your browser. Though, by deactivating cookies in general, it may be that you will not be able to use all of the functionality offered by our website.
+
+If you don&apos;t want the data of your visit to be stored and analyzed, you may opt-out at any time by clicking the checkbox below. In case the opt-out option is clicked, a so called opt-out cookie is stored in your browser, which tells Matomo not to collect any session data from your visit. WARNING: In case you are deleting your cookies, you will also delete your opt-out-cookie. Therefore, if you visit our website again, you may have to check the opt-out option again, to avoid the tracking of your session.
+
+### Cookie settings
+Processing of personal data when contacting us
+When users contact us, the data provided is processed in order to be able to respond to the enquiry. The following contact options are available:
+
+- Email
+- Letter
+- Phone
+- Newsletter
+
+## Contact by email
+It is possible to contact GIZ via the email addresses provided. In this case, at least the email address but also any other personal user data transmitted with the email (e.g. family and given name, address) as well as the information contained in the email are stored solely for the purpose of contacting the user and processing the request.
+
+The legal basis for the processing of data in connection with email communication is Article 6 (1) e GDPR.
+
+## Contact by letter
+When contacting us by letter, the personal data transmitted (e.g. family and given name, address) and the information contained in the letter is stored for the purpose of establishing contact and processing the enquiry.
+
+The legal basis for the processing of data in connection with communication by letter is Article 6 (1) e GDPR.
+
+## Contact by phone
+When contacting us by phone, personal data will be processed to the extent necessary in order to handle the enquiry.
+
+The legal basis for the processing of data in connection with communication by phone is Article 6 (1) e GDPR.
+
+## Disclosure to third parties
+GIZ does not pass on personal data to third parties unless it is legally obliged or entitled to do so by law.
+
+## Transfer of data to countries outside Germany
+GIZ does not transfer personal data to third countries. When using social media, the privacy policies of the respective providers apply.
+
+## Duration of data retention
+User data will not be kept any longer than is necessary for the purpose for which it is processed or as required by law.
+
+## IT security of user data
+GIZ accords great importance to protecting personal data. For this reason, technical and organisational security measures ensure that data is protected against accidental and intentional manipulation and unintended erasure as well as unauthorised access. These measures are updated accordingly based on technical developments and adapted continuously in line with the risks.
+
+## Reference to user rights
+Visitors to the GIZ website have the right
+
+- To obtain information about their data stored by us (Article 15 GDPR)
+- To have their data stored by us rectified (Article 16 GDPR)
+- To have their data stored by us erased (Article 17 GDPR)
+- To obtain restriction of processing of their data stored by us (Article 18 GDPR)
+- To object to the storage of their data if personal data are processed on the basis of the first sentence of Article 6 (1) 1 f and e GDPR (Article 21 GDPR)
+- To receive their personal data in a commonly used and machine-readable format from the controller such that they can be potentially transmitted to another controller (right to data portability, Article 20 GDPR).
+- To withdraw their consent to the extent that the data has been processed on the basis of consent (Article 6 (1) a GDPR). The lawfulness of the processing on the basis of the consent given remains unaffected until receipt of the withdrawal.
+
+Users also have the right in accordance with Article 77 GDPR to lodge a complaint with the competent data protection supervisory authority. The competent authority is the Federal Commissioner for Data Protection and Freedom of Information (BfDI).
+
+*Last updated: January 2022*
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/cp-data-protection/cp-data-protection.component.ts</context>
-          <context context-type="linenumber">13,48</context>
+          <context context-type="linenumber">13,121</context>
         </context-group>
         <note priority="1" from="description">data-protection body</note>
       </trans-unit>
-      <trans-unit id="6878574915146224212" datatype="html">
+      <trans-unit id="6583941815049891893" datatype="html">
+        <source>
+# Documentation
+
+## About the Tool
+
+On many farms or plantations, at least some workers do not earn a living wage. There is a gap between the actual wage paid and a living wage. If at least some workers on a farm or plantation do not receive a living wage, there are various ways to close the gap between the actual wage paid and a living wage: Strong trade unions and workers&apos; representatives are an important lever to work towards improved wage and working conditions in the long term within the framework of collective agreements. Companies can also make a proactive contribution through their procurement practices and reward producers for high wage and labour standards. For example, through an additional price premium to cover the extra costs of paying living wages.
+
+In order to advance the payment of living wages, GIZ developed the Living Wage Costing Tool. Based on the output of the IDH Salary Matrix the GIZ Living Wage Costing Tool provides various calculations to help you analyse the direct cost implications for producers to pay workers a living wage. It therefore allows the producer to determine additional costs of paying a living wage at farm level.
+
+Before starting the Costing Tool you need to fill out the IDH Salary Matrix and/or download your results. The resulting excel file (xlsx.) can then be directly uploaded into the tool. To help you and your suppliers complete the Costing Tool we offer open trainings on the 5th, 6th and 12th of August from 8-9.30 CST ([join here](https://us02web.zoom.us/j/89124009617?pwd=2xbUa9oLW0R3KiruRebT1tkCajSTbS.1)) and will include a link to a video online Demo session soon.
+
+For any questions you might have, you can contact the following email: nicola.nuecken@giz.de
+
+## How does it work?
+
+The Costing Tool offers options of taking into account the existing wage structures, i.e. differences in the remuneration of different activities on a plantation or farm and enabling specific action at a job category level. The cost implications and updated wage structure of the scenario specified by the user is clearly presented and can be compared to the status quo.
+
+1. Download the idh SM Outputs as an a slsx. file.
+2. Create a new entry and upload the SM file.
+3. Choose a scenario and default wage increase, specify additional costs incurred and levies and taxes.
+4. Customize wage increase and levies and taxes per job category for your needs
+5. Choose how to distribute the wage increase across base wage, bonuses and in-kind benefits.
+6. Optional: Enter buyer specifications to calculate the voluntary contribution for specific buyers.
+7. Review your results and compare it to the status quo.
+8. Download your results and engage in conversations with your buyer.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/cp-documentation/cp-documentation.component.ts</context>
+          <context context-type="linenumber">13,38</context>
+        </context-group>
+        <note priority="1" from="description">homepage body</note>
+      </trans-unit>
+      <trans-unit id="2337097262447943441" datatype="html">
         <source>
 # Imprint
-
-*August 21, 2023*
 
 Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH
 
@@ -1084,61 +1557,432 @@ Homepage: www.giz.de
 Local court (Amtsgericht) Bonn, Germany: HRB 18384
 Local court (Amtsgericht) Frankfurt am Main, Germany: HRB 12394
 
-## Vat (no.) DE 113891176
+Vat (no.) DE 113891176
 
 ## Chairperson of the Supervisory Board
-
 Jochen Flasbarth, State Secretary in the Federal Ministry for Economic Cooperation and Development
 
 ## Management Board
-
 Thorsten Schäfer-Gümbel (Chair)
 Ingrid-Gabriela Hoven (Vice-Chair)
 Anna Sophie Herken
 
 ## Legal notice on liability
-
 GIZ makes every effort to ensure that the information provided on this website is correct and up-to-date. Nevertheless, errors and ambiguities cannot be completely ruled out. For this reason, GIZ does not assume any liability for the topicality, correctness, completeness or quality of the information provided. GIZ shall not be liable for any material or immaterial damage caused directly or indirectly by the use or non-use of the information provided or by the use of incorrect or incomplete information, unless it can be proven that GIZ acted with intent or gross negligence. Parts of the pages or the complete publication including all offers and information might be extended, changed or partly or completely deleted by GIZ without separate announcement.
-
 References to &quot;third-party content&quot;, which is provided by direct or indirect links to other providers, are adequately marked. GIZ has no influence whatsoever on &quot;third-party content&quot; and does not adopt this content as its own. GIZ has no positive knowledge of illegal or offensive content on the linked pages of other providers. Should the linked pages of external providers nevertheless contain illegal or offensive content, GIZ expressly distances itself from this content.
 
 ## Legal notes on copyright
-
-The layout of the homepage, the graphics used and the other contents are protected by copyright.
+The layout of the tool, the graphics used and the other contents are protected by copyright.
 
 ## Coordination and editing
-
 Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH
 Sustainable Supply Chains Initiative (INA)
 Programme for sustainable agricultural supply chains and standards
 Tel.: +49 (0) 228 4460 4155
 E-Mail: ina(at)giz.de
-
-## Information architecture, design, implementation, hosting and operations management
-
-Us Media
-Danzigerkade 221
-1013 AP Amsterdam
-Nederland
-Web: www.usmedia.nl
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/cp-imprint/cp-imprint.component.ts</context>
-          <context context-type="linenumber">13,88</context>
+          <context context-type="linenumber">13,72</context>
         </context-group>
         <note priority="1" from="description">imprint body</note>
       </trans-unit>
-      <trans-unit id="8493087844363146694" datatype="html">
+      <trans-unit id="5028937531947453523" datatype="html">
         <source>
 # Terms and conditions
+TERMS AND CONDITIONS
 
-*August 21, 2023*
+## 0. Definitions.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.
+&quot;This License&quot; refers to version 3 of the GNU Affero General Public License.
+
+&quot;Copyright&quot; also means copyright-like laws that apply to other kinds of works, such as semiconductor masks.
+
+&quot;The Program&quot; refers to any copyrightable work licensed under this License.  Each licensee is addressed as &quot;you&quot;.  &quot;Licensees&quot; and &quot;recipients&quot; may be individuals or organizations.
+
+To &quot;modify&quot; a work means to copy from or adapt all or part of the work in a fashion requiring copyright permission, other than the making of an exact copy.  The resulting work is called a &quot;modified version&quot; of the
+earlier work or a work &quot;based on&quot; the earlier work.
+
+A &quot;covered work&quot; means either the unmodified Program or a work based on the Program.
+
+To &quot;propagate&quot; a work means to do anything with it that, without permission, would make you directly or secondarily liable for infringement under applicable copyright law, except executing it on a computer or modifying a private copy.  Propagation includes copying, distribution (with or without modification), making available to the public, and in some countries other activities as well.
+
+To &quot;convey&quot; a work means any kind of propagation that enables other parties to make or receive copies.  Mere interaction with a user through a computer network, with no transfer of a copy, is not conveying.
+
+An interactive user interface displays &quot;Appropriate Legal Notices&quot; to the extent that it includes a convenient and prominently visible feature that (1) displays an appropriate copyright notice, and (2) tells the user that there is no warranty for the work (except to the extent that warranties are provided), that licensees may convey the work under this License, and how to view a copy of this License.  If the interface presents a list of user commands or options, such as a menu, a prominent item in the list meets this criterion.
+
+## 1. Source Code.
+
+The &quot;source code&quot; for a work means the preferred form of the work for making modifications to it. &quot;Object code&quot; means any non-source form of a work.
+
+A &quot;Standard Interface&quot; means an interface that either is an official standard defined by a recognized standards body, or, in the case of interfaces specified for a particular programming language, one that is widely used among developers working in that language.
+
+The &quot;System Libraries&quot; of an executable work include anything, other than the work as a whole, that (a) is included in the normal form of packaging a Major Component, but which is not part of that Major
+Component, and (b) serves only to enable use of the work with that Major Component, or to implement a Standard Interface for which an implementation is available to the public in source code form.  A
+&quot;Major Component&quot;, in this context, means a major essential component (kernel, window system, and so on) of the specific operating system (if any) on which the executable work runs, or a compiler used to
+produce the work, or an object code interpreter used to run it.
+
+The &quot;Corresponding Source&quot; for a work in object code form means all the source code needed to generate, install, and (for an executable work) run the object code and to modify the work, including scripts to control those activities.  However, it does not include the work&apos;s System Libraries, or general-purpose tools or generally available free programs which are used unmodified in performing those activities but which are not part of the work.  For example, Corresponding Source includes interface definition files associated with source files for the work, and the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require, such as by intimate data communication or control flow between those subprograms and other parts of the work.
+
+The Corresponding Source need not include anything that users can regenerate automatically from other parts of the Corresponding Source.
+
+The Corresponding Source for a work in source code form is that same work.
+
+## 2. Basic Permissions.
+
+All rights granted under this License are granted for the term of copyright on the Program, and are irrevocable provided the stated conditions are met.  This License explicitly affirms your unlimited permission to run the unmodified Program.  The output from running a covered work is covered by this License only if the output, given its content, constitutes a covered work.  This License acknowledges your rights of fair use or other equivalent, as provided by copyright law.
+You may make, run and propagate covered works that you do not convey, without conditions so long as your license otherwise remains in force.  You may convey covered works to others for the sole purpose
+of having them make modifications exclusively for you, or provide you with facilities for running those works, provided that you comply with the terms of this License in conveying all material for which you do not control copyright.  Those thus making or running the covered works for you must do so exclusively on your behalf, under your direction and control, on terms that prohibit them from making any copies of
+your copyrighted material outside their relationship with you.
+Conveying under any other circumstances is permitted solely under the conditions stated below.  Sublicensing is not allowed; section 10 makes it unnecessary.
+
+## 3. Protecting Users&apos; Legal Rights From Anti-Circumvention Law.
+
+No covered work shall be deemed part of an effective technological measure under any applicable law fulfilling obligations under article 11 of the WIPO copyright treaty adopted on 20 December 1996, or
+similar laws prohibiting or restricting circumvention of such measures.
+
+When you convey a covered work, you waive any legal power to forbid circumvention of technological measures to the extent such circumvention is effected by exercising rights under this License with respect to
+the covered work, and you disclaim any intention to limit operation or modification of the work as a means of enforcing, against the work&apos;s users, your or third parties&apos; legal rights to forbid circumvention of
+technological measures.
+
+## 4. Conveying Verbatim Copies.
+
+You may convey verbatim copies of the Program&apos;s source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice; keep intact all notices stating that this License and any non-permissive terms added in accord with section 7 apply to the code; keep intact all notices of the absence of any warranty; and give all recipients a copy of this License along with the Program.
+
+You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee.
+
+## 5. Conveying Modified Source Versions.
+
+You may convey a work based on the Program, or the modifications to produce it from the Program, in the form of source code under the terms of section 4, provided that you also meet all of these conditions:
+
+a) The work must carry prominent notices stating that you modified it, and giving a relevant date.
+
+b) The work must carry prominent notices stating that it is released under this License and any conditions added under section 7.  This requirement modifies the requirement in section 4 to &quot;keep intact all notices&quot;.
+
+c) You must license the entire work, as a whole, under this License to anyone who comes into possession of a copy. This License will therefore apply, along with any applicable section 7 additional terms, to the whole of the work, and all its parts, regardless of how they are packaged.  This License gives no permission to license the work in any other way, but it does not invalidate such permission if you have separately received it.
+
+d) If the work has interactive user interfaces, each must display Appropriate Legal Notices; however, if the Program has interactive interfaces that do not display Appropriate Legal Notices, your work need not make them do so.
+
+A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program,
+in or on a volume of a storage or distribution medium, is called an &quot;aggregate&quot; if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation&apos;s users beyond what the individual works permit.  Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate.
+
+## 6. Conveying Non-Source Forms.
+
+You may convey a covered work in object code form under the terms of sections 4 and 5, provided that you also convey the machine-readable Corresponding Source under the terms of this License, in one of these ways:
+
+a) Convey the object code in, or embodied in, a physical product (including a physical distribution medium), accompanied by the Corresponding Source fixed on a durable physical medium customarily used for software interchange.
+
+b) Convey the object code in, or embodied in, a physical product (including a physical distribution medium), accompanied by a written offer, valid for at least three years and valid for as long as you offer spare parts or customer support for that product model, to give anyone who possesses the object code either (1) a copy of the Corresponding Source for all the software in the product that is covered by this License, on a durable physical medium customarily used for software interchange, for a price no more than your reasonable cost of physically performing this conveying of source, or (2) access to copy the Corresponding Source from a network server at no charge.
+
+c) Convey individual copies of the object code with a copy of the written offer to provide the Corresponding Source.  This alternative is allowed only occasionally and noncommercially, and only if you received the object code with such an offer, in accord with subsection 6b.
+
+d) Convey the object code by offering access from a designated place (gratis or for a charge), and offer equivalent access to the Corresponding Source in the same way through the same place at no further charge.  You need not require recipients to copy the Corresponding Source along with the object code.  If the place to copy the object code is a network server, the Corresponding Source may be on a different server (operated by you or a third party) that supports equivalent copying facilities, provided you maintain clear directions next to the object code saying where to find the Corresponding Source.  Regardless of what server hosts the Corresponding Source, you remain obligated to ensure that it is available for as long as needed to satisfy these requirements.
+
+e) Convey the object code using peer-to-peer transmission, provided you inform other peers where the object code and Corresponding  Source of the work are being offered to the general public at no charge under subsection 6d.
+
+A separable portion of the object code, whose source code is excluded from the Corresponding Source as a System Library, need not be included in conveying the object code work.
+
+A &quot;User Product&quot; is either (1) a &quot;consumer product&quot;, which means any tangible personal property which is normally used for personal, family, or household purposes, or (2) anything designed or sold for incorporation
+into a dwelling. In determining whether a product is a consumer product, doubtful cases shall be resolved in favor of coverage.  For a particular product received by a particular user, &quot;normally used&quot; refers to a typical or common use of that class of product, regardless of the status of the particular user or of the way in which the particular user actually uses, or expects or is expected to use, the product.  A product is a consumer product regardless of whether the product has substantial commercial, industrial or non-consumer uses, unless such uses represent the only significant mode of use of the product.
+
+&quot;Installation Information&quot; for a User Product means any methods, procedures, authorization keys, or other information required to install and execute modified versions of a covered work in that User Product from a modified version of its Corresponding Source.  The information must suffice to ensure that the continued functioning of the modified object code is in no case prevented or interfered with solely because modification has been made.
+
+If you convey an object code work under this section in, or with, or specifically for use in, a User Product, and the conveying occurs as part of a transaction in which the right of possession and use of the User Product is transferred to the recipient in perpetuity or for a fixed term (regardless of how the transaction is characterized), the Corresponding Source conveyed under this section must be accompanied by the Installation Information.  But this requirement does not apply if neither you nor any third party retains the ability to install modified object code on the User Product (for example, the work has been installed in ROM).
+
+The requirement to provide Installation Information does not include a requirement to continue to provide support service, warranty, or updates for a work that has been modified or installed by the recipient, or for the User Product in which it has been modified or installed.  Access to a network may be denied when the modification itself materially and adversely affects the operation of the network or violates the rules and
+protocols for communication across the network.
+
+Corresponding Source conveyed, and Installation Information provided, in accord with this section must be in a format that is publicly documented (and with an implementation available to the public in source code form), and must require no special password or key for unpacking, reading or copying.
+
+## 7. Additional Terms.
+
+&quot;Additional permissions&quot; are terms that supplement the terms of this License by making exceptions from one or more of its conditions. Additional permissions that are applicable to the entire Program shall be treated as though they were included in this License, to the extent that they are valid under applicable law.  If additional permissions apply only to part of the Program, that part may be used separately under those permissions, but the entire Program remains governed by this License without regard to the additional permissions.
+
+When you convey a copy of a covered work, you may at your option remove any additional permissions from that copy, or from any part of it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place additional permissions on material, added by you to a covered work, for which you have or can give appropriate copyright permission.
+
+Notwithstanding any other provision of this License, for material you add to a covered work, you may (if authorized by the copyright holders of that material) supplement the terms of this License with terms:
+
+a) Disclaiming warranty or limiting liability differently from the terms of sections 15 and 16 of this License; or
+
+b) Requiring preservation of specified reasonable legal notices or author attributions in that material or in the Appropriate Legal Notices displayed by works containing it; or
+
+c) Prohibiting misrepresentation of the origin of that material, or requiring that modified versions of such material be marked in reasonable ways as different from the original version; or
+
+d) Limiting the use for publicity purposes of names of licensors or authors of the material; or
+
+e) Declining to grant rights under trademark law for use of some  trade names, trademarks, or service marks; or
+
+f) Requiring indemnification of licensors and authors of that material by anyone who conveys the material (or modified versions of it) with contractual assumptions of liability to the recipient, for any liability that these contractual assumptions directly impose on those licensors and authors.
+
+All other non-permissive additional terms are considered &quot;further restrictions&quot; within the meaning of section 10.  If the Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term.  If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to a covered work material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
+
+If you add terms to a covered work in accord with this section, you must place, in the relevant source files, a statement of the additional terms that apply to those files, or a notice indicating where to find the applicable terms.
+
+Additional terms, permissive or non-permissive, may be stated in the form of a separately written license, or stated as exceptions; the above requirements apply either way.
+
+## 8. Termination.
+
+You may not propagate or modify a covered work except as expressly provided under this License.  Any attempt otherwise to propagate or modify it is void, and will automatically terminate your rights under this License (including any patent licenses granted under the third paragraph of section 11).
+
+However, if you cease all violation of this License, then your license from a particular copyright holder is reinstated (a) provisionally, unless and until the copyright holder explicitly and finally terminates your license, and (b) permanently, if the copyright holder fails to notify you of the violation by some reasonable means prior to 60 days after the cessation.
+
+Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, you do not qualify to receive new licenses for the same
+material under section 10.
+
+## 9. Acceptance Not Required for Having Copies.
+
+You are not required to accept this License in order to receive or
+run a copy of the Program.  Ancillary propagation of a covered work
+occurring solely as a consequence of using peer-to-peer transmission
+to receive a copy likewise does not require acceptance.  However,
+nothing other than this License grants you permission to propagate or
+modify any covered work.  These actions infringe copyright if you do
+not accept this License.  Therefore, by modifying or propagating a
+covered work, you indicate your acceptance of this License to do so.
+
+## 10. Automatic Licensing of Downstream Recipients.
+
+Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
+
+An &quot;entity transaction&quot; is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
+transaction who receives a copy of the work also receives whatever
+licenses to the work the party&apos;s predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
+any patent claim is infringed by making, using, selling, offering for
+sale, or importing the Program or any portion of it.
+
+## 11. Patents.
+
+A &quot;contributor&quot; is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor&apos;s &quot;contributor version&quot;.
+
+A contributor&apos;s &quot;essential patent claims&quot; are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, &quot;control&quot; includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
+this License.
+
+Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor&apos;s essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
+
+In the following three paragraphs, a &quot;patent license&quot; is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To &quot;grant&quot; such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
+
+If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  &quot;Knowingly relying&quot; means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient&apos;s use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
+
+If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
+
+A patent license is &quot;discriminatory&quot; if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
+work if you are a party to an arrangement with a third party that is
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
+or that patent license was granted, prior to 28 March 2007.
+
+Nothing in this License shall be construed as excluding or limiting
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+## 12. No Surrender of Others&apos; Freedom.
+
+If conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot convey a
+covered work so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you may
+not convey it at all.  For example, if you agree to terms that obligate you
+to collect a royalty for further conveying from those to whom you convey
+the Program, the only way you could satisfy both those terms and this
+License would be to refrain entirely from conveying the Program.
+
+## 13. Remote Network Interaction; Use with the GNU General Public License.
+
+Notwithstanding any other provision of this License, if you modify the
+Program, your modified version must prominently offer all users
+interacting with it remotely through a computer network (if your version
+supports such interaction) an opportunity to receive the Corresponding
+Source of your version by providing access to the Corresponding Source
+from a network server at no charge, through some standard or customary
+means of facilitating copying of software.  This Corresponding Source
+shall include the Corresponding Source for any work covered by version 3
+of the GNU General Public License that is incorporated pursuant to the
+following paragraph.
+
+Notwithstanding any other provision of this License, you have
+permission to link or combine any covered work with a work licensed
+under version 3 of the GNU General Public License into a single
+combined work, and to convey the resulting work.  The terms of this
+License will continue to apply to the part which is the covered work,
+but the work with which it is combined will remain governed by version
+3 of the GNU General Public License.
+
+## 14. Revised Versions of this License.
+
+The Free Software Foundation may publish revised and/or new versions of
+the GNU Affero General Public License from time to time.  Such new versions
+will be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+Each version is given a distinguishing version number.  If the
+Program specifies that a certain numbered version of the GNU Affero General
+Public License &quot;or any later version&quot; applies to it, you have the
+option of following the terms and conditions either of that numbered
+version or of any later version published by the Free Software
+Foundation.  If the Program does not specify a version number of the
+GNU Affero General Public License, you may choose any version ever published
+by the Free Software Foundation.
+
+If the Program specifies that a proxy can decide which future
+versions of the GNU Affero General Public License can be used, that proxy&apos;s
+public statement of acceptance of a version permanently authorizes you
+to choose that version for the Program.
+
+Later license versions may give you additional or different
+permissions.  However, no additional obligations are imposed on any
+author or copyright holder as a result of your choosing to follow a
+later version.
+
+## 15. Disclaimer of Warranty.
+
+THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+## 16. Limitation of Liability.
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+## 17. Interpretation of Sections 15 and 16.
+
+If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+END OF TERMS AND CONDITIONS
+
+## How to Apply These Terms to Your New Programs
+
+If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+state the exclusion of warranty; and each file should have at least
+the &quot;copyright&quot; line and a pointer to where the full notice is found.
+
+&lt;one line to give the program&apos;s name and a brief idea of what it does.&gt;
+Copyright (C) &lt;year&gt;  &lt;name of author&gt;
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+
+Also add information on how to contact you by electronic and paper mail.
+
+If your software can interact with users remotely through a computer
+network, you should also make sure that it provides a way for users to
+get its source.  For example, if your program is a web application, its
+interface could display a &quot;Source&quot; link that leads users to an archive
+of the code.  There are many ways you could offer source, and different
+solutions will be better for different programs; see section 13 for the
+specific requirements.
+
+You should also get your employer (if you work as a programmer) or school,
+if any, to sign a &quot;copyright disclaimer&quot; for the program, if necessary.
+For more information on this, and how to apply and follow the GNU AGPL, see
+&lt;https://www.gnu.org/licenses/&gt;.
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/cp-terms/cp-terms.component.ts</context>
-          <context context-type="linenumber">13,19</context>
+          <context context-type="linenumber">13,404</context>
         </context-group>
         <note priority="1" from="description">terms body</note>
       </trans-unit>
@@ -1150,29 +1994,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">dashboard title</note>
       </trans-unit>
-      <trans-unit id="8623056396663447180" datatype="html">
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus.</source>
+      <trans-unit id="7819423665857999846" datatype="html">
+        <source>View documentation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">8,10</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">6,7</context>
-        </context-group>
-        <note priority="1" from="description">dashboard description line-1</note>
-      </trans-unit>
-      <trans-unit id="1446456661478594619" datatype="html">
-        <source>Dictum varius duis at consectetur lorem donec massa sapien. Id aliquet lectus proin nibh. Ornare aenean euismod elementum nisi quis. Diam quis enim lobortis scelerisque fermentum.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.html</context>
-          <context context-type="linenumber">8,11</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">7,10</context>
-        </context-group>
-        <note priority="1" from="description">dashboard description line-2</note>
+        <note priority="1" from="description">documentation</note>
       </trans-unit>
       <trans-unit id="1500857032693406432" datatype="html">
         <source>Continue with</source>
@@ -1198,6 +2026,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">entries view-all</note>
       </trans-unit>
+      <trans-unit id="7389865603770362890" datatype="html">
+        <source>
+On many farms or plantations, at least some workers do not earn a living wage. There is a gap between the actual wage paid and a living wage. If at least some workers on a farm or plantation do not receive a living wage, there are various ways to close the gap between the actual wage paid and a living wage: Strong trade unions and workers&apos; representatives are an important lever to work towards improved wage and working conditions in the long term within the framework of collective agreements. Companies can also make a proactive contribution through their procurement practices and reward producers for high wage and labour standards. For example, through an additional price premium to cover the extra costs of paying living wages.
+
+In order to advance the payment of living wages, GIZ developed the Living Wage Costing Tool. Based on the output of the IDH Salary Matrix the GIZ Living Wage Costing Tool provides various calculations to help you analyse the direct cost implications for producers to pay workers a living wage. It therefore allows the producer to determine additional costs of paying a living wage at farm level.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">38,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.ts</context>
+          <context context-type="linenumber">23,27</context>
+        </context-group>
+        <note priority="1" from="description">homepage body</note>
+      </trans-unit>
       <trans-unit id="5641945527911431559" datatype="html">
         <source>Error: <x id="INTERPOLATION" equiv-text="{{ code }}"/></source>
         <context-group purpose="location">
@@ -1214,7 +2058,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">12,14</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/helpers/breadcrumb.helper.ts</context>
@@ -1296,7 +2140,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Login</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
-          <context context-type="linenumber">14,15</context>
+          <context context-type="linenumber">13,14</context>
         </context-group>
         <note priority="1" from="description">homepage login</note>
       </trans-unit>
@@ -1304,7 +2148,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>403 Unauthorized</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/interceptors/api-interceptor.service.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <note priority="1" from="description">unauthorized title</note>
       </trans-unit>
@@ -1312,7 +2156,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>You are not authorized to do this. Please login with the correct user and rights.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/interceptors/api-interceptor.service.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">56</context>
         </context-group>
         <note priority="1" from="description">unauthorized description</note>
       </trans-unit>
@@ -1320,67 +2164,67 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source> Close the living wage gap</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap title</note>
       </trans-unit>
-      <trans-unit id="4645422732519172477" datatype="html">
-        <source>Closing the living wage gap by increasing wage levels of all workers below living wage to living wage</source>
+      <trans-unit id="6683281301964635974" datatype="html">
+        <source>Analyse the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap description</note>
       </trans-unit>
-      <trans-unit id="8965490590268417161" datatype="html">
-        <source>Sed condimentum purus lectus, dignissim euismod arcu sagittis sed. Nulla dictum magna at nunc hendrerit, quis placerat nulla vulputate. Donec sodales at mauris nec sodales.</source>
+      <trans-unit id="3113021506760427301" datatype="html">
+        <source>
+Analyse the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage.
+
+This scenario closes the entire living wage gap of all workers below living wage. Wage levels of workers above living wage remain unchanged.
+
+While this scenario leaves no one behind and closes the entire gap, it distorts the wage structure of the farm and might have potential unforeseen negative social consequences. We very strongly advise to consider possible negative consequences of distorting the wage structure and  of increasing wages differently between groups such as unrest, increased animosity and social division.
+
+This scenario allows no modification of wage increases.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">35,36</context>
+          <context context-type="linenumber">18,25</context>
         </context-group>
         <note priority="1" from="description">scenario close-gap comment-1</note>
-      </trans-unit>
-      <trans-unit id="3388452656573855174" datatype="html">
-        <source>Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-        <note priority="1" from="description">scenario close-gap comment-2</note>
       </trans-unit>
       <trans-unit id="6251269467218886517" datatype="html">
         <source> Absolute wage increase</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">30</context>
         </context-group>
         <note priority="1" from="description">scenario absolute-increase title</note>
       </trans-unit>
-      <trans-unit id="2083058040228377634" datatype="html">
-        <source>Closing the living wage gap by an absolute wage increase for all workers.</source>
+      <trans-unit id="2111833012092157944" datatype="html">
+        <source>Closing the living wage gap by increasing wage levels of all workers per job category.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <note priority="1" from="description">scenario absolute-increase description</note>
+      </trans-unit>
+      <trans-unit id="201018111560499530" datatype="html">
+        <source>
+Analyse the cost implications of closing the living wage gap by increasing wage levels of all workers per job category. This allows you to take into account the existing wage structures, i.e. differences in the remuneration of different activities on a plantation or farm.
+
+You can choose to close the entire wage gap i.e. no worker is below living wage and additionanly increase wages of workers above living wage to consider the already existing wage structure.
+
+You can also choose to increase all wages per job category by different amounts, enabeling targetet actions for the lowest paid workers and gender specific actions. Depending on the specifications by the user this scenario might leave some workers earning less than a living wage.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
+          <context context-type="linenumber">32,37</context>
+        </context-group>
+        <note priority="1" from="description">scenario absolute-increase comment-1</note>
       </trans-unit>
       <trans-unit id="3434933493136380636" datatype="html">
         <source>Below an overview per job-category. If you want, you can overrule the default increase per job-category.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">scenario overview-intro</note>
       </trans-unit>
@@ -1388,7 +2232,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Something went wrong logging out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">87</context>
         </context-group>
         <note priority="1" from="description">logout error</note>
       </trans-unit>
@@ -1408,7 +2252,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
@@ -1436,7 +2280,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">6,7</context>
         </context-group>
         <note priority="1" from="description">worker-specs job-category</note>
       </trans-unit>
@@ -1452,7 +2296,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">124,125</context>
+          <context context-type="linenumber">125,126</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -1468,7 +2312,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">10,11</context>
+          <context context-type="linenumber">9,10</context>
         </context-group>
         <note priority="1" from="description">data.workers</note>
       </trans-unit>
@@ -1480,7 +2324,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">52,53</context>
+          <context context-type="linenumber">53,54</context>
         </context-group>
         <note priority="1" from="description">form baseWage label</note>
       </trans-unit>
@@ -1500,27 +2344,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">108,110</context>
+          <context context-type="linenumber">108,111</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">131,133</context>
+          <context context-type="linenumber">132,134</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">154,156</context>
+          <context context-type="linenumber">155,157</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">177,179</context>
+          <context context-type="linenumber">178,180</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">200,202</context>
+          <context context-type="linenumber">201,203</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">223,225</context>
+          <context context-type="linenumber">224,226</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
@@ -1528,23 +2372,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">60,62</context>
+          <context context-type="linenumber">63,65</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">85,87</context>
+          <context context-type="linenumber">89,91</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">107,109</context>
+          <context context-type="linenumber">111,113</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">64,65</context>
+          <context context-type="linenumber">61,62</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">34,38</context>
+          <context context-type="linenumber">33,37</context>
         </context-group>
         <note priority="1" from="description">form baseWagePerc errors min</note>
       </trans-unit>
@@ -1557,30 +2401,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
           <context context-type="linenumber">67,68</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">111,112</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">134,135</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">157,158</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">180,181</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">203,204</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">226,227</context>
         </context-group>
         <note priority="1" from="description">form baseWagePerc errors imax</note>
       </trans-unit>
@@ -1600,11 +2420,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">56,57</context>
+          <context context-type="linenumber">57,58</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">152,153</context>
+          <context context-type="linenumber">153,154</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -1624,23 +2444,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">128,130</context>
+          <context context-type="linenumber">129,131</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">151,153</context>
+          <context context-type="linenumber">152,154</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">174,176</context>
+          <context context-type="linenumber">175,177</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">197,199</context>
+          <context context-type="linenumber">198,200</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">220,222</context>
+          <context context-type="linenumber">221,223</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
@@ -1648,19 +2468,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">57,59</context>
+          <context context-type="linenumber">60,62</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">82,84</context>
+          <context context-type="linenumber">86,88</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">104,106</context>
+          <context context-type="linenumber">108,110</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">31,33</context>
+          <context context-type="linenumber">30,32</context>
         </context-group>
         <note priority="1" from="description">form bonusesPerc errors required</note>
       </trans-unit>
@@ -1672,11 +2492,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">60,61</context>
+          <context context-type="linenumber">61,62</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">156,157</context>
+          <context context-type="linenumber">157,158</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -1692,11 +2512,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">64,65</context>
+          <context context-type="linenumber">65,66</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">162,163</context>
+          <context context-type="linenumber">163,164</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -1708,27 +2528,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Food</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">121,123</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">65,66</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">163,164</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">87,88</context>
-        </context-group>
-        <note priority="1" from="description">form ikb-food label</note>
-      </trans-unit>
-      <trans-unit id="1415537753700024352" datatype="html">
-        <source>Transportation</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">144,146</context>
+          <context context-type="linenumber">122,124</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
@@ -1740,15 +2540,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
-          <context context-type="linenumber">88,89</context>
+          <context context-type="linenumber">87,88</context>
         </context-group>
-        <note priority="1" from="description">form ikb-transport label</note>
+        <note priority="1" from="description">form ikb-food label</note>
       </trans-unit>
-      <trans-unit id="7194017842579795231" datatype="html">
-        <source>Healthcare</source>
+      <trans-unit id="1415537753700024352" datatype="html">
+        <source>Transportation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">167,169</context>
+          <context context-type="linenumber">145,147</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
@@ -1760,6 +2560,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
+          <context context-type="linenumber">88,89</context>
+        </context-group>
+        <note priority="1" from="description">form ikb-transport label</note>
+      </trans-unit>
+      <trans-unit id="7194017842579795231" datatype="html">
+        <source>Healthcare</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
+          <context context-type="linenumber">168,170</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">166,167</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
           <context context-type="linenumber">89,90</context>
         </context-group>
         <note priority="1" from="description">form ikb-healthcare label</note>
@@ -1768,7 +2588,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Child care</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">190,192</context>
+          <context context-type="linenumber">191,193</context>
         </context-group>
         <note priority="1" from="description">form ikb-childcare label</note>
       </trans-unit>
@@ -1776,15 +2596,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Child education</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">213,215</context>
+          <context context-type="linenumber">214,216</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">69,70</context>
+          <context context-type="linenumber">70,71</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">167,168</context>
+          <context context-type="linenumber">168,169</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -1796,11 +2616,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Saving...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">237,238</context>
+          <context context-type="linenumber">238,239</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">121,122</context>
+          <context context-type="linenumber">124,125</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
@@ -1816,11 +2636,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Save and continue</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
-          <context context-type="linenumber">240,242</context>
+          <context context-type="linenumber">241,243</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">124,127</context>
+          <context context-type="linenumber">127,130</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
@@ -1923,8 +2743,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">scenario select</note>
       </trans-unit>
-      <trans-unit id="5355310281817378507" datatype="html">
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</source>
+      <trans-unit id="6595160691235962559" datatype="html">
+        <source>The minimum wage increase chosen will be applied to all job categories as a first step. In the following section you will have the opportunity of adapting the wage increase per job category. To close the LW gap for all workers the minumum wage increase has to be at least equal to the amount of the largest living wage gap.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">6,9</context>
@@ -1947,7 +2767,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">24,26</context>
+          <context context-type="linenumber">23,25</context>
         </context-group>
         <note priority="1" from="description">form remunerationIncrease label</note>
       </trans-unit>
@@ -1979,19 +2799,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">additional-costs title</note>
       </trans-unit>
-      <trans-unit id="972555437470280848" datatype="html">
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</source>
+      <trans-unit id="2314279403407040438" datatype="html">
+        <source>To reflect that additional costs may be incurred when filling in the IDH Salary Matrix and the LW Costing Tool additional expenses may be entered. For example, these can arise from collecting necessary information or hiring an external person to complete the tools.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">42,45</context>
+          <context context-type="linenumber">42,43</context>
         </context-group>
         <note priority="1" from="description">additional-costs intro</note>
+      </trans-unit>
+      <trans-unit id="5868226986909921169" datatype="html">
+        <source>Levies and taxes employer / employee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+        <note priority="1" from="description">levies-taxes title</note>
+      </trans-unit>
+      <trans-unit id="116260278461227350" datatype="html">
+        <source>When closing the Living Wage (LW) gap, it is important to note that payment of an additional amount does not equate to an increase of the same amount in take-home wages for employees. To accurately reflect this taxes and levies such as social contributions, users may specify country specific increases in both employee taxes and employer levies within the tool. This ensures that the true cost of closing the wage gap is accounted for, including the necessary adjustments for any applicable taxes and social contributions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+        <note priority="1" from="description">levies-taxes intro</note>
       </trans-unit>
       <trans-unit id="8358561485711913194" datatype="html">
         <source> Overhead costs<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p class=&quot;form__hint&quot;&gt;"/>e.g. administrative costs<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">53,54</context>
         </context-group>
         <note priority="1" from="description">form overheadCosts label</note>
       </trans-unit>
@@ -1999,7 +2835,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Maximum is 999999999</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">63,67</context>
+          <context context-type="linenumber">66,70</context>
         </context-group>
         <note priority="1" from="description">form overheadCosts errors max</note>
       </trans-unit>
@@ -2007,7 +2843,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Levies and taxes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">68,69</context>
+          <context context-type="linenumber">71,73</context>
         </context-group>
         <note priority="1" from="description">form levies-taxes label</note>
       </trans-unit>
@@ -2015,7 +2851,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Levies and taxes employee</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">74,76</context>
+          <context context-type="linenumber">78,80</context>
         </context-group>
         <note priority="1" from="description">form taxEmployee label</note>
       </trans-unit>
@@ -2023,7 +2859,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Employee</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">78,79</context>
+          <context context-type="linenumber">82,83</context>
         </context-group>
         <note priority="1" from="description">form taxEmployee placeholder</note>
       </trans-unit>
@@ -2031,15 +2867,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Maximum is 100</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">88,90</context>
+          <context context-type="linenumber">92,94</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">110,112</context>
+          <context context-type="linenumber">114,116</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">67,68</context>
+          <context context-type="linenumber">64,65</context>
         </context-group>
         <note priority="1" from="description">form taxEmployee errors max</note>
       </trans-unit>
@@ -2047,7 +2883,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Levies and taxes employer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">96,98</context>
+          <context context-type="linenumber">100,102</context>
         </context-group>
         <note priority="1" from="description">form taxEmployer label</note>
       </trans-unit>
@@ -2055,7 +2891,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Employer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
-          <context context-type="linenumber">100,101</context>
+          <context context-type="linenumber">104,105</context>
         </context-group>
         <note priority="1" from="description">form taxEmployer placeholder</note>
       </trans-unit>
@@ -2070,6 +2906,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           <context context-type="linenumber">34,35</context>
         </context-group>
         <note priority="1" from="description">comments</note>
+      </trans-unit>
+      <trans-unit id="1555433800692216634" datatype="html">
+        <source>Benchmark value</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+        <note priority="1" from="description">scenario benchmark label</note>
       </trans-unit>
       <trans-unit id="8526838789084733654" datatype="html">
         <source>Close living wage gap</source>
@@ -2131,7 +2975,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">81,82</context>
+          <context context-type="linenumber">82,83</context>
         </context-group>
         <note priority="1" from="description">scenario overview-title</note>
       </trans-unit>
@@ -2143,7 +2987,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">85,86</context>
+          <context context-type="linenumber">86,87</context>
         </context-group>
         <note priority="1" from="description">workers reset</note>
       </trans-unit>
@@ -2155,7 +2999,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">94,95</context>
+          <context context-type="linenumber">95,96</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2171,7 +3015,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">108,109</context>
+          <context context-type="linenumber">109,110</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2187,7 +3031,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">109,110</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2207,7 +3051,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">16,17</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <note priority="1" from="description">workers living-wage-gap label</note>
       </trans-unit>
@@ -2219,7 +3063,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">110,111</context>
+          <context context-type="linenumber">111,112</context>
         </context-group>
         <note priority="1" from="description">workers wage-increase label</note>
       </trans-unit>
@@ -2231,7 +3075,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">115,116</context>
+          <context context-type="linenumber">116,117</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
@@ -2255,7 +3099,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">201,202</context>
+          <context context-type="linenumber">202,203</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2267,7 +3111,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source><x id="PH" equiv-text="total ?? &apos;-&apos;"/> job categories</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario/scenario.component.ts</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
@@ -2307,11 +3151,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">buyer title</note>
       </trans-unit>
-      <trans-unit id="1374729245781156190" datatype="html">
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero. </source>
+      <trans-unit id="559054265494393702" datatype="html">
+        <source>If you would like to calculate the voluntary contribution for a specific buyer you can enter the % share or units of annual production you supply to him. The Tool will calculate the voluntary contribution for your facility and the buyer&apos;s share.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">31,33</context>
+          <context context-type="linenumber">30,31</context>
         </context-group>
         <note priority="1" from="description">buyer subtext</note>
       </trans-unit>
@@ -2319,7 +3163,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Name*</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">43,44</context>
+          <context context-type="linenumber">40,41</context>
         </context-group>
         <note priority="1" from="description">form buyerName label</note>
       </trans-unit>
@@ -2327,7 +3171,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Buying proportion * </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">47,48</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount label</note>
       </trans-unit>
@@ -2335,7 +3179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Buying proportion</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">59,60</context>
+          <context context-type="linenumber">56,57</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount label</note>
       </trans-unit>
@@ -2343,7 +3187,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>portion of total annual production</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">62,63</context>
+          <context context-type="linenumber">59,60</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount hint</note>
       </trans-unit>
@@ -2351,7 +3195,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Unit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">79,80</context>
+          <context context-type="linenumber">76,77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/pipes/buyerUnit.pipe.ts</context>
@@ -2363,7 +3207,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>(*) Optional field</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">90,92</context>
+          <context context-type="linenumber">87,89</context>
         </context-group>
         <note priority="1" from="description">form field optional</note>
       </trans-unit>
@@ -2371,11 +3215,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Entry ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">99,100</context>
+          <context context-type="linenumber">96,97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">129,130</context>
+          <context context-type="linenumber">133,134</context>
         </context-group>
         <note priority="1" from="description">buyer base-wage label</note>
       </trans-unit>
@@ -2383,7 +3227,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Copy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">108,109</context>
+          <context context-type="linenumber">105,106</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -2395,7 +3239,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">138,139</context>
+          <context context-type="linenumber">142,143</context>
         </context-group>
         <note priority="1" from="description">copy</note>
       </trans-unit>
@@ -2403,11 +3247,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Created on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">113,114</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">143,144</context>
+          <context context-type="linenumber">147,148</context>
         </context-group>
         <note priority="1" from="description">buyer bonuses label</note>
       </trans-unit>
@@ -2415,11 +3259,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Edited on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">117,118</context>
+          <context context-type="linenumber">114,115</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">147,148</context>
+          <context context-type="linenumber">151,152</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/overview/overview.component.html</context>
@@ -2439,7 +3283,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">112,113</context>
+          <context context-type="linenumber">113,114</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.ts</context>
@@ -2555,7 +3399,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">155,156</context>
+          <context context-type="linenumber">159,160</context>
         </context-group>
         <note priority="1" from="description">entry error not-found</note>
       </trans-unit>
@@ -2623,16 +3467,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">description</note>
       </trans-unit>
-      <trans-unit id="8106406364496425242" datatype="html">
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia in lacus scelerisque mattis. In bibendum bibendum dolor laoreet </source>
+      <trans-unit id="6719967087100042390" datatype="html">
+        <source>Please specify how you would like to redistribute the additional funds (in % per category). If no specifications are chosen all funds will be allocated to the base wage.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
           <context context-type="linenumber">30,32</context>
         </context-group>
         <note priority="1" from="description">distribution description</note>
       </trans-unit>
-      <trans-unit id="4611873109915111096" datatype="html">
-        <source>Maecenas scelerisque nisl id augue egestas, non pharetra nibh vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lorem quam. </source>
+      <trans-unit id="6658731125583186651" datatype="html">
+        <source>The additional voluntary contribution will have to be passed on to the workers. Since in kind benefits and bonuses can be an important component of remuneration, it is important to include them in the calculation. In this section you can specify what % of the voluntary contribution you want to allocate to the respective category.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <note priority="1" from="description">distribution comment1</note>
+      </trans-unit>
+      <trans-unit id="1919565085864013604" datatype="html">
+        <source>Please be advised that based on the principles for in-kind benefits outlined in the Anker Methodology, contribution of in-kind benefits (i.e. non-monetary benefits such as food, transport or housing provided by the employer that reduce the amount of cash income that workers need for a decent standard of living) to total renumeration is limited to ensure the worker right to self determination. The combined total value of in-kind benefits is capped at 30% of total remuneration. Housing is capped at 15% of total remuneration. All other benefits are capped at 10% of total remuneration. In order to reflect realities on the ground for now you are able to exceed the maximum specified. However this will have implications on the total renumeration calculated in the IDH salary matrix.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
           <context context-type="linenumber">36,38</context>
@@ -2643,11 +3495,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Childcare</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">68,69</context>
+          <context context-type="linenumber">69,70</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">166,167</context>
+          <context context-type="linenumber">167,168</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2659,7 +3511,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Below an overview per job-category. If you want, you can overrule the default distribution per job-category.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">82,83</context>
+          <context context-type="linenumber">83,84</context>
         </context-group>
         <note priority="1" from="description">distribution overview-description</note>
       </trans-unit>
@@ -2667,7 +3519,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Base wage / Bonusses / IKB</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">113,114</context>
+          <context context-type="linenumber">114,115</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2679,7 +3531,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Base Wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">148,149</context>
+          <context context-type="linenumber">149,150</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
@@ -2691,7 +3543,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Edit distribution </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-distribution/entry-distribution.component.html</context>
-          <context context-type="linenumber">181,182</context>
+          <context context-type="linenumber">182,183</context>
         </context-group>
         <note priority="1" from="description">distribution worker edit</note>
       </trans-unit>
@@ -2807,11 +3659,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">entry verified label</note>
       </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
+          <context context-type="linenumber">117,118</context>
+        </context-group>
+        <note priority="1" from="description">entry benchmark label</note>
+      </trans-unit>
       <trans-unit id="2702200797962830082" datatype="html">
         <source>Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">117,118</context>
+          <context context-type="linenumber">121,122</context>
         </context-group>
         <note priority="1" from="description">entry region label</note>
       </trans-unit>
@@ -2819,7 +3679,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Amount</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
-          <context context-type="linenumber">121,122</context>
+          <context context-type="linenumber">125,126</context>
         </context-group>
         <note priority="1" from="description">entry amount label</note>
       </trans-unit>
@@ -3011,7 +3871,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <note priority="1" from="description">facility label</note>
       </trans-unit>
       <trans-unit id="1642033592411526357" datatype="html">
-        <source> <x id="INTERPOLATION" equiv-text="{{ entry.buyer?.name ?? &apos;Buyer&apos; }}"/> (<x id="INTERPOLATION_1" equiv-text="{{ buyerPercentage | number: &apos;1.0-2&apos; }}"/>%) </source>
+        <source> <x id="INTERPOLATION" equiv-text="{{ entry.buyer?.name ?? &apos;Buyer&apos; }}"/> (<x id="INTERPOLATION_1" equiv-text="{{ buyerPercentage | number: &apos;1.0-10&apos; }}"/>%) </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-report/entry-report.component.html</context>
           <context context-type="linenumber">177,178</context>
@@ -3166,19 +4026,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">scenario reset</note>
       </trans-unit>
-      <trans-unit id="9124904634127834829" datatype="html">
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id sem pretium, malesuada elit vitae, ullamcorper tellus. Maecenas lacus odio, vulputate quis magna id, interdum elementum mauris. Phasellus magna quam, luctus quis elit eu, porta tempus metus.</source>
+      <trans-unit id="3107186692147887949" datatype="html">
+        <source> The GIZ Living Wage Costing Tool offers various simulations to analyse the direct cost implications for producers to pay workers a living wage. You can choose to either explore the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage or close the living wage gap by absolute wage increases per job category. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">49,51</context>
+          <context context-type="linenumber">50,51</context>
         </context-group>
-        <note priority="1" from="description">secnario intro</note>
+        <note priority="1" from="description">scenario intro</note>
       </trans-unit>
       <trans-unit id="1845025500384940851" datatype="html">
         <source> Select scenario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-scenarios/entry-scenarios.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">73</context>
         </context-group>
         <note priority="1" from="description">scenario select</note>
       </trans-unit>
@@ -3470,11 +4330,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </context-group>
         <note priority="1" from="description">scenario-worker-update error</note>
       </trans-unit>
-      <trans-unit id="6050386603951460736" datatype="html">
-        <source> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, erat in tincidunt molestie, est purus mollis odio, sit amet consectetur est nibh vitae libero.</source>
+      <trans-unit id="3585411132741160596" datatype="html">
+        <source>Please specify the minimum wage increase for this specific job category.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">3,5</context>
+          <context context-type="linenumber">2,4</context>
         </context-group>
         <note priority="1" from="description">worker-edit description</note>
       </trans-unit>
@@ -3482,7 +4342,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source> Wage increase is set lower than living wage gap.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">39,41</context>
+          <context context-type="linenumber">38,40</context>
         </context-group>
         <note priority="1" from="description">wage-increase-too-low</note>
       </trans-unit>
@@ -3490,7 +4350,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Reset to defaults</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">46,47</context>
+          <context context-type="linenumber">45,46</context>
         </context-group>
         <note priority="1" from="description">worker-edit reset</note>
       </trans-unit>
@@ -3498,7 +4358,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Submitting...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">49,51</context>
+          <context context-type="linenumber">48,50</context>
         </context-group>
         <note priority="1" from="description">worker-edit submitting</note>
       </trans-unit>
@@ -3506,7 +4366,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
-          <context context-type="linenumber">60,61</context>
+          <context context-type="linenumber">59,60</context>
         </context-group>
         <note priority="1" from="description">worker-edit save</note>
       </trans-unit>
@@ -3538,7 +4398,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <source>Close</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/dialog/dialog.component.html</context>
-          <context context-type="linenumber">6,9</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
         <note priority="1" from="description">close button</note>
       </trans-unit>

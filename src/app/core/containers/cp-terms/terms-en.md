@@ -1,16 +1,3 @@
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'giz-cp-terms',
-    templateUrl: './cp-terms.component.html',
-    styleUrl: './cp-terms.component.scss',
-})
-export class CpTermsComponent {
-    public markdown: string = this.getMarkdown();
-
-    // eslint-disable-next-line max-lines-per-function
-    private getMarkdown() {
-        return $localize`:terms body:
 # Terms and conditions
 TERMS AND CONDITIONS
 
@@ -401,6 +388,3 @@ You should also get your employer (if you work as a programmer) or school,
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <https://www.gnu.org/licenses/>.
-`;
-    }
-}

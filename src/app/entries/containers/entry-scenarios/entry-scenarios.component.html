@@ -46,7 +46,10 @@
               (submitSpecs)="saveSpecs($event)"
           ></giz-scenario>
         } @else {
-            <p class="scenarios__intro" i18n="secnario intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id sem pretium, malesuada elit vitae, ullamcorper tellus. Maecenas lacus odio, vulputate quis magna id, interdum elementum mauris. Phasellus magna quam, luctus quis elit eu, porta tempus metus.</p>
+            <p class="scenarios__intro" i18n="scenario intro">
+                The GIZ Living Wage Costing Tool offers various simulations to analyse the direct cost implications for producers to pay workers a living wage.
+                You can choose to either explore the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage or close the living wage gap by absolute wage increases per job category.
+            </p>
 
             <ul class="scenarios__list">
                 @for (scenario of scenarios; track scenario) {

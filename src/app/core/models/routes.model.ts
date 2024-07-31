@@ -7,6 +7,7 @@ export enum ROOT_ROUTE {
     DASHBOARD = '/dashboard',
     HOME = '/',
     DATA_PROTECTION = '/data-protection',
+    DOCUMENTATION = '/documentation',
     EXAMPLES = '/examples',
     IMPRINT = '/imprint',
     TERMS = '/terms',
