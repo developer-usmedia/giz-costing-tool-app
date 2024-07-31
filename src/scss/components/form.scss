@@ -133,10 +133,11 @@
         margin: 0;
     }
 
-    &__error {
+    /* stylelint-disable no-descending-specificity */
+    &__error,
+    &__warning {
         @include style-text-small;
 
-        color: var(--form-error);
         margin: 4px 0 0;
 
         #{ $self }__field & {
@@ -147,6 +148,15 @@
             margin-bottom: -14px;
         }
     }
+
+    &__error {
+        color: var(--form-error);
+    }
+
+    &__warning {
+        color: var(--form-warning);
+    }
+    /* stylelint-enable no-descending-specificity */
 
     &__hint {
         @include style-text-small;

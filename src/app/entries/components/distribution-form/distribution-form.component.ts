@@ -114,27 +114,27 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
             ),
             ikbHousingPerc: new FormControl<number | null>(
                 this.distribution?.ikbHousingPerc ?? 0, {
-                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbHousingPerc), Validators.required],
+                    validators: [Validators.required, Validators.min(0)],
                 }),
             ikbFoodPerc: new FormControl<number | null>(
                 this.distribution?.ikbFoodPerc ?? 0, {
-                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbFoodPerc), Validators.required],
+                    validators: [Validators.required, Validators.min(0)],
                 }),
             ikbTransportPerc: new FormControl<number | null>(
                 this.distribution?.ikbTransportPerc ?? 0, {
-                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbTransportPerc), Validators.required],
+                    validators: [Validators.required, Validators.min(0)],
                 }),
             ikbHealthcarePerc: new FormControl<number | null>(
                 this.distribution?.ikbHealthcarePerc ?? 0,
-                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbHealthcarePerc), Validators.required] },
+                { validators: [Validators.required, Validators.min(0)] },
             ),
             ikbChildcarePerc: new FormControl<number | null>(
                 this.distribution?.ikbChildcarePerc ?? 0, {
-                    validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbChildcarePerc), Validators.required],
+                    validators: [Validators.required, Validators.min(0)],
                 }),
             ikbChildEducationPerc: new FormControl<number | null>(
                 this.distribution?.ikbChildEducationPerc ?? 0,
-                { validators: [Validators.min(0), Validators.max(this.maxIkbPercMapping.ikbChildEducationPerc), Validators.required] },
+                { validators: [Validators.required, Validators.min(0)] },
             ),
         });
     }
