@@ -1,7 +1,10 @@
 import { Distribution, Entry, Worker } from '@api/models';
 
 export const determineWageIncrease = (worker: Worker, entry: Entry): number => {
-    if (worker.scenario.specification?.remunerationIncrease) {
+    if (
+        worker.scenario.specification?.remunerationIncrease !== null && 
+        worker.scenario.specification?.remunerationIncrease !== undefined
+    ) {
         return worker.scenario.specification.remunerationIncrease;
     }
 
