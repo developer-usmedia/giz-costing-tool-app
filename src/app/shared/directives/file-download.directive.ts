@@ -36,6 +36,7 @@ export class FileDownloadDirective {
         const request$ = this.httpClient.get(this.downloadUrl, { responseType: 'blob', observe: 'response' });
 
         // After download, simulate a normal download-click
+        this.disabled = true;
         this.loading.emit(true);
         await firstValueFrom(request$)
             .then((response) => {
@@ -47,6 +48,7 @@ export class FileDownloadDirective {
                 this.toastr.error(this.errorMessage);
             })
             .finally(() => {
+                this.disabled = false;
                 this.loading.emit(false);
             });
     }
