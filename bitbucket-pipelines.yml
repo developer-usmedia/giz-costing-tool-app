@@ -33,7 +33,8 @@ definitions:
         image: usmedia/cloud-sdk:latest
         script:
           # Get version for deployment
-          - export VERSION=$(if [ "${BITBUCKET_BRANCH}" = "develop" ]; then echo "staging"; elif [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; else date +"%Y-%m-%d-build-${BITBUCKET_BUILD_NUMBER}"; fi)
+          - export VERSION=$(if [ "${BITBUCKET_BRANCH}" = "develop" ]; then echo "staging"; elif [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; fi)
+          - export PROMOTE=$(if [ "${BITBUCKET_BRANCH}" = "master"  ]; then echo "--promote"; else echo "--no-promote"; fi)
 
           # Fill index.html with env variables
           - export BASE_HREF='/en/'
@@ -47,7 +48,7 @@ definitions:
           - gcloud config set project ${GOOGLE_CLOUD_PROJECT}
           - echo ${GCP_BITBUCKET_PIPELINE_SA} | base64 --decode --ignore-garbage > client-secret.json
           - gcloud auth activate-service-account --key-file client-secret.json && rm -f client-secret.json
-          - gcloud app deploy ./dist/ --quiet --version=${VERSION}
+          - gcloud app deploy ./dist/ --quiet --version=${VERSION} ${PROMOTE}
         artifacts:
           - dist/**
         after-script:
