@@ -125,11 +125,11 @@
                             </th>
                             <td giz-table-cell alignment="right">
                                 <p>{{ entry.livingWage?.nrOfWorkersBelowLivingWage | empty }} <span i18n="workers">{ entry.livingWage?.nrOfWorkersBelowLivingWage, plural, =1 {worker} other {workers}}</span></p>
-                                <p class="table-cell__subtitle">{{ percOfWorkersBelowLivingWage | number: '1.0-2' }}% <span i18n="of total">of total</span></p>
+                                <p class="table-cell__subtitle">{{ percOfWorkersBelowLivingWage | number: '1.0-10' }}% <span i18n="of total">of total</span></p>
                             </td>
                             <td giz-table-cell alignment="right">
                                 <p>{{ entry.scenario?.livingWage?.nrOfWorkersBelowLivingWage }} <span i18n="workers">{ entry.scenario?.livingWage?.nrOfWorkersBelowLivingWage, plural, =1 {worker} other {workers}}</span></p>
-                                <p class="table-cell__subtitle">{{ percOfWorkersBelowLivingWageScenario | number: '1.0-2' }}% <span i18n="of total">of total</span></p>
+                                <p class="table-cell__subtitle">{{ percOfWorkersBelowLivingWageScenario | number: '1.0-10' }}% <span i18n="of total">of total</span></p>
                             </td>
                         </tr>
                         <tr giz-table-row>
@@ -138,12 +138,12 @@
                                 <p class="table-cell__subtitle" i18n="report average-lw-gap hint">For employees below living wage</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                <p>{{ entry.livingWage?.avgLivingWageGap | currency: currencyCode : '' | empty  }} {{ currencyCode }}</p>
-                                <p class="table-cell__subtitle">{{ percAvgLivingWageGap | number: '1.0-2' }}% <span i18n="of benchmark">of benchmark</span></p>
+                                <p>{{ entry.livingWage?.avgLivingWageGap | currency: currencyCode : '' : '1.0-10' | empty  }} {{ currencyCode }}</p>
+                                <p class="table-cell__subtitle">{{ percAvgLivingWageGap | number: '1.0-10' }}% <span i18n="of benchmark">of benchmark</span></p>
                             </td>
                             <td giz-table-cell alignment="right">
-                                <p>{{ entry.scenario?.livingWage?.avgLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}</p>
-                                <p class="table-cell__subtitle">{{ percAvgLivingWageGapScenario | number: '1.0-2' }}% <span i18n="of benchmark">of benchmark</span></p>
+                                <p>{{ entry.scenario?.livingWage?.avgLivingWageGap | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}</p>
+                                <p class="table-cell__subtitle">{{ percAvgLivingWageGapScenario | number: '1.0-10' }}% <span i18n="of benchmark">of benchmark</span></p>
                             </td>
                         </tr>
                         <tr giz-table-row>
@@ -151,10 +151,10 @@
                                 <p i18n="report facility-lw-gap">Facility wide living wage gap</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                {{ entry.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                             <td giz-table-cell alignment="right">
-                                {{ entry.scenario?.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.scenario?.livingWage?.annualFacilityLivingWageGap | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                         </tr>
                     </ng-container>
@@ -174,7 +174,7 @@
                             <th giz-table-header-cell alignment="right" i18n="facility label">Facility (100%)</th>
                             @if (showBuyerColumn) {
                                 <th giz-table-header-cell alignment="right" i18n="buyer label">
-                                    {{ entry.buyer?.name ?? 'Buyer' }} ({{ buyerPercentage | number: '1.0-2' }}%)
+                                    {{ entry.buyer?.name ?? 'Buyer' }} ({{ buyerPercentage | number: '1.0-10' }}%)
                                 </th>
                             }
                         </tr>
@@ -185,11 +185,11 @@
                                 <p i18n="report contribution">Voluntary contribution requested</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                {{ entry.scenario?.annualCosts?.remunerationIncrease | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.scenario?.annualCosts?.remunerationIncrease | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right">
-                                    {{ entry.buyer?.annualCosts?.remunerationIncrease | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                    {{ entry.buyer?.annualCosts?.remunerationIncrease | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                                 </td>
                             }
                         </tr>
@@ -199,11 +199,11 @@
                                 <p class="table-cell__subtitle" i18n="report additional-labor-costs levies">Including levies and taxes</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                + {{ entry.scenario?.annualCosts?.taxCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                + {{ entry.scenario?.annualCosts?.taxCosts | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right">
-                                    + {{ entry.buyer?.annualCosts?.taxCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                    + {{ entry.buyer?.annualCosts?.taxCosts | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                                 </td>
                             }
                         </tr>
@@ -213,11 +213,11 @@
                                 <p class="table-cell__subtitle" i18n="report overhead-costs hint">e.g. administrative costs</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                + {{ entry.scenario?.annualCosts?.overheadCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                + {{ entry.scenario?.annualCosts?.overheadCosts | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right">
-                                    + {{ entry.buyer?.annualCosts?.overheadCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                    + {{ entry.buyer?.annualCosts?.overheadCosts | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                                 </td>
                             }
                         </tr>
@@ -226,11 +226,11 @@
                                 <p i18n="report total-costs">Total costs</p>
                             </th>
                             <td giz-table-cell alignment="right" type="subtotal">
-                                {{ entry.scenario?.annualCosts?.totalCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.scenario?.annualCosts?.totalCosts | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right" type="subtotal">
-                                    {{ entry.buyer?.annualCosts?.totalCosts | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                    {{ entry.buyer?.annualCosts?.totalCosts | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                                 </td>
                             }
                         </tr>
@@ -239,11 +239,11 @@
                                 <p i18n="report annual-production">Annual production</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                + {{ entry.facility.production.amount | number: '1.0-2' }} {{ entry.facility.production.unit }}
+                                + {{ entry.facility.production.amount | number: '1.0-10' }} {{ entry.facility.production.unit }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right">
-                                    + {{ buyerAnnualProduction | number: '1.0-2' }} {{ entry.facility.production.unit }}
+                                    + {{ buyerAnnualProduction | number: '1.0-10' }} {{ entry.facility.production.unit }}
                                 </td>
                             }
                         </tr>
@@ -252,11 +252,11 @@
                                 <p i18n="report cost-implecation">Cost implication per unit</p>
                             </th>
                             <td giz-table-cell alignment="right" type="total">
-                                {{ entry.scenario?.annualCosts?.totalCostsPerUnit | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                {{ entry.scenario?.annualCosts?.totalCostsPerUnit | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right" type="total">
-                                    {{ entry.buyer?.annualCosts?.totalCostsPerUnit | currency: currencyCode : '' | empty }} {{ currencyCode }}
+                                    {{ entry.buyer?.annualCosts?.totalCostsPerUnit | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
 
                                 </td>
                             }
