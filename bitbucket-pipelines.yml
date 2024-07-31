@@ -50,8 +50,6 @@ definitions:
           - echo ${GCP_BITBUCKET_PIPELINE_SA} | base64 --decode --ignore-garbage > client-secret.json
           - gcloud auth activate-service-account --key-file client-secret.json && rm -f client-secret.json
           - gcloud app deploy ./dist/ --quiet ${PROMOTE} --version=${VERSION} 
-        artifacts:
-          - dist/**
         after-script:
           - ./config/gae/clean-versions.sh
 
