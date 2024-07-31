@@ -7,7 +7,7 @@ echo "Cleanup of old versions"
 for VERSION in ${VERSIONS}
 do
     ((COUNT++))
-    if [ $COUNT -gt 10 ]
+    if [ $COUNT -gt 10 ] && [[ "$VERSION" != *"staging"* && "$VERSION" != *"production"* ]]
     then
       echo "Delete version '${VERSION}' of '${GOOGLE_CLOUD_PROJECT}'."
       gcloud app versions delete ${VERSION} --service default --project=${GOOGLE_CLOUD_PROJECT} --quiet
