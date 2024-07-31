@@ -11,8 +11,8 @@ import { BuyerUnit, Entry, EntryUpdateMutation } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { EntriesService } from '@core/services';
-import { CustomValidators } from '@shared/services';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { CustomValidators } from '@shared/services';
 
 
 export interface EntryBuyerForm {
@@ -116,7 +116,7 @@ export class EntryBuyerComponent implements OnDestroy {
             entryId: this.entryId(),
             entryUpdate: {
                 buyer: {
-                    buyerName: formValue.buyerName,
+                    buyerName: formValue.buyerName === '' ? null : formValue.buyerName,
                     buyerProportion: formValue.buyerAmount,
                     buyerUnit: formValue.buyerUnit,
                 },

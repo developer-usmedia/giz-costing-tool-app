@@ -97,8 +97,8 @@ export interface EntryUpdateForm {
     taxEmployee?: number;
     currencyCode?: string;
     buyer?: {
-        buyerName: string;
-        buyerProportion: number;
+        buyerName: string | null;
+        buyerProportion: number | null;
         buyerUnit: BuyerUnit;
     };
     facility?: {
