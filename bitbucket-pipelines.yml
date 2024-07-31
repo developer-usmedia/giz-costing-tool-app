@@ -30,13 +30,14 @@ definitions:
 
     - step: &deploy
         name: Deploy
-        image: usmedia/cloud-sdk:latest
+        image: google/cloud-sdk:latest
         script:
           # Get version for deployment
           - export VERSION=$(if [ "${BITBUCKET_BRANCH}" = "develop" ]; then echo "staging"; elif [ -n "${GAE_VERSION}" ]; then echo "${GAE_VERSION}"; fi)
           - export PROMOTE=$(if [ "${BITBUCKET_BRANCH}" = "master" ]; then echo ""; else echo "--no-promote"; fi)
 
           # Fill index.html with env variables
+          - apt-get update && apt-get install gettext-base
           - export BASE_HREF='/en/'
           - envsubst < './dist/browser/en/index.html' > './dist/browser/en/index.temp.html'
           - mv './dist/browser/en/index.temp.html' './dist/browser/en/index.html'
@@ -64,12 +65,13 @@ pipelines:
       - step:
           name: Deploy to staging - PR preview
           deployment: staging
-          image: usmedia/cloud-sdk:latest
+          image: google/cloud-sdk:latest
           script:
             # Get version for deployment
             - export VERSION="preview-${BITBUCKET_PR_ID}"
 
             # Fill index.html with env variables
+            - apt-get update && apt-get install gettext-base
             - export BASE_HREF='/en/'
             - envsubst < './dist/browser/en/index.html' > './dist/browser/en/index.temp.html'
             - mv './dist/browser/en/index.temp.html' './dist/browser/en/index.html'
@@ -82,8 +84,6 @@ pipelines:
             - echo ${GCP_BITBUCKET_PIPELINE_SA} | base64 --decode --ignore-garbage > client-secret.json
             - gcloud auth activate-service-account --key-file client-secret.json && rm -f client-secret.json
             - gcloud app deploy ./dist/ --quiet --no-promote --version=${VERSION}
-          artifacts:
-            - dist/**
           after-script:
             - ./config/gae/clean-versions.sh
 

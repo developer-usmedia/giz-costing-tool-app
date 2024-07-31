@@ -7,7 +7,7 @@ Google Cloud Project: airy-web-417014
 | Environment | URL                                                        |
 | ----------- | ---------------------------------------------------------- |
 | Local       | <http://localhost:4200>                                    |
-| Staging     | <https://staging-dot-airy-web-417014.ey.r.appspot.com/en/> |
+| Staging     | <https://staging-dot-airy-web-417014.ey.r.appspot.com/> |
 | Production  | <https://costing-tool.nachhaltige-agrarlieferketten.org/>  |
 
 
