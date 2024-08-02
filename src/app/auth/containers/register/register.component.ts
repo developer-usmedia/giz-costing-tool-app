@@ -4,7 +4,7 @@ import { Select, Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, Subject, take, takeUntil } from 'rxjs';
 
-import { RegisterForm } from '@api/models';
+import { ErrorResponse, RegisterForm } from '@api/models';
 import { AuthApi } from '@api/services';
 import { ROOT_ROUTE, UserDetails } from '@core/models';
 import { AuthService } from '@core/services';
@@ -88,8 +88,19 @@ export class RegisterComponent implements OnDestroy {
                     return this.currentStep$.next(REGISTER_STEPS.VERIFICATION_CODE);
                 },
                 error: (error: HttpErrorResponse) => {
-                    if (error.status === STATUS.BAD_REQUEST) {
+                    const errorBody = error.error as ErrorResponse;
+                    const isBadRequest = errorBody.statusCode === STATUS.BAD_REQUEST;
+                    if (isBadRequest && errorBody.message?.includes('verify email')) {
+                        this.store.dispatch(new SaveUserDetails({
+                            email: registerForm.email,
+                            password: registerForm.password,
+                        }));
+                        this.sendNewCode();
+                        return this.currentStep$.next(REGISTER_STEPS.VERIFICATION_CODE);
+                    } else if (isBadRequest) {
                         this.emailTaken = true;
+                    } else {
+                        this.toastr.error($localize`:register error:Something went wrong registering new account`, errorBody.message);
                     }
                     this.signupSubmitting = false;
                 },
