@@ -6,7 +6,6 @@ import { BaseAuthComponent } from '@core/containers/base-auth/base-auth.componen
 import { BaseContentComponent } from '@core/containers/base-content/base-content.component';
 import { BaseComponent } from '@core/containers/base/base.component';
 import { CpDataProtectionComponent } from '@core/containers/cp-data-protection/cp-data-protection.component';
-import { CpDocumentationComponent } from '@core/containers/cp-documentation/cp-documentation.component';
 import { CpImprintComponent } from '@core/containers/cp-imprint/cp-imprint.component';
 import { CpTermsComponent } from '@core/containers/cp-terms/cp-terms.component';
 import { DashboardComponent } from '@core/containers/dashboard/dashboard.component';
@@ -25,10 +24,6 @@ const routes: Routes = [
                 path: '',
                 pathMatch: 'full',
                 component: HomepageComponent,
-            },
-            {
-                path: ROOT_ROUTE.DOCUMENTATION.replace(/\//g, ''),
-                component: CpDocumentationComponent,
             },
             {
                 path: ROOT_ROUTE.IMPRINT.replace(/\//g, ''),

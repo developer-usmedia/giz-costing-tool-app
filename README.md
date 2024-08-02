@@ -60,7 +60,8 @@ When you've added a new translatable string run
     npm run extract-i18n
 ```
 
-This will generate a new source json & xlf file. Make sure you copy the new translations to all translation files and translate the content.
+This will generate a new source json & xlf file. Make sure you copy the new translations to all translation files (for now just es) and translate the content.  
+Sometimes angular changes the ID for a translation (for example if the meaning is changed): make sure to also update the id's for the other translations.  
 The XLF file is used a reference. In this file you can see where a string is used.
 
 Test the translations using the separate start tasks for each language.  

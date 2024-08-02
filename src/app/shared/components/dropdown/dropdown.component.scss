@@ -1,0 +1,50 @@
+@import 'config/sizes';
+@import 'mixins/typography';
+
+.dropdown {
+    $self: &;
+
+    display: block;
+    margin: 0 0 1rem;
+    position: relative;
+    width: 100%;
+
+    &[open] {
+        #{ $self }__icon {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__summary {
+        @include style-heading-3;
+
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: $p-gutter--xsmall;
+        margin: 0;
+
+        &:hover {
+            #{ $self }__title {
+                padding-left: 0.5rem;
+            }
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__title {
+        transition: padding 0.2s ease;
+    }
+
+    &__icon {
+        transition: transform 0.2s;
+    }
+
+    &__content {
+        overflow: hidden;
+        padding-top: 1rem;
+    }
+}

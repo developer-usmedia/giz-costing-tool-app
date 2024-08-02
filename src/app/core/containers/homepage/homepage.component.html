@@ -3,7 +3,15 @@
         <h1 class="homepage__title" i18n="homepage title">Welcome to the Costing Tool</h1>
         <p class="homepage__version">v1.15.0</p>
         <div class="homepage__description">
-            <div [innerHTML]="this.getMarkdown() | markdown"></div>
+            <p>{{ intro() }}</p>
+
+            <giz-dropdown [title]="aboutTitle()">
+                <div [innerHTML]="aboutMarkdown() | markdown"></div>
+            </giz-dropdown>
+
+            <giz-dropdown [title]="howTitle()">
+                <div [innerHTML]="howMarkdown() | markdown"></div>
+            </giz-dropdown>
         </div>
 
         <div class="homepage__buttons">

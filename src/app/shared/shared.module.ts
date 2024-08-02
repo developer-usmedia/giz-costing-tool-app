@@ -50,6 +50,7 @@ import {
 import { AlertComponent } from './components/alert/alert.component';
 import { NoResultsComponent } from './components/no-results/no-results.component';
 import { FileDownloadDirective } from './directives/file-download.directive';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 const PIPES = [
     BuyerUnitPipe,
@@ -71,6 +72,7 @@ const COMPONENTS = [
     ButtonComponent,
     CreateEntryDialogComponent,
     DialogComponent,
+    DropdownComponent,
     EntryCardComponent,
     FileUploadComponent,
     IconButtonComponent,
