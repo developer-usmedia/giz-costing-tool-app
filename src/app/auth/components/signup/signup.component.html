@@ -25,6 +25,13 @@
         <div class="form__input">
             <label class="form__label" for="password" i18n="form password label">Password</label>
             <input type="password" id="password" formControlName="password"/>
+            <button type="button"
+                    class="form__tooltip"
+                    giz-icon-button
+                    theme="basic"
+                    [icon]="icon.HELP"
+                    gizTooltip
+                    [text]="tooltipPassword"></button>
         </div>
         @if (form | hasError: 'password' :'required') {
             <div class="form__error" i18n="form password errors required">Password is required</div>

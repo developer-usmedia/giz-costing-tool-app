@@ -12,6 +12,7 @@ import {
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { RegisterForm } from '@api/models';
+import { ICON } from '@shared/components/icon/icon.enum';
 import { CustomValidators } from '@shared/services';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
@@ -64,11 +65,16 @@ export class SignupComponent implements OnInit, OnChanges, OnDestroy {
         }
     );
 
+    protected readonly icon = ICON;
     protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly authRoute = AUTH_ROUTE;
 
     private readonly destroyed$ = new Subject<void>();
     private _emailTaken?: boolean;
+
+    get tooltipPassword(): string {
+        return $localize`:password explanation:Password must be between 12 & 200 characters and must contain upper- and lowercase characters, numbers and special characters`;
+    }
 
     get password(): AbstractControl | null {
         return this.form.controls.password;
@@ -118,5 +124,4 @@ export class SignupComponent implements OnInit, OnChanges, OnDestroy {
             this.submitForm.emit(form);
         }
     }
-
 }

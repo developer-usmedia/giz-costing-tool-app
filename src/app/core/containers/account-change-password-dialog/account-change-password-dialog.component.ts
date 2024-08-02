@@ -94,7 +94,7 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
     }
 
     get tooltipPassword(): string {
-        return $localize`:password explanation:Password must be between 12 & 200 characters and must contain upper- and lowercase characters, numbers and special characters<  `;
+        return $localize`:password explanation:Password must be between 12 & 200 characters and must contain upper- and lowercase characters, numbers and special characters`;
     }
 
     get password(): AbstractControl | null {
