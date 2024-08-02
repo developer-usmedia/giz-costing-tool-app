@@ -14,7 +14,7 @@ export const SCENARIOS: ScenarioInfo[] = [
         type: ScenarioType.CLOSE_GAP,
         imageUrl: 'assets/images/scenario-close-gap.png',
         title: $localize`:scenario close-gap title: Close the living wage gap`,
-        description: $localize`:scenario close-gap description:Analyse the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage`,
+        description: $localize`:scenario close-gap description:Closing the living wage gap by increasing wage levels of all workers below living wage to living wage`,
         comments: $localize`:scenario close-gap comment-1:
 Analyse the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage.
 

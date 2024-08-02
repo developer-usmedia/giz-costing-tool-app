@@ -554,7 +554,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <note priority="1" from="description">register verification title</note>
       </trans-unit>
@@ -566,7 +566,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">177</context>
         </context-group>
         <note priority="1" from="description">register verification description</note>
       </trans-unit>
@@ -582,11 +582,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">131</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">142</context>
+          <context context-type="linenumber">153</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -610,7 +610,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">151</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -714,7 +714,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">164</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/homepage/homepage.component.html</context>
@@ -738,11 +738,19 @@
         </context-group>
         <note priority="1" from="description">register finalize hint</note>
       </trans-unit>
+      <trans-unit id="6718110387500572207" datatype="html">
+        <source>Something went wrong registering new account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <note priority="1" from="description">register error</note>
+      </trans-unit>
       <trans-unit id="3662195006957430287" datatype="html">
         <source>New code sent</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">148</context>
         </context-group>
         <note priority="1" from="description">verificationCode send success</note>
       </trans-unit>
@@ -750,7 +758,7 @@
         <source>All done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">157</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="description">register finalize title</note>
       </trans-unit>
@@ -758,7 +766,7 @@
         <source>Please fill in the details below to create your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <note priority="1" from="description">register signup description</note>
       </trans-unit>
@@ -766,7 +774,7 @@
         <source>Your account has been created and you are ready to start using the tool</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">179</context>
         </context-group>
         <note priority="1" from="description">register finalize description</note>
       </trans-unit>
@@ -2168,8 +2176,8 @@ In order to advance the payment of living wages, GIZ developed the Living Wage C
         </context-group>
         <note priority="1" from="description">scenario close-gap title</note>
       </trans-unit>
-      <trans-unit id="6683281301964635974" datatype="html">
-        <source>Analyse the cost implications of closing the living wage gap by increasing wage levels of all workers below living wage to living wage</source>
+      <trans-unit id="4645422732519172477" datatype="html">
+        <source>Closing the living wage gap by increasing wage levels of all workers below living wage to living wage</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/models/scenario-info.model.ts</context>
           <context context-type="linenumber">17</context>
@@ -2743,8 +2751,8 @@ You can also choose to increase all wages per job category by different amounts,
         </context-group>
         <note priority="1" from="description">scenario select</note>
       </trans-unit>
-      <trans-unit id="6595160691235962559" datatype="html">
-        <source>The minimum wage increase chosen will be applied to all job categories as a first step. In the following section you will have the opportunity of adapting the wage increase per job category. To close the LW gap for all workers the minumum wage increase has to be at least equal to the amount of the largest living wage gap.</source>
+      <trans-unit id="1762416655188680906" datatype="html">
+        <source>The minimum wage increase chosen will be applied to all job categories as a first step. In the following section you will have the opportunity of adapting the wage increase per job category. To close the LW gap for all workers the minimum wage increase has to be at least equal to the amount of the largest living wage gap.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">6,9</context>
