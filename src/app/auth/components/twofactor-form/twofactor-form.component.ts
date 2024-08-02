@@ -8,6 +8,7 @@ import {
     Output,
     SimpleChanges,
 } from '@angular/core';
+import { ICON } from '@shared/components/icon/icon.enum';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -42,11 +43,16 @@ export class TwofactorFormComponent implements OnInit, OnChanges, OnDestroy {
         },
     );
 
+    protected readonly icon = ICON;
     protected readonly moduleRoute = MODULE_ROUTE;
     protected readonly authroute = AUTH_ROUTE;
 
     private readonly destroyed$ = new Subject<void>();
     private _wrongOTP = false;
+
+    get tooltipOTP(): string {
+        return $localize`:otp explanation:This is the 2factor code you can view in your authenticator app.`;
+    }
 
     get wrongOTP(): boolean {
         return this._wrongOTP;

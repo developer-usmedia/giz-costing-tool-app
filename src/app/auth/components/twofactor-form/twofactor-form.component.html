@@ -6,6 +6,13 @@
         <div class="form__input">
             <label class="form__label"  for="otpCode" i18n="form otpCode label">OTP Code</label>
             <input type="text" id="otpCode" formControlName="otpCode"/>
+            <button type="button"
+                    class="form__tooltip"
+                    giz-icon-button
+                    theme="basic"
+                    [icon]="icon.HELP"
+                    gizTooltip
+                    [text]="tooltipOTP"></button>
         </div>
         @if (form | hasError: 'otpCode' :'required') {
             <div class="form__error" i18n="form otpCode errors required">OTP Code is required</div>
