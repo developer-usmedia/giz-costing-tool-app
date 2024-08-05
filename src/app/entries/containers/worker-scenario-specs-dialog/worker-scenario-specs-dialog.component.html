@@ -34,7 +34,7 @@
             }
         </div>
 
-        @if (remunerationIncrease?.value && remunerationIncrease?.value < (data.worker.livingWage?.livingWageGap ?? 0)) {
+        @if (remunerationIncrease?.value && remunerationIncrease?.value <= (data.worker.livingWage?.livingWageGap ?? 0)) {
             <giz-alert type="warning"><span i18n="wage-increase-too-low"> Wage increase is set lower than living wage gap.</span></giz-alert>
         }
     </form>
