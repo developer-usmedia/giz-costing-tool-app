@@ -28,6 +28,7 @@ interface LoginFormGroup {
 })
 export class LoginFormComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;
+    @Input() locked = false;
 
     @Output() submitForm = new EventEmitter<LoginForm>();
 

@@ -29,6 +29,9 @@
         @if (wrongPassword) {
             <div class="form__error" i18n="form password-email errors incorrect">Either your email address or your password is incorrect.</div>
         }
+        @if (locked) {
+            <div class="form__error" i18n="form login locked">Too many failed login attempts, login is locked. Please try again later.</div>
+        }
     </div>
 
     @if (submitting) {

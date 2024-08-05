@@ -24,6 +24,7 @@ export class LoginComponent {
     public submitting = false;
     public wrongPassword = false;
     public wrongOTP = false;
+    public locked = false;
     public step: 'form' | '2FA' = 'form';
 
     protected readonly authRoute = AUTH_ROUTE;
@@ -74,6 +75,9 @@ export class LoginComponent {
 
     public login(loginForm: LoginForm): void {
         this.submitting = true;
+        this.wrongPassword = false;
+        this.wrongOTP = false;
+        this.locked = false;
 
         this.authApi
             .login(loginForm)
@@ -81,22 +85,25 @@ export class LoginComponent {
             .then(() => this.router.navigate([ROOT_ROUTE.DASHBOARD]))
             .catch(async (error: HttpErrorResponse) => {
                 const errorBody = error.error as ErrorResponse;
-                if (error.status === STATUS.BAD_REQUEST && errorBody?.message.includes('emailVerificationCode')) {
+                if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('emailVerificationCode')) {
                     this.store.dispatch(new SaveUserDetails({
                         email: loginForm.email,
                         password: loginForm.password,
                     }));
                     await this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.EMAIL_VERIFICATION]);
                 }
-                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.includes('Two-factor is enabled')) {
+                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('two-factor is enabled')) {
                     this.store.dispatch(new SaveUserDetails({
                         email: loginForm.email,
                         password: loginForm.password,
                     }));
                     this.step = '2FA';
                 }
-                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.includes('Two-factor code is invalid')) {
+                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('two-factor code is invalid')) {
                     this.wrongOTP = true;
+                }
+                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('login locked')) {
+                    this.locked = true;
                 }
                 else if (error.status === STATUS.NOT_FOUND || error.status === STATUS.UNAUTHORIZED) {
                     this.step = 'form';

@@ -90,7 +90,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
-          <context context-type="linenumber">31,32</context>
+          <context context-type="linenumber">38,39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/logout/logout.component.html</context>
@@ -106,7 +106,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">46,47</context>
+          <context context-type="linenumber">49,50</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/new-password/new-password.component.html</context>
@@ -122,7 +122,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
-          <context context-type="linenumber">34,35</context>
+          <context context-type="linenumber">41,42</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/verification/verification.component.html</context>
@@ -210,7 +210,7 @@
         <source>Either your email address or your password is incorrect.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">30,34</context>
+          <context context-type="linenumber">30,33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-remove-dialog/account-remove-dialog.component.html</context>
@@ -218,15 +218,23 @@
         </context-group>
         <note priority="1" from="description">form password-email errors incorrect</note>
       </trans-unit>
+      <trans-unit id="7496673118998236084" datatype="html">
+        <source>Too many failed login attempts, login is locked. Please try again later.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">33,37</context>
+        </context-group>
+        <note priority="1" from="description">form login locked</note>
+      </trans-unit>
       <trans-unit id="3002949707073442552" datatype="html">
         <source>Login in...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">37,40</context>
+          <context context-type="linenumber">40,43</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
-          <context context-type="linenumber">25,28</context>
+          <context context-type="linenumber">32,35</context>
         </context-group>
         <note priority="1" from="description">form state login</note>
       </trans-unit>
@@ -234,7 +242,7 @@
         <source>Forgot password?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">43,45</context>
+          <context context-type="linenumber">46,48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/reset-password/reset-password.component.ts</context>
@@ -470,7 +478,7 @@
         <source>Password must be between 12 &amp; 200 characters and must contain upper- and lowercase characters, numbers and special characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/signup/signup.component.ts</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
@@ -502,7 +510,7 @@
         <source>OTP Code is required</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
-          <context context-type="linenumber">11,13</context>
+          <context context-type="linenumber">18,20</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
@@ -522,7 +530,7 @@
         <source>OTP Code has to be 6 characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">22,24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
@@ -542,7 +550,7 @@
         <source>OTP Code is not correct</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.html</context>
-          <context context-type="linenumber">18,22</context>
+          <context context-type="linenumber">25,29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.html</context>
@@ -557,6 +565,18 @@
           <context context-type="linenumber">49,52</context>
         </context-group>
         <note priority="1" from="description">form otpCode errors incorrect</note>
+      </trans-unit>
+      <trans-unit id="2828751851574113392" datatype="html">
+        <source>This is the 2factor code you can view in your authenticator app.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/twofactor-form/twofactor-form.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <note priority="1" from="description">otp explanation</note>
       </trans-unit>
       <trans-unit id="7451233168808859381" datatype="html">
         <source>Verification Code</source>
@@ -658,7 +678,7 @@
         <source>Verification code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <note priority="1" from="description">login-2fa title</note>
       </trans-unit>
@@ -666,7 +686,7 @@
         <source>Welcome Back!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <note priority="1" from="description">login title</note>
       </trans-unit>
@@ -674,7 +694,7 @@
         <source>Enter the code from your authenticator app</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <note priority="1" from="description">login-2fa description</note>
       </trans-unit>
@@ -682,7 +702,7 @@
         <source>Please login to continue</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <note priority="1" from="description">login description</note>
       </trans-unit>
@@ -690,7 +710,7 @@
         <source>Something went wrong logging in</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.ts</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">113</context>
         </context-group>
         <note priority="1" from="description">login error</note>
       </trans-unit>
@@ -1085,14 +1105,6 @@
           <context context-type="linenumber">89</context>
         </context-group>
         <note priority="1" from="description">change-password title</note>
-      </trans-unit>
-      <trans-unit id="2828751851574113392" datatype="html">
-        <source>This is the 2factor code you can view in your authenticator app.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/account-change-password-dialog/account-change-password-dialog.component.ts</context>
-          <context context-type="linenumber">93</context>
-        </context-group>
-        <note priority="1" from="description">otp explanation</note>
       </trans-unit>
       <trans-unit id="5462306218747490529" datatype="html">
         <source>Successfully changed password</source>
@@ -1997,18 +2009,6 @@ For more information on this, and how to apply and follow the GNU AGPL, see
         </context-group>
         <note priority="1" from="description">entries view-all</note>
       </trans-unit>
-      <trans-unit id="7389865603770362890" datatype="html">
-        <source>
-On many farms or plantations, at least some workers do not earn a living wage. There is a gap between the actual wage paid and a living wage. If at least some workers on a farm or plantation do not receive a living wage, there are various ways to close the gap between the actual wage paid and a living wage: Strong trade unions and workers&apos; representatives are an important lever to work towards improved wage and working conditions in the long term within the framework of collective agreements. Companies can also make a proactive contribution through their procurement practices and reward producers for high wage and labour standards. For example, through an additional price premium to cover the extra costs of paying living wages.
-
-In order to advance the payment of living wages, GIZ developed the Living Wage Costing Tool. Based on the output of the IDH Salary Matrix the GIZ Living Wage Costing Tool provides various calculations to help you analyse the direct cost implications for producers to pay workers a living wage. It therefore allows the producer to determine additional costs of paying a living wage at farm level.
-</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/containers/dashboard/dashboard.component.ts</context>
-          <context context-type="linenumber">39,43</context>
-        </context-group>
-        <note priority="1" from="description">homepage body</note>
-      </trans-unit>
       <trans-unit id="5641945527911431559" datatype="html">
         <source>Error: <x id="INTERPOLATION" equiv-text="{{ code }}"/></source>
         <context-group purpose="location">
@@ -2690,7 +2690,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Base wage (status-quo)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">224</context>
+          <context context-type="linenumber">226</context>
         </context-group>
         <note priority="1" from="description">baseWage status-quo label</note>
       </trans-unit>
@@ -2698,7 +2698,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Bonuses (status-quo)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">235</context>
+          <context context-type="linenumber">237</context>
         </context-group>
         <note priority="1" from="description">bonuses status-quo label</note>
       </trans-unit>
@@ -2706,7 +2706,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>IKB (status-quo)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">246</context>
+          <context context-type="linenumber">248</context>
         </context-group>
         <note priority="1" from="description">ikb status-quo label</note>
       </trans-unit>
@@ -2714,7 +2714,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Base wage (scenario)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">257</context>
+          <context context-type="linenumber">259</context>
         </context-group>
         <note priority="1" from="description">baseWage scenario label</note>
       </trans-unit>
@@ -2722,7 +2722,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Bonuses (scenario)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">268</context>
+          <context context-type="linenumber">270</context>
         </context-group>
         <note priority="1" from="description">bonuses scenario label</note>
       </trans-unit>
@@ -2730,7 +2730,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>IKB (scenario)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">279</context>
+          <context context-type="linenumber">281</context>
         </context-group>
         <note priority="1" from="description">ikb scenario label</note>
       </trans-unit>
@@ -2738,7 +2738,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>workers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">347</context>
+          <context context-type="linenumber">349</context>
         </context-group>
         <note priority="1" from="description">workers</note>
       </trans-unit>
@@ -2746,7 +2746,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>worker</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/report-workers-chart/report-workers-chart.component.ts</context>
-          <context context-type="linenumber">348</context>
+          <context context-type="linenumber">350</context>
         </context-group>
         <note priority="1" from="description">worker</note>
       </trans-unit>
