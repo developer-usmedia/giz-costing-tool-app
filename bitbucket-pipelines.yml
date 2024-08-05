@@ -99,5 +99,14 @@ pipelines:
           name: Deploy to production
           deployment: production
           <<: *deploy
+      - step:
+          name: Sync GitHub Mirror
+          image: alpine/git:latest
+          clone:
+            enabled: false
+          script:
+            - git clone --bare git@bitbucket.org:usmedia/giz-costing-tool-app.git
+            - cd giz-costing-tool-app.git
+            - git push --mirror git@github.com:developer-usmedia/giz-costing-tool-app.git
 
 
