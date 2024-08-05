@@ -59,9 +59,7 @@ export class BaseContentComponent implements OnDestroy {
                 takeUntil(this.destroyed$),
             )
             .subscribe(() => {
-                if (this.router.url === '/') {
-                    this.isHomepage = true;
-                }
+                this.isHomepage = this.router.url === '/';
             });
     }
 
