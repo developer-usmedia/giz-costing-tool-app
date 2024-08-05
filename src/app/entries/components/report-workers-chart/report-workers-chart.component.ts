@@ -159,9 +159,11 @@ export class ReportWorkersChartComponent implements OnInit, OnChanges {
 
     private getDataLabels(): ApexDataLabels {
         return {
-             formatter: (val: number): string | number => {
-                 return this.formatCurrency(val);
-             },
+            formatter: (val: number, opts): string | number => {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                const barWidth: number = Number(opts?.globals?.barWidth) ?? 0;
+                return barWidth > 65 ?  this.formatCurrency(val) : '';
+            },
         };
     }
 
