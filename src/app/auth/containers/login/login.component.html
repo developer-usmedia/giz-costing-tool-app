@@ -4,10 +4,10 @@
 >
     @if (step === 'form') {
         <giz-login-form
-            [wrongPassword]="wrongPassword"
-            [submitting]="submitting"
-            (submitForm)="login($event)"
             [locked]="locked"
+            [submitting]="submitting"
+            [wrongPassword]="wrongPassword"
+            (submitForm)="login($event)"
         ></giz-login-form>
     }
 
