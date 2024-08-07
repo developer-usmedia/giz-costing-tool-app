@@ -146,8 +146,17 @@ export class CreateEntryDialogComponent implements OnDestroy {
         }
 
         switch (validationError.errorType) {
-            case CellValidationError.VERSION_MISMATCH:
-                return $localize`:import validation-error version-mismatch:Version is not matching. Try to export the salary matrix again from the latest version.`;
+            case CellValidationError.VERSION_MISMATCH: {
+                const versionRegexp = new RegExp(/Template version (\d+\.\d+\.\d+) (does not|doesn't) match supported version: (\d+\.\d+\.\d+)/);
+                const versionsMatch = versionRegexp.exec(validationError.message ?? '');
+                if (validationError.message && versionsMatch) {
+                    const templateVersion = versionsMatch[1];
+                    const supportedVersion = versionsMatch[3];
+                    return $localize`:import validation-error version-mismatch:Version ${ templateVersion } is not matching supported version ${ supportedVersion }. Try to export the salary matrix again from the latest version.`;
+                } else {
+                    return $localize`:import validation-error version-mismatch:Version is not matching supported version. Try to export the salary matrix again from the latest version.`;
+                }
+            }
             case CellValidationError.MISSING_PAYROLL_SHEET:
                 return $localize`:import validation-error missing-payroll-sheet:Payroll sheet is missing`;
             case CellValidationError.MISSING_INFO_SHEET:
