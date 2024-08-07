@@ -32,37 +32,14 @@ GIZ only processes personal data to the extent necessary. Which data is required
 ## Collection of personal data when visiting our website
 When visiting the website of Initiative for Sustainable Agricultural Supply Chains (INA) from GIZ, the browser used automatically transmits data that is saved in a log file. GIZ itself processes only the data that is technically required in order to display the website correctly and to ensure its stability and security.
 
-Each time the website is accessed, the data stored includes, but is not limited to, the page that is viewed, the IP address of the accessing device, the page from which the user was redirected, as well as the date and time of access. A detailed list of the data stored is shown here.
+Each time the website is accessed, the data stored includes, but is not limited to, the page that is viewed, the IP address of the accessing device, the page from which the user was redirected, as well as the date and time of access.
 
-The data in the log file is deleted after seven days.
+The data in the log file is deleted after 30 days.
 
 ### Further information on data storage and transfer
 GIZ is obliged to store the data beyond the time of the visit in order to ensure protection against attacks against GIZ’s internet infrastructure and federal communications technology (legal basis: Article 6 (1) e GDPR in conjunction with Section 5 of the German Act on the Federal Office for Information Security (BSIG). In the event of attacks on communications technology, this data is analysed and used to initiate legal and criminal action.
 
 Data that is logged when accessing the GIZ website is only transferred to third parties if there is a legal obligation to do so or if the transfer is necessary for legal or criminal prosecution in the event of attacks on federal communications technology. Data will not be passed on in any other cases. This data is not merged with other data sources at GIZ.
-
-## Cookies
-When you visit the  Living Wage online tool, small text files known as ‘cookies’ are stored on your computer. They are used to make the online presence more user-friendly and effective overall. Cookies cannot run programs or infect your computer with viruses.
-
-The tool's website uses cookies that are automatically deleted as soon as the browser on which the page is displayed is closed (referred to as temporary cookies or session cookies) This type of cookie makes it possible to assign various requests from a browser to a session and to recognise the browser when the website is visited again (session ID).
-
-### Matomo (User analysis)
-This website uses Matomo, a web analytics software. Matomo is using "cookies", small text files, that are stored on your computer and are used for the purposes of analyzing website traffic.
-
-The data stored in the cookie (including an abbreviated IP address) is transfered to and stored on our server for the purpose of analyzing traffic, which is in turn helping us optimize our website. Your IP address is anonymized immediately, so that you remain anonymous as a user.
-
-The cookie information will not be shared with thrid parties. You can deactivate the usage of cookies directly inside your browser. Though, by deactivating cookies in general, it may be that you will not be able to use all of the functionality offered by our website.
-
-If you don't want the data of your visit to be stored and analyzed, you may opt-out at any time by clicking the checkbox below. In case the opt-out option is clicked, a so called opt-out cookie is stored in your browser, which tells Matomo not to collect any session data from your visit. WARNING: In case you are deleting your cookies, you will also delete your opt-out-cookie. Therefore, if you visit our website again, you may have to check the opt-out option again, to avoid the tracking of your session.
-
-### Cookie settings
-Processing of personal data when contacting us
-When users contact us, the data provided is processed in order to be able to respond to the enquiry. The following contact options are available:
-
-- Email
-- Letter
-- Phone
-- Newsletter
 
 ## Contact by email
 It is possible to contact GIZ via the email addresses provided. In this case, at least the email address but also any other personal user data transmitted with the email (e.g. family and given name, address) as well as the information contained in the email are stored solely for the purpose of contacting the user and processing the request.

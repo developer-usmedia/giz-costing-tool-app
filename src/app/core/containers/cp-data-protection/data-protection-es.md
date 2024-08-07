@@ -29,38 +29,15 @@ La GIZ sólo procesa datos personales en la medida de lo necesario. Qué datos s
 ## Adquisición de datos personales al visitar nuestra página web
 Al visitar el sitio web de la Iniciativa para Cadenas de Suministro Agrícolas Sostenibles (INA) de la GIZ, el navegador utilizado transmite automáticamente datos que se guardan en un archivo de registro. La propia GIZ procesa únicamente los datos técnicamente necesarios para la correcta visualización de la página web y para garantizar su estabilidad y seguridad.
 
-Cada vez que se accede al sitio web, los datos almacenados incluyen, entre otros, la página que se visualiza, la dirección IP del dispositivo de acceso, la página desde la que se redirigió al usuario, así como la fecha y hora de acceso. Aquí se muestra una lista detallada de los datos almacenados.
+Cada vez que se accede al sitio web, los datos almacenados incluyen, entre otros, la página que se visualiza, la dirección IP del dispositivo de acceso, la página desde la que se redirigió al usuario, así como la fecha y hora de acceso.
 
-Los datos del archivo de registro se eliminan al cabo de siete días.
+Los datos del archivo de registro se eliminan al cabo de 30 días.
 
 ### Más información sobre el almacenamiento y la transferencia de datos
 Más información sobre el almacenamiento y la transferencia de datos:
 GIZ está obligada a almacenar los datos más allá del tiempo de la visita para garantizar la protección contra ataques contra la infraestructura de Internet de GIZ y la tecnología federal de comunicaciones (base legal: Artículo 6 (1) e GDPR en relación con la Sección 5 de la Ley alemana sobre la Oficina Federal de Seguridad de la Información (BSIG). En caso de ataques a la tecnología de comunicaciones, estos datos se analizan y se utilizan para iniciar acciones legales y penales.
 
 Los datos que se registran al acceder a la página web de la GIZ sólo se transfieren a terceros si existe una obligación legal de hacerlo o si la transferencia es necesaria para la persecución legal o penal en caso de ataques a la tecnología federal de comunicaciones. Los datos no se transmitirán en ningún otro caso. Estos datos no se fusionan con otras fuentes de datos de la GIZ.
-
-## Cookies
-Cuando visita el sitio web de la herramienta de costos de salarios dignos ("Living Wage Tool"), se almacenan en su ordenador pequeños archivos de texto denominados «cookies». Se utilizan para que la presencia en línea sea más fácil de usar y más eficiente en general. Las cookies no pueden ejecutar programas ni infectar su ordenador con virus.
-
-El sitio web de la herramienta utiliza cookies que se borran automáticamente en cuanto se cierra el navegador en el que se visualiza la página (denominadas cookies temporales o cookies de sesión). Este tipo de cookie permite asignar varias solicitudes de un navegador a una sesión y reconocer el navegador cuando se vuelve a visitar el sitio web (ID de sesión).
-
-### Matomo (Análisis de usuario)
-Este sitio web utiliza Matomo, un software de análisis web. Matomo utiliza «»cookies«», pequeños archivos de texto, que se almacenan en su ordenador y se utilizan para analizar el tráfico del sitio web.
-
-Los datos almacenados en la cookie (incluida una dirección IP abreviada) se transfieren a nuestro servidor y se almacenan en él con el fin de analizar el tráfico, lo que a su vez nos ayuda a optimizar nuestro sitio web. Su dirección IP se anonimiza inmediatamente, de modo que usted permanece anónimo como usuario.
-
-La información de las cookies no se compartirá con terceros. Puede desactivar el uso de cookies directamente en su navegador. No obstante, al desactivar las cookies en general, es posible que no pueda utilizar todas las funciones que ofrece nuestro sitio web.
-
-Si no desea que se guarden y analicen los datos de su visita, puede darse de baja en cualquier momento haciendo clic en la casilla de verificación que aparece a continuación. En caso de que haga clic en la opción de exclusión, se almacenará en su navegador la denominada cookie de exclusión, que indica a Matomo que no recopile ningún dato de sesión de su visita. ADVERTENCIA: Si borra las cookies, también borrará la cookie de exclusión. Por lo tanto, si vuelve a visitar nuestro sitio web, es posible que tenga que marcar la opción de exclusión de nuevo, para evitar el seguimiento de su sesión.
-
-### Configuración de las cookies
-Tratamiento de datos personales al ponerse en contacto con nosotros
-Cuando los usuarios se ponen en contacto con nosotros, los datos proporcionados se procesan para poder responder a la consulta. Están disponibles las siguientes opciones de contacto:
-
-- Correo electrónico
-- Carta
-- Teléfono
-- Boletín de noticias
 
 ## Contacto por correo electrónico
 Es posible ponerse en contacto con GIZ a través de las direcciones de correo electrónico facilitadas. En este caso, al menos la dirección de correo electrónico, pero también cualquier otro dato personal del usuario transmitido con el correo electrónico (por ejemplo, apellido y nombre, dirección), así como la información contenida en el correo electrónico, se almacenan únicamente con el fin de ponerse en contacto con el usuario y procesar la solicitud.
