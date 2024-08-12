@@ -224,7 +224,7 @@
         "7609748400763849959": "Name*",
         "9004002956155376507": "Buying proportion * ",
         "957863876617539663": "Buying proportion",
-        "364432951088722182": "portion of total annual production",
+        "3452799431518934238": "portion of total annual production ({$INTERPOLATION} {$INTERPOLATION_1})",
         "8932917860978648376": "Unit",
         "640581944172119625": "(*) Optional field",
         "2830146403309406023": "Entry ID",

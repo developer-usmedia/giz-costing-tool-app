@@ -24,6 +24,7 @@
     } @else {
         <div class="buyer__info">
             <form class="form form--horizontal" autocomplete="off" [formGroup]="form" (ngSubmit)="saveEntry()">
+                <input id="name" type="hidden" formControlName="facilityProduction"/>
                 <div class="form__container">
                     <div class="form__header">
                         <h3 class="form__title" i18n="buyer title">Buyer specification (optional)</h3>
@@ -56,12 +57,12 @@
                                 <label class="form__label is-hidden" for="buyerAmount" i18n="form buyerAmount label">Buying proportion</label>
                                 <div class="form__input">
                                     <input type="number" id="buyerAmount" formControlName="buyerAmount" />
-                                    <span class="form__hint" i18n="form buyerAmount hint">portion of total annual production</span>
+                                    <span class="form__hint" i18n="form buyerAmount hint">portion of total annual production ({{ entry.data()?.facility?.production?.amount | number: '1.0-2' | empty }} {{ entry.data()?.facility?.production?.unit }})</span>
                                     @if (form | hasError: 'buyerAmount' : 'min') {
                                         <div class="form__error" i18n="form buyerAmount errors min">Minimum is 0</div>
                                     }
                                     @if (form.hasError('aboveMax')) {
-                                        <div class="form__error" i18n="form buyerAmount errors max">Maximum is 100</div>
+                                        <div class="form__error" i18n="form buyerAmount errors max">Maximum is {{ form.getError('aboveMax') }}</div>
                                     }
                                 </div>
                             </div>

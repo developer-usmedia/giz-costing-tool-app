@@ -2222,7 +2222,7 @@ You can also choose to increase all wages per job category by different amounts,
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">61,62</context>
+          <context context-type="linenumber">62,63</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component.html</context>
@@ -2239,6 +2239,10 @@ You can also choose to increase all wages per job category by different amounts,
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/components/distribution-form/distribution-form.component.html</context>
           <context context-type="linenumber">67,68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
+          <context context-type="linenumber">65,66</context>
         </context-group>
         <note priority="1" from="description">form baseWagePerc errors imax</note>
       </trans-unit>
@@ -2711,10 +2715,6 @@ You can also choose to increase all wages per job category by different amounts,
           <context context-type="sourcefile">src/app/entries/components/scenario-specs-form/scenario-specs-form.component.html</context>
           <context context-type="linenumber">114,116</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">64,65</context>
-        </context-group>
         <note priority="1" from="description">form taxEmployee errors max</note>
       </trans-unit>
       <trans-unit id="7598535915029054801" datatype="html">
@@ -2985,7 +2985,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Buyer specification (optional)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">29,30</context>
+          <context context-type="linenumber">30,31</context>
         </context-group>
         <note priority="1" from="description">buyer title</note>
       </trans-unit>
@@ -2993,7 +2993,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>If you would like to calculate the voluntary contribution for a specific buyer you can enter the % share or units of annual production you supply to him. The Tool will calculate the voluntary contribution for your facility and the buyer&apos;s share.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">30,31</context>
+          <context context-type="linenumber">31,32</context>
         </context-group>
         <note priority="1" from="description">buyer subtext</note>
       </trans-unit>
@@ -3001,7 +3001,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Name*</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">41,42</context>
         </context-group>
         <note priority="1" from="description">form buyerName label</note>
       </trans-unit>
@@ -3009,7 +3009,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Buying proportion * </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">47,48</context>
+          <context context-type="linenumber">48,49</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount label</note>
       </trans-unit>
@@ -3017,15 +3017,15 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Buying proportion</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">56,57</context>
+          <context context-type="linenumber">57,58</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount label</note>
       </trans-unit>
-      <trans-unit id="364432951088722182" datatype="html">
-        <source>portion of total annual production</source>
+      <trans-unit id="3452799431518934238" datatype="html">
+        <source>portion of total annual production (<x id="INTERPOLATION" equiv-text="{{ entry.data()?.facility?.production?.amount | number: &apos;1.0-2&apos; | empty }}"/> <x id="INTERPOLATION_1" equiv-text="{{ entry.data()?.facility?.production?.unit }}"/>)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">59,60</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
         <note priority="1" from="description">form buyerAmount hint</note>
       </trans-unit>
@@ -3033,7 +3033,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Unit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">76,77</context>
+          <context context-type="linenumber">77,78</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/pipes/buyerUnit.pipe.ts</context>
@@ -3045,7 +3045,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>(*) Optional field</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">87,89</context>
+          <context context-type="linenumber">88,90</context>
         </context-group>
         <note priority="1" from="description">form field optional</note>
       </trans-unit>
@@ -3053,7 +3053,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Entry ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">96,97</context>
+          <context context-type="linenumber">97,98</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -3065,7 +3065,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Copy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">105,106</context>
+          <context context-type="linenumber">106,107</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -3085,7 +3085,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Created on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">110,111</context>
+          <context context-type="linenumber">111,112</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -3097,7 +3097,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Edited on</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.html</context>
-          <context context-type="linenumber">114,115</context>
+          <context context-type="linenumber">115,116</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-information/entry-information.component.html</context>
@@ -3113,7 +3113,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Distribution</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
@@ -3145,7 +3145,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Buyer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-detail/entry-detail.component.html</context>
@@ -3161,7 +3161,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Entry information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <note priority="1" from="description">entry-info title</note>
       </trans-unit>
@@ -3169,7 +3169,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Successfully updated buyer information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">133</context>
         </context-group>
         <note priority="1" from="description">buyer-update success</note>
       </trans-unit>
@@ -3177,7 +3177,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Something went wrong updating the buyer information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/entries/containers/entry-buyer.component/entry-buyer.component.ts</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <note priority="1" from="description">buyer-update error</note>
       </trans-unit>

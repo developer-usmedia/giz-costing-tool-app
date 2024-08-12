@@ -22,6 +22,7 @@ export interface EntryBuyerForm {
 }
 
 interface EntryBuyerFormGroup {
+    facilityProduction: FormControl<number | null>;
     buyerName: FormControl<string | null>;
     buyerAmount: FormControl<number | null>;
     buyerUnit: FormControl<BuyerUnit | null>;
@@ -53,6 +54,7 @@ export class EntryBuyerComponent implements OnDestroy {
     public saving = this.updateEntryMudation.isPending();
 
     public form: FormGroup<EntryBuyerFormGroup> = new FormGroup({
+        facilityProduction: new FormControl<number | null>(this.entry.data()?.facility?.production?.amount ?? null),
         buyerName: new FormControl<string | null>(null),
         buyerAmount: new FormControl<number | null>(null, {
             validators: [Validators.min(0)],
@@ -98,6 +100,7 @@ export class EntryBuyerComponent implements OnDestroy {
         const entry = this.entry.data();
 
         this.form.patchValue({
+            facilityProduction: entry?.facility?.production?.amount,
             buyerName: entry?.buyer?.name,
             buyerAmount: entry?.buyer?.proportion?.amount,
             buyerUnit: entry?.buyer?.proportion?.unit ?? BuyerUnit.UNIT,
