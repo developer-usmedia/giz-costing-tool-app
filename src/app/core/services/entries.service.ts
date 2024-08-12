@@ -44,8 +44,8 @@ export class EntriesService {
         return this.queryClient.invalidateQueries({ queryKey: ['entry', { id: id }] });
     }
 
-    public refreshWorkers(): Promise<void> {
-        return this.queryClient.invalidateQueries({ queryKey: ['workers'] });
+    public refreshWorkers(entryId: string): Promise<void> {
+        return this.queryClient.invalidateQueries({ queryKey: ['workers', { id: entryId }] });
     }
 
     public updateEntry() {
@@ -68,9 +68,9 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioCreateMutation) => {
                 return this.entriesApi.createScenario(mutation.entryId, mutation.scenarioCreate);
             },
-            onSuccess: async (entry: Entry) => {
+            onSuccess: async (entry: Entry, _client, mutation: ScenarioCreateMutation) => {
                 await this.refreshEntry(entry.id);
-                await this.refreshWorkers();
+                await this.refreshWorkers(mutation.entryId);
             },
         });
     }
@@ -98,7 +98,7 @@ export class EntriesService {
                 return this.entriesApi.updateScenarioWorker(mutation.entryId, mutation.workerId, mutation.scenarioWorkerUpdate);
             },
             onSuccess: async (worker: Worker) => {
-                await this.refreshWorkers();
+                await this.refreshWorkers(worker.entryId);
                 await this.refreshEntry(worker.entryId);
             },
         });
@@ -109,7 +109,7 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioWorkersResetMutation) => {
                 return this.entriesApi.resetScenarioWorkers(mutation.entryId, mutation.scenarioWorkersReset);
             },
-            onSuccess: async () => await this.refreshWorkers(),
+            onSuccess: async (_data, _client, mutation) => await this.refreshWorkers(mutation.entryId),
         });
     }
 }

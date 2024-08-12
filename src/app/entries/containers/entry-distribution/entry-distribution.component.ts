@@ -124,7 +124,7 @@ export class EntryDistributionComponent implements OnDestroy {
         this.scenarioUpdateMutation.mutate(mutation, {
             onSuccess: async () => {
                 await this.entriesService.refreshEntry(entry.id);
-                await this.entriesService.refreshWorkers();
+                await this.entriesService.refreshWorkers(entry.id);
                 this.state = 'view';
                 this.toastr.success($localize`:distribution-update success:Successfully updated distribution`);
             },
