@@ -97,7 +97,10 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioWorkerUpdateMutation) => {
                 return this.entriesApi.updateScenarioWorker(mutation.entryId, mutation.workerId, mutation.scenarioWorkerUpdate);
             },
-            onSuccess: async () => await this.refreshWorkers(),
+            onSuccess: async (worker: Worker) => {
+                await this.refreshWorkers();
+                await this.refreshEntry(worker.entryId);
+            },
         });
     }
 
