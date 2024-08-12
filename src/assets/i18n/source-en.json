@@ -373,6 +373,8 @@
         "5146398958364876914": "Sort",
         "2455998534764050442": "Close\n",
         "198001657229937844": "Upload your downloaded excel file. You can download the excel file from the Salary Matrix",
+        "6513443132649256359": "{$START_LIST_ITEM}Log in to the {$START_LINK}IDH Salary Matrix{$CLOSE_LINK} and select the matrix you want to use.{$CLOSE_LIST_ITEM}{$START_LIST_ITEM}On the matrix detail page click \"View report\" in the top right corner.{$CLOSE_LIST_ITEM}{$START_LIST_ITEM}On the report page click on \"Download reports\" in the top right corner.{$CLOSE_LIST_ITEM}{$START_LIST_ITEM}You get a popup with different export options. In this popup select the option \"Export report to Excel\"{$CLOSE_LIST_ITEM}",
+        "2240416177502018785": "More information about the Salary Matrix report can be found in the {$START_LINK}Salary Matrix guide{$CLOSE_LINK}",
         "3245332597285014799": "Upload file ",
         "5964991154504548708": "Uploaded file invalid, found {$INTERPOLATION} issues.",
         "4699591220017305997": "Validation errors",

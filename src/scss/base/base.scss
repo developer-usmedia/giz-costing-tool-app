@@ -126,7 +126,7 @@ ol {
     @include list-reset;
 
     &:not([class]) {
-        margin: 0 0 2rem;
+        margin: 0 0 1.25rem;
 
         li {
             @include style-text;

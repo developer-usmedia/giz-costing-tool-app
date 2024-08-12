@@ -17,6 +17,11 @@
 
     &__buttons {
         display: flex;
+        margin-top: 1rem;
+
+        &:empty {
+            display: none;
+        }
     }
 
     &__close {

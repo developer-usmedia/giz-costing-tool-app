@@ -4112,15 +4112,15 @@ You can also choose to increase all wages per job category by different amounts,
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">25,27</context>
+          <context context-type="linenumber">49,51</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">74,75</context>
+          <context context-type="linenumber">102,103</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">97,98</context>
+          <context context-type="linenumber">129,130</context>
         </context-group>
         <note priority="1" from="description">worker-edit cancel</note>
       </trans-unit>
@@ -4409,15 +4409,31 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Upload your downloaded excel file. You can download the excel file from the Salary Matrix</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">9,12</context>
+          <context context-type="linenumber">10,13</context>
         </context-group>
         <note priority="1" from="description">import file-upload description</note>
+      </trans-unit>
+      <trans-unit id="6513443132649256359" datatype="html">
+        <source><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>Log in to the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://salarymatrix.idhtrade.org/&quot;&gt;"/>IDH Salary Matrix<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> and select the matrix you want to use.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>On the matrix detail page click &quot;View report&quot; in the top right corner.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>On the report page click on &quot;Download reports&quot; in the top right corner.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>You get a popup with different export options. In this popup select the option &quot;Export report to Excel&quot;<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
+          <context context-type="linenumber">23,27</context>
+        </context-group>
+        <note priority="1" from="description">import file-upload how-to</note>
+      </trans-unit>
+      <trans-unit id="2240416177502018785" datatype="html">
+        <source>More information about the Salary Matrix report can be found in the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://livingwagematrix.gitbook.io/salary-matrix-help-page/salary-matrix-reports&quot;&gt;"/>Salary Matrix guide<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+        <note priority="1" from="description">import file-upload more-info-guide</note>
       </trans-unit>
       <trans-unit id="3245332597285014799" datatype="html">
         <source>Upload file </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">31,33</context>
+          <context context-type="linenumber">56,58</context>
         </context-group>
         <note priority="1" from="description">import upload</note>
       </trans-unit>
@@ -4425,7 +4441,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Uploaded file invalid, found <x id="INTERPOLATION" equiv-text="{{ validationErrors?.length ?? &apos;unknown&apos; }}"/> issues.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">45,46</context>
+          <context context-type="linenumber">70,71</context>
         </context-group>
         <note priority="1" from="description">import validation-result description</note>
       </trans-unit>
@@ -4433,7 +4449,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Validation errors</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">75,76</context>
         </context-group>
         <note priority="1" from="description">excel caption</note>
       </trans-unit>
@@ -4441,7 +4457,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Tab</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">79</context>
         </context-group>
         <note priority="1" from="description">excel tab</note>
       </trans-unit>
@@ -4449,7 +4465,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Row</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">80</context>
         </context-group>
         <note priority="1" from="description">excel row</note>
       </trans-unit>
@@ -4457,7 +4473,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Column</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">55,56</context>
+          <context context-type="linenumber">80,81</context>
         </context-group>
         <note priority="1" from="description">excel column</note>
       </trans-unit>
@@ -4465,7 +4481,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Validation error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">56,58</context>
+          <context context-type="linenumber">81,83</context>
         </context-group>
         <note priority="1" from="description">excel validation-error</note>
       </trans-unit>
@@ -4473,7 +4489,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Upload new file </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">76,78</context>
+          <context context-type="linenumber">106,108</context>
         </context-group>
         <note priority="1" from="description">import upload-new</note>
       </trans-unit>
@@ -4481,7 +4497,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>An unexpected error occurred during your import. The import has been cancelled as it was incomplete.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">88,90</context>
+          <context context-type="linenumber">118,120</context>
         </context-group>
         <note priority="1" from="description">import error description</note>
       </trans-unit>
@@ -4489,7 +4505,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Please try again.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">90,92</context>
+          <context context-type="linenumber">120,122</context>
         </context-group>
         <note priority="1" from="description">import error try-again</note>
       </trans-unit>
@@ -4497,7 +4513,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Try again </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">101,103</context>
+          <context context-type="linenumber">134,136</context>
         </context-group>
         <note priority="1" from="description">import try-again</note>
       </trans-unit>
@@ -4505,7 +4521,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Upload file</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">115,117</context>
+          <context context-type="linenumber">148,150</context>
         </context-group>
         <note priority="1" from="description">import progress upload-file</note>
       </trans-unit>
@@ -4513,7 +4529,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Data Validation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">119,121</context>
+          <context context-type="linenumber">152,154</context>
         </context-group>
         <note priority="1" from="description">import progress data-validation</note>
       </trans-unit>
@@ -4521,7 +4537,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Importing file</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">123,125</context>
+          <context context-type="linenumber">156,158</context>
         </context-group>
         <note priority="1" from="description">import progress importing</note>
       </trans-unit>
@@ -4529,7 +4545,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Done</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">127,129</context>
+          <context context-type="linenumber">160,162</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/pipes/entry-status-text.pipe.ts</context>
@@ -4541,7 +4557,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Continue </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.html</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">169</context>
         </context-group>
         <note priority="1" from="description">continue</note>
       </trans-unit>
@@ -4597,7 +4613,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Payroll sheet is missing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">161</context>
         </context-group>
         <note priority="1" from="description">import validation-error missing-payroll-sheet</note>
       </trans-unit>
@@ -4605,7 +4621,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source>Info sheet is missing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">163</context>
         </context-group>
         <note priority="1" from="description">import validation-error missing-info-sheet</note>
       </trans-unit>
@@ -4613,7 +4629,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be a number**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">165</context>
         </context-group>
         <note priority="1" from="description">import validation-error number-base</note>
       </trans-unit>
@@ -4621,7 +4637,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be greater than or equal to <x id="PH_1" equiv-text="limit"/>**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">167</context>
         </context-group>
         <note priority="1" from="description">import validation-error number-min</note>
       </trans-unit>
@@ -4629,7 +4645,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be less than or equal to <x id="PH_1" equiv-text="limit"/>**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">169</context>
         </context-group>
         <note priority="1" from="description">import validation-error number-max</note>
       </trans-unit>
@@ -4637,7 +4653,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must be a string**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">171</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-base</note>
       </trans-unit>
@@ -4645,7 +4661,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **length must be at least <x id="PH_1" equiv-text="limit"/> characters long**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">172</context>
+          <context context-type="linenumber">173</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-min</note>
       </trans-unit>
@@ -4653,7 +4669,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **length must be less than or equal to <x id="PH_1" equiv-text="limit"/> characters long**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-max</note>
       </trans-unit>
@@ -4661,7 +4677,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, given value **must not have leading or trailing whitespace**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">176</context>
+          <context context-type="linenumber">177</context>
         </context-group>
         <note priority="1" from="description">import validation-error string-trim</note>
       </trans-unit>
@@ -4669,7 +4685,7 @@ You can also choose to increase all wages per job category by different amounts,
         <source><x id="PH" equiv-text="validationError.property"/>, **is required**</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/containers/create-entry-dialog/create-entry-dialog.component.ts</context>
-          <context context-type="linenumber">178</context>
+          <context context-type="linenumber">179</context>
         </context-group>
         <note priority="1" from="description">import validation-error required</note>
       </trans-unit>

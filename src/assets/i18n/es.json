@@ -373,6 +373,8 @@
         "5146398958364876914": "Clasificar",
         "2455998534764050442": "Cerrar\n",
         "198001657229937844": "Suba / Cargue su archivo excel. Puede descargar el archivo de excel de la matríz de salarios",
+        "6513443132649256359": "{$START_LIST_ITEM}Inicie sesión en la {$START_LINK}Matriz de salarios de IDH{$CLOSE_LINK} y seleccione la matriz que desea utilizar.{$CLOSE_LIST_ITEM}{$START_LIST_ITEM}En la página de detalles de la matriz, haga clic en \"Ver informe\" en la esquina superior derecha.{$CLOSE_LIST_ITEM}{$START_LIST_ITEM}En la página de informes, haga clic en \"Descargar informes\" en la esquina superior derecha.{$CLOSE_LIST_ITEM}{$START_LIST_ITEM}Obtendrá una ventana emergente con diferentes opciones de exportación. En esta ventana emergente, seleccione la opción \"Exportar informe Excel\".{$CLOSE_LIST_ITEM}",
+        "2240416177502018785": "Puede encontrar más información sobre el informe matríz de salarios en la {$START_LINK}guía matríz de salarios{$CLOSE_LINK}",
         "3245332597285014799": "Subir archivo ",
         "5964991154504548708": "El archivo subido no es válido, se encontraron problemas con {$INTERPOLATION}.",
         "4699591220017305997": "Errores de validación",

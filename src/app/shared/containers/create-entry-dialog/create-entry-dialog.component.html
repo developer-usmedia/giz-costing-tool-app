@@ -6,7 +6,29 @@
         [showCloseButton]="state !== 'uploading'"
         (closeDialog)="cancel()"
     >
-        <p i18n="import file-upload description">Upload your downloaded excel file. You can download the excel file from the Salary Matrix</p>
+        <p>
+            <span i18n="import file-upload description">Upload your downloaded excel file. You can download the excel file from the Salary Matrix</span>
+
+            <button
+                giz-icon-button
+                theme="basic"
+                [icon]="icon.HELP"
+                gizTooltipAdvanced
+                [template]="tooltipAdvanced"
+            >info</button>
+
+            <ng-template #tooltipAdvanced>
+                <giz-tooltip-advanced size="medium">
+                    <ol i18n="import file-upload how-to">
+                        <li>Log in to the <a href="https://salarymatrix.idhtrade.org/">IDH Salary Matrix</a> and select the matrix you want to use.</li>
+                        <li>On the matrix detail page click "View report" in the top right corner.</li>
+                        <li>On the report page click on "Download reports" in the top right corner.</li>
+                        <li>You get a popup with different export options. In this popup select the option "Export report to Excel"</li>
+                    </ol>
+                    <p i18n="import file-upload more-info-guide">More information about the Salary Matrix report can be found in the <a href="https://livingwagematrix.gitbook.io/salary-matrix-help-page/salary-matrix-reports">Salary Matrix guide</a></p>
+                </giz-tooltip-advanced>
+            </ng-template>
+        </p>
 
         <giz-file-upload
             [allowedExtensions]="['.xlsx']"
@@ -17,14 +39,17 @@
         ></giz-file-upload>
 
         <ng-container footer-right>
-            <button type="button" giz-stroke-button theme="basic"
+            <button type="button"
+                    giz-stroke-button
+                    theme="basic"
                     [disabled]="state === 'uploading'"
                     (click)="cancel()"
                     i18n="import cancel"
             >Cancel
             </button>
 
-            <button type="button" giz-stroke-button
+            <button type="button"
+                    giz-stroke-button
                     [disabled]="!this.file || state === 'uploading'"
                     (click)="uploadFile()"
                     i18n="import upload"
@@ -69,11 +94,16 @@
         </table>
 
         <ng-container footer-right>
-            <button type="button" giz-stroke-button theme="basic"
-                    (click)="cancel()" i18n="import cancel">Cancel
+            <button type="button"
+                    giz-stroke-button
+                    theme="basic"
+                    (click)="cancel()"
+                    i18n="import cancel">Cancel
             </button>
-            <button type="button" giz-stroke-button
-                    (click)="startOver()" i18n="import upload-new">Upload new file
+            <button type="button"
+                    giz-stroke-button
+                    (click)="startOver()"
+                    i18n="import upload-new">Upload new file
             </button>
         </ng-container>
     </giz-dialog>
@@ -90,12 +120,15 @@
         <p i18n="import error try-again">Please try again.</p>
 
         <ng-container footer-right>
-            <button type="button" giz-stroke-button theme="basic"
+            <button type="button"
+                    giz-stroke-button
+                    theme="basic"
                     (click)="cancel()"
                     i18n="import cancel"
             >Cancel
             </button>
-            <button type="button" giz-stroke-button
+            <button type="button"
+                    giz-stroke-button
                     (click)="startOver()"
                     i18n="import try-again"
             >Try again
@@ -129,7 +162,8 @@
         </ul>
 
         <ng-container footer-right>
-            <button type="button" giz-stroke-button
+            <button type="button"
+                    giz-stroke-button
                     (click)="continue()"
                     i18n="continue">Continue
             </button>
