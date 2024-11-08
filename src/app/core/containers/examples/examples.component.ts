@@ -23,7 +23,7 @@ export class ExamplesComponent {
         facility: {
             id: 'BRMASO-0002',
             name: 'Facility Name',
-            country: 'Brazil',
+            countryCode: 'BR',
             products: 'Bananas',
             production: {
                 unit: BuyerUnit.UNIT,

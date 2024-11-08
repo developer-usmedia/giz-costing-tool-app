@@ -27,7 +27,7 @@
                         </tr>
                         <tr giz-table-row>
                             <th giz-table-header-cell i18n="entry country label">Country</th>
-                            <td giz-table-cell>{{ entry.facility.country | empty }}</td>
+                            <td giz-table-cell>{{ entry.facility.countryCode | countryName | empty }}</td>
                         </tr>
                         <tr giz-table-row>
                             <th giz-table-header-cell i18n="entry currency label">Currency</th>

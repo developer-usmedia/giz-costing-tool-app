@@ -8,7 +8,7 @@ export interface Entry extends EntityResponse {
     facility: {
         id?: string;
         name: string;
-        country: string;
+        countryCode: string;
         products: string;
         production: {
             amount: number;
@@ -105,14 +105,13 @@ export interface EntryUpdateForm {
         facilityId: string;
         name: string;
         countryCode: string;
-        country: string;
         product: string;
         productionUnit: string;
         productionAmount: number;
     };
     benchmark?: {
         year: number;
-        country: string;
+        countryCode: string;
         region: string;
         value: number;
         locality: string;

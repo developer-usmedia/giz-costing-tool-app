@@ -69,7 +69,7 @@
                                 {{ entry.payroll.year | empty }}
                             </td>
                             <td giz-table-cell alignment="center">
-                                {{ entry.facility.country | empty }}
+                                {{ entry.facility.countryCode | countryName | empty }}
                             </td>
                             <td giz-table-cell alignment="center">
                                 <span gizTooltip [text]="(entry.updatedAt | date:'medium') ?? ''">{{ entry.updatedAt | date | empty }}</span>
