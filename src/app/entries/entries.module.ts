@@ -17,7 +17,7 @@ import { EntryHeaderComponent } from './components/entry-header/entry-header.com
 import { ScenarioCardComponent } from './components/scenario-card/scenario-card.component';
 import { ScenarioSpecsFormComponent } from './components/scenario-specs-form/scenario-specs-form.component';
 import { ScenarioComponent } from './components/scenario/scenario.component';
-import { EntryBuyerComponent } from './containers/entry-buyer.component/entry-buyer.component';
+import { EntryBuyerComponent } from './containers/entry-buyer/entry-buyer.component';
 import { EntryDeleteDialogComponent } from './containers/entry-delete-dialog/entry-delete-dialog.component';
 import { EntryDetailComponent } from './containers/entry-detail/entry-detail.component';
 import { EntryDistributionComponent } from './containers/entry-distribution/entry-distribution.component';

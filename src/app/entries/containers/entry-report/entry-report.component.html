@@ -239,11 +239,11 @@
                                 <p i18n="report annual-production">Annual production</p>
                             </th>
                             <td giz-table-cell alignment="right">
-                                + {{ entry.facility.production.amount | number: '1.0-2' }} {{ entry.facility.production.unit }}
+                                ÷ {{ entry.facility.production.amount | number: '1.0-2' }} {{ entry.facility.production.unit }}
                             </td>
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right">
-                                    + {{ buyerAnnualProduction | number: '1.0-2' }} {{ entry.facility.production.unit }}
+                                    ÷ {{ buyerAnnualProduction | number: '1.0-2' }} {{ entry.facility.production.unit }}
                                 </td>
                             }
                         </tr>
@@ -257,7 +257,6 @@
                             @if (showBuyerColumn) {
                                 <td giz-table-cell alignment="right" type="total">
                                     {{ entry.buyer?.annualCosts?.totalCostsPerUnit | currency: currencyCode : '' : '1.0-10' | empty }} {{ currencyCode }}
-
                                 </td>
                             }
                         </tr>
