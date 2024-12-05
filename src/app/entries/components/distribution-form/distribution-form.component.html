@@ -83,9 +83,6 @@
                 @if (form | hasError: 'ikbPerc' :'min') {
                     <div class="form__error" i18n="form ikbPerc errors min">Minimum is 0</div>
                 }
-                @if (form.get('ikbPerc')?.value && (form.get('ikbPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbPerc']) {
-                    <giz-alert type="warning" display="simple" class="form__alert">Recommended max is {{ this.maxIkbPercMapping['ikbPerc'] }}</giz-alert>
-                }
             </div>
 
             <div class="form__subfields">
@@ -108,9 +105,6 @@
                         <div class="form__error" i18n="form ikbHousingPerc errors min">Minimum is 0</div>
                     }
 
-                    @if (form.get('ikbHousingPerc')?.value && (form.get('ikbHousingPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbHousingPerc']) {
-                        <p class="form__warning">Recommended max is {{ this.maxIkbPercMapping['ikbHousingPerc'] }}</p>
-                    }
                 </div>
 
                 <div
@@ -130,9 +124,6 @@
                     }
                     @if (form | hasError: 'ikbFoodPerc' :'min') {
                         <div class="form__error" i18n="form ikbFoodPerc errors min">Minimum is 0</div>
-                    }
-                    @if (form.get('ikbFoodPerc')?.value && (form.get('ikbFoodPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbFoodPerc']) {
-                        <p class="form__warning">Recommended max is {{ this.maxIkbPercMapping['ikbFoodPerc'] }}</p>
                     }
                 </div>
 
@@ -154,9 +145,6 @@
                     @if (form | hasError: 'ikbTransportPerc' :'min') {
                         <div class="form__error" i18n="form ikbTransportPerc errors min">Minimum is 0</div>
                     }
-                    @if (form.get('ikbTransportPerc')?.value && (form.get('ikbTransportPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbTransportPerc']) {
-                        <p class="form__warning">Recommended max is {{ this.maxIkbPercMapping['ikbTransportPerc'] }}</p>
-                    }
                 </div>
 
                 <div
@@ -176,9 +164,6 @@
                     }
                     @if (form | hasError: 'ikbHealthcarePerc' :'min') {
                         <div class="form__error" i18n="form ikbHealthcarePerc errors min">Minimum is 0</div>
-                    }
-                    @if (form.get('ikbHealthcarePerc')?.value && (form.get('ikbHealthcarePerc')?.value ?? 0) > this.maxIkbPercMapping['ikbHealthcarePerc']) {
-                        <p class="form__warning">Recommended max is {{ this.maxIkbPercMapping['ikbHealthcarePerc'] }}</p>
                     }
                 </div>
 
@@ -200,9 +185,6 @@
                     @if (form | hasError: 'ikbChildcarePerc' :'min') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
                     }
-                    @if (form.get('ikbChildcarePerc')?.value && (form.get('ikbChildcarePerc')?.value ?? 0) > this.maxIkbPercMapping['ikbChildcarePerc']) {
-                        <p class="form__warning">Recommended max is {{ this.maxIkbPercMapping['ikbChildcarePerc'] }}</p>
-                    }
                 </div>
 
                 <div
@@ -222,9 +204,6 @@
                     }
                     @if (form | hasError: 'ikbChildEducationPerc' :'min') {
                         <div class="form__error" i18n="form ikbChildcarePerc errors min">Minimum is 0</div>
-                    }
-                    @if (form.get('ikbChildEducationPerc')?.value && (form.get('ikbChildEducationPerc')?.value ?? 0) > this.maxIkbPercMapping['ikbChildEducationPerc']) {
-                        <p class="form__warning">Recommended max is {{ this.maxIkbPercMapping['ikbChildEducationPerc'] }}</p>
                     }
                 </div>
             </div>

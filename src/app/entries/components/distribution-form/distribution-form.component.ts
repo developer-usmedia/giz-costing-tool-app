@@ -56,13 +56,6 @@ export class DistributionFormComponent implements OnChanges, OnDestroy {
     public maxIkbPercMapping = {
         baseWagePerc: 100,
         bonusesPerc: 100,
-        ikbPerc: 30,
-        ikbHousingPerc: 15,
-        ikbFoodPerc: 10,
-        ikbTransportPerc: 10,
-        ikbHealthcarePerc: 10,
-        ikbChildcarePerc: 10,
-        ikbChildEducationPerc: 10,
     };
 
     public form: FormGroup<DistributionFormGroup>;
