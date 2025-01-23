@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-cp-imprint',
     templateUrl: './cp-imprint.component.html',
     styleUrl: './cp-imprint.component.scss',
+    imports: [MarkdownPipe],
 })
 export class CpImprintComponent {
     public markdown: string = this.getMarkdown();

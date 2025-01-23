@@ -4,6 +4,10 @@ import { ToastrService } from 'ngx-toastr';
 
 import { Entry } from '@api/models';
 import { EntriesService } from '@core/services';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { EntryCardComponent } from '@shared/components/entry-card/entry-card.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
 
 export interface DeleteEntryResult {
     deleted: boolean;
@@ -13,6 +17,12 @@ export interface DeleteEntryResult {
     selector: 'giz-entry-delete-dialog',
     templateUrl: './entry-delete-dialog.component.html',
     styleUrl: './entry-delete-dialog.component.scss',
+    imports: [
+        DialogComponent,
+        EntryCardComponent,
+        SpinnerComponent,
+        ButtonComponent,
+    ],
 })
 export class EntryDeleteDialogComponent {
     public entriesService = inject(EntriesService);

@@ -9,9 +9,13 @@ import {
     Output,
     SimpleChanges,
 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { NgClass } from '@angular/common';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface VerificationFormGroup {
     verificationCode: FormControl<string>;
@@ -22,6 +26,14 @@ interface VerificationFormGroup {
     templateUrl: './verification.component.html',
     styleUrl: './verification.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        SpinnerComponent,
+        ButtonComponent,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class VerificationComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;

@@ -1,4 +1,5 @@
-@import 'mixins/typography';
+@use 'mixins/typography';
+@use "config" as *;
 
 :root {
     --noresults-background: #{ $c-white };
@@ -10,7 +11,7 @@
 }
 
 .no-results {
-    @include style-heading-3;
+    @include typography.style-heading-3;
 
     align-items: center;
     background: var(--noresults-background);

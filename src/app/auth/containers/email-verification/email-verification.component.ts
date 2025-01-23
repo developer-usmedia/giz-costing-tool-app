@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { ClearUserDetails } from '@store/app.actions';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, take } from 'rxjs';
@@ -11,14 +11,17 @@ import { AUTH_ROUTE, MODULE_ROUTE, ROOT_ROUTE, UserDetails } from '@core/models'
 import { AuthService } from '@core/services';
 import { STATUS } from '@shared/helpers';
 import { AppStore } from '@store/app.store';
+import { AuthContentComponent } from '../../components/auth-content/auth-content.component';
+import { VerificationComponent } from '../../components/verification/verification.component';
 
 @Component({
     selector: 'giz-email-verification',
     templateUrl: './email-verification.component.html',
     styleUrl: './email-verification.component.scss',
+    imports: [AuthContentComponent, VerificationComponent],
 })
 export class EmailVerificationComponent {
-    @Select(AppStore.userDetails) userDetails$!: Observable<UserDetails>;
+    userDetails$: Observable<UserDetails> = inject(Store).select(AppStore.userDetails);
 
     public emailAddress = '';
     public submitting = false;
@@ -68,7 +71,7 @@ export class EmailVerificationComponent {
                         this.router.navigate([ROOT_ROUTE.DASHBOARD]);
                     })
                     .catch((error: HttpErrorResponse) => {
-                        if (error.status === STATUS.BAD_REQUEST) {
+                        if (error.status as STATUS === STATUS.BAD_REQUEST) {
                             this.codeInvalid = true;
                         }
                         this.submitting = false;
@@ -88,7 +91,7 @@ export class EmailVerificationComponent {
                 this.authApi
                     .verifyEmail({ email: userDetails.email })
                     .catch((error: HttpErrorResponse) => {
-                            if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                            if (error.status as STATUS === STATUS.TOO_MANY_REQUESTS) {
                                 this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
                             } else {
                                 this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);

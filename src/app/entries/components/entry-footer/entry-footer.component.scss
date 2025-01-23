@@ -1,4 +1,4 @@
-@import 'config/sizes';
+@use 'config' as *;
 
 .entry-footer {
     display: flex;

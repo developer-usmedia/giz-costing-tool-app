@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { injectQueryClient } from '@tanstack/angular-query-experimental';
+import { QueryClient } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { from, Observable, throwError } from 'rxjs';
 
@@ -31,7 +31,7 @@ export class AuthService {
     public readonly tokenName = 'GIZ-TOKEN';
     public readonly refreshTokenName = 'GIZ-REFRESH';
 
-    private readonly queryClient = injectQueryClient();
+    private readonly queryClient = inject(QueryClient);
     private readonly userService = inject(UserService);
 
     public isLoggedIn(): boolean {

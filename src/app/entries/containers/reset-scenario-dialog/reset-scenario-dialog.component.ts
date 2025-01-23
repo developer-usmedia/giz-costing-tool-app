@@ -3,6 +3,9 @@ import { ChangeDetectionStrategy, Component, inject, Inject, ViewEncapsulation }
 import { Entry } from '@api/models';
 import { EntriesService } from '@core/services';
 import { ToastrService } from 'ngx-toastr';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
 
 export interface ResetScenarioData {
     entry?: Entry;
@@ -18,6 +21,11 @@ export interface ResetScenarioResult {
     styleUrl: './reset-scenario-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        DialogComponent,
+        SpinnerComponent,
+        ButtonComponent,
+    ],
 })
 export class ResetScenarioDialogComponent {
     public readonly entriesService = inject(EntriesService);

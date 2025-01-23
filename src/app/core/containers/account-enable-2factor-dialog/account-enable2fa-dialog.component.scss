@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/stretch';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/stretch';
+@use 'mixins/typography';
 
 :root {
     --qr-border: #{ $c-black-transparent };

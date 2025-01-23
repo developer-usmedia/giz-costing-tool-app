@@ -1,8 +1,13 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordForm } from '@api/models';
 import { MODULE_ROUTE, AUTH_ROUTE } from '@core/models';
 import { Subject, distinctUntilChanged, takeUntil } from 'rxjs';
+import { NgClass } from '@angular/common';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface ForgotPasswordFormGroup {
     email: FormControl<string>;
@@ -12,8 +17,17 @@ interface ForgotPasswordFormGroup {
 @Component({
     selector: 'giz-forgot-password',
     templateUrl: './forgot-password.component.html',
-    styleUrls: ['./forgot-password.component.scss'],
+    styleUrls: [ './forgot-password.component.scss' ],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        SpinnerComponent,
+        ButtonComponent,
+        RouterLink,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class ForgotPasswordComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;

@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 .info {
     display: flex;
@@ -12,7 +11,7 @@
         margin: 0 auto;
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         flex-direction: row;
 
         &__column {

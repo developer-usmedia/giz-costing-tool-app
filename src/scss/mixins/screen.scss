@@ -1,4 +1,4 @@
-@mixin screen($min-size) {
+@mixin min($min-size) {
     @media only screen and (min-width: $min-size) {
         @content;
     }

@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 .dashboard {
     margin: 0 auto;
@@ -14,13 +13,13 @@
     }
 
     &__title {
-        @include style-heading-1-hero;
+        @include typography.style-heading-1-hero;
 
         margin: 0 0 $p-gutter--small;
     }
 
     &__version {
-        @include style-text-small;
+        @include typography.style-text-small;
 
         color: var(--version-color);
     }
@@ -41,13 +40,13 @@
         margin-bottom: 1rem;
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         &__entries {
             grid-template-columns: repeat(3, 1fr);
         }
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         &__intro {
             flex-direction: row;
         }
@@ -62,7 +61,7 @@
         }
     }
 
-    @include screen($screen-large) {
+    @include screen.min($screen-large) {
         padding-top: 6vh;
     }
 }

@@ -12,6 +12,9 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconComponent } from '../icon/icon.component';
+import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
+import { EmptyPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-file-upload',
@@ -19,6 +22,11 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrl: './file-upload.component.scss',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        IconComponent,
+        ProgressBarComponent,
+        EmptyPipe,
+    ],
 })
 export class FileUploadComponent implements OnChanges {
     @Input() allowedExtensions?: string[];

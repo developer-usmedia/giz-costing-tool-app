@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { User } from '@api/models';
 import { AuthApi } from '@api/services';
-import { injectQueryClient } from '@tanstack/angular-query-experimental';
+import { QueryClient } from '@tanstack/angular-query-experimental';
 import { useQuery } from './query/use-query';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    private readonly queryClient = injectQueryClient();
+    private readonly queryClient = inject(QueryClient);
 
     constructor(
         private readonly authApi: AuthApi

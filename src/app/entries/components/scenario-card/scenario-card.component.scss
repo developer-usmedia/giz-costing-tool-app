@@ -1,11 +1,9 @@
 @use 'sass:color';
-@import 'config/colors';
-@import 'config/sizes';
-@import 'config/shadows';
-@import 'mixins/screen';
-@import 'mixins/sr-only';
-@import 'mixins/stretch';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/sr-only';
+@use 'mixins/stretch';
+@use 'mixins/typography';
 
 :root {
     --scenario-card-border: #{ $c-black-transparent };
@@ -23,7 +21,7 @@
     position: relative;
 
     &__title {
-        @include style-heading-3;
+        @include typography.style-heading-3;
 
         margin: 0 0 $p-gutter--small;
     }
@@ -44,10 +42,10 @@
     }
 
     &__button {
-        @include stretch;
+        @include stretch.apply;
 
         span {
-            @include sr-only;
+            @include sr-only.apply;
         }
     }
 
@@ -64,7 +62,7 @@
         border-color: var(--scenario-card-border-active);
     }
 
-    @include screen($screen-minimal) {
+    @include screen.min($screen-minimal) {
         display: grid;
         grid-template-columns: 1fr 180px;
         grid-template-rows: repeat(2, auto);

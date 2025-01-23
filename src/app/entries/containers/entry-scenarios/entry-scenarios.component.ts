@@ -2,7 +2,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, take, takeUntil } from 'rxjs';
@@ -27,12 +27,29 @@ import {
     ResetScenarioDialogComponent,
     ResetScenarioResult,
 } from '../reset-scenario-dialog/reset-scenario-dialog.component';
+import { EntryHeaderComponent } from '../../components/entry-header/entry-header.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { NoResultsComponent } from '@shared/components/no-results/no-results.component';
+import { ScenarioComponent } from '../../components/scenario/scenario.component';
+import { ScenarioCardComponent } from '../../components/scenario-card/scenario-card.component';
+import { EntryFooterComponent } from '../../components/entry-footer/entry-footer.component';
 
 
 @Component({
     selector: 'giz-entry-scenarios',
     templateUrl: './entry-scenarios.component.html',
     styleUrl: './entry-scenarios.component.scss',
+    imports: [
+        EntryHeaderComponent,
+        ButtonComponent,
+        RouterLink,
+        SpinnerComponent,
+        NoResultsComponent,
+        ScenarioComponent,
+        ScenarioCardComponent,
+        EntryFooterComponent,
+    ],
 })
 export class EntryScenariosComponent implements OnDestroy {
     public backTitle = $localize`:entry information title:Information`;

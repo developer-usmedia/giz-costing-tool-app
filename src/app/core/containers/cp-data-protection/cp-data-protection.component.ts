@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-cp-data-protection',
     templateUrl: './cp-data-protection.component.html',
     styleUrl: './cp-data-protection.component.scss',
+    imports: [MarkdownPipe],
 })
 export class CpDataProtectionComponent {
     public markdown: string = this.getMarkdown();

@@ -8,12 +8,18 @@ import {
     Output,
     SimpleChanges,
 } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 
 import { ResetPasswordForm } from '@api/models';
 import { CustomValidators } from '@shared/services';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { NgClass } from '@angular/common';
+import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface ResetPasswordFormGroup {
     password: FormControl<string>;
@@ -25,6 +31,16 @@ interface ResetPasswordFormGroup {
     templateUrl: './new-password.component.html',
     styleUrl: './new-password.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        PasswordStrengthComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        RouterLink,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class NewPasswordComponent implements OnChanges, OnDestroy {
     @Input() submitting = false;

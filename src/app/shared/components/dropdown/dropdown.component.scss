@@ -1,5 +1,5 @@
-@import 'config/sizes';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/typography';
 
 .dropdown {
     $self: &;
@@ -16,7 +16,7 @@
     }
 
     &__summary {
-        @include style-heading-3;
+        @include typography.style-heading-3;
 
         align-items: center;
         cursor: pointer;

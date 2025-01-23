@@ -4,6 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 
 import { Entry, ScenarioWorkersResetMutation } from '@api/models';
 import { EntriesService } from '@core/services';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
 
 export interface ResetWorkersData {
     entry?: Entry;
@@ -20,6 +23,11 @@ export interface ResetWorkersResult {
     styleUrl: './reset-workers-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        DialogComponent,
+        SpinnerComponent,
+        ButtonComponent,
+    ],
 })
 export class ResetWorkersDialogComponent {
     public readonly entriesService = inject(EntriesService);

@@ -2,7 +2,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
@@ -29,11 +29,46 @@ import {
     ResetWorkersResult,
 } from '../reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerDistributionDialogComponent } from '../worker-distribution-dialog/worker-distribution-dialog.component';
+import { EntryHeaderComponent } from '../../components/entry-header/entry-header.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { DistributionFormComponent } from '../../components/distribution-form/distribution-form.component';
+import { TableComponent } from '@shared/components/table/table.component';
+import { TableRowComponent } from '@shared/components/table-row/table-row.component';
+import { TableCellComponent } from '@shared/components/table-cell/table-cell.component';
+import { NoResultsComponent } from '@shared/components/no-results/no-results.component';
+import { TooltipAdvancedDirective } from '@shared/directives/tooltip-advanced.directive';
+import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
+import { EntryFooterComponent } from '../../components/entry-footer/entry-footer.component';
+import { CurrencyPipe, KeyValuePipe } from '@angular/common';
+import { EmptyPipe, GenderPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-entry-distribution',
     templateUrl: './entry-distribution.component.html',
     styleUrl: './entry-distribution.component.scss',
+    imports: [
+        EntryHeaderComponent,
+        ButtonComponent,
+        RouterLink,
+        SpinnerComponent,
+        DistributionFormComponent,
+        TableComponent,
+        TableRowComponent,
+        TableCellComponent,
+        NoResultsComponent,
+        TooltipAdvancedDirective,
+        TooltipAdvancedComponent,
+        IconButtonComponent,
+        PaginatorComponent,
+        EntryFooterComponent,
+        CurrencyPipe,
+        KeyValuePipe,
+        EmptyPipe,
+        GenderPipe,
+    ],
 })
 export class EntryDistributionComponent implements OnDestroy {
     public backTitle = $localize`:entry scenarios title:Scenarios`;

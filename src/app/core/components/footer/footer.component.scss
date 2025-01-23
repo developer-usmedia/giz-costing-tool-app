@@ -1,7 +1,6 @@
 @use 'sass:color';
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
+@use 'config' as *;
+@use 'mixins/screen';
 
 :root {
     --footer-link-color: #{ $c-grey--700 };
@@ -74,7 +73,7 @@
         }
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         align-items: center;
         display: flex;
         justify-content: space-between;

@@ -1,8 +1,8 @@
-@import 'config/sizes';
-@import 'config/fonts';
-@import 'mixins/overflow-gradient';
-@import 'mixins/screen';
-@import 'mixins/sr-only';
+
+@use 'config' as *;
+@use 'mixins/overflow-gradient';
+@use 'mixins/screen';
+@use 'mixins/sr-only';
 
 giz-table {
     display: block;
@@ -11,7 +11,7 @@ giz-table {
 .table {
     $self: &;
 
-    @include overflow-gradient;
+    @include overflow-gradient.apply;
 
     --overflow-gradient-width: 60px;
 
@@ -36,7 +36,7 @@ giz-table {
 
     &__caption {
         &--hide {
-            @include sr-only;
+            @include sr-only.apply;
         }
     }
 
@@ -160,7 +160,7 @@ giz-table {
     }
     /* stylelint-enable no-descending-specificity  */
 
-    @include screen($screen-minimal) {
+    @include screen.min($screen-minimal) {
         &--sticky {
             table {
                 border-left: 0;
@@ -187,7 +187,7 @@ giz-table {
         }
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         &--info {
             --table-cell-padding: 0.5rem #{ $p-gutter };
         }

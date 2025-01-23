@@ -1,6 +1,5 @@
 @use 'sass:color';
-@import '../config/colors';
-@import '../config/sizes';
+@use '../config' as *;
 
 :root {
     // Headings & Paragraphs

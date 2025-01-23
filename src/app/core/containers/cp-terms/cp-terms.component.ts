@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-cp-terms',
     templateUrl: './cp-terms.component.html',
     styleUrl: './cp-terms.component.scss',
+    imports: [MarkdownPipe],
 })
 export class CpTermsComponent {
     public markdown: string = this.getMarkdown();

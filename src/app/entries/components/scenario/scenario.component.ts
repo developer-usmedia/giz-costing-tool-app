@@ -1,5 +1,5 @@
 import { Dialog } from '@angular/cdk/dialog';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, NgClass, CurrencyPipe, KeyValuePipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import {
     ChangeDetectionStrategy,
@@ -23,6 +23,16 @@ import {
     ResetWorkersDialogComponent, ResetWorkersResult,
 } from '../../containers/reset-workers-dialog/reset-workers-dialog.component';
 import { WorkerScenarioSpecsDialogComponent } from '../../containers/worker-scenario-specs-dialog/worker-scenario-specs-dialog.component';
+import { ScenarioSpecsFormComponent } from '../scenario-specs-form/scenario-specs-form.component';
+import { TableComponent } from '@shared/components/table/table.component';
+import { TableRowComponent } from '@shared/components/table-row/table-row.component';
+import { TableCellComponent } from '@shared/components/table-cell/table-cell.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
+import { NoResultsComponent } from '@shared/components/no-results/no-results.component';
+import { EmptyPipe, GenderPipe, MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-scenario',
@@ -30,6 +40,23 @@ import { WorkerScenarioSpecsDialogComponent } from '../../containers/worker-scen
     styleUrl: './scenario.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        NgClass,
+        ScenarioSpecsFormComponent,
+        TableComponent,
+        TableRowComponent,
+        TableCellComponent,
+        ButtonComponent,
+        SpinnerComponent,
+        IconButtonComponent,
+        PaginatorComponent,
+        NoResultsComponent,
+        CurrencyPipe,
+        KeyValuePipe,
+        EmptyPipe,
+        GenderPipe,
+        MarkdownPipe,
+    ],
 })
 export class ScenarioComponent {
     @Input({ required: true }) scenario!: ScenarioInfo;

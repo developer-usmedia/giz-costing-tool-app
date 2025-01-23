@@ -13,7 +13,7 @@ Google Cloud Project: airy-web-417014
 
 ## Requirements
 
-Node version 20
+Node version 22
 
 If you use angular cli:
 [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2

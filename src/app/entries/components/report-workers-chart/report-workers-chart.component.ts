@@ -49,6 +49,7 @@ export type ChartOptions = {
     styleUrl: './report-workers-chart.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [ChartComponent],
 })
 export class ReportWorkersChartComponent implements OnInit, OnChanges {
     @Input({ required: true }) currencyCode?: string;
@@ -127,7 +128,6 @@ export class ReportWorkersChartComponent implements OnInit, OnChanges {
             fontFamily: 'Barlow',
             animations: {
                 enabled: true,
-                easing: 'linear',
                 animateGradually: {
                     enabled: false,
                 },
@@ -160,7 +160,7 @@ export class ReportWorkersChartComponent implements OnInit, OnChanges {
     private getDataLabels(): ApexDataLabels {
         return {
             formatter: (val: number, opts): string | number => {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, no-constant-binary-expression
                 const barWidth: number = Number(opts?.globals?.barWidth) ?? 0;
                 return barWidth > 65 ?  this.formatCurrency(val) : '';
             },

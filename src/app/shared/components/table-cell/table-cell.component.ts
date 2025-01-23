@@ -11,12 +11,14 @@ import {
 import { Sort } from '@core/models/paging.model';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { NgClass } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'td[giz-table-cell], th[giz-table-header-cell]',
     templateUrl: './table-cell.component.html',
-    styleUrls: ['./table-cell.component.scss'],
+    styleUrls: [ './table-cell.component.scss' ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
@@ -31,6 +33,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
             transition('inactive <=> active', animate('.2s ease-in')),
         ]),
     ],
+    imports: [NgClass, IconComponent],
 })
 export class TableCellComponent implements OnChanges {
     @Input() alignment: 'left' | 'right' | 'center' = 'left';

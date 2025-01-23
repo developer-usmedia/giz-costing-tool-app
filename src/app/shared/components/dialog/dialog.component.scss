@@ -1,7 +1,7 @@
-@import 'config/colors';
-@import 'config/shadows';
-@import 'config/sizes';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
+
 
 :root {
     --dialog-background: #{ $c-white };
@@ -36,7 +36,7 @@
     }
 
     &__title {
-        @include style-heading-dialog;
+        @include typography.style-heading-dialog;
 
         flex: 1;
         margin: 0;
@@ -96,7 +96,7 @@
         --dialog-width: 800px;
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         &__content {
             display: flex;
             gap: $p-gutter--large;

@@ -1,8 +1,7 @@
-@import 'config/colors';
-@import 'config/shadows';
-@import 'mixins/sr-only';
-@import 'mixins/stretch';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/sr-only';
+@use 'mixins/stretch';
+@use 'mixins/typography';
 
 :root {
     --entry-card-background: #{ $c-white };
@@ -25,7 +24,7 @@
     width: var(--entry-card-width);
 
     &__title {
-        @include style-heading-3;
+        @include typography.style-heading-3;
 
         align-items: flex-end;
         display: flex;
@@ -33,7 +32,7 @@
         margin: 0 0 0.4rem;
 
         &--main {
-            @include style-heading-2;
+            @include typography.style-heading-2;
         }
     }
 
@@ -47,10 +46,10 @@
     }
 
     &__link {
-        @include stretch;
+        @include stretch.apply;
 
         span {
-            @include sr-only;
+            @include sr-only.apply;
         }
     }
 

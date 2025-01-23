@@ -2,7 +2,7 @@ import { Distribution, Entry, Worker } from '@api/models';
 
 export const determineWageIncrease = (worker: Worker, entry: Entry): number => {
     if (
-        worker.scenario.specification?.remunerationIncrease !== null && 
+        worker.scenario.specification?.remunerationIncrease !== null &&
         worker.scenario.specification?.remunerationIncrease !== undefined
     ) {
         return worker.scenario.specification.remunerationIncrease;
@@ -14,6 +14,7 @@ export const determineWageIncrease = (worker: Worker, entry: Entry): number => {
     );
 };
 
+// eslint-disable-next-line complexity
 export const getWorkerDistribution = (worker: Worker, entry: Entry): Distribution => {
     return {
         baseWagePerc: (worker.scenario.distribution?.baseWagePerc ?? entry?.scenario?.distribution?.baseWagePerc) ?? 0,

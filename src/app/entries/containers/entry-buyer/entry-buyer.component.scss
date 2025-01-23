@@ -1,6 +1,6 @@
-@import 'config/sizes';
-@import 'mixins/screen';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 .buyer {
     display: flex;
@@ -15,7 +15,7 @@
         font-style: italic;
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto;

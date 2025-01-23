@@ -16,10 +16,7 @@ import {
 
 import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
 
-@Directive({
-    selector: '[gizTooltipAdvanced]',
-    standalone: true,
-})
+@Directive({ selector: '[gizTooltipAdvanced]' })
 export class TooltipAdvancedDirective implements OnInit, OnDestroy {
     @Input({ required: true }) template!: TemplateRef<TooltipAdvancedComponent>;
 
@@ -134,4 +131,3 @@ export class TooltipAdvancedDirective implements OnInit, OnDestroy {
         this.overlayRef = this.overlay.create(overlayConfig);
     }
 }
-

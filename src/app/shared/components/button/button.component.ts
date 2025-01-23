@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
     selector:
         'button[giz-button], button[giz-stroke-button], button[giz-link-button],' +
         'a[giz-button], a[giz-stroke-button], a[giz-link-button]',
@@ -10,6 +10,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrls: [ './button.component.scss' ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [IconComponent],
 })
 export class ButtonComponent {
     @Input() buttonType: 'default' | 'stroke' | 'link' = 'default';

@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ALL_ROUTES } from '@core/models';
 import { AuthService } from '@core/services';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-error-page',
     templateUrl: './error-page.component.html',
     styleUrl: './error-page.component.scss',
+    imports: [
+        ButtonComponent,
+        RouterLink,
+        MarkdownPipe,
+    ],
 })
 export class ErrorPageComponent {
     public readonly loggedIn = this.authService.isLoggedIn();

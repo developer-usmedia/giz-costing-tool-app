@@ -1,4 +1,4 @@
-@mixin overflow-gradient {
+@mixin apply {
     &::before,
     &::after {
         content: '';

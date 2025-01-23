@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
     selector: 'giz-alert',
@@ -8,6 +9,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrl: './alert.component.scss',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [IconComponent],
 })
 export class AlertComponent {
     @Input() type: 'info' | 'warning' | 'error' = 'info';

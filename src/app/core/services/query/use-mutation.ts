@@ -1,22 +1,22 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { MutationFunction, MutationOptions, QueryClient, injectMutation } from '@tanstack/angular-query-experimental';
+import { MutationFunction, MutationOptions, injectMutation } from '@tanstack/angular-query-experimental';
 
 export const useMutation = <TInput, TOutput>(
     props: {
         mutationFn: MutationFunction<TOutput, TInput>;
-        onSuccess?: (data: TOutput, client: QueryClient, mutation: TInput) => unknown;
-        onError?: (client: QueryClient, error: Error) => unknown;
-        onMutate?: (client: QueryClient) => unknown;
-        onSettled?: (client: QueryClient) => unknown;
+        onSuccess?: (data: TOutput, mutation: TInput) => unknown;
+        onError?: (error: Error) => unknown;
+        onMutate?: () => unknown;
+        onSettled?: () => unknown;
     },
     ...otherProps: MutationOptions<TInput>[]
 ) => {
-    return injectMutation<TOutput, HttpErrorResponse, TInput>((client) => ({
+    return injectMutation<TOutput, HttpErrorResponse, TInput>(() => ({
         mutationFn: props.mutationFn,
-        onSuccess: (data: TOutput, mutation: TInput,) => (props.onSuccess ? props.onSuccess(data, client, mutation) : null),
-        onError: (error) => (props.onError ? props.onError(client, error) : null),
-        onMutate: () => (props.onMutate ? props.onMutate(client) : null),
-        onSettled: () => (props.onSettled ? props.onSettled(client) : null),
+        onSuccess: (data: TOutput, mutation: TInput) => (props.onSuccess ? props.onSuccess(data, mutation) : null),
+        onError: (error) => (props.onError ? props.onError(error) : null),
+        onMutate: () => (props.onMutate ? props.onMutate() : null),
+        onSettled: () => (props.onSettled ? props.onSettled() : null),
         ...otherProps,
     }));
 };

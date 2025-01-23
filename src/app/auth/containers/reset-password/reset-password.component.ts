@@ -9,6 +9,13 @@ import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
+import { AuthContentComponent } from '../../components/auth-content/auth-content.component';
+import { ForgotPasswordComponent } from '../../components/forgot-password/forgot-password.component';
+import { ResetComponent } from '../../components/reset/reset.component';
+import { NewPasswordComponent } from '../../components/new-password/new-password.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { StepperComponent } from '@shared/components/stepper/stepper.component';
 
 enum RESET_PASSWORD_STEPS {
     FORGOT_PASSWORD = 1,
@@ -21,6 +28,15 @@ enum RESET_PASSWORD_STEPS {
     selector: 'giz-reset-password',
     templateUrl: './reset-password.component.html',
     styleUrl: './reset-password.component.scss',
+    imports: [
+        AuthContentComponent,
+        ForgotPasswordComponent,
+        ResetComponent,
+        NewPasswordComponent,
+        ButtonComponent,
+        RouterLink,
+        StepperComponent,
+    ],
 })
 export class ResetPasswordComponent {
     public currentStep$ = new BehaviorSubject<RESET_PASSWORD_STEPS>(RESET_PASSWORD_STEPS.FORGOT_PASSWORD);
@@ -69,7 +85,7 @@ export class ResetPasswordComponent {
                 this.currentStep$.next(RESET_PASSWORD_STEPS.RESET_CODE);
             })
             .catch((error: HttpErrorResponse) => {
-                if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                if (error.status as STATUS === STATUS.TOO_MANY_REQUESTS) {
                     this.toastr.error($localize`:resetCode send error-limit:Too many requests, try again later`);
                 } else {
                     this.toastr.error($localize`:resetCode send error:Something went wrong sending the code`);
@@ -95,7 +111,7 @@ export class ResetPasswordComponent {
                 }
             })
             .catch((error: HttpErrorResponse) => {
-                if (error.status === STATUS.BAD_REQUEST) {
+                if (error.status as STATUS === STATUS.BAD_REQUEST) {
                     this.codeInvalid = true;
                 }
                 this.verificationSubmitting = false;
@@ -109,7 +125,7 @@ export class ResetPasswordComponent {
                 this.currentStep$.next(RESET_PASSWORD_STEPS.DONE);
             })
             .catch((error: HttpErrorResponse) => {
-                if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                if (error.status as STATUS === STATUS.TOO_MANY_REQUESTS) {
                     this.toastr.error($localize`:resetCode send error-limit:Too many requests, try again later`);
                 } else {
                     this.toastr.error($localize`:resetCode send error:Something went wrong sending the code`);
@@ -125,7 +141,7 @@ export class ResetPasswordComponent {
                 this.currentStep$.next(RESET_PASSWORD_STEPS.RESET_CODE);
             })
             .catch((error: HttpErrorResponse) => {
-                if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                if (error.status as STATUS === STATUS.TOO_MANY_REQUESTS) {
                     this.toastr.error($localize`:resetCode send error-limit:Too many requests, try again later`);
                 } else {
                     this.toastr.error($localize`:resetCode send error:Something went wrong sending the code`);

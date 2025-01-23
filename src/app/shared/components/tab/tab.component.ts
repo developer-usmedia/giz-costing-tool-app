@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulati
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'button[giz-tab], a[giz-tab]',
     templateUrl: './tab.component.html',
-    styleUrls: ['./tab.component.scss'],
+    styleUrls: [ './tab.component.scss' ],
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
 })

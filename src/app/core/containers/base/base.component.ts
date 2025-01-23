@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { CreateQueryResult, injectQuery } from '@tanstack/angular-query-experimental';
 import { filter, Subject, takeUntil } from 'rxjs';
 
@@ -11,11 +11,18 @@ import { BreadcrumbItem, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { UserService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { getBreadCrumbTitle } from '@shared/helpers';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
     selector: 'giz-base',
     templateUrl: './base.component.html',
-    styleUrls: ['./base.component.scss'],
+    styleUrls: [ './base.component.scss' ],
+    imports: [
+        HeaderComponent,
+        RouterOutlet,
+        FooterComponent,
+    ],
 })
 export class BaseComponent implements OnDestroy {
     public readonly user: CreateQueryResult<User, Error> = this.userService.getUser();

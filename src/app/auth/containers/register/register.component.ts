@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, ViewEncapsulation, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, Subject, take, takeUntil } from 'rxjs';
 
@@ -13,6 +13,12 @@ import { Stepper } from '@shared/components/stepper/stepper.model';
 import { STATUS } from '@shared/helpers';
 import { ClearUserDetails, SaveUserDetails } from '@store/app.actions';
 import { AppStore } from '@store/app.store';
+import { AuthContentComponent } from '../../components/auth-content/auth-content.component';
+import { SignupComponent } from '../../components/signup/signup.component';
+import { VerificationComponent } from '../../components/verification/verification.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { StepperComponent } from '@shared/components/stepper/stepper.component';
 
 enum REGISTER_STEPS {
     REGISTER = 1,
@@ -25,9 +31,17 @@ enum REGISTER_STEPS {
     templateUrl: './register.component.html',
     styleUrl: './register.component.scss',
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        AuthContentComponent,
+        SignupComponent,
+        VerificationComponent,
+        ButtonComponent,
+        RouterLink,
+        StepperComponent,
+    ],
 })
 export class RegisterComponent implements OnDestroy {
-    @Select(AppStore.userDetails) userDetails$!: Observable<UserDetails>;
+    userDetails$: Observable<UserDetails> = inject(Store).select(AppStore.userDetails);
 
     public currentStep$ = new BehaviorSubject<REGISTER_STEPS>(REGISTER_STEPS.REGISTER);
     public signupSubmitting = false;
@@ -89,7 +103,7 @@ export class RegisterComponent implements OnDestroy {
                 },
                 error: (error: HttpErrorResponse) => {
                     const errorBody = error.error as ErrorResponse;
-                    const isBadRequest = errorBody.statusCode === STATUS.BAD_REQUEST;
+                    const isBadRequest = errorBody.statusCode as STATUS === STATUS.BAD_REQUEST;
                     if (isBadRequest && errorBody.message?.includes('verify email')) {
                         this.store.dispatch(new SaveUserDetails({
                             email: registerForm.email,
@@ -125,7 +139,7 @@ export class RegisterComponent implements OnDestroy {
                         this.currentStep$.next(REGISTER_STEPS.DONE);
                     })
                     .catch((error: HttpErrorResponse) => {
-                        if (error.status === STATUS.BAD_REQUEST) {
+                        if (error.status as STATUS === STATUS.BAD_REQUEST) {
                             this.codeInvalid = true;
                         }
                         this.verificationSubmitting = false;
@@ -147,7 +161,7 @@ export class RegisterComponent implements OnDestroy {
                     .verifyEmail({ email: userDetails.email })
                     .then(() => this.toastr.success($localize`:verificationCode send success:New code sent`,))
                     .catch((error: HttpErrorResponse) => {
-                        if (error.status === STATUS.TOO_MANY_REQUESTS) {
+                        if (error.status as STATUS === STATUS.TOO_MANY_REQUESTS) {
                             this.toastr.error($localize`:verificationCode send error-limit:Too many requests, try again later`);
                         } else {
                             this.toastr.error($localize`:verificationCode send error:Something went wrong sending the code`);

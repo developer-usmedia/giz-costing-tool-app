@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/list-reset';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/list-reset';
+@use 'mixins/typography';
 
 :root {
     --stepper-circle-bcg: #{ $c-white };
@@ -13,7 +12,7 @@
 .stepper {
     $self: &;
 
-    @include list-reset;
+    @include list-reset.apply;
 
     display: flex;
     justify-content: center;
@@ -57,7 +56,7 @@
     }
 
     &__label {
-        @include style-text-small;
+        @include typography.style-text-small;
 
         color: var(--stepper-circle-label);
         overflow: hidden;

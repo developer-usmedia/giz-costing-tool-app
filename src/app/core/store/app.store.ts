@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { AppState, INITIAL_STATE } from '@store/app.state';
 import { UserDetails } from '@core/models';
+// eslint-disable-next-line @typescript-eslint/naming-convention
 import * as Actions from '@store/app.actions';
 
 @State<AppState>({

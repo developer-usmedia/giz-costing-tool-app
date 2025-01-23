@@ -1,4 +1,4 @@
-@import 'config/colors';
+@use 'config' as *;
 
 :root {
     --auth-description-color: #{ $c-grey--700 };

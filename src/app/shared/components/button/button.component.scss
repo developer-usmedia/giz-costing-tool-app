@@ -1,7 +1,7 @@
 @use 'sass:color';
-@import './config/colors';
-@import './mixins/button';
-@import './mixins/sr-only';
+@use 'config' as *;
+@use 'mixins/button';
+@use 'mixins/sr-only';
 
 :root {
     --button-background: #{ $c-thunderbird-1 };
@@ -18,8 +18,8 @@
 .button {
     $self: &;
 
-    @include button-base;
-    @include button-style(
+    @include button.base;
+    @include button.style(
         var(--button-background),
         var(--button-border),
         var(--button-color),

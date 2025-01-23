@@ -3,10 +3,7 @@ import { Directive, EventEmitter, HostBinding, HostListener, inject, Input, Outp
 import { ToastrService } from 'ngx-toastr';
 import { firstValueFrom } from 'rxjs';
 
-@Directive({
-    selector: '[gizFileDownload]',
-    standalone: true,
-})
+@Directive({ selector: '[gizFileDownload]' })
 export class FileDownloadDirective {
     @Input({ alias: 'gizFileDownload', required: true })
     downloadUrl = '';

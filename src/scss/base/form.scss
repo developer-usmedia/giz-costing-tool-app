@@ -1,12 +1,13 @@
-@import '../mixins/form';
-@import '../mixins/typography';
+@use '../mixins/form';
+@use '../mixins/typography';
+@use "../config" as *;
 
 legend,
 label,
 input,
 textarea,
 select {
-    @include style-text;
+    @include typography.style-text;
 }
 
 input,
@@ -28,7 +29,7 @@ input {
     &[type='number'],
     &[type='password'],
     &[type='search'] {
-        @include form-input;
+        @include form.input;
     }
 
     &[type='date'] {
@@ -73,7 +74,7 @@ input {
 }
 
 textarea {
-    @include form-input;
+    @include form.input;
 
     line-height: 1.5;
     min-height: 6rem;
@@ -83,7 +84,7 @@ textarea {
 }
 
 select {
-    @include form-input;
+    @include form.input;
 
     // Undo readonly because select gets readonly attr because of custom styling appearance none
     &:read-only {
@@ -94,7 +95,7 @@ select {
 
 legend,
 label {
-    @include style-text;
+    @include typography.style-text;
 
     color: var(--form-label-color);
     display: block;

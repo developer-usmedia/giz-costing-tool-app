@@ -1,4 +1,4 @@
-@import 'config/colors';
+@use 'config' as *;
 
 .account-remove {
     --hr-color: #{ $c-grey--300 };

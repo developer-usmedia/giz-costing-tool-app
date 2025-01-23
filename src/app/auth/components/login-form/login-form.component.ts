@@ -9,11 +9,16 @@ import {
     Output,
     SimpleChanges,
 } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginForm } from '@api/models';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import { NgClass } from '@angular/common';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface LoginFormGroup {
     email: FormControl<string>;
@@ -25,6 +30,15 @@ interface LoginFormGroup {
     templateUrl: './login-form.component.html',
     styleUrl: './login-form.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        SpinnerComponent,
+        ButtonComponent,
+        RouterLink,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class LoginFormComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;

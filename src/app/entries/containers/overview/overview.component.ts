@@ -2,7 +2,7 @@ import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { ConnectedPosition } from '@angular/cdk/overlay';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { distinctUntilChanged, map, Observable, startWith, Subject, take, takeUntil } from 'rxjs';
@@ -23,12 +23,52 @@ import {
 } from '@shared/containers/create-entry-dialog/create-entry-dialog.component';
 import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
 import { DeleteEntryResult, EntryDeleteDialogComponent } from '../entry-delete-dialog/entry-delete-dialog.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { CdkMenuTrigger, CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
+import { MenuComponent } from '@shared/components/menu/menu.component';
+import { MenuItemComponent } from '@shared/components/menu-item/menu-item.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { NoResultsComponent } from '@shared/components/no-results/no-results.component';
+import { TableComponent } from '@shared/components/table/table.component';
+import { TableRowComponent } from '@shared/components/table-row/table-row.component';
+import { TableCellComponent } from '@shared/components/table-cell/table-cell.component';
+import { TooltipDirective } from '@shared/directives/tooltip.directive';
+import { StatusComponent } from '@shared/components/status/status.component';
+import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
+import { AsyncPipe, DatePipe, KeyValuePipe } from '@angular/common';
+import { CountryNamePipe, EmptyPipe, EntryStatusPipe, EntryStatusTextPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-overview',
     templateUrl: './overview.component.html',
     styleUrl: './overview.component.scss',
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        ButtonComponent,
+        IconButtonComponent,
+        CdkMenuTrigger,
+        CdkMenu,
+        MenuComponent,
+        CdkMenuItem,
+        MenuItemComponent,
+        SpinnerComponent,
+        NoResultsComponent,
+        TableComponent,
+        TableRowComponent,
+        TableCellComponent,
+        RouterLink,
+        TooltipDirective,
+        StatusComponent,
+        PaginatorComponent,
+        AsyncPipe,
+        DatePipe,
+        KeyValuePipe,
+        CountryNamePipe,
+        EmptyPipe,
+        EntryStatusPipe,
+        EntryStatusTextPipe,
+    ],
 })
 export class OverviewComponent implements OnDestroy {
     public pagingParams$: Observable<EntriesPagingParams>;

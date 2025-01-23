@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { Status } from '@shared/components/status/status.type';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
     selector: 'giz-status',
@@ -8,6 +9,7 @@ import { Status } from '@shared/components/status/status.type';
     styleUrl: './status.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [IconComponent],
 })
 export class StatusComponent {
     @Input({ required: true }) status!: Status;

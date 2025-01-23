@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
@@ -13,6 +13,17 @@ import { ENTRY_ROUTE, MODULE_ROUTE, ROOT_ROUTE } from '@core/models';
 import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { CustomValidators } from '@shared/services';
+import { EntryHeaderComponent } from '../../components/entry-header/entry-header.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { NoResultsComponent } from '@shared/components/no-results/no-results.component';
+import { NgClass, UpperCasePipe, DecimalPipe, DatePipe } from '@angular/common';
+import { TableComponent } from '@shared/components/table/table.component';
+import { TableRowComponent } from '@shared/components/table-row/table-row.component';
+import { TableCellComponent } from '@shared/components/table-cell/table-cell.component';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { CdkCopyToClipboard } from '@angular/cdk/clipboard';
+import { BuyerUnitPipe, EmptyPipe, HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 
 export interface EntryBuyerForm {
@@ -32,6 +43,26 @@ interface EntryBuyerFormGroup {
     selector: 'giz-entry-buyer',
     templateUrl: './entry-buyer.component.html',
     styleUrl: './entry-buyer.component.scss',
+    imports: [
+        EntryHeaderComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        NoResultsComponent,
+        ReactiveFormsModule,
+        NgClass,
+        TableComponent,
+        TableRowComponent,
+        TableCellComponent,
+        IconButtonComponent,
+        CdkCopyToClipboard,
+        UpperCasePipe,
+        DecimalPipe,
+        DatePipe,
+        BuyerUnitPipe,
+        EmptyPipe,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class EntryBuyerComponent implements OnDestroy {
     public backTitle = $localize`:entry distribution title:Distribution`;

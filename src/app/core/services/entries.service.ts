@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { injectQueryClient } from '@tanstack/angular-query-experimental';
+import { QueryClient } from '@tanstack/angular-query-experimental';
 
 import {
     EntriesListResponse,
@@ -20,7 +20,7 @@ import { useQuery } from './query/use-query';
 @Injectable({ providedIn: 'root' })
 export class EntriesService {
     private readonly entriesApi = inject(EntriesApi);
-    private readonly queryClient = injectQueryClient();
+    private readonly queryClient = inject(QueryClient);
 
     public getEntry(id: string) {
         return useQuery<Entry>(
@@ -68,7 +68,7 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioCreateMutation) => {
                 return this.entriesApi.createScenario(mutation.entryId, mutation.scenarioCreate);
             },
-            onSuccess: async (entry: Entry, _client, mutation: ScenarioCreateMutation) => {
+            onSuccess: async (entry: Entry, mutation: ScenarioCreateMutation) => {
                 await this.refreshEntry(entry.id);
                 await this.refreshWorkers(mutation.entryId);
             },
@@ -109,7 +109,7 @@ export class EntriesService {
             mutationFn: (mutation: ScenarioWorkersResetMutation) => {
                 return this.entriesApi.resetScenarioWorkers(mutation.entryId, mutation.scenarioWorkersReset);
             },
-            onSuccess: async (_data, _client, mutation) => await this.refreshWorkers(mutation.entryId),
+            onSuccess: async (_data, mutation) => await this.refreshWorkers(mutation.entryId),
         });
     }
 }

@@ -1,7 +1,6 @@
 @use 'sass:color';
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
+@use 'config' as *;
+@use 'mixins/screen';
 
 :root {
     --logos-background: #{ $c-white };
@@ -70,7 +69,7 @@
         }
     }
 
-    @include screen(510px) {
+    @include screen.min(510px) {
         --logos-padding: 30px;
         --logos-width: 260px;
     }

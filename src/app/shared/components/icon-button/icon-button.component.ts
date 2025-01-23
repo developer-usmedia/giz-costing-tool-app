@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -19,6 +20,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrls: [ './icon-button.component.scss' ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [IconComponent],
 })
 export class IconButtonComponent implements AfterViewInit {
     @Input({ required: true }) icon!: ICON;

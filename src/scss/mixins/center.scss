@@ -1,17 +1,17 @@
-@mixin center {
+@mixin both {
     left: 50%;
     position: absolute;
     top: 50%;
     translate: -50% -50%;
 }
 
-@mixin center-vertical {
+@mixin vertical {
     position: absolute;
     top: 50%;
     translate: 0 -50%;
 }
 
-@mixin center-horizontal {
+@mixin horizontal {
     left: 50%;
     position: absolute;
     translate: -50% 0;

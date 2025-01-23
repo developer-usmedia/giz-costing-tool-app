@@ -1,4 +1,4 @@
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, DecimalPipe, CurrencyPipe, KeyValuePipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, inject, OnDestroy, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
@@ -14,11 +14,47 @@ import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
 import { getPagingParamsFromQueryParams, getParamsFromPagingParams } from '@shared/helpers';
+import { EntryHeaderComponent } from '../../components/entry-header/entry-header.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { FileDownloadDirective } from '@shared/directives/file-download.directive';
+import { NoResultsComponent } from '@shared/components/no-results/no-results.component';
+import { TableComponent } from '@shared/components/table/table.component';
+import { TableRowComponent } from '@shared/components/table-row/table-row.component';
+import { TableCellComponent } from '@shared/components/table-cell/table-cell.component';
+import { TooltipAdvancedDirective } from '@shared/directives/tooltip-advanced.directive';
+import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
+import { ReportWorkersChartComponent } from '../../components/report-workers-chart/report-workers-chart.component';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { TooltipDirective } from '@shared/directives/tooltip.directive';
+import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
+import { EmptyPipe, GenderPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-entry-report',
     templateUrl: './entry-report.component.html',
     styleUrl: './entry-report.component.scss',
+    imports: [
+        EntryHeaderComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        FileDownloadDirective,
+        NoResultsComponent,
+        TableComponent,
+        TableRowComponent,
+        TableCellComponent,
+        TooltipAdvancedDirective,
+        TooltipAdvancedComponent,
+        ReportWorkersChartComponent,
+        IconButtonComponent,
+        TooltipDirective,
+        PaginatorComponent,
+        DecimalPipe,
+        CurrencyPipe,
+        KeyValuePipe,
+        EmptyPipe,
+        GenderPipe,
+    ],
 })
 export class EntryReportComponent implements OnDestroy {
     public backTitle = $localize`:entry buyer title:Buyer`;

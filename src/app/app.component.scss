@@ -1,5 +1,4 @@
-@import 'config/colors';
-@import 'config/sizes';
+@use 'config' as *;
 
 :host {
     display: block;

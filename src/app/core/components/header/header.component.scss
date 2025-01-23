@@ -1,9 +1,8 @@
 @use 'sass:color';
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
-@import 'mixins/sr-only';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/sr-only';
+@use 'mixins/typography';
 
 :root {
     --header-profile-color: #{ $c-grey--700 };
@@ -37,13 +36,13 @@
             }
 
             #{ $self }__email {
-                @include sr-only;
+                @include sr-only.apply;
             }
         }
     }
 
     &__email {
-        @include style-text-small;
+        @include typography.style-text-small;
 
         color: var(--header-profile-color);
         font-family: $font-barlow;
@@ -82,10 +81,10 @@
         padding: $p-gutter;
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         &__profile--link {
             #{ $self }__email {
-                @include sr-only-reverse;
+                @include sr-only.remove;
             }
         }
     }

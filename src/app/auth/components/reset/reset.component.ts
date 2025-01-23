@@ -9,9 +9,14 @@ import {
     Output,
     SimpleChanges,
 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { NgClass } from '@angular/common';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { RouterLink } from '@angular/router';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface ResetCodeFormGroup {
     resetCode: FormControl<string>;
@@ -21,6 +26,15 @@ interface ResetCodeFormGroup {
     selector: 'giz-reset',
     templateUrl: './reset.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        ButtonComponent,
+        SpinnerComponent,
+        RouterLink,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class ResetComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;

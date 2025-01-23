@@ -1,5 +1,4 @@
-@import '../config/colors';
-@import '../config/fonts';
+@use '../config' as *;
 
 .todo {
     border: 4px solid $c-thunderbird-1;

@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/shadows';
-@import 'config/sizes';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 :root {
     --tooltip-advanced-background: #{ $c-white };
@@ -36,7 +35,7 @@
         }
     }
 
-    @include screen($screen-minimal) {
+    @include screen.min($screen-minimal) {
         &--medium {
             width: 350px;
         }

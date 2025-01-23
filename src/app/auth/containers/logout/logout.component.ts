@@ -3,11 +3,19 @@ import { Component, OnInit, inject } from '@angular/core';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
 import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { AuthContentComponent } from '../../components/auth-content/auth-content.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'giz-logout',
-  templateUrl: './logout.component.html',
-  styleUrl: './logout.component.scss',
+    selector: 'giz-logout',
+    templateUrl: './logout.component.html',
+    styleUrl: './logout.component.scss',
+    imports: [
+        AuthContentComponent,
+        ButtonComponent,
+        RouterLink,
+    ],
 })
 export class LogoutComponent implements OnInit {
     protected readonly authRoute = AUTH_ROUTE;

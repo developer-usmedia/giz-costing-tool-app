@@ -1,8 +1,7 @@
 @use 'sass:color';
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/sr-only';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/sr-only';
+@use 'mixins/typography';
 
 :root {
     --create-entry-table-background: #{ $c-grey--100 };
@@ -27,7 +26,7 @@
         table-layout: fixed;
 
         caption {
-            @include sr-only;
+            @include sr-only.apply;
         }
 
         td,
@@ -57,7 +56,7 @@
 
         thead {
             th {
-                @include style-text-small;
+                @include typography.style-text-small;
 
                 font-family: $font-barlow;
                 font-weight: $weight-bold;

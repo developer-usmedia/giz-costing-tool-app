@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { Select, Store } from '@ngxs/store';
+import { Router, RouterLink } from '@angular/router';
+import { Store } from '@ngxs/store';
 import { AppStore } from '@store/app.store';
-import { injectQueryClient } from '@tanstack/angular-query-experimental';
+import { QueryClient } from '@tanstack/angular-query-experimental';
 import { ToastrService } from 'ngx-toastr';
 
 import { ErrorResponse, LoginForm } from '@api/models';
@@ -12,14 +12,23 @@ import { AuthService } from '@core/services';
 import { STATUS } from '@shared/helpers';
 import { SaveUserDetails } from '@store/app.actions';
 import { Observable, take } from 'rxjs';
+import { AuthContentComponent } from '../../components/auth-content/auth-content.component';
+import { LoginFormComponent } from '../../components/login-form/login-form.component';
+import { TwofactorFormComponent } from '../../components/twofactor-form/twofactor-form.component';
 
 @Component({
     selector: 'giz-login',
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss',
+    imports: [
+        AuthContentComponent,
+        LoginFormComponent,
+        TwofactorFormComponent,
+        RouterLink,
+    ],
 })
 export class LoginComponent {
-    @Select(AppStore.userDetails) userDetails$!: Observable<UserDetails>;
+    userDetails$: Observable<UserDetails> = inject(Store).select(AppStore.userDetails);
 
     public submitting = false;
     public wrongPassword = false;
@@ -34,7 +43,7 @@ export class LoginComponent {
     private readonly router = inject(Router);
     private readonly store = inject(Store);
     private readonly toastr = inject(ToastrService);
-    private readonly queryClient = injectQueryClient();
+    private readonly queryClient = inject(QueryClient);
 
     public getTitle(): string {
         switch (this.step) {
@@ -85,27 +94,29 @@ export class LoginComponent {
             .then(() => this.router.navigate([ROOT_ROUTE.DASHBOARD]))
             .catch(async (error: HttpErrorResponse) => {
                 const errorBody = error.error as ErrorResponse;
-                if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('emailVerificationCode')) {
+                const errorStatus = error.status as STATUS;
+
+                if (errorStatus === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('emailVerificationCode')) {
                     this.store.dispatch(new SaveUserDetails({
                         email: loginForm.email,
                         password: loginForm.password,
                     }));
                     await this.router.navigate([MODULE_ROUTE.AUTH, AUTH_ROUTE.EMAIL_VERIFICATION]);
                 }
-                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('two-factor is enabled')) {
+                else if (errorStatus === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('two-factor is enabled')) {
                     this.store.dispatch(new SaveUserDetails({
                         email: loginForm.email,
                         password: loginForm.password,
                     }));
                     this.step = '2FA';
                 }
-                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('two-factor code is invalid')) {
+                else if (errorStatus === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('two-factor code is invalid')) {
                     this.wrongOTP = true;
                 }
-                else if (error.status === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('login locked')) {
+                else if (errorStatus === STATUS.BAD_REQUEST && errorBody?.message.toLowerCase().includes('login locked')) {
                     this.locked = true;
                 }
-                else if (error.status === STATUS.NOT_FOUND || error.status === STATUS.UNAUTHORIZED) {
+                else if (errorStatus === STATUS.NOT_FOUND || errorStatus === STATUS.UNAUTHORIZED) {
                     this.step = 'form';
                     this.wrongPassword = true;
                 }

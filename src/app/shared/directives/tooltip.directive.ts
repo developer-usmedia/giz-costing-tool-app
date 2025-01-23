@@ -13,10 +13,7 @@ import {
 } from '@angular/core';
 import { TooltipComponent } from '@shared/components/tooltip/tooltip.component';
 
-@Directive({
-    selector: '[gizTooltip]',
-    standalone: true,
-})
+@Directive({ selector: '[gizTooltip]' })
 export class TooltipDirective implements OnInit, OnDestroy {
     @Input({ required: true }) text!: string;
 
@@ -85,4 +82,3 @@ export class TooltipDirective implements OnInit, OnDestroy {
         this.overlayRef = this.overlay.create(overlayConfig);
     }
 }
-

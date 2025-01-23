@@ -1,5 +1,5 @@
-@import 'config/sizes';
-@import 'mixins/screen';
+@use 'config' as *;
+@use 'mixins/screen';
 
 .distribution {
     display: flex;
@@ -24,7 +24,7 @@
         grid-column: span 2;
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;

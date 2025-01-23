@@ -8,6 +8,8 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
+import { MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-dialog',
@@ -15,6 +17,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrl: './dialog.component.scss',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [IconButtonComponent, MarkdownPipe],
 })
 export class DialogComponent {
     @Input({ required: true }) title!: string;

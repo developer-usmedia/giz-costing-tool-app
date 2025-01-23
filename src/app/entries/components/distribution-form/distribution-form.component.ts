@@ -9,10 +9,14 @@ import {
     SimpleChanges,
     ViewEncapsulation,
 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { Distribution, DistributionForm, Worker } from '@api/models';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import { NgClass } from '@angular/common';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { GenderPipe, HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface DistributionFormGroup {
     baseWagePerc: FormControl<number | null>;
@@ -44,6 +48,15 @@ interface DistributionFormValue {
     styleUrl: './distribution-form.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        SpinnerComponent,
+        ButtonComponent,
+        GenderPipe,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class DistributionFormComponent implements OnChanges, OnDestroy {
     @Input() distribution?: Distribution;

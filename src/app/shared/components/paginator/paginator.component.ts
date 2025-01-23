@@ -10,15 +10,17 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { PageEvent } from '@shared/components/paginator/paginator.model';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
 @Component({
     selector: 'giz-paginator',
     templateUrl: './paginator.component.html',
     styleUrls: [ './paginator.component.scss' ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [ReactiveFormsModule, IconButtonComponent],
 })
 export class PaginatorComponent implements OnChanges {
     @Input() disabled = false;

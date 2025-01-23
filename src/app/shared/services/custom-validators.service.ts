@@ -14,7 +14,7 @@ export class CustomValidators {
     static buyerAmount(control: AbstractControl): ValidationErrors | null {
         const amount = parseFloat(String(control.get('buyerAmount')?.value));
         const maxUnits = control.get('facilityProduction')?.value ? parseFloat(String(control.get('facilityProduction')?.value)) : undefined;
-        const unit = String(control.get('buyerUnit')?.value);
+        const unit = control.get('buyerUnit')?.value as BuyerUnit;
         const inValid = (unit === BuyerUnit.PERCENTAGE && amount > 100) ||
             (unit === BuyerUnit.UNIT && maxUnits && amount > maxUnits);
         return inValid ? { aboveMax: unit === BuyerUnit.PERCENTAGE ? 100 : maxUnits } : null;

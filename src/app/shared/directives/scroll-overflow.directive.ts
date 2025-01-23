@@ -10,10 +10,7 @@ import {
 } from '@angular/core';
 import { ScrollOverflowContainerDirective } from '@shared/directives/scroll-overflow-container.directive';
 
-@Directive({
-    selector: '[gizScrollOverflow]',
-    standalone: true,
-})
+@Directive({ selector: '[gizScrollOverflow]' })
 export class ScrollOverflowDirective implements AfterViewInit {
     @ContentChildren(ScrollOverflowContainerDirective, { descendants: true }) scrollContainer!: QueryList<ScrollOverflowContainerDirective>;
 

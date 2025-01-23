@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, Vie
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'tr[giz-table-row], tr[giz-table-header-row]',
     templateUrl: './table-row.component.html',
-    styleUrls: ['./table-row.component.scss'],
+    styleUrls: [ './table-row.component.scss' ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

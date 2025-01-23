@@ -1,6 +1,5 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/sr-only';
+@use 'config' as *;
+@use 'mixins/sr-only';
 
 :root {
     --overview-link-color-hover: #{ $c-giz-red };

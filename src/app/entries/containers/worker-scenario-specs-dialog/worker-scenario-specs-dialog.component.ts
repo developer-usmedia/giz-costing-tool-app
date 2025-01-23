@@ -8,11 +8,17 @@ import {
     ViewEncapsulation,
     inject,
 } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 import { Entry, ScenarioWorkerForm, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
 import { EntriesService } from '@core/services';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { NgClass, CurrencyPipe } from '@angular/common';
+import { AlertComponent } from '@shared/components/alert/alert.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { GenderPipe, HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface ScenarioWorkerSpecsFormGroup {
     remunerationIncrease: FormControl<number | null>;
@@ -28,6 +34,18 @@ export interface ScenarioWorkerSpecsResult {
     styleUrl: './worker-scenario-specs-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        DialogComponent,
+        ReactiveFormsModule,
+        NgClass,
+        AlertComponent,
+        ButtonComponent,
+        SpinnerComponent,
+        CurrencyPipe,
+        GenderPipe,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class WorkerScenarioSpecsDialogComponent implements OnChanges {
     public readonly entriesService = inject(EntriesService);

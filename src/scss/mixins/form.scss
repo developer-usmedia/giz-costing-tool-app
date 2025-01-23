@@ -1,9 +1,7 @@
-@import '../config/colors';
-@import '../config/fonts';
-@import '../config/sizes';
-@import '../mixins/svg';
+@use '../config' as *;
+@use '../mixins/svg';
 
-@mixin form-input {
+@mixin input {
     appearance: none;
     background: var(--form-input-bcg);
     border: 0;
@@ -35,7 +33,7 @@
 
 /* stylelint-disable no-descending-specificity -- disable lint to ignore the styling on the grouped class */
 
-@mixin form-checkbox {
+@mixin checkbox {
     min-height: 30px;
     padding: 6px;
     position: relative;
@@ -113,7 +111,7 @@
     }
 }
 
-@mixin form-radio {
+@mixin radio {
     min-height: 30px;
     padding: 6px;
     position: relative;
@@ -185,7 +183,7 @@
     }
 }
 
-@mixin form-select {
+@mixin select {
     position: relative;
 
     select {
@@ -194,7 +192,7 @@
     }
 
     &::before {
-        @include svg('arrow-dropdown', $c-grey--600);
+        @include svg.svg('arrow-dropdown', $c-grey--600);
 
         display: block;
         height: 16px;

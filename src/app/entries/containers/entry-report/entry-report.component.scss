@@ -1,5 +1,5 @@
-@import 'config/sizes';
-@import 'mixins/screen';
+@use 'config' as *;
+@use 'mixins/screen';
 
 .report {
     &__section {
@@ -10,7 +10,7 @@
         margin-bottom: $p-gutter;
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         &__section {
             &--intro {
                 display: grid;

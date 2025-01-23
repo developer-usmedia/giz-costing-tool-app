@@ -1,5 +1,6 @@
-@import './config/colors';
-@import './mixins/animations';
+@use 'config' as *;
+@use 'mixins/animations';
+@use 'mixins/property-override';
 
 :root {
     --spinner-bcg: #{ $c-thunderbird-4 };
@@ -10,13 +11,15 @@
 .spinner {
     $self: &;
 
-    @include rotate;
+    @include animations.rotate;
 
-    align-items: center;
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    position: relative;
+    @include property-override.apply {
+        align-items: center;
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        position: relative;
+    }
 
     &::before {
         animation: rotate 1.2s infinite linear;

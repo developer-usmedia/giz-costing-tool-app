@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { CdkMenuItem } from '@angular/cdk/menu';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -9,7 +10,8 @@ import { CdkMenuItem } from '@angular/cdk/menu';
     styleUrl: './menu-item.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
-    hostDirectives: [ CdkMenuItem ],
+    hostDirectives: [CdkMenuItem],
+    imports: [IconComponent],
 })
 export class MenuItemComponent {
     @Input() active = false;

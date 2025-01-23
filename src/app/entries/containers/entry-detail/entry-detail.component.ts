@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, OnDestroy, signal, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { distinctUntilChanged, map, Subject, takeUntil } from 'rxjs';
 
@@ -8,12 +8,25 @@ import { Entry, EntryStatus } from '@api/models';
 import { EntriesApi } from '@api/services';
 import { ENTRY_ROUTE, MODULE_ROUTE, RouteName } from '@core/models';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { EntryCardComponent } from '@shared/components/entry-card/entry-card.component';
+import { TabGroupComponent } from '@shared/components/tab-group/tab-group.component';
+import { TabComponent } from '@shared/components/tab/tab.component';
 
 @Component({
     selector: 'giz-entry-detail',
     templateUrl: './entry-detail.component.html',
     styleUrl: './entry-detail.component.scss',
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        SpinnerComponent,
+        EntryCardComponent,
+        TabGroupComponent,
+        TabComponent,
+        RouterLink,
+        RouterLinkActive,
+        RouterOutlet,
+    ],
 })
 export class EntryDetailComponent implements OnDestroy {
     public readonly routes = ENTRY_ROUTE;

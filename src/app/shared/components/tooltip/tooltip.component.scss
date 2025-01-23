@@ -1,7 +1,5 @@
-@import 'config/colors';
-@import 'config/fonts';
-@import 'config/shadows';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/typography';
 
 :root {
     --tooltip-bcg: #{ $c-grey--900 };
@@ -9,7 +7,7 @@
 }
 
 .tooltip {
-    @include style-text-small;
+    @include typography.style-text-small;
 
     background: var(--tooltip-bcg);
     border-radius: $b-radius;

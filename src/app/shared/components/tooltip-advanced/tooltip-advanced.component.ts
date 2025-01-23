@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
 
 @Component({
     selector: 'giz-tooltip-advanced',
@@ -15,6 +16,7 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrl: './tooltip-advanced.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [IconButtonComponent],
 })
 export class TooltipAdvancedComponent {
     @Input() size: 'small' | 'medium' = 'small';
@@ -32,4 +34,3 @@ export class TooltipAdvancedComponent {
         this.closeTooltip.emit();
     }
 }
-

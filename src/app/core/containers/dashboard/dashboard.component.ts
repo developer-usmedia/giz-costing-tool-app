@@ -9,11 +9,27 @@ import {
     CreateEntryDialogComponent,
     CreateEntryResult,
 } from '@shared/containers/create-entry-dialog/create-entry-dialog.component';
+import { DropdownComponent } from '@shared/components/dropdown/dropdown.component';
+import { LogosComponent } from '@shared/components/logos/logos.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { EntryCardComponent } from '@shared/components/entry-card/entry-card.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { MarkdownPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.scss',
+    imports: [
+        DropdownComponent,
+        LogosComponent,
+        SpinnerComponent,
+        EntryCardComponent,
+        ButtonComponent,
+        RouterLink,
+        MarkdownPipe,
+    ],
 })
 export class DashboardComponent {
     public readonly moduleRoute = MODULE_ROUTE;

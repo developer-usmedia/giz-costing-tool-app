@@ -1,9 +1,8 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/overflow-gradient';
+@use 'config' as *;
+@use 'mixins/overflow-gradient';
 
 .tab-group {
-    @include overflow-gradient;
+    @include overflow-gradient.apply;
 
     display: block;
     margin-bottom: -1px;

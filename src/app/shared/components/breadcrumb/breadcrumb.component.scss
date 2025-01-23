@@ -1,6 +1,6 @@
-@import 'config/colors';
-@import 'mixins/sr-only';
-@import 'mixins/svg';
+@use 'config' as *;
+@use 'mixins/sr-only';
+@use 'mixins/svg';
 
 :root {
     --breadcrumb-color: #{ $c-grey--600 };
@@ -28,7 +28,7 @@ giz-breadcrumb {
 
         &--icon:not(.is-active) {
             #{ $self }__text {
-                @include sr-only;
+                @include sr-only.apply;
             }
         }
 

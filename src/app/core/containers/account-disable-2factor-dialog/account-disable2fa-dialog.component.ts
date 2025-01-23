@@ -1,6 +1,6 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
@@ -8,6 +8,14 @@ import { Disable2FAForm, ErrorResponse } from '@api/models';
 import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { STATUS } from '@shared/helpers';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { NgClass } from '@angular/common';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { TooltipAdvancedDirective } from '@shared/directives/tooltip-advanced.directive';
+import { TooltipAdvancedComponent } from '@shared/components/tooltip-advanced/tooltip-advanced.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface Disable2FAFormGroup {
     password: FormControl<string>;
@@ -27,6 +35,18 @@ export interface Disable2FAResult {
     selector: 'giz-account-disable2-factor-dialog',
     templateUrl: './account-disable2fa-dialog.component.html',
     styleUrl: './account-disable2fa-dialog.component.scss',
+    imports: [
+        DialogComponent,
+        ReactiveFormsModule,
+        NgClass,
+        IconButtonComponent,
+        TooltipAdvancedDirective,
+        TooltipAdvancedComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class AccountDisable2FaDialogComponent implements OnInit, OnDestroy {
     public readonly authService = inject(AuthService);
@@ -107,7 +127,7 @@ export class AccountDisable2FaDialogComponent implements OnInit, OnDestroy {
                 },
                 onError: (error) => {
                     const errorBody = error.error as ErrorResponse;
-                    const isBadRequest = errorBody.statusCode === STATUS.BAD_REQUEST;
+                    const isBadRequest = errorBody.statusCode as STATUS === STATUS.BAD_REQUEST;
                     if (isBadRequest && errorBody.message.includes('Invalid credentials')) {
                         this.wrongPassword = true;
                     }

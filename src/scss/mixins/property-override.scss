@@ -1,0 +1,21 @@
+/**
+    Temporary fix for https://github.com/stylelint/stylelint/issues/7893
+    This is not needed anymore after this bug by Stylelint is fixed.
+
+    What to do after fix:
+    ```scss
+    // replace i.e.
+    @include property-override {
+        margin-top: 0 0 1rem;
+    }
+    // with
+    & {
+        margin-top: 0 0 1rem;
+    }
+    ```
+ */
+ @mixin apply() {
+    & {
+        @content;
+    }
+}

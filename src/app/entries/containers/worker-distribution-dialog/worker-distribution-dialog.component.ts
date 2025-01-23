@@ -4,6 +4,10 @@ import { ToastrService } from 'ngx-toastr';
 
 import { Distribution, DistributionForm, Entry, ScenarioWorkerUpdateMutation, Worker } from '@api/models';
 import { EntriesService } from '@core/services';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { DistributionFormComponent } from '../../components/distribution-form/distribution-form.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
 
 export interface ScenarioWorkerDistroResult {
     update: boolean;
@@ -15,6 +19,12 @@ export interface ScenarioWorkerDistroResult {
     styleUrl: './worker-distribution-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        DialogComponent,
+        DistributionFormComponent,
+        ButtonComponent,
+        SpinnerComponent,
+    ],
 })
 export class WorkerDistributionDialogComponent {
     public readonly entriesService = inject(EntriesService);

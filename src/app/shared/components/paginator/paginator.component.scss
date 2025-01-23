@@ -1,9 +1,8 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/form';
-@import 'mixins/screen';
-@import 'mixins/svg';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/form';
+@use 'mixins/screen';
+@use 'mixins/svg';
+@use 'mixins/typography';
 
 :root {
     --paginator-color: #{ $c-grey--700 };
@@ -44,7 +43,7 @@
 
     &__input {
         input {
-            @include style-text;
+            @include typography.style-text;
 
             color: var(--paginator-color);
             font-family: $font-barlow;
@@ -61,10 +60,10 @@
     }
 
     &__select {
-        @include form-select;
+        @include form.select;
 
         select {
-            @include style-text;
+            @include typography.style-text;
 
             --form-input-border: transparent;
 
@@ -81,7 +80,7 @@
         }
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         gap: 1.75rem;
     }
 }

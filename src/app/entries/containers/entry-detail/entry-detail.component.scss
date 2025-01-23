@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 :root {
     --entry-detail-border-color: #{ $c-grey--300 };
@@ -17,7 +16,7 @@
         padding: $p-gutter;
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         &__header {
             align-items: flex-end;
             display: flex;

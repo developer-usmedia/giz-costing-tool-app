@@ -20,12 +20,15 @@ import {
     AccountRemoveResult,
 } from '@core/containers/account-remove-dialog/account-remove-dialog.component';
 import { UserService } from '@core/services';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { EmptyPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-account',
     templateUrl: './account.component.html',
     styleUrl: './account.component.scss',
     encapsulation: ViewEncapsulation.None,
+    imports: [ButtonComponent, EmptyPipe],
 })
 export class AccountComponent {
     public readonly userService = inject(UserService);

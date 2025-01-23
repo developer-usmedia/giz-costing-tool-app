@@ -47,10 +47,11 @@ export class ApiInterceptor implements HttpInterceptor {
         return next.handle(request).pipe(
             catchError((error: HttpErrorResponse) => {
                 const url = error.url ? error.url.split('?')[0] : '';
-                if (error.status === STATUS.UNAUTHORIZED && error.url && !this.openEndpoints.includes(url)) {
+                const errorStatus = error.status as STATUS;
+                if (errorStatus === STATUS.UNAUTHORIZED && error.url && !this.openEndpoints.includes(url)) {
                     // Refresh token only if error is not from an auth (logout/refresh etc) route
                     return this.handle401Response(request, next);
-                } else if (error.status === STATUS.FORBIDDEN) {
+                } else if (errorStatus === STATUS.FORBIDDEN) {
                     this.toastr.error(
                         $localize`:unauthorized title:403 Unauthorized`,
                         $localize`:unauthorized description:You are not authorized to do this. Please login with the correct user and rights.`,

@@ -1,4 +1,4 @@
-@import 'config/colors';
+@use 'config' as *;
 
 .table-row {
     &--clickable {

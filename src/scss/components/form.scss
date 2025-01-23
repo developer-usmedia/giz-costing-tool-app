@@ -1,6 +1,8 @@
-@import '../mixins/sr-only';
-@import '../mixins/form';
-@import '../mixins/typography';
+@use "../config" as *;
+@use '../mixins/sr-only';
+@use '../mixins/form';
+@use '../mixins/typography';
+@use "../mixins/screen";
 
 .form {
     $self: &;
@@ -24,7 +26,7 @@
     }
 
     &__title {
-        @include style-heading-2;
+        @include typography.style-heading-2;
 
         margin: 0 0 $p-gutter--small;
     }
@@ -118,7 +120,7 @@
         }
 
         &.is-hidden {
-            @include sr-only;
+            @include sr-only.apply;
         }
 
         #{ $self }__hint {
@@ -127,7 +129,7 @@
     }
 
     &__sublabel {
-        @include style-text-small;
+        @include typography.style-text-small;
 
         color: var(--form-sublabel-color);
         margin: 0;
@@ -136,7 +138,7 @@
     /* stylelint-disable no-descending-specificity */
     &__error,
     &__warning {
-        @include style-text-small;
+        @include typography.style-text-small;
 
         margin: 4px 0 0;
 
@@ -159,7 +161,7 @@
     /* stylelint-enable no-descending-specificity */
 
     &__hint {
-        @include style-text-small;
+        @include typography.style-text-small;
 
         color: var(--form-input-hint-color);
         margin: 4px 0 0;
@@ -205,15 +207,15 @@
     }
 
     &__select {
-        @include form-select;
+        @include form.select;
     }
 
     &__checkbox {
-        @include form-checkbox;
+        @include form.checkbox;
     }
 
     &__radio {
-        @include form-radio;
+        @include form.radio;
     }
 
     &__postfix,
@@ -229,11 +231,10 @@
     }
 
     &__footer {
-        align-content: center;
         display: flex;
         gap: 1rem;
-        justify-content: space-between;
         margin-top: 2rem;
+        place-content: center space-between;
 
         &--right {
             justify-content: flex-end;
@@ -254,7 +255,7 @@
         gap: 0.5rem;
     }
 
-    @include screen($screen-minimal) {
+    @include screen.min($screen-minimal) {
         &__definition {
             align-items: center;
             flex-direction: row;
@@ -320,7 +321,7 @@
         }
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         &__subfields {
             column-gap: $p-gutter;
             columns: 2;

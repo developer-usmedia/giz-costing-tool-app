@@ -40,7 +40,7 @@
                     <div class="form__error" i18n="form baseWagePerc errors min">Minimum is 0</div>
                 }
                 @if (form | hasError: 'baseWagePerc' :'max') {
-                    <div class="form__error" i18n="form baseWagePerc errors imax">Maximum is {{ this.maxIkbPercMapping['baseWagePerc'] }}</div>
+                    <div class="form__error" i18n="form baseWagePerc errors imax">Maximum is {{ maxIkbPercMapping['baseWagePerc'] }}</div>
                 }
                 <span class="form__hint" i18n="form basewage hint">Unallocated funds will go to base wage</span>
             </div>
@@ -64,7 +64,7 @@
                     <div class="form__error" i18n="form bonusesPerc errors min">Minimum is 0</div>
                 }
                 @if (form | hasError: 'bonusesPerc' :'max') {
-                    <div class="form__error" i18n="form bonusesPerc errors imax">Maximum is {{ this.maxIkbPercMapping['bonusesPerc'] }}</div>
+                    <div class="form__error" i18n="form bonusesPerc errors imax">Maximum is {{ maxIkbPercMapping['bonusesPerc'] }}</div>
                 }
             </div>
 

@@ -9,13 +9,21 @@ import {
     Output,
     SimpleChanges,
 } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { RegisterForm } from '@api/models';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { CustomValidators } from '@shared/services';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { NgClass } from '@angular/common';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { TooltipDirective } from '@shared/directives/tooltip.directive';
+import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface SignupFormGroup {
     email: FormControl<string>;
@@ -28,6 +36,18 @@ interface SignupFormGroup {
     templateUrl: './signup.component.html',
     styleUrl: './signup.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        IconButtonComponent,
+        TooltipDirective,
+        PasswordStrengthComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        RouterLink,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class SignupComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;

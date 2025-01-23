@@ -1,6 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 :root {
     --tab-color: #{ $c-grey--900 };
@@ -58,7 +58,7 @@
         }
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         min-width: 100px;
     }
 }

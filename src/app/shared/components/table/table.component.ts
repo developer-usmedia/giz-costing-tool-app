@@ -1,11 +1,19 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { ScrollOverflowDirective } from '../../directives/scroll-overflow.directive';
+import { NgClass } from '@angular/common';
+import { ScrollOverflowContainerDirective } from '../../directives/scroll-overflow-container.directive';
 
 @Component({
     selector: 'giz-table',
     templateUrl: './table.component.html',
-    styleUrls: ['./table.component.scss'],
+    styleUrls: [ './table.component.scss' ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ScrollOverflowDirective,
+        NgClass,
+        ScrollOverflowContainerDirective,
+    ],
 })
 export class TableComponent {
     @Input() loading = false;

@@ -1,7 +1,4 @@
-@import '../config/colors';
-@import '../config/sizes';
-@import '../config/fonts';
-@import '../mixins/screen';
+@use '../config' as *;
 
 // Text styles
 @mixin style-text {

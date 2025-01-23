@@ -1,6 +1,7 @@
 @use 'sass:color';
-@import './mixins/button';
-@import './mixins/sr-only';
+@use 'mixins/button';
+@use 'mixins/sr-only';
+@use "config" as *;
 
 :root {
     --icon-button-background: transparent;
@@ -17,8 +18,8 @@
 .icon-button {
     $self: &;
 
-    @include button-base;
-    @include button-style(
+    @include button.base;
+    @include button.style(
         var(--icon-button-background),
         var(--icon-button-border),
         var(--icon-button-color),
@@ -35,7 +36,7 @@
     width: var(--button-height);
 
     &__text {
-        @include sr-only;
+        @include sr-only.apply;
     }
 
     &--basic {

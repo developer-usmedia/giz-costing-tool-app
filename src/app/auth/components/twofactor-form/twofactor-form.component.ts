@@ -11,8 +11,14 @@ import {
 import { ICON } from '@shared/components/icon/icon.enum';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { NgClass } from '@angular/common';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { TooltipDirective } from '@shared/directives/tooltip.directive';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface TwoFactorFormGroup {
     otpCode: FormControl<string>;
@@ -23,6 +29,16 @@ interface TwoFactorFormGroup {
     templateUrl: './twofactor-form.component.html',
     styleUrl: './twofactor-form.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        IconButtonComponent,
+        TooltipDirective,
+        SpinnerComponent,
+        ButtonComponent,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class TwofactorFormComponent implements OnInit, OnChanges, OnDestroy {
     @Input() submitting = false;

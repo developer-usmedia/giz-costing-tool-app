@@ -9,6 +9,7 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { PasswordService } from '@shared/services';
+import { NgClass } from '@angular/common';
 
 export enum RANK {
     TOO_SHORT = 0,
@@ -24,6 +25,7 @@ export enum RANK {
     styleUrl: './password-strength.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [NgClass],
 })
 export class PasswordStrengthComponent implements OnChanges {
     @Input({ required: true }) password!: string;

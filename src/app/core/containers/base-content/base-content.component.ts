@@ -1,7 +1,7 @@
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, NgClass } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, inject, OnDestroy } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { AuthApi } from '@api/services';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { filter, Subject, takeUntil } from 'rxjs';
@@ -11,11 +11,19 @@ import { BreadcrumbItem, ROOT_ROUTE } from '@core/models';
 import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { getBreadCrumbTitle } from '@shared/helpers';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
     selector: 'giz-base-content',
     templateUrl: './base-content.component.html',
-    styleUrls: ['./base-content.component.scss'],
+    styleUrls: [ './base-content.component.scss' ],
+    imports: [
+        NgClass,
+        HeaderComponent,
+        RouterOutlet,
+        FooterComponent,
+    ],
 })
 export class BaseContentComponent implements OnDestroy {
     public readonly router = inject(Router);

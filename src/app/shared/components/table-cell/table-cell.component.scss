@@ -1,9 +1,8 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/sr-only';
-@import 'mixins/screen';
-@import 'mixins/stretch';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/sr-only';
+@use 'mixins/screen';
+@use 'mixins/stretch';
+@use 'mixins/typography';
 
 :root {
     --table-cell-subtitle: #{ $c-grey--600 };
@@ -25,12 +24,12 @@
     }
 
     &__sort {
-        @include stretch;
+        @include stretch.apply;
 
         color: var(--table-cell-icon);
 
         span {
-            @include sr-only;
+            @include sr-only.apply;
         }
 
         &:focus-visible,
@@ -108,7 +107,7 @@
         padding-top: 0;
 
         > span {
-            @include sr-only;
+            @include sr-only.apply;
         }
     }
 

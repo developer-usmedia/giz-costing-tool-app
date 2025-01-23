@@ -2,6 +2,11 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulati
 
 import { Entry } from '@api/models';
 import { ICON } from '@shared/components/icon/icon.enum';
+import { IconComponent } from '../icon/icon.component';
+import { TooltipDirective } from '../../directives/tooltip.directive';
+import { StatusComponent } from '../status/status.component';
+import { RouterLink } from '@angular/router';
+import { CountryNamePipe, EmptyPipe, EntryStatusPipe } from '@shared/pipes';
 
 @Component({
     selector: 'giz-entry-card',
@@ -9,6 +14,15 @@ import { ICON } from '@shared/components/icon/icon.enum';
     styleUrl: './entry-card.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        IconComponent,
+        TooltipDirective,
+        StatusComponent,
+        RouterLink,
+        CountryNamePipe,
+        EmptyPipe,
+        EntryStatusPipe,
+    ],
 })
 export class EntryCardComponent {
     @Input({ required: true }) entry!: Entry;

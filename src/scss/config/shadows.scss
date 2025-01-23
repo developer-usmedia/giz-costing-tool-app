@@ -1,5 +1,5 @@
 @use 'sass:color';
-@import 'colors';
+@use 'colors' as *;
 /* stylelint-disable scss/dollar-variable-colon-space-after */
 $c-shadow-1:
     0 2px 1px color.scale($c-black, $alpha: -80%),

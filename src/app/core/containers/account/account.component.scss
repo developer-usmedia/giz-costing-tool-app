@@ -1,7 +1,6 @@
-@import 'config/colors';
-@import 'config/sizes';
-@import 'mixins/screen';
-@import 'mixins/typography';
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 :root {
     --settings-border-color: #{ $c-black-transparent };
@@ -18,13 +17,13 @@
     }
 
     &__title {
-        @include style-heading-1-hero;
+        @include typography.style-heading-1-hero;
 
         margin: 0 0 1rem;
     }
 
     &__intro {
-        @include style-text-large;
+        @include typography.style-text-large;
     }
 
     &__content {
@@ -34,7 +33,7 @@
         justify-content: space-between;
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         &__heading {
             margin-bottom: $p-gutter--xlarge;
         }
@@ -83,7 +82,7 @@
         padding: $p-gutter;
     }
 
-    @include screen($screen-minimal) {
+    @include screen.min($screen-minimal) {
         &__content {
             grid-column: span 1;
         }
@@ -93,11 +92,11 @@
         }
     }
 
-    @include screen($screen-simple) {
+    @include screen.min($screen-simple) {
         --settings-image-column: 120px;
     }
 
-    @include screen($screen-normal) {
+    @include screen.min($screen-normal) {
         --settings-image-column: 175px;
     }
 }

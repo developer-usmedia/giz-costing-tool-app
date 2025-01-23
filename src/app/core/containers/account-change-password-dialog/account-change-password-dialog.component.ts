@@ -1,6 +1,6 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { Component, Inject, inject, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
@@ -9,6 +9,14 @@ import { AuthService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { STATUS } from '@shared/helpers';
 import { CustomValidators } from '@shared/services';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
+import { NgClass } from '@angular/common';
+import { IconButtonComponent } from '@shared/components/icon-button/icon-button.component';
+import { TooltipDirective } from '@shared/directives/tooltip.directive';
+import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface ChangePasswordFormGroup {
     currentPassword: FormControl<string>;
@@ -32,6 +40,18 @@ export interface AccountChangePasswordResult {
     selector: 'giz-account-change-password-dialog',
     templateUrl: './account-change-password-dialog.component.html',
     styleUrl: './account-change-password-dialog.component.scss',
+    imports: [
+        DialogComponent,
+        ReactiveFormsModule,
+        NgClass,
+        IconButtonComponent,
+        TooltipDirective,
+        PasswordStrengthComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
     public readonly authService = inject(AuthService);
@@ -146,7 +166,7 @@ export class AccountChangePasswordDialogComponent implements OnInit, OnDestroy {
                 },
                 onError: (error) => {
                     const errorBody = error.error as ErrorResponse;
-                    const isBadRequest = errorBody.statusCode === STATUS.BAD_REQUEST;
+                    const isBadRequest = errorBody.statusCode as STATUS === STATUS.BAD_REQUEST;
                     if (isBadRequest && errorBody.message?.includes('Invalid credentials')) {
                         this.wrongPassword = true;
                     }

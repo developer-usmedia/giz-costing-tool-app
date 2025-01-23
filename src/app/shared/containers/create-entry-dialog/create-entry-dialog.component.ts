@@ -10,6 +10,15 @@ import { MODULE_ROUTE } from '@core/models';
 import { EntriesService } from '@core/services';
 import { ICON } from '@shared/components/icon/icon.enum';
 import { STATUS } from '@shared/helpers';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+import { IconButtonComponent } from '../../components/icon-button/icon-button.component';
+import { TooltipAdvancedDirective } from '../../directives/tooltip-advanced.directive';
+import { TooltipAdvancedComponent } from '../../components/tooltip-advanced/tooltip-advanced.component';
+import { FileUploadComponent } from '../../components/file-upload/file-upload.component';
+import { ButtonComponent } from '../../components/button/button.component';
+import { IconComponent } from '../../components/icon/icon.component';
+import { AsyncPipe } from '@angular/common';
+import { MarkdownPipe } from '@shared/pipes';
 
 export interface CreateEntryResult {
     success: boolean;
@@ -23,6 +32,17 @@ type ImportState = 'start' | 'uploading' | 'success' | 'error' | 'validation-err
     templateUrl: './create-entry-dialog.component.html',
     styleUrl: './create-entry-dialog.component.scss',
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        DialogComponent,
+        IconButtonComponent,
+        TooltipAdvancedDirective,
+        TooltipAdvancedComponent,
+        FileUploadComponent,
+        ButtonComponent,
+        IconComponent,
+        AsyncPipe,
+        MarkdownPipe,
+    ],
 })
 export class CreateEntryDialogComponent implements OnDestroy {
     public state: ImportState = 'start';
@@ -87,7 +107,7 @@ export class CreateEntryDialogComponent implements OnDestroy {
                     },
                     error: (error: HttpErrorResponse) =>  {
                         /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-                        if (error.status === STATUS.UNPROCESSABLE && Array.isArray(error.error?.errors)
+                        if (error.status as STATUS === STATUS.UNPROCESSABLE && Array.isArray(error.error?.errors)
                             && (error.error.errors as ImportValidationError[]).length > 0 ) {
                             this.state = 'validation-errors';
                             this.validationErrors = error.error.errors as ImportValidationError[];

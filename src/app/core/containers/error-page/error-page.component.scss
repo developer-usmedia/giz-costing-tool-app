@@ -1,7 +1,7 @@
-@import 'config/sizes';
-@import 'config/colors';
-@import 'mixins/screen';
-@import 'mixins/typography';
+
+@use 'config' as *;
+@use 'mixins/screen';
+@use 'mixins/typography';
 
 :root {
     --error-page-color-subtitle: #{$c-grey--600};
@@ -21,14 +21,14 @@
     justify-content: center;
 
     &__subtitle {
-        @include style-heading-3;
+        @include typography.style-heading-3;
 
         color: var(--error-page-color-subtitle);
         margin-bottom: 0.25rem;
     }
 
     &__title {
-        @include style-heading-1-hero;
+        @include typography.style-heading-1-hero;
 
         margin-bottom: 3rem;
     }

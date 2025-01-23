@@ -9,10 +9,14 @@ import {
     SimpleChanges,
     ViewEncapsulation,
 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { Entry, ScenarioSpecsForm, ScenarioType } from '@api/models';
 import { AUTH_ROUTE, MODULE_ROUTE } from '@core/models';
+import { NgClass, CurrencyPipe } from '@angular/common';
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { HasErrorPipe, HasValuePipe } from '@shared/pipes';
 
 interface ScenarioSpecsFormGroup {
     taxEmployee: FormControl<number | null>;
@@ -27,6 +31,15 @@ interface ScenarioSpecsFormGroup {
     styleUrl: './scenario-specs-form.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
+    imports: [
+        ReactiveFormsModule,
+        NgClass,
+        SpinnerComponent,
+        ButtonComponent,
+        CurrencyPipe,
+        HasErrorPipe,
+        HasValuePipe,
+    ],
 })
 export class ScenarioSpecsFormComponent implements OnInit, OnChanges {
     @Input({ required: true }) entry!: Entry;
