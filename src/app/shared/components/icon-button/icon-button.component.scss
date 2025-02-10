@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use 'mixins/button';
 @use 'mixins/sr-only';
-@use "config" as *;
+@use 'config' as *;
 
 :root {
     --icon-button-background: transparent;

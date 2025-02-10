@@ -1,5 +1,5 @@
 @use 'mixins/typography';
-@use "config" as *;
+@use 'config' as *;
 
 :root {
     --noresults-background: #{ $c-white };

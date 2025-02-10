@@ -1,8 +1,8 @@
-@use "../config" as *;
+@use '../config' as *;
 @use '../mixins/sr-only';
 @use '../mixins/form';
 @use '../mixins/typography';
-@use "../mixins/screen";
+@use '../mixins/screen';
 
 .form {
     $self: &;
